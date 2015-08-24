@@ -1,0 +1,70 @@
+
+<h1 class="class export">System <span class="type">class</span></h1>
+<p><p>The System class provides you methods to fetch games, audio devices, and
+camera devices.</p>
+<h3 id="basic-usage">Basic Usage</h3>
+<pre><code class="lang-javascript">var XJS = require(&#39;xjs&#39;);
+var System = XJS.System;
+
+System.getCameraDevices().then(funciton(cameras) {
+  window.cameras = cameras;
+});
+</code></pre>
+</p><h2>Members</h2>
+  <section class="member static">
+    <h1 id="getAudioDevices" class="name">
+      <code>static</code> getAudioDevices
+    </h1>
+    <pre><code>return: Promise&lt;AudioDevice[]&gt;
+</code></pre>
+<p>Gets audio devices, both input and output</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">System.getAudioDevices(
+  XML.AudioDeviceDataflow.ALL,
+  XML.AudioDeviceState.ACTIVE
+).then(funciton(devices) {
+  // devices is an array of AudioDevice object
+  window.audios = devices;
+});
+</code></pre>
+
+  </section>
+
+
+  <section class="member static">
+    <h1 id="getCameraDevices" class="name">
+      <code>static</code> getCameraDevices
+    </h1>
+    <pre><code>return: Promise&lt;CameraDevice[]&gt;
+</code></pre>
+<p>Gets all camera devices</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">System.getCameraDevices().then(funciton(devices) {
+  // devices is an array of CameraDevice object
+  window.cameras = devices;
+});
+</code></pre>
+
+  </section>
+
+
+  <section class="member static">
+    <h1 id="getGames" class="name">
+      <code>static</code> getGames
+    </h1>
+    <pre><code>return: Promise&lt;Game[]&gt;
+</code></pre>
+<p>Gets all camera devices</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">System.getGames().then(funciton(games) {
+  // games is an array of Game object
+  window.games = games;
+});
+</code></pre>
+
+  </section>
+
+<p class="module defined-in">exported from <a href='#/system'>system</a><br/>
+defined in <a href="https://github.com/xjsframework/xjs/tree/release-0.1.0/modules/../src/system/system.ts#L43-L171">../src/system/system.ts (line 43)</a>
+</p>
+

@@ -1,0 +1,171 @@
+
+<h1 class="class export">Game <span class="type">class</span></h1>
+<p><p>The Game Class is the object returned by <a href='#system/System'>System Class&#39;</a>
+getGames method. It provides you with methods to fetch the game object&#39;s
+attributes, and also provides methods to convert it back to an XML object
+that is compatible with XBC</p>
+<h3 id="basic-usage">Basic Usage</h3>
+<pre><code class="lang-javascript">var XJS = require(&#39;xjs&#39;);
+var System = XJS.System;
+var xml;
+
+System.getGames().then(function(games) {
+    for (var i in games) {
+        if(games[i].isFullscreen()) {
+            xml = games[i].toXML();
+            // Do something with the xml here. Probably add it to the current scene
+        }
+    }
+});
+</code></pre>
+</p><h2>Members</h2>
+  <section class="member">
+    <h1 id="getPid" class="name">
+      getPid
+    </h1>
+    <pre><code>return: number
+</code></pre>
+<p>Gets the game&#39;s process ID.</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">var processId = game.getPid();
+</code></pre>
+
+  </section>
+
+
+  <section class="member">
+    <h1 id="getHandle" class="name">
+      getHandle
+    </h1>
+    <pre><code>return: number
+</code></pre>
+<p>Gets the Graphics API handle.</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">var handle = game.getHandle();
+</code></pre>
+
+  </section>
+
+
+  <section class="member">
+    <h1 id="getWindowHandle" class="name">
+      getWindowHandle
+    </h1>
+    <pre><code>return: number
+</code></pre>
+<p>Gets the window handle.</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">var windowHandle = game.getWindowHandle();
+</code></pre>
+
+  </section>
+
+
+  <section class="member">
+    <h1 id="getGapiType" class="name">
+      getGapiType
+    </h1>
+    <pre><code>return: string
+</code></pre>
+<p>Gets the Graphics API type.</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">var gApiType = game.getGapiType();
+</code></pre>
+<h4 id="possible-values">Possible Values</h4>
+<pre><code>OGL, DX8, DX8_SwapChain, DX9, DX9Ex, DX9_SwapChain,
+DX9_PresentEx, DX10, DX11, DX11.1, DX11.1_Present1
+</code></pre>
+
+  </section>
+
+
+  <section class="member">
+    <h1 id="getResolution" class="name">
+      getResolution
+    </h1>
+    <pre><code>return: Rectangle
+</code></pre>
+<p>Gets the game resolution.</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">var resolution = game.getResolution();
+</code></pre>
+
+  </section>
+
+
+  <section class="member">
+    <h1 id="isFullscreen" class="name">
+      isFullscreen
+    </h1>
+    <pre><code>return: boolean
+</code></pre>
+<p>Checks if game has exclusive full screen.</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">var isFullscreen = game.isFullscreen();
+</code></pre>
+
+  </section>
+
+
+  <section class="member">
+    <h1 id="getWindowName" class="name">
+      getWindowName
+    </h1>
+    <pre><code>return: string
+</code></pre>
+<p>Gets the window title</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">var windowName = game.getWindowName();
+</code></pre>
+
+  </section>
+
+
+  <section class="member">
+    <h1 id="getLastFrameTimestamp" class="name">
+      getLastFrameTimestamp
+    </h1>
+    <pre><code>return: number
+</code></pre>
+<p>Gets timestamp of last frame in milliseconds.</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">var lastFrameTimestamp = game.getLastFrameTimestamp();
+</code></pre>
+
+  </section>
+
+
+  <section class="member">
+    <h1 id="toXML" class="name">
+      toXML
+    </h1>
+    <pre><code>return: XML
+</code></pre>
+<p>Converts Game object into an XML object</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">var gameXML = game.toXML();
+</code></pre>
+
+  </section>
+
+
+  <section class="member static">
+    <h1 id="parse" class="name">
+      <code>static</code> parse
+    </h1>
+    <pre><code>param: gameJSON&lt;JXON&gt;
+</code></pre>
+<pre><code>return: Game
+</code></pre>
+<p>Converts a JSON object into a Game object</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">var XJS = require(&#39;xjs&#39;);
+var game = XJS.Game.parse(jsonObj);
+</code></pre>
+
+  </section>
+
+<p class="module defined-in">exported from <a href='#/system'>system</a><br/>
+defined in <a href="https://github.com/xjsframework/xjs/tree/release-0.1.0/modules/../src/system/game.ts#L5-L233">../src/system/game.ts (line 5)</a>
+</p>
+

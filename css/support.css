@@ -1,0 +1,158 @@
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  width: 100%;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body * {
+  font-family: 'Source Sans Pro', sans-serif;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+a.no-hover:hover{
+  text-decoration: none;
+}
+
+span a {
+  color: #0095de;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 15px;
+}
+
+#header {
+  margin: 68px auto 0;
+  width: 100%;
+  height: 133px;
+  background-image: url('../assets/bg_home.jpg');
+
+  color: #FFF;
+  font-size: 38px;
+  font-weight: 600; /* semibold */
+
+  padding-left: 10%;
+  padding-top: 46px;
+}
+
+#container {
+  width: 65%;
+  margin: auto;
+}
+
+#support-channels {
+  display: flex;
+  width: 960px;
+  flex-wrap: wrap;
+
+  margin: 30px auto;
+}
+
+h1 {
+  font-size: 28px;
+  margin-top: 50px;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 8px;
+}
+
+#found-bug {
+  font-style: italic;
+}
+
+h1 + span {
+  font-family: 'Tahoma', sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 28px;
+}
+
+#found-bug + span {
+  font-style: italic;
+}
+
+.support {
+  width: 480px;
+  height: 150px;
+
+  background-color: #232A35;
+  border: 1px solid #3B4555;
+  color: #FEFEFE;
+
+  font-size: 16px;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+}
+
+.support > div {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: 25px;
+}
+
+.support-first-line,
+.support-small-second-line,
+.support-second-line {
+  margin-left: 180px;
+  display: block;
+}
+
+.support-first-line {
+  font-size: 24px;
+  font-weight: 600; /* semibold */
+  padding-top: 45px;
+}
+
+.support-small-second-line {
+  font-size: 15px;
+}
+
+.support:hover {
+  background-color: #2E3848;
+  border: 1px solid #687893;
+}
+
+#copyright {
+  width: 65%;
+  height: 40px;
+  margin: auto;
+  margin-top: 125px;
+  font-size: 14px;
+  color: #666;
+  line-height: 28px;
+}
+
+.company-name {
+  font-weight: bold;
+}
+
+/* Support channel images */
+#support-github {
+  background-image: url('../assets/icon_support_github.png');
+}
+
+#support-stackoverflow {
+  background-image: url('../assets/icon_support_stackoverflow.png');
+}
+
+#support-email {
+  background-image: url('../assets/icon_support_email.png');
+}
+
+#support-chat {
+  background-image: url('../assets/icon_support_chat.png');
+}

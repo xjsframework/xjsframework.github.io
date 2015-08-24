@@ -1,0 +1,92 @@
+* {
+  font-family: 'Source Sans Pro', sans-serif;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: url('../assets/bg_home.jpg');
+  min-height: 100%;
+}
+
+body * {
+  text-align: center;
+}
+
+#wrap {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+#logo {
+  width: 745px;
+  height: 117px;
+  background-image: url('../assets/img_logo.png');
+  align-self: center;
+}
+
+#subtitle {
+  font-size: 30px;
+  line-height: 36px;
+  color: #9ADFFF;
+  position: relative;
+  top: 10px;
+  font-weight: lighter;
+}
+
+#buttons {
+  position: relative;
+  top: 50px;
+}
+
+#getStarted,
+#download {
+  width: 246px;
+  height: 47px;
+  display: inline-block;
+  margin-left: 5px;
+}
+
+#getStarted:hover,
+#download:hover {
+  background-position-y: -47px;
+}
+
+#getStarted:active,
+#download:active {
+  background-position-y: -94px;
+}
+
+
+#getStarted {
+  background-image: url('../assets/btn_getStarted.png');
+}
+
+#download {
+  background-image: url('../assets/btn_download.png');
+}
+
+#copyright {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 2%;
+  font-size: 14px;
+  color: #518CCF;
+  width: 100%;
+}

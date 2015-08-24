@@ -1,0 +1,88 @@
+
+<h1 class="class export">CameraDevice <span class="type">class</span></h1>
+<p><p>The CameraDevice Class is the object returned by
+<a href='#system/System'>System Class&#39;</a> getCameraDevices method. It provides
+you with methods to fetch the Camera Device&#39;s id, name, and convert it to
+an XML object that is compatible with XBC</p>
+<h3 id="basic-usage">Basic Usage</h3>
+<pre><code class="lang-javascript">var XJS = require(&#39;xjs&#39;);
+var System = XJS.System;
+
+System.getCameraDevices().then(function(cameras) {
+  for (var i in cameras) {
+    // Do not include the imaginary xsplit camera if that ever exist
+    if (cameras[i].getName().indexOf(&#39;xsplit&#39;) === -1) {
+      xml = cameras[i].toXML();
+      // do something with the XML here
+    }
+  }
+});
+</code></pre>
+</p><h2>Members</h2>
+  <section class="member constructor">
+    <h1 id="constructor" class="name">constructor</h1>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
+  </section>
+
+  <section class="member">
+    <h1 id="getId" class="name">
+      getId
+    </h1>
+    <pre><code>return: string
+</code></pre>
+<p>Get the ID of the device. The ID of the device is based on the <code>disp</code>
+attribute of the devices XML</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">var cameraID = device.getID();
+</code></pre>
+
+  </section>
+
+
+  <section class="member">
+    <h1 id="getName" class="name">
+      getName
+    </h1>
+    <pre><code>return: string
+</code></pre>
+<p>Get the Name of the device.</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">var cameraName = device.getName();
+</code></pre>
+
+  </section>
+
+
+  <section class="member">
+    <h1 id="toXML" class="name">
+      toXML
+    </h1>
+    <pre><code>return: XML
+</code></pre>
+<p>Convert the current CameraDevice object to XML</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">var xml = device.toXML();
+</code></pre>
+
+  </section>
+
+
+  <section class="member static">
+    <h1 id="parse" class="name">
+      <code>static</code> parse
+    </h1>
+    <pre><code>param: deviceJSON&lt;JXON&gt;
+</code></pre>
+<pre><code>return: CameraDevice
+</code></pre>
+<p>Create a CameraDevice object based on a JXON object</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">var camera = CameraDevice.parse(JSONObj);
+</code></pre>
+
+  </section>
+
+<p class="module defined-in">exported from <a href='#/system'>system</a><br/>
+defined in <a href="https://github.com/xjsframework/xjs/tree/release-0.1.0/modules/../src/system/camera.ts#L4-L109">../src/system/camera.ts (line 4)</a>
+</p>
+

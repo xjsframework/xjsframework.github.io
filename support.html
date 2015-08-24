@@ -1,0 +1,59 @@
+<html>
+  <head>
+    <title>XSplit JS Framework Support</title>
+
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700italic,300,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="css/support.css">
+
+    <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+    <script>
+      window.Polymer = window.Polymer || {};
+      window.Polymer.dom = 'shadow';
+    </script>
+
+    <link rel="import" href="polymer_elements/navbar/navbar.html">
+    <link rel="import" href="polymer_elements/copyright/copyright.html">
+  </head>
+  <body>
+    <xsplit-navbar></xsplit-navbar>
+
+    <div id="header">
+      GOT QUESTIONS? NEED HELP?
+    </div>
+
+    <div id="container">
+      <h1> We got a number of ways for you to ask for help: </h1>
+      <span>We have an incredible community of developers who are passionate about solving problems. We recommend the following methods to get help with XSplit JS Framework.</span>
+
+      <div id="support-channels">
+        <a href="https://github.com/xjsframework/xjs/issues/new" class="support no-hover" target="_blank">
+          <div id="support-github">
+            <span class="support-first-line">ASK US AT GITHUB</span>
+          </div>
+        </a>
+        <a href="http://stackoverflow.com/questions/ask?tags=xsplit-js" class="support no-hover" target="_blank">
+          <div id="support-stackoverflow">
+            <span class="support-first-line">ASK YOUR QUESTIONS</span>
+            <span class="support-second-line">AT STACK OVERFLOW</span>
+          </div>
+        </a>
+        <a href="mailto://xjs@splitmedialabs.com" class="support no-hover">
+          <div id="support-email">
+            <span class="support-first-line">EMAIL US AT</span>
+            <span class="support-second-line">xjs@splitmedialabs.com</span>
+          </div>
+        </a>
+        <a href="https://gitter.im/xjsframework/xjs" class="support no-hover" target="_blank">
+          <div id="support-chat"><span class="support-first-line">HIT US UP AT</span>
+          <span class="support-second-line">XJSFRAMEWORK/XJS VIA GITTER</span>
+          </div>
+        </a>
+      </div>
+
+      <h1 id="found-bug"> Found some bug in our framework? </h1>
+      <span>Please do report that to us at <a href="https://github.com/xjsframework/xjs/issues/new" target="_blank">github</a>.<span>
+
+    </div>
+    <xsplit-copyright></xsplit-copyright>
+  </body>
+</html>

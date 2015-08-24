@@ -1,0 +1,23 @@
+{
+  "name": "xsplit-developers-website",
+  "version": "0.1.0",
+  "authors": [
+    "miyb@splitmedialabs.com",
+    "dara@splitmedialabs.com",
+    "meso@splitmedialabs.com",
+    "orur@splitmedialabs.com"
+  ],
+  "description": "XSplit Developers Website",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#1.0.0",
+    "angular-route": "~1.4.3",
+    "angular-material": "~0.10.0"
+  }
+}
