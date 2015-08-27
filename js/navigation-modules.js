@@ -9,9 +9,51 @@ angular.module('navigation-modules', [])
       "type": "module",
       "pages": [
         {
+          "path": "core/Environment",
+          "partial": "partials/modules/core/Environment/index.html",
+          "name": "Environment",
+          "type": "class"
+        },
+        {
           "path": "core/App",
           "partial": "partials/modules/core/App/index.html",
           "name": "App",
+          "type": "class"
+        },
+        {
+          "path": "core/Scene",
+          "partial": "partials/modules/core/Scene/index.html",
+          "name": "Scene",
+          "type": "class"
+        },
+        {
+          "path": "core/Transition",
+          "partial": "partials/modules/core/Transition/index.html",
+          "name": "Transition",
+          "type": "class"
+        },
+        {
+          "path": "core/ItemTypes",
+          "partial": "partials/modules/core/ItemTypes/index.html",
+          "name": "ItemTypes",
+          "type": "enum"
+        },
+        {
+          "path": "core/Item",
+          "partial": "partials/modules/core/Item/index.html",
+          "name": "Item",
+          "type": "class"
+        },
+        {
+          "path": "core/CameraItem",
+          "partial": "partials/modules/core/CameraItem/index.html",
+          "name": "CameraItem",
+          "type": "class"
+        },
+        {
+          "path": "core/GameItem",
+          "partial": "partials/modules/core/GameItem/index.html",
+          "name": "GameItem",
           "type": "class"
         }
       ]
@@ -56,6 +98,26 @@ angular.module('navigation-modules', [])
           "path": "system/Game",
           "partial": "partials/modules/system/Game/index.html",
           "name": "Game",
+          "type": "class"
+        }
+      ]
+    },
+    {
+      "path": "util",
+      "partial": "partials/modules/util/index.html",
+      "name": "util",
+      "type": "module",
+      "pages": [
+        {
+          "path": "util/Color",
+          "partial": "partials/modules/util/Color/index.html",
+          "name": "Color",
+          "type": "class"
+        },
+        {
+          "path": "util/Rectangle",
+          "partial": "partials/modules/util/Rectangle/index.html",
+          "name": "Rectangle",
           "type": "class"
         }
       ]
