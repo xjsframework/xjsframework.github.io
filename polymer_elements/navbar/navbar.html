@@ -21,7 +21,8 @@
       listeners: {
         'home.tap': 'homeTap',
         'api.tap': 'apiTap',
-        'support.tap': 'supportTap'
+        'support.tap': 'supportTap',
+        'quickstart.tap': 'quickstartTap'
       },
 
       homeTap: function(e) {
@@ -34,6 +35,10 @@
 
       supportTap: function(e) {
         location.href = 'support.html';
+      },
+
+      quickstartTap: function(e) {
+        location.href = 'quickstart.html';
       }
     });
   </script>
