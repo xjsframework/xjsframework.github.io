@@ -1,0 +1,32 @@
+<h1>Developing Sources</h1>
+<h3>Basics</h3>
+<p>
+  To create your own source, all you need to do is to write an HTML file. Whatever you see on the screen should be visible on the stage during recording or streaming.
+</p>
+<h3>Usage</h3>
+<p>
+  You can test your own source by dragging the HTML file onto the stage. Alternatively, if you are locally or remotely hosting the source, you may add the file by clicking Add > Other > Webpage URL on the bottom panel of XSplit Broadcaster.
+</p>
+<h3>Configuration objects</h3>
+<p>
+  Aside from the basic set of source properties (which include position and chroma keying, among many others), a custom configuration object may also be used for sources. Configuration objects are simple JSON objects that sources can save to memory.
+</p>
+<p>
+  There is no standard format for the configuration objects; developers may use any valid JSON. It is the responsibility of the source to load the saved object every time the source is loaded, and to apply the object's various settings onto the source's HTML. This is ideally done when the framework's ready event is fired.
+</p>
+<pre class="language-javascript"><code>var xjs = require('xjs');
+var Item = xjs.Item;
+
+xjs.ready()
+  .then(Item.getCurrentSource)
+  .then(function(myItem) {
+    return myItem.loadConfig();
+  }).then(function(config) {
+    // apply the loaded configuration object onto the source
+  });</code></pre>
+<p>
+  To let the source save its own configuration, it simply needs to call saveConfig() on its <code>Item</code> instance.
+</p>
+<h3>Source Plugin Window utility</h3>
+<p>
+  There is a utility class for source plugins which is used in conjunction with the configuration window. The <code>SourcePluginWindow</code> class is an Event Emitter. Currently, its only use to plugin developers is to save configuration objects as instructed by the configuration window. See this <a href="tutorials.html#/sourceconfig#man-config-obj" target="_blank">section</a> for more details.

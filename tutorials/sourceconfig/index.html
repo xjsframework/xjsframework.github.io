@@ -1,0 +1,85 @@
+<h1>Developing Source Configuration Windows</h1>
+<p>
+  The configuration window is a very important tool to allow customization of your source plugin. This article details how to use the framework to layout the window, and to allow the window access to the source's custom configuration object. Developers begin by creating HTML for the configuration window's graphical interface.
+</p>
+<h1>Specifying the configuration window</h1>
+<p>
+  For the application to locate the correct configuration window HTML file, the source HTML must contain metadata to specify this. If you are using our Yeoman generator to quickly generate a source plugin (<a href="quickstart.html#yeoman" target="_blank">see here</a>), this is automatically generated for you.
+</p>
+<pre class="language-html"><code>&lt;meta name="xsplit:config-url" content="./config.html"&gt;</code></pre>
+<h3>Configuration window layouts</h3>
+<p>
+  The framework allows developers two different layout schemes for the configuration window. The first is called tabbed mode, which allows users to leverage XSplit's existing tab system, and even to reuse a number of existing core tabs. The second is called full mode, which gives the developers total control over the full space of the window (the title bar and the Keep Source in Memory checkbox is already supplied).
+</p>
+<pre class="language-javascript"><code>var xjs = require('xjs');
+var configWindow = xjs.SourceConfigWindow.getInstance();
+
+// Option 1: Use XSplit's existing tab system
+xjs.ready()
+  .then(function() {
+    configWindow.useTabbedWindow({
+      customTabs: ['Custom'],
+      tabOrder: ['Custom', 'Layout', 'Color', 'Transition']
+    });
+  });
+
+// Option 2: Use the full window
+xjs.ready()
+  .then(function() {
+    configWindow.useFullWindow();
+  });</code></pre>
+<p>
+  The following images illustrate the difference between the two modes as specified by the above code snippets. The blue area indicates where the developer's own HTML will be rendered.
+</p>
+<h3>Tabbed Mode</h3>
+<p>This section only applies to those who prefer to use XSplit's existing tab system.</p>
+<p>
+  When using tabbed mode, it is important to specify both the list of custom tabs and the order of all the tabs as users should see them.
+</p>
+<a name="man-config-obj"><h3>Manipulating the configuration object</h3></a>
+<p>
+  The source’s custom configuration object can be manipulated similarly to how the source itself does it (see this article), but there are some differences.
+</p>
+<p>
+  When the framework’s ready event fires, developers should opt to load the source’s configuration object in order to update the settings displayed on the configuration window. This is done in exactly the same manner as the source does.
+</p>
+<pre class="language-javascript"><code>var xjs = require('xjs');
+var Item = xjs.Item;
+
+xjs.ready()
+  .then(Item.getCurrentSource)
+  .then(function(myItem) {
+    return myItem.loadConfig();
+  }).then(function(config) {
+    // update the config window's UI based on the last saved configuration
+  });</code></pre>
+<p>
+  The main difference is in saving the configuration: because of the underlying architecture of the application, the configuration window is only allowed to signal the source to save the configuration. It is still the source’s responsibility to actually save the configuration. The following code snippet illustrates this. (Lines pertaining to the ready event have been removed but you should always do your processing when the framework is ready.)
+</p>
+<pre class="language-javascript"><code>// somewhere in configuration window
+mySaveButton.addEventListener('click', function() {
+  myItem.requestSaveConfig(configObj); // myItem from Item.getCurrentSource
+});</code></pre>
+<pre class="language-javascript"><code>// in source
+var xjs = require('xjs');
+var sourceWindow = xjs.SourcePluginWindow.getInstance();
+
+sourceWindow.on('save-config', function(configObj) {
+  myItem.saveConfig(configObj); // myItem from Item.getCurrentSource
+});</code></pre>
+<p>
+  There are some cases in which the plugin may need to change some settings without the need for saving the configuration object, which is illustrated below:
+</p>
+<pre class="language-javascript"><code>// somewhere in configuration window
+mySaveButton.addEventListener('click', function() {
+  myItem.applyConfig(configObj); // 
+});</code></pre>
+
+<pre class="language-javascript"><code>// somewhere in source
+var myDiv = document.getElementById(‘myDiv’);
+
+sourceWindow.on('apply-config', function(configObj) {
+  if (configObj.hasOwnProperty(‘text’)) {
+    myDiv.textContent = configObj.text;
+  }
+});</code></pre>

@@ -1,0 +1,18 @@
+<h1>Developing Extension Plugins</h1>
+<p>
+  Extensions occupy their own window separate from the main XSplit Broadcaster application. They can be used to do many kinds of tasks in the global scope of the application.
+</p>
+<h3>Basic tasks</h3>
+<p>
+  This section outlines some of the possible things one can do with extensions.
+</p>
+<ul>
+  <li><strong>Adding system items.</strong> Extensions are capable of adding system-related items: <code>CameraDevice, Game, Microphone</code> (more will be added in the future). Simply call the relevant system call (<code>System.getCameraDevices()</code>, for example) and call <code>addToScene()</code> on the appropriate object. Note that this is currently limited to adding to the currently active scene.</li>
+  <li><strong>Manipulating sources.</strong> Extensions are allowed to manipulate sources, their properties, and even their custom configuration objects just as a configuration window might, as detailed here. (Please see the Issues section below for some relevant information.)</li>
+  <li><strong>Setting application-wide properties.</strong> Extensions are much more powerful than sources and are able to manipulate the application itself. For example, they may use the App class change the transition settings when changing scenes. See the API reference for more information.</li>
+</ul>
+<h3>Issues and possible gotchas</h3>
+<p>This section details some of the current issues related to extensions and/or the framework in general.</p>
+<ul>
+  <li><strong>Non-active sources.</strong> When manipulating source properties, it is currently not possible to change any of their properties if the item is not in the currently active scene, or if “Keep Source in Memory” is not checked for that item.</li>
+</ul>

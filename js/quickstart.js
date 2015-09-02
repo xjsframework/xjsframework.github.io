@@ -18,17 +18,17 @@ $(document).ready(function() {
       .replace(/^\//,'') === this.pathname.replace(/^\//,'') &&
       location.hostname == this.hostname) {
       var target = $(this.hash);
-    target = target.length ? target : 
-    $('[name=' + this.hash.slice(1) +']');
-    if (target.length) {
-      $('html,body').animate({
-        scrollTop: target.offset().top - 68
-      }, 1000);
-      history.pushState({}, '', this.hash);
-      return false;
+      target = target.length ? target : 
+      $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html,body').animate({
+          scrollTop: target.offset().top - 68
+        }, 1000);
+        history.pushState({}, '', this.hash);
+        return false;
+      }
     }
-  }
-});
+  });
 
   // Sticky Side menu
   var lastId;
