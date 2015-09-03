@@ -23,6 +23,14 @@
       location.href = 'quickstart.html';
     }
   });
+  document.getElementById('download').addEventListener('click', function(e) {
+    if (e.which === 1) {
+      var link = document.createElement('a');
+      link.download = 'xjs.js';
+      link.href = 'http://cdn2.xsplit.com/xjs/download/xjs.js';
+      link.click();
+    }
+  });
   </script>
 </body>
 </html>
