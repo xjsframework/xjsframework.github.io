@@ -3,7 +3,7 @@ $(document).ready(function() {
   window.Polymer.dom = 'shadow';
 
   var $menu = $('.vertical-menu');
-  var $right = $('#right');
+  var $left = $('#left');
   var $window = $(window);
   var $links = $menu.find('a[href]');
   var $scrollItems = $links.map(function() {
@@ -34,9 +34,9 @@ $(document).ready(function() {
   var lastId;
   var setSticky = function() {
     var fromTop = $(this).scrollTop() + 75;
-    if (($window.scrollTop() + 68) > $right.offset().top) {
+    if (($window.scrollTop() + 68) > $left.offset().top) {
       $menu.addClass('stick');
-      $menu.width($right.width());
+      $menu.width($left.width());
     } else {
       $menu.removeClass('stick');
       $menu.width('auto');
