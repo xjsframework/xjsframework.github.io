@@ -51,24 +51,24 @@
         </p>
         <h1>Installing XSplit JS Framework</h1>
         <p>
-          We recommend using Yeoman to create your first plugin, but also outlined below are alternative methods to get development started. Please note that you will need working knowledge of JavaScript to use the framework.
+          We recommend using Yeoman to create your first plugin, but also outlined below are alternative methods to get development started. Please note that you will need working knowledge of JavaScript and ES6 Promises to use the framework.
         </p>
         <a id="yeoman" name="yeoman">
           <h2>Getting started using Yeoman Generator</h2>
         </a>
         <h3>Dependencies</h3>
         <p>
-          You'll need to have Node.js and npm installed first. If you have that installed already, great! If not, you should go to the official website, download and install it. Also, do make sure that you have the latest version of npm to avoid issues with other tools.
+          You'll need to have Node.js and npm installed first. If you have that installed already, great! If not, you should go to the <a href="https://nodejs.org/en/" target="_blank">official website</a>, download and install it. Also, do make sure that you have the latest version of npm to avoid issues with other tools.
         </p>
         <h3>Installation</h3>
         <p>
-          Let's get started first with installing yeoman and XSplit JS Framework generator though npm.
+          Let's get started first with installing yeoman and XSplit JS Framework generator through npm.
         </p>
         <pre class="language-shell"><code>npm install -g bower
 npm install -g yo
 npm install -g generator-xjs</code></pre>
         <p>
-          That would allow you to generate XSplit JS Framework based projects through the command <code>yo xjs</code>.
+          That will allow you to generate XSplit JS Framework based projects through the command <code>yo xjs</code>.
         </p>
         <p>
           To use our generator, you'll have to create your project folder, and then scaffold your project in there:
@@ -77,61 +77,64 @@ npm install -g generator-xjs</code></pre>
 cd YOUR_DIR
 yo xjs</code></pre>
         <p>
-          You would be prompted a couple of options like project name, version, plugin type, and package name.
+          You will be prompted with a number of options like project name, version, plugin type, and package name.
         </p>
         <p>
-          That should create the basic structure for your plugin, including a generic HTML file you can use to get started. The directory should now also include the file <code>xjs.js</code>, which contains the framework code. We also included <code>browsersync</code> for you to test your plugin on a browser first; all you have to do is execute <code>gulp</code> on the root folder of your project.
+          That should create the basic structure for your plugin, including a generic HTML file you can use to get started. The directory should now also include the file <code>xjs.js</code>, which contains the framework code. We also included <code>browsersync</code> for you to test your plugin on a browser first; all you have to do is execute <code>gulp</code> in the root folder of your project.
         </p>
         <hr />
         <a id="bower" name="bower">
           <h2>Getting started using bower</h2>
         </a>
         <p>
-          Our Yeoman Generator also makes use of bower, but it's just that the generator would execute it automatically. On this section, we would assume you hate automation, and would love to use bower by yourself for whatever reason.
+          Our Yeoman Generator also makes use of bower, but the generator simply executes it automatically. In this section, we assume that you hate automation, and that you would love to use bower by yourself for whatever reason.
         </p>
         <h3>Installation</h3>
         <p>
-          To use bower, install it first, and then fetch <code>xui-framework</code> through bower.
+          To use bower, install it first, and then fetch <code>xjs-framework</code> through bower.
         </p>
         <pre class="language-shell"><code>npm install -g bower
 bower install xjs-framework</code></pre>
         <p>
         <p>
-          That would create a dist folder under your current directory which should contain <code>xjs.js</code> file.
-        </p>
-        <p>
-          You'll have to manually include the <code>xjs.js</code> file on your HTML file when using this approach. The structure of your project is absolutely up to you, but we do recommend that you provide an XML file which would be used by XBC when you upload it to our plugin store.
-        </p>
-        <p>
-          Assuming that you're on your current project's folder, where you executed <code>bower install xjs-framework</code>, you should find a folder named <code>bower_components</code>. That folder should have <code>xjs</code> in it. If so, we would create an <code>index.html</code> file on your project root folder where we would include the <code>xjs.js</code> file.
+          This creates a <code>bower_components</code> folder. The relevant file is <code>bower_components/xjs-framework/dist/xjs.js</code>, which you should include in your plugin's HTML file. All other details of the project structure are up to you. See the following example for what a basic plugin might look like.
         </p>
         <h4>Example:</h4>
-        <pre class="language-html"><code>&lt;html&gt;
+        <pre class="language-markup"><code>&lt;html&gt;
 &lt;body&gt;
   &lt;script src="bower_components/xjs-framework/dist/xjs.js"&gt;&lt;/script&gt;
   &lt;script src="js/main.js"&gt;&lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;</code></pre>
         <p>
-          With that done, let's add up another javascript file where we would place our codes that would use the framework. We'll name it as <code>main.js</code> under a new folder <code>js</code>.
+          For plugin publishing, you will also need to create an XML file&mdash;this is actually automatically generated for you if you used Yeoman! (Please note that as of time of writing, the details regarding the plugin store and plugin publishing methodology are still being worked out.) The following is the XML you will need; simply replace the values in the <code>&lt;Name&gt;</code> and <code>&lt;ProperName&gt;</code> nodes with your desired plugin name.
         </p>
-        <pre class="language-html"><code>PROJECT_ROOT
-|- index.html
-|- js
-|  |- main.js
-|- bower_components
-    |- xjs-framework
-        |- dist
-            |- xjs.js</code></pre>
-        <p>
-          On the next section, we would try creating a sample plugin that actually works. 
-        </p>
+        <pre class="language-markup"><code>&lt;?xml version="1.0"?&gt;
+&lt;config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;CanPause&gt;false&lt;/CanPause&gt;
+  &lt;CanPlay&gt;false&lt;/CanPlay&gt;
+  &lt;CanSetVolume&gt;false&lt;/CanSetVolume&gt;
+  &lt;CanStepBackward&gt;false&lt;/CanStepBackward&gt;
+  &lt;CanStepForward&gt;false&lt;/CanStepForward&gt;
+  &lt;CanStop&gt;false&lt;/CanStop&gt;
+  &lt;Description /&gt;
+  &lt;HelpLink /&gt;
+  &lt;HelpText /&gt;
+  &lt;Name&gt;test&lt;/Name&gt;
+  &lt;param name="flashvars" value="" /&gt;
+  &lt;ProperName&gt;test&lt;/ProperName&gt;
+  &lt;Category&gt;&lt;/Category&gt;
+  &lt;ShowConfigOnAdd&gt;false&lt;/ShowConfigOnAdd&gt;
+  &lt;MinCompatibleVersion&gt;2.3.1505.0516&lt;/MinCompatibleVersion&gt;
+  &lt;MinFxVersion&gt;2.3.1505.0516&lt;/MinFxVersion&gt;
+  &lt;Version&gt;0.1.0&lt;/Version&gt;
+&lt;/config&gt;</code></pre>
         <hr />
         <a id="sample" name="sample">
           <h2>Let's create a sample plugin!</h2>
         </a>
         <p>
-         Let's try making a source plugin that would display all the items loaded on the current scene. So let's open up <code>main.js</code>, and write the following code:
+         Let's try making a <strong>source plugin</strong> that would display all the items loaded on the current scene. So let's open up <code>main.js</code>, and write the following code:
         </p>
         <pre class="language-javascript"><code>var xjs = require('xjs');
 
@@ -150,26 +153,23 @@ xjs.ready().then(xjs.Scene.getActiveScene)
   });
 });</code></pre>
         <p>
-          Let's disect the sample code above.
+          Let's dissect the sample code above.
         </p>
         <p>
-          The first line of the code would just load the framework and save it to the <code>xjs</code> variable. We then used <code>xjs</code> and accessed it's <code>ready()</code> method; a method that would return a promise, which would resolve when XSplit JS Framework is ready to use.
+          <em>* We're assuming that you are knowledgeable with Promises in JavaScript. If you are not, please do check it out on <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Promise" target="_blank">MDN</a> or other articles about Promise programming.</em>
         </p>
         <p>
-          <em>* We're assuming that you are knowledgeable with Promises in JavaScript, if not, please do check it out on <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Promise" target="_blank">MDN</a>.</em>
-        </p>
-        <p>
-           <code>xjs.Scene</code> Class' method <code>getActiveScene</code> also returns a Promise, which makes it safe to just simple use that on the <code>then()</code> method's parameter of <code>xjs.ready()</code>.
+          The first line of the code loads the framework and save it to the <code>xjs</code> variable. We then accessed the framework's <code>ready()</code> method; a method that returns a promise, which will resolve when XSplit JS Framework is ready to use. Always make sure to do your development when the framework is ready!
         </p>
         <pre class="language-javascript"><code>xjs.ready().then(xjs.Scene.getActiveScene)</code></pre>
         <p>
-          <code>getActiveScene</code> would resolve with the current scene's Scene object as the first parameter. The Scene object on the hand has a method named <code>getItems</code> which would return a promise that would resolve with a parameter of items placed on the current scene referenced by the Scene object.
+          XSplit Broadcaster exposes a number of scenes to the user. <code>getActiveScene</code> will resolve with the current/active scene's Scene object as the first parameter. This Scene object has a method named <code>getItems</code> which will eventually resolve with an array of Item instances, each referring to a source placed on the current scene.
         </p>
         <pre class="language-javascript"><code>.then(function(scene) {
   return scene.getItems();
 })</code></pre>
         <p>
-          Each items is a Item object or a sub class of the Item class, which would depend on the item type fetched by <code>getItems</code>. All types of Item object however has some <a href="api.html#/core/Item" target="_blank">common methods</a>, which includes the <code>getName</code> method. <code>getName</code> would again return a Promise which would resolve with a string as the parameter. That string is the name of the item, which is what we need to print back to the DOM.
+          Each of the items is an instance of Item or a subclass thereof. However, all types of Item instances have <a href="api.html#/core/Item" target="_blank">common methods</a>, which includes the <code>getName</code> method. <code>getName</code> returns a Promise which will resolve with a string as the parameter. That string is the name of the item/source, which is what this plugin wants to print back to the DOM.
         </p>
         <pre class="language-javascript"><code>.then(function(items) {
   var p;
@@ -182,7 +182,7 @@ xjs.ready().then(xjs.Scene.getActiveScene)
   }
 })</code></pre>
         <p>
-          For more in dept information about each methods, please do check out our <a href="api.html" target="_blank">API</a>, or our <a href="tutorials.html" target="_blank">tutorials</a> for a much more comprehensive tutorial.
+          For more in-depth information, please do check out our <a href="api.html" target="_blank">API</a>, or our <a href="tutorials.html" target="_blank">tutorials</a> for articles on achieving certain tasks using the framework.
         </p>
         <p>
           For now, let's update the CSS file located on the css folder, and set the background to white.
@@ -191,10 +191,10 @@ xjs.ready().then(xjs.Scene.getActiveScene)
   background: #FFF;
 }</code></pre>
         <p>
-          To test our plugin, we could run <code>gulp</code> on your project root <strong>if you scaffolded your project using our generator</strong>. This should create a temporary dev server that would host your plugin, which you could access at <code>http://localhost:9001</code>.
+          To test our plugin, we could run <code>gulp</code> on your project root. <strong>(Note: this will only work if you scaffolded your project using our generator! You may host your HTML locally otherwise.)</strong> This should create a temporary dev server that would host your plugin, which you can access at <code>http://localhost:9001</code>. This method has the added advantage of automatically refreshing your plugin in XSplit when changes are detected inside your code.
         </p>
         <p>
-          Now open up your XSplit broadcaster, log-in, and add a web URL source with the URL set as <code>http://localhost:9001</code>.
+          Now open up your XSplit Broadcaster, log-in, and add a web URL source with the URL set to <code>http://localhost:9001</code>.
         </p>
         <p class="center inner-padding-10">
           <img src="assets/xbc-add-othersource.png" />
@@ -204,7 +204,7 @@ xjs.ready().then(xjs.Scene.getActiveScene)
           That should add your plugin to the stage, and it should list all items placed in the active scene.
         </p>
         <p>
-          If you manually created your plugin project, you could simply drag the <code>index.html</code> file to the stage. That should work. Or, you add it as a media file:
+          If you manually created your plugin project, you can simply drag the <code>index.html</code> file to the stage. That should work. Or, you add it as a media file:
         </p>
         <p class="center inner-padding-10">
           <img src="assets/xbc-add-media.png" />
