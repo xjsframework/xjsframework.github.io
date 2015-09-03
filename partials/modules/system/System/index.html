@@ -6,7 +6,7 @@ camera devices.</p>
 <pre><code class="lang-javascript">var XJS = require(&#39;xjs&#39;);
 var System = XJS.System;
 
-System.getCameraDevices().then(funciton(cameras) {
+System.getCameraDevices().then(function(cameras) {
   window.cameras = cameras;
 });
 </code></pre>
@@ -22,7 +22,7 @@ System.getCameraDevices().then(funciton(cameras) {
 <pre><code class="lang-javascript">System.getAudioDevices(
   XML.AudioDeviceDataflow.ALL,
   XML.AudioDeviceState.ACTIVE
-).then(funciton(devices) {
+).then(function(devices) {
   // devices is an array of AudioDevice object
   window.audios = devices;
 });
@@ -39,7 +39,7 @@ System.getCameraDevices().then(funciton(cameras) {
 </code></pre>
 <p>Gets all camera devices</p>
 <h4 id="usage">Usage</h4>
-<pre><code class="lang-javascript">System.getCameraDevices().then(funciton(devices) {
+<pre><code class="lang-javascript">System.getCameraDevices().then(function(devices) {
   // devices is an array of CameraDevice object
   window.cameras = devices;
 });
@@ -56,7 +56,7 @@ System.getCameraDevices().then(funciton(cameras) {
 </code></pre>
 <p>Gets all camera devices</p>
 <h4 id="usage">Usage</h4>
-<pre><code class="lang-javascript">System.getGames().then(funciton(games) {
+<pre><code class="lang-javascript">System.getGames().then(function(games) {
   // games is an array of Game object
   window.games = games;
 });
@@ -64,7 +64,54 @@ System.getCameraDevices().then(funciton(cameras) {
 
   </section>
 
+
+  <section class="member static">
+    <h1 id="getMicrophones" class="name">
+      <code>static</code> getMicrophones
+    </h1>
+    <pre><code>return: Promise&lt;MicrophoneDevice[]&gt;
+</code></pre>
+<p>Gets all audio capture devices that may be added to the stage</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">System.getMicrophones().then(function(microphones) {
+  microphones[0].addToScene(); // add first microphone to stage
+});
+</code></pre>
+
+  </section>
+
+
+  <section class="member static">
+    <h1 id="getCursorPosition" class="name">
+      <code>static</code> getCursorPosition
+    </h1>
+    <pre><code>return: Promise&lt;JXON&gt;
+</code></pre>
+<p>Gets the position of the cursor. Does not work on Source Plugins.</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">System.getCursorPosition().then(function(pos) {
+  var x = pos.x; // X Axis
+  var y = pos.y; // Y Axis
+});
+</code></pre>
+
+  </section>
+
+
+  <section class="member static">
+    <h1 id="setCursorPosition" class="name">
+      <code>static</code> setCursorPosition
+    </h1>
+    <pre><code>param: JXON
+</code></pre>
+<p>Sets the position of the cursor. Does not work on Source Plugins.</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">System.setCursorPosition({x:0, y:0});
+</code></pre>
+
+  </section>
+
 <p class="module defined-in">exported from <a href='#/system'>system</a><br/>
-defined in <a href="https://github.com/xjsframework/xjs/tree/release-0.1.0/modules/../src/system/system.ts#L43-L171">../src/system/system.ts (line 43)</a>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/system/system.ts#L46-L259">../src/system/system.ts (line 46)</a>
 </p>
 

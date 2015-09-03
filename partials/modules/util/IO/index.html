@@ -1,0 +1,68 @@
+
+<h1 class="class export">IO <span class="type">class</span></h1>
+<p></p><h2>Members</h2>
+  <section class="member static">
+    <h1 id="getFileContent" class="name">
+      <code>static</code> getFileContent
+    </h1>
+    <pre><code>Returns a base-64 encoded string of the target file&#39;s contents.
+</code></pre>
+<p>UTF-8 encoded files may be decoded through:</p>
+<pre><code class="lang-javascript">var decodedContent = decodeURIComponent(escape(window.atob(base64Content));
+</code></pre>
+
+  </section>
+
+
+  <section class="member static">
+    <h1 id="getWebContent" class="name">
+      <code>static</code> getWebContent
+    </h1>
+    <pre><code>Returns a base-64 encoded string of the target endpoint&#39;s contents.
+</code></pre>
+<p>Redirects are resolved, and this bypasses access-control-allow-origin.</p>
+<p>UTF-8 encoded content may be decoded through:</p>
+<pre><code class="lang-javascript">var decodedContent = decodeURIComponent(escape(window.atob(base64Content));
+</code></pre>
+
+  </section>
+
+
+  <section class="member static">
+    <h1 id="openUrl" class="name">
+      <code>static</code> openUrl
+    </h1>
+          <p>Opens a URL in the user&#39;s default browser. URLs need to</p>
+      
+  </section>
+
+
+  <section class="member static">
+    <h1 id="openFileDialog" class="name">
+      <code>static</code> openFileDialog
+    </h1>
+    <pre><code>Opens a file dialog for the user to select a file (or multiple files).
+</code></pre>
+<p>Returns an array of strings, each of which contains the full path
+and filename of a selected file. Rejects when the dialog is canceled.</p>
+<p>The first (optional) argument is a JSON object that can be used to indicate
+that certain flags should be true. These are documented as follows:</p>
+<ul>
+<li><code>allowMultiSelect</code>: allows users to select multiple files.</li>
+<li><code>fileMustExist</code>: prevents users from typing a name of a nonexistent file</li>
+<li><code>forceShowHidden</code>: lets the dialog show files marked as System or Hidden
+(but not both)</li>
+</ul>
+<p>The second argument (also optional) is a JSON object used to specify the
+filter for items to be displayed. It takes two members:</p>
+<ul>
+<li><code>name</code>: the description of the filter (for example: Image Files)</li>
+<li><code>extensions</code>: an array of file extensions (for example: <code>[&#39;jpg&#39;,&#39;bmp&#39;]</code>);</li>
+</ul>
+
+  </section>
+
+<p class="module defined-in">exported from <a href='#/util'>util</a><br/>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/util/io.ts#L3-L107">../src/util/io.ts (line 3)</a>
+</p>
+

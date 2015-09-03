@@ -1,38 +1,587 @@
 
-<h1 class="class export">Environment <span class="type">class</span></h1>
+<h1 class="class export">HTMLItem <span class="type">class</span></h1>
 <p></p><h2>Members</h2>
-  <section class="member static">
-    <h1 id="initialize" class="name">
-      <code>static</code> initialize
+  <section class="member">
+    <h1 id="getURL" class="name">
+      getURL
     </h1>
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
   </section>
 
 
-  <section class="member static">
-    <h1 id="isSourcePlugin" class="name">
-      <code>static</code> isSourcePlugin
+  <section class="member">
+    <h1 id="setURL" class="name">
+      setURL
     </h1>
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
   </section>
 
 
-  <section class="member static">
-    <h1 id="isSourceConfig" class="name">
-      <code>static</code> isSourceConfig
+  <section class="member">
+    <h1 id="isKeepAspectRatio" class="name">
+      isKeepAspectRatio
+    </h1>
+    <pre><code>return: Promise&lt;boolean&gt;
+</code></pre>
+<p>Check if Aspect Ratio is set to ON or OFF</p>
+
+  </section>
+
+
+  <section class="member">
+    <h1 id="isPositionLocked" class="name">
+      isPositionLocked
+    </h1>
+    <pre><code>return: Promise&lt;boolean&gt;
+</code></pre>
+<p>Check if Position Locked is set to ON or OFF</p>
+
+  </section>
+
+
+  <section class="member">
+    <h1 id="isEnhancedResizeEnabled" class="name">
+      isEnhancedResizeEnabled
+    </h1>
+    <pre><code>return: Promise&lt;boolean&gt;
+</code></pre>
+<p>Check if Enhance Resize is Enabled or Disabled</p>
+
+  </section>
+
+
+  <section class="member">
+    <h1 id="getPosition" class="name">
+      getPosition
+    </h1>
+    <pre><code>return: Promise&lt;Rectangle&gt;
+</code></pre>
+<p>Get the position of the item</p>
+
+  </section>
+
+
+  <section class="member">
+    <h1 id="setKeepAspectRatio" class="name">
+      setKeepAspectRatio
+    </h1>
+    <pre><code>param: value&lt;boolean&gt;
+</code></pre>
+<p>Set Aspect Ratio to ON or OFF</p>
+
+  </section>
+
+
+  <section class="member">
+    <h1 id="setPositionLocked" class="name">
+      setPositionLocked
+    </h1>
+    <pre><code>param: value&lt;boolean&gt;
+</code></pre>
+<p>Set Position Lock to ON or OFF</p>
+
+  </section>
+
+
+  <section class="member">
+    <h1 id="setEnhancedResizeEnabled" class="name">
+      setEnhancedResizeEnabled
+    </h1>
+    <pre><code>param: value&lt;boolean&gt;
+</code></pre>
+<p>Set Enhance Resize to ON or OFF</p>
+
+  </section>
+
+
+  <section class="member">
+    <h1 id="setPosition" class="name">
+      setPosition
+    </h1>
+    <pre><code>param: value&lt;Rectangle&gt;
+</code></pre>
+<p>Set Item position</p>
+
+  </section>
+
+
+  <section class="member">
+    <h1 id="getTransparency" class="name">
+      getTransparency
+    </h1>
+    <pre><code>return: Promise&lt;number&gt;
+</code></pre>
+<p>Get Item Transparency value</p>
+
+  </section>
+
+
+  <section class="member">
+    <h1 id="getBrightness" class="name">
+      getBrightness
+    </h1>
+    <pre><code>return: Promise&lt;number&gt;
+</code></pre>
+<p>Get Item Brightness value</p>
+
+  </section>
+
+
+  <section class="member">
+    <h1 id="getContrast" class="name">
+      getContrast
+    </h1>
+    <pre><code>return: Promise&lt;number&gt;
+</code></pre>
+<p>Get Item Contrast value</p>
+
+  </section>
+
+
+  <section class="member">
+    <h1 id="getHue" class="name">
+      getHue
+    </h1>
+    <pre><code>return: Promise&lt;number&gt;
+</code></pre>
+<p>Get Item Hue value</p>
+
+  </section>
+
+
+  <section class="member">
+    <h1 id="getSaturation" class="name">
+      getSaturation
+    </h1>
+    <pre><code>return: Promise&lt;number&gt;
+</code></pre>
+<p>Get Item Saturation value</p>
+
+  </section>
+
+
+  <section class="member">
+    <h1 id="getBorderColor" class="name">
+      getBorderColor
+    </h1>
+    <pre><code>return: Promise&lt;Color&gt;
+</code></pre>
+<p>Get Border Color</p>
+
+  </section>
+
+
+  <section class="member">
+    <h1 id="setTransparency" class="name">
+      setTransparency
+    </h1>
+    <pre><code>param: value&lt;number&gt;
+</code></pre>
+<p>Set Item Transparency</p>
+
+  </section>
+
+
+  <section class="member">
+    <h1 id="setBrightness" class="name">
+      setBrightness
+    </h1>
+    <pre><code>param: value&lt;number&gt;
+</code></pre>
+<p>Set Item Brightness</p>
+
+  </section>
+
+
+  <section class="member">
+    <h1 id="setContrast" class="name">
+      setContrast
+    </h1>
+    <pre><code>param: value&lt;number&gt;
+</code></pre>
+<p>Set Item Contrast</p>
+
+  </section>
+
+
+  <section class="member">
+    <h1 id="setHue" class="name">
+      setHue
+    </h1>
+    <pre><code>param: value&lt;number&gt;
+</code></pre>
+<p>Set Item Hue</p>
+
+  </section>
+
+
+  <section class="member">
+    <h1 id="setSaturation" class="name">
+      setSaturation
+    </h1>
+    <pre><code>param: value&lt;number&gt;
+</code></pre>
+<p>Set Item Saturation</p>
+
+  </section>
+
+
+  <section class="member">
+    <h1 id="setBorderColor" class="name">
+      setBorderColor
+    </h1>
+    <pre><code>param: value&lt;Color&gt;
+</code></pre>
+<p>Set Border Color</p>
+
+  </section>
+
+
+  <section class="member">
+    <h1 id="isChromaEnabled" class="name">
+      isChromaEnabled
+    </h1>
+          <p>return: Promise<boolean></p>
+      
+  </section>
+
+
+  <section class="member">
+    <h1 id="setChromaEnabled" class="name">
+      setChromaEnabled
+    </h1>
+          <p>param: value<boolean></p>
+      
+  </section>
+
+
+  <section class="member">
+    <h1 id="getKeyingType" class="name">
+      getKeyingType
+    </h1>
+          <p>return: Promise<KeyingType></p>
+      
+  </section>
+
+
+  <section class="member">
+    <h1 id="setKeyingType" class="name">
+      setKeyingType
+    </h1>
+          <p>param: value<KeyingType></p>
+      
+  </section>
+
+
+  <section class="member">
+    <h1 id="getChromaAntiAliasLevel" class="name">
+      getChromaAntiAliasLevel
+    </h1>
+          <p>return: Promise<ChromaAntiAliasLevel></p>
+      
+  </section>
+
+
+  <section class="member">
+    <h1 id="setChromaAntiAliasLevel" class="name">
+      setChromaAntiAliasLevel
+    </h1>
+          <p>param: value<ChromaAntiAliasLevel></p>
+      
+  </section>
+
+
+  <section class="member">
+    <h1 id="getChromaLegacyBrightness" class="name">
+      getChromaLegacyBrightness
+    </h1>
+          <p>return: Promise<number></p>
+      
+  </section>
+
+
+  <section class="member">
+    <h1 id="setChromaLegacyBrightness" class="name">
+      setChromaLegacyBrightness
+    </h1>
+          <p>param: value<number></p>
+      
+  </section>
+
+
+  <section class="member">
+    <h1 id="getChromaLegacySaturation" class="name">
+      getChromaLegacySaturation
+    </h1>
+          <p>return: Promise<number></p>
+      
+  </section>
+
+
+  <section class="member">
+    <h1 id="setChromaLegacySaturation" class="name">
+      setChromaLegacySaturation
+    </h1>
+          <p>param: value<number></p>
+      
+  </section>
+
+
+  <section class="member">
+    <h1 id="getChromaLegacyHue" class="name">
+      getChromaLegacyHue
+    </h1>
+          <p>return: Promise<number></p>
+      
+  </section>
+
+
+  <section class="member">
+    <h1 id="setChromaLegacyHue" class="name">
+      setChromaLegacyHue
+    </h1>
+          <p>param: value<number></p>
+      
+  </section>
+
+
+  <section class="member">
+    <h1 id="getChromaLegacyThreshold" class="name">
+      getChromaLegacyThreshold
+    </h1>
+          <p>return: Promise<number></p>
+      
+  </section>
+
+
+  <section class="member">
+    <h1 id="setChromaLegacyThreshold" class="name">
+      setChromaLegacyThreshold
+    </h1>
+          <p>param: value<number></p>
+      
+  </section>
+
+
+  <section class="member">
+    <h1 id="getChromaLegacyAlphaSmoothing" class="name">
+      getChromaLegacyAlphaSmoothing
+    </h1>
+          <p>return: Promise<number></p>
+      
+  </section>
+
+
+  <section class="member">
+    <h1 id="setChromaLegacyAlphaSmoothing" class="name">
+      setChromaLegacyAlphaSmoothing
+    </h1>
+          <p>param: value<number></p>
+      
+  </section>
+
+
+  <section class="member">
+    <h1 id="getChromaRGBKeyPrimaryColor" class="name">
+      getChromaRGBKeyPrimaryColor
+    </h1>
+          <p>return: Promise<ChromaPrimaryColors></p>
+      
+  </section>
+
+
+  <section class="member">
+    <h1 id="setChromaRGBKeyPrimaryColor" class="name">
+      setChromaRGBKeyPrimaryColor
+    </h1>
+          <p>param: value<ChromaPrimaryColors></p>
+      
+  </section>
+
+
+  <section class="member">
+    <h1 id="getChromaRGBKeyThreshold" class="name">
+      getChromaRGBKeyThreshold
+    </h1>
+          <p>return: Promise<number></p>
+      
+  </section>
+
+
+  <section class="member">
+    <h1 id="setChromaRGBKeyThreshold" class="name">
+      setChromaRGBKeyThreshold
+    </h1>
+          <p>param: value<number></p>
+      
+  </section>
+
+
+  <section class="member">
+    <h1 id="getChromaRGBKeyExposure" class="name">
+      getChromaRGBKeyExposure
+    </h1>
+          <p>return: Promise<number></p>
+      
+  </section>
+
+
+  <section class="member">
+    <h1 id="setChromaRGBKeyExposure" class="name">
+      setChromaRGBKeyExposure
+    </h1>
+          <p>param: value<number></p>
+      
+  </section>
+
+
+  <section class="member">
+    <h1 id="getChromaColorKeyThreshold" class="name">
+      getChromaColorKeyThreshold
+    </h1>
+          <p>return: Promise<number></p>
+      
+  </section>
+
+
+  <section class="member">
+    <h1 id="setChromaColorKeyThreshold" class="name">
+      setChromaColorKeyThreshold
+    </h1>
+          <p>param: value<number></p>
+      
+  </section>
+
+
+  <section class="member">
+    <h1 id="getChromaColorKeyExposure" class="name">
+      getChromaColorKeyExposure
+    </h1>
+          <p>return: Promise<number></p>
+      
+  </section>
+
+
+  <section class="member">
+    <h1 id="setChromaColorKeyExposure" class="name">
+      setChromaColorKeyExposure
+    </h1>
+          <p>param: value<number></p>
+      
+  </section>
+
+
+  <section class="member">
+    <h1 id="getChromaColorKeyColor" class="name">
+      getChromaColorKeyColor
+    </h1>
+          <p>return: Promise<Color></p>
+      
+  </section>
+
+
+  <section class="member">
+    <h1 id="setChromaColorKeyColor" class="name">
+      setChromaColorKeyColor
+    </h1>
+          <p>param: value<Color></p>
+      
+  </section>
+
+
+  <section class="member">
+    <h1 id="isVisible" class="name">
+      isVisible
+    </h1>
+    <pre><code>return: Promise&lt;boolean&gt;
+</code></pre>
+<p>Check if item is visible on stage</p>
+
+  </section>
+
+
+  <section class="member">
+    <h1 id="setVisible" class="name">
+      setVisible
+    </h1>
+    <pre><code>param: value&lt;boolean&gt;
+</code></pre>
+<p>Set item to visible or hidden</p>
+
+  </section>
+
+
+  <section class="member">
+    <h1 id="getTransition" class="name">
+      getTransition
+    </h1>
+    <pre><code>return: Promise&lt;boolean&gt;
+</code></pre>
+<p>Get item&#39;s transition type for when visibility is toggled</p>
+
+  </section>
+
+
+  <section class="member">
+    <h1 id="setTransition" class="name">
+      setTransition
+    </h1>
+    <pre><code>param: value&lt;Transition&gt;
+</code></pre>
+<p>Set item&#39;s transition type for when visibility is toggled</p>
+
+  </section>
+
+
+  <section class="member">
+    <h1 id="getTransitionTime" class="name">
+      getTransitionTime
+    </h1>
+    <pre><code>return: Promise&lt;number&gt;
+</code></pre>
+<p>Get item&#39;s transition time in milliseconds</p>
+
+  </section>
+
+
+  <section class="member">
+    <h1 id="setTransitionTime" class="name">
+      setTransitionTime
+    </h1>
+    <pre><code>param: value&lt;number&gt;
+</code></pre>
+<p>Set item&#39;s transition time in milliseconds</p>
+
+  </section>
+
+
+  <section class="member">
+    <h1 id="loadConfig" class="name">
+      loadConfig
+    </h1>
+    <pre><code>return: Promise&lt;any&gt;
+</code></pre>
+<p>Gets the configuration JSON</p>
+
+  </section>
+
+
+  <section class="member">
+    <h1 id="saveConfig" class="name">
+      saveConfig
     </h1>
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
   </section>
 
 
-  <section class="member static">
-    <h1 id="isExtension" class="name">
-      <code>static</code> isExtension
+  <section class="member">
+    <h1 id="requestSaveConfig" class="name">
+      requestSaveConfig
     </h1>
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
   </section>
 
 <p class="module defined-in">exported from <a href='#/core'>core</a><br/>
-defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/core/environment.ts#L1-L36">../src/core/environment.ts (line 1)</a>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/core/item/html.ts#L16-L364">../src/core/item/html.ts (line 16)</a>
 </p>
 

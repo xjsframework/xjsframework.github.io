@@ -55,6 +55,18 @@ angular.module('navigation-modules', [])
           "partial": "partials/modules/core/GameItem/index.html",
           "name": "GameItem",
           "type": "class"
+        },
+        {
+          "path": "core/AudioItem",
+          "partial": "partials/modules/core/AudioItem/index.html",
+          "name": "AudioItem",
+          "type": "class"
+        },
+        {
+          "path": "core/HTMLItem",
+          "partial": "partials/modules/core/HTMLItem/index.html",
+          "name": "HTMLItem",
+          "type": "class"
         }
       ]
     },
@@ -99,6 +111,12 @@ angular.module('navigation-modules', [])
           "partial": "partials/modules/system/Game/index.html",
           "name": "Game",
           "type": "class"
+        },
+        {
+          "path": "system/MicrophoneDevice",
+          "partial": "partials/modules/system/MicrophoneDevice/index.html",
+          "name": "MicrophoneDevice",
+          "type": "class"
         }
       ]
     },
@@ -118,6 +136,12 @@ angular.module('navigation-modules', [])
           "path": "util/Rectangle",
           "partial": "partials/modules/util/Rectangle/index.html",
           "name": "Rectangle",
+          "type": "class"
+        },
+        {
+          "path": "util/IO",
+          "partial": "partials/modules/util/IO/index.html",
+          "name": "IO",
           "type": "class"
         }
       ]

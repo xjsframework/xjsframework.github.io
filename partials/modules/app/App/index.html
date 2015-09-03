@@ -1,6 +1,6 @@
 
 <h1 class="class export">App <span class="type">class</span></h1>
-<p><p>The App Class provides you methods to get and set application-related
+<p><p>The App Class provides you methods to get and set application related
 functionalities.</p>
 <h3 id="basic-usage">Basic Usage</h3>
 <pre><code class="lang-javascript">var XJS = require(&#39;XJS&#39;);
@@ -99,15 +99,16 @@ framesrenderedP.then(function(res) {
 
 
   <section class="member">
-    <h1 id="getPrimaryMic" class="name">
-      getPrimaryMic
+    <h1 id="getAudioGain" class="name">
+      getAudioGain
     </h1>
-    <pre><code>return: Promise&lt;AudioDevice&gt;
+    <pre><code>return: Promise&lt;JSON&gt;
 </code></pre>
-<p>Gets the primary microphone device used in the application</p>
-<h3 id="usage">Usage</h3>
-<pre><code class="lang-javascript">App.getPrimaryMic().then(function(audioDevice) {
-  var primaryMic = audioDevice;
+<p>Gets the configuration for silence detection</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">var audioGainP = App.getAudioGain();
+audioGainP.then(function(res) {
+  var audioGain = res;
 });
 </code></pre>
 
@@ -115,156 +116,14 @@ framesrenderedP.then(function(res) {
 
 
   <section class="member">
-    <h1 id="getPrimarySpeaker" class="name">
-      getPrimarySpeaker
+    <h1 id="setAudioGain" class="name">
+      setAudioGain
     </h1>
-    <pre><code>return: Promise&lt;AudioDevice&gt;
+    <pre><code>param: config&lt;JSON&gt;
 </code></pre>
-<p>Gets the primary speaker/audio render device used in the application</p>
-<h3 id="usage">Usage</h3>
-<pre><code class="lang-javascript">App.getPrimarySpeaker().then(function(audioDevice) {
-  var primarySpeaker = audioDevice;
-});
-</code></pre>
-
-  </section>
-
-
-  <section class="member">
-    <h1 id="setPrimaryMic" class="name">
-      setPrimaryMic
-    </h1>
-    <pre><code>param: device&lt;AudioDevice&gt;
-</code></pre>
-<pre><code>return: Promise&lt;boolean&gt;
-</code></pre>
-<p>Sets the primary microphone device to be used in the application</p>
-<h3 id="usage">Usage</h3>
-<pre><code class="lang-javascript">App.setPrimaryMic(device).then(function(val) {
-  var isSet = val;
-});
-</code></pre>
-
-  </section>
-
-
-  <section class="member">
-    <h1 id="setPrimarySpeaker" class="name">
-      setPrimarySpeaker
-    </h1>
-    <pre><code>param: device&lt;AudioDevice&gt;
-</code></pre>
-<pre><code>return: Promise&lt;boolean&gt;
-</code></pre>
-<p>Sets the primary speaker/audio render device to be used in the application</p>
-<h3 id="usage">Usage</h3>
-<pre><code class="lang-javascript">App.setPrimarySpeaker(device).then(function(val) {
-  var isSet = val;
-});
-</code></pre>
-
-  </section>
-
-
-  <section class="member">
-    <h1 id="isSilenceDetectionEnabled" class="name">
-      isSilenceDetectionEnabled
-    </h1>
-    <pre><code>return: Promise&lt;boolean&gt;
-</code></pre>
-<p>Gets whether silence detection is enabled</p>
-<h3 id="usage">Usage</h3>
-<pre><code class="lang-javascript">App.isSilenceDetectionEnabled().then(function(val) {
-  var isEnabled = val;
-});
-</code></pre>
-
-  </section>
-
-
-  <section class="member">
-    <h1 id="enableSilenceDetection" class="name">
-      enableSilenceDetection
-    </h1>
-    <pre><code>param: enabled&lt;boolean&gt;
-</code></pre>
-<pre><code>return: Promise&lt;boolean&gt;
-</code></pre>
-<p>Enables or disables silence detection</p>
-<h3 id="usage">Usage</h3>
-<pre><code class="lang-javascript">App.enableSilenceDetection(enabled).then(function(val) {
-  var isSet = val;
-});
-</code></pre>
-
-  </section>
-
-
-  <section class="member">
-    <h1 id="getSilenceDetectionPeriod" class="name">
-      getSilenceDetectionPeriod
-    </h1>
-    <pre><code>return: Promise&lt;number&gt;
-</code></pre>
-<p>Gets silence detection period,
-the length of time after voice detection before silence is again detected</p>
-<h3 id="usage">Usage</h3>
-<pre><code class="lang-javascript">App.getSilenceDetectionPeriod().then(function(val) {
-  var silenceDetectionPeriod = val;
-});
-</code></pre>
-
-  </section>
-
-
-  <section class="member">
-    <h1 id="setSilenceDetectionPeriod" class="name">
-      setSilenceDetectionPeriod
-    </h1>
-    <pre><code>param: sdPeriod&lt;number&gt;
-</code></pre>
-<pre><code>return: Promise&lt;boolean&gt;
-</code></pre>
-<p>Sets silence detection period (0-60000 ms),
-the length of time after voice detection before silence is again detected</p>
-<h3 id="usage">Usage</h3>
-<pre><code class="lang-javascript">App.setSilenceDetectionPeriod(sdPeriod).then(function(val) {
-  var isSet = val;
-});
-</code></pre>
-
-  </section>
-
-
-  <section class="member">
-    <h1 id="getSilenceDetectionThreshold" class="name">
-      getSilenceDetectionThreshold
-    </h1>
-    <pre><code>return: Promise&lt;number&gt;
-</code></pre>
-<p>Gets silence detection threshold/silence amplitude</p>
-<h3 id="usage">Usage</h3>
-<pre><code class="lang-javascript">App.getSilenceDetectionThreshold().then(function(val) {
-  var silenceDetectionTfhreshold = val;
-});
-</code></pre>
-
-  </section>
-
-
-  <section class="member">
-    <h1 id="setSilenceDetectionThreshold" class="name">
-      setSilenceDetectionThreshold
-    </h1>
-    <pre><code>param: sdThreshold&lt;number&gt;
-</code></pre>
-<pre><code>return: Promise&lt;boolean&gt;
-</code></pre>
-<p>Sets silence detection threshold/silence amplitude (values from 0-128)</p>
-<h3 id="usage">Usage</h3>
-<pre><code class="lang-javascript">App.setSilenceDetectionThreshold(sdThreshold).then(function(val) {
-  var isSet = val;
-});
+<p>Sets the configuration for silence detection</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">App.setAudioGain(configJSON);
 </code></pre>
 
   </section>
@@ -279,13 +138,7 @@ the length of time after voice detection before silence is again detected</p>
 <p>Creates a persistent modal dialog.<br/>
 This method is not available for source</p>
 <h4 id="usage">Usage</h4>
-<pre><code class="lang-javascript">// you may use the following:
-//     * App.BORDER_ENABLE (1)
-//     * App.BORDER_ENABLE_CAPTION (2)
-//     * App.BORDER_ENABLE_SIZING (4)
-//     * App.BORDER_ENABLE_MINIMIZE (8)
-//     * App.BORDER_ENABLE_MAXIMIZE (16)
-App.newDialog(url, width, height, flags, title);
+<pre><code class="lang-javascript">App.newDialog(url, width, height, flags, title);
 </code></pre>
 
   </section>
@@ -337,26 +190,9 @@ transitionP.then(function(res) {
     </h1>
     <pre><code>param: transition&lt;string&gt;
 </code></pre>
-<pre><code>return: Promise&lt;string&gt;
-</code></pre>
 <p>Sets the transition for scene changes</p>
-<h3 id="usage">Usage</h3>
-<pre><code class="lang-javascript">// you may use the following:
-//     * App.TRANSITION_CLOCK
-//     * App.TRANSITION_COLLAPSE
-//     * App.TRANSITION_FADE
-//     * App.TRANSITION_FAN
-//     * App.TRANSITION_HOLE
-//     * App.TRANSITION_MOVE_BOTTOM
-//     * App.TRANSITION_MOVE_LEFT
-//     * App.TRANSITION_MOVE_LEFT_RIGHT
-//     * App.TRANSITION_MOVE_RIGHT
-//     * App.TRANSITION_MOVE_TOP
-//     * App.TRANSITION_MOVE_TOP_BOTTOM
-//     * App.TRANSITION_WAVE
-App.setTransition(App.TRANSITION_CLOCK).then(function(val) {
- var isSet = val;
-});
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">App.setTransition(transitionid);
 </code></pre>
 
   </section>
@@ -385,18 +221,14 @@ transitionTimeP.then(function(res) {
     </h1>
     <pre><code>param: transition&lt;number&gt;
 </code></pre>
-<pre><code>return: Promise&lt;string&gt;
-</code></pre>
 <p>Sets the scene transition duration in milliseconds</p>
 <h4 id="usage">Usage</h4>
-<pre><code class="lang-javascript">App.setTransitionTime(time).then(function(val) {
- var isSet = val;
-});
+<pre><code class="lang-javascript">App.setTransitionTime(transitiontime);
 </code></pre>
 
   </section>
 
 <p class="module defined-in">exported from <a href='#/app'>app</a><br/>
-defined in <a href="https://github.com/xjsframework/xjs/tree/release-0.1.0/modules/app.ts#L12-L655">app.ts (line 12)</a>
+defined in <a href="https://github.com/xjsframework/xjs/tree/release-0.1.0/modules/app.ts#L8-L342">app.ts (line 8)</a>
 </p>
 
