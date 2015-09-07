@@ -2,7 +2,7 @@
 <h1 class="class export">CameraItem <span class="type">class</span></h1>
 <p><p>The CameraItem Class provides methods specifically used for camera items and
 also methods that are shared between Item Classes. The
-<a href='#core/Scene'>Scene Class&#39;</a> getItems would automatically return a
+<a href='#core/Scene'>Scene</a> class&#39; getItems method would automatically return a
 CameraItem object if there&#39;s a camera item on the specified scene.</p>
 <h3 id="basic-usage">Basic Usage</h3>
 <pre><code class="lang-javascript">var XJS = require(&#39;xjs&#39;);
@@ -25,8 +25,10 @@ XJS.Scene.getActiveScene().then(function(scene) {
     <h1 id="getDeviceId" class="name">
       getDeviceId
     </h1>
-          <p>return: Promise<string></p>
-      
+    <pre><code>return: Promise&lt;string&gt;
+</code></pre>
+<p>Gets the device ID of the underlying camera deviec.</p>
+
   </section>
 
 
@@ -616,6 +618,6 @@ this camera device on the stage.</p>
   </section>
 
 <p class="module defined-in">exported from <a href='#/core'>core</a><br/>
-defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/core/item/camera.ts#L15-L429">../src/core/item/camera.ts (line 15)</a>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/core/item/camera.ts#L15-L431">../src/core/item/camera.ts (line 15)</a>
 </p>
 

@@ -1,7 +1,9 @@
 
 <h1 class="class export">System <span class="type">class</span></h1>
-<p><p>The System class provides you methods to fetch games, audio devices, and
-camera devices.</p>
+<p><p>The System class provides you methods to fetch audio devices to manipulate
+the application&#39;s audio settings. It also allows you to fetch games,
+microphone devices and camera devices to add to scenes. Finally, some
+system-level functionality such as cursor position is exposed.</p>
 <h3 id="basic-usage">Basic Usage</h3>
 <pre><code class="lang-javascript">var XJS = require(&#39;xjs&#39;);
 var System = XJS.System;
@@ -17,7 +19,8 @@ System.getCameraDevices().then(function(cameras) {
     </h1>
     <pre><code>return: Promise&lt;AudioDevice[]&gt;
 </code></pre>
-<p>Gets audio devices, both input and output</p>
+<p>Gets audio devices, both input and output
+See also: System/AudioDevice</p>
 <h4 id="usage">Usage</h4>
 <pre><code class="lang-javascript">System.getAudioDevices(
   XML.AudioDeviceDataflow.ALL,
@@ -37,7 +40,8 @@ System.getCameraDevices().then(function(cameras) {
     </h1>
     <pre><code>return: Promise&lt;CameraDevice[]&gt;
 </code></pre>
-<p>Gets all camera devices</p>
+<p>Gets all camera devices
+See also: System/CameraDevice</p>
 <h4 id="usage">Usage</h4>
 <pre><code class="lang-javascript">System.getCameraDevices().then(function(devices) {
   // devices is an array of CameraDevice object
@@ -54,7 +58,8 @@ System.getCameraDevices().then(function(cameras) {
     </h1>
     <pre><code>return: Promise&lt;Game[]&gt;
 </code></pre>
-<p>Gets all camera devices</p>
+<p>Gets all currently running games
+See also: System/Game</p>
 <h4 id="usage">Usage</h4>
 <pre><code class="lang-javascript">System.getGames().then(function(games) {
   // games is an array of Game object
@@ -71,7 +76,8 @@ System.getCameraDevices().then(function(cameras) {
     </h1>
     <pre><code>return: Promise&lt;MicrophoneDevice[]&gt;
 </code></pre>
-<p>Gets all audio capture devices that may be added to the stage</p>
+<p>Gets all audio capture devices that may be added to the stage
+See also: System/MicrophoneDevice</p>
 <h4 id="usage">Usage</h4>
 <pre><code class="lang-javascript">System.getMicrophones().then(function(microphones) {
   microphones[0].addToScene(); // add first microphone to stage
@@ -85,7 +91,7 @@ System.getCameraDevices().then(function(cameras) {
     <h1 id="getCursorPosition" class="name">
       <code>static</code> getCursorPosition
     </h1>
-    <pre><code>return: Promise&lt;JXON&gt;
+    <pre><code>return: Promise&lt;JSON&gt;
 </code></pre>
 <p>Gets the position of the cursor. Does not work on Source Plugins.</p>
 <h4 id="usage">Usage</h4>
@@ -102,7 +108,7 @@ System.getCameraDevices().then(function(cameras) {
     <h1 id="setCursorPosition" class="name">
       <code>static</code> setCursorPosition
     </h1>
-    <pre><code>param: JXON
+    <pre><code>param: JSON: {x: number, y: number}
 </code></pre>
 <p>Sets the position of the cursor. Does not work on Source Plugins.</p>
 <h4 id="usage">Usage</h4>
@@ -112,6 +118,6 @@ System.getCameraDevices().then(function(cameras) {
   </section>
 
 <p class="module defined-in">exported from <a href='#/system'>system</a><br/>
-defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/system/system.ts#L46-L259">../src/system/system.ts (line 46)</a>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/system/system.ts#L46-L265">../src/system/system.ts (line 46)</a>
 </p>
 

@@ -8,8 +8,8 @@
 </p>
 <ul>
   <li><strong>Adding system items.</strong> Extensions are capable of adding system-related items: <code>CameraDevice, Game, Microphone</code> (more will be added in the future). Simply call the relevant system call (<code>System.getCameraDevices()</code>, for example) and call <code>addToScene()</code> on the appropriate object. Note that this is currently limited to adding to the currently active scene.</li>
-  <li><strong>Manipulating sources.</strong> Extensions are allowed to manipulate sources, their properties, and even their custom configuration objects just as a configuration window might, as detailed here. (Please see the Issues section below for some relevant information.)</li>
-  <li><strong>Setting application-wide properties.</strong> Extensions are much more powerful than sources and are able to manipulate the application itself. For example, they may use the App class change the transition settings when changing scenes. See the API reference for more information.</li>
+  <li><strong>Manipulating sources.</strong> Extensions are allowed to manipulate sources, their properties, and even their custom configuration objects just as a configuration window might, as detailed <a href="tutorials.html#/sourceconfig#man-config-obj">here</a>. (Please see the Issues section below for some relevant information.)</li>
+  <li><strong>Setting application-wide properties.</strong> Extensions are much more powerful than sources and are able to manipulate the application itself. For example, they may use the App class change the transition settings when changing scenes. See the <a href="api.html">API reference</a> for more information.</li>
 </ul>
 <h3>Issues and possible gotchas</h3>
 <p>This section details some of the current issues related to extensions and/or the framework in general.</p>

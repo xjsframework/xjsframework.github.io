@@ -9,6 +9,12 @@ angular.module('navigation-modules', [])
       "type": "module",
       "pages": [
         {
+          "path": "core/Item",
+          "partial": "partials/modules/core/Item/index.html",
+          "name": "Item",
+          "type": "class"
+        },
+        {
           "path": "core/Environment",
           "partial": "partials/modules/core/Environment/index.html",
           "name": "Environment",
@@ -30,18 +36,6 @@ angular.module('navigation-modules', [])
           "path": "core/Transition",
           "partial": "partials/modules/core/Transition/index.html",
           "name": "Transition",
-          "type": "class"
-        },
-        {
-          "path": "core/ItemTypes",
-          "partial": "partials/modules/core/ItemTypes/index.html",
-          "name": "ItemTypes",
-          "type": "enum"
-        },
-        {
-          "path": "core/Item",
-          "partial": "partials/modules/core/Item/index.html",
-          "name": "Item",
           "type": "class"
         },
         {
