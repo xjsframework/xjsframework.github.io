@@ -85,6 +85,19 @@ See also: Core/Item</p>
   </section>
 
 
+  <section class="member">
+    <h1 id="setItemOrder" class="name">
+      setItemOrder
+    </h1>
+    <pre><code>param: Array&lt;Item&gt; | Array&lt;string&gt;
+</code></pre>
+<pre><code>return: Promise&lt;Scene&gt;
+</code></pre>
+<p>Sets the item order of the current scene. It is ordered as bottom to top.</p>
+
+  </section>
+
+
   <section class="member static">
     <h1 id="getById" class="name">
       <code>static</code> getById
@@ -130,13 +143,28 @@ See also: Core/Item</p>
 
 
   <section class="member static">
+    <h1 id="setActiveScene" class="name">
+      <code>static</code> setActiveScene
+    </h1>
+    <pre><code>param: scene&lt;number|Scene&gt;
+</code></pre>
+<pre><code>return: Promise&lt;boolean&gt;
+</code></pre>
+<p>Change active scene. Does not work on source plugins.</p>
+
+  </section>
+
+
+  <section class="member static">
     <h1 id="searchAllForItemId" class="name">
       <code>static</code> searchAllForItemId
     </h1>
-    <pre><code>return: Promise&lt;Item&gt;
+    <pre><code>Searches all scenes for an item by ID. ID search will return exactly 1 result (IDs are unique) or null.
 </code></pre>
-<p>Searches all scenes for an item by ID. ID search will return exactly 1 result (IDs are unique) or null.
-See also: Core/Item</p>
+<p>See also: Core/Item</p>
+<p>#Return</p>
+<pre><code>Item
+</code></pre>
 <h4 id="usage">Usage</h4>
 <pre><code class="lang-javascript">Scene.searchAllForItemId(&#39;{10F04AE-6215-3A88-7899-950B12186359}&#39;).then(function(item) {
   // item is either an Item or null
@@ -199,6 +227,6 @@ This function is only available to extensions.</p>
   </section>
 
 <p class="module defined-in">exported from <a href='#/core'>core</a><br/>
-defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/core/scene.ts#L10-L451">../src/core/scene.ts (line 10)</a>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/core/scene.ts#L12-L571">../src/core/scene.ts (line 12)</a>
 </p>
 

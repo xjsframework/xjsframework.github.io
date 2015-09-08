@@ -137,6 +137,32 @@ angular.module('navigation-modules', [])
           "partial": "partials/modules/util/IO/index.html",
           "name": "IO",
           "type": "class"
+        },
+        {
+          "path": "util/EventEmitter",
+          "partial": "partials/modules/util/EventEmitter/index.html",
+          "name": "EventEmitter",
+          "type": "class"
+        }
+      ]
+    },
+    {
+      "path": "window",
+      "partial": "partials/modules/window/index.html",
+      "name": "window",
+      "type": "module",
+      "pages": [
+        {
+          "path": "window/SourceConfigWindow",
+          "partial": "partials/modules/window/SourceConfigWindow/index.html",
+          "name": "SourceConfigWindow",
+          "type": "class"
+        },
+        {
+          "path": "window/SourcePluginWindow",
+          "partial": "partials/modules/window/SourcePluginWindow/index.html",
+          "name": "SourcePluginWindow",
+          "type": "class"
         }
       ]
     }
