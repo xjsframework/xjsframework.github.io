@@ -4,6 +4,7 @@ $(document).ready(function() {
 
   var $menu = $('.vertical-menu');
   var $left = $('#left');
+  var $download = $('#download');
   var $window = $(window);
   var $links = $menu.find('a[href]');
   var $scrollItems = $links.map(function() {
@@ -58,4 +59,11 @@ $(document).ready(function() {
   };
 
   $window.scroll(setSticky);
+
+  $download.on('click', function() {
+    var link = document.createElement('a');
+    link.download = 'xjs.js';
+    link.href = 'http://cdn2.xsplit.com/xjs/download/sourceplugin.zip';
+    link.click();
+  })
 });

@@ -53,6 +53,11 @@ p em {
   font-size: 12px;
 }
 
+button {
+  border: none;
+  cursor: pointer;
+}
+
 #header {
   margin: 68px auto 0;
   width: 100%;
@@ -123,4 +128,23 @@ p em {
 
 .company-name {
   font-weight: bold;
+}
+
+#download {
+  width: 246px;
+  height: 47px;
+  display: inline-block;
+  margin-left: 5px;
+}
+
+#download:hover {
+  background-position-y: -47px;
+}
+
+#download:active {
+  background-position-y: -94px;
+}
+
+#download {
+  background-image: url('../assets/btn_download.png');
 }
