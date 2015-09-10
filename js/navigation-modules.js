@@ -39,6 +39,12 @@ angular.module('navigation-modules', [])
           "type": "class"
         },
         {
+          "path": "core/Stream",
+          "partial": "partials/modules/core/Stream/index.html",
+          "name": "Stream",
+          "type": "class"
+        },
+        {
           "path": "core/CameraItem",
           "partial": "partials/modules/core/CameraItem/index.html",
           "name": "CameraItem",
