@@ -63,7 +63,7 @@ $(document).ready(function() {
   $download.on('click', function() {
     var link = document.createElement('a');
     link.download = 'xjs.js';
-    link.href = 'http://cdn2.xsplit.com/xjs/download/SourcePlugin.zip';
+    link.href = 'http://cdn2.xsplit.com/xjs/download/sourceplugin.zip';
     link.click();
   })
 });
