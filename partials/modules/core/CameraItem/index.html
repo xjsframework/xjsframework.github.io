@@ -346,8 +346,10 @@ this camera device on the stage.</p>
     <h1 id="isChromaEnabled" class="name">
       isChromaEnabled
     </h1>
-          <p>return: Promise<boolean></p>
-      
+    <pre><code>return: Promise&lt;boolean&gt;
+</code></pre>
+<p>Determines whether any type of chroma keying is enabled.</p>
+
   </section>
 
 
@@ -355,8 +357,10 @@ this camera device on the stage.</p>
     <h1 id="setChromaEnabled" class="name">
       setChromaEnabled
     </h1>
-          <p>param: value<boolean></p>
-      
+    <pre><code>param: (value: boolean)
+</code></pre>
+<p>Enables or disables chroma keying. Use together with <code>getKeyingType()</code>.</p>
+
   </section>
 
 
@@ -364,8 +368,10 @@ this camera device on the stage.</p>
     <h1 id="getKeyingType" class="name">
       getKeyingType
     </h1>
-          <p>return: Promise<KeyingType></p>
-      
+    <pre><code>return: Promise&lt;KeyingType&gt;
+</code></pre>
+<p>Determines the chroma keying type being used.</p>
+
   </section>
 
 
@@ -373,8 +379,16 @@ this camera device on the stage.</p>
     <h1 id="setKeyingType" class="name">
       setKeyingType
     </h1>
-          <p>param: value<KeyingType></p>
-      
+    <pre><code>param: (value: KeyingType)
+</code></pre>
+<p>Sets the chroma keying scheme to any one of three possible choices: Chroma RGB Key, Color Key, or Legacy Mode.</p>
+<p>After setting the keying type, you may tweak settings specific to that type.</p>
+<ul>
+<li>RGB Key: methods prefixed with <code>getChromaRGBKey-\*</code> or <code>setChromaRGBKey-\*</code></li>
+<li>Color Key: methods prefixed with <code>getChromaColorKey-\*</code> or <code>setChromaColorKey-\*</code></li>
+<li>Chroma Legacy Mode: methods prefixed with <code>getChromaLegacy-\*</code> or <code>setChromaLegacy-\*</code></li>
+</ul>
+
   </section>
 
 
@@ -382,8 +396,10 @@ this camera device on the stage.</p>
     <h1 id="getChromaAntiAliasLevel" class="name">
       getChromaAntiAliasLevel
     </h1>
-          <p>return: Promise<ChromaAntiAliasLevel></p>
-      
+    <pre><code>return: Promise&lt;ChromaAntiAliasLevel&gt;
+</code></pre>
+<p>Gets the antialiasing level for chroma keying.</p>
+
   </section>
 
 
@@ -391,8 +407,10 @@ this camera device on the stage.</p>
     <h1 id="setChromaAntiAliasLevel" class="name">
       setChromaAntiAliasLevel
     </h1>
-          <p>param: value<ChromaAntiAliasLevel></p>
-      
+    <pre><code>param: (value: ChromaAntiAliasLevel)
+</code></pre>
+<p>Sets the antialiasing level for chroma keying.</p>
+
   </section>
 
 
@@ -400,8 +418,10 @@ this camera device on the stage.</p>
     <h1 id="getChromaLegacyBrightness" class="name">
       getChromaLegacyBrightness
     </h1>
-          <p>return: Promise<number></p>
-      
+    <pre><code>return: Promise&lt;number&gt;
+</code></pre>
+<p>Gets the brightness setting (0-255). Only relevant when chroma keying is in Legacy mode.</p>
+
   </section>
 
 
@@ -409,8 +429,10 @@ this camera device on the stage.</p>
     <h1 id="setChromaLegacyBrightness" class="name">
       setChromaLegacyBrightness
     </h1>
-          <p>param: value<number></p>
-      
+    <pre><code>param: (value: number)
+</code></pre>
+<p>Sets the brightness setting (0-255). Only relevant when chroma keying is in Legacy mode.</p>
+
   </section>
 
 
@@ -418,8 +440,10 @@ this camera device on the stage.</p>
     <h1 id="getChromaLegacySaturation" class="name">
       getChromaLegacySaturation
     </h1>
-          <p>return: Promise<number></p>
-      
+    <pre><code>return: Promise&lt;number&gt;
+</code></pre>
+<p>Gets the saturation setting (0-255).  Only relevant when chroma keying is in Legacy mode.</p>
+
   </section>
 
 
@@ -427,8 +451,10 @@ this camera device on the stage.</p>
     <h1 id="setChromaLegacySaturation" class="name">
       setChromaLegacySaturation
     </h1>
-          <p>param: value<number></p>
-      
+    <pre><code>param: (value: number)
+</code></pre>
+<p>Sets the saturation setting (0-255).  Only relevant when chroma keying is in Legacy mode.</p>
+
   </section>
 
 
@@ -436,8 +462,10 @@ this camera device on the stage.</p>
     <h1 id="getChromaLegacyHue" class="name">
       getChromaLegacyHue
     </h1>
-          <p>return: Promise<number></p>
-      
+    <pre><code>return: Promise&lt;number&gt;
+</code></pre>
+<p>Gets the hue setting (0-180).  Only relevant when chroma keying is in Legacy mode.</p>
+
   </section>
 
 
@@ -445,8 +473,10 @@ this camera device on the stage.</p>
     <h1 id="setChromaLegacyHue" class="name">
       setChromaLegacyHue
     </h1>
-          <p>param: value<number></p>
-      
+    <pre><code>param: (value: number)
+</code></pre>
+<p>Sets the hue setting (0-180).  Only relevant when chroma keying is in Legacy mode.</p>
+
   </section>
 
 
@@ -454,8 +484,10 @@ this camera device on the stage.</p>
     <h1 id="getChromaLegacyThreshold" class="name">
       getChromaLegacyThreshold
     </h1>
-          <p>return: Promise<number></p>
-      
+    <pre><code>return: Promise&lt;number&gt;
+</code></pre>
+<p>Gets the threshold setting (0-255). Only relevant when chroma keying is in Legacy mode.</p>
+
   </section>
 
 
@@ -463,8 +495,10 @@ this camera device on the stage.</p>
     <h1 id="setChromaLegacyThreshold" class="name">
       setChromaLegacyThreshold
     </h1>
-          <p>param: value<number></p>
-      
+    <pre><code>param: (value: number)
+</code></pre>
+<p>Sets the threshold setting (0-255). Only relevant when chroma keying is in Legacy mode.</p>
+
   </section>
 
 
@@ -472,8 +506,10 @@ this camera device on the stage.</p>
     <h1 id="getChromaLegacyAlphaSmoothing" class="name">
       getChromaLegacyAlphaSmoothing
     </h1>
-          <p>return: Promise<number></p>
-      
+    <pre><code>return: Promise&lt;number&gt;
+</code></pre>
+<p>Gets the alpha smoothing setting (0-255). Only relevant when chroma keying is in Legacy mode.</p>
+
   </section>
 
 
@@ -481,8 +517,10 @@ this camera device on the stage.</p>
     <h1 id="setChromaLegacyAlphaSmoothing" class="name">
       setChromaLegacyAlphaSmoothing
     </h1>
-          <p>param: value<number></p>
-      
+    <pre><code>param: (value: number)
+</code></pre>
+<p>Sets the alpha smoothing setting (0-255). Only relevant when chroma keying is in Legacy mode.</p>
+
   </section>
 
 
@@ -490,8 +528,10 @@ this camera device on the stage.</p>
     <h1 id="getChromaRGBKeyPrimaryColor" class="name">
       getChromaRGBKeyPrimaryColor
     </h1>
-          <p>return: Promise<ChromaPrimaryColors></p>
-      
+    <pre><code>return: Promise&lt;ChromaPrimaryColors&gt;
+</code></pre>
+<p>Gets the primary color setting for chroma key. Only relevant when chroma keying is in RGB mode.</p>
+
   </section>
 
 
@@ -499,8 +539,10 @@ this camera device on the stage.</p>
     <h1 id="setChromaRGBKeyPrimaryColor" class="name">
       setChromaRGBKeyPrimaryColor
     </h1>
-          <p>param: value<ChromaPrimaryColors></p>
-      
+    <pre><code>param: (value: ChromaPrimaryColors)
+</code></pre>
+<p>Sets the primary color setting for chroma key. Only relevant when chroma keying is in RGB mode.</p>
+
   </section>
 
 
@@ -508,8 +550,10 @@ this camera device on the stage.</p>
     <h1 id="getChromaRGBKeyThreshold" class="name">
       getChromaRGBKeyThreshold
     </h1>
-          <p>return: Promise<number></p>
-      
+    <pre><code>return: Promise&lt;number&gt;
+</code></pre>
+<p>Gets the threshold setting (0-255). Only relevant when chroma keying is in RGB mode.</p>
+
   </section>
 
 
@@ -517,8 +561,10 @@ this camera device on the stage.</p>
     <h1 id="setChromaRGBKeyThreshold" class="name">
       setChromaRGBKeyThreshold
     </h1>
-          <p>param: value<number></p>
-      
+    <pre><code>param: (value: number)
+</code></pre>
+<p>Sets the threshold setting (0-255). Only relevant when chroma keying is in RGB mode.</p>
+
   </section>
 
 
@@ -526,8 +572,10 @@ this camera device on the stage.</p>
     <h1 id="getChromaRGBKeyExposure" class="name">
       getChromaRGBKeyExposure
     </h1>
-          <p>return: Promise<number></p>
-      
+    <pre><code>return: Promise&lt;number&gt;
+</code></pre>
+<p>Gets the exposure setting (0-255). Only relevant when chroma keying is in RGB mode.</p>
+
   </section>
 
 
@@ -535,8 +583,10 @@ this camera device on the stage.</p>
     <h1 id="setChromaRGBKeyExposure" class="name">
       setChromaRGBKeyExposure
     </h1>
-          <p>param: value<number></p>
-      
+    <pre><code>param: (value: number)
+</code></pre>
+<p>Sets the exposure setting (0-255). Only relevant when chroma keying is in RGB mode.</p>
+
   </section>
 
 
@@ -544,8 +594,10 @@ this camera device on the stage.</p>
     <h1 id="getChromaColorKeyThreshold" class="name">
       getChromaColorKeyThreshold
     </h1>
-          <p>return: Promise<number></p>
-      
+    <pre><code>return: Promise&lt;number&gt;
+</code></pre>
+<p>Gets the threshold setting (0-255). Only relevant when chroma keying is in color key mode.</p>
+
   </section>
 
 
@@ -553,8 +605,10 @@ this camera device on the stage.</p>
     <h1 id="setChromaColorKeyThreshold" class="name">
       setChromaColorKeyThreshold
     </h1>
-          <p>param: value<number></p>
-      
+    <pre><code>param: (value: number)
+</code></pre>
+<p>Sets the threshold setting (0-255). Only relevant when chroma keying is in color key mode.</p>
+
   </section>
 
 
@@ -562,8 +616,10 @@ this camera device on the stage.</p>
     <h1 id="getChromaColorKeyExposure" class="name">
       getChromaColorKeyExposure
     </h1>
-          <p>return: Promise<number></p>
-      
+    <pre><code>return: Promise&lt;number&gt;
+</code></pre>
+<p>Gets the exposure setting (0-255). Only relevant when chroma keying is in color key mode.</p>
+
   </section>
 
 
@@ -571,8 +627,10 @@ this camera device on the stage.</p>
     <h1 id="setChromaColorKeyExposure" class="name">
       setChromaColorKeyExposure
     </h1>
-          <p>param: value<number></p>
-      
+    <pre><code>param: (value: number)
+</code></pre>
+<p>Sets the exposure setting (0-255). Only relevant when chroma keying is in color key mode.</p>
+
   </section>
 
 
@@ -580,8 +638,10 @@ this camera device on the stage.</p>
     <h1 id="getChromaColorKeyColor" class="name">
       getChromaColorKeyColor
     </h1>
-          <p>return: Promise<Color></p>
-      
+    <pre><code>return: Promise&lt;Color&gt;
+</code></pre>
+<p>Gets the color setting for keying in color key mode.</p>
+
   </section>
 
 
@@ -589,8 +649,10 @@ this camera device on the stage.</p>
     <h1 id="setChromaColorKeyColor" class="name">
       setChromaColorKeyColor
     </h1>
-          <p>param: value<Color></p>
-      
+    <pre><code>param: (value: Color)
+</code></pre>
+<p>Sets the color setting for keying in color key mode.</p>
+
   </section>
 
 
@@ -598,7 +660,7 @@ this camera device on the stage.</p>
     <h1 id="setKeyingOptionsPinned" class="name">
       setKeyingOptionsPinned
     </h1>
-    <pre><code>param: value&lt;boolean&gt;
+    <pre><code>param: (value: boolean)
 </code></pre>
 <p>Set this to true to share chroma keying settings across all instances of
 this camera device on the stage.</p>
@@ -610,7 +672,7 @@ this camera device on the stage.</p>
     <h1 id="getKeyingOptionsPinned" class="name">
       getKeyingOptionsPinned
     </h1>
-    <pre><code>return: value&lt;boolean&gt;
+    <pre><code>return: Promise&lt;boolean&gt;
 </code></pre>
 <p>Checks whether chroma keying settings are shared across all instances of
 this camera device on the stage.</p>
@@ -684,6 +746,6 @@ this camera device on the stage.</p>
   </section>
 
 <p class="module defined-in">exported from <a href='#/core'>core</a><br/>
-defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/core/item/camera.ts#L15-L473">../src/core/item/camera.ts (line 15)</a>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/core/item/camera.ts#L15-L560">../src/core/item/camera.ts (line 15)</a>
 </p>
 

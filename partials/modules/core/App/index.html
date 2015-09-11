@@ -3,8 +3,8 @@
 <p><p>The App Class provides you methods to get and set application-related
 functionalities.</p>
 <h3 id="basic-usage">Basic Usage</h3>
-<pre><code class="lang-javascript">var XJS = require(&#39;xjs&#39;);
-var App = new XJS.App();
+<pre><code class="lang-javascript">var xjs = require(&#39;xjs&#39;);
+var App = new xjs.App();
 
 App.getFrameTime().then(function(frametime) {
   window.frametime = frametime;
@@ -19,8 +19,7 @@ App.getFrameTime().then(function(frametime) {
 </code></pre>
 <p>Gets application&#39;s frame time (duration per frame in 100ns unit)</p>
 <h4 id="usage">Usage</h4>
-<pre><code class="lang-javascript">var frameTimeP = App.getFrameTime();
-frameTimeP.then(function(res) {
+<pre><code class="lang-javascript">App.getFrameTime().then(function(res) {
   var frameTime = res;
 });
 </code></pre>
@@ -34,11 +33,10 @@ frameTimeP.then(function(res) {
     </h1>
     <pre><code>return: Promise&lt;Rectangle&gt;
 </code></pre>
-<p>Gets application default output resolution.
-See also: Util/Rectangle</p>
+<p>Gets application default output resolution.</p>
+<p>See also: <a href='#util/Rectangle'>Util/Rectangle</a></p>
 <h4 id="usage">Usage</h4>
-<pre><code class="lang-javascript">var resolutionP = App.getResolution();
-resolutionP.then(function(res) {
+<pre><code class="lang-javascript">App.getResolution().then(function(res) {
   var height = res.getHeight();
   var width = res.getWidth();
 });
@@ -53,11 +51,10 @@ resolutionP.then(function(res) {
     </h1>
     <pre><code>return: Promise&lt;Rectangle&gt;
 </code></pre>
-<p>Gets application viewport display resolution
-See also: Util/Rectangle</p>
+<p>Gets application viewport display resolution</p>
+<p>See also: <a href='#util/Rectangle'>Util/Rectangle</a></p>
 <h4 id="usage">Usage</h4>
-<pre><code class="lang-javascript">var viewPortP = App.getViewport();
-viewPortP.then(function(res) {
+<pre><code class="lang-javascript">App.getViewport().then(function(res) {
   var height = res.getHeight();
   var width = res.getWidth();
 });
@@ -74,8 +71,7 @@ viewPortP.then(function(res) {
 </code></pre>
 <p>Refers to XSplit Broadcaster DLL file version number</p>
 <h4 id="usage">Usage</h4>
-<pre><code class="lang-javascript">var versionP = App.getVersion();
-versionP.then(function(res) {
+<pre><code class="lang-javascript">App.getVersion().then(function(res) {
   var version = res;
 });
 </code></pre>
@@ -91,8 +87,7 @@ versionP.then(function(res) {
 </code></pre>
 <p>Gets the total number of frames rendered</p>
 <h4 id="usage">Usage</h4>
-<pre><code class="lang-javascript">var framesrenderedP = App.getFramesRendered();
-framesrenderedP.then(function(res) {
+<pre><code class="lang-javascript">App.getFramesRendered().then(function(res) {
   var framesrendered = res;
 });
 </code></pre>
@@ -104,10 +99,10 @@ framesrenderedP.then(function(res) {
     <h1 id="getPrimaryMic" class="name">
       getPrimaryMic
     </h1>
-    <pre><code>return: Promise&lt;AudioDevice&gt;
+    <pre><code>return: Promise&lt;AudioDevice[]&gt;
 </code></pre>
-<p>Gets the primary microphone device used in the application
-See also: System/AudioDevice</p>
+<p>Gets the primary microphone device used in the application</p>
+<p>See also: <a href='#system/AudioDevice'>System/AudioDevice</a></p>
 <h3 id="usage">Usage</h3>
 <pre><code class="lang-javascript">App.getPrimaryMic().then(function(audioDevice) {
   var primaryMic = audioDevice;
@@ -121,10 +116,10 @@ See also: System/AudioDevice</p>
     <h1 id="getPrimarySpeaker" class="name">
       getPrimarySpeaker
     </h1>
-    <pre><code>return: Promise&lt;AudioDevice&gt;
+    <pre><code>return: Promise&lt;AudioDevice[]&gt;
 </code></pre>
-<p>Gets the primary speaker/audio render device used in the application
-See also: System/AudioDevice</p>
+<p>Gets the primary speaker/audio render device used in the application</p>
+<p>See also: <a href='#system/AudioDevice'>System/AudioDevice</a></p>
 <h3 id="usage">Usage</h3>
 <pre><code class="lang-javascript">App.getPrimarySpeaker().then(function(audioDevice) {
   var primarySpeaker = audioDevice;
@@ -138,12 +133,12 @@ See also: System/AudioDevice</p>
     <h1 id="setPrimaryMic" class="name">
       setPrimaryMic
     </h1>
-    <pre><code>param: device&lt;AudioDevice&gt;
+    <pre><code>param: (device: AudioDevice)
 </code></pre>
 <pre><code>return: Promise&lt;boolean&gt;
 </code></pre>
-<p>Sets the primary microphone device to be used in the application
-See also: System/AudioDevice</p>
+<p>Sets the primary microphone device to be used in the application</p>
+<p>See also: <a href='#system/AudioDevice'>System/AudioDevice</a></p>
 <h3 id="usage">Usage</h3>
 <pre><code class="lang-javascript">App.setPrimaryMic(device).then(function(val) {
   var isSet = val;
@@ -157,12 +152,12 @@ See also: System/AudioDevice</p>
     <h1 id="setPrimarySpeaker" class="name">
       setPrimarySpeaker
     </h1>
-    <pre><code>param: device&lt;AudioDevice&gt;
+    <pre><code>param: (device: AudioDevice)
 </code></pre>
 <pre><code>return: Promise&lt;boolean&gt;
 </code></pre>
-<p>Sets the primary speaker/audio render device to be used in the application
-See also: System/AudioDevice</p>
+<p>Sets the primary speaker/audio render device to be used in the application</p>
+<p>See also: <a href='#system/AudioDevice'>System/AudioDevice</a></p>
 <h3 id="usage">Usage</h3>
 <pre><code class="lang-javascript">App.setPrimarySpeaker(device).then(function(val) {
   var isSet = val;
@@ -192,7 +187,7 @@ See also: System/AudioDevice</p>
     <h1 id="enableSilenceDetection" class="name">
       enableSilenceDetection
     </h1>
-    <pre><code>param: enabled&lt;boolean&gt;
+    <pre><code>param: (enabled: boolean)
 </code></pre>
 <pre><code>return: Promise&lt;boolean&gt;
 </code></pre>
@@ -227,7 +222,7 @@ the length of time after voice detection before silence is again detected</p>
     <h1 id="setSilenceDetectionPeriod" class="name">
       setSilenceDetectionPeriod
     </h1>
-    <pre><code>param: sdPeriod&lt;number&gt;
+    <pre><code>param: (sdPeriod: number)
 </code></pre>
 <pre><code>return: Promise&lt;boolean&gt;
 </code></pre>
@@ -262,7 +257,7 @@ the length of time after voice detection before silence is again detected</p>
     <h1 id="setSilenceDetectionThreshold" class="name">
       setSilenceDetectionThreshold
     </h1>
-    <pre><code>param: sdThreshold&lt;number&gt;
+    <pre><code>param: (sdThreshold: number)
 </code></pre>
 <pre><code>return: Promise&lt;boolean&gt;
 </code></pre>
@@ -280,9 +275,9 @@ the length of time after voice detection before silence is again detected</p>
     <h1 id="newDialog" class="name">
       newDialog
     </h1>
-    <pre><code>param: url&lt;string&gt;[, width&lt;number&gt;[, height&lt;number&gt;[, flags&lt;number&gt;[, title&lt;string&gt;]]]]
+    <pre><code>param: (url: string [, width: number = 300 [, height: number = 300 [, flags: number [, title: string ]]]])
 </code></pre>
-<p>Creates a persistent modal dialog.<br/>
+<p>Creates a persistent modal dialog.
 This method is not available for source</p>
 <h4 id="usage">Usage</h4>
 <pre><code class="lang-javascript">// you may use the following:
@@ -301,7 +296,7 @@ App.newDialog(url, width, height, flags, title);
     <h1 id="newAutoDialog" class="name">
       newAutoDialog
     </h1>
-    <pre><code>param: url&lt;string&gt;[, width&lt;number&gt;[, height&lt;number&gt;]]
+    <pre><code>param: (url: string [, width: number = 300 [, height: number = 300]])
 </code></pre>
 <p>Creates a dialog that automatically closes on outside click</p>
 <h4 id="usage">Usage</h4>
@@ -326,11 +321,10 @@ App.newDialog(url, width, height, flags, title);
     </h1>
     <pre><code>return: Promise&lt;Transition&gt;
 </code></pre>
-<p>Gets the transition for scene changes
-See also: Core/Transition</p>
+<p>Gets the transition for scene changes</p>
+<p>See also: <a href='#core/Transition'>Core/Transition</a></p>
 <h4 id="usage">Usage</h4>
-<pre><code class="lang-javascript">var transitionP = App.getTransition();
-transitionP.then(function(res) {
+<pre><code class="lang-javascript">App.getTransition().then(function(res) {
   var transitionid = res;
 });
 </code></pre>
@@ -342,12 +336,12 @@ transitionP.then(function(res) {
     <h1 id="setTransition" class="name">
       setTransition
     </h1>
-    <pre><code>param: transition&lt;Transition&gt;
+    <pre><code>param: (transition: Transition)
 </code></pre>
-<pre><code>return: Promise&lt;Transition&gt;
+<pre><code>return: Promise&lt;boolean&gt;
 </code></pre>
-<p>Sets the transition for scene changes
-See also: Core/Transition</p>
+<p>Sets the transition for scene changes</p>
+<p>See also: <a href='#core/Transition'>Core/Transition</a></p>
 <h4 id="usage">Usage</h4>
 <pre><code class="lang-javascript">var xjs = require(&#39;xjs&#39;),
     Transition = xjs.Transition,
@@ -369,8 +363,7 @@ App.setTransition(Transition.CLOCK).then(function(val) {
 </code></pre>
 <p>Gets the scene transition duration in milliseconds</p>
 <h4 id="usage">Usage</h4>
-<pre><code class="lang-javascript">var transitionTimeP = App.getTransitionTime();
-transitionTimeP.then(function(res) {
+<pre><code class="lang-javascript">App.getTransitionTime().then(function(res) {
   var transitiontime = res;
 });
 </code></pre>
@@ -382,9 +375,9 @@ transitionTimeP.then(function(res) {
     <h1 id="setTransitionTime" class="name">
       setTransitionTime
     </h1>
-    <pre><code>param: transition&lt;number&gt;
+    <pre><code>param: (time: number)
 </code></pre>
-<pre><code>return: Promise&lt;string&gt;
+<pre><code>return: Promise&lt;boolean&gt;
 </code></pre>
 <p>Sets the scene transition duration in milliseconds</p>
 <h4 id="usage">Usage</h4>
@@ -436,6 +429,6 @@ transitionTimeP.then(function(res) {
   </section>
 
 <p class="module defined-in">exported from <a href='#/core'>core</a><br/>
-defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/core/app.ts#L13-L646">../src/core/app.ts (line 13)</a>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/core/app.ts#L13-L647">../src/core/app.ts (line 13)</a>
 </p>
 

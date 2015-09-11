@@ -15,6 +15,24 @@ angular.module('navigation-modules', [])
           "type": "class"
         },
         {
+          "path": "core/KeyingType",
+          "partial": "partials/modules/core/KeyingType/index.html",
+          "name": "KeyingType",
+          "type": "enum"
+        },
+        {
+          "path": "core/ChromaPrimaryColors",
+          "partial": "partials/modules/core/ChromaPrimaryColors/index.html",
+          "name": "ChromaPrimaryColors",
+          "type": "enum"
+        },
+        {
+          "path": "core/ChromaAntiAliasLevel",
+          "partial": "partials/modules/core/ChromaAntiAliasLevel/index.html",
+          "name": "ChromaAntiAliasLevel",
+          "type": "enum"
+        },
+        {
           "path": "core/Environment",
           "partial": "partials/modules/core/Environment/index.html",
           "name": "Environment",
@@ -36,12 +54,6 @@ angular.module('navigation-modules', [])
           "path": "core/Transition",
           "partial": "partials/modules/core/Transition/index.html",
           "name": "Transition",
-          "type": "class"
-        },
-        {
-          "path": "core/Stream",
-          "partial": "partials/modules/core/Stream/index.html",
-          "name": "Stream",
           "type": "class"
         },
         {
