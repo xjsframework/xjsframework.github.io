@@ -1,6 +1,11 @@
 
 <h1 class="class export">HTMLItem <span class="type">class</span></h1>
-<p></p><h2>Members</h2>
+<p><p>The HTMLItem class represents a web page source. This covers both source
+plugins and non-plugin URLs.</p>
+<p>Inherits from: <a href='#core/Item'>Core/Item</a></p>
+<p> All methods marked as <em>Chainable</em> resolve with the original <code>HTMLItem</code>
+ instance.</p>
+</p><h2>Members</h2>
   <section class="member">
     <h1 id="getURL" class="name">
       getURL
@@ -16,9 +21,170 @@
     <h1 id="setURL" class="name">
       setURL
     </h1>
-    <pre><code>param: value&lt;string&gt;
+    <pre><code>param: (url: string)
+</code></pre>
+<pre><code>return: Promise&lt;HTMLItem&gt;
 </code></pre>
 <p>Sets the URL of this webpage source.</p>
+<p><em>Chainable.</em></p>
+
+  </section>
+
+
+  <section class="member">
+    <h1 id="getBrowserJS" class="name">
+      getBrowserJS
+    </h1>
+    <pre><code>return: Promise&lt;string&gt;
+</code></pre>
+<p>Gets the javascript commands to be executed on source upon load</p>
+
+  </section>
+
+
+  <section class="member">
+    <h1 id="setBrowserJS" class="name">
+      setBrowserJS
+    </h1>
+    <pre><code>param: (js: string, refresh: boolean = false)
+</code></pre>
+<pre><code>return: Promise&lt;HTMLItem&gt;
+</code></pre>
+<p>Sets the javascript commands to be executed on source
+right upon setting and on load. Optionally set second parameter
+to true to refresh source (needed to clean previously executed JS code.)</p>
+<p><em>Chainable.</em></p>
+
+  </section>
+
+
+  <section class="member">
+    <h1 id="isBrowserJSEnabled" class="name">
+      isBrowserJSEnabled
+    </h1>
+    <pre><code>return: Promise&lt;boolean&gt;
+</code></pre>
+<p>Gets if BrowserJS is enabled and executed on load</p>
+
+  </section>
+
+
+  <section class="member">
+    <h1 id="enableBrowserJS" class="name">
+      enableBrowserJS
+    </h1>
+    <pre><code>param: value&lt;string&gt;
+</code></pre>
+<pre><code>return: Promise&lt;HTMLItem&gt;
+</code></pre>
+<p>Enables or disables execution of the set BrowserJs upon load.
+Note that disabling this will require source to be refreshed
+in order to remove any BrowserJS previously executed.</p>
+<p><em>Chainable.</em></p>
+
+  </section>
+
+
+  <section class="member">
+    <h1 id="getCustomCSS" class="name">
+      getCustomCSS
+    </h1>
+    <pre><code>return: Promise&lt;string&gt;
+</code></pre>
+<p>Gets the custom CSS applied to the document upon loading</p>
+
+  </section>
+
+
+  <section class="member">
+    <h1 id="setCustomCSS" class="name">
+      setCustomCSS
+    </h1>
+    <pre><code>param: value&lt;string&gt;
+</code></pre>
+<pre><code>return: Promise&lt;HTMLItem&gt;
+</code></pre>
+<p>Sets the custom CSS to be applied to the document upon loading</p>
+<p><em>Chainable.</em></p>
+
+  </section>
+
+
+  <section class="member">
+    <h1 id="isCustomCSSEnabled" class="name">
+      isCustomCSSEnabled
+    </h1>
+    <pre><code>return: Promise&lt;string&gt;
+</code></pre>
+<p>Gets if custom CSS is enabled and applied to the document on load</p>
+
+  </section>
+
+
+  <section class="member">
+    <h1 id="enableCustomCSS" class="name">
+      enableCustomCSS
+    </h1>
+    <pre><code>param: value&lt;string&gt;
+</code></pre>
+<pre><code>return: Promise&lt;HTMLItem&gt;
+</code></pre>
+<p>Enables or disables application of custom CSS to the document</p>
+<p><em>Chainable.</em></p>
+
+  </section>
+
+
+  <section class="member">
+    <h1 id="isBrowserTransparent" class="name">
+      isBrowserTransparent
+    </h1>
+    <pre><code>return: Promise&lt;boolean&gt;
+</code></pre>
+<p>Check if browser is rendered transparent</p>
+
+  </section>
+
+
+  <section class="member">
+    <h1 id="enableBrowserTransparency" class="name">
+      enableBrowserTransparency
+    </h1>
+    <pre><code>param: Promise&lt;boolean&gt;
+</code></pre>
+<pre><code>return: Promise&lt;HTMLItem&gt;
+</code></pre>
+<p>Enable or disabled transparency of CEF browser</p>
+<p><em>Chainable.</em></p>
+
+  </section>
+
+
+  <section class="member">
+    <h1 id="getBrowserCustomSize" class="name">
+      getBrowserCustomSize
+    </h1>
+    <pre><code>return: Promise&lt;Rectangle&gt;
+</code></pre>
+<p>Gets the custom browser window size for the source, if set,
+regardless of its layout on the mixer</p>
+<p>See also: <a href='#util/Rectangle'>Util/Rectangle</a></p>
+
+  </section>
+
+
+  <section class="member">
+    <h1 id="setBrowserCustomSize" class="name">
+      setBrowserCustomSize
+    </h1>
+    <pre><code>param: Promise&lt;Rectangle&gt;
+</code></pre>
+<pre><code>return: Promise&lt;HTMLItem&gt;
+</code></pre>
+<p>Sets the custom browser window size for the source
+regardless of its layout on the mixer</p>
+<p><em>Chainable.</em></p>
+<p>See also: <a href='#util/Rectangle'>Util/Rectangle</a></p>
 
   </section>
 
@@ -63,6 +229,7 @@
     <pre><code>return: Promise&lt;Rectangle&gt;
 </code></pre>
 <p>Get the position of the item</p>
+<p>See also: <a href='#util/Rectangle'>Util/Rectangle</a></p>
 
   </section>
 
@@ -107,6 +274,7 @@
     <pre><code>param: value&lt;boolean&gt;
 </code></pre>
 <p>Set Aspect Ratio to ON or OFF</p>
+<p><em>Chainable.</em></p>
 
   </section>
 
@@ -118,6 +286,7 @@
     <pre><code>param: value&lt;boolean&gt;
 </code></pre>
 <p>Set Position Lock to ON or OFF</p>
+<p><em>Chainable.</em></p>
 
   </section>
 
@@ -129,6 +298,7 @@
     <pre><code>param: value&lt;boolean&gt;
 </code></pre>
 <p>Set Enhance Resize to ON or OFF</p>
+<p><em>Chainable.</em></p>
 
   </section>
 
@@ -140,6 +310,8 @@
     <pre><code>param: value&lt;Rectangle&gt;
 </code></pre>
 <p>Set Item position</p>
+<p><em>Chainable.</em></p>
+<p>See also: <a href='#util/Rectangle'>Util/Rectangle</a></p>
 
   </section>
 
@@ -151,6 +323,7 @@
     <pre><code>param: value&lt;number&gt;
 </code></pre>
 <p>Set Rotate Y value of the item</p>
+<p><em>Chainable.</em></p>
 
   </section>
 
@@ -162,6 +335,7 @@
     <pre><code>param: value&lt;number&gt;
 </code></pre>
 <p>Set Rotate X value of the item</p>
+<p><em>Chainable.</em></p>
 
   </section>
 
@@ -173,6 +347,7 @@
     <pre><code>param: value&lt;number&gt;
 </code></pre>
 <p>Set Rotate Z value of the item</p>
+<p><em>Chainable.</em></p>
 
   </section>
 
@@ -250,6 +425,7 @@
     <pre><code>param: value&lt;number&gt;
 </code></pre>
 <p>Set Item Transparency</p>
+<p><em>Chainable.</em></p>
 
   </section>
 
@@ -261,6 +437,7 @@
     <pre><code>param: value&lt;number&gt;
 </code></pre>
 <p>Set Item Brightness</p>
+<p><em>Chainable.</em></p>
 
   </section>
 
@@ -272,6 +449,7 @@
     <pre><code>param: value&lt;number&gt;
 </code></pre>
 <p>Set Item Contrast</p>
+<p><em>Chainable.</em></p>
 
   </section>
 
@@ -283,6 +461,7 @@
     <pre><code>param: value&lt;number&gt;
 </code></pre>
 <p>Set Item Hue</p>
+<p><em>Chainable.</em></p>
 
   </section>
 
@@ -294,6 +473,7 @@
     <pre><code>param: value&lt;number&gt;
 </code></pre>
 <p>Set Item Saturation</p>
+<p><em>Chainable.</em></p>
 
   </section>
 
@@ -305,6 +485,7 @@
     <pre><code>param: value&lt;Color&gt;
 </code></pre>
 <p>Set Border Color</p>
+<p><em>Chainable.</em></p>
 
   </section>
 
@@ -313,10 +494,8 @@
     <h1 id="isChromaEnabled" class="name">
       isChromaEnabled
     </h1>
-    <pre><code>return: Promise&lt;boolean&gt;
-</code></pre>
-<p>Determines whether any type of chroma keying is enabled.</p>
-
+          <p>return: Promise<boolean></p>
+      
   </section>
 
 
@@ -324,9 +503,9 @@
     <h1 id="setChromaEnabled" class="name">
       setChromaEnabled
     </h1>
-    <pre><code>param: (value: boolean)
+    <pre><code>param: value&lt;boolean&gt;
 </code></pre>
-<p>Enables or disables chroma keying. Use together with <code>getKeyingType()</code>.</p>
+<p><em>Chainable.</em></p>
 
   </section>
 
@@ -335,10 +514,8 @@
     <h1 id="getKeyingType" class="name">
       getKeyingType
     </h1>
-    <pre><code>return: Promise&lt;KeyingType&gt;
-</code></pre>
-<p>Determines the chroma keying type being used.</p>
-
+          <p>return: Promise<KeyingType></p>
+      
   </section>
 
 
@@ -346,15 +523,9 @@
     <h1 id="setKeyingType" class="name">
       setKeyingType
     </h1>
-    <pre><code>param: (value: KeyingType)
+    <pre><code>param: value&lt;KeyingType&gt;
 </code></pre>
-<p>Sets the chroma keying scheme to any one of three possible choices: Chroma RGB Key, Color Key, or Legacy Mode.</p>
-<p>After setting the keying type, you may tweak settings specific to that type.</p>
-<ul>
-<li>RGB Key: methods prefixed with <code>getChromaRGBKey-\*</code> or <code>setChromaRGBKey-\*</code></li>
-<li>Color Key: methods prefixed with <code>getChromaColorKey-\*</code> or <code>setChromaColorKey-\*</code></li>
-<li>Chroma Legacy Mode: methods prefixed with <code>getChromaLegacy-\*</code> or <code>setChromaLegacy-\*</code></li>
-</ul>
+<p><em>Chainable.</em></p>
 
   </section>
 
@@ -363,10 +534,8 @@
     <h1 id="getChromaAntiAliasLevel" class="name">
       getChromaAntiAliasLevel
     </h1>
-    <pre><code>return: Promise&lt;ChromaAntiAliasLevel&gt;
-</code></pre>
-<p>Gets the antialiasing level for chroma keying.</p>
-
+          <p>return: Promise<ChromaAntiAliasLevel></p>
+      
   </section>
 
 
@@ -374,9 +543,9 @@
     <h1 id="setChromaAntiAliasLevel" class="name">
       setChromaAntiAliasLevel
     </h1>
-    <pre><code>param: (value: ChromaAntiAliasLevel)
+    <pre><code>param: value&lt;ChromaAntiAliasLevel&gt;
 </code></pre>
-<p>Sets the antialiasing level for chroma keying.</p>
+<p><em>Chainable.</em></p>
 
   </section>
 
@@ -385,10 +554,8 @@
     <h1 id="getChromaLegacyBrightness" class="name">
       getChromaLegacyBrightness
     </h1>
-    <pre><code>return: Promise&lt;number&gt;
-</code></pre>
-<p>Gets the brightness setting (0-255). Only relevant when chroma keying is in Legacy mode.</p>
-
+          <p>return: Promise<number></p>
+      
   </section>
 
 
@@ -396,9 +563,9 @@
     <h1 id="setChromaLegacyBrightness" class="name">
       setChromaLegacyBrightness
     </h1>
-    <pre><code>param: (value: number)
+    <pre><code>param: value&lt;number&gt;
 </code></pre>
-<p>Sets the brightness setting (0-255). Only relevant when chroma keying is in Legacy mode.</p>
+<p><em>Chainable.</em></p>
 
   </section>
 
@@ -407,10 +574,8 @@
     <h1 id="getChromaLegacySaturation" class="name">
       getChromaLegacySaturation
     </h1>
-    <pre><code>return: Promise&lt;number&gt;
-</code></pre>
-<p>Gets the saturation setting (0-255).  Only relevant when chroma keying is in Legacy mode.</p>
-
+          <p>return: Promise<number></p>
+      
   </section>
 
 
@@ -418,9 +583,9 @@
     <h1 id="setChromaLegacySaturation" class="name">
       setChromaLegacySaturation
     </h1>
-    <pre><code>param: (value: number)
+    <pre><code>param: value&lt;number&gt;
 </code></pre>
-<p>Sets the saturation setting (0-255).  Only relevant when chroma keying is in Legacy mode.</p>
+<p><em>Chainable.</em></p>
 
   </section>
 
@@ -429,10 +594,8 @@
     <h1 id="getChromaLegacyHue" class="name">
       getChromaLegacyHue
     </h1>
-    <pre><code>return: Promise&lt;number&gt;
-</code></pre>
-<p>Gets the hue setting (0-180).  Only relevant when chroma keying is in Legacy mode.</p>
-
+          <p>return: Promise<number></p>
+      
   </section>
 
 
@@ -440,9 +603,9 @@
     <h1 id="setChromaLegacyHue" class="name">
       setChromaLegacyHue
     </h1>
-    <pre><code>param: (value: number)
+    <pre><code>param: value&lt;number&gt;
 </code></pre>
-<p>Sets the hue setting (0-180).  Only relevant when chroma keying is in Legacy mode.</p>
+<p><em>Chainable.</em></p>
 
   </section>
 
@@ -451,10 +614,8 @@
     <h1 id="getChromaLegacyThreshold" class="name">
       getChromaLegacyThreshold
     </h1>
-    <pre><code>return: Promise&lt;number&gt;
-</code></pre>
-<p>Gets the threshold setting (0-255). Only relevant when chroma keying is in Legacy mode.</p>
-
+          <p>return: Promise<number></p>
+      
   </section>
 
 
@@ -462,9 +623,9 @@
     <h1 id="setChromaLegacyThreshold" class="name">
       setChromaLegacyThreshold
     </h1>
-    <pre><code>param: (value: number)
+    <pre><code>param: value&lt;number&gt;
 </code></pre>
-<p>Sets the threshold setting (0-255). Only relevant when chroma keying is in Legacy mode.</p>
+<p><em>Chainable.</em></p>
 
   </section>
 
@@ -473,10 +634,8 @@
     <h1 id="getChromaLegacyAlphaSmoothing" class="name">
       getChromaLegacyAlphaSmoothing
     </h1>
-    <pre><code>return: Promise&lt;number&gt;
-</code></pre>
-<p>Gets the alpha smoothing setting (0-255). Only relevant when chroma keying is in Legacy mode.</p>
-
+          <p>return: Promise<number></p>
+      
   </section>
 
 
@@ -484,9 +643,9 @@
     <h1 id="setChromaLegacyAlphaSmoothing" class="name">
       setChromaLegacyAlphaSmoothing
     </h1>
-    <pre><code>param: (value: number)
+    <pre><code>param: value&lt;number&gt;
 </code></pre>
-<p>Sets the alpha smoothing setting (0-255). Only relevant when chroma keying is in Legacy mode.</p>
+<p><em>Chainable.</em></p>
 
   </section>
 
@@ -495,10 +654,8 @@
     <h1 id="getChromaRGBKeyPrimaryColor" class="name">
       getChromaRGBKeyPrimaryColor
     </h1>
-    <pre><code>return: Promise&lt;ChromaPrimaryColors&gt;
-</code></pre>
-<p>Gets the primary color setting for chroma key. Only relevant when chroma keying is in RGB mode.</p>
-
+          <p>return: Promise<ChromaPrimaryColors></p>
+      
   </section>
 
 
@@ -506,9 +663,9 @@
     <h1 id="setChromaRGBKeyPrimaryColor" class="name">
       setChromaRGBKeyPrimaryColor
     </h1>
-    <pre><code>param: (value: ChromaPrimaryColors)
+    <pre><code>param: value&lt;ChromaPrimaryColors&gt;
 </code></pre>
-<p>Sets the primary color setting for chroma key. Only relevant when chroma keying is in RGB mode.</p>
+<p><em>Chainable.</em></p>
 
   </section>
 
@@ -517,10 +674,8 @@
     <h1 id="getChromaRGBKeyThreshold" class="name">
       getChromaRGBKeyThreshold
     </h1>
-    <pre><code>return: Promise&lt;number&gt;
-</code></pre>
-<p>Gets the threshold setting (0-255). Only relevant when chroma keying is in RGB mode.</p>
-
+          <p>return: Promise<number></p>
+      
   </section>
 
 
@@ -528,9 +683,9 @@
     <h1 id="setChromaRGBKeyThreshold" class="name">
       setChromaRGBKeyThreshold
     </h1>
-    <pre><code>param: (value: number)
+    <pre><code>param: value&lt;number&gt;
 </code></pre>
-<p>Sets the threshold setting (0-255). Only relevant when chroma keying is in RGB mode.</p>
+<p><em>Chainable.</em></p>
 
   </section>
 
@@ -539,10 +694,8 @@
     <h1 id="getChromaRGBKeyExposure" class="name">
       getChromaRGBKeyExposure
     </h1>
-    <pre><code>return: Promise&lt;number&gt;
-</code></pre>
-<p>Gets the exposure setting (0-255). Only relevant when chroma keying is in RGB mode.</p>
-
+          <p>return: Promise<number></p>
+      
   </section>
 
 
@@ -550,9 +703,9 @@
     <h1 id="setChromaRGBKeyExposure" class="name">
       setChromaRGBKeyExposure
     </h1>
-    <pre><code>param: (value: number)
+    <pre><code>param: value&lt;number&gt;
 </code></pre>
-<p>Sets the exposure setting (0-255). Only relevant when chroma keying is in RGB mode.</p>
+<p><em>Chainable.</em></p>
 
   </section>
 
@@ -561,10 +714,8 @@
     <h1 id="getChromaColorKeyThreshold" class="name">
       getChromaColorKeyThreshold
     </h1>
-    <pre><code>return: Promise&lt;number&gt;
-</code></pre>
-<p>Gets the threshold setting (0-255). Only relevant when chroma keying is in color key mode.</p>
-
+          <p>return: Promise<number></p>
+      
   </section>
 
 
@@ -572,9 +723,9 @@
     <h1 id="setChromaColorKeyThreshold" class="name">
       setChromaColorKeyThreshold
     </h1>
-    <pre><code>param: (value: number)
+    <pre><code>param: value&lt;number&gt;
 </code></pre>
-<p>Sets the threshold setting (0-255). Only relevant when chroma keying is in color key mode.</p>
+<p><em>Chainable.</em></p>
 
   </section>
 
@@ -583,10 +734,8 @@
     <h1 id="getChromaColorKeyExposure" class="name">
       getChromaColorKeyExposure
     </h1>
-    <pre><code>return: Promise&lt;number&gt;
-</code></pre>
-<p>Gets the exposure setting (0-255). Only relevant when chroma keying is in color key mode.</p>
-
+          <p>return: Promise<number></p>
+      
   </section>
 
 
@@ -594,9 +743,9 @@
     <h1 id="setChromaColorKeyExposure" class="name">
       setChromaColorKeyExposure
     </h1>
-    <pre><code>param: (value: number)
+    <pre><code>param: value&lt;number&gt;
 </code></pre>
-<p>Sets the exposure setting (0-255). Only relevant when chroma keying is in color key mode.</p>
+<p><em>Chainable.</em></p>
 
   </section>
 
@@ -605,10 +754,8 @@
     <h1 id="getChromaColorKeyColor" class="name">
       getChromaColorKeyColor
     </h1>
-    <pre><code>return: Promise&lt;Color&gt;
-</code></pre>
-<p>Gets the color setting for keying in color key mode.</p>
-
+          <p>return: Promise<Color></p>
+      
   </section>
 
 
@@ -616,9 +763,9 @@
     <h1 id="setChromaColorKeyColor" class="name">
       setChromaColorKeyColor
     </h1>
-    <pre><code>param: (value: Color)
+    <pre><code>param: value&lt;Color&gt;
 </code></pre>
-<p>Sets the color setting for keying in color key mode.</p>
+<p><em>Chainable.</em></p>
 
   </section>
 
@@ -641,6 +788,7 @@
     <pre><code>param: value&lt;boolean&gt;
 </code></pre>
 <p>Set item to visible or hidden</p>
+<p><em>Chainable.</em></p>
 
   </section>
 
@@ -663,6 +811,7 @@
     <pre><code>param: value&lt;Transition&gt;
 </code></pre>
 <p>Set item&#39;s transition type for when visibility is toggled</p>
+<p><em>Chainable.</em></p>
 
   </section>
 
@@ -685,6 +834,7 @@
     <pre><code>param: value&lt;number&gt;
 </code></pre>
 <p>Set item&#39;s transition time in milliseconds</p>
+<p><em>Chainable.</em></p>
 
   </section>
 
@@ -707,6 +857,7 @@
     <pre><code>param: config&lt;JSON&gt;
 </code></pre>
 <p>Persists a JSON object for configuration. Available to sources only.</p>
+<p><em>Chainable.</em></p>
 
   </section>
 
@@ -718,6 +869,7 @@
     <pre><code>param: config&lt;JSON&gt;
 </code></pre>
 <p>Requests the source to save a configuration. This makes the source emit the save-config event.</p>
+<p><em>Chainable.</em></p>
 
   </section>
 
@@ -729,10 +881,11 @@
     <pre><code>param: config&lt;JSON&gt;
 </code></pre>
 <p>Requests the source to save a configuration. This makes the source emit the apply-config event.</p>
+<p><em>Chainable.</em></p>
 
   </section>
 
 <p class="module defined-in">exported from <a href='#/core'>core</a><br/>
-defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/core/item/html.ts#L16-L522">../src/core/item/html.ts (line 16)</a>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/core/item/html.ts#L18-L1014">../src/core/item/html.ts (line 18)</a>
 </p>
 

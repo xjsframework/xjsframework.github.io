@@ -1,0 +1,41 @@
+
+<h1 class="class export">ExtensionWindow <span class="type">class</span></h1>
+<p><p>This utility class represents the extension window. It allows manipulation
+ of the window (e.g., resizing), and also serves as an event emitter
+ for all events that the window should be able to handle.</p>
+<p> Currently, only the following event is available:</p>
+<ul>
+<li><p><code>scene-load</code>: notifies in the event of a scene change. Handler is a function f(sceneNumber: number)</p>
+<p>Use the <code>on(event: string, handler: Function)</code> function to listen to an event.</p>
+</li>
+</ul>
+</p><h2>Members</h2>
+  <section class="member constructor">
+    <h1 id="constructor" class="name">constructor</h1>
+          <p>Use getInstance() instead.</p>
+      
+  </section>
+
+  <section class="member">
+    <h1 id="resize" class="name">
+      resize
+    </h1>
+     <pre><code>param: (width: number, height: number)
+ </code></pre>
+ <p>Resizes this extension&#39;s window.</p>
+ 
+  </section>
+
+
+  <section class="member static">
+    <h1 id="getInstance" class="name">
+      <code>static</code> getInstance
+    </h1>
+          <p>Gets the instance of the window utility. Use this instead of the constructor.</p>
+      
+  </section>
+
+<p class="module defined-in">exported from <a href='#/window'>window</a><br/>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/window/extension.ts#L8-L49">../src/window/extension.ts (line 8)</a>
+</p>
+

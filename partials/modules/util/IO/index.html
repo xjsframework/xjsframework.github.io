@@ -5,9 +5,12 @@
     <h1 id="getFileContent" class="name">
       <code>static</code> getFileContent
     </h1>
-    <pre><code>Returns a base-64 encoded string of the target file&#39;s contents.
+    <pre><code>param: (path: string)
 </code></pre>
-<p>UTF-8 encoded files may be decoded through:</p>
+<pre><code>return: Promise&lt;string&gt;
+</code></pre>
+<p>Returns a base-64 encoded string of the target file&#39;s contents.
+UTF-8 encoded files may be decoded through:</p>
 <pre><code class="lang-javascript">var decodedContent = decodeURIComponent(escape(window.atob(base64Content));
 </code></pre>
 
@@ -18,9 +21,12 @@
     <h1 id="getWebContent" class="name">
       <code>static</code> getWebContent
     </h1>
-    <pre><code>Returns a base-64 encoded string of the target endpoint&#39;s contents.
+    <pre><code>param: (url: string)
 </code></pre>
-<p>Redirects are resolved, and this bypasses access-control-allow-origin.</p>
+<pre><code>return: Promise&lt;string&gt;
+</code></pre>
+<p>Returns a base-64 encoded string of the target endpoint&#39;s contents.
+Redirects are resolved, and this bypasses access-control-allow-origin.</p>
 <p>UTF-8 encoded content may be decoded through:</p>
 <pre><code class="lang-javascript">var decodedContent = decodeURIComponent(escape(window.atob(base64Content));
 </code></pre>
@@ -32,8 +38,10 @@
     <h1 id="openUrl" class="name">
       <code>static</code> openUrl
     </h1>
-          <p>Opens a URL in the user&#39;s default browser. URLs need to</p>
-      
+    <pre><code>param: (url: string)
+</code></pre>
+<p>Opens a URL in the user&#39;s default browser. URL must specify HTTP or HTTPS.</p>
+
   </section>
 
 
@@ -41,9 +49,12 @@
     <h1 id="openFileDialog" class="name">
       <code>static</code> openFileDialog
     </h1>
-    <pre><code>Opens a file dialog for the user to select a file (or multiple files).
+    <pre><code>param: ([options] [, filter]) -- see below
 </code></pre>
-<p>Returns an array of strings, each of which contains the full path
+<pre><code>return: Promise&lt;string[]&gt;
+</code></pre>
+<p>Opens a file dialog for the user to select a file (or multiple files).
+Resolves with an array of strings, each of which contains the full path
 and filename of a selected file. Rejects when the dialog is canceled.</p>
 <p>The first (optional) argument is a JSON object that can be used to indicate
 that certain flags should be true. These are documented as follows:</p>
@@ -63,6 +74,6 @@ filter for items to be displayed. It takes two members:</p>
   </section>
 
 <p class="module defined-in">exported from <a href='#/util'>util</a><br/>
-defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/util/io.ts#L3-L107">../src/util/io.ts (line 3)</a>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/util/io.ts#L3-L124">../src/util/io.ts (line 3)</a>
 </p>
 

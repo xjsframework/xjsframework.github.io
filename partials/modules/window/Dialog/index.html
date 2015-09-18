@@ -1,231 +1,163 @@
 
-<h1 class="class export">Scene <span class="type">class</span></h1>
-<p></p><h2>Members</h2>
+<h1 class="class export">Dialog <span class="type">class</span></h1>
+<p><p>This class is used to spawn new browser processes that can be used to open
+ other URLS. Source plugins do not have this functionality (but their
+ configuration windows may use this.)</p>
+<p> Note that opening a new dialog replaces the old one.</p>
+<p> Most of the methods are chainable.</p>
+<p> Sample usage:</p>
+<pre><code class="lang-javascript">var xjs = require(&#39;xjs&#39;);
+var Dialog = xjs.Dialog;
+
+xjs.ready().then(function() {
+  var button = document.getElementById(&#39;openDialogButton&#39;);
+  button.addEventListener(&#39;click&#39;, function() {
+    xjs.Dialog.createDialog(&#39;your.url/here.html&#39;)
+    .setSize(500, 800)
+    .setTitle(&#39;ThisDialogReturnsAString&#39;)
+    .setBorderOptions(true, false)
+    .setButtons(true, true)
+    .show()
+    .getResult().then(function(result) {
+      document.getElementById(&#39;input&#39;).value = result;
+    });
+  });
+});
+
+// in the opened dialog, simply call
+// Dialog.return(&#39;returnedStringValue&#39;);
+// to return a value
+</code></pre>
+</p><h2>Members</h2>
   <section class="member constructor">
     <h1 id="constructor" class="name">constructor</h1>
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
   </section>
 
   <section class="member">
-    <h1 id="getSceneNumber" class="name">
-      getSceneNumber
+    <h1 id="setSize" class="name">
+      setSize
     </h1>
-    <pre><code>return: number
+    <pre><code>param: (width: number, height: number)
 </code></pre>
-<p>Get the 1-indexed scene number of this scene object.</p>
-<h4 id="usage">Usage</h4>
-<pre><code class="lang-javascript">myScene.getSceneNumber().then(function(num) {
- console.log(&#39;My scene is scene number &#39; + num);
-});
-</code></pre>
+<p> return: Dialog</p>
+<p> Sets the size of the dialog to be displayed.</p>
+<p><em>Chainable.</em></p>
 
   </section>
 
 
   <section class="member">
-    <h1 id="getName" class="name">
-      getName
+    <h1 id="setTitle" class="name">
+      setTitle
     </h1>
-    <pre><code>return: number
+    <pre><code>param: (title: string)
 </code></pre>
-<p>Get the name of this scene object.</p>
-<h4 id="usage">Usage</h4>
-<pre><code class="lang-javascript">myScene.getSceneName().then(function(name) {
- console.log(&#39;My scene is named &#39; + name);
-});
-</code></pre>
+<p> return: Dialog</p>
+<p> Sets the title of the dialog to be displayed.</p>
+<p><em>Chainable.</em></p>
 
   </section>
 
 
   <section class="member">
-    <h1 id="setName" class="name">
-      setName
+    <h1 id="setBorderOptions" class="name">
+      setBorderOptions
     </h1>
-    <pre><code>Set the name of this scene object. Cannot be set by source plugins.
+    <pre><code>param: (showBorder: boolean, resizable: boolean)
 </code></pre>
-<h4 id="usage">Usage</h4>
-<pre><code class="lang-javascript">myScene.setName(&#39;Gameplay&#39;);
-</code></pre>
+<p> return: Dialog</p>
+<p> Specifies the border and resizable flags for the dialog to be displayed.</p>
+<p><em>Chainable.</em></p>
 
   </section>
 
 
   <section class="member">
-    <h1 id="getItems" class="name">
-      getItems
+    <h1 id="setButtons" class="name">
+      setButtons
     </h1>
-    <pre><code>return: Promise&lt;Item[]&gt;
+    <pre><code>param: (isMinimizeActive: boolean, isMaximizeActive: boolean)
 </code></pre>
-<p>Gets all the items (sources) in a specific scene.
-See also: @{link #core/Item Core/Item}</p>
-<h4 id="usage">Usage</h4>
-<pre><code class="lang-javascript">myScene.getItems().then(function(items) {
- // do something to each item in items array
-});
-</code></pre>
+<p> return: Dialog</p>
+<p> Specifies if the window buttons (minimize and maximize) should be active.</p>
+<p><em>Chainable.</em></p>
 
   </section>
 
 
   <section class="member">
-    <h1 id="isEmpty" class="name">
-      isEmpty
+    <h1 id="show" class="name">
+      show
     </h1>
-    <pre><code>Checks if a scene is empty.
+    <pre><code>return: Dialog
 </code></pre>
-<h4 id="usage">Usage</h4>
-<pre><code class="lang-javascript">myScene.isEmpty().then(function(empty) {
-  if (empty === true) {
-    console.log(&#39;My scene is empty.&#39;);
-  }
-});
-</code></pre>
+<p> After configuring the dialog, call this function to spawn it.</p>
+<p><em>Chainable.</em></p>
 
   </section>
 
 
   <section class="member">
-    <h1 id="setItemOrder" class="name">
-      setItemOrder
+    <h1 id="getResult" class="name">
+      getResult
     </h1>
-    <pre><code>param: Array&lt;Item&gt; | Array&lt;string&gt; (item IDs)
+     <pre><code>return: Promise&lt;string&gt;
+ </code></pre>
+ <p>Gets the string result returned from the spawned dialog.</p>
+ 
+  </section>
+
+
+  <section class="member">
+    <h1 id="close" class="name">
+      close
+    </h1>
+          <p>Closes the dialog that this window spawned.</p>
+      
+  </section>
+
+
+  <section class="member static">
+    <h1 id="createDialog" class="name">
+      <code>static</code> createDialog
+    </h1>
+    <pre><code>param: (url: string)
 </code></pre>
-<pre><code>return: Promise&lt;Scene&gt;
-</code></pre>
-<p>Sets the item order of the current scene. The first item in the array will
-be on top (will cover items below it).</p>
+<p> return: Dialog</p>
+<p> Creates a Dialog object pointing to a URL. Call the other methods to
+ modify the dialog&#39;s properties, and <code>show()</code> to spawn the dialog.</p>
+<p><em>Chainable.</em></p>
 
   </section>
 
 
   <section class="member static">
-    <h1 id="getById" class="name">
-      <code>static</code> getById
+    <h1 id="createAutoDialog" class="name">
+      <code>static</code> createAutoDialog
     </h1>
-    <pre><code>return: Scene
+    <pre><code>param: (url: string)
 </code></pre>
-<p>Get a specific scene object given the scene number.</p>
-<h4 id="usage">Usage</h4>
-<pre><code class="lang-javascript">var scene1 = Scene.getById(1);
-</code></pre>
+<p> return: Dialog</p>
+<p> Creates a Dialog object pointing to a URL, that autocloses on an outside
+ click. AutoDialogs only have access to the <code>setSize</code> and <code>show</code> methods.</p>
+<p><em>Chainable.</em></p>
 
   </section>
 
 
   <section class="member static">
-    <h1 id="getByName" class="name">
-      <code>static</code> getByName
+    <h1 id="return" class="name">
+      <code>static</code> return
     </h1>
-    <pre><code>return: Promise&lt;Scene[]&gt;
-</code></pre>
-<p>Asynchronous functon to get a list of scene objects with a specific name.</p>
-<h4 id="usage">Usage</h4>
-<pre><code class="lang-javascript">var scenes = Scene.getByName(&#39;Game&#39;).then(function(scenes) {
-   // manipulate scenes
-});
-</code></pre>
-
+     <pre><code>param: (result: string)
+ </code></pre>
+ <p>Closes this dialog with an optional string result. (Call this from the
+ dialog.)</p>
+ 
   </section>
 
-
-  <section class="member static">
-    <h1 id="getActiveScene" class="name">
-      <code>static</code> getActiveScene
-    </h1>
-    <pre><code>return: Promise&lt;Scene&gt;
-</code></pre>
-<p>Get the currently active scene.</p>
-<h4 id="usage">Usage</h4>
-<pre><code class="lang-javascript">var myScene = Scene.getActiveScene();
-</code></pre>
-
-  </section>
-
-
-  <section class="member static">
-    <h1 id="setActiveScene" class="name">
-      <code>static</code> setActiveScene
-    </h1>
-    <pre><code>param: scene&lt;number|Scene&gt;
-</code></pre>
-<pre><code>return: Promise&lt;boolean&gt;
-</code></pre>
-<p>Change active scene. Does not work on source plugins.</p>
-
-  </section>
-
-
-  <section class="member static">
-    <h1 id="searchAllForItemId" class="name">
-      <code>static</code> searchAllForItemId
-    </h1>
-    <pre><code>return: Promise&lt;Item&gt;
-</code></pre>
-<p>Searches all scenes for an item by ID. ID search will return exactly 1 result (IDs are unique) or null.</p>
-<p>See also: @{link #core/Item Core/Item}</p>
-<h4 id="usage">Usage</h4>
-<pre><code class="lang-javascript">Scene.searchAllForItemId(&#39;{10F04AE-6215-3A88-7899-950B12186359}&#39;).then(function(item) {
-  // item is either an Item or null
-});
-</code></pre>
-
-  </section>
-
-
-  <section class="member static">
-    <h1 id="searchSceneWithItemId" class="name">
-      <code>static</code> searchSceneWithItemId
-    </h1>
-    <pre><code>return: Promise&lt;Scene&gt;
-</code></pre>
-<p>Searches all scenes for one that contains the given item ID.</p>
-<h4 id="usage">Usage</h4>
-<pre><code class="lang-javascript">Scene.searchSceneWithItemId(&#39;{10F04AE-6215-3A88-7899-950B12186359}&#39;).then(function(scene) {
-  // scene contains the item
-});
-</code></pre>
-
-  </section>
-
-
-  <section class="member static">
-    <h1 id="searchAllForItemName" class="name">
-      <code>static</code> searchAllForItemName
-    </h1>
-    <pre><code>return: Promise&lt;Item[]&gt;
-</code></pre>
-<p>Searches all scenes for an item by name substring.</p>
-<h4 id="usage">Usage</h4>
-<pre><code class="lang-javascript">Scene.searchAllForItemName(&#39;camera&#39;).then(function(items) {
-  // do something to each item in items array
-});
-</code></pre>
-
-  </section>
-
-
-  <section class="member static">
-    <h1 id="initializeScenes" class="name">
-      <code>static</code> initializeScenes
-    </h1>
-    <pre><code>return: Promise&lt;boolean&gt;
-</code></pre>
-<p>Load scenes that are not yet initialized in XSplit Broadcaster.</p>
-<p>Note: For memory saving purposes, this is not called automatically.
-If your extension wants to manipulate multiple scenes, it is imperative that you call this function.
-This function is only available to extensions.</p>
-<h4 id="usage">Usage</h4>
-<pre><code class="lang-javascript">Scene.initializeScenes().then(function(val) {
-  if (val === true) {
-    // Now you know that all scenes are loaded :)
-  }
-})
-</code></pre>
-
-  </section>
-
-<p class="module defined-in">exported from <a href='#/core'>core</a><br/>
-defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/core/scene.ts#L12-L571">../src/core/scene.ts (line 12)</a>
+<p class="module defined-in">exported from <a href='#/window'>window</a><br/>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/window/dialog.ts#L6-L238">../src/window/dialog.ts (line 6)</a>
 </p>
 

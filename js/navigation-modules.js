@@ -57,6 +57,12 @@ angular.module('navigation-modules', [])
           "type": "class"
         },
         {
+          "path": "core/Channel",
+          "partial": "partials/modules/core/Channel/index.html",
+          "name": "Channel",
+          "type": "class"
+        },
+        {
           "path": "core/CameraItem",
           "partial": "partials/modules/core/CameraItem/index.html",
           "name": "CameraItem",
@@ -180,6 +186,18 @@ angular.module('navigation-modules', [])
           "path": "window/SourcePluginWindow",
           "partial": "partials/modules/window/SourcePluginWindow/index.html",
           "name": "SourcePluginWindow",
+          "type": "class"
+        },
+        {
+          "path": "window/ExtensionWindow",
+          "partial": "partials/modules/window/ExtensionWindow/index.html",
+          "name": "ExtensionWindow",
+          "type": "class"
+        },
+        {
+          "path": "window/Dialog",
+          "partial": "partials/modules/window/Dialog/index.html",
+          "name": "Dialog",
           "type": "class"
         }
       ]

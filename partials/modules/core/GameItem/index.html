@@ -4,6 +4,7 @@
 also methods that is shared between Item Classes. The
 <a href='#core/Scene'>Scene</a> class&#39; getItems method would automatically return a
 GameItem object if there&#39;s a game item on the specified scene.</p>
+<p>Inherits from: <a href='#core/Item'>Core/Item</a></p>
 <h3 id="basic-usage">Basic Usage</h3>
 <pre><code class="lang-javascript">var XJS = require(&#39;xjs&#39;);
 
@@ -18,6 +19,8 @@ XJS.Scene.getActiveScene().then(function(scene) {
   });
 });
 </code></pre>
+<p> All methods marked as <em>Chainable</em> resolve with the original <code>GameItem</code>
+ instance.</p>
 </p><h2>Members</h2>
   <section class="member">
     <h1 id="isSpecialOptimizationEnabled" class="name">
@@ -37,6 +40,7 @@ XJS.Scene.getActiveScene().then(function(scene) {
     <pre><code>param: Promise&lt;boolean&gt;
 </code></pre>
 <p>Set Game Special Optimization to on or off</p>
+<p><em>Chainable.</em></p>
 
   </section>
 
@@ -59,6 +63,7 @@ XJS.Scene.getActiveScene().then(function(scene) {
     <pre><code>param: value&lt;boolean&gt;
 </code></pre>
 <p>Set Show Mouse in game to on or off</p>
+<p><em>Chainable.</em></p>
 
   </section>
 
@@ -70,6 +75,7 @@ XJS.Scene.getActiveScene().then(function(scene) {
     <pre><code>param: path&lt;string&gt;
 </code></pre>
 <p>Set the offline image of a game source</p>
+<p><em>Chainable.</em></p>
 
   </section>
 
@@ -125,6 +131,7 @@ XJS.Scene.getActiveScene().then(function(scene) {
     <pre><code>return: Promise&lt;Rectangle&gt;
 </code></pre>
 <p>Get the position of the item</p>
+<p>See also: <a href='#util/Rectangle'>Util/Rectangle</a></p>
 
   </section>
 
@@ -169,6 +176,7 @@ XJS.Scene.getActiveScene().then(function(scene) {
     <pre><code>param: value&lt;boolean&gt;
 </code></pre>
 <p>Set Aspect Ratio to ON or OFF</p>
+<p><em>Chainable.</em></p>
 
   </section>
 
@@ -180,6 +188,7 @@ XJS.Scene.getActiveScene().then(function(scene) {
     <pre><code>param: value&lt;boolean&gt;
 </code></pre>
 <p>Set Position Lock to ON or OFF</p>
+<p><em>Chainable.</em></p>
 
   </section>
 
@@ -191,6 +200,7 @@ XJS.Scene.getActiveScene().then(function(scene) {
     <pre><code>param: value&lt;boolean&gt;
 </code></pre>
 <p>Set Enhance Resize to ON or OFF</p>
+<p><em>Chainable.</em></p>
 
   </section>
 
@@ -202,6 +212,8 @@ XJS.Scene.getActiveScene().then(function(scene) {
     <pre><code>param: value&lt;Rectangle&gt;
 </code></pre>
 <p>Set Item position</p>
+<p><em>Chainable.</em></p>
+<p>See also: <a href='#util/Rectangle'>Util/Rectangle</a></p>
 
   </section>
 
@@ -213,6 +225,7 @@ XJS.Scene.getActiveScene().then(function(scene) {
     <pre><code>param: value&lt;number&gt;
 </code></pre>
 <p>Set Rotate Y value of the item</p>
+<p><em>Chainable.</em></p>
 
   </section>
 
@@ -224,6 +237,7 @@ XJS.Scene.getActiveScene().then(function(scene) {
     <pre><code>param: value&lt;number&gt;
 </code></pre>
 <p>Set Rotate X value of the item</p>
+<p><em>Chainable.</em></p>
 
   </section>
 
@@ -235,6 +249,7 @@ XJS.Scene.getActiveScene().then(function(scene) {
     <pre><code>param: value&lt;number&gt;
 </code></pre>
 <p>Set Rotate Z value of the item</p>
+<p><em>Chainable.</em></p>
 
   </section>
 
@@ -312,6 +327,7 @@ XJS.Scene.getActiveScene().then(function(scene) {
     <pre><code>param: value&lt;number&gt;
 </code></pre>
 <p>Set Item Transparency</p>
+<p><em>Chainable.</em></p>
 
   </section>
 
@@ -323,6 +339,7 @@ XJS.Scene.getActiveScene().then(function(scene) {
     <pre><code>param: value&lt;number&gt;
 </code></pre>
 <p>Set Item Brightness</p>
+<p><em>Chainable.</em></p>
 
   </section>
 
@@ -334,6 +351,7 @@ XJS.Scene.getActiveScene().then(function(scene) {
     <pre><code>param: value&lt;number&gt;
 </code></pre>
 <p>Set Item Contrast</p>
+<p><em>Chainable.</em></p>
 
   </section>
 
@@ -345,6 +363,7 @@ XJS.Scene.getActiveScene().then(function(scene) {
     <pre><code>param: value&lt;number&gt;
 </code></pre>
 <p>Set Item Hue</p>
+<p><em>Chainable.</em></p>
 
   </section>
 
@@ -356,6 +375,7 @@ XJS.Scene.getActiveScene().then(function(scene) {
     <pre><code>param: value&lt;number&gt;
 </code></pre>
 <p>Set Item Saturation</p>
+<p><em>Chainable.</em></p>
 
   </section>
 
@@ -367,6 +387,7 @@ XJS.Scene.getActiveScene().then(function(scene) {
     <pre><code>param: value&lt;Color&gt;
 </code></pre>
 <p>Set Border Color</p>
+<p><em>Chainable.</em></p>
 
   </section>
 
@@ -389,6 +410,7 @@ XJS.Scene.getActiveScene().then(function(scene) {
     <pre><code>param: (value: boolean)
 </code></pre>
 <p>Enables or disables chroma keying. Use together with <code>getKeyingType()</code>.</p>
+<p><em>Chainable.</em></p>
 
   </section>
 
@@ -411,6 +433,7 @@ XJS.Scene.getActiveScene().then(function(scene) {
     <pre><code>param: (value: KeyingType)
 </code></pre>
 <p>Sets the chroma keying scheme to any one of three possible choices: Chroma RGB Key, Color Key, or Legacy Mode.</p>
+<p><em>Chainable.</em></p>
 <p>After setting the keying type, you may tweak settings specific to that type.</p>
 <ul>
 <li>RGB Key: methods prefixed with <code>getChromaRGBKey-\*</code> or <code>setChromaRGBKey-\*</code></li>
@@ -439,6 +462,7 @@ XJS.Scene.getActiveScene().then(function(scene) {
     <pre><code>param: (value: ChromaAntiAliasLevel)
 </code></pre>
 <p>Sets the antialiasing level for chroma keying.</p>
+<p><em>Chainable.</em></p>
 
   </section>
 
@@ -461,6 +485,7 @@ XJS.Scene.getActiveScene().then(function(scene) {
     <pre><code>param: (value: number)
 </code></pre>
 <p>Sets the brightness setting (0-255). Only relevant when chroma keying is in Legacy mode.</p>
+<p><em>Chainable.</em></p>
 
   </section>
 
@@ -483,6 +508,7 @@ XJS.Scene.getActiveScene().then(function(scene) {
     <pre><code>param: (value: number)
 </code></pre>
 <p>Sets the saturation setting (0-255).  Only relevant when chroma keying is in Legacy mode.</p>
+<p><em>Chainable.</em></p>
 
   </section>
 
@@ -505,6 +531,7 @@ XJS.Scene.getActiveScene().then(function(scene) {
     <pre><code>param: (value: number)
 </code></pre>
 <p>Sets the hue setting (0-180).  Only relevant when chroma keying is in Legacy mode.</p>
+<p><em>Chainable.</em></p>
 
   </section>
 
@@ -527,6 +554,7 @@ XJS.Scene.getActiveScene().then(function(scene) {
     <pre><code>param: (value: number)
 </code></pre>
 <p>Sets the threshold setting (0-255). Only relevant when chroma keying is in Legacy mode.</p>
+<p><em>Chainable.</em></p>
 
   </section>
 
@@ -549,6 +577,7 @@ XJS.Scene.getActiveScene().then(function(scene) {
     <pre><code>param: (value: number)
 </code></pre>
 <p>Sets the alpha smoothing setting (0-255). Only relevant when chroma keying is in Legacy mode.</p>
+<p><em>Chainable.</em></p>
 
   </section>
 
@@ -571,6 +600,7 @@ XJS.Scene.getActiveScene().then(function(scene) {
     <pre><code>param: (value: ChromaPrimaryColors)
 </code></pre>
 <p>Sets the primary color setting for chroma key. Only relevant when chroma keying is in RGB mode.</p>
+<p><em>Chainable.</em></p>
 
   </section>
 
@@ -593,6 +623,7 @@ XJS.Scene.getActiveScene().then(function(scene) {
     <pre><code>param: (value: number)
 </code></pre>
 <p>Sets the threshold setting (0-255). Only relevant when chroma keying is in RGB mode.</p>
+<p><em>Chainable.</em></p>
 
   </section>
 
@@ -615,6 +646,7 @@ XJS.Scene.getActiveScene().then(function(scene) {
     <pre><code>param: (value: number)
 </code></pre>
 <p>Sets the exposure setting (0-255). Only relevant when chroma keying is in RGB mode.</p>
+<p><em>Chainable.</em></p>
 
   </section>
 
@@ -637,6 +669,7 @@ XJS.Scene.getActiveScene().then(function(scene) {
     <pre><code>param: (value: number)
 </code></pre>
 <p>Sets the threshold setting (0-255). Only relevant when chroma keying is in color key mode.</p>
+<p><em>Chainable.</em></p>
 
   </section>
 
@@ -659,6 +692,7 @@ XJS.Scene.getActiveScene().then(function(scene) {
     <pre><code>param: (value: number)
 </code></pre>
 <p>Sets the exposure setting (0-255). Only relevant when chroma keying is in color key mode.</p>
+<p><em>Chainable.</em></p>
 
   </section>
 
@@ -681,6 +715,7 @@ XJS.Scene.getActiveScene().then(function(scene) {
     <pre><code>param: (value: Color)
 </code></pre>
 <p>Sets the color setting for keying in color key mode.</p>
+<p><em>Chainable.</em></p>
 
   </section>
 
@@ -703,6 +738,7 @@ XJS.Scene.getActiveScene().then(function(scene) {
     <pre><code>param: value&lt;boolean&gt;
 </code></pre>
 <p>Set item to visible or hidden</p>
+<p><em>Chainable.</em></p>
 
   </section>
 
@@ -725,6 +761,7 @@ XJS.Scene.getActiveScene().then(function(scene) {
     <pre><code>param: value&lt;Transition&gt;
 </code></pre>
 <p>Set item&#39;s transition type for when visibility is toggled</p>
+<p><em>Chainable.</em></p>
 
   </section>
 
@@ -747,10 +784,11 @@ XJS.Scene.getActiveScene().then(function(scene) {
     <pre><code>param: value&lt;number&gt;
 </code></pre>
 <p>Set item&#39;s transition time in milliseconds</p>
+<p><em>Chainable.</em></p>
 
   </section>
 
 <p class="module defined-in">exported from <a href='#/core'>core</a><br/>
-defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/core/item/game.ts#L17-L589">../src/core/item/game.ts (line 17)</a>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/core/item/game.ts#L17-L664">../src/core/item/game.ts (line 17)</a>
 </p>
 
