@@ -19,7 +19,7 @@ $(document).ready(function() {
       .replace(/^\//,'') === this.pathname.replace(/^\//,'') &&
       location.hostname == this.hostname) {
       var target = $(this.hash);
-      target = target.length ? target : 
+      target = target.length ? target :
       $('[name=' + this.hash.slice(1) +']');
       if (target.length) {
         $('html,body').animate({
@@ -61,9 +61,6 @@ $(document).ready(function() {
   $window.scroll(setSticky);
 
   $download.on('click', function() {
-    var link = document.createElement('a');
-    link.download = 'xjs.js';
-    link.href = 'http://cdn2.xsplit.com/xjs/download/sourceplugin.zip';
-    link.click();
-  })
+    window.location = 'http://cdn2.xsplit.com/xjs/download/sourceplugin.zip';
+  });
 });
