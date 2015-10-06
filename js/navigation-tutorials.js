@@ -26,6 +26,11 @@ angular.module('navigation-tutorials', [])
       "path": "debugging",
       "partial": "tutorials/debugging",
       "name": "Debugging Your Plugins"
+    },
+    {
+      "path": "authentication",
+      "partial": "tutorials/authentication",
+      "name": "Authenticating to External Services"
     }
   ]
 });

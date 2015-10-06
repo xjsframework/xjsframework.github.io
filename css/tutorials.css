@@ -30,7 +30,8 @@ span a, p a {
 }
 
 p code,
-ul code {
+ul code,
+ol code {
   background: #f7fafb;
   border: #e3edf3 1px solid;
   border-radius: 2px;
