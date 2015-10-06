@@ -3,7 +3,10 @@
 <p><p>This class is used to spawn new browser processes that can be used to open
  other URLS. Source plugins do not have this functionality (but their
  configuration windows may use this.)</p>
-<p> Note that opening a new dialog replaces the old one.</p>
+<p> Note that opening a new dialog replaces the old one. Also, dialogs are
+ considered to be the same type of window as their parent windows: e.g.,
+ dialogs from extension windows are considered by the framework to have
+ access to the same functions as extensions.</p>
 <p> Most of the methods are chainable.</p>
 <p> Sample usage:</p>
 <pre><code class="lang-javascript">var xjs = require(&#39;xjs&#39;);
@@ -24,9 +27,9 @@ xjs.ready().then(function() {
   });
 });
 
-// in the opened dialog, simply call
-// Dialog.return(&#39;returnedStringValue&#39;);
-// to return a value
+// in the opened dialog, call Dialog.return() to return a value
+//
+// see documentation below for more details
 </code></pre>
 </p><h2>Members</h2>
   <section class="member constructor">
@@ -41,7 +44,7 @@ xjs.ready().then(function() {
     <pre><code>param: (width: number, height: number)
 </code></pre>
 <p> return: Dialog</p>
-<p> Sets the size of the dialog to be displayed.</p>
+<p> Sets the size in pixels of the dialog to be displayed.</p>
 <p><em>Chainable.</em></p>
 
   </section>
@@ -150,7 +153,7 @@ xjs.ready().then(function() {
     <h1 id="return" class="name">
       <code>static</code> return
     </h1>
-     <pre><code>param: (result: string)
+     <pre><code>param: (result ?: string)
  </code></pre>
  <p>Closes this dialog with an optional string result. (Call this from the
  dialog.)</p>
@@ -158,6 +161,6 @@ xjs.ready().then(function() {
   </section>
 
 <p class="module defined-in">exported from <a href='#/window'>window</a><br/>
-defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/window/dialog.ts#L6-L238">../src/window/dialog.ts (line 6)</a>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/window/dialog.ts#L6-L241">../src/window/dialog.ts (line 6)</a>
 </p>
 

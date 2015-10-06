@@ -211,8 +211,14 @@ XJS.Scene.getActiveScene().then(function(scene) {
     </h1>
     <pre><code>param: value&lt;Rectangle&gt;
 </code></pre>
-<p>Set Item position</p>
+<p>Set Item Position. Relative coordinates (0-1) are required.</p>
 <p><em>Chainable.</em></p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">var rect = xjs.Rectangle.fromCoordinates(0, 0, 1, 1);
+item.setPosition(rect).then(function(item) {
+  // Promise resolves with same Item instance
+});
+</code></pre>
 <p>See also: <a href='#util/Rectangle'>Util/Rectangle</a></p>
 
   </section>
@@ -789,6 +795,6 @@ XJS.Scene.getActiveScene().then(function(scene) {
   </section>
 
 <p class="module defined-in">exported from <a href='#/core'>core</a><br/>
-defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/core/item/game.ts#L17-L664">../src/core/item/game.ts (line 17)</a>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/core/item/game.ts#L17-L673">../src/core/item/game.ts (line 17)</a>
 </p>
 

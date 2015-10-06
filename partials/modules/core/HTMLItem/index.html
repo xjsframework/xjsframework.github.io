@@ -166,8 +166,9 @@ in order to remove any BrowserJS previously executed.</p>
     </h1>
     <pre><code>return: Promise&lt;Rectangle&gt;
 </code></pre>
-<p>Gets the custom browser window size for the source, if set,
-regardless of its layout on the mixer</p>
+<p>Gets the custom browser window size (in pixels) for the source, if set,
+regardless of its layout on the mixer. Returns a (0, 0) Rectangle if no
+custom size has been set.</p>
 <p>See also: <a href='#util/Rectangle'>Util/Rectangle</a></p>
 
   </section>
@@ -309,8 +310,14 @@ regardless of its layout on the mixer</p>
     </h1>
     <pre><code>param: value&lt;Rectangle&gt;
 </code></pre>
-<p>Set Item position</p>
+<p>Set Item Position. Relative coordinates (0-1) are required.</p>
 <p><em>Chainable.</em></p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">var rect = xjs.Rectangle.fromCoordinates(0, 0, 1, 1);
+item.setPosition(rect).then(function(item) {
+  // Promise resolves with same Item instance
+});
+</code></pre>
 <p>See also: <a href='#util/Rectangle'>Util/Rectangle</a></p>
 
   </section>
@@ -886,6 +893,6 @@ regardless of its layout on the mixer</p>
   </section>
 
 <p class="module defined-in">exported from <a href='#/core'>core</a><br/>
-defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/core/item/html.ts#L18-L1014">../src/core/item/html.ts (line 18)</a>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/core/item/html.ts#L18-L1024">../src/core/item/html.ts (line 18)</a>
 </p>
 
