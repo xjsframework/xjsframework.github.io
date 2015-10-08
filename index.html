@@ -5,8 +5,11 @@
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600' rel='stylesheet' type='text/css'>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
     <link rel="stylesheet" type="text/css" href="css/index.css"></style>
+
+    <link rel="import" href="polymer_elements/navbar/navbar.html">
 </head>
 <body>
+  <xsplit-navbar></xsplit-navbar>
   <div id="wrap">
     <div id="logo"></div>
     <div id="subtitle">The development framework for building awesome XSplit Broadcaster Plugins</div>
@@ -15,7 +18,15 @@
       <button id="download"></button>
     </div>
   </div>
-  <div id="copyright"><span>&copy; 2015 <strong>SplitmediaLabs,</strong> Ltd. All Rights Reserved.</span></div>
+  <div id="copyright">
+    <span>
+      &copy; 2015 <strong>SplitmediaLabs,</strong> Ltd. All Rights Reserved.
+      <span id="links">
+        <a href="https://www.xsplit.com/">XSplit</a> <span>|</span>
+        <a href="https://developers.xsplit.com">XSplit Developers</a>
+      </span>
+    </span>
+  </div>
 
   <script>
   document.getElementById('getStarted').addEventListener('click', function(e) {

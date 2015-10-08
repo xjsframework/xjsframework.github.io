@@ -90,3 +90,16 @@ body * {
   color: #518CCF;
   width: 100%;
 }
+
+#links {
+  margin: 0 10px;
+}
+
+#links a {
+  color: #518CCF;
+  text-decoration: none;
+}
+
+#links a:hover {
+  text-decoration: underline;
+}
