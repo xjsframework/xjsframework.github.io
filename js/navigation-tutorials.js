@@ -26,6 +26,11 @@ angular.module('navigation-tutorials', [])
       "path": "debugging",
       "partial": "tutorials/debugging",
       "name": "Debugging Your Plugins"
+    },
+    {
+      "path": "dll",
+      "partial": "tutorials/dll",
+      "name": "Using DLLs for Extensibility"
     }
   ]
 });

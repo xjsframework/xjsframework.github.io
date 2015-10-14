@@ -1,0 +1,28 @@
+<h1>Using DLLs for Extensibility</h1>
+
+<h2>Using DLLs</h2>
+
+<p>XSplit Broadcaster allows you to create and use DLLs for your plugins. We are currently exposing a number of DLL calls from our internal DLLs for you to use. At the moment there are two types of functions that our DLLs provide:</p>
+<ol>
+  <li>No callback: these return a string result immediately</li>
+  <li>With callback: these may optionally return a string result, but calling these functions will cause the DLL to call a global callback function at least once. (Some of these callbacks may be called multiple times, as in the case of event notifications.)</li>
+</ol>
+
+<p><i>Important note:</i> DLLs are only currently accessible if they are manually placed within the <code>Scriptdlls</code> folder of XSplit Broadcaster. Bundling with the plugins will be handled in a future update. The current method of invoking DLL functions may change in the future as the framework is improved.</p>
+
+<h4>Calling functions</h4>
+<p>Simply use the DLL module's <code>callFunction()</code> call. The first parameter is the function name, and you may supply any number of additional parameters for the DLL function call. Sample code follows:</p>
+<p><code>  var Dll = require('xjs').Dll;
+  Dll.callFunction('xsplit.EnumProcesses');
+  // sample return value: "0,4,456,608,724,856,864,940,972,620,1012"</code></p>
+
+<h4>Callback usage</h4>
+<p>To handle your DLL callback, just assign a handler function in the global namespace. Consult your DLL documentation for the function names.</p>
+<p><code>  window.OnInputHookEvent = function(msg, wparam, lparam) {
+    // handle values from xsplit.HookSubscribe DLL call
+  }</code>
+
+<h2>Existing XSplit DLL documentation</h2>
+
+The following sections outline the DLL calls that are accessible to any plugin developer using XSplit's own DLLs.
+
