@@ -23,6 +23,11 @@ angular.module('navigation-tutorials', [])
       "name": "Developing Extension Plugins"
     },
     {
+      "path": "errors",
+      "partial": "tutorials/errors",
+      "name": "Common Errors"
+    },
+    {
       "path": "debugging",
       "partial": "tutorials/debugging",
       "name": "Debugging Your Plugins"

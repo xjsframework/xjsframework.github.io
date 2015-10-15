@@ -11,9 +11,3 @@
   <li><strong>Manipulating sources.</strong> Extensions are allowed to manipulate sources, their properties, and even their custom configuration objects just as a configuration window might, as detailed <a href="tutorials.html#/sourceconfig#man-config-obj">here</a>. (Please see the Issues section below for some relevant information.)</li>
   <li><strong>Setting application-wide properties.</strong> Extensions are much more powerful than sources and are able to manipulate the application itself. For example, they may use the App class change the transition settings when changing scenes. See the <a href="api.html">API reference</a> for more information.</li>
 </ul>
-<h3>Issues and possible gotchas</h3>
-<p>This section details some of the current issues related to extensions and/or the framework in general.</p>
-<ul>
-  <li><strong>Non-active sources.</strong> When manipulating source properties, it is currently not possible to change any of their properties if the item is not in the currently active scene, or if “Keep Source in Memory” is not checked for that item.</li>
-  <li><strong>Handling multiple scenes.</strong> If your extension requires manipulation of more scenes, it is imperative that the scenes be initialized first. You can do this by calling `Scene.initializeScenes()`. This function is not automatically called by the framework for memory purposes. </li>
-</ul>

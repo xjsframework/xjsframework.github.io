@@ -1,0 +1,19 @@
+<h1>Authenticating to External Services</h1>
+<p>Many plugins will require authentication to services before they can provide their main functionality. Many source plugins use these services to fetch relevant data to be displayed on the stage. Standard authentication processes such as OAuth will be tricky to implement because there are limits to the configuration window (such as auto-hiding of the window when focus is lost), so we are providing this recommended pattern for authentication. <em>This tutorial is primarily for source plugins, but is also applicable to extensions.</em></p>
+
+<ol>
+  <li>Your source plugin's configuration window should have some kind of authentication button (that can also be used to deauthenticate.)
+  <ul>
+    <li>You can check if some authentication token already exists on the machine. If an entry exists in memory<sup>1</sup>, then you can skip the rest of the steps and simply obtain the saved authentication data (such as a user name or a channel name.)</li>
+    <li>This means that when the user wants to deauthenticate, your plugin should remove the entry from local storage, and clear all cookies using <code>App.clearBrowserCookies()</code><sup>1</sup> for the next authentication action.</li>
+  </ul></li>
+  <li>Clicking this button should open a new dialog (see <a href="api.html#/window/Dialog" target="_blank"><code>createDialog()</code></a>) to a URL you control. This URL can contain a page that contacts the external service's authentication protocol, optionally requests for any additional authorization from the service, and finally, retrieves any pertinent information.<ul><li>Pertinent information may include user name, or authentication token, as required by the plugin.</li>
+  </ul></li>
+  <li>When the process completes (and returns information), the dialog should call <a href="api.html#/window/Dialog" target="_blank"><code>Dialog.return()</code></a><sup>2</sup> with the data relevant to your plugin. This closes the dialog.</li>
+  <li>This result is captured by the <a href="api.html#/window/Dialog" target="_blank"><code>getResult()</code></a> method of the original Dialog object within the context of the configuration window. Note that this function can only accept strings.</li>
+  <li>Save the result into local storage<sup>1</sup>. To accommodate any other plugins, you should also clear all cookies using <code>App.clearBrowserCookies()</code>. You should now have the necessary data for your plugin to work.</li>
+</ol>
+
+<p><sup>1</sup> Your service should ideally not depend on cookies for storing authentication, because it is possible for other plugins to erase all cookies in the application. We suggest the use of the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Storage/LocalStorage" target="_new">localStorage API</a>.</p>
+
+<p><sup>2</sup> <code>Dialog.return()</code> is made available for pages that also include <code>xjs.js</code>, as all dialogs can still perform framework-related functions. For lightweight dialogs that simply need to return a value, you may simply execute the following native calls: <br /><br /><code>external.SetDialogResult('string');</code><br /><code>external.Close();</code></p>
