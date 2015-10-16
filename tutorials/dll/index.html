@@ -24,5 +24,224 @@
 
 <h2>Existing XSplit DLL documentation</h2>
 
-The following sections outline the DLL calls that are accessible to any plugin developer using XSplit's own DLLs.
+<p>The following sections outline the DLL calls that are accessible to any plugin developer using XSplit's own DLLs. Note that DLL call return types will always be <code>string</code>. <em>If you find any bugs with the XSplit DLLs, please file an issue at the framework's <a href='https://github.com/xjsframework/xjs/issues/new' target='_new'>Github page.</a></em></p>
 
+<table>
+  <caption>XSplitScriptPlugin.dll</caption>
+  <thead>
+    <tr>
+      <th>Function name</th>
+      <th>Parameters</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>xsplit.EnumParentWindows</code></td>
+      <td></td>
+      <td>list all window handles of visible, non-transparent, non-minimized windows for all processes</td>
+    </tr>
+
+    <tr>
+      <td><code>xsplit.EnumProcesses</code></td>
+      <td></td>
+      <td></td>
+    </tr>
+
+    <tr>
+      <td><code>xsplit.GetForegroundWindow</code></td>
+      <td></td>
+      <td></td>
+    </tr>
+
+    <tr>
+      <td><code>xsplit.GetWindowState</code></td>
+      <td>windowHandle</td>
+      <td></td>
+    </tr>
+
+    <tr>
+      <td><code>xsplit.GetWindowProcessId</code></td>
+      <td>windowHandle</td>
+      <td></td>
+    </tr>
+
+    <tr>
+      <td><code>xsplit.GetProcessDetails</code></td>
+      <td>processId</td>
+      <td></td>
+    </tr>
+
+    <tr>
+      <td><code>xsplit.GetProcessModules</code></td>
+      <td>processId</td>
+      <td></td>
+    </tr>
+
+    <tr>
+      <td><code>xsplit.GetProcessWindowsList</code></td>
+      <td>processId</td>
+      <td></td>
+    </tr>
+
+    <tr>
+      <td><code>xsplit.GetWindowTitle</code></td>
+      <td>windowHandle</td>
+      <td></td>
+    </tr>
+
+    <tr>
+      <td><code>xsplit.GetWindowClassName</code></td>
+      <td>windowHandle</td>
+      <td></td>
+    </tr>
+
+    <tr>
+      <td><code>xsplit.GetSysCpuUsage</code></td>
+      <td>string of the format <code>&lt;idleTime&gt;,&lt;kernelTime&gt;,&lt;userTime&gt;</code>.<br /><br />
+        Pass 0 for above values on initial call. On succeeding calls, use values returned from previous call.
+      </td>
+      <td>Get CPU Usage for system. Returns a string of the format <code>&lt;usage&gt;|&lt;idleTime&gt;,&lt;kernelTime&gt;,&lt;userTime&gt;</code></td>
+    </tr>
+
+    <tr>
+      <td><code>xsplit.GetProcCpuUsage</code></td>
+      <td>string of the format <code>&lt;processId&gt;,&lt;idleTime&gt;,&lt;kernelTime&gt;,&lt;userTime&gt;</code>.<br /><br />
+        Pass 0 for non-<code>processId</code> values on initial call. On succeeding calls, use values returned from previous call.
+      </td>
+      <td>Get CPU Usage for process identified by <code>processId</code>. Returns a string of the format <code>&lt;usage&gt;|&lt;processId&gt;,&lt;idleTime&gt;,&lt;kernelTime&gt;,&lt;userTime&gt;</code></td>
+    </tr>
+
+    <tr>
+      <td><code>xsplit.GetSysMemoryUsage</code></td>
+      <td></td>
+      <td></td>
+    </tr>
+
+    <tr>
+      <td><code>xsplit.GetProcMemoryUsage</code></td>
+      <td>processId</td>
+      <td></td>
+    </tr>
+
+  </tbody>
+</table>
+<br />
+<table>
+  <caption>XSplitScriptPluginInternal.dll</caption>
+  <thead>
+    <tr>
+      <th>Function name</th>
+      <th>Parameters</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>xsplit.Copy</code></td>
+      <td>source, target</td>
+      <td>Returns an async ID, which can be used for the other related calls.</td>
+    </tr>
+
+    <tr>
+      <td><code>xsplit.CopyCancel</code></td>
+      <td>async ID</td>
+      <td></td>
+    </tr>
+
+    <tr>
+      <td><code>xsplit.CopyPause</code></td>
+      <td>async ID</td>
+      <td></td>
+    </tr>
+
+    <tr>
+      <td><code>xsplit.CopyResume</code></td>
+      <td>async ID</td>
+      <td></td>
+    </tr>
+
+    <tr>
+      <td><code>xsplit.CreateFolder</code></td>
+      <td>target</td>
+      <td>Returns "true" only if folder is created.</td>
+    </tr>
+
+    <tr>
+      <td><code>xsplit.Delete</code></td>
+      <td>source</td>
+      <td>Returns an async ID.</td>
+    </tr>
+
+    <tr>
+      <td><code>xsplit.Move</code></td>
+      <td>source, target</td>
+      <td>Returns an async ID.</td>
+    </tr>
+
+    <tr>
+      <td><code>xsplit.Progress</code></td>
+      <td>async ID</td>
+      <td>Returns progress percentage of file operation as identified by async ID.</td>
+    </tr>
+
+    <tr>
+      <td><code>xsplit.Write</code></td>
+      <td>filename, data, overwriteFlag, type<br /><br />
+        Overwrite flag must be 0 or 1. Type refers to file encoding type. Possible values are 1: Unicode, 2: UTF-8, 3: Base 64
+      </td>
+      <td>Writes to a file. Returns number of bytes written.</td>
+    </tr>
+
+    <tr>
+      <td><code>xsplit.Zip</code></td>
+      <td>input, zipPath, overwriteFlag<br /><br />
+        Overwrite flag must be 0 or 1. 1 means it will create a new zip containing only input as end result, and 0 means it will append to an existing zip file.
+      </td>
+      <td>Creates a zip archive</td>
+    </tr>
+
+    <tr>
+      <td><code>xsplit.ZipCancel</code></td>
+      <td>async ID</td>
+      <td></td>
+    </tr>
+
+    <tr>
+      <td><code>xsplit.ZipPause</code></td>
+      <td>async ID</td>
+      <td></td>
+    </tr>
+
+    <tr>
+      <td><code>xsplit.ZipResume</code></td>
+      <td>async ID</td>
+      <td></td>
+    </tr>
+
+    <tr>
+      <td><code>xsplit.Exists</code></td>
+      <td>item_path</td>
+      <td>Checks for the existence of a file or folder. Returns "1" if it exists, and "0" otherwise.</td>
+    </tr>
+
+    <tr>
+      <td><code>xsplit.HookSubscribe</code></td>
+      <td></td>
+      <td>Subscribes to global keyboard/mouse hook. Hook events will use the callback <code>OnInputHookEvent</code> with parameters:<br />
+      <ol>
+        <li><code>msg</code> - one of this values <code>WM_KEYDOWN</code>, <code>WM_KEYUP</code>, <code>WM_SYSKEYDOWN</code>, or <code>WM_SYSKEYUP</code> for keyboard events, or <code>WM_LBUTTONDOWN</code>, <code>WM_LBUTTONUP</code>, <code>WM_MOUSEMOVE</code>, <code>WM_MOUSEWHEEL</code>, <code>WM_MOUSEHWHEEL</code>, <code>WM_RBUTTONDOWN</code>, or <code>WM_RBUTTONUP</code>. - for mouse events.</li>
+        <li><code>wparam</code></li>
+        <li><code>lparam</code></li>
+      </ol>
+      For more information on the parameters, check <a href='https://msdn.microsoft.com/en-us/library/windows/desktop/ms646280(v=vs.85).aspx' target='_new'>this reference.</a>
+      </td>
+    </tr>
+
+    <tr>
+      <td><code>xsplit.HookUnsubscribe</code></td>
+      <td></td>
+      <td>Unsubscribe from global keyboard/mouse hook.</td>
+    </tr>
+  </tbody>
+</table>
