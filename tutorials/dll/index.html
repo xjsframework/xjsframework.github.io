@@ -12,15 +12,15 @@
 
 <h4>Calling functions</h4>
 <p>Simply use the DLL module's <code>callFunction()</code> call. The first parameter is the function name, and you may supply any number of additional parameters for the DLL function call. Sample code follows:</p>
-<p><code>  var Dll = require('xjs').Dll;
+<p><pre class="language-javascript"><code>  var Dll = require('xjs').Dll;
   Dll.callFunction('xsplit.EnumProcesses');
-  // sample return value: "0,4,456,608,724,856,864,940,972,620,1012"</code></p>
+  // sample return value: "0,4,456,608,724,856,864,940,972,620,1012"</code></pre></p>
 
 <h4>Callback usage</h4>
 <p>To handle your DLL callback, just assign a handler function in the global namespace. Consult your DLL documentation for the function names.</p>
-<p><code>  window.OnInputHookEvent = function(msg, wparam, lparam) {
+<p><pre class="language-javascript"><code>  window.OnInputHookEvent = function(msg, wparam, lparam) {
     // handle values from xsplit.HookSubscribe DLL call
-  }</code>
+  }</code></pre>
 
 <h2>Existing XSplit DLL documentation</h2>
 
