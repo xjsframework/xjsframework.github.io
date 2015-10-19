@@ -41,6 +41,11 @@ ul code {
   white-space: pre-wrap;
 }
 
+pre code {
+  background: transparent;
+  border: 0;
+}
+
 p.center {
   text-align: center;
 }
