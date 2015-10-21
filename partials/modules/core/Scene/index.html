@@ -7,9 +7,9 @@
   </section>
 
   <section class="member">
-    <h1 id="getSceneNumber" class="name">
+    <a name="getSceneNumber"><h1 id="getSceneNumber" class="name">
       getSceneNumber
-    </h1>
+    </h1></a>
     <pre><code>return: number
 </code></pre>
 <p>Get the 1-indexed scene number of this scene object.</p>
@@ -23,9 +23,9 @@
 
 
   <section class="member">
-    <h1 id="getName" class="name">
+    <a name="getName"><h1 id="getName" class="name">
       getName
-    </h1>
+    </h1></a>
     <pre><code>return: number
 </code></pre>
 <p>Get the name of this scene object.</p>
@@ -39,9 +39,9 @@
 
 
   <section class="member">
-    <h1 id="setName" class="name">
+    <a name="setName"><h1 id="setName" class="name">
       setName
-    </h1>
+    </h1></a>
     <pre><code>Set the name of this scene object. Cannot be set by source plugins.
 </code></pre>
 <h4 id="usage">Usage</h4>
@@ -52,9 +52,9 @@
 
 
   <section class="member">
-    <h1 id="getItems" class="name">
+    <a name="getItems"><h1 id="getItems" class="name">
       getItems
-    </h1>
+    </h1></a>
     <pre><code>return: Promise&lt;Item[]&gt;
 </code></pre>
 <p>Gets all the items (sources) in a specific scene.
@@ -69,9 +69,9 @@ See also: <a href='#core/Item'>Core/Item</a></p>
 
 
   <section class="member">
-    <h1 id="isEmpty" class="name">
+    <a name="isEmpty"><h1 id="isEmpty" class="name">
       isEmpty
-    </h1>
+    </h1></a>
     <pre><code>Checks if a scene is empty.
 </code></pre>
 <h4 id="usage">Usage</h4>
@@ -86,9 +86,9 @@ See also: <a href='#core/Item'>Core/Item</a></p>
 
 
   <section class="member">
-    <h1 id="setItemOrder" class="name">
+    <a name="setItemOrder"><h1 id="setItemOrder" class="name">
       setItemOrder
-    </h1>
+    </h1></a>
     <pre><code>param: Array&lt;Item&gt; | Array&lt;string&gt; (item IDs)
 </code></pre>
 <pre><code>return: Promise&lt;Scene&gt;
@@ -100,9 +100,9 @@ be on top (will cover items below it).</p>
 
 
   <section class="member static">
-    <h1 id="getById" class="name">
+    <a name="getById"><h1 id="getById" class="name">
       <code>static</code> getById
-    </h1>
+    </h1></a>
     <pre><code>return: Scene
 </code></pre>
 <p>Get a specific scene object given the scene number.</p>
@@ -114,9 +114,9 @@ be on top (will cover items below it).</p>
 
 
   <section class="member static">
-    <h1 id="getByName" class="name">
+    <a name="getByName"><h1 id="getByName" class="name">
       <code>static</code> getByName
-    </h1>
+    </h1></a>
     <pre><code>return: Promise&lt;Scene[]&gt;
 </code></pre>
 <p>Asynchronous functon to get a list of scene objects with a specific name.</p>
@@ -130,9 +130,9 @@ be on top (will cover items below it).</p>
 
 
   <section class="member static">
-    <h1 id="getActiveScene" class="name">
+    <a name="getActiveScene"><h1 id="getActiveScene" class="name">
       <code>static</code> getActiveScene
-    </h1>
+    </h1></a>
     <pre><code>return: Promise&lt;Scene&gt;
 </code></pre>
 <p>Get the currently active scene.</p>
@@ -144,9 +144,9 @@ be on top (will cover items below it).</p>
 
 
   <section class="member static">
-    <h1 id="setActiveScene" class="name">
+    <a name="setActiveScene"><h1 id="setActiveScene" class="name">
       <code>static</code> setActiveScene
-    </h1>
+    </h1></a>
     <pre><code>param: scene&lt;number|Scene&gt;
 </code></pre>
 <pre><code>return: Promise&lt;boolean&gt;
@@ -157,15 +157,15 @@ be on top (will cover items below it).</p>
 
 
   <section class="member static">
-    <h1 id="searchAllForItemId" class="name">
-      <code>static</code> searchAllForItemId
-    </h1>
+    <a name="searchItemsById"><h1 id="searchItemsById" class="name">
+      <code>static</code> searchItemsById
+    </h1></a>
     <pre><code>return: Promise&lt;Item&gt;
 </code></pre>
 <p>Searches all scenes for an item by ID. ID search will return exactly 1 result (IDs are unique) or null.</p>
 <p>See also: <a href='#core/Item'>Core/Item</a></p>
 <h4 id="usage">Usage</h4>
-<pre><code class="lang-javascript">Scene.searchAllForItemId(&#39;{10F04AE-6215-3A88-7899-950B12186359}&#39;).then(function(item) {
+<pre><code class="lang-javascript">Scene.searchItemsById(&#39;{10F04AE-6215-3A88-7899-950B12186359}&#39;).then(function(item) {
   // item is either an Item or null
 });
 </code></pre>
@@ -174,14 +174,14 @@ be on top (will cover items below it).</p>
 
 
   <section class="member static">
-    <h1 id="searchSceneWithItemId" class="name">
-      <code>static</code> searchSceneWithItemId
-    </h1>
+    <a name="searchScenesByItemId"><h1 id="searchScenesByItemId" class="name">
+      <code>static</code> searchScenesByItemId
+    </h1></a>
     <pre><code>return: Promise&lt;Scene&gt;
 </code></pre>
 <p>Searches all scenes for one that contains the given item ID.</p>
 <h4 id="usage">Usage</h4>
-<pre><code class="lang-javascript">Scene.searchSceneWithItemId(&#39;{10F04AE-6215-3A88-7899-950B12186359}&#39;).then(function(scene) {
+<pre><code class="lang-javascript">Scene.searchScenesByItemId(&#39;{10F04AE-6215-3A88-7899-950B12186359}&#39;).then(function(scene) {
   // scene contains the item
 });
 </code></pre>
@@ -190,14 +190,16 @@ be on top (will cover items below it).</p>
 
 
   <section class="member static">
-    <h1 id="searchAllForItemName" class="name">
-      <code>static</code> searchAllForItemName
-    </h1>
+    <a name="searchItemsByName"><h1 id="searchItemsByName" class="name">
+      <code>static</code> searchItemsByName
+    </h1></a>
     <pre><code>return: Promise&lt;Item[]&gt;
 </code></pre>
-<p>Searches all scenes for an item by name substring.</p>
+<p>Searches all scenes for an item by name substring. This function compares
+against custom name first (recommended) before falling back to the name
+property of the source.</p>
 <h4 id="usage">Usage</h4>
-<pre><code class="lang-javascript">Scene.searchAllForItemName(&#39;camera&#39;).then(function(items) {
+<pre><code class="lang-javascript">Scene.searchItemsByName(&#39;camera&#39;).then(function(items) {
   // do something to each item in items array
 });
 </code></pre>
@@ -206,9 +208,55 @@ be on top (will cover items below it).</p>
 
 
   <section class="member static">
-    <h1 id="initializeScenes" class="name">
+    <a name="filterItems"><h1 id="filterItems" class="name">
+      <code>static</code> filterItems
+    </h1></a>
+    <pre><code>param: function(item, resolve)
+</code></pre>
+<pre><code>return: Promise&lt;Item[]&gt;
+</code></pre>
+<p>Searches all scenes for items that satisfies the provided testing function.</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">Scene.filterItems(function(item, resolve) {
+  // We&#39;ll only fetch Flash Items by resolving &#39;true&#39; if the item is an
+  // instance of FlashItem
+  resolve((item instanceof FlashItem));
+}).then(function(items) {
+  // items would either be an empty array if no Flash items was found, or
+  // an array of FlashItem objects
+});
+</code></pre>
+
+  </section>
+
+
+  <section class="member static">
+    <a name="filterScenesByItems"><h1 id="filterScenesByItems" class="name">
+      <code>static</code> filterScenesByItems
+    </h1></a>
+    <pre><code>param: function(item, resolve)
+</code></pre>
+<pre><code>return: Promise&lt;Scene[]&gt;
+</code></pre>
+<p>Searches all scenes for items that satisfies the provided testing function,
+and then return the scene that contains the item.</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">Scene.filterScenesByItems(function(item, resolve) {
+  // We&#39;ll only fetch the scenes with flash items by resolving &#39;true&#39; if
+  // the item is an instance of FlashItem
+  resolve((item instanceof FlashItem));
+}).then(function(scenes) {
+  // scenes would be an array of all scenes with FlashItems
+});
+</code></pre>
+
+  </section>
+
+
+  <section class="member static">
+    <a name="initializeScenes"><h1 id="initializeScenes" class="name">
       <code>static</code> initializeScenes
-    </h1>
+    </h1></a>
     <pre><code>return: Promise&lt;boolean&gt;
 </code></pre>
 <p>Load scenes that are not yet initialized in XSplit Broadcaster.</p>
@@ -226,6 +274,6 @@ This function is only available to extensions.</p>
   </section>
 
 <p class="module defined-in">exported from <a href='#/core'>core</a><br/>
-defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/core/scene.ts#L12-L571">../src/core/scene.ts (line 12)</a>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/core/scene.ts#L16-L691">../src/core/scene.ts (line 16)</a>
 </p>
 

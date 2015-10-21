@@ -14,9 +14,9 @@ System.getCameraDevices().then(function(cameras) {
 </code></pre>
 </p><h2>Members</h2>
   <section class="member static">
-    <h1 id="getAudioDevices" class="name">
+    <a name="getAudioDevices"><h1 id="getAudioDevices" class="name">
       <code>static</code> getAudioDevices
-    </h1>
+    </h1></a>
     <pre><code>return: Promise&lt;AudioDevice[]&gt;
 </code></pre>
 <p>Gets audio devices, both input and output
@@ -35,9 +35,9 @@ See also: <a href='#system/AudioDevice'>System/AudioDevice</a></p>
 
 
   <section class="member static">
-    <h1 id="getCameraDevices" class="name">
+    <a name="getCameraDevices"><h1 id="getCameraDevices" class="name">
       <code>static</code> getCameraDevices
-    </h1>
+    </h1></a>
     <pre><code>return: Promise&lt;CameraDevice[]&gt;
 </code></pre>
 <p>Gets all camera devices
@@ -53,9 +53,9 @@ See also: <a href='#system/CameraDevice'>System/CameraDevice</a></p>
 
 
   <section class="member static">
-    <h1 id="getGames" class="name">
+    <a name="getGames"><h1 id="getGames" class="name">
       <code>static</code> getGames
-    </h1>
+    </h1></a>
     <pre><code>return: Promise&lt;Game[]&gt;
 </code></pre>
 <p>Gets all currently running games
@@ -71,9 +71,9 @@ See also: <a href='#system/Game'>System/Game</a></p>
 
 
   <section class="member static">
-    <h1 id="getMicrophones" class="name">
+    <a name="getMicrophones"><h1 id="getMicrophones" class="name">
       <code>static</code> getMicrophones
-    </h1>
+    </h1></a>
     <pre><code>return: Promise&lt;MicrophoneDevice[]&gt;
 </code></pre>
 <p>Gets all audio capture devices that may be added to the stage
@@ -88,9 +88,32 @@ See also: <a href='#system/MicrophoneDevice'>System/MicrophoneDevice</a></p>
 
 
   <section class="member static">
-    <h1 id="getCursorPosition" class="name">
+    <a name="getFonts"><h1 id="getFonts" class="name">
+      <code>static</code> getFonts
+    </h1></a>
+    <pre><code>return: Promise&lt;string[]&gt;
+</code></pre>
+<p>Gets array of system-installed fonts</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">var mySelect = document.getElementById(&quot;mySelect&quot;);
+
+System.getSystemFonts().then(function(fontsArray) {
+  var fontsArrayLength = fontsArray.length;
+  for (var i = 0; i &lt; fontsArrayLength; ++i) {
+    var option = document.createElement(&quot;option&quot;);
+    option.text = &quot;Kiwi&quot;;
+    mySelect.add(option);
+  }
+});
+</code></pre>
+
+  </section>
+
+
+  <section class="member static">
+    <a name="getCursorPosition"><h1 id="getCursorPosition" class="name">
       <code>static</code> getCursorPosition
-    </h1>
+    </h1></a>
     <pre><code>return: Promise&lt;JSON&gt;
 </code></pre>
 <p>Gets the position of the cursor. Does not work on Source Plugins.</p>
@@ -105,9 +128,9 @@ See also: <a href='#system/MicrophoneDevice'>System/MicrophoneDevice</a></p>
 
 
   <section class="member static">
-    <h1 id="setCursorPosition" class="name">
+    <a name="setCursorPosition"><h1 id="setCursorPosition" class="name">
       <code>static</code> setCursorPosition
-    </h1>
+    </h1></a>
     <pre><code>param: JSON: {x: number, y: number}
 </code></pre>
 <p>Sets the position of the cursor. Does not work on Source Plugins.</p>
@@ -118,6 +141,6 @@ See also: <a href='#system/MicrophoneDevice'>System/MicrophoneDevice</a></p>
   </section>
 
 <p class="module defined-in">exported from <a href='#/system'>system</a><br/>
-defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/system/system.ts#L46-L265">../src/system/system.ts (line 46)</a>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/system/system.ts#L46-L302">../src/system/system.ts (line 46)</a>
 </p>
 

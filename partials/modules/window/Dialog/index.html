@@ -1,7 +1,7 @@
 
 <h1 class="class export">Dialog <span class="type">class</span></h1>
 <p><p>This class is used to spawn new browser processes that can be used to open
- other URLS. Source plugins do not have this functionality (but their
+ other URLs. Source plugins do not have this functionality (but their
  configuration windows may use this.)</p>
 <p> Note that opening a new dialog replaces the old one. Also, dialogs are
  considered to be the same type of window as their parent windows: e.g.,
@@ -38,9 +38,9 @@ xjs.ready().then(function() {
   </section>
 
   <section class="member">
-    <h1 id="setSize" class="name">
+    <a name="setSize"><h1 id="setSize" class="name">
       setSize
-    </h1>
+    </h1></a>
     <pre><code>param: (width: number, height: number)
 </code></pre>
 <p> return: Dialog</p>
@@ -51,9 +51,9 @@ xjs.ready().then(function() {
 
 
   <section class="member">
-    <h1 id="setTitle" class="name">
+    <a name="setTitle"><h1 id="setTitle" class="name">
       setTitle
-    </h1>
+    </h1></a>
     <pre><code>param: (title: string)
 </code></pre>
 <p> return: Dialog</p>
@@ -64,9 +64,9 @@ xjs.ready().then(function() {
 
 
   <section class="member">
-    <h1 id="setBorderOptions" class="name">
+    <a name="setBorderOptions"><h1 id="setBorderOptions" class="name">
       setBorderOptions
-    </h1>
+    </h1></a>
     <pre><code>param: (showBorder: boolean, resizable: boolean)
 </code></pre>
 <p> return: Dialog</p>
@@ -77,9 +77,9 @@ xjs.ready().then(function() {
 
 
   <section class="member">
-    <h1 id="setButtons" class="name">
+    <a name="setButtons"><h1 id="setButtons" class="name">
       setButtons
-    </h1>
+    </h1></a>
     <pre><code>param: (isMinimizeActive: boolean, isMaximizeActive: boolean)
 </code></pre>
 <p> return: Dialog</p>
@@ -90,9 +90,9 @@ xjs.ready().then(function() {
 
 
   <section class="member">
-    <h1 id="show" class="name">
+    <a name="show"><h1 id="show" class="name">
       show
-    </h1>
+    </h1></a>
     <pre><code>return: Dialog
 </code></pre>
 <p> After configuring the dialog, call this function to spawn it.</p>
@@ -102,9 +102,9 @@ xjs.ready().then(function() {
 
 
   <section class="member">
-    <h1 id="getResult" class="name">
+    <a name="getResult"><h1 id="getResult" class="name">
       getResult
-    </h1>
+    </h1></a>
      <pre><code>return: Promise&lt;string&gt;
  </code></pre>
  <p>Gets the string result returned from the spawned dialog.</p>
@@ -113,18 +113,18 @@ xjs.ready().then(function() {
 
 
   <section class="member">
-    <h1 id="close" class="name">
+    <a name="close"><h1 id="close" class="name">
       close
-    </h1>
+    </h1></a>
           <p>Closes the dialog that this window spawned.</p>
       
   </section>
 
 
   <section class="member static">
-    <h1 id="createDialog" class="name">
+    <a name="createDialog"><h1 id="createDialog" class="name">
       <code>static</code> createDialog
-    </h1>
+    </h1></a>
     <pre><code>param: (url: string)
 </code></pre>
 <p> return: Dialog</p>
@@ -136,9 +136,9 @@ xjs.ready().then(function() {
 
 
   <section class="member static">
-    <h1 id="createAutoDialog" class="name">
+    <a name="createAutoDialog"><h1 id="createAutoDialog" class="name">
       <code>static</code> createAutoDialog
-    </h1>
+    </h1></a>
     <pre><code>param: (url: string)
 </code></pre>
 <p> return: Dialog</p>
@@ -150,17 +150,22 @@ xjs.ready().then(function() {
 
 
   <section class="member static">
-    <h1 id="return" class="name">
+    <a name="return"><h1 id="return" class="name">
       <code>static</code> return
-    </h1>
+    </h1></a>
      <pre><code>param: (result ?: string)
  </code></pre>
- <p>Closes this dialog with an optional string result. (Call this from the
- dialog.)</p>
+ <p>Closes this dialog with an optional string result. For more complex
+ return values, try JSON.stringify. (Call this method from the dialog.)</p>
+ <p>As an alternative, lightweight dialogs that do not want to include xjs.js
+ may simply call native XBC methods to return a value.</p>
+ <pre><code class="lang-javascript">external.SetDialogResult(stringResult);
+ external.Close();
+ </code></pre>
  
   </section>
 
 <p class="module defined-in">exported from <a href='#/window'>window</a><br/>
-defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/window/dialog.ts#L6-L241">../src/window/dialog.ts (line 6)</a>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/window/dialog.ts#L7-L288">../src/window/dialog.ts (line 7)</a>
 </p>
 
