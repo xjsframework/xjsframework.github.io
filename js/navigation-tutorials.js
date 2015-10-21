@@ -23,6 +23,11 @@ angular.module('navigation-tutorials', [])
       "name": "Developing Extension Plugins"
     },
     {
+      "path": "es6",
+      "partial": "tutorials/es6",
+      "name": "Developing with ES6"
+    },
+    {
       "path": "debugging",
       "partial": "tutorials/debugging",
       "name": "Debugging Your Plugins"

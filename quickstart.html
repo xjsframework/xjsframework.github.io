@@ -35,6 +35,9 @@
             <a href="#bower">Getting Started using Bower</a>
           </li>
           <li>
+            <a href="#npm">Getting Started using NPM</a>
+          </li>
+          <li>
             <a href="#zipfile">Getting Started from ZIP files</a>
           </li>
           <li>
@@ -146,6 +149,24 @@ bower install xjs-framework</code></pre>
   &lt;MinFxVersion&gt;2.3.1505.0516&lt;/MinFxVersion&gt;
   &lt;Version&gt;0.1.0&lt;/Version&gt;
 &lt;/config&gt;</code></pre>
+        <hr />
+        <a id="npm" name="npm">
+          <h2>Getting started using NPM</h2>
+        </a>
+        <p>
+          Usage of NPM is similar to using Bower to fetch the XSplit JS Framework.
+        </p>
+        <h3>Installation</h3>
+        <p>
+          At this point, we already have npm installed. Just execute this in your CLI:
+        </p>
+        <pre class="language-shell"><code>npm install xjs-framework</code></pre>
+        <p>
+          This would create a <code>node_modules</code> folder. The relevant file is <code>node_modules/xjs-framework/dist/xjs.js</code>, which you should include in your plugin's HTML file. All other details of the project structure are up to you. Sample usage can be seen in the <a href="#sample">sample plugin code</a> below.
+        </p>
+        <p>
+          This approach also opens up an alternative coding method. You can create your plugins using TypeScript or ES6 due to the availability of the <code>package.json</code> file and the source code written in TypeScript. To learn more, see <a href="tutorials.html#/es6" target="_blank">our tutorials</a>.
+        </p>
         <hr />
         <a id="zipfile" name="zipfile">
           <h2>Getting started from ZIP files</h2>
