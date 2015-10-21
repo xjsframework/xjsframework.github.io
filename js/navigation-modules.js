@@ -513,6 +513,29 @@ angular.module('navigation-modules', [])
           ]
         },
         {
+          "path": "core/Extension",
+          "partial": "partials/modules/core/Extension/index.html",
+          "name": "Extension",
+          "type": "Class",
+          "pages": [
+            {
+              "path": "core/Extension#saveConfig",
+              "partial": "partials/modules/core/Extension/index.html",
+              "name": "saveConfig"
+            },
+            {
+              "path": "core/Extension#loadConfig",
+              "partial": "partials/modules/core/Extension/index.html",
+              "name": "loadConfig"
+            },
+            {
+              "path": "core/Extension#getInstance",
+              "partial": "partials/modules/core/Extension/index.html",
+              "name": "getInstance"
+            }
+          ]
+        },
+        {
           "path": "core/CameraItem",
           "partial": "partials/modules/core/CameraItem/index.html",
           "name": "CameraItem",
