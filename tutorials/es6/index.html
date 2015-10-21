@@ -1,8 +1,8 @@
 <h1>Developing with ES6</h1>
-<p>In order to use XSplit JS Framework on your ES6-based project, you will have to use Browserify and the loaders required to parse your ES6 code. The advantages of using ES6 is that you can utilize the modular nature of XSplit JS Framework to better organize your code.</p>
+<p>In order to use XSplit JS Framework on your ES6-based project, you will have to use some kind of bundler such as Browserify or Webpack, and the loaders required to parse your ES6 code. The advantages of using ES6, in addition to its improved language features, is that you can utilize the modular nature of XSplit JS Framework to better organize your code.</p>
 <p>On this tutorial, we will be using <a href="http://webpack.github.io/" target="_blank">Webpack</a> to bundle your code, and at the same time, transpile your ES6 code to ES5.</p>
 <h3>Using Webpack</h3>
-<p>Please head to their <a href="http://webpack.github.io/docs/installation.html" target="_blank">website</a> to get a glimps on how to configure webpack for your use. We will list the loaders that we would need to get our project running.</p>
+<p>Please head to their <a href="http://webpack.github.io/docs/installation.html" target="_blank">website</a> to get a glimpse on how to configure webpack for your use. We will list the loaders that we would need to get our project running.</p>
 <h4>NPM Modules needed</h4>
 <ul>
   <li><a href="http://webpack.github.io/">XJS Framework</a><pre class="language-shell"><code>npm install --save-dev xjs-framework</code></pre></li>
@@ -13,10 +13,10 @@
   <li><a href="https://github.com/babel/babel-loader" target="_blank">Babel-loader</a><pre class="language-shell"><code>npm install --save-dev babel-loader</code></pre></li>
   <li><a href="https://github.com/TypeStrong/ts-loader" target="_blank">TypeScript loader</a><pre class="language-shell"><code>npm install --save-dev ts-loader</code></pre></li>
 </ul>
-<p>You might notice that we also need a typescript loader. This is required since the source codes of XSplit JS Framework is written on TypeScript, so we would obviously need to have a loader for webpack to parse the files.</p>
-<p>Please do check out the documentation of webpack, babel-loader, and ts-loader on how to configure your webpack configuration file to load up both required loaders. This is necessary to transpile your ES6 code to ES5.</p>
+<p>You might notice that we also need a TypeScript loader. This is required since the source code of XSplit JS Framework is written in TypeScript.</p>
+<p>Please do check out the documentation of webpack, babel-loader, and ts-loader on how to configure your webpack configuration file to load up both required loaders.</p>
 <h4>Using XJS on ES6</h4>
-<p>Creating XSplit plugins with ES6 as your environment would allow you to import modules that you would only need on your individual modules. To better understand what we mean, here's an example code:</p>
+<p>Creating XSplit plugins with ES6 as your environment would allow you to import only modules that you need in your individual modules. To better understand what we mean, here's some sample code:</p>
 <pre class="language-javascript"><code>import {ready, Scene} from 'xjs-framework';
 
 ready().then(Scene.getActiveScene).then(scene => {
@@ -24,4 +24,4 @@ ready().then(Scene.getActiveScene).then(scene => {
 }).then(items => {
   // Do something with the items
 });</code></pre>
-<p>We have an example plugin project written on ES6 for you to checkout. You can actually make use of the webpack configuration of that project for your own project. <a href="https://github.com/xjsframework/simple-text-es6" target="_blank">Check it out here</a>.</p>
+<p>We have an example plugin project written in ES6. You can actually make use of the webpack configuration of that project for your own project. <a href="https://github.com/xjsframework/simple-text-es6" target="_blank">Check it out here</a>.</p>
