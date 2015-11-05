@@ -1,0 +1,25 @@
+
+<h1 class="class export">Dll <span class="type">class</span></h1>
+<p><p>The Dll class allows access to functions in DLL files that are placed within
+ the Scriptdlls folder.</p>
+</p><h2>Members</h2>
+  <section class="member static">
+    <a name="callFunction"><h1 id="callFunction" class="name">
+      <code>static</code> callFunction
+    </h1></a>
+     <pre><code>param: (funcName: string, ...params: string[])
+ </code></pre>
+ <p>return: string (see DLL documentation)</p>
+ <p>Calls a function from a DLL. Note that function name collisions are
+ possible. The first DLL to be found containing the function name will be
+ called.</p>
+ <p>Some DLLs have callbacks. Assign a handler function to that callback in
+ the global namespace, and the DLL will call that function accordingly.</p>
+ <p>See the documentation of your specific DLL for more details.</p>
+ 
+  </section>
+
+<p class="module defined-in">exported from <a href='#/core'>core</a><br/>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/core/dll.ts#L1-L27">../src/core/dll.ts (line 1)</a>
+</p>
+
