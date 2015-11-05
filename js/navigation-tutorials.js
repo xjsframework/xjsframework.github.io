@@ -41,6 +41,11 @@ angular.module('navigation-tutorials', [])
       "path": "authentication",
       "partial": "tutorials/authentication",
       "name": "Authenticating to External Services"
+    },
+    {
+      "path": "dll",
+      "partial": "tutorials/dll",
+      "name": "Using DLLs for Extensibility"
     }
   ]
 });
