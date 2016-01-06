@@ -19,7 +19,7 @@
 
 <h4>Calling functions</h4>
 <p>To call functions from DLLs, simply use the <a href="api.html#/window/Dll#call" target="_blank"><code>Dll.call()</code></a> or <a href="api.html#/window/Dll#callEx" target="_blank"><code>Dll.callEx()</code></a> methods, for safe and unsafe DLLs, respectively. The first parameter is the function name as declared in the DLL, and you may supply any number of additional parameters for the DLL function call. Note that if the DLL call is inaccessible at the time of execution, the promise rejects with an error instead of resolving with a value. Sample code follows:</p>
-<p><pre class="language-javascript"><code>Dll.callFunction('xsplit.EnumProcesses').then(function(value) {console.log(value);});
+<p><pre class="language-javascript"><code>Dll.call('xsplit.EnumProcesses').then(function(value) {console.log(value);});
 // sample return value: "0,4,456,608,724,856,864,940,972,620,1012"</code></pre></p>
 <p>If the promise rejects, then it might suggest that DLL permissions were not granted yet, or have been revoked. Your plugin should ideally handle this robustly, and perhaps even include some visual feedback for the user. Promise rejection can also mean that no functions were found with the given name.</p>
 
@@ -29,8 +29,12 @@
 window.OnInputHookEvent = function(msg, wparam, lparam) { }</code></pre>
 
 <h4>Miscellaneous</h4>
-<p>Optionally, developers can choose to subscribe to the <code>access-granted</code> and <code>access-revoked</code> events of the Dll object. Note that if the user suddenly disables Script Security altogether (through General Settings), no more events may be generated. Make sure your plugin does not rely on these events.</p>
-<p>The DLL module also has the <code>Dll.isAccessGranted()</code> module that returns true if DLL access was granted to the current plugin or if script security was disabled.</p>
+<p>Optionally, developers can choose to subscribe to the <code>access-granted</code> and <code>access-revoked</code> events of the Dll object. 
+<p><pre class="language-javascript"><code>Dll.on('access-revoked').then(function() {
+  // do something
+});</code></pre></p>
+<p>Note that if the user suddenly disables Script Security altogether (through General Settings), no more events may be generated. Make sure your plugin does not rely on these events.</p>
+<p>The DLL module also has the <a href="api.html#/window/Dll#isAccessGranted" target="_blank"><code>Dll.isAccessGranted()</code></a> function that resolves with true if DLL access was granted to the current plugin or if script security was disabled.</p>
 
 <h4>Sample code</h4>
 <p>This is sample code for a plugin that continuously updates the UI as to whether the file <code>C:\test.mp4</code> exists or not.</p>
@@ -85,7 +89,7 @@ xjs.ready().then(function() {
 
 <p>We are currently exposing the following two DLLs for developers. Note that DLL call return types will always be <code>string</code>. <em>If you find any bugs with the XSplit DLLs, please file an issue at the framework's <a href='https://github.com/xjsframework/xjs/issues/new' target='_new'>Github page.</a></em></p>
 
-<p><i>Important note:</i> For security purposes, only <code>Xjs.dll</code> is automatically loaded, and is considered as a safe DLL. This means that you use <a href="api.html#/window/Dll#call" target="_blank"><code>Dll.call()</code></a> to call its functions. In order to access the functionality of the unsafe <code>XjsEx.dll</code>, you will need to first load it using <code>Dll.load()</code> as in the sample code above, and use <a href="api.html#/window/Dll#callEx" target="_blank"><code>Dll.callEx()</code></a> instead.</p>
+<p><i>Important note:</i> For security purposes, only <code>Xjs.dll</code> is automatically loaded, and is considered as a safe DLL. This means that you use <a href="api.html#/window/Dll#call" target="_blank"><code>Dll.call()</code></a> to call its functions. In order to access the functionality of the unsafe <code>XjsEx.dll</code>, you will need to first load it using <a href="api.html#/window/Dll#load" target="_blank"><code>Dll.load()</code></a> as in the sample code above, and use <a href="api.html#/window/Dll#callEx" target="_blank"><code>Dll.callEx()</code></a> instead.</p>
 
 <table>
   <caption>Xjs.dll (auto-loaded)</caption>
