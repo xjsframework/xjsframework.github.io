@@ -37,7 +37,7 @@ window.OnInputHookEvent = function(msg, wparam, lparam) { }</code></pre>
 <p>The DLL module also has the <a href="api.html#/window/Dll#isAccessGranted" target="_blank"><code>Dll.isAccessGranted()</code></a> function that resolves with true if DLL access was granted to the current plugin or if script security was disabled.</p>
 
 <h4>Sample code</h4>
-<p>This is sample code for a plugin that continuously updates the UI as to whether the file <code>C:\test.mp4</code> exists or not.</p>
+<p>This is sample code for a plugin that checks as to whether the file <code>C:\test.mp4</code> exists or not. Note that this check is only done once, as soon as the plugin is able.</p>
 
 <pre class="language-javascript"><code>var xjs = require('xjs');
 var dll = xjs.Dll;
@@ -45,40 +45,41 @@ var dll = xjs.Dll;
 xjs.ready().then(function() {
   dll.load(['Scriptdlls\\SplitMediaLabs\\XjsEx.dll']); // path for loading is relative to the application folder
 
-  var statusLabel = document.getElementById('statusLabel');
+  // update the element with whether the file exists
+  var fileStatus = document.getElementById('fileStatus');
   var updateLabel = function(status) {
-    if (status === 'exist') statusLabel.textContent = 'File exists!';
-    else if (status === 'not-exist') statusLabel.textContent = 'File does not exist';
-    // we update label if we cannot call DLL function properly
-    else if (status === 'unknown') statusLabel.textContent = 'File status unknown. Please allow DLL access for the plugin.';
+    if (status === 'exist') fileStatus.textContent = 'File exists!';
+    else if (status === 'not-exist') fileStatus.textContent = 'File does not exist';
+    else if (status === 'unknown') fileStatus.textContent = 'File status unknown.';
   };
 
+  // update with a warning if the plugin cannot check file existence
+  var dllAccess = document.getElementById('dllAccessStatus');
+  var updateDllStatus = function(granted) {
+    if (granted) dllAccess.textContent = 'DLL access available';
+    else dllAccess.textContent = 'DLL access unavailable';
+  }
+
   // a function for checking existence of a file
-  var checkStatus = function() {
+  var checkFile = function() {
     dll.callEx('xsplit.Exists', 'C:\\test.mp4').then(function(val) {
       if (val === '1') updateLabel('exist');
       else if (val === '0') updateLabel('not-exist');
+      else updateLabel('unknown');
     });
   };
-
-  var updateInterval;
-  dll.on('access-granted', function() {
-    // begin file status polling when access is granted
-    updateInterval = setInterval(checkStatus, 5000);
-  });
-  dll.on('access-revoked', function() {
-    // we should stop polling when access is revoked
-    clearInterval(updateInterval);
-    // but we want to update label to inform users
-    updateLabel('unknown');
-  });
 
   // initial check for access for startup of plugin
   dll.isAccessGranted().then(function(isAccessGranted) {
     if (isAccessGranted) {
-      dll.emit('access-granted'); // manually trigger event so that polling can begin
+      updateDllStatus(true);
+      checkFile();
     } else {
-      dll.emit('access-revoked'); // manually trigger event so we can update information label
+      updateDllStatus(false);
+      dll.on('access-granted', function() {
+        checkFile();
+        updateDllStatus(true);
+      });
     }
   });
 });</code>
