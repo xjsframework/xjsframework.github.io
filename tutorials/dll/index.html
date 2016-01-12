@@ -65,7 +65,8 @@ xjs.ready().then(function() {
     dll.callEx('xsplit.Exists', 'C:\\test.mp4').then(function(val) {
       if (val === '1') updateLabel('exist');
       else if (val === '0') updateLabel('not-exist');
-      else updateLabel('unknown');
+    }).catch(function() {
+      updateLabel('unknown');
     });
   };
 
