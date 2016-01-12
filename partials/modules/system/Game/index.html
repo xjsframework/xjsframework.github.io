@@ -210,7 +210,24 @@ var game = XJS.Game.parse(jsonObj);
 
   </section>
 
+
+  <section class="member static">
+    <a name="autoDetect"><h1 id="autoDetect" class="name">
+      <code>static</code> autoDetect
+    </h1></a>
+    <pre><code>return: Game
+</code></pre>
+<p> Returns a special Game object that may be added to the stage. This
+ object automatically detects any compatible games that are running
+ and focused, and changes the displayed game on the stage accordingly.</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">var xjs = require(&#39;xjs&#39;);
+xjs.Game.autoDetect().addToScene();
+</code></pre>
+
+  </section>
+
 <p class="module defined-in">exported from <a href='#/system'>system</a><br/>
-defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/system/game.ts#L7-L284">../src/system/game.ts (line 7)</a>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/system/game.ts#L7-L333">../src/system/game.ts (line 7)</a>
 </p>
 

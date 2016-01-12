@@ -1,0 +1,33 @@
+
+<h1 class="class export">File <span class="type">class</span></h1>
+<p><p>Class for adding files (such as images and media)
+ from your file system to the stage.</p>
+<h3 id="basic-usage">Basic Usage</h3>
+<pre><code class="lang-javascript">var XJS = require(&#39;xjs&#39;);
+var File = XJS.File;
+
+var filePromise = new File(&#39;C:\\Users\\Public\\Music\\song.mp3&#39;).addToScene();
+</code></pre>
+</p><h2>Members</h2>
+  <section class="member constructor">
+    <h1 id="constructor" class="name">constructor</h1>
+     <pre><code>param: (file: string)
+ </code></pre>
+ <p>Creates a File object pertaining to a file&#39;s full path.</p>
+ 
+  </section>
+
+  <section class="member">
+    <a name="addToScene"><h1 id="addToScene" class="name">
+      addToScene
+    </h1></a>
+     <pre><code>return: Promise&lt;boolean&gt;
+ </code></pre>
+ <p>Adds this file to the current scene.</p>
+ 
+  </section>
+
+<p class="module defined-in">exported from <a href='#/system'>system</a><br/>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/system/file.ts#L4-L50">../src/system/file.ts (line 4)</a>
+</p>
+

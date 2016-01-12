@@ -10,6 +10,11 @@ App.getFrameTime().then(function(frametime) {
   window.frametime = frametime;
 });
 </code></pre>
+<p>For methods referring to application audio
+(i.e. mic and speaker settings, silence detection, etc.).
+This will affect XBC settings
+but will not be reflected in the General Settings Window
+(also will not be persistent after logging out of/exiting the application).</p>
 </p><h2>Members</h2>
   <section class="member">
     <a name="getFrametime"><h1 id="getFrametime" class="name">
@@ -69,7 +74,7 @@ App.getFrameTime().then(function(frametime) {
     </h1></a>
     <pre><code>return: Promise&lt;string&gt;
 </code></pre>
-<p>Refers to XSplit Broadcaster DLL file version number</p>
+<p>Refers to XSplit Broadcaster version number</p>
 <h4 id="usage">Usage</h4>
 <pre><code class="lang-javascript">App.getVersion().then(function(res) {
   var version = res;
@@ -130,17 +135,16 @@ App.getFrameTime().then(function(frametime) {
 
 
   <section class="member">
-    <a name="setPrimaryMic"><h1 id="setPrimaryMic" class="name">
-      setPrimaryMic
+    <a name="setPrimaryMicLevel"><h1 id="setPrimaryMicLevel" class="name">
+      setPrimaryMicLevel
     </h1></a>
-    <pre><code>param: (device: AudioDevice)
+    <pre><code>param: volume&lt;number&gt; (0 to 100 normal range, &gt; 100 will boost volume level)
 </code></pre>
 <pre><code>return: Promise&lt;boolean&gt;
 </code></pre>
-<p>Sets the primary microphone device to be used in the application</p>
-<p>See also: <a href='#system/AudioDevice'>System/AudioDevice</a></p>
+<p>Sets the application audio level of the primary microphone set</p>
 <h3 id="usage">Usage</h3>
-<pre><code class="lang-javascript">App.setPrimaryMic(device).then(function(val) {
+<pre><code class="lang-javascript">App.setPrimaryMicLevel(volume).then(function(val) {
   var isSet = val;
 });
 </code></pre>
@@ -149,17 +153,160 @@ App.getFrameTime().then(function(frametime) {
 
 
   <section class="member">
-    <a name="setPrimarySpeaker"><h1 id="setPrimarySpeaker" class="name">
-      setPrimarySpeaker
+    <a name="setPrimaryMicEnabled"><h1 id="setPrimaryMicEnabled" class="name">
+      setPrimaryMicEnabled
     </h1></a>
-    <pre><code>param: (device: AudioDevice)
+    <pre><code>param: enabled&lt;boolean&gt;
 </code></pre>
 <pre><code>return: Promise&lt;boolean&gt;
 </code></pre>
-<p>Sets the primary speaker/audio render device to be used in the application</p>
-<p>See also: <a href='#system/AudioDevice'>System/AudioDevice</a></p>
+<p>Sets whether the primary microphone set is enabled or disabled in the applicaation</p>
 <h3 id="usage">Usage</h3>
-<pre><code class="lang-javascript">App.setPrimarySpeaker(device).then(function(val) {
+<pre><code class="lang-javascript">App.setPrimaryMicEnabled(enabled).then(function(val) {
+  var isSet = val;
+});
+</code></pre>
+
+  </section>
+
+
+  <section class="member">
+    <a name="setPrimaryMicSystemLevel"><h1 id="setPrimaryMicSystemLevel" class="name">
+      setPrimaryMicSystemLevel
+    </h1></a>
+    <pre><code>param: volume&lt;number&gt; (0 to 100)
+</code></pre>
+<pre><code>return: Promise&lt;boolean&gt;
+</code></pre>
+<p>Sets the system audio level of the primary microphone set</p>
+<h3 id="usage">Usage</h3>
+<pre><code class="lang-javascript">App.setPrimaryMicSystemLevel(volume).then(function(val) {
+  var isSet = val;
+});
+</code></pre>
+
+  </section>
+
+
+  <section class="member">
+    <a name="setPrimaryMicSystemEnabled"><h1 id="setPrimaryMicSystemEnabled" class="name">
+      setPrimaryMicSystemEnabled
+    </h1></a>
+    <pre><code>param: hwenabled&lt;number&gt; (0 or 1, or set to 255 to avoid mute change)
+</code></pre>
+<pre><code>return: Promise&lt;boolean&gt;
+</code></pre>
+<p>Sets whether the primary microphone set is enabled or disabled in the system</p>
+<h3 id="usage">Usage</h3>
+<pre><code class="lang-javascript">App.setPrimaryMicSystemEnabled(enabled).then(function(val) {
+  var isSet = val;
+});
+</code></pre>
+
+  </section>
+
+
+  <section class="member">
+    <a name="setPrimaryMicDelay"><h1 id="setPrimaryMicDelay" class="name">
+      setPrimaryMicDelay
+    </h1></a>
+    <pre><code>param: delay&lt;number&gt; (100 nanoseconds in units)
+</code></pre>
+<pre><code>return: Promise&lt;boolean&gt;
+</code></pre>
+<p>Sets the loopback capture delay of the primary microphone set</p>
+<h3 id="usage">Usage</h3>
+<pre><code class="lang-javascript">App.setPrimaryMicDelay(delay).then(function(val) {
+  var isSet = val;
+});
+</code></pre>
+
+  </section>
+
+
+  <section class="member">
+    <a name="setPrimarySpeakerLevel"><h1 id="setPrimarySpeakerLevel" class="name">
+      setPrimarySpeakerLevel
+    </h1></a>
+    <pre><code>param: volume&lt;number&gt; (0 to 100 normal range, &gt; 100 will boost volume level)
+</code></pre>
+<pre><code>return: Promise&lt;boolean&gt;
+</code></pre>
+<p>Sets the application audio level of the primary speaker/audio render device</p>
+<h3 id="usage">Usage</h3>
+<pre><code class="lang-javascript">App.setPrimarySpeakerLevel(volume).then(function(val) {
+  var isSet = val;
+});
+</code></pre>
+
+  </section>
+
+
+  <section class="member">
+    <a name="setPrimarySpeakerEnabled"><h1 id="setPrimarySpeakerEnabled" class="name">
+      setPrimarySpeakerEnabled
+    </h1></a>
+    <pre><code>param: enabled&lt;boolean&gt;
+</code></pre>
+<pre><code>return: Promise&lt;boolean&gt;
+</code></pre>
+<p>Sets whether the primary speaker/audio render device set is enabled or disabled in the applicaation</p>
+<h3 id="usage">Usage</h3>
+<pre><code class="lang-javascript">App.setPrimarySpeakerEnabled(enabled).then(function(val) {
+  var isSet = val;
+});
+</code></pre>
+
+  </section>
+
+
+  <section class="member">
+    <a name="setPrimarySpeakerSystemLevel"><h1 id="setPrimarySpeakerSystemLevel" class="name">
+      setPrimarySpeakerSystemLevel
+    </h1></a>
+    <pre><code>param: volume&lt;number&gt; (0 to 100)
+</code></pre>
+<pre><code>return: Promise&lt;boolean&gt;
+</code></pre>
+<p>Sets the system audio level of the primary speaker/audio render device set</p>
+<h3 id="usage">Usage</h3>
+<pre><code class="lang-javascript">App.setPrimarySpeakerSystemLevel(volume).then(function(val) {
+  var isSet = val;
+});
+</code></pre>
+
+  </section>
+
+
+  <section class="member">
+    <a name="setPrimarySpeakerSystemEnabled"><h1 id="setPrimarySpeakerSystemEnabled" class="name">
+      setPrimarySpeakerSystemEnabled
+    </h1></a>
+    <pre><code>param: hwenabled&lt;number&gt; (0 or 1, or set to 255 to avoid mute change)
+</code></pre>
+<pre><code>return: Promise&lt;boolean&gt;
+</code></pre>
+<p>Sets whether the primary speaker/audio render device set is enabled or disabled in the system</p>
+<h3 id="usage">Usage</h3>
+<pre><code class="lang-javascript">App.setPrimarySpeakerSystemEnabled(enabled).then(function(val) {
+  var isSet = val;
+});
+</code></pre>
+
+  </section>
+
+
+  <section class="member">
+    <a name="setPrimarySpeakerDelay"><h1 id="setPrimarySpeakerDelay" class="name">
+      setPrimarySpeakerDelay
+    </h1></a>
+    <pre><code>param: delay&lt;number&gt; (100 nanoseconds in units)
+</code></pre>
+<pre><code>return: Promise&lt;boolean&gt;
+</code></pre>
+<p>Sets the loopback capture delay of the primary speaker/audio render device</p>
+<h3 id="usage">Usage</h3>
+<pre><code class="lang-javascript">App.setPrimarySpeakerDelay(delay).then(function(val) {
   var isSet = val;
 });
 </code></pre>
@@ -187,7 +334,7 @@ App.getFrameTime().then(function(frametime) {
     <a name="enableSilenceDetection"><h1 id="enableSilenceDetection" class="name">
       enableSilenceDetection
     </h1></a>
-    <pre><code>param: (enabled: boolean)
+    <pre><code>param: enabled&lt;boolean&gt;
 </code></pre>
 <pre><code>return: Promise&lt;boolean&gt;
 </code></pre>
@@ -222,7 +369,7 @@ the length of time after voice detection before silence is again detected</p>
     <a name="setSilenceDetectionPeriod"><h1 id="setSilenceDetectionPeriod" class="name">
       setSilenceDetectionPeriod
     </h1></a>
-    <pre><code>param: (sdPeriod: number)
+    <pre><code>param: sdPeriod&lt;number&gt;
 </code></pre>
 <pre><code>return: Promise&lt;boolean&gt;
 </code></pre>
@@ -257,7 +404,7 @@ the length of time after voice detection before silence is again detected</p>
     <a name="setSilenceDetectionThreshold"><h1 id="setSilenceDetectionThreshold" class="name">
       setSilenceDetectionThreshold
     </h1></a>
-    <pre><code>param: (sdThreshold: number)
+    <pre><code>param: sdThreshold&lt;number&gt;
 </code></pre>
 <pre><code>return: Promise&lt;boolean&gt;
 </code></pre>
@@ -292,7 +439,7 @@ the length of time after voice detection before silence is again detected</p>
     <a name="setTransition"><h1 id="setTransition" class="name">
       setTransition
     </h1></a>
-    <pre><code>param: (transition: Transition)
+    <pre><code>param: transition&lt;Transition&gt;
 </code></pre>
 <pre><code>return: Promise&lt;boolean&gt;
 </code></pre>
@@ -331,7 +478,7 @@ App.setTransition(Transition.CLOCK).then(function(val) {
     <a name="setTransitionTime"><h1 id="setTransitionTime" class="name">
       setTransitionTime
     </h1></a>
-    <pre><code>param: (time: number)
+    <pre><code>param: time&lt;number&gt;
 </code></pre>
 <pre><code>return: Promise&lt;boolean&gt;
 </code></pre>
@@ -354,14 +501,27 @@ App.setTransition(Transition.CLOCK).then(function(val) {
 <p> Clears all cookies across all browser instances. Not available to
  source plugins (call this from the configuration window instead.)</p>
 <h4 id="usage">Usage</h4>
-<pre><code class="lang-javascript">App.clearBrowserCookies.then(function(val) {
+<pre><code class="lang-javascript">App.clearBrowserCookies().then(function(val) {
  var isCleared = val;
 });
 </code></pre>
 
   </section>
 
+
+  <section class="member">
+    <a name="getUserIdHash"><h1 id="getUserIdHash" class="name">
+      getUserIdHash
+    </h1></a>
+    <pre><code>return: Promise&lt;string&gt;
+</code></pre>
+<p>Returns a hashed string that may be used to differentiate among logged-in
+users. This will be useful in such cases as persisting data to be used by
+certain XSplit users only.</p>
+
+  </section>
+
 <p class="module defined-in">exported from <a href='#/core'>core</a><br/>
-defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/core/app.ts#L13-L590">../src/core/app.ts (line 13)</a>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/core/app.ts#L13-L1021">../src/core/app.ts (line 13)</a>
 </p>
 

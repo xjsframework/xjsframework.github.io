@@ -221,8 +221,8 @@ its type IF you set an invalid string for the current item.</p>
 
 
   <section class="member">
-    <a name="getID"><h1 id="getID" class="name">
-      getID
+    <a name="getId"><h1 id="getId" class="name">
+      getId
     </h1></a>
     <pre><code>return: Promise&lt;string&gt;
 </code></pre>
@@ -264,6 +264,28 @@ get the string version of the returned object.</p>
 <pre><code class="lang-javascript">var xml = item.toXML();
 </code></pre>
 
+  </section>
+
+
+  <section class="member">
+    <a name="refresh"><h1 id="refresh" class="name">
+      refresh
+    </h1></a>
+     <pre><code>return: Promise&lt;Item&gt;
+ </code></pre>
+ <p>Refreshes the specified source.</p>
+ <h4 id="usage">Usage</h4>
+ <pre><code class="lang-javascript">// Sample 1: let source refresh itself
+ xjs.Item.getCurrentSource().then(function(source) {
+   source.refresh(); // execution of JavaScript halts because of refresh
+ });
+ 
+ // Sample 2: refresh some other source &#39;otherSource&#39;
+ otherSource.refresh().then(function(source) {
+   // further manipulation of other source goes here
+ });
+ </code></pre>
+ 
   </section>
 
 
@@ -540,6 +562,6 @@ from the config window)</p>
   </section>
 
 <p class="module defined-in">exported from <a href='#/core'>core</a><br/>
-defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/core/item/item.ts#L22-L714">../src/core/item/item.ts (line 22)</a>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/core/item/item.ts#L22-L731">../src/core/item/item.ts (line 22)</a>
 </p>
 

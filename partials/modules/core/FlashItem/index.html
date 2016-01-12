@@ -4,7 +4,9 @@
 loaded to XSplit Broadcaster.</p>
 <p>Inherits from: <a href='#core/Item'>Core/Item</a></p>
 <p> All methods marked as <em>Chainable</em> resolve with the original <code>FlashItem</code>
- instance.</p>
+instance. Also, any audio setting, i.e. volume, mute, stream only
+may not be properly reflected in the source unless native flash audio support
+is enabled. (Tools menu &gt; General Settings &gt; Advanced tab)</p>
 </p><h2>Members</h2>
   <section class="member">
     <a name="getCustomResolution"><h1 id="getCustomResolution" class="name">
@@ -24,7 +26,7 @@ custom resolution has been set.</p>
     <a name="setCustomResolution"><h1 id="setCustomResolution" class="name">
       setCustomResolution
     </h1></a>
-    <pre><code>param: Promise&lt;Rectangle&gt;
+    <pre><code>param: (value: Rectangle)
 </code></pre>
 <pre><code>return: Promise&lt;FlashItem&gt;
 </code></pre>
@@ -118,7 +120,7 @@ regardless of its layout on the mixer</p>
     <a name="setKeepAspectRatio"><h1 id="setKeepAspectRatio" class="name">
       setKeepAspectRatio
     </h1></a>
-    <pre><code>param: value&lt;boolean&gt;
+    <pre><code>param: (value: boolean)
 </code></pre>
 <p>Set Aspect Ratio to ON or OFF</p>
 <p><em>Chainable.</em></p>
@@ -130,7 +132,7 @@ regardless of its layout on the mixer</p>
     <a name="setPositionLocked"><h1 id="setPositionLocked" class="name">
       setPositionLocked
     </h1></a>
-    <pre><code>param: value&lt;boolean&gt;
+    <pre><code>param: (value: boolean)
 </code></pre>
 <p>Set Position Lock to ON or OFF</p>
 <p><em>Chainable.</em></p>
@@ -142,7 +144,7 @@ regardless of its layout on the mixer</p>
     <a name="setEnhancedResizeEnabled"><h1 id="setEnhancedResizeEnabled" class="name">
       setEnhancedResizeEnabled
     </h1></a>
-    <pre><code>param: value&lt;boolean&gt;
+    <pre><code>param: (value: boolean)
 </code></pre>
 <p>Set Enhance Resize to ON or OFF</p>
 <p><em>Chainable.</em></p>
@@ -154,7 +156,7 @@ regardless of its layout on the mixer</p>
     <a name="setPosition"><h1 id="setPosition" class="name">
       setPosition
     </h1></a>
-    <pre><code>param: value&lt;Rectangle&gt;
+    <pre><code>param: (value: Rectangle)
 </code></pre>
 <p>Set Item Position. Relative coordinates (0-1) are required.</p>
 <p><em>Chainable.</em></p>
@@ -173,7 +175,7 @@ item.setPosition(rect).then(function(item) {
     <a name="setRotateY"><h1 id="setRotateY" class="name">
       setRotateY
     </h1></a>
-    <pre><code>param: value&lt;number&gt;
+    <pre><code>param: (value: number)
 </code></pre>
 <p>Set Rotate Y value of the item</p>
 <p><em>Chainable.</em></p>
@@ -185,7 +187,7 @@ item.setPosition(rect).then(function(item) {
     <a name="setRotateX"><h1 id="setRotateX" class="name">
       setRotateX
     </h1></a>
-    <pre><code>param: value&lt;number&gt;
+    <pre><code>param: (value: number)
 </code></pre>
 <p>Set Rotate X value of the item</p>
 <p><em>Chainable.</em></p>
@@ -197,7 +199,7 @@ item.setPosition(rect).then(function(item) {
     <a name="setRotateZ"><h1 id="setRotateZ" class="name">
       setRotateZ
     </h1></a>
-    <pre><code>param: value&lt;number&gt;
+    <pre><code>param: (value: number)
 </code></pre>
 <p>Set Rotate Z value of the item</p>
 <p><em>Chainable.</em></p>
@@ -275,7 +277,7 @@ item.setPosition(rect).then(function(item) {
     <a name="setTransparency"><h1 id="setTransparency" class="name">
       setTransparency
     </h1></a>
-    <pre><code>param: value&lt;number&gt;
+    <pre><code>param: (value: number)
 </code></pre>
 <p>Set Item Transparency</p>
 <p><em>Chainable.</em></p>
@@ -287,7 +289,7 @@ item.setPosition(rect).then(function(item) {
     <a name="setBrightness"><h1 id="setBrightness" class="name">
       setBrightness
     </h1></a>
-    <pre><code>param: value&lt;number&gt;
+    <pre><code>param: (value: number)
 </code></pre>
 <p>Set Item Brightness</p>
 <p><em>Chainable.</em></p>
@@ -299,7 +301,7 @@ item.setPosition(rect).then(function(item) {
     <a name="setContrast"><h1 id="setContrast" class="name">
       setContrast
     </h1></a>
-    <pre><code>param: value&lt;number&gt;
+    <pre><code>param: (value: number)
 </code></pre>
 <p>Set Item Contrast</p>
 <p><em>Chainable.</em></p>
@@ -311,7 +313,7 @@ item.setPosition(rect).then(function(item) {
     <a name="setHue"><h1 id="setHue" class="name">
       setHue
     </h1></a>
-    <pre><code>param: value&lt;number&gt;
+    <pre><code>param: (value: number)
 </code></pre>
 <p>Set Item Hue</p>
 <p><em>Chainable.</em></p>
@@ -323,7 +325,7 @@ item.setPosition(rect).then(function(item) {
     <a name="setSaturation"><h1 id="setSaturation" class="name">
       setSaturation
     </h1></a>
-    <pre><code>param: value&lt;number&gt;
+    <pre><code>param: (value: number)
 </code></pre>
 <p>Set Item Saturation</p>
 <p><em>Chainable.</em></p>
@@ -335,7 +337,7 @@ item.setPosition(rect).then(function(item) {
     <a name="setBorderColor"><h1 id="setBorderColor" class="name">
       setBorderColor
     </h1></a>
-    <pre><code>param: value&lt;Color&gt;
+    <pre><code>param: (value: Color)
 </code></pre>
 <p>Set Border Color</p>
 <p><em>Chainable.</em></p>
@@ -356,7 +358,7 @@ item.setPosition(rect).then(function(item) {
     <a name="setChromaEnabled"><h1 id="setChromaEnabled" class="name">
       setChromaEnabled
     </h1></a>
-    <pre><code>param: value&lt;boolean&gt;
+    <pre><code>param: (value: boolean)
 </code></pre>
 <p><em>Chainable.</em></p>
 
@@ -376,7 +378,7 @@ item.setPosition(rect).then(function(item) {
     <a name="setKeyingType"><h1 id="setKeyingType" class="name">
       setKeyingType
     </h1></a>
-    <pre><code>param: value&lt;KeyingType&gt;
+    <pre><code>param: (value: KeyingType)
 </code></pre>
 <p><em>Chainable.</em></p>
 
@@ -396,7 +398,7 @@ item.setPosition(rect).then(function(item) {
     <a name="setChromaAntiAliasLevel"><h1 id="setChromaAntiAliasLevel" class="name">
       setChromaAntiAliasLevel
     </h1></a>
-    <pre><code>param: value&lt;ChromaAntiAliasLevel&gt;
+    <pre><code>param: (value: ChromaAntiAliasLevel)
 </code></pre>
 <p><em>Chainable.</em></p>
 
@@ -416,7 +418,7 @@ item.setPosition(rect).then(function(item) {
     <a name="setChromaLegacyBrightness"><h1 id="setChromaLegacyBrightness" class="name">
       setChromaLegacyBrightness
     </h1></a>
-    <pre><code>param: value&lt;number&gt;
+    <pre><code>param: (value: number)
 </code></pre>
 <p><em>Chainable.</em></p>
 
@@ -436,7 +438,7 @@ item.setPosition(rect).then(function(item) {
     <a name="setChromaLegacySaturation"><h1 id="setChromaLegacySaturation" class="name">
       setChromaLegacySaturation
     </h1></a>
-    <pre><code>param: value&lt;number&gt;
+    <pre><code>param: (value: number)
 </code></pre>
 <p><em>Chainable.</em></p>
 
@@ -456,7 +458,7 @@ item.setPosition(rect).then(function(item) {
     <a name="setChromaLegacyHue"><h1 id="setChromaLegacyHue" class="name">
       setChromaLegacyHue
     </h1></a>
-    <pre><code>param: value&lt;number&gt;
+    <pre><code>param: (value: number)
 </code></pre>
 <p><em>Chainable.</em></p>
 
@@ -476,7 +478,7 @@ item.setPosition(rect).then(function(item) {
     <a name="setChromaLegacyThreshold"><h1 id="setChromaLegacyThreshold" class="name">
       setChromaLegacyThreshold
     </h1></a>
-    <pre><code>param: value&lt;number&gt;
+    <pre><code>param: (value: number)
 </code></pre>
 <p><em>Chainable.</em></p>
 
@@ -496,7 +498,7 @@ item.setPosition(rect).then(function(item) {
     <a name="setChromaLegacyAlphaSmoothing"><h1 id="setChromaLegacyAlphaSmoothing" class="name">
       setChromaLegacyAlphaSmoothing
     </h1></a>
-    <pre><code>param: value&lt;number&gt;
+    <pre><code>param: (value: number)
 </code></pre>
 <p><em>Chainable.</em></p>
 
@@ -516,7 +518,7 @@ item.setPosition(rect).then(function(item) {
     <a name="setChromaRGBKeyPrimaryColor"><h1 id="setChromaRGBKeyPrimaryColor" class="name">
       setChromaRGBKeyPrimaryColor
     </h1></a>
-    <pre><code>param: value&lt;ChromaPrimaryColors&gt;
+    <pre><code>param: (value: ChromaPrimaryColors)
 </code></pre>
 <p><em>Chainable.</em></p>
 
@@ -536,7 +538,7 @@ item.setPosition(rect).then(function(item) {
     <a name="setChromaRGBKeyThreshold"><h1 id="setChromaRGBKeyThreshold" class="name">
       setChromaRGBKeyThreshold
     </h1></a>
-    <pre><code>param: value&lt;number&gt;
+    <pre><code>param: (value: number)
 </code></pre>
 <p><em>Chainable.</em></p>
 
@@ -556,7 +558,7 @@ item.setPosition(rect).then(function(item) {
     <a name="setChromaRGBKeyExposure"><h1 id="setChromaRGBKeyExposure" class="name">
       setChromaRGBKeyExposure
     </h1></a>
-    <pre><code>param: value&lt;number&gt;
+    <pre><code>param: (value: number)
 </code></pre>
 <p><em>Chainable.</em></p>
 
@@ -576,7 +578,7 @@ item.setPosition(rect).then(function(item) {
     <a name="setChromaColorKeyThreshold"><h1 id="setChromaColorKeyThreshold" class="name">
       setChromaColorKeyThreshold
     </h1></a>
-    <pre><code>param: value&lt;number&gt;
+    <pre><code>param: (value: number)
 </code></pre>
 <p><em>Chainable.</em></p>
 
@@ -596,7 +598,7 @@ item.setPosition(rect).then(function(item) {
     <a name="setChromaColorKeyExposure"><h1 id="setChromaColorKeyExposure" class="name">
       setChromaColorKeyExposure
     </h1></a>
-    <pre><code>param: value&lt;number&gt;
+    <pre><code>param: (value: number)
 </code></pre>
 <p><em>Chainable.</em></p>
 
@@ -616,7 +618,7 @@ item.setPosition(rect).then(function(item) {
     <a name="setChromaColorKeyColor"><h1 id="setChromaColorKeyColor" class="name">
       setChromaColorKeyColor
     </h1></a>
-    <pre><code>param: value&lt;Color&gt;
+    <pre><code>param: (value: Color)
 </code></pre>
 <p><em>Chainable.</em></p>
 
@@ -638,7 +640,7 @@ item.setPosition(rect).then(function(item) {
     <a name="setVisible"><h1 id="setVisible" class="name">
       setVisible
     </h1></a>
-    <pre><code>param: value&lt;boolean&gt;
+    <pre><code>param: (value: boolean)
 </code></pre>
 <p>Set item to visible or hidden</p>
 <p><em>Chainable.</em></p>
@@ -661,7 +663,7 @@ item.setPosition(rect).then(function(item) {
     <a name="setTransition"><h1 id="setTransition" class="name">
       setTransition
     </h1></a>
-    <pre><code>param: value&lt;Transition&gt;
+    <pre><code>param: (value: Transition)
 </code></pre>
 <p>Set item&#39;s transition type for when visibility is toggled</p>
 <p><em>Chainable.</em></p>
@@ -684,14 +686,94 @@ item.setPosition(rect).then(function(item) {
     <a name="setTransitionTime"><h1 id="setTransitionTime" class="name">
       setTransitionTime
     </h1></a>
-    <pre><code>param: value&lt;number&gt;
+    <pre><code>param: (value: number)
 </code></pre>
 <p>Set item&#39;s transition time in milliseconds</p>
 <p><em>Chainable.</em></p>
 
   </section>
 
+
+  <section class="member">
+    <a name="getVolume"><h1 id="getVolume" class="name">
+      getVolume
+    </h1></a>
+    <pre><code>return: Promise&lt;number&gt;
+</code></pre>
+<p>Get item&#39;s volume level expressed as an integer from 0 to 100</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="isMute"><h1 id="isMute" class="name">
+      isMute
+    </h1></a>
+    <pre><code>return: Promise&lt;boolean&gt;
+</code></pre>
+<p>Check if item&#39;s mute option is active</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="setVolume"><h1 id="setVolume" class="name">
+      setVolume
+    </h1></a>
+    <pre><code>param: (value: number)
+</code></pre>
+<p>Set volume level of item as an integer from 0 (muted) to 100 (maximum)</p>
+<p><em>Chainable.</em></p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="setMute"><h1 id="setMute" class="name">
+      setMute
+    </h1></a>
+    <pre><code>param: (value: boolean)
+</code></pre>
+<p>Set item&#39;s Mute property to ON or OFF</p>
+<p><em>Chainable.</em></p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="isStreamOnlyAudio"><h1 id="isStreamOnlyAudio" class="name">
+      isStreamOnlyAudio
+    </h1></a>
+    <pre><code>return: Promise&lt;boolean&gt;
+</code></pre>
+<p>Checks if audio is also output to system sound</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="setStreamOnlyAudio"><h1 id="setStreamOnlyAudio" class="name">
+      setStreamOnlyAudio
+    </h1></a>
+    <pre><code>param: (value: boolean)
+</code></pre>
+<p>Sets whether audio should also be output to system sound</p>
+<p><em>Chainable.</em></p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="isAudioAvailable"><h1 id="isAudioAvailable" class="name">
+      isAudioAvailable
+    </h1></a>
+    <pre><code>return: Promise&lt;boolean&gt;
+</code></pre>
+<p>Checks if audio is available</p>
+
+  </section>
+
 <p class="module defined-in">exported from <a href='#/core'>core</a><br/>
-defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/core/item/flash.ts#L17-L501">../src/core/item/flash.ts (line 17)</a>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/core/item/flash.ts#L18-L561">../src/core/item/flash.ts (line 18)</a>
 </p>
 

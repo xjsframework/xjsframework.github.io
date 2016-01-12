@@ -36,6 +36,110 @@ XJS.Scene.getActiveScene().then(function(scene) {
 
 
   <section class="member">
+    <a name="isStreamPaused"><h1 id="isStreamPaused" class="name">
+      isStreamPaused
+    </h1></a>
+    <pre><code>return: Promise&lt;boolean&gt;
+</code></pre>
+<p>Checks if camera feed is paused</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="setStreamPaused"><h1 id="setStreamPaused" class="name">
+      setStreamPaused
+    </h1></a>
+    <pre><code>param: (value: boolean)
+</code></pre>
+<p>Sets whether camera feed is paused or not</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="isHardwareEncoder"><h1 id="isHardwareEncoder" class="name">
+      isHardwareEncoder
+    </h1></a>
+    <pre><code>return: Promise&lt;boolean&gt;
+</code></pre>
+<p>Checks if camera device is a hardware encoder or not. This check may fail
+if camera device is reinitializing or not present (value defaults to false)</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="getDelay"><h1 id="getDelay" class="name">
+      getDelay
+    </h1></a>
+    <pre><code>return: Promise&lt;number&gt;
+</code></pre>
+<p>Gets feed capture delay in milliseconds</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="setDelay"><h1 id="setDelay" class="name">
+      setDelay
+    </h1></a>
+    <pre><code>param: (value: number)
+</code></pre>
+<p>Sets feed capture delay in milliseconds, accepts only positive delay</p>
+<p><em>Chainable.</em></p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="getAudioOffset"><h1 id="getAudioOffset" class="name">
+      getAudioOffset
+    </h1></a>
+    <pre><code>return: Promise&lt;number&gt;
+</code></pre>
+<p>Gets audio delay with respect to video feed in milliseconds</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="setAudioOffset"><h1 id="setAudioOffset" class="name">
+      setAudioOffset
+    </h1></a>
+    <pre><code>param: (value: number)
+</code></pre>
+<p>Sets audio delay with respect to video feed in milliseconds</p>
+<p><em>Chainable.</em></p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="getAudioInput"><h1 id="getAudioInput" class="name">
+      getAudioInput
+    </h1></a>
+    <pre><code>return: Promise&lt;MicrophoneDevice&gt;
+</code></pre>
+<p>Gets the microphone device tied as an audio input,
+rejected if no microphone device is used</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="setAudioInput"><h1 id="setAudioInput" class="name">
+      setAudioInput
+    </h1></a>
+    <pre><code>param: (value: number)
+</code></pre>
+<p>Sets the microphone device to be tied as an audio input</p>
+<p><em>Chainable.</em></p>
+
+  </section>
+
+
+  <section class="member">
     <a name="isKeepAspectRatio"><h1 id="isKeepAspectRatio" class="name">
       isKeepAspectRatio
     </h1></a>
@@ -117,7 +221,7 @@ XJS.Scene.getActiveScene().then(function(scene) {
     <a name="setKeepAspectRatio"><h1 id="setKeepAspectRatio" class="name">
       setKeepAspectRatio
     </h1></a>
-    <pre><code>param: value&lt;boolean&gt;
+    <pre><code>param: (value: boolean)
 </code></pre>
 <p>Set Aspect Ratio to ON or OFF</p>
 <p><em>Chainable.</em></p>
@@ -129,7 +233,7 @@ XJS.Scene.getActiveScene().then(function(scene) {
     <a name="setPositionLocked"><h1 id="setPositionLocked" class="name">
       setPositionLocked
     </h1></a>
-    <pre><code>param: value&lt;boolean&gt;
+    <pre><code>param: (value: boolean)
 </code></pre>
 <p>Set Position Lock to ON or OFF</p>
 <p><em>Chainable.</em></p>
@@ -141,7 +245,7 @@ XJS.Scene.getActiveScene().then(function(scene) {
     <a name="setEnhancedResizeEnabled"><h1 id="setEnhancedResizeEnabled" class="name">
       setEnhancedResizeEnabled
     </h1></a>
-    <pre><code>param: value&lt;boolean&gt;
+    <pre><code>param: (value: boolean)
 </code></pre>
 <p>Set Enhance Resize to ON or OFF</p>
 <p><em>Chainable.</em></p>
@@ -153,7 +257,7 @@ XJS.Scene.getActiveScene().then(function(scene) {
     <a name="setPosition"><h1 id="setPosition" class="name">
       setPosition
     </h1></a>
-    <pre><code>param: value&lt;Rectangle&gt;
+    <pre><code>param: (value: Rectangle)
 </code></pre>
 <p>Set Item Position. Relative coordinates (0-1) are required.</p>
 <p><em>Chainable.</em></p>
@@ -172,7 +276,7 @@ item.setPosition(rect).then(function(item) {
     <a name="setRotateY"><h1 id="setRotateY" class="name">
       setRotateY
     </h1></a>
-    <pre><code>param: value&lt;number&gt;
+    <pre><code>param: (value: number)
 </code></pre>
 <p>Set Rotate Y value of the item</p>
 <p><em>Chainable.</em></p>
@@ -184,7 +288,7 @@ item.setPosition(rect).then(function(item) {
     <a name="setRotateX"><h1 id="setRotateX" class="name">
       setRotateX
     </h1></a>
-    <pre><code>param: value&lt;number&gt;
+    <pre><code>param: (value: number)
 </code></pre>
 <p>Set Rotate X value of the item</p>
 <p><em>Chainable.</em></p>
@@ -196,7 +300,7 @@ item.setPosition(rect).then(function(item) {
     <a name="setRotateZ"><h1 id="setRotateZ" class="name">
       setRotateZ
     </h1></a>
-    <pre><code>param: value&lt;number&gt;
+    <pre><code>param: (value: number)
 </code></pre>
 <p>Set Rotate Z value of the item</p>
 <p><em>Chainable.</em></p>
@@ -274,7 +378,7 @@ item.setPosition(rect).then(function(item) {
     <a name="setTransparency"><h1 id="setTransparency" class="name">
       setTransparency
     </h1></a>
-    <pre><code>param: value&lt;number&gt;
+    <pre><code>param: (value: number)
 </code></pre>
 <p>Set Item Transparency</p>
 <p><em>Chainable.</em></p>
@@ -286,7 +390,7 @@ item.setPosition(rect).then(function(item) {
     <a name="setBrightness"><h1 id="setBrightness" class="name">
       setBrightness
     </h1></a>
-    <pre><code>param: value&lt;number&gt;
+    <pre><code>param: (value: number)
 </code></pre>
 <p>Set Item Brightness</p>
 <p><em>Chainable.</em></p>
@@ -298,7 +402,7 @@ item.setPosition(rect).then(function(item) {
     <a name="setContrast"><h1 id="setContrast" class="name">
       setContrast
     </h1></a>
-    <pre><code>param: value&lt;number&gt;
+    <pre><code>param: (value: number)
 </code></pre>
 <p>Set Item Contrast</p>
 <p><em>Chainable.</em></p>
@@ -310,7 +414,7 @@ item.setPosition(rect).then(function(item) {
     <a name="setHue"><h1 id="setHue" class="name">
       setHue
     </h1></a>
-    <pre><code>param: value&lt;number&gt;
+    <pre><code>param: (value: number)
 </code></pre>
 <p>Set Item Hue</p>
 <p><em>Chainable.</em></p>
@@ -322,7 +426,7 @@ item.setPosition(rect).then(function(item) {
     <a name="setSaturation"><h1 id="setSaturation" class="name">
       setSaturation
     </h1></a>
-    <pre><code>param: value&lt;number&gt;
+    <pre><code>param: (value: number)
 </code></pre>
 <p>Set Item Saturation</p>
 <p><em>Chainable.</em></p>
@@ -334,7 +438,7 @@ item.setPosition(rect).then(function(item) {
     <a name="setBorderColor"><h1 id="setBorderColor" class="name">
       setBorderColor
     </h1></a>
-    <pre><code>param: value&lt;Color&gt;
+    <pre><code>param: (value: Color)
 </code></pre>
 <p>Set Border Color</p>
 <p><em>Chainable.</em></p>
@@ -346,7 +450,7 @@ item.setPosition(rect).then(function(item) {
     <a name="setColorOptionsPinned"><h1 id="setColorOptionsPinned" class="name">
       setColorOptionsPinned
     </h1></a>
-    <pre><code>param: value&lt;boolean&gt;
+    <pre><code>param: (value: boolean)
 </code></pre>
 <p>Set this to true to share color settings across all instances of this
 camera device on the stage.</p>
@@ -735,7 +839,7 @@ this camera device on the stage.</p>
     <a name="setVisible"><h1 id="setVisible" class="name">
       setVisible
     </h1></a>
-    <pre><code>param: value&lt;boolean&gt;
+    <pre><code>param: (value: boolean)
 </code></pre>
 <p>Set item to visible or hidden</p>
 <p><em>Chainable.</em></p>
@@ -758,7 +862,7 @@ this camera device on the stage.</p>
     <a name="setTransition"><h1 id="setTransition" class="name">
       setTransition
     </h1></a>
-    <pre><code>param: value&lt;Transition&gt;
+    <pre><code>param: (value: Transition)
 </code></pre>
 <p>Set item&#39;s transition type for when visibility is toggled</p>
 <p><em>Chainable.</em></p>
@@ -781,14 +885,94 @@ this camera device on the stage.</p>
     <a name="setTransitionTime"><h1 id="setTransitionTime" class="name">
       setTransitionTime
     </h1></a>
-    <pre><code>param: value&lt;number&gt;
+    <pre><code>param: (value: number)
 </code></pre>
 <p>Set item&#39;s transition time in milliseconds</p>
 <p><em>Chainable.</em></p>
 
   </section>
 
+
+  <section class="member">
+    <a name="getVolume"><h1 id="getVolume" class="name">
+      getVolume
+    </h1></a>
+    <pre><code>return: Promise&lt;number&gt;
+</code></pre>
+<p>Get item&#39;s volume level expressed as an integer from 0 to 100</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="isMute"><h1 id="isMute" class="name">
+      isMute
+    </h1></a>
+    <pre><code>return: Promise&lt;boolean&gt;
+</code></pre>
+<p>Check if item&#39;s mute option is active</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="setVolume"><h1 id="setVolume" class="name">
+      setVolume
+    </h1></a>
+    <pre><code>param: value&lt;number&gt;
+</code></pre>
+<p>Set volume level of item as an integer from 0 (muted) to 100 (maximum)</p>
+<p><em>Chainable.</em></p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="setMute"><h1 id="setMute" class="name">
+      setMute
+    </h1></a>
+    <pre><code>param: value&lt;boolean&gt;
+</code></pre>
+<p>Set item&#39;s Mute property to ON or OFF</p>
+<p><em>Chainable.</em></p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="isStreamOnlyAudio"><h1 id="isStreamOnlyAudio" class="name">
+      isStreamOnlyAudio
+    </h1></a>
+    <pre><code>return: Promise&lt;boolean&gt;
+</code></pre>
+<p>Checks if audio is also output to system sound</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="setStreamOnlyAudio"><h1 id="setStreamOnlyAudio" class="name">
+      setStreamOnlyAudio
+    </h1></a>
+    <pre><code>param: value&lt;boolean&gt;
+</code></pre>
+<p>Sets whether audio should also be output to system sound</p>
+<p><em>Chainable.</em></p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="isAudioAvailable"><h1 id="isAudioAvailable" class="name">
+      isAudioAvailable
+    </h1></a>
+    <pre><code>return: Promise&lt;boolean&gt;
+</code></pre>
+<p>Checks if audio is available</p>
+
+  </section>
+
 <p class="module defined-in">exported from <a href='#/core'>core</a><br/>
-defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/core/item/camera.ts#L15-L642">../src/core/item/camera.ts (line 15)</a>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/core/item/camera.ts#L18-L946">../src/core/item/camera.ts (line 18)</a>
 </p>
 
