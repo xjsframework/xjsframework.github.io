@@ -25,7 +25,7 @@ angular.module('navigation-tutorials', [])
     {
       "path": "es6",
       "partial": "tutorials/es6",
-      "name": "Developing with ES6"
+      "name": "Developing with ES2015"
     },
     {
       "path": "errors",
