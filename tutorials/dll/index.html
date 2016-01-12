@@ -1,35 +1,109 @@
 <h1>Using DLLs for Extensibility</h1>
 
+<h2>Creating DLLs</h2>
+
+<p><i>Information for DLL Developers:</i> Please refer to <a href='assets/WritingcustomXSplitscriptDLLsinC.pdf'>this document</a> to see how to create your own DLLs for XSplit Broadcaster.</p>
+
 <h2>Using DLLs</h2>
 
-<p>XSplit Broadcaster allows you to use DLLs for your plugins. We are currently exposing a number of DLL calls from our internal DLLs for you to use. At the moment there are two types of functions that our DLLs provide:</p>
+<p>XSplit Broadcaster allows you to use DLLs for your plugins. These are generally contained within the <code>Scriptdlls</code> folder of the application. Because DLLs might contain potentially harmful functions, our security protocols can functionally classify DLLs through the following categories:</p>
+
 <ol>
-  <li>No callback: these return a <code>string</code> result immediately</li>
-  <li>With callback: these may optionally return a <code>string</code> result, but calling these functions will cause the DLL to call a global callback function at least once. (Some of these callbacks may be called multiple times, as in the case of event notifications.)</li>
+  <li><strong>Auto-loaded DLLs</strong>: this is a very small subset of DLLs that are automatically loaded for use by any plugins. Hence, these do not require developers to call <a href="api.html#/window/Dll#load" target="_blank"><code>Dll.load()</code></a> to be used. <code>Xjs.dll</code> is in this category, and is considered a <em>safe</em> DLL.</li>
+  <li><strong>Other signed DLLs</strong>: this comprises most of the DLLs that will be used by plugins; these are considered unsafe DLLs. These need to be loaded by the plugin first by calling <a href="api.html#/window/Dll#load" target="_blank"><code>Dll.load()</code></a>. Access to these DLL functions needs to be granted by the XBC user as part of the security protocols. (Access can automatically be granted if a user has disabled DLL security in Tools > General Settings > Advanced). <code>XjsEx.dll</code> is an example of this, and it contains functions that allow developers to perform unsafe actions such as reading from files. As a general rule, all external DLLs are considered <em>unsafe</em> (this includes those in the next point).</li>
+  <li><strong>Unsigned DLLs</strong>: these DLLs do not have signed certificates and will never be loaded by the application even if <a href="api.html#/window/Dll#load" target="_blank"><code>Dll.load()</code></a> is called, unless Developer Mode is activated (Tools > General Settings > Advanced). Developer mode is disabled by default as it is not intended for production use.</li>
 </ol>
 
-<p><i>Important note:</i> This feature of XSplit Broadcaster and the framework is likely to change in the future. This may mean changes on the framework side (such as improvements in how to invoke DLL methods), or on the application side (there may be new restrictions or security enhancements implemented.) <strong>If your plugin makes use of DLL calls for its main functionality, please take note of any changes related to DLLs on every new version of the framework we release.</strong> (Our changelog will always be found at our <a href="https://github.com/xjsframework/xjs/wiki" target="_blank">Github wiki</a>.) You may want to subscribe to the developers' newsletter as well; check the <a href="https://developers.xsplit.com" target="_blank">XSplit Developers website.</a></p>
+<p>We are currently exposing a number of our internal DLLs for you to use. All functions may return a <code>string</code> value. Occasionally, DLL functions may invoke callbacks defined on the global object.</p>
+
+<p><i>Important note:</i> This feature of XSplit Broadcaster might change in the future. We will be documenting any relevant changes that might happen on the framework and/or the core application.
+
+<h4>Loading DLLs</h4>
+<p>The first thing plugin developers should do is to load all DLLs they need on initialization. This is done using <a href="api.html#/window/Dll#load" target="_blank"><code>Dll.load()</code></a>. Note that this step should only be performed once, on initialization. (Loading is not necessary for auto-loaded DLLs, e.g. <code>Xjs.dll</code>.)</p>
+
+<p><pre class="language-javascript"><code>// multiple DLLs example
+var xjs = require('xjs');
+var dll = xjs.Dll;
+dll.load(['Scriptdlls\\SplitMediaLabs\\dllA.dll','Scriptdlls\\SplitMediaLabs\\dllB.dll']);</code></pre></p>
 
 <h4>Calling functions</h4>
-<p>Simply use the DLL module's <code>callFunction()</code> call. The first parameter is the function name, and you may supply any number of additional parameters for the DLL function call. Sample code follows:</p>
-<p><pre class="language-javascript"><code>  var Dll = require('xjs').Dll;
-  Dll.callFunction('xsplit.EnumProcesses');
-  // sample return value: "0,4,456,608,724,856,864,940,972,620,1012"</code></pre></p>
+<p>To call functions from DLLs, simply use the <a href="api.html#/window/Dll#call" target="_blank"><code>Dll.call()</code></a> or <a href="api.html#/window/Dll#callEx" target="_blank"><code>Dll.callEx()</code></a> methods, for safe and unsafe DLLs, respectively. The first parameter is the function name as declared in the DLL, and you may supply any number of additional parameters for the DLL function call. Note that if the DLL call is inaccessible at the time of execution, the promise rejects with an error instead of resolving with a value. Sample code follows:</p>
+<p><pre class="language-javascript"><code>Dll.call('xsplit.EnumProcesses').then(function(value) {console.log(value);});
+// sample return value: "0,4,456,608,724,856,864,940,972,620,1012"</code></pre></p>
+<p>If the promise rejects, then it might suggest that DLL permissions were not granted yet, or have been revoked. Your plugin should ideally handle this robustly, and perhaps even include some visual feedback for the user. Promise rejection can also mean that no functions were found with the given name.</p>
 
 <h4>Callback usage</h4>
-<p>To handle your DLL callback, just assign a handler function in the global namespace. Consult your DLL documentation for the function names.</p>
-<p><pre class="language-javascript"><code>  window.OnInputHookEvent = function(msg, wparam, lparam) {
-    // handle values from xsplit.HookSubscribe DLL call
-  }</code></pre>
+<p>Some DLLs can call functions defined on the global scope. Consult your DLL documentation for these functions and the callbacks they may call.</p>
+<p><pre class="language-javascript"><code>// handle values from xsplit.HookSubscribe DLL call
+window.OnInputHookEvent = function(msg, wparam, lparam) { }</code></pre>
+
+<h4>Miscellaneous</h4>
+<p>Optionally, developers can choose to subscribe to the <code>access-granted</code> and <code>access-revoked</code> events of the Dll object. 
+<p><pre class="language-javascript"><code>Dll.on('access-revoked').then(function() {
+  // do something
+});</code></pre></p>
+<p>Note that if the user suddenly disables Script Security altogether (through General Settings), no more events may be generated. Make sure your plugin does not rely on these events.</p>
+<p>The DLL module also has the <a href="api.html#/window/Dll#isAccessGranted" target="_blank"><code>Dll.isAccessGranted()</code></a> function that resolves with true if DLL access was granted to the current plugin or if script security was disabled.</p>
+
+<h4>Sample code</h4>
+<p>This is sample code for a very simple plugin that checks as to whether the file <code>C:\test.mp4</code> exists or not.</p>
+
+<pre class="language-javascript"><code>var xjs = require('xjs');
+var dll = xjs.Dll;
+
+xjs.ready().then(function() {
+  dll.load(['Scriptdlls\\SplitMediaLabs\\XjsEx.dll']); // path for loading is relative to the application folder
+
+  // update the element with whether the file exists
+  var fileStatus = document.getElementById('fileStatus');
+  var updateLabel = function(status) {
+    if (status === 'exist') fileStatus.textContent = 'File exists!';
+    else if (status === 'not-exist') fileStatus.textContent = 'File does not exist';
+    else if (status === 'unknown') fileStatus.textContent = 'File status unknown.';
+  };
+
+  // update with a warning if the plugin cannot check file existence
+  var dllAccess = document.getElementById('dllAccessStatus');
+  var updateDllStatus = function(granted) {
+    if (granted) dllAccess.textContent = 'DLL access available';
+    else dllAccess.textContent = 'DLL access unavailable';
+  }
+
+  // a function for checking existence of a file
+  var checkFile = function() {
+    dll.callEx('xsplit.Exists', 'C:\\test.mp4').then(function(val) {
+      if (val === '1') updateLabel('exist');
+      else if (val === '0') updateLabel('not-exist');
+    }).catch(function() {
+      updateLabel('unknown');
+    });
+  };
+
+  // initial check for access for startup of plugin
+  dll.isAccessGranted().then(function(isAccessGranted) {
+    if (isAccessGranted) {
+      updateDllStatus(true);
+      checkFile();
+    } else {
+      updateDllStatus(false);
+      dll.on('access-granted', function() {
+        checkFile();
+        updateDllStatus(true);
+      });
+    }
+  });
+});</code>
+</pre>
+
 
 <h2>Existing XSplit DLL documentation</h2>
 
-<p>The following sections outline the DLL calls that are accessible to any plugin developer using XSplit's own DLLs. Note that DLL call return types will always be <code>string</code>. <em>If you find any bugs with the XSplit DLLs, please file an issue at the framework's <a href='https://github.com/xjsframework/xjs/issues/new' target='_new'>Github page.</a></em></p>
+<p>We are currently exposing the following two DLLs for developers. Note that DLL call return types will always be <code>string</code>. If you find any bugs with the XSplit DLLs, please file an issue at the framework's <a href='https://github.com/xjsframework/xjs/issues/new' target='_new'>Github page.</a></p>
 
-<p><i>Important note:</i> For security purposes, only <code>Xjs.dll</code> is considered a 'safe' DLL. In order to access the functionality of <code>XjsEx.dll</code>, you will need to start XSplit Broadcaster with the <code>nodllsecurity</code> startup parameter. This will change in the future as we implement more changes to the security infrastructure of XBC.</p>
+<p><i>Important note:</i> For security purposes, only <code>Xjs.dll</code> is automatically loaded, and is considered as a safe DLL. This means that you use <a href="api.html#/window/Dll#call" target="_blank"><code>Dll.call()</code></a> to call its functions. In order to access the functionality of the unsafe <code>XjsEx.dll</code>, you will need to first load it using <a href="api.html#/window/Dll#load" target="_blank"><code>Dll.load()</code></a> as in the sample code above, and use <a href="api.html#/window/Dll#callEx" target="_blank"><code>Dll.callEx()</code></a> instead.</p>
 
 <table>
-  <caption>Xjs.dll</caption>
+  <caption>Xjs.dll (auto-loaded)</caption>
   <thead>
     <tr>
       <th>Function name</th>
