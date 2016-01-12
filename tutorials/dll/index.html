@@ -14,6 +14,8 @@
 
 <p><i>Important note:</i> This feature of XSplit Broadcaster might change in the future. <strong>If your plugin makes use of DLL calls for its main functionality, please take note of any changes related to DLLs on every new version of the framework we release.</strong> We will be documenting any relevant changes that might happen on the framework and/or the core application.
 
+<p><i>Information for DLL Developers:</i> Please refer to <a href='assets/WritingcustomXSplitscriptDLLsinC.pdf'>this document</a> to see how to create your own DLLs for XSplit Broadcaster.</p>
+
 <h4>Loading DLLs</h4>
 <p>The first thing plugin developers should do is to load all unloaded DLLs they need on initialization. This is done using <a href="api.html#/window/Dll#load" target="_blank"><code>Dll.load()</code></a>. Note that this step should only be performed once, on initialization. (This is not necessary if only auto-loaded DLLs, e.g. <code>Xjs.dll</code> are used.)</p>
 
