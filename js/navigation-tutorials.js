@@ -15,7 +15,7 @@ angular.module('navigation-tutorials', [])
     {
       "path": "sourceconfig",
       "partial": "tutorials/sourceconfig",
-      "name": "Developing the Source Configuration Window"
+      "name": "Developing the Source Properties Window"
     },
     {
       "path": "extensions",

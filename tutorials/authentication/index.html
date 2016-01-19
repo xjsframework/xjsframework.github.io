@@ -14,7 +14,7 @@
   <li>Clicking this button should open a new dialog (see <a href="api.html#/window/Dialog#createDialog" target="_blank"><code>createDialog()</code></a>) to a URL you control. This URL can contain a page that contacts the external service's authentication protocol, optionally requests for any additional authorization from the service, and finally, retrieves any pertinent information.<ul><li>Pertinent information is usually some authentication token, as required by the plugin.</li>
   </ul></li>
   <li>When the process completes (and returns information), the dialog should call <a href="api.html#/window/Dialog#return" target="_blank"><code>Dialog.return()</code></a><sup>2</sup> with the data relevant to your plugin. This closes the dialog.</li>
-  <li>This result is captured by the <a href="api.html#/window/Dialog#getResult" target="_blank"><code>getResult()</code></a> method of the original Dialog object within the context of the configuration window. Note that this function can only accept strings.</li>
+  <li>This result is captured by the <a href="api.html#/window/Dialog#getResult" target="_blank"><code>getResult()</code></a> method of the original Dialog object within the context of the properties window. Note that this function can only accept strings.</li>
   <li>Save the result into local storage<sup>1</sup>. We highly recommend linking the result to the current user (through the <code>userHash</code>).
   <li>To accommodate any other plugins that may connect to the same services, you should also clear all cookies using <code>App.clearBrowserCookies()</code>. </li>
 </ol>

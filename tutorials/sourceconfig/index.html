@@ -1,23 +1,23 @@
-<h1>Developing Source Configuration Windows</h1>
+<h1>Developing Source Properties Windows</h1>
 <p>
-  The configuration window is a very important tool to allow customization of your source plugin. This article details how to use the framework to layout the window, and to allow the window access to the source's custom configuration object. Developers begin by creating HTML for the configuration window's graphical interface.
+  The properties window is a very important tool to allow customization of your source plugin. This article details how to use the framework to layout the window, and to allow the window access to the source's custom configuration object. Developers begin by creating HTML for the properties window's graphical interface.
 </p>
-<h3>Specifying the configuration window</h3>
+<h3>Specifying the properties window</h3>
 <p>
-  For the application to locate the correct configuration window HTML file, the source HTML must contain metadata to specify this. If you are using our Yeoman generator to quickly generate a source plugin (<a href="quickstart.html#yeoman" target="_blank">see here</a>), this is automatically generated for you.
+  For the application to locate the correct properties window HTML file, the source HTML must contain metadata to specify this. If you are using our Yeoman generator to quickly generate a source plugin (<a href="quickstart.html#yeoman" target="_blank">see here</a>), this is automatically generated for you.
 </p>
 <pre class="language-html"><code>&lt;meta name="xsplit:config-url" content="./config.html"&gt;</code></pre>
-<h3>Configuration window layouts</h3>
+<h3>Properties window layouts</h3>
 <p>
-  The framework allows developers two different layout schemes for the configuration window. The first is called tabbed mode, which allows users to leverage XSplit's existing tab system, and even to reuse a number of existing core tabs. The second is called full mode, which gives the developers total control over the full space of the window (the title bar and the Keep Source in Memory checkbox is already supplied).
+  The framework allows developers two different layout schemes for the properties window. The first is called tabbed mode, which allows users to leverage XSplit's existing tab system, and even to reuse a number of existing core tabs. The second is called full mode, which gives the developers total control over the full space of the window (the title bar and the Keep Source in Memory checkbox is already supplied).
 </p>
 <pre class="language-javascript"><code>var xjs = require('xjs');
-var configWindow = xjs.SourceConfigWindow.getInstance();
+var propsWindow = xjs.SourcePropsWindow.getInstance();
 
 // Option 1: Use XSplit's existing tab system
 xjs.ready()
   .then(function() {
-    configWindow.useTabbedWindow({
+    propsWindow.useTabbedWindow({
       customTabs: ['Custom'],
       tabOrder: ['Custom', 'Layout', 'Color', 'Transition']
     });
@@ -26,10 +26,10 @@ xjs.ready()
 // Option 2: Use the full window
 xjs.ready()
   .then(function() {
-    configWindow.useFullWindow();
+    propsWindow.useFullWindow();
   });</code></pre>
 <p>
-  The following images illustrate the difference between the two modes as specified by the above code snippets. Right-clicking the source (yellow) opens the configuration window. The blue area indicates where the developer's own HTML will be rendered.
+  The following images illustrate the difference between the two modes as specified by the above code snippets. Right-clicking the source (yellow) opens the properties window. The blue area indicates where the developer's own HTML will be rendered.
 </p>
 <img src="assets/tabbed-config.png">
 <img src="assets/full-config.png">
@@ -37,13 +37,13 @@ xjs.ready()
 <h3>Tabbed Mode</h3>
 <p>This section only applies to those who prefer to use XSplit's existing tab system (option 2 in the code snippet above).</p>
 <p>
-  In tabbed mode, source configuration windows are allowed to reuse the functionality of three of the existing tabs. These are: Layout, Color, Transition. Developers also have the capability to use their own custom tabs. In the above example, only one custom tab is used, and it is given the name "Custom". The above example also illustrates that the plugin also wishes to reuse all three of the reusable tabs, by specifying them in the <code>tabOrder</code> node of the JSON object. Note that both the <code>customTabs</code> and <code>tabOrder</code> nodes are required to make tabbed mode work.
+  In tabbed mode, source properties windows are allowed to reuse the functionality of three of the existing tabs. These are: Layout, Color, Transition. Developers also have the capability to use their own custom tabs. In the above example, only one custom tab is used, and it is given the name "Custom". The above example also illustrates that the plugin also wishes to reuse all three of the reusable tabs, by specifying them in the <code>tabOrder</code> node of the JSON object. Note that both the <code>customTabs</code> and <code>tabOrder</code> nodes are required to make tabbed mode work.
 </p>
 <p>
-  Developers should also note that since there is only one HTML file for their configuration window, multiple custom tabs have to be handled in the same file. In order to achieve this, the window needs to listen to the <code>set-selected-tab</code> event emitted by the configuration window's event emitter. (This event only fires when a custom tab is selected.)
+  Developers should also note that since there is only one HTML file for their properties window, multiple custom tabs have to be handled in the same file. In order to achieve this, the window needs to listen to the <code>set-selected-tab</code> event emitted by the properties window's event emitter. (This event only fires when a custom tab is selected.)
 </p>
-<pre class="language-javascript"><code>// configWindow is the SourceConfigWindow instance as in the above snippet
-configWindow.on('set-selected-tab', function(selected) {
+<pre class="language-javascript"><code>// propsWindow is the SourcePropsWindow instance as in the above snippet
+propsWindow.on('set-selected-tab', function(selected) {
   // selected is the exact tab title passed to the customTabs node
   // at this point, developers might use CSS to show only content from the relevant tab
 });</code></pre>
@@ -52,38 +52,38 @@ configWindow.on('set-selected-tab', function(selected) {
   The source’s custom configuration object can be manipulated similarly to how the source itself does it (<a href="tutorials.html#/sourceplugins" target="_blank">see this article</a>), but there are some differences.
 </p>
 <p>
-  When the framework’s ready event fires, developers should opt to load the source’s configuration object in order to update the settings displayed on the configuration window. This is done in exactly the same manner as the source does.
+  When the framework’s ready event fires, developers should opt to load the source’s configuration object in order to update the settings displayed on the properties window. This is done in exactly the same manner as the source does.
 </p>
 <pre class="language-javascript"><code>var xjs = require('xjs');
-var Item = xjs.Item;
+var Source = xjs.Source;
 
 xjs.ready()
-  .then(Item.getCurrentSource)
-  .then(function(myItem) {
-    return myItem.loadConfig();
+  .then(Source.getCurrentSource)
+  .then(function(mySource) {
+    return mySource.loadConfig();
   }).then(function(config) {
-    // update the config window's UI based on the last saved configuration
+    // update the source properties window's UI based on the last saved configuration
   });</code></pre>
 <p>
-  The main difference is in saving the configuration: because of the underlying architecture of the application, the configuration window is only allowed to signal the source to save the configuration. It is still the source’s responsibility to actually save the configuration. The following code snippet illustrates this. (Lines pertaining to the ready event have been removed but you should always do your processing when the framework is ready.)
+  The main difference is in saving the configuration: because of the underlying architecture of the application, the properties window is only allowed to signal the source to save the configuration. It is still the source’s responsibility to actually save the configuration. The following code snippet illustrates this. (Lines pertaining to the ready event have been removed but you should always do your processing when the framework is ready.)
 </p>
-<pre class="language-javascript"><code>// somewhere in configuration window
+<pre class="language-javascript"><code>// somewhere in properties window
 mySaveButton.addEventListener('click', function() {
-  myItem.requestSaveConfig(configObj); // myItem from Item.getCurrentSource
+  mySource.requestSaveConfig(configObj); // mySource from Source.getCurrentSource
 });</code></pre>
 <pre class="language-javascript"><code>// in source
 var xjs = require('xjs');
 var sourceWindow = xjs.SourcePluginWindow.getInstance();
 
 sourceWindow.on('save-config', function(configObj) {
-  myItem.saveConfig(configObj); // myItem from Item.getCurrentSource
+  mySource.saveConfig(configObj); // mySource from Source.getCurrentSource
 });</code></pre>
 <p>
   There may be some cases when the plugin may need to change some settings without the need for saving the configuration object, which is illustrated below:
 </p>
-<pre class="language-javascript"><code>// somewhere in configuration window
+<pre class="language-javascript"><code>// somewhere in properties window
 myPropertyChanger.addEventListener('click', function() {
-  myItem.applyConfig(configObj); // does not ask to save
+  mySource.applyConfig(configObj); // does not ask to save
 });</code></pre>
 
 <pre class="language-javascript"><code>// somewhere in source
