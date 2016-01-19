@@ -3,15 +3,14 @@
   Extensions occupy their own window separate from the main XSplit Broadcaster application. They can be used to do many kinds of tasks in the global scope of the application.
 </p>
 <h3>How to use extensions</h3>
-<p>Extension plugins are currently only available to XSplit premium license holders. To enable extensions in the application, go to Tools > General Settings > Advanced, and check the Enable Global Script checkbox.</p>
-<p>While the extension plugin store is not yet available, extensions may be added through their URLs. To do this, go to Tools > Extensions > Add Extension, and input your extension's URL. It should now appear in the same Extensions menu until you choose to remove it.</p>
+<p>Currently, extensions may be added through their URLs. To do this, go to Tools > Extensions > Add Extension, and input your extension's URL. It should now appear in the same Extensions menu until you choose to remove it.</p>
 
 <img src="assets/xbc-add-extensions.png">
 
 <h3>What extensions can do</h3>
 <p>This section outlines some of the possible things one can do with extensions. Note that this list is not exhaustive. Explore the <a href="api.html">API reference</a> to learn more, or contact us at <a href-"support.html">our support channels</a> for any inquiries or feature requests.</p>
 <ul>
-  <li><strong>Adding new items to the stage.</strong> Extensions are capable of adding system-related items: <code>CameraDevice, Game, Microphone</code> (more will be added in the future). Simply call the relevant system call (<code>System.getCameraDevices()</code>, for example) and call <code>addToScene()</code> on the appropriate object. Note that this is currently limited to adding to the currently active scene.</li>
+  <li><strong>Adding new items to the stage.</strong> Extensions are capable of adding system-related items: <code>CameraDevice, Game, MicrophoneDevice</code> (more will be added in the future). Simply call the relevant system call (<code>System.getCameraDevices()</code>, for example) and call <code>addToScene()</code> on the appropriate object. Note that this is currently limited to adding to the currently active scene.</li>
   <li><strong>Manipulating sources.</strong> Extensions are allowed to manipulate sources, their properties, and even their custom configuration objects just as a properties window might, as detailed <a href="tutorials.html#/sourceconfig#man-config-obj">here</a>.</li>
   <li><strong>Setting application-wide properties.</strong> Extensions are much more powerful than sources and are able to manipulate the application itself. For example, they may use the App class change the transition settings when changing scenes. See the <a href="api.html">API reference</a> for more information.</li>
 </ul>
