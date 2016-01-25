@@ -1,0 +1,53 @@
+
+<h1 class="class export">IItemConfigurable <span class="type">interface</span></h1>
+<p></p><h2>Members</h2>
+  <section class="member">
+    <a name="loadConfig"><h1 id="loadConfig" class="name">
+      loadConfig
+    </h1></a>
+    <pre><code>return: Promise&lt;any&gt;
+</code></pre>
+<p>Gets the configuration JSON</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="saveConfig"><h1 id="saveConfig" class="name">
+      saveConfig
+    </h1></a>
+    <pre><code>param: config&lt;JSON&gt;
+</code></pre>
+<p>Persists a JSON object for configuration. Available to sources only.</p>
+<p><em>Chainable.</em></p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="requestSaveConfig"><h1 id="requestSaveConfig" class="name">
+      requestSaveConfig
+    </h1></a>
+    <pre><code>param: config&lt;JSON&gt;
+</code></pre>
+<p>Requests the source to save a configuration. This makes the source emit the save-config event.</p>
+<p><em>Chainable.</em></p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="applyConfig"><h1 id="applyConfig" class="name">
+      applyConfig
+    </h1></a>
+    <pre><code>param: config&lt;JSON&gt;
+</code></pre>
+<p>Requests the source to save a configuration. This makes the source emit the apply-config event.</p>
+<p><em>Chainable.</em></p>
+
+  </section>
+
+<p class="module defined-in">exported from <a href='#/core'>core</a><br/>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/core/source/iconfig.ts#L6-L43">../src/core/source/iconfig.ts (line 6)</a>
+</p>
+

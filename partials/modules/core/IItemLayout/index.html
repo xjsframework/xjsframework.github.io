@@ -1,0 +1,258 @@
+
+<h1 class="class export">IItemLayout <span class="type">interface</span></h1>
+<p></p><h2>Members</h2>
+  <section class="member">
+    <a name="isKeepAspectRatio"><h1 id="isKeepAspectRatio" class="name">
+      isKeepAspectRatio
+    </h1></a>
+    <pre><code>return: Promise&lt;boolean&gt;
+</code></pre>
+<p>Check if Aspect Ratio is set to ON or OFF</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">source.isKeepAspectRatio().then(function(bool) {
+  // The rest of your code here
+});
+</code></pre>
+
+  </section>
+
+
+  <section class="member">
+    <a name="setKeepAspectRatio"><h1 id="setKeepAspectRatio" class="name">
+      setKeepAspectRatio
+    </h1></a>
+    <pre><code>param: (value: boolean)
+</code></pre>
+<pre><code>return: Promise&lt;Source&gt;
+</code></pre>
+<p>Set Aspect Ratio to ON or OFF</p>
+<p><em>Chainable.</em></p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">source.setKeepAspectRatio(true).then(function(source) {
+  // Promise resolves with same Source instance
+});
+</code></pre>
+
+  </section>
+
+
+  <section class="member">
+    <a name="isPositionLocked"><h1 id="isPositionLocked" class="name">
+      isPositionLocked
+    </h1></a>
+    <pre><code>return: Promise&lt;boolean&gt;
+</code></pre>
+<p>Check if Position Locked is set to ON or OFF</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">source.isPositionLocked().then(function(bool) {
+  // The rest of your code here
+});
+</code></pre>
+
+  </section>
+
+
+  <section class="member">
+    <a name="setPositionLocked"><h1 id="setPositionLocked" class="name">
+      setPositionLocked
+    </h1></a>
+    <pre><code>param: (value: boolean)
+</code></pre>
+<pre><code>return: Promise&lt;Source&gt;
+</code></pre>
+<p>Set Position Lock to ON or OFF</p>
+<p><em>Chainable.</em></p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">source.setPositionLocked(true).then(function(source) {
+  // Promise resolves with same Source instance
+});
+</code></pre>
+
+  </section>
+
+
+  <section class="member">
+    <a name="isEnhancedResizeEnabled"><h1 id="isEnhancedResizeEnabled" class="name">
+      isEnhancedResizeEnabled
+    </h1></a>
+    <pre><code>return: Promise&lt;boolean&gt;
+</code></pre>
+<p>Check if Enhance Resize is Enabled or Disabled</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">source.isEnhancedResizeEnabled().then(function(bool) {
+  // The rest of your code here
+});
+</code></pre>
+
+  </section>
+
+
+  <section class="member">
+    <a name="setEnhancedResizeEnabled"><h1 id="setEnhancedResizeEnabled" class="name">
+      setEnhancedResizeEnabled
+    </h1></a>
+    <pre><code>param: (value: boolean)
+</code></pre>
+<pre><code>return: Promise&lt;Source&gt;
+</code></pre>
+<p>Set Enhance Resize to ON or OFF</p>
+<p><em>Chainable.</em></p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">source.setEnhancedResizeEnabled(true).then(function(source) {
+  // Promise resolves with same Source instance
+});
+</code></pre>
+
+  </section>
+
+
+  <section class="member">
+    <a name="getPosition"><h1 id="getPosition" class="name">
+      getPosition
+    </h1></a>
+    <pre><code>return: Promise&lt;Rectangle&gt;
+</code></pre>
+<p>Get the position of the source</p>
+<p>See also: <a href='#util/Rectangle'>Util/Rectangle</a></p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">source.getPosition().then(function(pos) {
+  // The rest of your code here
+});
+</code></pre>
+
+  </section>
+
+
+  <section class="member">
+    <a name="setPosition"><h1 id="setPosition" class="name">
+      setPosition
+    </h1></a>
+    <pre><code>param: (value: Rectangle)
+</code></pre>
+<p>Set Source Position. Relative coordinates (0-1) are required.</p>
+<p><em>Chainable.</em></p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">var rect = xjs.Rectangle.fromCoordinates(0, 0, 1, 1);
+source.setPosition(rect).then(function(source) {
+  // Promise resolves with same Source instance
+});
+</code></pre>
+<p>See also: <a href='#util/Rectangle'>Util/Rectangle</a></p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="getRotateY"><h1 id="getRotateY" class="name">
+      getRotateY
+    </h1></a>
+    <pre><code>return: Promise&lt;number&gt;
+</code></pre>
+<p>Get Rotate Y value of the source</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">source.getRotateY().then(function(deg) {
+  // The rest of your code here
+});
+</code></pre>
+
+  </section>
+
+
+  <section class="member">
+    <a name="setRotateY"><h1 id="setRotateY" class="name">
+      setRotateY
+    </h1></a>
+    <pre><code>param: (value: number)
+</code></pre>
+<pre><code>return: Promise&lt;Source&gt;
+</code></pre>
+<p>Set Rotate Y value of the source</p>
+<p><em>Chainable.</em></p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">source.setRotateY(30).then(function(source) {
+  // Promise resolves with same Source instance
+});
+</code></pre>
+
+  </section>
+
+
+  <section class="member">
+    <a name="getRotateX"><h1 id="getRotateX" class="name">
+      getRotateX
+    </h1></a>
+    <pre><code>return: Promise&lt;number&gt;
+</code></pre>
+<p>Get Rotate X value of the source</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">source.getRotateX().then(function(deg) {
+  // The rest of your code here
+});
+</code></pre>
+
+  </section>
+
+
+  <section class="member">
+    <a name="setRotateX"><h1 id="setRotateX" class="name">
+      setRotateX
+    </h1></a>
+    <pre><code>param: (value: number)
+</code></pre>
+<pre><code>return: Promise&lt;Source&gt;
+</code></pre>
+<p>Set Rotate X value of the source</p>
+<p><em>Chainable.</em></p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">source.setRotateX(30).then(function(source) {
+  // Promise resolves with same Source instance
+});
+</code></pre>
+
+  </section>
+
+
+  <section class="member">
+    <a name="getRotateZ"><h1 id="getRotateZ" class="name">
+      getRotateZ
+    </h1></a>
+    <pre><code>return: Promise&lt;number&gt;
+</code></pre>
+<p>Get Rotate Z value of the source.</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">source.getRotateX().then(function(deg) {
+  // The rest of your code here
+});
+</code></pre>
+
+  </section>
+
+
+  <section class="member">
+    <a name="setRotateZ"><h1 id="setRotateZ" class="name">
+      setRotateZ
+    </h1></a>
+    <pre><code>param: (value: number)
+</code></pre>
+<pre><code>return: Promise&lt;Source&gt;
+</code></pre>
+<p>Set Rotate Z value of the source.</p>
+<p><em>Chainable.</em></p>
+<p>Please do note that this method will NOT automatically modify/calculate
+the height and width of the source whenever you modify the rotate Z value,
+unlike the behavior of XBC when modifying it through the properties window.</p>
+<p>You will need to manually modify the height and width of the source each time
+you modify this value to get the best results. If not, it might result to
+the stretching and/or shrinking of the source.</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">source.setRotateZ(30).then(function(source) {
+  // Promise resolves with same Source instance
+});
+</code></pre>
+
+  </section>
+
+<p class="module defined-in">exported from <a href='#/core'>core</a><br/>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/core/source/ilayout.ts#L4-L263">../src/core/source/ilayout.ts (line 4)</a>
+</p>
+

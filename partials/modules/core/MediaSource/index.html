@@ -1,0 +1,835 @@
+
+<h1 class="class export">MediaSource <span class="type">class</span></h1>
+<p><p>The MediaSource class represents a playable media file.</p>
+<p>Inherits from: <a href='#core/Source'>Core/Source</a></p>
+<p>Implements: <a href='#core/IItemChroma'>Core/IItemChroma</a>,
+<a href='#core/IItemColor'>Core/IItemColor</a>,
+<a href='#core/IItemLayout'>Core/IItemLayout</a>,
+<a href='#core/IItemTransition'>Core/IItemTransition</a>,
+<a href='#core/IItemAudio'>Core/IItemAudio</a>,
+<a href='#core/IItemPlayback'>Core/IItemPlayback</a></p>
+<p> All methods marked as <em>Chainable</em> resolve with the original <code>MediaSource</code>
+ instance.</p>
+</p><h2>Members</h2>
+  <section class="member">
+    <a name="isKeepAspectRatio"><h1 id="isKeepAspectRatio" class="name">
+      isKeepAspectRatio
+    </h1></a>
+          <p>See: <a href='#core/IItemLayout#isKeepAspectRatio'>isKeepAspectRatio</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="isPositionLocked"><h1 id="isPositionLocked" class="name">
+      isPositionLocked
+    </h1></a>
+          <p>See: <a href='#core/IItemLayout#isPositionLocked'>isPositionLocked</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="isEnhancedResizeEnabled"><h1 id="isEnhancedResizeEnabled" class="name">
+      isEnhancedResizeEnabled
+    </h1></a>
+          <p>See: <a href='#core/IItemLayout#isEnhancedResizeEnabled'>isEnhancedResizeEnabled</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="getPosition"><h1 id="getPosition" class="name">
+      getPosition
+    </h1></a>
+          <p>See: <a href='#core/IItemLayout#getPosition'>getPosition</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="getRotateY"><h1 id="getRotateY" class="name">
+      getRotateY
+    </h1></a>
+          <p>See: <a href='#core/IItemLayout#getRotateY'>getRotateY</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="getRotateX"><h1 id="getRotateX" class="name">
+      getRotateX
+    </h1></a>
+          <p>See: <a href='#core/IItemLayout#getRotateX'>getRotateX</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="getRotateZ"><h1 id="getRotateZ" class="name">
+      getRotateZ
+    </h1></a>
+          <p>See: <a href='#core/IItemLayout#getRotateZ'>getRotateZ</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="setKeepAspectRatio"><h1 id="setKeepAspectRatio" class="name">
+      setKeepAspectRatio
+    </h1></a>
+          <p>See: <a href='#core/IItemLayout#setKeepAspectRatio'>setKeepAspectRatio</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="setPositionLocked"><h1 id="setPositionLocked" class="name">
+      setPositionLocked
+    </h1></a>
+          <p>See: <a href='#core/IItemLayout#setPositionLocked'>setPositionLocked</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="setEnhancedResizeEnabled"><h1 id="setEnhancedResizeEnabled" class="name">
+      setEnhancedResizeEnabled
+    </h1></a>
+          <p>See: <a href='#core/IItemLayout#setEnhancedResizeEnabled'>setEnhancedResizeEnabled</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="setPosition"><h1 id="setPosition" class="name">
+      setPosition
+    </h1></a>
+          <p>See: <a href='#core/IItemLayout#setPosition'>setPosition</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="setRotateY"><h1 id="setRotateY" class="name">
+      setRotateY
+    </h1></a>
+          <p>See: <a href='#core/IItemLayout#setRotateY'>setRotateY</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="setRotateX"><h1 id="setRotateX" class="name">
+      setRotateX
+    </h1></a>
+          <p>See: <a href='#core/IItemLayout#setRotateX'>setRotateX</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="setRotateZ"><h1 id="setRotateZ" class="name">
+      setRotateZ
+    </h1></a>
+          <p>See: <a href='#core/IItemLayout#setRotateZ'>setRotateZ</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="getTransparency"><h1 id="getTransparency" class="name">
+      getTransparency
+    </h1></a>
+          <p>See: <a href='#core/IItemColor#getTransparency'>getTransparency</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="getBrightness"><h1 id="getBrightness" class="name">
+      getBrightness
+    </h1></a>
+          <p>See: <a href='#core/IItemColor#getBrightness'>getBrightness</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="getContrast"><h1 id="getContrast" class="name">
+      getContrast
+    </h1></a>
+          <p>See: <a href='#core/IItemColor#getContrast'>getContrast</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="getHue"><h1 id="getHue" class="name">
+      getHue
+    </h1></a>
+          <p>See: <a href='#core/IItemColor#getHue'>getHue</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="getSaturation"><h1 id="getSaturation" class="name">
+      getSaturation
+    </h1></a>
+          <p>See: <a href='#core/IItemColor#getSaturation'>getSaturation</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="getBorderColor"><h1 id="getBorderColor" class="name">
+      getBorderColor
+    </h1></a>
+          <p>See: <a href='#core/IItemColor#getBorderColor'>getBorderColor</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="setTransparency"><h1 id="setTransparency" class="name">
+      setTransparency
+    </h1></a>
+          <p>See: <a href='#core/IItemColor#setTransparency'>setTransparency</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="setBrightness"><h1 id="setBrightness" class="name">
+      setBrightness
+    </h1></a>
+          <p>See: <a href='#core/IItemColor#setBrightness'>setBrightness</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="setContrast"><h1 id="setContrast" class="name">
+      setContrast
+    </h1></a>
+          <p>See: <a href='#core/IItemColor#setContrast'>setContrast</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="setHue"><h1 id="setHue" class="name">
+      setHue
+    </h1></a>
+          <p>See: <a href='#core/IItemColor#setHue'>setHue</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="setSaturation"><h1 id="setSaturation" class="name">
+      setSaturation
+    </h1></a>
+          <p>See: <a href='#core/IItemColor#setSaturation'>setSaturation</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="setBorderColor"><h1 id="setBorderColor" class="name">
+      setBorderColor
+    </h1></a>
+          <p>See: <a href='#core/IItemColor#setBorderColor'>setBorderColor</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="isChromaEnabled"><h1 id="isChromaEnabled" class="name">
+      isChromaEnabled
+    </h1></a>
+          <p>See: <a href='#core/IItemChroma#isChromaEnabled'>isChromaEnabled</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="setChromaEnabled"><h1 id="setChromaEnabled" class="name">
+      setChromaEnabled
+    </h1></a>
+          <p>See: <a href='#core/IItemChroma#setChromaEnabled'>setChromaEnabled</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="getKeyingType"><h1 id="getKeyingType" class="name">
+      getKeyingType
+    </h1></a>
+          <p>See: <a href='#core/IItemChroma#getKeyingType'>getKeyingType</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="setKeyingType"><h1 id="setKeyingType" class="name">
+      setKeyingType
+    </h1></a>
+          <p>See: <a href='#core/IItemChroma#setKeyingType'>setKeyingType</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="getChromaAntiAliasLevel"><h1 id="getChromaAntiAliasLevel" class="name">
+      getChromaAntiAliasLevel
+    </h1></a>
+          <p>See: <a href='#core/IItemChroma#getChromaAntiAliasLevel'>getChromaAntiAliasLevel</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="setChromaAntiAliasLevel"><h1 id="setChromaAntiAliasLevel" class="name">
+      setChromaAntiAliasLevel
+    </h1></a>
+          <p>See: <a href='#core/IItemChroma#setChromaAntiAliasLevel'>setChromaAntiAliasLevel</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="getChromaLegacyBrightness"><h1 id="getChromaLegacyBrightness" class="name">
+      getChromaLegacyBrightness
+    </h1></a>
+          <p>See: <a href='#core/IItemChroma#getChromaLegacyBrightness'>getChromaLegacyBrightness</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="setChromaLegacyBrightness"><h1 id="setChromaLegacyBrightness" class="name">
+      setChromaLegacyBrightness
+    </h1></a>
+          <p>See: <a href='#core/IItemChroma#setChromaLegacyBrightness'>setChromaLegacyBrightness</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="getChromaLegacySaturation"><h1 id="getChromaLegacySaturation" class="name">
+      getChromaLegacySaturation
+    </h1></a>
+          <p>See: <a href='#core/IItemChroma#getChromaLegacySaturation'>getChromaLegacySaturation</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="setChromaLegacySaturation"><h1 id="setChromaLegacySaturation" class="name">
+      setChromaLegacySaturation
+    </h1></a>
+          <p>See: <a href='#core/IItemChroma#setChromaLegacySaturation'>setChromaLegacySaturation</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="getChromaLegacyHue"><h1 id="getChromaLegacyHue" class="name">
+      getChromaLegacyHue
+    </h1></a>
+          <p>See: <a href='#core/IItemChroma#getChromaLegacyHue'>getChromaLegacyHue</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="setChromaLegacyHue"><h1 id="setChromaLegacyHue" class="name">
+      setChromaLegacyHue
+    </h1></a>
+          <p>See: <a href='#core/IItemChroma#setChromaLegacyHue'>setChromaLegacyHue</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="getChromaLegacyThreshold"><h1 id="getChromaLegacyThreshold" class="name">
+      getChromaLegacyThreshold
+    </h1></a>
+          <p>See: <a href='#core/IItemChroma#getChromaLegacyThreshold'>getChromaLegacyThreshold</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="setChromaLegacyThreshold"><h1 id="setChromaLegacyThreshold" class="name">
+      setChromaLegacyThreshold
+    </h1></a>
+          <p>See: <a href='#core/IItemChroma#setChromaLegacyThreshold'>setChromaLegacyThreshold</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="getChromaLegacyAlphaSmoothing"><h1 id="getChromaLegacyAlphaSmoothing" class="name">
+      getChromaLegacyAlphaSmoothing
+    </h1></a>
+          <p>See: <a href='#core/IItemChroma#getChromaLegacyAlphaSmoothing'>getChromaLegacyAlphaSmoothing</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="setChromaLegacyAlphaSmoothing"><h1 id="setChromaLegacyAlphaSmoothing" class="name">
+      setChromaLegacyAlphaSmoothing
+    </h1></a>
+          <p>See: <a href='#core/IItemChroma#setChromaLegacyAlphaSmoothing'>setChromaLegacyAlphaSmoothing</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="getChromaRGBKeyPrimaryColor"><h1 id="getChromaRGBKeyPrimaryColor" class="name">
+      getChromaRGBKeyPrimaryColor
+    </h1></a>
+          <p>See: <a href='#core/IItemChroma#getChromaRGBKeyPrimaryColor'>getChromaRGBKeyPrimaryColor</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="setChromaRGBKeyPrimaryColor"><h1 id="setChromaRGBKeyPrimaryColor" class="name">
+      setChromaRGBKeyPrimaryColor
+    </h1></a>
+          <p>See: <a href='#core/IItemChroma#setChromaRGBKeyPrimaryColor'>setChromaRGBKeyPrimaryColor</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="getChromaRGBKeyThreshold"><h1 id="getChromaRGBKeyThreshold" class="name">
+      getChromaRGBKeyThreshold
+    </h1></a>
+          <p>See: <a href='#core/IItemChroma#getChromaRGBKeyThreshold'>getChromaRGBKeyThreshold</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="setChromaRGBKeyThreshold"><h1 id="setChromaRGBKeyThreshold" class="name">
+      setChromaRGBKeyThreshold
+    </h1></a>
+          <p>See: <a href='#core/IItemChroma#setChromaRGBKeyThreshold'>setChromaRGBKeyThreshold</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="getChromaRGBKeyExposure"><h1 id="getChromaRGBKeyExposure" class="name">
+      getChromaRGBKeyExposure
+    </h1></a>
+          <p>See: <a href='#core/IItemChroma#getChromaRGBKeyExposure'>getChromaRGBKeyExposure</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="setChromaRGBKeyExposure"><h1 id="setChromaRGBKeyExposure" class="name">
+      setChromaRGBKeyExposure
+    </h1></a>
+          <p>See: <a href='#core/IItemChroma#setChromaRGBKeyExposure'>setChromaRGBKeyExposure</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="getChromaColorKeyThreshold"><h1 id="getChromaColorKeyThreshold" class="name">
+      getChromaColorKeyThreshold
+    </h1></a>
+          <p>See: <a href='#core/IItemChroma#getChromaColorKeyThreshold'>getChromaColorKeyThreshold</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="setChromaColorKeyThreshold"><h1 id="setChromaColorKeyThreshold" class="name">
+      setChromaColorKeyThreshold
+    </h1></a>
+          <p>See: <a href='#core/IItemChroma#setChromaColorKeyThreshold'>setChromaColorKeyThreshold</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="getChromaColorKeyExposure"><h1 id="getChromaColorKeyExposure" class="name">
+      getChromaColorKeyExposure
+    </h1></a>
+          <p>See: <a href='#core/IItemChroma#getChromaColorKeyExposure'>getChromaColorKeyExposure</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="setChromaColorKeyExposure"><h1 id="setChromaColorKeyExposure" class="name">
+      setChromaColorKeyExposure
+    </h1></a>
+          <p>See: <a href='#core/IItemChroma#setChromaColorKeyExposure'>setChromaColorKeyExposure</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="getChromaColorKeyColor"><h1 id="getChromaColorKeyColor" class="name">
+      getChromaColorKeyColor
+    </h1></a>
+          <p>See: <a href='#core/IItemChroma#getChromaColorKeyColor'>getChromaColorKeyColor</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="setChromaColorKeyColor"><h1 id="setChromaColorKeyColor" class="name">
+      setChromaColorKeyColor
+    </h1></a>
+          <p>See: <a href='#core/IItemChroma#setChromaColorKeyColor'>setChromaColorKeyColor</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="isVisible"><h1 id="isVisible" class="name">
+      isVisible
+    </h1></a>
+          <p>See: <a href='#core/IItemTransition#isVisible'>isVisible</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="setVisible"><h1 id="setVisible" class="name">
+      setVisible
+    </h1></a>
+          <p>See: <a href='#core/IItemTransition#setVisible'>setVisible</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="getTransition"><h1 id="getTransition" class="name">
+      getTransition
+    </h1></a>
+          <p>See: <a href='#core/IItemTransition#getTransition'>getTransition</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="setTransition"><h1 id="setTransition" class="name">
+      setTransition
+    </h1></a>
+          <p>See: <a href='#core/IItemTransition#setTransition'>setTransition</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="getTransitionTime"><h1 id="getTransitionTime" class="name">
+      getTransitionTime
+    </h1></a>
+          <p>See: <a href='#core/IItemTransition#getTransitionTime'>getTransitionTime</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="setTransitionTime"><h1 id="setTransitionTime" class="name">
+      setTransitionTime
+    </h1></a>
+          <p>See: <a href='#core/IItemTransition#setTransitionTime'>setTransitionTime</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="isSeekable"><h1 id="isSeekable" class="name">
+      isSeekable
+    </h1></a>
+          <p>See: <a href='#core/IItemPlayback#isSeekable'>isSeekable</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="getPlaybackPosition"><h1 id="getPlaybackPosition" class="name">
+      getPlaybackPosition
+    </h1></a>
+          <p>See: <a href='#core/IItemPlayback#getPlaybackPosition'>getPlaybackPosition</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="setPlaybackPosition"><h1 id="setPlaybackPosition" class="name">
+      setPlaybackPosition
+    </h1></a>
+          <p>See: <a href='#core/IItemPlayback#setPlaybackPosition'>setPlaybackPosition</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="getPlaybackDuration"><h1 id="getPlaybackDuration" class="name">
+      getPlaybackDuration
+    </h1></a>
+          <p>See: <a href='#core/IItemPlayback#getPlaybackDuration'>getPlaybackDuration</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="isPlaying"><h1 id="isPlaying" class="name">
+      isPlaying
+    </h1></a>
+          <p>See: <a href='#core/IItemPlayback#isPlaying'>isPlaying</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="setPlaying"><h1 id="setPlaying" class="name">
+      setPlaying
+    </h1></a>
+          <p>See: <a href='#core/IItemPlayback#setPlaying'>setPlaying</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="getPlaybackStartPosition"><h1 id="getPlaybackStartPosition" class="name">
+      getPlaybackStartPosition
+    </h1></a>
+          <p>See: <a href='#core/IItemPlayback#getPlaybackStartPosition'>getPlaybackStartPosition</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="setPlaybackStartPosition"><h1 id="setPlaybackStartPosition" class="name">
+      setPlaybackStartPosition
+    </h1></a>
+          <p>See: <a href='#core/IItemPlayback#setPlaybackStartPosition'>setPlaybackStartPosition</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="getPlaybackEndPosition"><h1 id="getPlaybackEndPosition" class="name">
+      getPlaybackEndPosition
+    </h1></a>
+          <p>See: <a href='#core/IItemPlayback#getPlaybackEndPosition'>getPlaybackEndPosition</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="setPlaybackEndPosition"><h1 id="setPlaybackEndPosition" class="name">
+      setPlaybackEndPosition
+    </h1></a>
+          <p>See: <a href='#core/IItemPlayback#setPlaybackEndPosition'>setPlaybackEndPosition</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="getActionAfterPlayback"><h1 id="getActionAfterPlayback" class="name">
+      getActionAfterPlayback
+    </h1></a>
+          <p>See: <a href='#core/IItemPlayback#getActionAfterPlayback'>getActionAfterPlayback</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="setActionAfterPlayback"><h1 id="setActionAfterPlayback" class="name">
+      setActionAfterPlayback
+    </h1></a>
+          <p>See: <a href='#core/IItemPlayback#setActionAfterPlayback'>setActionAfterPlayback</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="isAutostartOnSceneLoad"><h1 id="isAutostartOnSceneLoad" class="name">
+      isAutostartOnSceneLoad
+    </h1></a>
+          <p>See: <a href='#core/IItemPlayback#isAutostartOnSceneLoad'>isAutostartOnSceneLoad</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="setAutostartOnSceneLoad"><h1 id="setAutostartOnSceneLoad" class="name">
+      setAutostartOnSceneLoad
+    </h1></a>
+          <p>See: <a href='#core/IItemPlayback#setAutostartOnSceneLoad'>setAutostartOnSceneLoad</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="isForceDeinterlace"><h1 id="isForceDeinterlace" class="name">
+      isForceDeinterlace
+    </h1></a>
+          <p>See: <a href='#core/IItemPlayback#isForceDeinterlace'>isForceDeinterlace</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="setForceDeinterlace"><h1 id="setForceDeinterlace" class="name">
+      setForceDeinterlace
+    </h1></a>
+          <p>See: <a href='#core/IItemPlayback#setForceDeinterlace'>setForceDeinterlace</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="isRememberingPlaybackPosition"><h1 id="isRememberingPlaybackPosition" class="name">
+      isRememberingPlaybackPosition
+    </h1></a>
+          <p>See: <a href='#core/IItemPlayback#isRememberingPlaybackPosition'>isRememberingPlaybackPosition</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="setRememberingPlaybackPosition"><h1 id="setRememberingPlaybackPosition" class="name">
+      setRememberingPlaybackPosition
+    </h1></a>
+          <p>See: <a href='#core/IItemPlayback#setRememberingPlaybackPosition'>setRememberingPlaybackPosition</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="isShowingPlaybackPosition"><h1 id="isShowingPlaybackPosition" class="name">
+      isShowingPlaybackPosition
+    </h1></a>
+          <p>See: <a href='#core/IItemPlayback#isShowingPlaybackPosition'>isShowingPlaybackPosition</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="setShowingPlaybackPosition"><h1 id="setShowingPlaybackPosition" class="name">
+      setShowingPlaybackPosition
+    </h1></a>
+          <p>See: <a href='#core/IItemPlayback#setShowingPlaybackPosition'>setShowingPlaybackPosition</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="getCuePoints"><h1 id="getCuePoints" class="name">
+      getCuePoints
+    </h1></a>
+          <p>See: <a href='#core/IItemPlayback#getCuePoints'>getCuePoints</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="setCuePoints"><h1 id="setCuePoints" class="name">
+      setCuePoints
+    </h1></a>
+          <p>See: <a href='#core/IItemPlayback#setCuePoints'>setCuePoints</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="isAudio"><h1 id="isAudio" class="name">
+      isAudio
+    </h1></a>
+          <p>See: <a href='#core/IItemPlayback#isAudio'>isAudio</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="isVideo"><h1 id="isVideo" class="name">
+      isVideo
+    </h1></a>
+          <p>See: <a href='#core/IItemPlayback#isVideo'>isVideo</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="getVolume"><h1 id="getVolume" class="name">
+      getVolume
+    </h1></a>
+          <p>See: <a href='#core/IItemAudio#getVolume'>getVolume</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="isMute"><h1 id="isMute" class="name">
+      isMute
+    </h1></a>
+          <p>See: <a href='#core/IItemAudio#isMute'>isMute</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="setVolume"><h1 id="setVolume" class="name">
+      setVolume
+    </h1></a>
+          <p>See: <a href='#core/IItemAudio#setVolume'>setVolume</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="setMute"><h1 id="setMute" class="name">
+      setMute
+    </h1></a>
+          <p>See: <a href='#core/IItemAudio#setMute'>setMute</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="isStreamOnlyAudio"><h1 id="isStreamOnlyAudio" class="name">
+      isStreamOnlyAudio
+    </h1></a>
+          <p>See: <a href='#core/IItemAudio#isStreamOnlyAudio'>isStreamOnlyAudio</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="setStreamOnlyAudio"><h1 id="setStreamOnlyAudio" class="name">
+      setStreamOnlyAudio
+    </h1></a>
+          <p>See: <a href='#core/IItemAudio#setStreamOnlyAudio'>setStreamOnlyAudio</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="isAudioAvailable"><h1 id="isAudioAvailable" class="name">
+      isAudioAvailable
+    </h1></a>
+          <p>See: <a href='#core/IItemAudio#isAudioAvailable'>isAudioAvailable</a></p>
+      
+  </section>
+
+<p class="module defined-in">exported from <a href='#/core'>core</a><br/>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/core/source/media.ts#L19-L503">../src/core/source/media.ts (line 19)</a>
+</p>
+

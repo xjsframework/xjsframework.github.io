@@ -1,21 +1,60 @@
 
-<h1 class="class export">Scene <span class="type">class</span></h1>
-<p></p><h2>Members</h2>
+<h1 class="class export">Source <span class="type">class</span></h1>
+<p><p>A <code>Source</code> represents an object that is used as a source on the stage.
+Some possible sources are games, microphones, or a webpage.</p>
+<p>Implements: <a href='#core/IItemLayout'>Core/IItemLayout</a></p>
+<h3 id="basic-usage">Basic Usage</h3>
+<pre><code class="lang-javascript">var xjs = require(&#39;xjs&#39;);
+var Scene = xjs.Scene.getById(0);
+
+Scene.getSources().then(function(sources) {
+  if (sources.length === 0) return;
+
+  // There&#39;s a valid source, let&#39;s use that
+  var source = sources[sources.length - 1];
+  return source.setCustomName(&#39;SourceTesting&#39;);
+}).then(function(source) {
+  // Do something else here
+});
+</code></pre>
+<p>All methods marked as <em>Chainable</em> resolve with the original <code>Source</code> instance.
+This allows you to perform sequential operations correctly:</p>
+<pre><code class="lang-javascript">var xjs = require(&#39;xjs&#39;);
+var Source = xjs.Source;
+
+// a source that sets its own properties on load
+xjs.ready()
+   .then(Source.getCurrentSource)
+   .then(function(source) {
+    return source.setCustomName(&#39;MyCustomName&#39;);
+ }).then(function(source) {
+    return source.setKeepLoaded(true);
+ }).then(function(source) {
+    // set more properties here
+ });
+</code></pre>
+</p><h2>Members</h2>
   <section class="member constructor">
     <h1 id="constructor" class="name">constructor</h1>
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
   </section>
 
   <section class="member">
-    <a name="getSceneNumber"><h1 id="getSceneNumber" class="name">
-      getSceneNumber
+    <a name="setName"><h1 id="setName" class="name">
+      setName
     </h1></a>
-    <pre><code>return: number
+    <pre><code>param: (value: string)
 </code></pre>
-<p>Get the 1-indexed scene number of this scene object.</p>
+<pre><code>return: Promise&lt;Source&gt;
+</code></pre>
+<p>Sets the name of the source.</p>
+<p><em>Chainable.</em></p>
 <h4 id="usage">Usage</h4>
-<pre><code class="lang-javascript">myScene.getSceneNumber().then(function(num) {
- console.log(&#39;My scene is scene number &#39; + num);
+<pre><code class="lang-javascript">source.setName(&#39;newNameHere&#39;).then(function(source) {
+  // Promise resolves with same Source instance when name has been set
+  return source.getName();
+}).then(function(name) {
+  // &#39;name&#39; should be the updated value by now.
 });
 </code></pre>
 
@@ -26,12 +65,12 @@
     <a name="getName"><h1 id="getName" class="name">
       getName
     </h1></a>
-    <pre><code>return: number
+    <pre><code>return: Promise&lt;string&gt;
 </code></pre>
-<p>Get the name of this scene object.</p>
+<p>Gets the name of the source.</p>
 <h4 id="usage">Usage</h4>
-<pre><code class="lang-javascript">myScene.getSceneName().then(function(name) {
- console.log(&#39;My scene is named &#39; + name);
+<pre><code class="lang-javascript">source.getName().then(function(name) {
+  // Do something with the name
 });
 </code></pre>
 
@@ -39,29 +78,24 @@
 
 
   <section class="member">
-    <a name="setName"><h1 id="setName" class="name">
-      setName
+    <a name="setCustomName"><h1 id="setCustomName" class="name">
+      setCustomName
     </h1></a>
-    <pre><code>Set the name of this scene object. Cannot be set by source plugins.
+    <pre><code>param: (value: string)
 </code></pre>
+<pre><code>return: Promise&lt;Source&gt;
+</code></pre>
+<p>Sets the custom name of the source.</p>
+<p>The main difference between <code>setName</code> and <code>setCustomName</code> is that the CustomName
+can be edited by users using XBC through the bottom panel. <code>setName</code> on
+the other hand would update the source&#39;s internal name property.</p>
+<p><em>Chainable.</em></p>
 <h4 id="usage">Usage</h4>
-<pre><code class="lang-javascript">myScene.setName(&#39;Gameplay&#39;);
-</code></pre>
-
-  </section>
-
-
-  <section class="member">
-    <a name="getSources"><h1 id="getSources" class="name">
-      getSources
-    </h1></a>
-    <pre><code>return: Promise&lt;Source[]&gt;
-</code></pre>
-<p>Gets all the sources in a specific scene.
-See also: <a href='#core/Source'>Core/Source</a></p>
-<h4 id="usage">Usage</h4>
-<pre><code class="lang-javascript">myScene.getSources().then(function(sources) {
- // do something to each source in sources array
+<pre><code class="lang-javascript">source.setCustomName(&#39;newNameHere&#39;).then(function(source) {
+  // Promise resolves with same Source instance when custom name has been set
+  return source.getCustomName();
+}).then(function(name) {
+  // &#39;name&#39; should be the updated value by now.
 });
 </code></pre>
 
@@ -69,16 +103,15 @@ See also: <a href='#core/Source'>Core/Source</a></p>
 
 
   <section class="member">
-    <a name="isEmpty"><h1 id="isEmpty" class="name">
-      isEmpty
+    <a name="getCustomName"><h1 id="getCustomName" class="name">
+      getCustomName
     </h1></a>
-    <pre><code>Checks if a scene is empty.
+    <pre><code>return: Promise&lt;string&gt;
 </code></pre>
+<p>Gets the custom name of the source.</p>
 <h4 id="usage">Usage</h4>
-<pre><code class="lang-javascript">myScene.isEmpty().then(function(empty) {
-  if (empty === true) {
-    console.log(&#39;My scene is empty.&#39;);
-  }
+<pre><code class="lang-javascript">source.getCustomName().then(function(name) {
+  // Do something with the name
 });
 </code></pre>
 
@@ -86,194 +119,325 @@ See also: <a href='#core/Source'>Core/Source</a></p>
 
 
   <section class="member">
-    <a name="setSourceOrder"><h1 id="setSourceOrder" class="name">
-      setSourceOrder
+    <a name="getValue"><h1 id="getValue" class="name">
+      getValue
     </h1></a>
-    <pre><code>param: Array&lt;Source&gt; | Array&lt;string&gt; (source IDs)
+    <pre><code>return: Promise&lt;string|XML&gt;
 </code></pre>
-<pre><code>return: Promise&lt;Scene&gt;
-</code></pre>
-<p>Sets the source order of the current scene. The first source in the array
-will be on top (will cover sources below it).</p>
-
-  </section>
-
-
-  <section class="member static">
-    <a name="getById"><h1 id="getById" class="name">
-      <code>static</code> getById
-    </h1></a>
-    <pre><code>return: Scene
-</code></pre>
-<p>Get a specific scene object given the scene number.</p>
+<p>Gets a special string that refers to the source&#39;s main definition.</p>
+<p>This method can resolve with an XML object, which is an object generated by
+the framework. Call <code>toString()</code> to transform into an XML String. (See the
+documentation for <code>setValue</code> for more details.)</p>
 <h4 id="usage">Usage</h4>
-<pre><code class="lang-javascript">var scene1 = Scene.getById(1);
-</code></pre>
-
-  </section>
-
-
-  <section class="member static">
-    <a name="getByName"><h1 id="getByName" class="name">
-      <code>static</code> getByName
-    </h1></a>
-    <pre><code>return: Promise&lt;Scene[]&gt;
-</code></pre>
-<p>Asynchronous functon to get a list of scene objects with a specific name.</p>
-<h4 id="usage">Usage</h4>
-<pre><code class="lang-javascript">var scenes = Scene.getByName(&#39;Game&#39;).then(function(scenes) {
-   // manipulate scenes
+<pre><code class="lang-javascript">source.getValue().then(function(value) {
+  // Do something with the value
 });
 </code></pre>
 
   </section>
 
 
-  <section class="member static">
-    <a name="getActiveScene"><h1 id="getActiveScene" class="name">
-      <code>static</code> getActiveScene
+  <section class="member">
+    <a name="setValue"><h1 id="setValue" class="name">
+      setValue
     </h1></a>
-    <pre><code>return: Promise&lt;Scene&gt;
+    <pre><code>param: (value: string)
 </code></pre>
-<p>Get the currently active scene.</p>
+<pre><code>return: Promise&lt;Source&gt;
+</code></pre>
+<p>Set the source&#39;s main definition; this special string defines the source&#39;s
+&quot;identity&quot;. Each type of source requires a different format for this value.</p>
+<p><em>Chainable.</em></p>
+<p><strong>WARNING:</strong>
+Please do note that using this method COULD break the current source, possibly modifying
+its type IF you set an invalid string for the current source.</p>
+<h4 id="possible-values-by-source-type">Possible values by source type</h4>
+<ul>
+<li>FILE - path/URL</li>
+<li>LIVE - Device ID</li>
+<li>BITMAP - path</li>
+<li>SCREEN - XML string</li>
+<li>FLASHFILE - path</li>
+<li>GAMESOURCE - XML string</li>
+<li>HTML - path/URL or html:<plugin></li>
+</ul>
 <h4 id="usage">Usage</h4>
-<pre><code class="lang-javascript">var myScene = Scene.getActiveScene();
-</code></pre>
-
-  </section>
-
-
-  <section class="member static">
-    <a name="setActiveScene"><h1 id="setActiveScene" class="name">
-      <code>static</code> setActiveScene
-    </h1></a>
-    <pre><code>param: scene&lt;number|Scene&gt;
-</code></pre>
-<pre><code>return: Promise&lt;boolean&gt;
-</code></pre>
-<p>Change active scene. Does not work on source plugins.</p>
-
-  </section>
-
-
-  <section class="member static">
-    <a name="searchSourcesById"><h1 id="searchSourcesById" class="name">
-      <code>static</code> searchSourcesById
-    </h1></a>
-    <pre><code>return: Promise&lt;Source&gt;
-</code></pre>
-<p>Searches all scenes for an source by ID. ID search will return exactly 1 result (IDs are unique) or null.</p>
-<p>See also: <a href='#core/Source'>Core/Source</a></p>
-<h4 id="usage">Usage</h4>
-<pre><code class="lang-javascript">Scene.searchSourcesById(&#39;{10F04AE-6215-3A88-7899-950B12186359}&#39;).then(function(source) {
-  // result is either a Source or null
+<pre><code class="lang-javascript">source.setValue(&#39;@DEVICE:PNP:\\?\USB#VID_046D&amp;amp;PID_082C&amp;amp;MI_02#6&amp;amp;16FD2F8D&amp;amp;0&amp;amp;0002#{65E8773D-8F56-11D0-A3B9-00A0C9223196}\GLOBAL&#39;)
+  .then(function(source) {
+  // Promise resolves with same Source instance
 });
 </code></pre>
 
   </section>
 
 
-  <section class="member static">
-    <a name="searchScenesBySourceId"><h1 id="searchScenesBySourceId" class="name">
-      <code>static</code> searchScenesBySourceId
-    </h1></a>
-    <pre><code>return: Promise&lt;Scene&gt;
-</code></pre>
-<p>Searches all scenes for one that contains the given source ID.</p>
-<h4 id="usage">Usage</h4>
-<pre><code class="lang-javascript">Scene.searchScenesBySourceId(&#39;{10F04AE-6215-3A88-7899-950B12186359}&#39;).then(function(scene) {
-  // scene contains the source
-});
-</code></pre>
-
-  </section>
-
-
-  <section class="member static">
-    <a name="searchSourcesByName"><h1 id="searchSourcesByName" class="name">
-      <code>static</code> searchSourcesByName
-    </h1></a>
-    <pre><code>return: Promise&lt;Source[]&gt;
-</code></pre>
-<p>Searches all scenes for a source by name substring. This function
-compares against custom name first (recommended) before falling back to the
-name property of the source.</p>
-<h4 id="usage">Usage</h4>
-<pre><code class="lang-javascript">Scene.searchSourcesByName(&#39;camera&#39;).then(function(sources) {
-  // do something to each source in sources array
-});
-</code></pre>
-
-  </section>
-
-
-  <section class="member static">
-    <a name="filterSources"><h1 id="filterSources" class="name">
-      <code>static</code> filterSources
-    </h1></a>
-    <pre><code>param: function(source, resolve)
-</code></pre>
-<pre><code>return: Promise&lt;Source[]&gt;
-</code></pre>
-<p>Searches all scenes for sources that satisfies the provided testing function.</p>
-<h4 id="usage">Usage</h4>
-<pre><code class="lang-javascript">Scene.filterSources(function(source, resolve) {
-  // We&#39;ll only fetch Flash Sources by resolving &#39;true&#39; if the source is an
-  // instance of FlashSource
-  resolve((source instanceof FlashSource));
-}).then(function(sources) {
-  // sources would either be an empty array if no Flash sources was found,
-  // or an array of FlashSource objects
-});
-</code></pre>
-
-  </section>
-
-
-  <section class="member static">
-    <a name="filterScenesBySources"><h1 id="filterScenesBySources" class="name">
-      <code>static</code> filterScenesBySources
-    </h1></a>
-    <pre><code>param: function(source, resolve)
-</code></pre>
-<pre><code>return: Promise&lt;Scene[]&gt;
-</code></pre>
-<p>Searches all scenes for sources that satisfies the provided testing
-function, and then return the scene that contains the source.</p>
-<h4 id="usage">Usage</h4>
-<pre><code class="lang-javascript">Scene.filterScenesBySources(function(source, resolve) {
-  // We&#39;ll only fetch the scenes with flash sources by resolving &#39;true&#39; if
-  // the source is an instance of FlashSource
-  resolve((source instanceof FlashSource));
-}).then(function(scenes) {
-  // scenes would be an array of all scenes with FlashSources
-});
-</code></pre>
-
-  </section>
-
-
-  <section class="member static">
-    <a name="initializeScenes"><h1 id="initializeScenes" class="name">
-      <code>static</code> initializeScenes
+  <section class="member">
+    <a name="getKeepLoaded"><h1 id="getKeepLoaded" class="name">
+      getKeepLoaded
     </h1></a>
     <pre><code>return: Promise&lt;boolean&gt;
 </code></pre>
-<p>Load scenes that are not yet initialized in XSplit Broadcaster.</p>
-<p>Note: For memory saving purposes, this is not called automatically.
-If your extension wants to manipulate multiple scenes, it is imperative that you call this function.
-This function is only available to extensions.</p>
+<p>Check if source is kept loaded in memory</p>
 <h4 id="usage">Usage</h4>
-<pre><code class="lang-javascript">Scene.initializeScenes().then(function(val) {
-  if (val === true) {
-    // Now you know that all scenes are loaded :)
-  }
-})
+<pre><code class="lang-javascript">source.getKeepLoaded().then(function(isLoaded) {
+  // The rest of your code here
+});
+</code></pre>
+
+  </section>
+
+
+  <section class="member">
+    <a name="setKeepLoaded"><h1 id="setKeepLoaded" class="name">
+      setKeepLoaded
+    </h1></a>
+    <pre><code>param: (value: boolean)
+</code></pre>
+<pre><code>return: Promise&lt;Source&gt;
+</code></pre>
+<p>Set Keep loaded option to ON or OFF</p>
+<p><em>Chainable.</em></p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">source.setKeepLoaded(true).then(function(source) {
+  // Promise resolves with same Source instance
+});
+</code></pre>
+
+  </section>
+
+
+  <section class="member">
+    <a name="getType"><h1 id="getType" class="name">
+      getType
+    </h1></a>
+    <pre><code>return: Promise&lt;SourceTypes&gt;
+</code></pre>
+<p>Get the type of the source</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">source.getType().then(function(type) {
+  // The rest of your code here
+});
+</code></pre>
+
+  </section>
+
+
+  <section class="member">
+    <a name="getId"><h1 id="getId" class="name">
+      getId
+    </h1></a>
+    <pre><code>return: Promise&lt;string&gt;
+</code></pre>
+<p>Get the ID of the source</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">source.getId().then(function(id) {
+  // The rest of your code here
+});
+</code></pre>
+
+  </section>
+
+
+  <section class="member">
+    <a name="getSceneId"><h1 id="getSceneId" class="name">
+      getSceneId
+    </h1></a>
+    <pre><code>return: Promise&lt;number&gt;
+</code></pre>
+<p>Get (1-indexed) Scene ID where the source is loaded</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">source.getSceneId().then(function(id) {
+  // The rest of your code here
+});
+</code></pre>
+
+  </section>
+
+
+  <section class="member">
+    <a name="toXML"><h1 id="toXML" class="name">
+      toXML
+    </h1></a>
+    <pre><code>return: XML
+</code></pre>
+<p>Convert the Source object to an XML object. Use <code>toString()</code> to
+get the string version of the returned object.</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">var xml = source.toXML();
+</code></pre>
+
+  </section>
+
+
+  <section class="member">
+    <a name="refresh"><h1 id="refresh" class="name">
+      refresh
+    </h1></a>
+     <pre><code>return: Promise&lt;Source&gt;
+ </code></pre>
+ <p>Refreshes the specified source.</p>
+ <h4 id="usage">Usage</h4>
+ <pre><code class="lang-javascript">// Sample 1: let source refresh itself
+ xjs.Source.getCurrentSource().then(function(source) {
+   source.refresh(); // execution of JavaScript halts because of refresh
+ });
+ 
+ // Sample 2: refresh some other source &#39;otherSource&#39;
+ otherSource.refresh().then(function(source) {
+   // further manipulation of other source goes here
+ });
+ </code></pre>
+ 
+  </section>
+
+
+  <section class="member">
+    <a name="isKeepAspectRatio"><h1 id="isKeepAspectRatio" class="name">
+      isKeepAspectRatio
+    </h1></a>
+          <p>See: <a href='#core/IItemLayout#isKeepAspectRatio'>isKeepAspectRatio</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="isPositionLocked"><h1 id="isPositionLocked" class="name">
+      isPositionLocked
+    </h1></a>
+          <p>See: <a href='#core/IItemLayout#isPositionLocked'>isPositionLocked</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="isEnhancedResizeEnabled"><h1 id="isEnhancedResizeEnabled" class="name">
+      isEnhancedResizeEnabled
+    </h1></a>
+          <p>See: <a href='#core/IItemLayout#isEnhancedResizeEnabled'>isEnhancedResizeEnabled</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="getPosition"><h1 id="getPosition" class="name">
+      getPosition
+    </h1></a>
+          <p>See: <a href='#core/IItemLayout#getPosition'>getPosition</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="getRotateY"><h1 id="getRotateY" class="name">
+      getRotateY
+    </h1></a>
+          <p>See: <a href='#core/IItemLayout#getRotateY'>getRotateY</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="getRotateX"><h1 id="getRotateX" class="name">
+      getRotateX
+    </h1></a>
+          <p>See: <a href='#core/IItemLayout#getRotateX'>getRotateX</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="getRotateZ"><h1 id="getRotateZ" class="name">
+      getRotateZ
+    </h1></a>
+          <p>See: <a href='#core/IItemLayout#getRotateZ'>getRotateZ</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="setKeepAspectRatio"><h1 id="setKeepAspectRatio" class="name">
+      setKeepAspectRatio
+    </h1></a>
+          <p>See: <a href='#core/IItemLayout#setKeepAspectRatio'>setKeepAspectRatio</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="setPositionLocked"><h1 id="setPositionLocked" class="name">
+      setPositionLocked
+    </h1></a>
+          <p>See: <a href='#core/IItemLayout#setPositionLocked'>setPositionLocked</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="setEnhancedResizeEnabled"><h1 id="setEnhancedResizeEnabled" class="name">
+      setEnhancedResizeEnabled
+    </h1></a>
+          <p>See: <a href='#core/IItemLayout#setEnhancedResizeEnabled'>setEnhancedResizeEnabled</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="setPosition"><h1 id="setPosition" class="name">
+      setPosition
+    </h1></a>
+          <p>See: <a href='#core/IItemLayout#setPosition'>setPosition</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="setRotateY"><h1 id="setRotateY" class="name">
+      setRotateY
+    </h1></a>
+          <p>See: <a href='#core/IItemLayout#setRotateY'>setRotateY</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="setRotateX"><h1 id="setRotateX" class="name">
+      setRotateX
+    </h1></a>
+          <p>See: <a href='#core/IItemLayout#setRotateX'>setRotateX</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="setRotateZ"><h1 id="setRotateZ" class="name">
+      setRotateZ
+    </h1></a>
+          <p>See: <a href='#core/IItemLayout#setRotateZ'>setRotateZ</a></p>
+      
+  </section>
+
+
+  <section class="member static">
+    <a name="getCurrentSource"><h1 id="getCurrentSource" class="name">
+      <code>static</code> getCurrentSource
+    </h1></a>
+    <pre><code>return: Promise&lt;Source&gt;
+</code></pre>
+<p>Get the current source (when function is called by sources), or the source
+that was right-clicked to open the source properties window (when function is called
+from the source properties window)</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">xjs.Source.getCurrentSource().then(function(source) {
+  // This will fetch the current source (the plugin)
+}).catch(function(err) {
+  // Handle the error here. Errors would only occur
+  // if we try to execute this method on Extension plugins
+});
 </code></pre>
 
   </section>
 
 <p class="module defined-in">exported from <a href='#/core'>core</a><br/>
-defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/core/scene.ts#L16-L695">../src/core/scene.ts (line 16)</a>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/core/source/source.ts#L22-L550">../src/core/source/source.ts (line 22)</a>
 </p>
 

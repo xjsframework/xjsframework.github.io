@@ -2,8 +2,8 @@
 <h1 class="class export">CameraDevice <span class="type">class</span></h1>
 <p><p>The CameraDevice Class is the object returned by
 <a href='#system/System'>System Class&#39;</a> getCameraDevices method. It provides
-you with methods to fetch the Camera Device&#39;s id, name, and convert it to
-an XML object that is compatible with XBC</p>
+you with methods to fetch the Camera Device&#39;s id, name, and to add it as
+a source in the current scene.</p>
 <h3 id="basic-usage">Basic Usage</h3>
 <pre><code class="lang-javascript">var XJS = require(&#39;xjs&#39;);
 var System = XJS.System;
@@ -80,7 +80,7 @@ attribute of the devices XML</p>
     <a name="parse"><h1 id="parse" class="name">
       <code>static</code> parse
     </h1></a>
-    <pre><code>param: deviceJSON&lt;JXON&gt;
+    <pre><code>param: (deviceJSON: JXON)
 </code></pre>
 <pre><code>return: CameraDevice
 </code></pre>

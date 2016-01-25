@@ -9,149 +9,149 @@ angular.module('navigation-modules', [])
       "type": "Module",
       "pages": [
         {
-          "path": "/core/Item",
-          "partial": "partials/modules//core/Item/index.html",
-          "name": "Item",
+          "path": "/core/Source",
+          "partial": "partials/modules//core/Source/index.html",
+          "name": "Source",
           "type": "Class",
           "pages": [
             {
-              "path": "/core/Item#setName",
-              "partial": "partials/modules//core/Item/index.html",
+              "path": "/core/Source#setName",
+              "partial": "partials/modules//core/Source/index.html",
               "name": "setName"
             },
             {
-              "path": "/core/Item#getName",
-              "partial": "partials/modules//core/Item/index.html",
+              "path": "/core/Source#getName",
+              "partial": "partials/modules//core/Source/index.html",
               "name": "getName"
             },
             {
-              "path": "/core/Item#setCustomName",
-              "partial": "partials/modules//core/Item/index.html",
+              "path": "/core/Source#setCustomName",
+              "partial": "partials/modules//core/Source/index.html",
               "name": "setCustomName"
             },
             {
-              "path": "/core/Item#getCustomName",
-              "partial": "partials/modules//core/Item/index.html",
+              "path": "/core/Source#getCustomName",
+              "partial": "partials/modules//core/Source/index.html",
               "name": "getCustomName"
             },
             {
-              "path": "/core/Item#getValue",
-              "partial": "partials/modules//core/Item/index.html",
+              "path": "/core/Source#getValue",
+              "partial": "partials/modules//core/Source/index.html",
               "name": "getValue"
             },
             {
-              "path": "/core/Item#setValue",
-              "partial": "partials/modules//core/Item/index.html",
+              "path": "/core/Source#setValue",
+              "partial": "partials/modules//core/Source/index.html",
               "name": "setValue"
             },
             {
-              "path": "/core/Item#getKeepLoaded",
-              "partial": "partials/modules//core/Item/index.html",
+              "path": "/core/Source#getKeepLoaded",
+              "partial": "partials/modules//core/Source/index.html",
               "name": "getKeepLoaded"
             },
             {
-              "path": "/core/Item#setKeepLoaded",
-              "partial": "partials/modules//core/Item/index.html",
+              "path": "/core/Source#setKeepLoaded",
+              "partial": "partials/modules//core/Source/index.html",
               "name": "setKeepLoaded"
             },
             {
-              "path": "/core/Item#getType",
-              "partial": "partials/modules//core/Item/index.html",
+              "path": "/core/Source#getType",
+              "partial": "partials/modules//core/Source/index.html",
               "name": "getType"
             },
             {
-              "path": "/core/Item#getId",
-              "partial": "partials/modules//core/Item/index.html",
+              "path": "/core/Source#getId",
+              "partial": "partials/modules//core/Source/index.html",
               "name": "getId"
             },
             {
-              "path": "/core/Item#getSceneID",
-              "partial": "partials/modules//core/Item/index.html",
-              "name": "getSceneID"
+              "path": "/core/Source#getSceneId",
+              "partial": "partials/modules//core/Source/index.html",
+              "name": "getSceneId"
             },
             {
-              "path": "/core/Item#toXML",
-              "partial": "partials/modules//core/Item/index.html",
+              "path": "/core/Source#toXML",
+              "partial": "partials/modules//core/Source/index.html",
               "name": "toXML"
             },
             {
-              "path": "/core/Item#refresh",
-              "partial": "partials/modules//core/Item/index.html",
+              "path": "/core/Source#refresh",
+              "partial": "partials/modules//core/Source/index.html",
               "name": "refresh"
             },
             {
-              "path": "/core/Item#isKeepAspectRatio",
-              "partial": "partials/modules//core/Item/index.html",
+              "path": "/core/Source#isKeepAspectRatio",
+              "partial": "partials/modules//core/Source/index.html",
               "name": "isKeepAspectRatio"
             },
             {
-              "path": "/core/Item#isPositionLocked",
-              "partial": "partials/modules//core/Item/index.html",
+              "path": "/core/Source#isPositionLocked",
+              "partial": "partials/modules//core/Source/index.html",
               "name": "isPositionLocked"
             },
             {
-              "path": "/core/Item#isEnhancedResizeEnabled",
-              "partial": "partials/modules//core/Item/index.html",
+              "path": "/core/Source#isEnhancedResizeEnabled",
+              "partial": "partials/modules//core/Source/index.html",
               "name": "isEnhancedResizeEnabled"
             },
             {
-              "path": "/core/Item#getPosition",
-              "partial": "partials/modules//core/Item/index.html",
+              "path": "/core/Source#getPosition",
+              "partial": "partials/modules//core/Source/index.html",
               "name": "getPosition"
             },
             {
-              "path": "/core/Item#getRotateY",
-              "partial": "partials/modules//core/Item/index.html",
+              "path": "/core/Source#getRotateY",
+              "partial": "partials/modules//core/Source/index.html",
               "name": "getRotateY"
             },
             {
-              "path": "/core/Item#getRotateX",
-              "partial": "partials/modules//core/Item/index.html",
+              "path": "/core/Source#getRotateX",
+              "partial": "partials/modules//core/Source/index.html",
               "name": "getRotateX"
             },
             {
-              "path": "/core/Item#getRotateZ",
-              "partial": "partials/modules//core/Item/index.html",
+              "path": "/core/Source#getRotateZ",
+              "partial": "partials/modules//core/Source/index.html",
               "name": "getRotateZ"
             },
             {
-              "path": "/core/Item#setKeepAspectRatio",
-              "partial": "partials/modules//core/Item/index.html",
+              "path": "/core/Source#setKeepAspectRatio",
+              "partial": "partials/modules//core/Source/index.html",
               "name": "setKeepAspectRatio"
             },
             {
-              "path": "/core/Item#setPositionLocked",
-              "partial": "partials/modules//core/Item/index.html",
+              "path": "/core/Source#setPositionLocked",
+              "partial": "partials/modules//core/Source/index.html",
               "name": "setPositionLocked"
             },
             {
-              "path": "/core/Item#setEnhancedResizeEnabled",
-              "partial": "partials/modules//core/Item/index.html",
+              "path": "/core/Source#setEnhancedResizeEnabled",
+              "partial": "partials/modules//core/Source/index.html",
               "name": "setEnhancedResizeEnabled"
             },
             {
-              "path": "/core/Item#setPosition",
-              "partial": "partials/modules//core/Item/index.html",
+              "path": "/core/Source#setPosition",
+              "partial": "partials/modules//core/Source/index.html",
               "name": "setPosition"
             },
             {
-              "path": "/core/Item#setRotateY",
-              "partial": "partials/modules//core/Item/index.html",
+              "path": "/core/Source#setRotateY",
+              "partial": "partials/modules//core/Source/index.html",
               "name": "setRotateY"
             },
             {
-              "path": "/core/Item#setRotateX",
-              "partial": "partials/modules//core/Item/index.html",
+              "path": "/core/Source#setRotateX",
+              "partial": "partials/modules//core/Source/index.html",
               "name": "setRotateX"
             },
             {
-              "path": "/core/Item#setRotateZ",
-              "partial": "partials/modules//core/Item/index.html",
+              "path": "/core/Source#setRotateZ",
+              "partial": "partials/modules//core/Source/index.html",
               "name": "setRotateZ"
             },
             {
-              "path": "/core/Item#getCurrentSource",
-              "partial": "partials/modules//core/Item/index.html",
+              "path": "/core/Source#getCurrentSource",
+              "partial": "partials/modules//core/Source/index.html",
               "name": "getCurrentSource"
             }
           ]
@@ -303,6 +303,547 @@ angular.module('navigation-modules', [])
               "path": "/core/CuePoint#CUT",
               "partial": "partials/modules//core/CuePoint/index.html",
               "name": "CUT"
+            }
+          ]
+        },
+        {
+          "path": "/core/IItemChroma",
+          "partial": "partials/modules//core/IItemChroma/index.html",
+          "name": "IItemChroma",
+          "type": "Interface",
+          "pages": [
+            {
+              "path": "/core/IItemChroma#isChromaEnabled",
+              "partial": "partials/modules//core/IItemChroma/index.html",
+              "name": "isChromaEnabled"
+            },
+            {
+              "path": "/core/IItemChroma#setChromaEnabled",
+              "partial": "partials/modules//core/IItemChroma/index.html",
+              "name": "setChromaEnabled"
+            },
+            {
+              "path": "/core/IItemChroma#getKeyingType",
+              "partial": "partials/modules//core/IItemChroma/index.html",
+              "name": "getKeyingType"
+            },
+            {
+              "path": "/core/IItemChroma#setKeyingType",
+              "partial": "partials/modules//core/IItemChroma/index.html",
+              "name": "setKeyingType"
+            },
+            {
+              "path": "/core/IItemChroma#getChromaAntiAliasLevel",
+              "partial": "partials/modules//core/IItemChroma/index.html",
+              "name": "getChromaAntiAliasLevel"
+            },
+            {
+              "path": "/core/IItemChroma#setChromaAntiAliasLevel",
+              "partial": "partials/modules//core/IItemChroma/index.html",
+              "name": "setChromaAntiAliasLevel"
+            },
+            {
+              "path": "/core/IItemChroma#getChromaLegacyBrightness",
+              "partial": "partials/modules//core/IItemChroma/index.html",
+              "name": "getChromaLegacyBrightness"
+            },
+            {
+              "path": "/core/IItemChroma#setChromaLegacyBrightness",
+              "partial": "partials/modules//core/IItemChroma/index.html",
+              "name": "setChromaLegacyBrightness"
+            },
+            {
+              "path": "/core/IItemChroma#getChromaLegacySaturation",
+              "partial": "partials/modules//core/IItemChroma/index.html",
+              "name": "getChromaLegacySaturation"
+            },
+            {
+              "path": "/core/IItemChroma#setChromaLegacySaturation",
+              "partial": "partials/modules//core/IItemChroma/index.html",
+              "name": "setChromaLegacySaturation"
+            },
+            {
+              "path": "/core/IItemChroma#getChromaLegacyHue",
+              "partial": "partials/modules//core/IItemChroma/index.html",
+              "name": "getChromaLegacyHue"
+            },
+            {
+              "path": "/core/IItemChroma#setChromaLegacyHue",
+              "partial": "partials/modules//core/IItemChroma/index.html",
+              "name": "setChromaLegacyHue"
+            },
+            {
+              "path": "/core/IItemChroma#getChromaLegacyThreshold",
+              "partial": "partials/modules//core/IItemChroma/index.html",
+              "name": "getChromaLegacyThreshold"
+            },
+            {
+              "path": "/core/IItemChroma#setChromaLegacyThreshold",
+              "partial": "partials/modules//core/IItemChroma/index.html",
+              "name": "setChromaLegacyThreshold"
+            },
+            {
+              "path": "/core/IItemChroma#getChromaLegacyAlphaSmoothing",
+              "partial": "partials/modules//core/IItemChroma/index.html",
+              "name": "getChromaLegacyAlphaSmoothing"
+            },
+            {
+              "path": "/core/IItemChroma#setChromaLegacyAlphaSmoothing",
+              "partial": "partials/modules//core/IItemChroma/index.html",
+              "name": "setChromaLegacyAlphaSmoothing"
+            },
+            {
+              "path": "/core/IItemChroma#getChromaRGBKeyPrimaryColor",
+              "partial": "partials/modules//core/IItemChroma/index.html",
+              "name": "getChromaRGBKeyPrimaryColor"
+            },
+            {
+              "path": "/core/IItemChroma#setChromaRGBKeyPrimaryColor",
+              "partial": "partials/modules//core/IItemChroma/index.html",
+              "name": "setChromaRGBKeyPrimaryColor"
+            },
+            {
+              "path": "/core/IItemChroma#getChromaRGBKeyThreshold",
+              "partial": "partials/modules//core/IItemChroma/index.html",
+              "name": "getChromaRGBKeyThreshold"
+            },
+            {
+              "path": "/core/IItemChroma#setChromaRGBKeyThreshold",
+              "partial": "partials/modules//core/IItemChroma/index.html",
+              "name": "setChromaRGBKeyThreshold"
+            },
+            {
+              "path": "/core/IItemChroma#getChromaRGBKeyExposure",
+              "partial": "partials/modules//core/IItemChroma/index.html",
+              "name": "getChromaRGBKeyExposure"
+            },
+            {
+              "path": "/core/IItemChroma#setChromaRGBKeyExposure",
+              "partial": "partials/modules//core/IItemChroma/index.html",
+              "name": "setChromaRGBKeyExposure"
+            },
+            {
+              "path": "/core/IItemChroma#getChromaColorKeyThreshold",
+              "partial": "partials/modules//core/IItemChroma/index.html",
+              "name": "getChromaColorKeyThreshold"
+            },
+            {
+              "path": "/core/IItemChroma#setChromaColorKeyThreshold",
+              "partial": "partials/modules//core/IItemChroma/index.html",
+              "name": "setChromaColorKeyThreshold"
+            },
+            {
+              "path": "/core/IItemChroma#getChromaColorKeyExposure",
+              "partial": "partials/modules//core/IItemChroma/index.html",
+              "name": "getChromaColorKeyExposure"
+            },
+            {
+              "path": "/core/IItemChroma#setChromaColorKeyExposure",
+              "partial": "partials/modules//core/IItemChroma/index.html",
+              "name": "setChromaColorKeyExposure"
+            },
+            {
+              "path": "/core/IItemChroma#getChromaColorKeyColor",
+              "partial": "partials/modules//core/IItemChroma/index.html",
+              "name": "getChromaColorKeyColor"
+            },
+            {
+              "path": "/core/IItemChroma#setChromaColorKeyColor",
+              "partial": "partials/modules//core/IItemChroma/index.html",
+              "name": "setChromaColorKeyColor"
+            }
+          ]
+        },
+        {
+          "path": "/core/IItemColor",
+          "partial": "partials/modules//core/IItemColor/index.html",
+          "name": "IItemColor",
+          "type": "Interface",
+          "pages": [
+            {
+              "path": "/core/IItemColor#getTransparency",
+              "partial": "partials/modules//core/IItemColor/index.html",
+              "name": "getTransparency"
+            },
+            {
+              "path": "/core/IItemColor#setTransparency",
+              "partial": "partials/modules//core/IItemColor/index.html",
+              "name": "setTransparency"
+            },
+            {
+              "path": "/core/IItemColor#getBrightness",
+              "partial": "partials/modules//core/IItemColor/index.html",
+              "name": "getBrightness"
+            },
+            {
+              "path": "/core/IItemColor#setBrightness",
+              "partial": "partials/modules//core/IItemColor/index.html",
+              "name": "setBrightness"
+            },
+            {
+              "path": "/core/IItemColor#getContrast",
+              "partial": "partials/modules//core/IItemColor/index.html",
+              "name": "getContrast"
+            },
+            {
+              "path": "/core/IItemColor#setContrast",
+              "partial": "partials/modules//core/IItemColor/index.html",
+              "name": "setContrast"
+            },
+            {
+              "path": "/core/IItemColor#getHue",
+              "partial": "partials/modules//core/IItemColor/index.html",
+              "name": "getHue"
+            },
+            {
+              "path": "/core/IItemColor#setHue",
+              "partial": "partials/modules//core/IItemColor/index.html",
+              "name": "setHue"
+            },
+            {
+              "path": "/core/IItemColor#getSaturation",
+              "partial": "partials/modules//core/IItemColor/index.html",
+              "name": "getSaturation"
+            },
+            {
+              "path": "/core/IItemColor#setSaturation",
+              "partial": "partials/modules//core/IItemColor/index.html",
+              "name": "setSaturation"
+            },
+            {
+              "path": "/core/IItemColor#getBorderColor",
+              "partial": "partials/modules//core/IItemColor/index.html",
+              "name": "getBorderColor"
+            },
+            {
+              "path": "/core/IItemColor#setBorderColor",
+              "partial": "partials/modules//core/IItemColor/index.html",
+              "name": "setBorderColor"
+            }
+          ]
+        },
+        {
+          "path": "/core/IItemLayout",
+          "partial": "partials/modules//core/IItemLayout/index.html",
+          "name": "IItemLayout",
+          "type": "Interface",
+          "pages": [
+            {
+              "path": "/core/IItemLayout#isKeepAspectRatio",
+              "partial": "partials/modules//core/IItemLayout/index.html",
+              "name": "isKeepAspectRatio"
+            },
+            {
+              "path": "/core/IItemLayout#setKeepAspectRatio",
+              "partial": "partials/modules//core/IItemLayout/index.html",
+              "name": "setKeepAspectRatio"
+            },
+            {
+              "path": "/core/IItemLayout#isPositionLocked",
+              "partial": "partials/modules//core/IItemLayout/index.html",
+              "name": "isPositionLocked"
+            },
+            {
+              "path": "/core/IItemLayout#setPositionLocked",
+              "partial": "partials/modules//core/IItemLayout/index.html",
+              "name": "setPositionLocked"
+            },
+            {
+              "path": "/core/IItemLayout#isEnhancedResizeEnabled",
+              "partial": "partials/modules//core/IItemLayout/index.html",
+              "name": "isEnhancedResizeEnabled"
+            },
+            {
+              "path": "/core/IItemLayout#setEnhancedResizeEnabled",
+              "partial": "partials/modules//core/IItemLayout/index.html",
+              "name": "setEnhancedResizeEnabled"
+            },
+            {
+              "path": "/core/IItemLayout#getPosition",
+              "partial": "partials/modules//core/IItemLayout/index.html",
+              "name": "getPosition"
+            },
+            {
+              "path": "/core/IItemLayout#setPosition",
+              "partial": "partials/modules//core/IItemLayout/index.html",
+              "name": "setPosition"
+            },
+            {
+              "path": "/core/IItemLayout#getRotateY",
+              "partial": "partials/modules//core/IItemLayout/index.html",
+              "name": "getRotateY"
+            },
+            {
+              "path": "/core/IItemLayout#setRotateY",
+              "partial": "partials/modules//core/IItemLayout/index.html",
+              "name": "setRotateY"
+            },
+            {
+              "path": "/core/IItemLayout#getRotateX",
+              "partial": "partials/modules//core/IItemLayout/index.html",
+              "name": "getRotateX"
+            },
+            {
+              "path": "/core/IItemLayout#setRotateX",
+              "partial": "partials/modules//core/IItemLayout/index.html",
+              "name": "setRotateX"
+            },
+            {
+              "path": "/core/IItemLayout#getRotateZ",
+              "partial": "partials/modules//core/IItemLayout/index.html",
+              "name": "getRotateZ"
+            },
+            {
+              "path": "/core/IItemLayout#setRotateZ",
+              "partial": "partials/modules//core/IItemLayout/index.html",
+              "name": "setRotateZ"
+            }
+          ]
+        },
+        {
+          "path": "/core/IItemTransition",
+          "partial": "partials/modules//core/IItemTransition/index.html",
+          "name": "IItemTransition",
+          "type": "Interface",
+          "pages": [
+            {
+              "path": "/core/IItemTransition#isVisible",
+              "partial": "partials/modules//core/IItemTransition/index.html",
+              "name": "isVisible"
+            },
+            {
+              "path": "/core/IItemTransition#setVisible",
+              "partial": "partials/modules//core/IItemTransition/index.html",
+              "name": "setVisible"
+            },
+            {
+              "path": "/core/IItemTransition#getTransition",
+              "partial": "partials/modules//core/IItemTransition/index.html",
+              "name": "getTransition"
+            },
+            {
+              "path": "/core/IItemTransition#setTransition",
+              "partial": "partials/modules//core/IItemTransition/index.html",
+              "name": "setTransition"
+            },
+            {
+              "path": "/core/IItemTransition#getTransitionTime",
+              "partial": "partials/modules//core/IItemTransition/index.html",
+              "name": "getTransitionTime"
+            },
+            {
+              "path": "/core/IItemTransition#setTransitionTime",
+              "partial": "partials/modules//core/IItemTransition/index.html",
+              "name": "setTransitionTime"
+            }
+          ]
+        },
+        {
+          "path": "/core/IItemAudio",
+          "partial": "partials/modules//core/IItemAudio/index.html",
+          "name": "IItemAudio",
+          "type": "Interface",
+          "pages": [
+            {
+              "path": "/core/IItemAudio#getVolume",
+              "partial": "partials/modules//core/IItemAudio/index.html",
+              "name": "getVolume"
+            },
+            {
+              "path": "/core/IItemAudio#setVolume",
+              "partial": "partials/modules//core/IItemAudio/index.html",
+              "name": "setVolume"
+            },
+            {
+              "path": "/core/IItemAudio#isMute",
+              "partial": "partials/modules//core/IItemAudio/index.html",
+              "name": "isMute"
+            },
+            {
+              "path": "/core/IItemAudio#setMute",
+              "partial": "partials/modules//core/IItemAudio/index.html",
+              "name": "setMute"
+            },
+            {
+              "path": "/core/IItemAudio#isStreamOnlyAudio",
+              "partial": "partials/modules//core/IItemAudio/index.html",
+              "name": "isStreamOnlyAudio"
+            },
+            {
+              "path": "/core/IItemAudio#setStreamOnlyAudio",
+              "partial": "partials/modules//core/IItemAudio/index.html",
+              "name": "setStreamOnlyAudio"
+            },
+            {
+              "path": "/core/IItemAudio#isAudioAvailable",
+              "partial": "partials/modules//core/IItemAudio/index.html",
+              "name": "isAudioAvailable"
+            }
+          ]
+        },
+        {
+          "path": "/core/IItemConfigurable",
+          "partial": "partials/modules//core/IItemConfigurable/index.html",
+          "name": "IItemConfigurable",
+          "type": "Interface",
+          "pages": [
+            {
+              "path": "/core/IItemConfigurable#loadConfig",
+              "partial": "partials/modules//core/IItemConfigurable/index.html",
+              "name": "loadConfig"
+            },
+            {
+              "path": "/core/IItemConfigurable#saveConfig",
+              "partial": "partials/modules//core/IItemConfigurable/index.html",
+              "name": "saveConfig"
+            },
+            {
+              "path": "/core/IItemConfigurable#requestSaveConfig",
+              "partial": "partials/modules//core/IItemConfigurable/index.html",
+              "name": "requestSaveConfig"
+            },
+            {
+              "path": "/core/IItemConfigurable#applyConfig",
+              "partial": "partials/modules//core/IItemConfigurable/index.html",
+              "name": "applyConfig"
+            }
+          ]
+        },
+        {
+          "path": "/core/IItemPlayback",
+          "partial": "partials/modules//core/IItemPlayback/index.html",
+          "name": "IItemPlayback",
+          "type": "Interface",
+          "pages": [
+            {
+              "path": "/core/IItemPlayback#isSeekable",
+              "partial": "partials/modules//core/IItemPlayback/index.html",
+              "name": "isSeekable"
+            },
+            {
+              "path": "/core/IItemPlayback#getPlaybackPosition",
+              "partial": "partials/modules//core/IItemPlayback/index.html",
+              "name": "getPlaybackPosition"
+            },
+            {
+              "path": "/core/IItemPlayback#setPlaybackPosition",
+              "partial": "partials/modules//core/IItemPlayback/index.html",
+              "name": "setPlaybackPosition"
+            },
+            {
+              "path": "/core/IItemPlayback#getPlaybackDuration",
+              "partial": "partials/modules//core/IItemPlayback/index.html",
+              "name": "getPlaybackDuration"
+            },
+            {
+              "path": "/core/IItemPlayback#isPlaying",
+              "partial": "partials/modules//core/IItemPlayback/index.html",
+              "name": "isPlaying"
+            },
+            {
+              "path": "/core/IItemPlayback#setPlaying",
+              "partial": "partials/modules//core/IItemPlayback/index.html",
+              "name": "setPlaying"
+            },
+            {
+              "path": "/core/IItemPlayback#getPlaybackStartPosition",
+              "partial": "partials/modules//core/IItemPlayback/index.html",
+              "name": "getPlaybackStartPosition"
+            },
+            {
+              "path": "/core/IItemPlayback#setPlaybackStartPosition",
+              "partial": "partials/modules//core/IItemPlayback/index.html",
+              "name": "setPlaybackStartPosition"
+            },
+            {
+              "path": "/core/IItemPlayback#getPlaybackEndPosition",
+              "partial": "partials/modules//core/IItemPlayback/index.html",
+              "name": "getPlaybackEndPosition"
+            },
+            {
+              "path": "/core/IItemPlayback#setPlaybackEndPosition",
+              "partial": "partials/modules//core/IItemPlayback/index.html",
+              "name": "setPlaybackEndPosition"
+            },
+            {
+              "path": "/core/IItemPlayback#getActionAfterPlayback",
+              "partial": "partials/modules//core/IItemPlayback/index.html",
+              "name": "getActionAfterPlayback"
+            },
+            {
+              "path": "/core/IItemPlayback#setActionAfterPlayback",
+              "partial": "partials/modules//core/IItemPlayback/index.html",
+              "name": "setActionAfterPlayback"
+            },
+            {
+              "path": "/core/IItemPlayback#isAutostartOnSceneLoad",
+              "partial": "partials/modules//core/IItemPlayback/index.html",
+              "name": "isAutostartOnSceneLoad"
+            },
+            {
+              "path": "/core/IItemPlayback#setAutostartOnSceneLoad",
+              "partial": "partials/modules//core/IItemPlayback/index.html",
+              "name": "setAutostartOnSceneLoad"
+            },
+            {
+              "path": "/core/IItemPlayback#isForceDeinterlace",
+              "partial": "partials/modules//core/IItemPlayback/index.html",
+              "name": "isForceDeinterlace"
+            },
+            {
+              "path": "/core/IItemPlayback#setForceDeinterlace",
+              "partial": "partials/modules//core/IItemPlayback/index.html",
+              "name": "setForceDeinterlace"
+            },
+            {
+              "path": "/core/IItemPlayback#isRememberingPlaybackPosition",
+              "partial": "partials/modules//core/IItemPlayback/index.html",
+              "name": "isRememberingPlaybackPosition"
+            },
+            {
+              "path": "/core/IItemPlayback#setRememberingPlaybackPosition",
+              "partial": "partials/modules//core/IItemPlayback/index.html",
+              "name": "setRememberingPlaybackPosition"
+            },
+            {
+              "path": "/core/IItemPlayback#isShowingPlaybackPosition",
+              "partial": "partials/modules//core/IItemPlayback/index.html",
+              "name": "isShowingPlaybackPosition"
+            },
+            {
+              "path": "/core/IItemPlayback#setShowingPlaybackPosition",
+              "partial": "partials/modules//core/IItemPlayback/index.html",
+              "name": "setShowingPlaybackPosition"
+            },
+            {
+              "path": "/core/IItemPlayback#getCuePoints",
+              "partial": "partials/modules//core/IItemPlayback/index.html",
+              "name": "getCuePoints"
+            },
+            {
+              "path": "/core/IItemPlayback#setCuePoints",
+              "partial": "partials/modules//core/IItemPlayback/index.html",
+              "name": "setCuePoints"
+            },
+            {
+              "path": "/core/IItemPlayback#getValue",
+              "partial": "partials/modules//core/IItemPlayback/index.html",
+              "name": "getValue"
+            },
+            {
+              "path": "/core/IItemPlayback#setValue",
+              "partial": "partials/modules//core/IItemPlayback/index.html",
+              "name": "setValue"
+            },
+            {
+              "path": "/core/IItemPlayback#isAudio",
+              "partial": "partials/modules//core/IItemPlayback/index.html",
+              "name": "isAudio"
+            },
+            {
+              "path": "/core/IItemPlayback#isVideo",
+              "partial": "partials/modules//core/IItemPlayback/index.html",
+              "name": "isVideo"
             }
           ]
         },
@@ -509,9 +1050,9 @@ angular.module('navigation-modules', [])
               "name": "setName"
             },
             {
-              "path": "/core/Scene#getItems",
+              "path": "/core/Scene#getSources",
               "partial": "partials/modules//core/Scene/index.html",
-              "name": "getItems"
+              "name": "getSources"
             },
             {
               "path": "/core/Scene#isEmpty",
@@ -519,9 +1060,9 @@ angular.module('navigation-modules', [])
               "name": "isEmpty"
             },
             {
-              "path": "/core/Scene#setItemOrder",
+              "path": "/core/Scene#setSourceOrder",
               "partial": "partials/modules//core/Scene/index.html",
-              "name": "setItemOrder"
+              "name": "setSourceOrder"
             },
             {
               "path": "/core/Scene#getById",
@@ -544,29 +1085,29 @@ angular.module('navigation-modules', [])
               "name": "setActiveScene"
             },
             {
-              "path": "/core/Scene#searchItemsById",
+              "path": "/core/Scene#searchSourcesById",
               "partial": "partials/modules//core/Scene/index.html",
-              "name": "searchItemsById"
+              "name": "searchSourcesById"
             },
             {
-              "path": "/core/Scene#searchScenesByItemId",
+              "path": "/core/Scene#searchScenesBySourceId",
               "partial": "partials/modules//core/Scene/index.html",
-              "name": "searchScenesByItemId"
+              "name": "searchScenesBySourceId"
             },
             {
-              "path": "/core/Scene#searchItemsByName",
+              "path": "/core/Scene#searchSourcesByName",
               "partial": "partials/modules//core/Scene/index.html",
-              "name": "searchItemsByName"
+              "name": "searchSourcesByName"
             },
             {
-              "path": "/core/Scene#filterItems",
+              "path": "/core/Scene#filterSources",
               "partial": "partials/modules//core/Scene/index.html",
-              "name": "filterItems"
+              "name": "filterSources"
             },
             {
-              "path": "/core/Scene#filterScenesByItems",
+              "path": "/core/Scene#filterScenesBySources",
               "partial": "partials/modules//core/Scene/index.html",
-              "name": "filterScenesByItems"
+              "name": "filterScenesBySources"
             },
             {
               "path": "/core/Scene#initializeScenes",
@@ -753,2730 +1294,2730 @@ angular.module('navigation-modules', [])
           ]
         },
         {
-          "path": "/core/CameraItem",
-          "partial": "partials/modules//core/CameraItem/index.html",
-          "name": "CameraItem",
+          "path": "/core/CameraSource",
+          "partial": "partials/modules//core/CameraSource/index.html",
+          "name": "CameraSource",
           "type": "Class",
           "pages": [
             {
-              "path": "/core/CameraItem#getDeviceId",
-              "partial": "partials/modules//core/CameraItem/index.html",
+              "path": "/core/CameraSource#getDeviceId",
+              "partial": "partials/modules//core/CameraSource/index.html",
               "name": "getDeviceId"
             },
             {
-              "path": "/core/CameraItem#isStreamPaused",
-              "partial": "partials/modules//core/CameraItem/index.html",
+              "path": "/core/CameraSource#isStreamPaused",
+              "partial": "partials/modules//core/CameraSource/index.html",
               "name": "isStreamPaused"
             },
             {
-              "path": "/core/CameraItem#setStreamPaused",
-              "partial": "partials/modules//core/CameraItem/index.html",
+              "path": "/core/CameraSource#setStreamPaused",
+              "partial": "partials/modules//core/CameraSource/index.html",
               "name": "setStreamPaused"
             },
             {
-              "path": "/core/CameraItem#isHardwareEncoder",
-              "partial": "partials/modules//core/CameraItem/index.html",
+              "path": "/core/CameraSource#isHardwareEncoder",
+              "partial": "partials/modules//core/CameraSource/index.html",
               "name": "isHardwareEncoder"
             },
             {
-              "path": "/core/CameraItem#getDelay",
-              "partial": "partials/modules//core/CameraItem/index.html",
+              "path": "/core/CameraSource#getDelay",
+              "partial": "partials/modules//core/CameraSource/index.html",
               "name": "getDelay"
             },
             {
-              "path": "/core/CameraItem#setDelay",
-              "partial": "partials/modules//core/CameraItem/index.html",
+              "path": "/core/CameraSource#setDelay",
+              "partial": "partials/modules//core/CameraSource/index.html",
               "name": "setDelay"
             },
             {
-              "path": "/core/CameraItem#getAudioOffset",
-              "partial": "partials/modules//core/CameraItem/index.html",
+              "path": "/core/CameraSource#getAudioOffset",
+              "partial": "partials/modules//core/CameraSource/index.html",
               "name": "getAudioOffset"
             },
             {
-              "path": "/core/CameraItem#setAudioOffset",
-              "partial": "partials/modules//core/CameraItem/index.html",
+              "path": "/core/CameraSource#setAudioOffset",
+              "partial": "partials/modules//core/CameraSource/index.html",
               "name": "setAudioOffset"
             },
             {
-              "path": "/core/CameraItem#getAudioInput",
-              "partial": "partials/modules//core/CameraItem/index.html",
+              "path": "/core/CameraSource#getAudioInput",
+              "partial": "partials/modules//core/CameraSource/index.html",
               "name": "getAudioInput"
             },
             {
-              "path": "/core/CameraItem#setAudioInput",
-              "partial": "partials/modules//core/CameraItem/index.html",
+              "path": "/core/CameraSource#setAudioInput",
+              "partial": "partials/modules//core/CameraSource/index.html",
               "name": "setAudioInput"
             },
             {
-              "path": "/core/CameraItem#isKeepAspectRatio",
-              "partial": "partials/modules//core/CameraItem/index.html",
+              "path": "/core/CameraSource#isKeepAspectRatio",
+              "partial": "partials/modules//core/CameraSource/index.html",
               "name": "isKeepAspectRatio"
             },
             {
-              "path": "/core/CameraItem#isPositionLocked",
-              "partial": "partials/modules//core/CameraItem/index.html",
+              "path": "/core/CameraSource#isPositionLocked",
+              "partial": "partials/modules//core/CameraSource/index.html",
               "name": "isPositionLocked"
             },
             {
-              "path": "/core/CameraItem#isEnhancedResizeEnabled",
-              "partial": "partials/modules//core/CameraItem/index.html",
+              "path": "/core/CameraSource#isEnhancedResizeEnabled",
+              "partial": "partials/modules//core/CameraSource/index.html",
               "name": "isEnhancedResizeEnabled"
             },
             {
-              "path": "/core/CameraItem#getPosition",
-              "partial": "partials/modules//core/CameraItem/index.html",
+              "path": "/core/CameraSource#getPosition",
+              "partial": "partials/modules//core/CameraSource/index.html",
               "name": "getPosition"
             },
             {
-              "path": "/core/CameraItem#getRotateY",
-              "partial": "partials/modules//core/CameraItem/index.html",
+              "path": "/core/CameraSource#getRotateY",
+              "partial": "partials/modules//core/CameraSource/index.html",
               "name": "getRotateY"
             },
             {
-              "path": "/core/CameraItem#getRotateX",
-              "partial": "partials/modules//core/CameraItem/index.html",
+              "path": "/core/CameraSource#getRotateX",
+              "partial": "partials/modules//core/CameraSource/index.html",
               "name": "getRotateX"
             },
             {
-              "path": "/core/CameraItem#getRotateZ",
-              "partial": "partials/modules//core/CameraItem/index.html",
+              "path": "/core/CameraSource#getRotateZ",
+              "partial": "partials/modules//core/CameraSource/index.html",
               "name": "getRotateZ"
             },
             {
-              "path": "/core/CameraItem#setKeepAspectRatio",
-              "partial": "partials/modules//core/CameraItem/index.html",
+              "path": "/core/CameraSource#setKeepAspectRatio",
+              "partial": "partials/modules//core/CameraSource/index.html",
               "name": "setKeepAspectRatio"
             },
             {
-              "path": "/core/CameraItem#setPositionLocked",
-              "partial": "partials/modules//core/CameraItem/index.html",
+              "path": "/core/CameraSource#setPositionLocked",
+              "partial": "partials/modules//core/CameraSource/index.html",
               "name": "setPositionLocked"
             },
             {
-              "path": "/core/CameraItem#setEnhancedResizeEnabled",
-              "partial": "partials/modules//core/CameraItem/index.html",
+              "path": "/core/CameraSource#setEnhancedResizeEnabled",
+              "partial": "partials/modules//core/CameraSource/index.html",
               "name": "setEnhancedResizeEnabled"
             },
             {
-              "path": "/core/CameraItem#setPosition",
-              "partial": "partials/modules//core/CameraItem/index.html",
+              "path": "/core/CameraSource#setPosition",
+              "partial": "partials/modules//core/CameraSource/index.html",
               "name": "setPosition"
             },
             {
-              "path": "/core/CameraItem#setRotateY",
-              "partial": "partials/modules//core/CameraItem/index.html",
+              "path": "/core/CameraSource#setRotateY",
+              "partial": "partials/modules//core/CameraSource/index.html",
               "name": "setRotateY"
             },
             {
-              "path": "/core/CameraItem#setRotateX",
-              "partial": "partials/modules//core/CameraItem/index.html",
+              "path": "/core/CameraSource#setRotateX",
+              "partial": "partials/modules//core/CameraSource/index.html",
               "name": "setRotateX"
             },
             {
-              "path": "/core/CameraItem#setRotateZ",
-              "partial": "partials/modules//core/CameraItem/index.html",
+              "path": "/core/CameraSource#setRotateZ",
+              "partial": "partials/modules//core/CameraSource/index.html",
               "name": "setRotateZ"
             },
             {
-              "path": "/core/CameraItem#getTransparency",
-              "partial": "partials/modules//core/CameraItem/index.html",
+              "path": "/core/CameraSource#getTransparency",
+              "partial": "partials/modules//core/CameraSource/index.html",
               "name": "getTransparency"
             },
             {
-              "path": "/core/CameraItem#getBrightness",
-              "partial": "partials/modules//core/CameraItem/index.html",
+              "path": "/core/CameraSource#getBrightness",
+              "partial": "partials/modules//core/CameraSource/index.html",
               "name": "getBrightness"
             },
             {
-              "path": "/core/CameraItem#getContrast",
-              "partial": "partials/modules//core/CameraItem/index.html",
+              "path": "/core/CameraSource#getContrast",
+              "partial": "partials/modules//core/CameraSource/index.html",
               "name": "getContrast"
             },
             {
-              "path": "/core/CameraItem#getHue",
-              "partial": "partials/modules//core/CameraItem/index.html",
+              "path": "/core/CameraSource#getHue",
+              "partial": "partials/modules//core/CameraSource/index.html",
               "name": "getHue"
             },
             {
-              "path": "/core/CameraItem#getSaturation",
-              "partial": "partials/modules//core/CameraItem/index.html",
+              "path": "/core/CameraSource#getSaturation",
+              "partial": "partials/modules//core/CameraSource/index.html",
               "name": "getSaturation"
             },
             {
-              "path": "/core/CameraItem#getBorderColor",
-              "partial": "partials/modules//core/CameraItem/index.html",
+              "path": "/core/CameraSource#getBorderColor",
+              "partial": "partials/modules//core/CameraSource/index.html",
               "name": "getBorderColor"
             },
             {
-              "path": "/core/CameraItem#setTransparency",
-              "partial": "partials/modules//core/CameraItem/index.html",
+              "path": "/core/CameraSource#setTransparency",
+              "partial": "partials/modules//core/CameraSource/index.html",
               "name": "setTransparency"
             },
             {
-              "path": "/core/CameraItem#setBrightness",
-              "partial": "partials/modules//core/CameraItem/index.html",
+              "path": "/core/CameraSource#setBrightness",
+              "partial": "partials/modules//core/CameraSource/index.html",
               "name": "setBrightness"
             },
             {
-              "path": "/core/CameraItem#setContrast",
-              "partial": "partials/modules//core/CameraItem/index.html",
+              "path": "/core/CameraSource#setContrast",
+              "partial": "partials/modules//core/CameraSource/index.html",
               "name": "setContrast"
             },
             {
-              "path": "/core/CameraItem#setHue",
-              "partial": "partials/modules//core/CameraItem/index.html",
+              "path": "/core/CameraSource#setHue",
+              "partial": "partials/modules//core/CameraSource/index.html",
               "name": "setHue"
             },
             {
-              "path": "/core/CameraItem#setSaturation",
-              "partial": "partials/modules//core/CameraItem/index.html",
+              "path": "/core/CameraSource#setSaturation",
+              "partial": "partials/modules//core/CameraSource/index.html",
               "name": "setSaturation"
             },
             {
-              "path": "/core/CameraItem#setBorderColor",
-              "partial": "partials/modules//core/CameraItem/index.html",
+              "path": "/core/CameraSource#setBorderColor",
+              "partial": "partials/modules//core/CameraSource/index.html",
               "name": "setBorderColor"
             },
             {
-              "path": "/core/CameraItem#setColorOptionsPinned",
-              "partial": "partials/modules//core/CameraItem/index.html",
+              "path": "/core/CameraSource#setColorOptionsPinned",
+              "partial": "partials/modules//core/CameraSource/index.html",
               "name": "setColorOptionsPinned"
             },
             {
-              "path": "/core/CameraItem#getColorOptionsPinned",
-              "partial": "partials/modules//core/CameraItem/index.html",
+              "path": "/core/CameraSource#getColorOptionsPinned",
+              "partial": "partials/modules//core/CameraSource/index.html",
               "name": "getColorOptionsPinned"
             },
             {
-              "path": "/core/CameraItem#isChromaEnabled",
-              "partial": "partials/modules//core/CameraItem/index.html",
+              "path": "/core/CameraSource#isChromaEnabled",
+              "partial": "partials/modules//core/CameraSource/index.html",
               "name": "isChromaEnabled"
             },
             {
-              "path": "/core/CameraItem#setChromaEnabled",
-              "partial": "partials/modules//core/CameraItem/index.html",
+              "path": "/core/CameraSource#setChromaEnabled",
+              "partial": "partials/modules//core/CameraSource/index.html",
               "name": "setChromaEnabled"
             },
             {
-              "path": "/core/CameraItem#getKeyingType",
-              "partial": "partials/modules//core/CameraItem/index.html",
+              "path": "/core/CameraSource#getKeyingType",
+              "partial": "partials/modules//core/CameraSource/index.html",
               "name": "getKeyingType"
             },
             {
-              "path": "/core/CameraItem#setKeyingType",
-              "partial": "partials/modules//core/CameraItem/index.html",
+              "path": "/core/CameraSource#setKeyingType",
+              "partial": "partials/modules//core/CameraSource/index.html",
               "name": "setKeyingType"
             },
             {
-              "path": "/core/CameraItem#getChromaAntiAliasLevel",
-              "partial": "partials/modules//core/CameraItem/index.html",
+              "path": "/core/CameraSource#getChromaAntiAliasLevel",
+              "partial": "partials/modules//core/CameraSource/index.html",
               "name": "getChromaAntiAliasLevel"
             },
             {
-              "path": "/core/CameraItem#setChromaAntiAliasLevel",
-              "partial": "partials/modules//core/CameraItem/index.html",
+              "path": "/core/CameraSource#setChromaAntiAliasLevel",
+              "partial": "partials/modules//core/CameraSource/index.html",
               "name": "setChromaAntiAliasLevel"
             },
             {
-              "path": "/core/CameraItem#getChromaLegacyBrightness",
-              "partial": "partials/modules//core/CameraItem/index.html",
+              "path": "/core/CameraSource#getChromaLegacyBrightness",
+              "partial": "partials/modules//core/CameraSource/index.html",
               "name": "getChromaLegacyBrightness"
             },
             {
-              "path": "/core/CameraItem#setChromaLegacyBrightness",
-              "partial": "partials/modules//core/CameraItem/index.html",
+              "path": "/core/CameraSource#setChromaLegacyBrightness",
+              "partial": "partials/modules//core/CameraSource/index.html",
               "name": "setChromaLegacyBrightness"
             },
             {
-              "path": "/core/CameraItem#getChromaLegacySaturation",
-              "partial": "partials/modules//core/CameraItem/index.html",
+              "path": "/core/CameraSource#getChromaLegacySaturation",
+              "partial": "partials/modules//core/CameraSource/index.html",
               "name": "getChromaLegacySaturation"
             },
             {
-              "path": "/core/CameraItem#setChromaLegacySaturation",
-              "partial": "partials/modules//core/CameraItem/index.html",
+              "path": "/core/CameraSource#setChromaLegacySaturation",
+              "partial": "partials/modules//core/CameraSource/index.html",
               "name": "setChromaLegacySaturation"
             },
             {
-              "path": "/core/CameraItem#getChromaLegacyHue",
-              "partial": "partials/modules//core/CameraItem/index.html",
+              "path": "/core/CameraSource#getChromaLegacyHue",
+              "partial": "partials/modules//core/CameraSource/index.html",
               "name": "getChromaLegacyHue"
             },
             {
-              "path": "/core/CameraItem#setChromaLegacyHue",
-              "partial": "partials/modules//core/CameraItem/index.html",
+              "path": "/core/CameraSource#setChromaLegacyHue",
+              "partial": "partials/modules//core/CameraSource/index.html",
               "name": "setChromaLegacyHue"
             },
             {
-              "path": "/core/CameraItem#getChromaLegacyThreshold",
-              "partial": "partials/modules//core/CameraItem/index.html",
+              "path": "/core/CameraSource#getChromaLegacyThreshold",
+              "partial": "partials/modules//core/CameraSource/index.html",
               "name": "getChromaLegacyThreshold"
             },
             {
-              "path": "/core/CameraItem#setChromaLegacyThreshold",
-              "partial": "partials/modules//core/CameraItem/index.html",
+              "path": "/core/CameraSource#setChromaLegacyThreshold",
+              "partial": "partials/modules//core/CameraSource/index.html",
               "name": "setChromaLegacyThreshold"
             },
             {
-              "path": "/core/CameraItem#getChromaLegacyAlphaSmoothing",
-              "partial": "partials/modules//core/CameraItem/index.html",
+              "path": "/core/CameraSource#getChromaLegacyAlphaSmoothing",
+              "partial": "partials/modules//core/CameraSource/index.html",
               "name": "getChromaLegacyAlphaSmoothing"
             },
             {
-              "path": "/core/CameraItem#setChromaLegacyAlphaSmoothing",
-              "partial": "partials/modules//core/CameraItem/index.html",
+              "path": "/core/CameraSource#setChromaLegacyAlphaSmoothing",
+              "partial": "partials/modules//core/CameraSource/index.html",
               "name": "setChromaLegacyAlphaSmoothing"
             },
             {
-              "path": "/core/CameraItem#getChromaRGBKeyPrimaryColor",
-              "partial": "partials/modules//core/CameraItem/index.html",
+              "path": "/core/CameraSource#getChromaRGBKeyPrimaryColor",
+              "partial": "partials/modules//core/CameraSource/index.html",
               "name": "getChromaRGBKeyPrimaryColor"
             },
             {
-              "path": "/core/CameraItem#setChromaRGBKeyPrimaryColor",
-              "partial": "partials/modules//core/CameraItem/index.html",
+              "path": "/core/CameraSource#setChromaRGBKeyPrimaryColor",
+              "partial": "partials/modules//core/CameraSource/index.html",
               "name": "setChromaRGBKeyPrimaryColor"
             },
             {
-              "path": "/core/CameraItem#getChromaRGBKeyThreshold",
-              "partial": "partials/modules//core/CameraItem/index.html",
+              "path": "/core/CameraSource#getChromaRGBKeyThreshold",
+              "partial": "partials/modules//core/CameraSource/index.html",
               "name": "getChromaRGBKeyThreshold"
             },
             {
-              "path": "/core/CameraItem#setChromaRGBKeyThreshold",
-              "partial": "partials/modules//core/CameraItem/index.html",
+              "path": "/core/CameraSource#setChromaRGBKeyThreshold",
+              "partial": "partials/modules//core/CameraSource/index.html",
               "name": "setChromaRGBKeyThreshold"
             },
             {
-              "path": "/core/CameraItem#getChromaRGBKeyExposure",
-              "partial": "partials/modules//core/CameraItem/index.html",
+              "path": "/core/CameraSource#getChromaRGBKeyExposure",
+              "partial": "partials/modules//core/CameraSource/index.html",
               "name": "getChromaRGBKeyExposure"
             },
             {
-              "path": "/core/CameraItem#setChromaRGBKeyExposure",
-              "partial": "partials/modules//core/CameraItem/index.html",
+              "path": "/core/CameraSource#setChromaRGBKeyExposure",
+              "partial": "partials/modules//core/CameraSource/index.html",
               "name": "setChromaRGBKeyExposure"
             },
             {
-              "path": "/core/CameraItem#getChromaColorKeyThreshold",
-              "partial": "partials/modules//core/CameraItem/index.html",
+              "path": "/core/CameraSource#getChromaColorKeyThreshold",
+              "partial": "partials/modules//core/CameraSource/index.html",
               "name": "getChromaColorKeyThreshold"
             },
             {
-              "path": "/core/CameraItem#setChromaColorKeyThreshold",
-              "partial": "partials/modules//core/CameraItem/index.html",
+              "path": "/core/CameraSource#setChromaColorKeyThreshold",
+              "partial": "partials/modules//core/CameraSource/index.html",
               "name": "setChromaColorKeyThreshold"
             },
             {
-              "path": "/core/CameraItem#getChromaColorKeyExposure",
-              "partial": "partials/modules//core/CameraItem/index.html",
+              "path": "/core/CameraSource#getChromaColorKeyExposure",
+              "partial": "partials/modules//core/CameraSource/index.html",
               "name": "getChromaColorKeyExposure"
             },
             {
-              "path": "/core/CameraItem#setChromaColorKeyExposure",
-              "partial": "partials/modules//core/CameraItem/index.html",
+              "path": "/core/CameraSource#setChromaColorKeyExposure",
+              "partial": "partials/modules//core/CameraSource/index.html",
               "name": "setChromaColorKeyExposure"
             },
             {
-              "path": "/core/CameraItem#getChromaColorKeyColor",
-              "partial": "partials/modules//core/CameraItem/index.html",
+              "path": "/core/CameraSource#getChromaColorKeyColor",
+              "partial": "partials/modules//core/CameraSource/index.html",
               "name": "getChromaColorKeyColor"
             },
             {
-              "path": "/core/CameraItem#setChromaColorKeyColor",
-              "partial": "partials/modules//core/CameraItem/index.html",
+              "path": "/core/CameraSource#setChromaColorKeyColor",
+              "partial": "partials/modules//core/CameraSource/index.html",
               "name": "setChromaColorKeyColor"
             },
             {
-              "path": "/core/CameraItem#setKeyingOptionsPinned",
-              "partial": "partials/modules//core/CameraItem/index.html",
+              "path": "/core/CameraSource#setKeyingOptionsPinned",
+              "partial": "partials/modules//core/CameraSource/index.html",
               "name": "setKeyingOptionsPinned"
             },
             {
-              "path": "/core/CameraItem#getKeyingOptionsPinned",
-              "partial": "partials/modules//core/CameraItem/index.html",
+              "path": "/core/CameraSource#getKeyingOptionsPinned",
+              "partial": "partials/modules//core/CameraSource/index.html",
               "name": "getKeyingOptionsPinned"
             },
             {
-              "path": "/core/CameraItem#isVisible",
-              "partial": "partials/modules//core/CameraItem/index.html",
+              "path": "/core/CameraSource#isVisible",
+              "partial": "partials/modules//core/CameraSource/index.html",
               "name": "isVisible"
             },
             {
-              "path": "/core/CameraItem#setVisible",
-              "partial": "partials/modules//core/CameraItem/index.html",
+              "path": "/core/CameraSource#setVisible",
+              "partial": "partials/modules//core/CameraSource/index.html",
               "name": "setVisible"
             },
             {
-              "path": "/core/CameraItem#getTransition",
-              "partial": "partials/modules//core/CameraItem/index.html",
+              "path": "/core/CameraSource#getTransition",
+              "partial": "partials/modules//core/CameraSource/index.html",
               "name": "getTransition"
             },
             {
-              "path": "/core/CameraItem#setTransition",
-              "partial": "partials/modules//core/CameraItem/index.html",
+              "path": "/core/CameraSource#setTransition",
+              "partial": "partials/modules//core/CameraSource/index.html",
               "name": "setTransition"
             },
             {
-              "path": "/core/CameraItem#getTransitionTime",
-              "partial": "partials/modules//core/CameraItem/index.html",
+              "path": "/core/CameraSource#getTransitionTime",
+              "partial": "partials/modules//core/CameraSource/index.html",
               "name": "getTransitionTime"
             },
             {
-              "path": "/core/CameraItem#setTransitionTime",
-              "partial": "partials/modules//core/CameraItem/index.html",
+              "path": "/core/CameraSource#setTransitionTime",
+              "partial": "partials/modules//core/CameraSource/index.html",
               "name": "setTransitionTime"
             },
             {
-              "path": "/core/CameraItem#getVolume",
-              "partial": "partials/modules//core/CameraItem/index.html",
+              "path": "/core/CameraSource#getVolume",
+              "partial": "partials/modules//core/CameraSource/index.html",
               "name": "getVolume"
             },
             {
-              "path": "/core/CameraItem#isMute",
-              "partial": "partials/modules//core/CameraItem/index.html",
+              "path": "/core/CameraSource#isMute",
+              "partial": "partials/modules//core/CameraSource/index.html",
               "name": "isMute"
             },
             {
-              "path": "/core/CameraItem#setVolume",
-              "partial": "partials/modules//core/CameraItem/index.html",
+              "path": "/core/CameraSource#setVolume",
+              "partial": "partials/modules//core/CameraSource/index.html",
               "name": "setVolume"
             },
             {
-              "path": "/core/CameraItem#setMute",
-              "partial": "partials/modules//core/CameraItem/index.html",
+              "path": "/core/CameraSource#setMute",
+              "partial": "partials/modules//core/CameraSource/index.html",
               "name": "setMute"
             },
             {
-              "path": "/core/CameraItem#isStreamOnlyAudio",
-              "partial": "partials/modules//core/CameraItem/index.html",
+              "path": "/core/CameraSource#isStreamOnlyAudio",
+              "partial": "partials/modules//core/CameraSource/index.html",
               "name": "isStreamOnlyAudio"
             },
             {
-              "path": "/core/CameraItem#setStreamOnlyAudio",
-              "partial": "partials/modules//core/CameraItem/index.html",
+              "path": "/core/CameraSource#setStreamOnlyAudio",
+              "partial": "partials/modules//core/CameraSource/index.html",
               "name": "setStreamOnlyAudio"
             },
             {
-              "path": "/core/CameraItem#isAudioAvailable",
-              "partial": "partials/modules//core/CameraItem/index.html",
+              "path": "/core/CameraSource#isAudioAvailable",
+              "partial": "partials/modules//core/CameraSource/index.html",
               "name": "isAudioAvailable"
             }
           ]
         },
         {
-          "path": "/core/GameItem",
-          "partial": "partials/modules//core/GameItem/index.html",
-          "name": "GameItem",
+          "path": "/core/GameSource",
+          "partial": "partials/modules//core/GameSource/index.html",
+          "name": "GameSource",
           "type": "Class",
           "pages": [
             {
-              "path": "/core/GameItem#isSpecialOptimizationEnabled",
-              "partial": "partials/modules//core/GameItem/index.html",
+              "path": "/core/GameSource#isSpecialOptimizationEnabled",
+              "partial": "partials/modules//core/GameSource/index.html",
               "name": "isSpecialOptimizationEnabled"
             },
             {
-              "path": "/core/GameItem#setSpecialOptimizationEnabled",
-              "partial": "partials/modules//core/GameItem/index.html",
+              "path": "/core/GameSource#setSpecialOptimizationEnabled",
+              "partial": "partials/modules//core/GameSource/index.html",
               "name": "setSpecialOptimizationEnabled"
             },
             {
-              "path": "/core/GameItem#isShowMouseEnabled",
-              "partial": "partials/modules//core/GameItem/index.html",
+              "path": "/core/GameSource#isShowMouseEnabled",
+              "partial": "partials/modules//core/GameSource/index.html",
               "name": "isShowMouseEnabled"
             },
             {
-              "path": "/core/GameItem#setShowMouseEnabled",
-              "partial": "partials/modules//core/GameItem/index.html",
+              "path": "/core/GameSource#setShowMouseEnabled",
+              "partial": "partials/modules//core/GameSource/index.html",
               "name": "setShowMouseEnabled"
             },
             {
-              "path": "/core/GameItem#setOfflineImage",
-              "partial": "partials/modules//core/GameItem/index.html",
+              "path": "/core/GameSource#setOfflineImage",
+              "partial": "partials/modules//core/GameSource/index.html",
               "name": "setOfflineImage"
             },
             {
-              "path": "/core/GameItem#getOfflineImage",
-              "partial": "partials/modules//core/GameItem/index.html",
+              "path": "/core/GameSource#getOfflineImage",
+              "partial": "partials/modules//core/GameSource/index.html",
               "name": "getOfflineImage"
             },
             {
-              "path": "/core/GameItem#isKeepAspectRatio",
-              "partial": "partials/modules//core/GameItem/index.html",
+              "path": "/core/GameSource#isKeepAspectRatio",
+              "partial": "partials/modules//core/GameSource/index.html",
               "name": "isKeepAspectRatio"
             },
             {
-              "path": "/core/GameItem#isPositionLocked",
-              "partial": "partials/modules//core/GameItem/index.html",
+              "path": "/core/GameSource#isPositionLocked",
+              "partial": "partials/modules//core/GameSource/index.html",
               "name": "isPositionLocked"
             },
             {
-              "path": "/core/GameItem#isEnhancedResizeEnabled",
-              "partial": "partials/modules//core/GameItem/index.html",
+              "path": "/core/GameSource#isEnhancedResizeEnabled",
+              "partial": "partials/modules//core/GameSource/index.html",
               "name": "isEnhancedResizeEnabled"
             },
             {
-              "path": "/core/GameItem#getPosition",
-              "partial": "partials/modules//core/GameItem/index.html",
+              "path": "/core/GameSource#getPosition",
+              "partial": "partials/modules//core/GameSource/index.html",
               "name": "getPosition"
             },
             {
-              "path": "/core/GameItem#getRotateY",
-              "partial": "partials/modules//core/GameItem/index.html",
+              "path": "/core/GameSource#getRotateY",
+              "partial": "partials/modules//core/GameSource/index.html",
               "name": "getRotateY"
             },
             {
-              "path": "/core/GameItem#getRotateX",
-              "partial": "partials/modules//core/GameItem/index.html",
+              "path": "/core/GameSource#getRotateX",
+              "partial": "partials/modules//core/GameSource/index.html",
               "name": "getRotateX"
             },
             {
-              "path": "/core/GameItem#getRotateZ",
-              "partial": "partials/modules//core/GameItem/index.html",
+              "path": "/core/GameSource#getRotateZ",
+              "partial": "partials/modules//core/GameSource/index.html",
               "name": "getRotateZ"
             },
             {
-              "path": "/core/GameItem#setKeepAspectRatio",
-              "partial": "partials/modules//core/GameItem/index.html",
+              "path": "/core/GameSource#setKeepAspectRatio",
+              "partial": "partials/modules//core/GameSource/index.html",
               "name": "setKeepAspectRatio"
             },
             {
-              "path": "/core/GameItem#setPositionLocked",
-              "partial": "partials/modules//core/GameItem/index.html",
+              "path": "/core/GameSource#setPositionLocked",
+              "partial": "partials/modules//core/GameSource/index.html",
               "name": "setPositionLocked"
             },
             {
-              "path": "/core/GameItem#setEnhancedResizeEnabled",
-              "partial": "partials/modules//core/GameItem/index.html",
+              "path": "/core/GameSource#setEnhancedResizeEnabled",
+              "partial": "partials/modules//core/GameSource/index.html",
               "name": "setEnhancedResizeEnabled"
             },
             {
-              "path": "/core/GameItem#setPosition",
-              "partial": "partials/modules//core/GameItem/index.html",
+              "path": "/core/GameSource#setPosition",
+              "partial": "partials/modules//core/GameSource/index.html",
               "name": "setPosition"
             },
             {
-              "path": "/core/GameItem#setRotateY",
-              "partial": "partials/modules//core/GameItem/index.html",
+              "path": "/core/GameSource#setRotateY",
+              "partial": "partials/modules//core/GameSource/index.html",
               "name": "setRotateY"
             },
             {
-              "path": "/core/GameItem#setRotateX",
-              "partial": "partials/modules//core/GameItem/index.html",
+              "path": "/core/GameSource#setRotateX",
+              "partial": "partials/modules//core/GameSource/index.html",
               "name": "setRotateX"
             },
             {
-              "path": "/core/GameItem#setRotateZ",
-              "partial": "partials/modules//core/GameItem/index.html",
+              "path": "/core/GameSource#setRotateZ",
+              "partial": "partials/modules//core/GameSource/index.html",
               "name": "setRotateZ"
             },
             {
-              "path": "/core/GameItem#getTransparency",
-              "partial": "partials/modules//core/GameItem/index.html",
+              "path": "/core/GameSource#getTransparency",
+              "partial": "partials/modules//core/GameSource/index.html",
               "name": "getTransparency"
             },
             {
-              "path": "/core/GameItem#getBrightness",
-              "partial": "partials/modules//core/GameItem/index.html",
+              "path": "/core/GameSource#getBrightness",
+              "partial": "partials/modules//core/GameSource/index.html",
               "name": "getBrightness"
             },
             {
-              "path": "/core/GameItem#getContrast",
-              "partial": "partials/modules//core/GameItem/index.html",
+              "path": "/core/GameSource#getContrast",
+              "partial": "partials/modules//core/GameSource/index.html",
               "name": "getContrast"
             },
             {
-              "path": "/core/GameItem#getHue",
-              "partial": "partials/modules//core/GameItem/index.html",
+              "path": "/core/GameSource#getHue",
+              "partial": "partials/modules//core/GameSource/index.html",
               "name": "getHue"
             },
             {
-              "path": "/core/GameItem#getSaturation",
-              "partial": "partials/modules//core/GameItem/index.html",
+              "path": "/core/GameSource#getSaturation",
+              "partial": "partials/modules//core/GameSource/index.html",
               "name": "getSaturation"
             },
             {
-              "path": "/core/GameItem#getBorderColor",
-              "partial": "partials/modules//core/GameItem/index.html",
+              "path": "/core/GameSource#getBorderColor",
+              "partial": "partials/modules//core/GameSource/index.html",
               "name": "getBorderColor"
             },
             {
-              "path": "/core/GameItem#setTransparency",
-              "partial": "partials/modules//core/GameItem/index.html",
+              "path": "/core/GameSource#setTransparency",
+              "partial": "partials/modules//core/GameSource/index.html",
               "name": "setTransparency"
             },
             {
-              "path": "/core/GameItem#setBrightness",
-              "partial": "partials/modules//core/GameItem/index.html",
+              "path": "/core/GameSource#setBrightness",
+              "partial": "partials/modules//core/GameSource/index.html",
               "name": "setBrightness"
             },
             {
-              "path": "/core/GameItem#setContrast",
-              "partial": "partials/modules//core/GameItem/index.html",
+              "path": "/core/GameSource#setContrast",
+              "partial": "partials/modules//core/GameSource/index.html",
               "name": "setContrast"
             },
             {
-              "path": "/core/GameItem#setHue",
-              "partial": "partials/modules//core/GameItem/index.html",
+              "path": "/core/GameSource#setHue",
+              "partial": "partials/modules//core/GameSource/index.html",
               "name": "setHue"
             },
             {
-              "path": "/core/GameItem#setSaturation",
-              "partial": "partials/modules//core/GameItem/index.html",
+              "path": "/core/GameSource#setSaturation",
+              "partial": "partials/modules//core/GameSource/index.html",
               "name": "setSaturation"
             },
             {
-              "path": "/core/GameItem#setBorderColor",
-              "partial": "partials/modules//core/GameItem/index.html",
+              "path": "/core/GameSource#setBorderColor",
+              "partial": "partials/modules//core/GameSource/index.html",
               "name": "setBorderColor"
             },
             {
-              "path": "/core/GameItem#isChromaEnabled",
-              "partial": "partials/modules//core/GameItem/index.html",
+              "path": "/core/GameSource#isChromaEnabled",
+              "partial": "partials/modules//core/GameSource/index.html",
               "name": "isChromaEnabled"
             },
             {
-              "path": "/core/GameItem#setChromaEnabled",
-              "partial": "partials/modules//core/GameItem/index.html",
+              "path": "/core/GameSource#setChromaEnabled",
+              "partial": "partials/modules//core/GameSource/index.html",
               "name": "setChromaEnabled"
             },
             {
-              "path": "/core/GameItem#getKeyingType",
-              "partial": "partials/modules//core/GameItem/index.html",
+              "path": "/core/GameSource#getKeyingType",
+              "partial": "partials/modules//core/GameSource/index.html",
               "name": "getKeyingType"
             },
             {
-              "path": "/core/GameItem#setKeyingType",
-              "partial": "partials/modules//core/GameItem/index.html",
+              "path": "/core/GameSource#setKeyingType",
+              "partial": "partials/modules//core/GameSource/index.html",
               "name": "setKeyingType"
             },
             {
-              "path": "/core/GameItem#getChromaAntiAliasLevel",
-              "partial": "partials/modules//core/GameItem/index.html",
+              "path": "/core/GameSource#getChromaAntiAliasLevel",
+              "partial": "partials/modules//core/GameSource/index.html",
               "name": "getChromaAntiAliasLevel"
             },
             {
-              "path": "/core/GameItem#setChromaAntiAliasLevel",
-              "partial": "partials/modules//core/GameItem/index.html",
+              "path": "/core/GameSource#setChromaAntiAliasLevel",
+              "partial": "partials/modules//core/GameSource/index.html",
               "name": "setChromaAntiAliasLevel"
             },
             {
-              "path": "/core/GameItem#getChromaLegacyBrightness",
-              "partial": "partials/modules//core/GameItem/index.html",
+              "path": "/core/GameSource#getChromaLegacyBrightness",
+              "partial": "partials/modules//core/GameSource/index.html",
               "name": "getChromaLegacyBrightness"
             },
             {
-              "path": "/core/GameItem#setChromaLegacyBrightness",
-              "partial": "partials/modules//core/GameItem/index.html",
+              "path": "/core/GameSource#setChromaLegacyBrightness",
+              "partial": "partials/modules//core/GameSource/index.html",
               "name": "setChromaLegacyBrightness"
             },
             {
-              "path": "/core/GameItem#getChromaLegacySaturation",
-              "partial": "partials/modules//core/GameItem/index.html",
+              "path": "/core/GameSource#getChromaLegacySaturation",
+              "partial": "partials/modules//core/GameSource/index.html",
               "name": "getChromaLegacySaturation"
             },
             {
-              "path": "/core/GameItem#setChromaLegacySaturation",
-              "partial": "partials/modules//core/GameItem/index.html",
+              "path": "/core/GameSource#setChromaLegacySaturation",
+              "partial": "partials/modules//core/GameSource/index.html",
               "name": "setChromaLegacySaturation"
             },
             {
-              "path": "/core/GameItem#getChromaLegacyHue",
-              "partial": "partials/modules//core/GameItem/index.html",
+              "path": "/core/GameSource#getChromaLegacyHue",
+              "partial": "partials/modules//core/GameSource/index.html",
               "name": "getChromaLegacyHue"
             },
             {
-              "path": "/core/GameItem#setChromaLegacyHue",
-              "partial": "partials/modules//core/GameItem/index.html",
+              "path": "/core/GameSource#setChromaLegacyHue",
+              "partial": "partials/modules//core/GameSource/index.html",
               "name": "setChromaLegacyHue"
             },
             {
-              "path": "/core/GameItem#getChromaLegacyThreshold",
-              "partial": "partials/modules//core/GameItem/index.html",
+              "path": "/core/GameSource#getChromaLegacyThreshold",
+              "partial": "partials/modules//core/GameSource/index.html",
               "name": "getChromaLegacyThreshold"
             },
             {
-              "path": "/core/GameItem#setChromaLegacyThreshold",
-              "partial": "partials/modules//core/GameItem/index.html",
+              "path": "/core/GameSource#setChromaLegacyThreshold",
+              "partial": "partials/modules//core/GameSource/index.html",
               "name": "setChromaLegacyThreshold"
             },
             {
-              "path": "/core/GameItem#getChromaLegacyAlphaSmoothing",
-              "partial": "partials/modules//core/GameItem/index.html",
+              "path": "/core/GameSource#getChromaLegacyAlphaSmoothing",
+              "partial": "partials/modules//core/GameSource/index.html",
               "name": "getChromaLegacyAlphaSmoothing"
             },
             {
-              "path": "/core/GameItem#setChromaLegacyAlphaSmoothing",
-              "partial": "partials/modules//core/GameItem/index.html",
+              "path": "/core/GameSource#setChromaLegacyAlphaSmoothing",
+              "partial": "partials/modules//core/GameSource/index.html",
               "name": "setChromaLegacyAlphaSmoothing"
             },
             {
-              "path": "/core/GameItem#getChromaRGBKeyPrimaryColor",
-              "partial": "partials/modules//core/GameItem/index.html",
+              "path": "/core/GameSource#getChromaRGBKeyPrimaryColor",
+              "partial": "partials/modules//core/GameSource/index.html",
               "name": "getChromaRGBKeyPrimaryColor"
             },
             {
-              "path": "/core/GameItem#setChromaRGBKeyPrimaryColor",
-              "partial": "partials/modules//core/GameItem/index.html",
+              "path": "/core/GameSource#setChromaRGBKeyPrimaryColor",
+              "partial": "partials/modules//core/GameSource/index.html",
               "name": "setChromaRGBKeyPrimaryColor"
             },
             {
-              "path": "/core/GameItem#getChromaRGBKeyThreshold",
-              "partial": "partials/modules//core/GameItem/index.html",
+              "path": "/core/GameSource#getChromaRGBKeyThreshold",
+              "partial": "partials/modules//core/GameSource/index.html",
               "name": "getChromaRGBKeyThreshold"
             },
             {
-              "path": "/core/GameItem#setChromaRGBKeyThreshold",
-              "partial": "partials/modules//core/GameItem/index.html",
+              "path": "/core/GameSource#setChromaRGBKeyThreshold",
+              "partial": "partials/modules//core/GameSource/index.html",
               "name": "setChromaRGBKeyThreshold"
             },
             {
-              "path": "/core/GameItem#getChromaRGBKeyExposure",
-              "partial": "partials/modules//core/GameItem/index.html",
+              "path": "/core/GameSource#getChromaRGBKeyExposure",
+              "partial": "partials/modules//core/GameSource/index.html",
               "name": "getChromaRGBKeyExposure"
             },
             {
-              "path": "/core/GameItem#setChromaRGBKeyExposure",
-              "partial": "partials/modules//core/GameItem/index.html",
+              "path": "/core/GameSource#setChromaRGBKeyExposure",
+              "partial": "partials/modules//core/GameSource/index.html",
               "name": "setChromaRGBKeyExposure"
             },
             {
-              "path": "/core/GameItem#getChromaColorKeyThreshold",
-              "partial": "partials/modules//core/GameItem/index.html",
+              "path": "/core/GameSource#getChromaColorKeyThreshold",
+              "partial": "partials/modules//core/GameSource/index.html",
               "name": "getChromaColorKeyThreshold"
             },
             {
-              "path": "/core/GameItem#setChromaColorKeyThreshold",
-              "partial": "partials/modules//core/GameItem/index.html",
+              "path": "/core/GameSource#setChromaColorKeyThreshold",
+              "partial": "partials/modules//core/GameSource/index.html",
               "name": "setChromaColorKeyThreshold"
             },
             {
-              "path": "/core/GameItem#getChromaColorKeyExposure",
-              "partial": "partials/modules//core/GameItem/index.html",
+              "path": "/core/GameSource#getChromaColorKeyExposure",
+              "partial": "partials/modules//core/GameSource/index.html",
               "name": "getChromaColorKeyExposure"
             },
             {
-              "path": "/core/GameItem#setChromaColorKeyExposure",
-              "partial": "partials/modules//core/GameItem/index.html",
+              "path": "/core/GameSource#setChromaColorKeyExposure",
+              "partial": "partials/modules//core/GameSource/index.html",
               "name": "setChromaColorKeyExposure"
             },
             {
-              "path": "/core/GameItem#getChromaColorKeyColor",
-              "partial": "partials/modules//core/GameItem/index.html",
+              "path": "/core/GameSource#getChromaColorKeyColor",
+              "partial": "partials/modules//core/GameSource/index.html",
               "name": "getChromaColorKeyColor"
             },
             {
-              "path": "/core/GameItem#setChromaColorKeyColor",
-              "partial": "partials/modules//core/GameItem/index.html",
+              "path": "/core/GameSource#setChromaColorKeyColor",
+              "partial": "partials/modules//core/GameSource/index.html",
               "name": "setChromaColorKeyColor"
             },
             {
-              "path": "/core/GameItem#isVisible",
-              "partial": "partials/modules//core/GameItem/index.html",
+              "path": "/core/GameSource#isVisible",
+              "partial": "partials/modules//core/GameSource/index.html",
               "name": "isVisible"
             },
             {
-              "path": "/core/GameItem#setVisible",
-              "partial": "partials/modules//core/GameItem/index.html",
+              "path": "/core/GameSource#setVisible",
+              "partial": "partials/modules//core/GameSource/index.html",
               "name": "setVisible"
             },
             {
-              "path": "/core/GameItem#getTransition",
-              "partial": "partials/modules//core/GameItem/index.html",
+              "path": "/core/GameSource#getTransition",
+              "partial": "partials/modules//core/GameSource/index.html",
               "name": "getTransition"
             },
             {
-              "path": "/core/GameItem#setTransition",
-              "partial": "partials/modules//core/GameItem/index.html",
+              "path": "/core/GameSource#setTransition",
+              "partial": "partials/modules//core/GameSource/index.html",
               "name": "setTransition"
             },
             {
-              "path": "/core/GameItem#getTransitionTime",
-              "partial": "partials/modules//core/GameItem/index.html",
+              "path": "/core/GameSource#getTransitionTime",
+              "partial": "partials/modules//core/GameSource/index.html",
               "name": "getTransitionTime"
             },
             {
-              "path": "/core/GameItem#setTransitionTime",
-              "partial": "partials/modules//core/GameItem/index.html",
+              "path": "/core/GameSource#setTransitionTime",
+              "partial": "partials/modules//core/GameSource/index.html",
               "name": "setTransitionTime"
             }
           ]
         },
         {
-          "path": "/core/AudioItem",
-          "partial": "partials/modules//core/AudioItem/index.html",
-          "name": "AudioItem",
+          "path": "/core/AudioSource",
+          "partial": "partials/modules//core/AudioSource/index.html",
+          "name": "AudioSource",
           "type": "Class",
           "pages": [
             {
-              "path": "/core/AudioItem#isSilenceDetectionEnabled",
-              "partial": "partials/modules//core/AudioItem/index.html",
+              "path": "/core/AudioSource#isSilenceDetectionEnabled",
+              "partial": "partials/modules//core/AudioSource/index.html",
               "name": "isSilenceDetectionEnabled"
             },
             {
-              "path": "/core/AudioItem#setSilenceDetectionEnabled",
-              "partial": "partials/modules//core/AudioItem/index.html",
+              "path": "/core/AudioSource#setSilenceDetectionEnabled",
+              "partial": "partials/modules//core/AudioSource/index.html",
               "name": "setSilenceDetectionEnabled"
             },
             {
-              "path": "/core/AudioItem#getSilenceThreshold",
-              "partial": "partials/modules//core/AudioItem/index.html",
+              "path": "/core/AudioSource#getSilenceThreshold",
+              "partial": "partials/modules//core/AudioSource/index.html",
               "name": "getSilenceThreshold"
             },
             {
-              "path": "/core/AudioItem#setSilenceThreshold",
-              "partial": "partials/modules//core/AudioItem/index.html",
+              "path": "/core/AudioSource#setSilenceThreshold",
+              "partial": "partials/modules//core/AudioSource/index.html",
               "name": "setSilenceThreshold"
             },
             {
-              "path": "/core/AudioItem#getSilencePeriod",
-              "partial": "partials/modules//core/AudioItem/index.html",
+              "path": "/core/AudioSource#getSilencePeriod",
+              "partial": "partials/modules//core/AudioSource/index.html",
               "name": "getSilencePeriod"
             },
             {
-              "path": "/core/AudioItem#setSilencePeriod",
-              "partial": "partials/modules//core/AudioItem/index.html",
+              "path": "/core/AudioSource#setSilencePeriod",
+              "partial": "partials/modules//core/AudioSource/index.html",
               "name": "setSilencePeriod"
             },
             {
-              "path": "/core/AudioItem#getAudioOffset",
-              "partial": "partials/modules//core/AudioItem/index.html",
+              "path": "/core/AudioSource#getAudioOffset",
+              "partial": "partials/modules//core/AudioSource/index.html",
               "name": "getAudioOffset"
             },
             {
-              "path": "/core/AudioItem#setAudioOffset",
-              "partial": "partials/modules//core/AudioItem/index.html",
+              "path": "/core/AudioSource#setAudioOffset",
+              "partial": "partials/modules//core/AudioSource/index.html",
               "name": "setAudioOffset"
             },
             {
-              "path": "/core/AudioItem#getVolume",
-              "partial": "partials/modules//core/AudioItem/index.html",
+              "path": "/core/AudioSource#getVolume",
+              "partial": "partials/modules//core/AudioSource/index.html",
               "name": "getVolume"
             },
             {
-              "path": "/core/AudioItem#isMute",
-              "partial": "partials/modules//core/AudioItem/index.html",
+              "path": "/core/AudioSource#isMute",
+              "partial": "partials/modules//core/AudioSource/index.html",
               "name": "isMute"
             },
             {
-              "path": "/core/AudioItem#setVolume",
-              "partial": "partials/modules//core/AudioItem/index.html",
+              "path": "/core/AudioSource#setVolume",
+              "partial": "partials/modules//core/AudioSource/index.html",
               "name": "setVolume"
             },
             {
-              "path": "/core/AudioItem#setMute",
-              "partial": "partials/modules//core/AudioItem/index.html",
+              "path": "/core/AudioSource#setMute",
+              "partial": "partials/modules//core/AudioSource/index.html",
               "name": "setMute"
             },
             {
-              "path": "/core/AudioItem#isStreamOnlyAudio",
-              "partial": "partials/modules//core/AudioItem/index.html",
+              "path": "/core/AudioSource#isStreamOnlyAudio",
+              "partial": "partials/modules//core/AudioSource/index.html",
               "name": "isStreamOnlyAudio"
             },
             {
-              "path": "/core/AudioItem#setStreamOnlyAudio",
-              "partial": "partials/modules//core/AudioItem/index.html",
+              "path": "/core/AudioSource#setStreamOnlyAudio",
+              "partial": "partials/modules//core/AudioSource/index.html",
               "name": "setStreamOnlyAudio"
             },
             {
-              "path": "/core/AudioItem#isAudioAvailable",
-              "partial": "partials/modules//core/AudioItem/index.html",
+              "path": "/core/AudioSource#isAudioAvailable",
+              "partial": "partials/modules//core/AudioSource/index.html",
               "name": "isAudioAvailable"
             }
           ]
         },
         {
-          "path": "/core/HTMLItem",
-          "partial": "partials/modules//core/HTMLItem/index.html",
-          "name": "HTMLItem",
+          "path": "/core/HtmlSource",
+          "partial": "partials/modules//core/HtmlSource/index.html",
+          "name": "HtmlSource",
           "type": "Class",
           "pages": [
             {
-              "path": "/core/HTMLItem#getURL",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#getURL",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "getURL"
             },
             {
-              "path": "/core/HTMLItem#setURL",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#setURL",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "setURL"
             },
             {
-              "path": "/core/HTMLItem#getBrowserJS",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#getBrowserJS",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "getBrowserJS"
             },
             {
-              "path": "/core/HTMLItem#setBrowserJS",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#setBrowserJS",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "setBrowserJS"
             },
             {
-              "path": "/core/HTMLItem#isBrowserJSEnabled",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#isBrowserJSEnabled",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "isBrowserJSEnabled"
             },
             {
-              "path": "/core/HTMLItem#enableBrowserJS",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#enableBrowserJS",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "enableBrowserJS"
             },
             {
-              "path": "/core/HTMLItem#getCustomCSS",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#getCustomCSS",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "getCustomCSS"
             },
             {
-              "path": "/core/HTMLItem#setCustomCSS",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#setCustomCSS",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "setCustomCSS"
             },
             {
-              "path": "/core/HTMLItem#isCustomCSSEnabled",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#isCustomCSSEnabled",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "isCustomCSSEnabled"
             },
             {
-              "path": "/core/HTMLItem#enableCustomCSS",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#enableCustomCSS",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "enableCustomCSS"
             },
             {
-              "path": "/core/HTMLItem#isBrowserTransparent",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#isBrowserTransparent",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "isBrowserTransparent"
             },
             {
-              "path": "/core/HTMLItem#enableBrowserTransparency",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#enableBrowserTransparency",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "enableBrowserTransparency"
             },
             {
-              "path": "/core/HTMLItem#getBrowserCustomSize",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#getBrowserCustomSize",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "getBrowserCustomSize"
             },
             {
-              "path": "/core/HTMLItem#setBrowserCustomSize",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#setBrowserCustomSize",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "setBrowserCustomSize"
             },
             {
-              "path": "/core/HTMLItem#isKeepAspectRatio",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#isKeepAspectRatio",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "isKeepAspectRatio"
             },
             {
-              "path": "/core/HTMLItem#isPositionLocked",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#isPositionLocked",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "isPositionLocked"
             },
             {
-              "path": "/core/HTMLItem#isEnhancedResizeEnabled",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#isEnhancedResizeEnabled",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "isEnhancedResizeEnabled"
             },
             {
-              "path": "/core/HTMLItem#getPosition",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#getPosition",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "getPosition"
             },
             {
-              "path": "/core/HTMLItem#getRotateY",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#getRotateY",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "getRotateY"
             },
             {
-              "path": "/core/HTMLItem#getRotateX",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#getRotateX",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "getRotateX"
             },
             {
-              "path": "/core/HTMLItem#getRotateZ",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#getRotateZ",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "getRotateZ"
             },
             {
-              "path": "/core/HTMLItem#setKeepAspectRatio",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#setKeepAspectRatio",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "setKeepAspectRatio"
             },
             {
-              "path": "/core/HTMLItem#setPositionLocked",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#setPositionLocked",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "setPositionLocked"
             },
             {
-              "path": "/core/HTMLItem#setEnhancedResizeEnabled",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#setEnhancedResizeEnabled",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "setEnhancedResizeEnabled"
             },
             {
-              "path": "/core/HTMLItem#setPosition",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#setPosition",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "setPosition"
             },
             {
-              "path": "/core/HTMLItem#setRotateY",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#setRotateY",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "setRotateY"
             },
             {
-              "path": "/core/HTMLItem#setRotateX",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#setRotateX",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "setRotateX"
             },
             {
-              "path": "/core/HTMLItem#setRotateZ",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#setRotateZ",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "setRotateZ"
             },
             {
-              "path": "/core/HTMLItem#getTransparency",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#getTransparency",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "getTransparency"
             },
             {
-              "path": "/core/HTMLItem#getBrightness",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#getBrightness",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "getBrightness"
             },
             {
-              "path": "/core/HTMLItem#getContrast",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#getContrast",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "getContrast"
             },
             {
-              "path": "/core/HTMLItem#getHue",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#getHue",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "getHue"
             },
             {
-              "path": "/core/HTMLItem#getSaturation",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#getSaturation",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "getSaturation"
             },
             {
-              "path": "/core/HTMLItem#getBorderColor",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#getBorderColor",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "getBorderColor"
             },
             {
-              "path": "/core/HTMLItem#setTransparency",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#setTransparency",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "setTransparency"
             },
             {
-              "path": "/core/HTMLItem#setBrightness",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#setBrightness",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "setBrightness"
             },
             {
-              "path": "/core/HTMLItem#setContrast",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#setContrast",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "setContrast"
             },
             {
-              "path": "/core/HTMLItem#setHue",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#setHue",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "setHue"
             },
             {
-              "path": "/core/HTMLItem#setSaturation",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#setSaturation",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "setSaturation"
             },
             {
-              "path": "/core/HTMLItem#setBorderColor",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#setBorderColor",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "setBorderColor"
             },
             {
-              "path": "/core/HTMLItem#isChromaEnabled",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#isChromaEnabled",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "isChromaEnabled"
             },
             {
-              "path": "/core/HTMLItem#setChromaEnabled",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#setChromaEnabled",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "setChromaEnabled"
             },
             {
-              "path": "/core/HTMLItem#getKeyingType",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#getKeyingType",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "getKeyingType"
             },
             {
-              "path": "/core/HTMLItem#setKeyingType",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#setKeyingType",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "setKeyingType"
             },
             {
-              "path": "/core/HTMLItem#getChromaAntiAliasLevel",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#getChromaAntiAliasLevel",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "getChromaAntiAliasLevel"
             },
             {
-              "path": "/core/HTMLItem#setChromaAntiAliasLevel",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#setChromaAntiAliasLevel",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "setChromaAntiAliasLevel"
             },
             {
-              "path": "/core/HTMLItem#getChromaLegacyBrightness",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#getChromaLegacyBrightness",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "getChromaLegacyBrightness"
             },
             {
-              "path": "/core/HTMLItem#setChromaLegacyBrightness",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#setChromaLegacyBrightness",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "setChromaLegacyBrightness"
             },
             {
-              "path": "/core/HTMLItem#getChromaLegacySaturation",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#getChromaLegacySaturation",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "getChromaLegacySaturation"
             },
             {
-              "path": "/core/HTMLItem#setChromaLegacySaturation",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#setChromaLegacySaturation",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "setChromaLegacySaturation"
             },
             {
-              "path": "/core/HTMLItem#getChromaLegacyHue",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#getChromaLegacyHue",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "getChromaLegacyHue"
             },
             {
-              "path": "/core/HTMLItem#setChromaLegacyHue",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#setChromaLegacyHue",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "setChromaLegacyHue"
             },
             {
-              "path": "/core/HTMLItem#getChromaLegacyThreshold",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#getChromaLegacyThreshold",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "getChromaLegacyThreshold"
             },
             {
-              "path": "/core/HTMLItem#setChromaLegacyThreshold",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#setChromaLegacyThreshold",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "setChromaLegacyThreshold"
             },
             {
-              "path": "/core/HTMLItem#getChromaLegacyAlphaSmoothing",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#getChromaLegacyAlphaSmoothing",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "getChromaLegacyAlphaSmoothing"
             },
             {
-              "path": "/core/HTMLItem#setChromaLegacyAlphaSmoothing",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#setChromaLegacyAlphaSmoothing",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "setChromaLegacyAlphaSmoothing"
             },
             {
-              "path": "/core/HTMLItem#getChromaRGBKeyPrimaryColor",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#getChromaRGBKeyPrimaryColor",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "getChromaRGBKeyPrimaryColor"
             },
             {
-              "path": "/core/HTMLItem#setChromaRGBKeyPrimaryColor",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#setChromaRGBKeyPrimaryColor",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "setChromaRGBKeyPrimaryColor"
             },
             {
-              "path": "/core/HTMLItem#getChromaRGBKeyThreshold",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#getChromaRGBKeyThreshold",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "getChromaRGBKeyThreshold"
             },
             {
-              "path": "/core/HTMLItem#setChromaRGBKeyThreshold",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#setChromaRGBKeyThreshold",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "setChromaRGBKeyThreshold"
             },
             {
-              "path": "/core/HTMLItem#getChromaRGBKeyExposure",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#getChromaRGBKeyExposure",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "getChromaRGBKeyExposure"
             },
             {
-              "path": "/core/HTMLItem#setChromaRGBKeyExposure",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#setChromaRGBKeyExposure",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "setChromaRGBKeyExposure"
             },
             {
-              "path": "/core/HTMLItem#getChromaColorKeyThreshold",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#getChromaColorKeyThreshold",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "getChromaColorKeyThreshold"
             },
             {
-              "path": "/core/HTMLItem#setChromaColorKeyThreshold",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#setChromaColorKeyThreshold",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "setChromaColorKeyThreshold"
             },
             {
-              "path": "/core/HTMLItem#getChromaColorKeyExposure",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#getChromaColorKeyExposure",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "getChromaColorKeyExposure"
             },
             {
-              "path": "/core/HTMLItem#setChromaColorKeyExposure",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#setChromaColorKeyExposure",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "setChromaColorKeyExposure"
             },
             {
-              "path": "/core/HTMLItem#getChromaColorKeyColor",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#getChromaColorKeyColor",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "getChromaColorKeyColor"
             },
             {
-              "path": "/core/HTMLItem#setChromaColorKeyColor",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#setChromaColorKeyColor",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "setChromaColorKeyColor"
             },
             {
-              "path": "/core/HTMLItem#isVisible",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#isVisible",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "isVisible"
             },
             {
-              "path": "/core/HTMLItem#setVisible",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#setVisible",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "setVisible"
             },
             {
-              "path": "/core/HTMLItem#getTransition",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#getTransition",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "getTransition"
             },
             {
-              "path": "/core/HTMLItem#setTransition",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#setTransition",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "setTransition"
             },
             {
-              "path": "/core/HTMLItem#getTransitionTime",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#getTransitionTime",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "getTransitionTime"
             },
             {
-              "path": "/core/HTMLItem#setTransitionTime",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#setTransitionTime",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "setTransitionTime"
             },
             {
-              "path": "/core/HTMLItem#loadConfig",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#loadConfig",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "loadConfig"
             },
             {
-              "path": "/core/HTMLItem#saveConfig",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#saveConfig",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "saveConfig"
             },
             {
-              "path": "/core/HTMLItem#requestSaveConfig",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#requestSaveConfig",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "requestSaveConfig"
             },
             {
-              "path": "/core/HTMLItem#applyConfig",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#applyConfig",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "applyConfig"
             },
             {
-              "path": "/core/HTMLItem#getVolume",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#getVolume",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "getVolume"
             },
             {
-              "path": "/core/HTMLItem#isMute",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#isMute",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "isMute"
             },
             {
-              "path": "/core/HTMLItem#setVolume",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#setVolume",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "setVolume"
             },
             {
-              "path": "/core/HTMLItem#setMute",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#setMute",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "setMute"
             },
             {
-              "path": "/core/HTMLItem#isStreamOnlyAudio",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#isStreamOnlyAudio",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "isStreamOnlyAudio"
             },
             {
-              "path": "/core/HTMLItem#setStreamOnlyAudio",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#setStreamOnlyAudio",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "setStreamOnlyAudio"
             },
             {
-              "path": "/core/HTMLItem#isAudioAvailable",
-              "partial": "partials/modules//core/HTMLItem/index.html",
+              "path": "/core/HtmlSource#isAudioAvailable",
+              "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "isAudioAvailable"
             }
           ]
         },
         {
-          "path": "/core/FlashItem",
-          "partial": "partials/modules//core/FlashItem/index.html",
-          "name": "FlashItem",
+          "path": "/core/FlashSource",
+          "partial": "partials/modules//core/FlashSource/index.html",
+          "name": "FlashSource",
           "type": "Class",
           "pages": [
             {
-              "path": "/core/FlashItem#getCustomResolution",
-              "partial": "partials/modules//core/FlashItem/index.html",
+              "path": "/core/FlashSource#getCustomResolution",
+              "partial": "partials/modules//core/FlashSource/index.html",
               "name": "getCustomResolution"
             },
             {
-              "path": "/core/FlashItem#setCustomResolution",
-              "partial": "partials/modules//core/FlashItem/index.html",
+              "path": "/core/FlashSource#setCustomResolution",
+              "partial": "partials/modules//core/FlashSource/index.html",
               "name": "setCustomResolution"
             },
             {
-              "path": "/core/FlashItem#isKeepAspectRatio",
-              "partial": "partials/modules//core/FlashItem/index.html",
+              "path": "/core/FlashSource#isKeepAspectRatio",
+              "partial": "partials/modules//core/FlashSource/index.html",
               "name": "isKeepAspectRatio"
             },
             {
-              "path": "/core/FlashItem#isPositionLocked",
-              "partial": "partials/modules//core/FlashItem/index.html",
+              "path": "/core/FlashSource#isPositionLocked",
+              "partial": "partials/modules//core/FlashSource/index.html",
               "name": "isPositionLocked"
             },
             {
-              "path": "/core/FlashItem#isEnhancedResizeEnabled",
-              "partial": "partials/modules//core/FlashItem/index.html",
+              "path": "/core/FlashSource#isEnhancedResizeEnabled",
+              "partial": "partials/modules//core/FlashSource/index.html",
               "name": "isEnhancedResizeEnabled"
             },
             {
-              "path": "/core/FlashItem#getPosition",
-              "partial": "partials/modules//core/FlashItem/index.html",
+              "path": "/core/FlashSource#getPosition",
+              "partial": "partials/modules//core/FlashSource/index.html",
               "name": "getPosition"
             },
             {
-              "path": "/core/FlashItem#getRotateY",
-              "partial": "partials/modules//core/FlashItem/index.html",
+              "path": "/core/FlashSource#getRotateY",
+              "partial": "partials/modules//core/FlashSource/index.html",
               "name": "getRotateY"
             },
             {
-              "path": "/core/FlashItem#getRotateX",
-              "partial": "partials/modules//core/FlashItem/index.html",
+              "path": "/core/FlashSource#getRotateX",
+              "partial": "partials/modules//core/FlashSource/index.html",
               "name": "getRotateX"
             },
             {
-              "path": "/core/FlashItem#getRotateZ",
-              "partial": "partials/modules//core/FlashItem/index.html",
+              "path": "/core/FlashSource#getRotateZ",
+              "partial": "partials/modules//core/FlashSource/index.html",
               "name": "getRotateZ"
             },
             {
-              "path": "/core/FlashItem#setKeepAspectRatio",
-              "partial": "partials/modules//core/FlashItem/index.html",
+              "path": "/core/FlashSource#setKeepAspectRatio",
+              "partial": "partials/modules//core/FlashSource/index.html",
               "name": "setKeepAspectRatio"
             },
             {
-              "path": "/core/FlashItem#setPositionLocked",
-              "partial": "partials/modules//core/FlashItem/index.html",
+              "path": "/core/FlashSource#setPositionLocked",
+              "partial": "partials/modules//core/FlashSource/index.html",
               "name": "setPositionLocked"
             },
             {
-              "path": "/core/FlashItem#setEnhancedResizeEnabled",
-              "partial": "partials/modules//core/FlashItem/index.html",
+              "path": "/core/FlashSource#setEnhancedResizeEnabled",
+              "partial": "partials/modules//core/FlashSource/index.html",
               "name": "setEnhancedResizeEnabled"
             },
             {
-              "path": "/core/FlashItem#setPosition",
-              "partial": "partials/modules//core/FlashItem/index.html",
+              "path": "/core/FlashSource#setPosition",
+              "partial": "partials/modules//core/FlashSource/index.html",
               "name": "setPosition"
             },
             {
-              "path": "/core/FlashItem#setRotateY",
-              "partial": "partials/modules//core/FlashItem/index.html",
+              "path": "/core/FlashSource#setRotateY",
+              "partial": "partials/modules//core/FlashSource/index.html",
               "name": "setRotateY"
             },
             {
-              "path": "/core/FlashItem#setRotateX",
-              "partial": "partials/modules//core/FlashItem/index.html",
+              "path": "/core/FlashSource#setRotateX",
+              "partial": "partials/modules//core/FlashSource/index.html",
               "name": "setRotateX"
             },
             {
-              "path": "/core/FlashItem#setRotateZ",
-              "partial": "partials/modules//core/FlashItem/index.html",
+              "path": "/core/FlashSource#setRotateZ",
+              "partial": "partials/modules//core/FlashSource/index.html",
               "name": "setRotateZ"
             },
             {
-              "path": "/core/FlashItem#getTransparency",
-              "partial": "partials/modules//core/FlashItem/index.html",
+              "path": "/core/FlashSource#getTransparency",
+              "partial": "partials/modules//core/FlashSource/index.html",
               "name": "getTransparency"
             },
             {
-              "path": "/core/FlashItem#getBrightness",
-              "partial": "partials/modules//core/FlashItem/index.html",
+              "path": "/core/FlashSource#getBrightness",
+              "partial": "partials/modules//core/FlashSource/index.html",
               "name": "getBrightness"
             },
             {
-              "path": "/core/FlashItem#getContrast",
-              "partial": "partials/modules//core/FlashItem/index.html",
+              "path": "/core/FlashSource#getContrast",
+              "partial": "partials/modules//core/FlashSource/index.html",
               "name": "getContrast"
             },
             {
-              "path": "/core/FlashItem#getHue",
-              "partial": "partials/modules//core/FlashItem/index.html",
+              "path": "/core/FlashSource#getHue",
+              "partial": "partials/modules//core/FlashSource/index.html",
               "name": "getHue"
             },
             {
-              "path": "/core/FlashItem#getSaturation",
-              "partial": "partials/modules//core/FlashItem/index.html",
+              "path": "/core/FlashSource#getSaturation",
+              "partial": "partials/modules//core/FlashSource/index.html",
               "name": "getSaturation"
             },
             {
-              "path": "/core/FlashItem#getBorderColor",
-              "partial": "partials/modules//core/FlashItem/index.html",
+              "path": "/core/FlashSource#getBorderColor",
+              "partial": "partials/modules//core/FlashSource/index.html",
               "name": "getBorderColor"
             },
             {
-              "path": "/core/FlashItem#setTransparency",
-              "partial": "partials/modules//core/FlashItem/index.html",
+              "path": "/core/FlashSource#setTransparency",
+              "partial": "partials/modules//core/FlashSource/index.html",
               "name": "setTransparency"
             },
             {
-              "path": "/core/FlashItem#setBrightness",
-              "partial": "partials/modules//core/FlashItem/index.html",
+              "path": "/core/FlashSource#setBrightness",
+              "partial": "partials/modules//core/FlashSource/index.html",
               "name": "setBrightness"
             },
             {
-              "path": "/core/FlashItem#setContrast",
-              "partial": "partials/modules//core/FlashItem/index.html",
+              "path": "/core/FlashSource#setContrast",
+              "partial": "partials/modules//core/FlashSource/index.html",
               "name": "setContrast"
             },
             {
-              "path": "/core/FlashItem#setHue",
-              "partial": "partials/modules//core/FlashItem/index.html",
+              "path": "/core/FlashSource#setHue",
+              "partial": "partials/modules//core/FlashSource/index.html",
               "name": "setHue"
             },
             {
-              "path": "/core/FlashItem#setSaturation",
-              "partial": "partials/modules//core/FlashItem/index.html",
+              "path": "/core/FlashSource#setSaturation",
+              "partial": "partials/modules//core/FlashSource/index.html",
               "name": "setSaturation"
             },
             {
-              "path": "/core/FlashItem#setBorderColor",
-              "partial": "partials/modules//core/FlashItem/index.html",
+              "path": "/core/FlashSource#setBorderColor",
+              "partial": "partials/modules//core/FlashSource/index.html",
               "name": "setBorderColor"
             },
             {
-              "path": "/core/FlashItem#isChromaEnabled",
-              "partial": "partials/modules//core/FlashItem/index.html",
+              "path": "/core/FlashSource#isChromaEnabled",
+              "partial": "partials/modules//core/FlashSource/index.html",
               "name": "isChromaEnabled"
             },
             {
-              "path": "/core/FlashItem#setChromaEnabled",
-              "partial": "partials/modules//core/FlashItem/index.html",
+              "path": "/core/FlashSource#setChromaEnabled",
+              "partial": "partials/modules//core/FlashSource/index.html",
               "name": "setChromaEnabled"
             },
             {
-              "path": "/core/FlashItem#getKeyingType",
-              "partial": "partials/modules//core/FlashItem/index.html",
+              "path": "/core/FlashSource#getKeyingType",
+              "partial": "partials/modules//core/FlashSource/index.html",
               "name": "getKeyingType"
             },
             {
-              "path": "/core/FlashItem#setKeyingType",
-              "partial": "partials/modules//core/FlashItem/index.html",
+              "path": "/core/FlashSource#setKeyingType",
+              "partial": "partials/modules//core/FlashSource/index.html",
               "name": "setKeyingType"
             },
             {
-              "path": "/core/FlashItem#getChromaAntiAliasLevel",
-              "partial": "partials/modules//core/FlashItem/index.html",
+              "path": "/core/FlashSource#getChromaAntiAliasLevel",
+              "partial": "partials/modules//core/FlashSource/index.html",
               "name": "getChromaAntiAliasLevel"
             },
             {
-              "path": "/core/FlashItem#setChromaAntiAliasLevel",
-              "partial": "partials/modules//core/FlashItem/index.html",
+              "path": "/core/FlashSource#setChromaAntiAliasLevel",
+              "partial": "partials/modules//core/FlashSource/index.html",
               "name": "setChromaAntiAliasLevel"
             },
             {
-              "path": "/core/FlashItem#getChromaLegacyBrightness",
-              "partial": "partials/modules//core/FlashItem/index.html",
+              "path": "/core/FlashSource#getChromaLegacyBrightness",
+              "partial": "partials/modules//core/FlashSource/index.html",
               "name": "getChromaLegacyBrightness"
             },
             {
-              "path": "/core/FlashItem#setChromaLegacyBrightness",
-              "partial": "partials/modules//core/FlashItem/index.html",
+              "path": "/core/FlashSource#setChromaLegacyBrightness",
+              "partial": "partials/modules//core/FlashSource/index.html",
               "name": "setChromaLegacyBrightness"
             },
             {
-              "path": "/core/FlashItem#getChromaLegacySaturation",
-              "partial": "partials/modules//core/FlashItem/index.html",
+              "path": "/core/FlashSource#getChromaLegacySaturation",
+              "partial": "partials/modules//core/FlashSource/index.html",
               "name": "getChromaLegacySaturation"
             },
             {
-              "path": "/core/FlashItem#setChromaLegacySaturation",
-              "partial": "partials/modules//core/FlashItem/index.html",
+              "path": "/core/FlashSource#setChromaLegacySaturation",
+              "partial": "partials/modules//core/FlashSource/index.html",
               "name": "setChromaLegacySaturation"
             },
             {
-              "path": "/core/FlashItem#getChromaLegacyHue",
-              "partial": "partials/modules//core/FlashItem/index.html",
+              "path": "/core/FlashSource#getChromaLegacyHue",
+              "partial": "partials/modules//core/FlashSource/index.html",
               "name": "getChromaLegacyHue"
             },
             {
-              "path": "/core/FlashItem#setChromaLegacyHue",
-              "partial": "partials/modules//core/FlashItem/index.html",
+              "path": "/core/FlashSource#setChromaLegacyHue",
+              "partial": "partials/modules//core/FlashSource/index.html",
               "name": "setChromaLegacyHue"
             },
             {
-              "path": "/core/FlashItem#getChromaLegacyThreshold",
-              "partial": "partials/modules//core/FlashItem/index.html",
+              "path": "/core/FlashSource#getChromaLegacyThreshold",
+              "partial": "partials/modules//core/FlashSource/index.html",
               "name": "getChromaLegacyThreshold"
             },
             {
-              "path": "/core/FlashItem#setChromaLegacyThreshold",
-              "partial": "partials/modules//core/FlashItem/index.html",
+              "path": "/core/FlashSource#setChromaLegacyThreshold",
+              "partial": "partials/modules//core/FlashSource/index.html",
               "name": "setChromaLegacyThreshold"
             },
             {
-              "path": "/core/FlashItem#getChromaLegacyAlphaSmoothing",
-              "partial": "partials/modules//core/FlashItem/index.html",
+              "path": "/core/FlashSource#getChromaLegacyAlphaSmoothing",
+              "partial": "partials/modules//core/FlashSource/index.html",
               "name": "getChromaLegacyAlphaSmoothing"
             },
             {
-              "path": "/core/FlashItem#setChromaLegacyAlphaSmoothing",
-              "partial": "partials/modules//core/FlashItem/index.html",
+              "path": "/core/FlashSource#setChromaLegacyAlphaSmoothing",
+              "partial": "partials/modules//core/FlashSource/index.html",
               "name": "setChromaLegacyAlphaSmoothing"
             },
             {
-              "path": "/core/FlashItem#getChromaRGBKeyPrimaryColor",
-              "partial": "partials/modules//core/FlashItem/index.html",
+              "path": "/core/FlashSource#getChromaRGBKeyPrimaryColor",
+              "partial": "partials/modules//core/FlashSource/index.html",
               "name": "getChromaRGBKeyPrimaryColor"
             },
             {
-              "path": "/core/FlashItem#setChromaRGBKeyPrimaryColor",
-              "partial": "partials/modules//core/FlashItem/index.html",
+              "path": "/core/FlashSource#setChromaRGBKeyPrimaryColor",
+              "partial": "partials/modules//core/FlashSource/index.html",
               "name": "setChromaRGBKeyPrimaryColor"
             },
             {
-              "path": "/core/FlashItem#getChromaRGBKeyThreshold",
-              "partial": "partials/modules//core/FlashItem/index.html",
+              "path": "/core/FlashSource#getChromaRGBKeyThreshold",
+              "partial": "partials/modules//core/FlashSource/index.html",
               "name": "getChromaRGBKeyThreshold"
             },
             {
-              "path": "/core/FlashItem#setChromaRGBKeyThreshold",
-              "partial": "partials/modules//core/FlashItem/index.html",
+              "path": "/core/FlashSource#setChromaRGBKeyThreshold",
+              "partial": "partials/modules//core/FlashSource/index.html",
               "name": "setChromaRGBKeyThreshold"
             },
             {
-              "path": "/core/FlashItem#getChromaRGBKeyExposure",
-              "partial": "partials/modules//core/FlashItem/index.html",
+              "path": "/core/FlashSource#getChromaRGBKeyExposure",
+              "partial": "partials/modules//core/FlashSource/index.html",
               "name": "getChromaRGBKeyExposure"
             },
             {
-              "path": "/core/FlashItem#setChromaRGBKeyExposure",
-              "partial": "partials/modules//core/FlashItem/index.html",
+              "path": "/core/FlashSource#setChromaRGBKeyExposure",
+              "partial": "partials/modules//core/FlashSource/index.html",
               "name": "setChromaRGBKeyExposure"
             },
             {
-              "path": "/core/FlashItem#getChromaColorKeyThreshold",
-              "partial": "partials/modules//core/FlashItem/index.html",
+              "path": "/core/FlashSource#getChromaColorKeyThreshold",
+              "partial": "partials/modules//core/FlashSource/index.html",
               "name": "getChromaColorKeyThreshold"
             },
             {
-              "path": "/core/FlashItem#setChromaColorKeyThreshold",
-              "partial": "partials/modules//core/FlashItem/index.html",
+              "path": "/core/FlashSource#setChromaColorKeyThreshold",
+              "partial": "partials/modules//core/FlashSource/index.html",
               "name": "setChromaColorKeyThreshold"
             },
             {
-              "path": "/core/FlashItem#getChromaColorKeyExposure",
-              "partial": "partials/modules//core/FlashItem/index.html",
+              "path": "/core/FlashSource#getChromaColorKeyExposure",
+              "partial": "partials/modules//core/FlashSource/index.html",
               "name": "getChromaColorKeyExposure"
             },
             {
-              "path": "/core/FlashItem#setChromaColorKeyExposure",
-              "partial": "partials/modules//core/FlashItem/index.html",
+              "path": "/core/FlashSource#setChromaColorKeyExposure",
+              "partial": "partials/modules//core/FlashSource/index.html",
               "name": "setChromaColorKeyExposure"
             },
             {
-              "path": "/core/FlashItem#getChromaColorKeyColor",
-              "partial": "partials/modules//core/FlashItem/index.html",
+              "path": "/core/FlashSource#getChromaColorKeyColor",
+              "partial": "partials/modules//core/FlashSource/index.html",
               "name": "getChromaColorKeyColor"
             },
             {
-              "path": "/core/FlashItem#setChromaColorKeyColor",
-              "partial": "partials/modules//core/FlashItem/index.html",
+              "path": "/core/FlashSource#setChromaColorKeyColor",
+              "partial": "partials/modules//core/FlashSource/index.html",
               "name": "setChromaColorKeyColor"
             },
             {
-              "path": "/core/FlashItem#isVisible",
-              "partial": "partials/modules//core/FlashItem/index.html",
+              "path": "/core/FlashSource#isVisible",
+              "partial": "partials/modules//core/FlashSource/index.html",
               "name": "isVisible"
             },
             {
-              "path": "/core/FlashItem#setVisible",
-              "partial": "partials/modules//core/FlashItem/index.html",
+              "path": "/core/FlashSource#setVisible",
+              "partial": "partials/modules//core/FlashSource/index.html",
               "name": "setVisible"
             },
             {
-              "path": "/core/FlashItem#getTransition",
-              "partial": "partials/modules//core/FlashItem/index.html",
+              "path": "/core/FlashSource#getTransition",
+              "partial": "partials/modules//core/FlashSource/index.html",
               "name": "getTransition"
             },
             {
-              "path": "/core/FlashItem#setTransition",
-              "partial": "partials/modules//core/FlashItem/index.html",
+              "path": "/core/FlashSource#setTransition",
+              "partial": "partials/modules//core/FlashSource/index.html",
               "name": "setTransition"
             },
             {
-              "path": "/core/FlashItem#getTransitionTime",
-              "partial": "partials/modules//core/FlashItem/index.html",
+              "path": "/core/FlashSource#getTransitionTime",
+              "partial": "partials/modules//core/FlashSource/index.html",
               "name": "getTransitionTime"
             },
             {
-              "path": "/core/FlashItem#setTransitionTime",
-              "partial": "partials/modules//core/FlashItem/index.html",
+              "path": "/core/FlashSource#setTransitionTime",
+              "partial": "partials/modules//core/FlashSource/index.html",
               "name": "setTransitionTime"
             },
             {
-              "path": "/core/FlashItem#getVolume",
-              "partial": "partials/modules//core/FlashItem/index.html",
+              "path": "/core/FlashSource#getVolume",
+              "partial": "partials/modules//core/FlashSource/index.html",
               "name": "getVolume"
             },
             {
-              "path": "/core/FlashItem#isMute",
-              "partial": "partials/modules//core/FlashItem/index.html",
+              "path": "/core/FlashSource#isMute",
+              "partial": "partials/modules//core/FlashSource/index.html",
               "name": "isMute"
             },
             {
-              "path": "/core/FlashItem#setVolume",
-              "partial": "partials/modules//core/FlashItem/index.html",
+              "path": "/core/FlashSource#setVolume",
+              "partial": "partials/modules//core/FlashSource/index.html",
               "name": "setVolume"
             },
             {
-              "path": "/core/FlashItem#setMute",
-              "partial": "partials/modules//core/FlashItem/index.html",
+              "path": "/core/FlashSource#setMute",
+              "partial": "partials/modules//core/FlashSource/index.html",
               "name": "setMute"
             },
             {
-              "path": "/core/FlashItem#isStreamOnlyAudio",
-              "partial": "partials/modules//core/FlashItem/index.html",
+              "path": "/core/FlashSource#isStreamOnlyAudio",
+              "partial": "partials/modules//core/FlashSource/index.html",
               "name": "isStreamOnlyAudio"
             },
             {
-              "path": "/core/FlashItem#setStreamOnlyAudio",
-              "partial": "partials/modules//core/FlashItem/index.html",
+              "path": "/core/FlashSource#setStreamOnlyAudio",
+              "partial": "partials/modules//core/FlashSource/index.html",
               "name": "setStreamOnlyAudio"
             },
             {
-              "path": "/core/FlashItem#isAudioAvailable",
-              "partial": "partials/modules//core/FlashItem/index.html",
+              "path": "/core/FlashSource#isAudioAvailable",
+              "partial": "partials/modules//core/FlashSource/index.html",
               "name": "isAudioAvailable"
             }
           ]
         },
         {
-          "path": "/core/ScreenItem",
-          "partial": "partials/modules//core/ScreenItem/index.html",
-          "name": "ScreenItem",
+          "path": "/core/ScreenSource",
+          "partial": "partials/modules//core/ScreenSource/index.html",
+          "name": "ScreenSource",
           "type": "Class",
           "pages": [
             {
-              "path": "/core/ScreenItem#getCaptureArea",
-              "partial": "partials/modules//core/ScreenItem/index.html",
+              "path": "/core/ScreenSource#getCaptureArea",
+              "partial": "partials/modules//core/ScreenSource/index.html",
               "name": "getCaptureArea"
             },
             {
-              "path": "/core/ScreenItem#setCaptureArea",
-              "partial": "partials/modules//core/ScreenItem/index.html",
+              "path": "/core/ScreenSource#setCaptureArea",
+              "partial": "partials/modules//core/ScreenSource/index.html",
               "name": "setCaptureArea"
             },
             {
-              "path": "/core/ScreenItem#isClientArea",
-              "partial": "partials/modules//core/ScreenItem/index.html",
+              "path": "/core/ScreenSource#isClientArea",
+              "partial": "partials/modules//core/ScreenSource/index.html",
               "name": "isClientArea"
             },
             {
-              "path": "/core/ScreenItem#setClientArea",
-              "partial": "partials/modules//core/ScreenItem/index.html",
+              "path": "/core/ScreenSource#setClientArea",
+              "partial": "partials/modules//core/ScreenSource/index.html",
               "name": "setClientArea"
             },
             {
-              "path": "/core/ScreenItem#isStickToTitle",
-              "partial": "partials/modules//core/ScreenItem/index.html",
+              "path": "/core/ScreenSource#isStickToTitle",
+              "partial": "partials/modules//core/ScreenSource/index.html",
               "name": "isStickToTitle"
             },
             {
-              "path": "/core/ScreenItem#setStickToTitle",
-              "partial": "partials/modules//core/ScreenItem/index.html",
+              "path": "/core/ScreenSource#setStickToTitle",
+              "partial": "partials/modules//core/ScreenSource/index.html",
               "name": "setStickToTitle"
             },
             {
-              "path": "/core/ScreenItem#isKeepAspectRatio",
-              "partial": "partials/modules//core/ScreenItem/index.html",
+              "path": "/core/ScreenSource#isKeepAspectRatio",
+              "partial": "partials/modules//core/ScreenSource/index.html",
               "name": "isKeepAspectRatio"
             },
             {
-              "path": "/core/ScreenItem#isPositionLocked",
-              "partial": "partials/modules//core/ScreenItem/index.html",
+              "path": "/core/ScreenSource#isPositionLocked",
+              "partial": "partials/modules//core/ScreenSource/index.html",
               "name": "isPositionLocked"
             },
             {
-              "path": "/core/ScreenItem#isEnhancedResizeEnabled",
-              "partial": "partials/modules//core/ScreenItem/index.html",
+              "path": "/core/ScreenSource#isEnhancedResizeEnabled",
+              "partial": "partials/modules//core/ScreenSource/index.html",
               "name": "isEnhancedResizeEnabled"
             },
             {
-              "path": "/core/ScreenItem#getPosition",
-              "partial": "partials/modules//core/ScreenItem/index.html",
+              "path": "/core/ScreenSource#getPosition",
+              "partial": "partials/modules//core/ScreenSource/index.html",
               "name": "getPosition"
             },
             {
-              "path": "/core/ScreenItem#getRotateY",
-              "partial": "partials/modules//core/ScreenItem/index.html",
+              "path": "/core/ScreenSource#getRotateY",
+              "partial": "partials/modules//core/ScreenSource/index.html",
               "name": "getRotateY"
             },
             {
-              "path": "/core/ScreenItem#getRotateX",
-              "partial": "partials/modules//core/ScreenItem/index.html",
+              "path": "/core/ScreenSource#getRotateX",
+              "partial": "partials/modules//core/ScreenSource/index.html",
               "name": "getRotateX"
             },
             {
-              "path": "/core/ScreenItem#getRotateZ",
-              "partial": "partials/modules//core/ScreenItem/index.html",
+              "path": "/core/ScreenSource#getRotateZ",
+              "partial": "partials/modules//core/ScreenSource/index.html",
               "name": "getRotateZ"
             },
             {
-              "path": "/core/ScreenItem#setKeepAspectRatio",
-              "partial": "partials/modules//core/ScreenItem/index.html",
+              "path": "/core/ScreenSource#setKeepAspectRatio",
+              "partial": "partials/modules//core/ScreenSource/index.html",
               "name": "setKeepAspectRatio"
             },
             {
-              "path": "/core/ScreenItem#setPositionLocked",
-              "partial": "partials/modules//core/ScreenItem/index.html",
+              "path": "/core/ScreenSource#setPositionLocked",
+              "partial": "partials/modules//core/ScreenSource/index.html",
               "name": "setPositionLocked"
             },
             {
-              "path": "/core/ScreenItem#setEnhancedResizeEnabled",
-              "partial": "partials/modules//core/ScreenItem/index.html",
+              "path": "/core/ScreenSource#setEnhancedResizeEnabled",
+              "partial": "partials/modules//core/ScreenSource/index.html",
               "name": "setEnhancedResizeEnabled"
             },
             {
-              "path": "/core/ScreenItem#setPosition",
-              "partial": "partials/modules//core/ScreenItem/index.html",
+              "path": "/core/ScreenSource#setPosition",
+              "partial": "partials/modules//core/ScreenSource/index.html",
               "name": "setPosition"
             },
             {
-              "path": "/core/ScreenItem#setRotateY",
-              "partial": "partials/modules//core/ScreenItem/index.html",
+              "path": "/core/ScreenSource#setRotateY",
+              "partial": "partials/modules//core/ScreenSource/index.html",
               "name": "setRotateY"
             },
             {
-              "path": "/core/ScreenItem#setRotateX",
-              "partial": "partials/modules//core/ScreenItem/index.html",
+              "path": "/core/ScreenSource#setRotateX",
+              "partial": "partials/modules//core/ScreenSource/index.html",
               "name": "setRotateX"
             },
             {
-              "path": "/core/ScreenItem#setRotateZ",
-              "partial": "partials/modules//core/ScreenItem/index.html",
+              "path": "/core/ScreenSource#setRotateZ",
+              "partial": "partials/modules//core/ScreenSource/index.html",
               "name": "setRotateZ"
             },
             {
-              "path": "/core/ScreenItem#getTransparency",
-              "partial": "partials/modules//core/ScreenItem/index.html",
+              "path": "/core/ScreenSource#getTransparency",
+              "partial": "partials/modules//core/ScreenSource/index.html",
               "name": "getTransparency"
             },
             {
-              "path": "/core/ScreenItem#getBrightness",
-              "partial": "partials/modules//core/ScreenItem/index.html",
+              "path": "/core/ScreenSource#getBrightness",
+              "partial": "partials/modules//core/ScreenSource/index.html",
               "name": "getBrightness"
             },
             {
-              "path": "/core/ScreenItem#getContrast",
-              "partial": "partials/modules//core/ScreenItem/index.html",
+              "path": "/core/ScreenSource#getContrast",
+              "partial": "partials/modules//core/ScreenSource/index.html",
               "name": "getContrast"
             },
             {
-              "path": "/core/ScreenItem#getHue",
-              "partial": "partials/modules//core/ScreenItem/index.html",
+              "path": "/core/ScreenSource#getHue",
+              "partial": "partials/modules//core/ScreenSource/index.html",
               "name": "getHue"
             },
             {
-              "path": "/core/ScreenItem#getSaturation",
-              "partial": "partials/modules//core/ScreenItem/index.html",
+              "path": "/core/ScreenSource#getSaturation",
+              "partial": "partials/modules//core/ScreenSource/index.html",
               "name": "getSaturation"
             },
             {
-              "path": "/core/ScreenItem#getBorderColor",
-              "partial": "partials/modules//core/ScreenItem/index.html",
+              "path": "/core/ScreenSource#getBorderColor",
+              "partial": "partials/modules//core/ScreenSource/index.html",
               "name": "getBorderColor"
             },
             {
-              "path": "/core/ScreenItem#setTransparency",
-              "partial": "partials/modules//core/ScreenItem/index.html",
+              "path": "/core/ScreenSource#setTransparency",
+              "partial": "partials/modules//core/ScreenSource/index.html",
               "name": "setTransparency"
             },
             {
-              "path": "/core/ScreenItem#setBrightness",
-              "partial": "partials/modules//core/ScreenItem/index.html",
+              "path": "/core/ScreenSource#setBrightness",
+              "partial": "partials/modules//core/ScreenSource/index.html",
               "name": "setBrightness"
             },
             {
-              "path": "/core/ScreenItem#setContrast",
-              "partial": "partials/modules//core/ScreenItem/index.html",
+              "path": "/core/ScreenSource#setContrast",
+              "partial": "partials/modules//core/ScreenSource/index.html",
               "name": "setContrast"
             },
             {
-              "path": "/core/ScreenItem#setHue",
-              "partial": "partials/modules//core/ScreenItem/index.html",
+              "path": "/core/ScreenSource#setHue",
+              "partial": "partials/modules//core/ScreenSource/index.html",
               "name": "setHue"
             },
             {
-              "path": "/core/ScreenItem#setSaturation",
-              "partial": "partials/modules//core/ScreenItem/index.html",
+              "path": "/core/ScreenSource#setSaturation",
+              "partial": "partials/modules//core/ScreenSource/index.html",
               "name": "setSaturation"
             },
             {
-              "path": "/core/ScreenItem#setBorderColor",
-              "partial": "partials/modules//core/ScreenItem/index.html",
+              "path": "/core/ScreenSource#setBorderColor",
+              "partial": "partials/modules//core/ScreenSource/index.html",
               "name": "setBorderColor"
             },
             {
-              "path": "/core/ScreenItem#isChromaEnabled",
-              "partial": "partials/modules//core/ScreenItem/index.html",
+              "path": "/core/ScreenSource#isChromaEnabled",
+              "partial": "partials/modules//core/ScreenSource/index.html",
               "name": "isChromaEnabled"
             },
             {
-              "path": "/core/ScreenItem#setChromaEnabled",
-              "partial": "partials/modules//core/ScreenItem/index.html",
+              "path": "/core/ScreenSource#setChromaEnabled",
+              "partial": "partials/modules//core/ScreenSource/index.html",
               "name": "setChromaEnabled"
             },
             {
-              "path": "/core/ScreenItem#getKeyingType",
-              "partial": "partials/modules//core/ScreenItem/index.html",
+              "path": "/core/ScreenSource#getKeyingType",
+              "partial": "partials/modules//core/ScreenSource/index.html",
               "name": "getKeyingType"
             },
             {
-              "path": "/core/ScreenItem#setKeyingType",
-              "partial": "partials/modules//core/ScreenItem/index.html",
+              "path": "/core/ScreenSource#setKeyingType",
+              "partial": "partials/modules//core/ScreenSource/index.html",
               "name": "setKeyingType"
             },
             {
-              "path": "/core/ScreenItem#getChromaAntiAliasLevel",
-              "partial": "partials/modules//core/ScreenItem/index.html",
+              "path": "/core/ScreenSource#getChromaAntiAliasLevel",
+              "partial": "partials/modules//core/ScreenSource/index.html",
               "name": "getChromaAntiAliasLevel"
             },
             {
-              "path": "/core/ScreenItem#setChromaAntiAliasLevel",
-              "partial": "partials/modules//core/ScreenItem/index.html",
+              "path": "/core/ScreenSource#setChromaAntiAliasLevel",
+              "partial": "partials/modules//core/ScreenSource/index.html",
               "name": "setChromaAntiAliasLevel"
             },
             {
-              "path": "/core/ScreenItem#getChromaLegacyBrightness",
-              "partial": "partials/modules//core/ScreenItem/index.html",
+              "path": "/core/ScreenSource#getChromaLegacyBrightness",
+              "partial": "partials/modules//core/ScreenSource/index.html",
               "name": "getChromaLegacyBrightness"
             },
             {
-              "path": "/core/ScreenItem#setChromaLegacyBrightness",
-              "partial": "partials/modules//core/ScreenItem/index.html",
+              "path": "/core/ScreenSource#setChromaLegacyBrightness",
+              "partial": "partials/modules//core/ScreenSource/index.html",
               "name": "setChromaLegacyBrightness"
             },
             {
-              "path": "/core/ScreenItem#getChromaLegacySaturation",
-              "partial": "partials/modules//core/ScreenItem/index.html",
+              "path": "/core/ScreenSource#getChromaLegacySaturation",
+              "partial": "partials/modules//core/ScreenSource/index.html",
               "name": "getChromaLegacySaturation"
             },
             {
-              "path": "/core/ScreenItem#setChromaLegacySaturation",
-              "partial": "partials/modules//core/ScreenItem/index.html",
+              "path": "/core/ScreenSource#setChromaLegacySaturation",
+              "partial": "partials/modules//core/ScreenSource/index.html",
               "name": "setChromaLegacySaturation"
             },
             {
-              "path": "/core/ScreenItem#getChromaLegacyHue",
-              "partial": "partials/modules//core/ScreenItem/index.html",
+              "path": "/core/ScreenSource#getChromaLegacyHue",
+              "partial": "partials/modules//core/ScreenSource/index.html",
               "name": "getChromaLegacyHue"
             },
             {
-              "path": "/core/ScreenItem#setChromaLegacyHue",
-              "partial": "partials/modules//core/ScreenItem/index.html",
+              "path": "/core/ScreenSource#setChromaLegacyHue",
+              "partial": "partials/modules//core/ScreenSource/index.html",
               "name": "setChromaLegacyHue"
             },
             {
-              "path": "/core/ScreenItem#getChromaLegacyThreshold",
-              "partial": "partials/modules//core/ScreenItem/index.html",
+              "path": "/core/ScreenSource#getChromaLegacyThreshold",
+              "partial": "partials/modules//core/ScreenSource/index.html",
               "name": "getChromaLegacyThreshold"
             },
             {
-              "path": "/core/ScreenItem#setChromaLegacyThreshold",
-              "partial": "partials/modules//core/ScreenItem/index.html",
+              "path": "/core/ScreenSource#setChromaLegacyThreshold",
+              "partial": "partials/modules//core/ScreenSource/index.html",
               "name": "setChromaLegacyThreshold"
             },
             {
-              "path": "/core/ScreenItem#getChromaLegacyAlphaSmoothing",
-              "partial": "partials/modules//core/ScreenItem/index.html",
+              "path": "/core/ScreenSource#getChromaLegacyAlphaSmoothing",
+              "partial": "partials/modules//core/ScreenSource/index.html",
               "name": "getChromaLegacyAlphaSmoothing"
             },
             {
-              "path": "/core/ScreenItem#setChromaLegacyAlphaSmoothing",
-              "partial": "partials/modules//core/ScreenItem/index.html",
+              "path": "/core/ScreenSource#setChromaLegacyAlphaSmoothing",
+              "partial": "partials/modules//core/ScreenSource/index.html",
               "name": "setChromaLegacyAlphaSmoothing"
             },
             {
-              "path": "/core/ScreenItem#getChromaRGBKeyPrimaryColor",
-              "partial": "partials/modules//core/ScreenItem/index.html",
+              "path": "/core/ScreenSource#getChromaRGBKeyPrimaryColor",
+              "partial": "partials/modules//core/ScreenSource/index.html",
               "name": "getChromaRGBKeyPrimaryColor"
             },
             {
-              "path": "/core/ScreenItem#setChromaRGBKeyPrimaryColor",
-              "partial": "partials/modules//core/ScreenItem/index.html",
+              "path": "/core/ScreenSource#setChromaRGBKeyPrimaryColor",
+              "partial": "partials/modules//core/ScreenSource/index.html",
               "name": "setChromaRGBKeyPrimaryColor"
             },
             {
-              "path": "/core/ScreenItem#getChromaRGBKeyThreshold",
-              "partial": "partials/modules//core/ScreenItem/index.html",
+              "path": "/core/ScreenSource#getChromaRGBKeyThreshold",
+              "partial": "partials/modules//core/ScreenSource/index.html",
               "name": "getChromaRGBKeyThreshold"
             },
             {
-              "path": "/core/ScreenItem#setChromaRGBKeyThreshold",
-              "partial": "partials/modules//core/ScreenItem/index.html",
+              "path": "/core/ScreenSource#setChromaRGBKeyThreshold",
+              "partial": "partials/modules//core/ScreenSource/index.html",
               "name": "setChromaRGBKeyThreshold"
             },
             {
-              "path": "/core/ScreenItem#getChromaRGBKeyExposure",
-              "partial": "partials/modules//core/ScreenItem/index.html",
+              "path": "/core/ScreenSource#getChromaRGBKeyExposure",
+              "partial": "partials/modules//core/ScreenSource/index.html",
               "name": "getChromaRGBKeyExposure"
             },
             {
-              "path": "/core/ScreenItem#setChromaRGBKeyExposure",
-              "partial": "partials/modules//core/ScreenItem/index.html",
+              "path": "/core/ScreenSource#setChromaRGBKeyExposure",
+              "partial": "partials/modules//core/ScreenSource/index.html",
               "name": "setChromaRGBKeyExposure"
             },
             {
-              "path": "/core/ScreenItem#getChromaColorKeyThreshold",
-              "partial": "partials/modules//core/ScreenItem/index.html",
+              "path": "/core/ScreenSource#getChromaColorKeyThreshold",
+              "partial": "partials/modules//core/ScreenSource/index.html",
               "name": "getChromaColorKeyThreshold"
             },
             {
-              "path": "/core/ScreenItem#setChromaColorKeyThreshold",
-              "partial": "partials/modules//core/ScreenItem/index.html",
+              "path": "/core/ScreenSource#setChromaColorKeyThreshold",
+              "partial": "partials/modules//core/ScreenSource/index.html",
               "name": "setChromaColorKeyThreshold"
             },
             {
-              "path": "/core/ScreenItem#getChromaColorKeyExposure",
-              "partial": "partials/modules//core/ScreenItem/index.html",
+              "path": "/core/ScreenSource#getChromaColorKeyExposure",
+              "partial": "partials/modules//core/ScreenSource/index.html",
               "name": "getChromaColorKeyExposure"
             },
             {
-              "path": "/core/ScreenItem#setChromaColorKeyExposure",
-              "partial": "partials/modules//core/ScreenItem/index.html",
+              "path": "/core/ScreenSource#setChromaColorKeyExposure",
+              "partial": "partials/modules//core/ScreenSource/index.html",
               "name": "setChromaColorKeyExposure"
             },
             {
-              "path": "/core/ScreenItem#getChromaColorKeyColor",
-              "partial": "partials/modules//core/ScreenItem/index.html",
+              "path": "/core/ScreenSource#getChromaColorKeyColor",
+              "partial": "partials/modules//core/ScreenSource/index.html",
               "name": "getChromaColorKeyColor"
             },
             {
-              "path": "/core/ScreenItem#setChromaColorKeyColor",
-              "partial": "partials/modules//core/ScreenItem/index.html",
+              "path": "/core/ScreenSource#setChromaColorKeyColor",
+              "partial": "partials/modules//core/ScreenSource/index.html",
               "name": "setChromaColorKeyColor"
             },
             {
-              "path": "/core/ScreenItem#isVisible",
-              "partial": "partials/modules//core/ScreenItem/index.html",
+              "path": "/core/ScreenSource#isVisible",
+              "partial": "partials/modules//core/ScreenSource/index.html",
               "name": "isVisible"
             },
             {
-              "path": "/core/ScreenItem#setVisible",
-              "partial": "partials/modules//core/ScreenItem/index.html",
+              "path": "/core/ScreenSource#setVisible",
+              "partial": "partials/modules//core/ScreenSource/index.html",
               "name": "setVisible"
             },
             {
-              "path": "/core/ScreenItem#getTransition",
-              "partial": "partials/modules//core/ScreenItem/index.html",
+              "path": "/core/ScreenSource#getTransition",
+              "partial": "partials/modules//core/ScreenSource/index.html",
               "name": "getTransition"
             },
             {
-              "path": "/core/ScreenItem#setTransition",
-              "partial": "partials/modules//core/ScreenItem/index.html",
+              "path": "/core/ScreenSource#setTransition",
+              "partial": "partials/modules//core/ScreenSource/index.html",
               "name": "setTransition"
             },
             {
-              "path": "/core/ScreenItem#getTransitionTime",
-              "partial": "partials/modules//core/ScreenItem/index.html",
+              "path": "/core/ScreenSource#getTransitionTime",
+              "partial": "partials/modules//core/ScreenSource/index.html",
               "name": "getTransitionTime"
             },
             {
-              "path": "/core/ScreenItem#setTransitionTime",
-              "partial": "partials/modules//core/ScreenItem/index.html",
+              "path": "/core/ScreenSource#setTransitionTime",
+              "partial": "partials/modules//core/ScreenSource/index.html",
               "name": "setTransitionTime"
             }
           ]
         },
         {
-          "path": "/core/ImageItem",
-          "partial": "partials/modules//core/ImageItem/index.html",
-          "name": "ImageItem",
+          "path": "/core/ImageSource",
+          "partial": "partials/modules//core/ImageSource/index.html",
+          "name": "ImageSource",
           "type": "Class",
           "pages": [
             {
-              "path": "/core/ImageItem#isKeepAspectRatio",
-              "partial": "partials/modules//core/ImageItem/index.html",
+              "path": "/core/ImageSource#isKeepAspectRatio",
+              "partial": "partials/modules//core/ImageSource/index.html",
               "name": "isKeepAspectRatio"
             },
             {
-              "path": "/core/ImageItem#isPositionLocked",
-              "partial": "partials/modules//core/ImageItem/index.html",
+              "path": "/core/ImageSource#isPositionLocked",
+              "partial": "partials/modules//core/ImageSource/index.html",
               "name": "isPositionLocked"
             },
             {
-              "path": "/core/ImageItem#isEnhancedResizeEnabled",
-              "partial": "partials/modules//core/ImageItem/index.html",
+              "path": "/core/ImageSource#isEnhancedResizeEnabled",
+              "partial": "partials/modules//core/ImageSource/index.html",
               "name": "isEnhancedResizeEnabled"
             },
             {
-              "path": "/core/ImageItem#getPosition",
-              "partial": "partials/modules//core/ImageItem/index.html",
+              "path": "/core/ImageSource#getPosition",
+              "partial": "partials/modules//core/ImageSource/index.html",
               "name": "getPosition"
             },
             {
-              "path": "/core/ImageItem#getRotateY",
-              "partial": "partials/modules//core/ImageItem/index.html",
+              "path": "/core/ImageSource#getRotateY",
+              "partial": "partials/modules//core/ImageSource/index.html",
               "name": "getRotateY"
             },
             {
-              "path": "/core/ImageItem#getRotateX",
-              "partial": "partials/modules//core/ImageItem/index.html",
+              "path": "/core/ImageSource#getRotateX",
+              "partial": "partials/modules//core/ImageSource/index.html",
               "name": "getRotateX"
             },
             {
-              "path": "/core/ImageItem#getRotateZ",
-              "partial": "partials/modules//core/ImageItem/index.html",
+              "path": "/core/ImageSource#getRotateZ",
+              "partial": "partials/modules//core/ImageSource/index.html",
               "name": "getRotateZ"
             },
             {
-              "path": "/core/ImageItem#setKeepAspectRatio",
-              "partial": "partials/modules//core/ImageItem/index.html",
+              "path": "/core/ImageSource#setKeepAspectRatio",
+              "partial": "partials/modules//core/ImageSource/index.html",
               "name": "setKeepAspectRatio"
             },
             {
-              "path": "/core/ImageItem#setPositionLocked",
-              "partial": "partials/modules//core/ImageItem/index.html",
+              "path": "/core/ImageSource#setPositionLocked",
+              "partial": "partials/modules//core/ImageSource/index.html",
               "name": "setPositionLocked"
             },
             {
-              "path": "/core/ImageItem#setEnhancedResizeEnabled",
-              "partial": "partials/modules//core/ImageItem/index.html",
+              "path": "/core/ImageSource#setEnhancedResizeEnabled",
+              "partial": "partials/modules//core/ImageSource/index.html",
               "name": "setEnhancedResizeEnabled"
             },
             {
-              "path": "/core/ImageItem#setPosition",
-              "partial": "partials/modules//core/ImageItem/index.html",
+              "path": "/core/ImageSource#setPosition",
+              "partial": "partials/modules//core/ImageSource/index.html",
               "name": "setPosition"
             },
             {
-              "path": "/core/ImageItem#setRotateY",
-              "partial": "partials/modules//core/ImageItem/index.html",
+              "path": "/core/ImageSource#setRotateY",
+              "partial": "partials/modules//core/ImageSource/index.html",
               "name": "setRotateY"
             },
             {
-              "path": "/core/ImageItem#setRotateX",
-              "partial": "partials/modules//core/ImageItem/index.html",
+              "path": "/core/ImageSource#setRotateX",
+              "partial": "partials/modules//core/ImageSource/index.html",
               "name": "setRotateX"
             },
             {
-              "path": "/core/ImageItem#setRotateZ",
-              "partial": "partials/modules//core/ImageItem/index.html",
+              "path": "/core/ImageSource#setRotateZ",
+              "partial": "partials/modules//core/ImageSource/index.html",
               "name": "setRotateZ"
             },
             {
-              "path": "/core/ImageItem#getTransparency",
-              "partial": "partials/modules//core/ImageItem/index.html",
+              "path": "/core/ImageSource#getTransparency",
+              "partial": "partials/modules//core/ImageSource/index.html",
               "name": "getTransparency"
             },
             {
-              "path": "/core/ImageItem#getBrightness",
-              "partial": "partials/modules//core/ImageItem/index.html",
+              "path": "/core/ImageSource#getBrightness",
+              "partial": "partials/modules//core/ImageSource/index.html",
               "name": "getBrightness"
             },
             {
-              "path": "/core/ImageItem#getContrast",
-              "partial": "partials/modules//core/ImageItem/index.html",
+              "path": "/core/ImageSource#getContrast",
+              "partial": "partials/modules//core/ImageSource/index.html",
               "name": "getContrast"
             },
             {
-              "path": "/core/ImageItem#getHue",
-              "partial": "partials/modules//core/ImageItem/index.html",
+              "path": "/core/ImageSource#getHue",
+              "partial": "partials/modules//core/ImageSource/index.html",
               "name": "getHue"
             },
             {
-              "path": "/core/ImageItem#getSaturation",
-              "partial": "partials/modules//core/ImageItem/index.html",
+              "path": "/core/ImageSource#getSaturation",
+              "partial": "partials/modules//core/ImageSource/index.html",
               "name": "getSaturation"
             },
             {
-              "path": "/core/ImageItem#getBorderColor",
-              "partial": "partials/modules//core/ImageItem/index.html",
+              "path": "/core/ImageSource#getBorderColor",
+              "partial": "partials/modules//core/ImageSource/index.html",
               "name": "getBorderColor"
             },
             {
-              "path": "/core/ImageItem#setTransparency",
-              "partial": "partials/modules//core/ImageItem/index.html",
+              "path": "/core/ImageSource#setTransparency",
+              "partial": "partials/modules//core/ImageSource/index.html",
               "name": "setTransparency"
             },
             {
-              "path": "/core/ImageItem#setBrightness",
-              "partial": "partials/modules//core/ImageItem/index.html",
+              "path": "/core/ImageSource#setBrightness",
+              "partial": "partials/modules//core/ImageSource/index.html",
               "name": "setBrightness"
             },
             {
-              "path": "/core/ImageItem#setContrast",
-              "partial": "partials/modules//core/ImageItem/index.html",
+              "path": "/core/ImageSource#setContrast",
+              "partial": "partials/modules//core/ImageSource/index.html",
               "name": "setContrast"
             },
             {
-              "path": "/core/ImageItem#setHue",
-              "partial": "partials/modules//core/ImageItem/index.html",
+              "path": "/core/ImageSource#setHue",
+              "partial": "partials/modules//core/ImageSource/index.html",
               "name": "setHue"
             },
             {
-              "path": "/core/ImageItem#setSaturation",
-              "partial": "partials/modules//core/ImageItem/index.html",
+              "path": "/core/ImageSource#setSaturation",
+              "partial": "partials/modules//core/ImageSource/index.html",
               "name": "setSaturation"
             },
             {
-              "path": "/core/ImageItem#setBorderColor",
-              "partial": "partials/modules//core/ImageItem/index.html",
+              "path": "/core/ImageSource#setBorderColor",
+              "partial": "partials/modules//core/ImageSource/index.html",
               "name": "setBorderColor"
             },
             {
-              "path": "/core/ImageItem#isChromaEnabled",
-              "partial": "partials/modules//core/ImageItem/index.html",
+              "path": "/core/ImageSource#isChromaEnabled",
+              "partial": "partials/modules//core/ImageSource/index.html",
               "name": "isChromaEnabled"
             },
             {
-              "path": "/core/ImageItem#setChromaEnabled",
-              "partial": "partials/modules//core/ImageItem/index.html",
+              "path": "/core/ImageSource#setChromaEnabled",
+              "partial": "partials/modules//core/ImageSource/index.html",
               "name": "setChromaEnabled"
             },
             {
-              "path": "/core/ImageItem#getKeyingType",
-              "partial": "partials/modules//core/ImageItem/index.html",
+              "path": "/core/ImageSource#getKeyingType",
+              "partial": "partials/modules//core/ImageSource/index.html",
               "name": "getKeyingType"
             },
             {
-              "path": "/core/ImageItem#setKeyingType",
-              "partial": "partials/modules//core/ImageItem/index.html",
+              "path": "/core/ImageSource#setKeyingType",
+              "partial": "partials/modules//core/ImageSource/index.html",
               "name": "setKeyingType"
             },
             {
-              "path": "/core/ImageItem#getChromaAntiAliasLevel",
-              "partial": "partials/modules//core/ImageItem/index.html",
+              "path": "/core/ImageSource#getChromaAntiAliasLevel",
+              "partial": "partials/modules//core/ImageSource/index.html",
               "name": "getChromaAntiAliasLevel"
             },
             {
-              "path": "/core/ImageItem#setChromaAntiAliasLevel",
-              "partial": "partials/modules//core/ImageItem/index.html",
+              "path": "/core/ImageSource#setChromaAntiAliasLevel",
+              "partial": "partials/modules//core/ImageSource/index.html",
               "name": "setChromaAntiAliasLevel"
             },
             {
-              "path": "/core/ImageItem#getChromaLegacyBrightness",
-              "partial": "partials/modules//core/ImageItem/index.html",
+              "path": "/core/ImageSource#getChromaLegacyBrightness",
+              "partial": "partials/modules//core/ImageSource/index.html",
               "name": "getChromaLegacyBrightness"
             },
             {
-              "path": "/core/ImageItem#setChromaLegacyBrightness",
-              "partial": "partials/modules//core/ImageItem/index.html",
+              "path": "/core/ImageSource#setChromaLegacyBrightness",
+              "partial": "partials/modules//core/ImageSource/index.html",
               "name": "setChromaLegacyBrightness"
             },
             {
-              "path": "/core/ImageItem#getChromaLegacySaturation",
-              "partial": "partials/modules//core/ImageItem/index.html",
+              "path": "/core/ImageSource#getChromaLegacySaturation",
+              "partial": "partials/modules//core/ImageSource/index.html",
               "name": "getChromaLegacySaturation"
             },
             {
-              "path": "/core/ImageItem#setChromaLegacySaturation",
-              "partial": "partials/modules//core/ImageItem/index.html",
+              "path": "/core/ImageSource#setChromaLegacySaturation",
+              "partial": "partials/modules//core/ImageSource/index.html",
               "name": "setChromaLegacySaturation"
             },
             {
-              "path": "/core/ImageItem#getChromaLegacyHue",
-              "partial": "partials/modules//core/ImageItem/index.html",
+              "path": "/core/ImageSource#getChromaLegacyHue",
+              "partial": "partials/modules//core/ImageSource/index.html",
               "name": "getChromaLegacyHue"
             },
             {
-              "path": "/core/ImageItem#setChromaLegacyHue",
-              "partial": "partials/modules//core/ImageItem/index.html",
+              "path": "/core/ImageSource#setChromaLegacyHue",
+              "partial": "partials/modules//core/ImageSource/index.html",
               "name": "setChromaLegacyHue"
             },
             {
-              "path": "/core/ImageItem#getChromaLegacyThreshold",
-              "partial": "partials/modules//core/ImageItem/index.html",
+              "path": "/core/ImageSource#getChromaLegacyThreshold",
+              "partial": "partials/modules//core/ImageSource/index.html",
               "name": "getChromaLegacyThreshold"
             },
             {
-              "path": "/core/ImageItem#setChromaLegacyThreshold",
-              "partial": "partials/modules//core/ImageItem/index.html",
+              "path": "/core/ImageSource#setChromaLegacyThreshold",
+              "partial": "partials/modules//core/ImageSource/index.html",
               "name": "setChromaLegacyThreshold"
             },
             {
-              "path": "/core/ImageItem#getChromaLegacyAlphaSmoothing",
-              "partial": "partials/modules//core/ImageItem/index.html",
+              "path": "/core/ImageSource#getChromaLegacyAlphaSmoothing",
+              "partial": "partials/modules//core/ImageSource/index.html",
               "name": "getChromaLegacyAlphaSmoothing"
             },
             {
-              "path": "/core/ImageItem#setChromaLegacyAlphaSmoothing",
-              "partial": "partials/modules//core/ImageItem/index.html",
+              "path": "/core/ImageSource#setChromaLegacyAlphaSmoothing",
+              "partial": "partials/modules//core/ImageSource/index.html",
               "name": "setChromaLegacyAlphaSmoothing"
             },
             {
-              "path": "/core/ImageItem#getChromaRGBKeyPrimaryColor",
-              "partial": "partials/modules//core/ImageItem/index.html",
+              "path": "/core/ImageSource#getChromaRGBKeyPrimaryColor",
+              "partial": "partials/modules//core/ImageSource/index.html",
               "name": "getChromaRGBKeyPrimaryColor"
             },
             {
-              "path": "/core/ImageItem#setChromaRGBKeyPrimaryColor",
-              "partial": "partials/modules//core/ImageItem/index.html",
+              "path": "/core/ImageSource#setChromaRGBKeyPrimaryColor",
+              "partial": "partials/modules//core/ImageSource/index.html",
               "name": "setChromaRGBKeyPrimaryColor"
             },
             {
-              "path": "/core/ImageItem#getChromaRGBKeyThreshold",
-              "partial": "partials/modules//core/ImageItem/index.html",
+              "path": "/core/ImageSource#getChromaRGBKeyThreshold",
+              "partial": "partials/modules//core/ImageSource/index.html",
               "name": "getChromaRGBKeyThreshold"
             },
             {
-              "path": "/core/ImageItem#setChromaRGBKeyThreshold",
-              "partial": "partials/modules//core/ImageItem/index.html",
+              "path": "/core/ImageSource#setChromaRGBKeyThreshold",
+              "partial": "partials/modules//core/ImageSource/index.html",
               "name": "setChromaRGBKeyThreshold"
             },
             {
-              "path": "/core/ImageItem#getChromaRGBKeyExposure",
-              "partial": "partials/modules//core/ImageItem/index.html",
+              "path": "/core/ImageSource#getChromaRGBKeyExposure",
+              "partial": "partials/modules//core/ImageSource/index.html",
               "name": "getChromaRGBKeyExposure"
             },
             {
-              "path": "/core/ImageItem#setChromaRGBKeyExposure",
-              "partial": "partials/modules//core/ImageItem/index.html",
+              "path": "/core/ImageSource#setChromaRGBKeyExposure",
+              "partial": "partials/modules//core/ImageSource/index.html",
               "name": "setChromaRGBKeyExposure"
             },
             {
-              "path": "/core/ImageItem#getChromaColorKeyThreshold",
-              "partial": "partials/modules//core/ImageItem/index.html",
+              "path": "/core/ImageSource#getChromaColorKeyThreshold",
+              "partial": "partials/modules//core/ImageSource/index.html",
               "name": "getChromaColorKeyThreshold"
             },
             {
-              "path": "/core/ImageItem#setChromaColorKeyThreshold",
-              "partial": "partials/modules//core/ImageItem/index.html",
+              "path": "/core/ImageSource#setChromaColorKeyThreshold",
+              "partial": "partials/modules//core/ImageSource/index.html",
               "name": "setChromaColorKeyThreshold"
             },
             {
-              "path": "/core/ImageItem#getChromaColorKeyExposure",
-              "partial": "partials/modules//core/ImageItem/index.html",
+              "path": "/core/ImageSource#getChromaColorKeyExposure",
+              "partial": "partials/modules//core/ImageSource/index.html",
               "name": "getChromaColorKeyExposure"
             },
             {
-              "path": "/core/ImageItem#setChromaColorKeyExposure",
-              "partial": "partials/modules//core/ImageItem/index.html",
+              "path": "/core/ImageSource#setChromaColorKeyExposure",
+              "partial": "partials/modules//core/ImageSource/index.html",
               "name": "setChromaColorKeyExposure"
             },
             {
-              "path": "/core/ImageItem#getChromaColorKeyColor",
-              "partial": "partials/modules//core/ImageItem/index.html",
+              "path": "/core/ImageSource#getChromaColorKeyColor",
+              "partial": "partials/modules//core/ImageSource/index.html",
               "name": "getChromaColorKeyColor"
             },
             {
-              "path": "/core/ImageItem#setChromaColorKeyColor",
-              "partial": "partials/modules//core/ImageItem/index.html",
+              "path": "/core/ImageSource#setChromaColorKeyColor",
+              "partial": "partials/modules//core/ImageSource/index.html",
               "name": "setChromaColorKeyColor"
             },
             {
-              "path": "/core/ImageItem#isVisible",
-              "partial": "partials/modules//core/ImageItem/index.html",
+              "path": "/core/ImageSource#isVisible",
+              "partial": "partials/modules//core/ImageSource/index.html",
               "name": "isVisible"
             },
             {
-              "path": "/core/ImageItem#setVisible",
-              "partial": "partials/modules//core/ImageItem/index.html",
+              "path": "/core/ImageSource#setVisible",
+              "partial": "partials/modules//core/ImageSource/index.html",
               "name": "setVisible"
             },
             {
-              "path": "/core/ImageItem#getTransition",
-              "partial": "partials/modules//core/ImageItem/index.html",
+              "path": "/core/ImageSource#getTransition",
+              "partial": "partials/modules//core/ImageSource/index.html",
               "name": "getTransition"
             },
             {
-              "path": "/core/ImageItem#setTransition",
-              "partial": "partials/modules//core/ImageItem/index.html",
+              "path": "/core/ImageSource#setTransition",
+              "partial": "partials/modules//core/ImageSource/index.html",
               "name": "setTransition"
             },
             {
-              "path": "/core/ImageItem#getTransitionTime",
-              "partial": "partials/modules//core/ImageItem/index.html",
+              "path": "/core/ImageSource#getTransitionTime",
+              "partial": "partials/modules//core/ImageSource/index.html",
               "name": "getTransitionTime"
             },
             {
-              "path": "/core/ImageItem#setTransitionTime",
-              "partial": "partials/modules//core/ImageItem/index.html",
+              "path": "/core/ImageSource#setTransitionTime",
+              "partial": "partials/modules//core/ImageSource/index.html",
               "name": "setTransitionTime"
             }
           ]
         },
         {
-          "path": "/core/MediaItem",
-          "partial": "partials/modules//core/MediaItem/index.html",
-          "name": "MediaItem",
+          "path": "/core/MediaSource",
+          "partial": "partials/modules//core/MediaSource/index.html",
+          "name": "MediaSource",
           "type": "Class",
           "pages": [
             {
-              "path": "/core/MediaItem#isKeepAspectRatio",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#isKeepAspectRatio",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "isKeepAspectRatio"
             },
             {
-              "path": "/core/MediaItem#isPositionLocked",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#isPositionLocked",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "isPositionLocked"
             },
             {
-              "path": "/core/MediaItem#isEnhancedResizeEnabled",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#isEnhancedResizeEnabled",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "isEnhancedResizeEnabled"
             },
             {
-              "path": "/core/MediaItem#getPosition",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#getPosition",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "getPosition"
             },
             {
-              "path": "/core/MediaItem#getRotateY",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#getRotateY",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "getRotateY"
             },
             {
-              "path": "/core/MediaItem#getRotateX",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#getRotateX",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "getRotateX"
             },
             {
-              "path": "/core/MediaItem#getRotateZ",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#getRotateZ",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "getRotateZ"
             },
             {
-              "path": "/core/MediaItem#setKeepAspectRatio",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#setKeepAspectRatio",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "setKeepAspectRatio"
             },
             {
-              "path": "/core/MediaItem#setPositionLocked",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#setPositionLocked",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "setPositionLocked"
             },
             {
-              "path": "/core/MediaItem#setEnhancedResizeEnabled",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#setEnhancedResizeEnabled",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "setEnhancedResizeEnabled"
             },
             {
-              "path": "/core/MediaItem#setPosition",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#setPosition",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "setPosition"
             },
             {
-              "path": "/core/MediaItem#setRotateY",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#setRotateY",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "setRotateY"
             },
             {
-              "path": "/core/MediaItem#setRotateX",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#setRotateX",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "setRotateX"
             },
             {
-              "path": "/core/MediaItem#setRotateZ",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#setRotateZ",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "setRotateZ"
             },
             {
-              "path": "/core/MediaItem#getTransparency",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#getTransparency",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "getTransparency"
             },
             {
-              "path": "/core/MediaItem#getBrightness",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#getBrightness",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "getBrightness"
             },
             {
-              "path": "/core/MediaItem#getContrast",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#getContrast",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "getContrast"
             },
             {
-              "path": "/core/MediaItem#getHue",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#getHue",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "getHue"
             },
             {
-              "path": "/core/MediaItem#getSaturation",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#getSaturation",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "getSaturation"
             },
             {
-              "path": "/core/MediaItem#getBorderColor",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#getBorderColor",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "getBorderColor"
             },
             {
-              "path": "/core/MediaItem#setTransparency",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#setTransparency",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "setTransparency"
             },
             {
-              "path": "/core/MediaItem#setBrightness",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#setBrightness",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "setBrightness"
             },
             {
-              "path": "/core/MediaItem#setContrast",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#setContrast",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "setContrast"
             },
             {
-              "path": "/core/MediaItem#setHue",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#setHue",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "setHue"
             },
             {
-              "path": "/core/MediaItem#setSaturation",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#setSaturation",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "setSaturation"
             },
             {
-              "path": "/core/MediaItem#setBorderColor",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#setBorderColor",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "setBorderColor"
             },
             {
-              "path": "/core/MediaItem#isChromaEnabled",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#isChromaEnabled",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "isChromaEnabled"
             },
             {
-              "path": "/core/MediaItem#setChromaEnabled",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#setChromaEnabled",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "setChromaEnabled"
             },
             {
-              "path": "/core/MediaItem#getKeyingType",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#getKeyingType",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "getKeyingType"
             },
             {
-              "path": "/core/MediaItem#setKeyingType",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#setKeyingType",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "setKeyingType"
             },
             {
-              "path": "/core/MediaItem#getChromaAntiAliasLevel",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#getChromaAntiAliasLevel",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "getChromaAntiAliasLevel"
             },
             {
-              "path": "/core/MediaItem#setChromaAntiAliasLevel",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#setChromaAntiAliasLevel",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "setChromaAntiAliasLevel"
             },
             {
-              "path": "/core/MediaItem#getChromaLegacyBrightness",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#getChromaLegacyBrightness",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "getChromaLegacyBrightness"
             },
             {
-              "path": "/core/MediaItem#setChromaLegacyBrightness",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#setChromaLegacyBrightness",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "setChromaLegacyBrightness"
             },
             {
-              "path": "/core/MediaItem#getChromaLegacySaturation",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#getChromaLegacySaturation",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "getChromaLegacySaturation"
             },
             {
-              "path": "/core/MediaItem#setChromaLegacySaturation",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#setChromaLegacySaturation",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "setChromaLegacySaturation"
             },
             {
-              "path": "/core/MediaItem#getChromaLegacyHue",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#getChromaLegacyHue",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "getChromaLegacyHue"
             },
             {
-              "path": "/core/MediaItem#setChromaLegacyHue",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#setChromaLegacyHue",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "setChromaLegacyHue"
             },
             {
-              "path": "/core/MediaItem#getChromaLegacyThreshold",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#getChromaLegacyThreshold",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "getChromaLegacyThreshold"
             },
             {
-              "path": "/core/MediaItem#setChromaLegacyThreshold",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#setChromaLegacyThreshold",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "setChromaLegacyThreshold"
             },
             {
-              "path": "/core/MediaItem#getChromaLegacyAlphaSmoothing",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#getChromaLegacyAlphaSmoothing",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "getChromaLegacyAlphaSmoothing"
             },
             {
-              "path": "/core/MediaItem#setChromaLegacyAlphaSmoothing",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#setChromaLegacyAlphaSmoothing",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "setChromaLegacyAlphaSmoothing"
             },
             {
-              "path": "/core/MediaItem#getChromaRGBKeyPrimaryColor",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#getChromaRGBKeyPrimaryColor",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "getChromaRGBKeyPrimaryColor"
             },
             {
-              "path": "/core/MediaItem#setChromaRGBKeyPrimaryColor",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#setChromaRGBKeyPrimaryColor",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "setChromaRGBKeyPrimaryColor"
             },
             {
-              "path": "/core/MediaItem#getChromaRGBKeyThreshold",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#getChromaRGBKeyThreshold",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "getChromaRGBKeyThreshold"
             },
             {
-              "path": "/core/MediaItem#setChromaRGBKeyThreshold",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#setChromaRGBKeyThreshold",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "setChromaRGBKeyThreshold"
             },
             {
-              "path": "/core/MediaItem#getChromaRGBKeyExposure",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#getChromaRGBKeyExposure",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "getChromaRGBKeyExposure"
             },
             {
-              "path": "/core/MediaItem#setChromaRGBKeyExposure",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#setChromaRGBKeyExposure",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "setChromaRGBKeyExposure"
             },
             {
-              "path": "/core/MediaItem#getChromaColorKeyThreshold",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#getChromaColorKeyThreshold",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "getChromaColorKeyThreshold"
             },
             {
-              "path": "/core/MediaItem#setChromaColorKeyThreshold",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#setChromaColorKeyThreshold",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "setChromaColorKeyThreshold"
             },
             {
-              "path": "/core/MediaItem#getChromaColorKeyExposure",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#getChromaColorKeyExposure",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "getChromaColorKeyExposure"
             },
             {
-              "path": "/core/MediaItem#setChromaColorKeyExposure",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#setChromaColorKeyExposure",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "setChromaColorKeyExposure"
             },
             {
-              "path": "/core/MediaItem#getChromaColorKeyColor",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#getChromaColorKeyColor",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "getChromaColorKeyColor"
             },
             {
-              "path": "/core/MediaItem#setChromaColorKeyColor",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#setChromaColorKeyColor",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "setChromaColorKeyColor"
             },
             {
-              "path": "/core/MediaItem#isVisible",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#isVisible",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "isVisible"
             },
             {
-              "path": "/core/MediaItem#setVisible",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#setVisible",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "setVisible"
             },
             {
-              "path": "/core/MediaItem#getTransition",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#getTransition",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "getTransition"
             },
             {
-              "path": "/core/MediaItem#setTransition",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#setTransition",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "setTransition"
             },
             {
-              "path": "/core/MediaItem#getTransitionTime",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#getTransitionTime",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "getTransitionTime"
             },
             {
-              "path": "/core/MediaItem#setTransitionTime",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#setTransitionTime",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "setTransitionTime"
             },
             {
-              "path": "/core/MediaItem#isSeekable",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#isSeekable",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "isSeekable"
             },
             {
-              "path": "/core/MediaItem#getPlaybackPosition",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#getPlaybackPosition",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "getPlaybackPosition"
             },
             {
-              "path": "/core/MediaItem#setPlaybackPosition",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#setPlaybackPosition",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "setPlaybackPosition"
             },
             {
-              "path": "/core/MediaItem#getPlaybackDuration",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#getPlaybackDuration",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "getPlaybackDuration"
             },
             {
-              "path": "/core/MediaItem#isPlaying",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#isPlaying",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "isPlaying"
             },
             {
-              "path": "/core/MediaItem#setPlaying",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#setPlaying",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "setPlaying"
             },
             {
-              "path": "/core/MediaItem#getPlaybackStartPosition",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#getPlaybackStartPosition",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "getPlaybackStartPosition"
             },
             {
-              "path": "/core/MediaItem#setPlaybackStartPosition",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#setPlaybackStartPosition",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "setPlaybackStartPosition"
             },
             {
-              "path": "/core/MediaItem#getPlaybackEndPosition",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#getPlaybackEndPosition",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "getPlaybackEndPosition"
             },
             {
-              "path": "/core/MediaItem#setPlaybackEndPosition",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#setPlaybackEndPosition",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "setPlaybackEndPosition"
             },
             {
-              "path": "/core/MediaItem#getActionAfterPlayback",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#getActionAfterPlayback",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "getActionAfterPlayback"
             },
             {
-              "path": "/core/MediaItem#setActionAfterPlayback",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#setActionAfterPlayback",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "setActionAfterPlayback"
             },
             {
-              "path": "/core/MediaItem#isAutostartOnSceneLoad",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#isAutostartOnSceneLoad",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "isAutostartOnSceneLoad"
             },
             {
-              "path": "/core/MediaItem#setAutostartOnSceneLoad",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#setAutostartOnSceneLoad",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "setAutostartOnSceneLoad"
             },
             {
-              "path": "/core/MediaItem#isForceDeinterlace",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#isForceDeinterlace",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "isForceDeinterlace"
             },
             {
-              "path": "/core/MediaItem#setForceDeinterlace",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#setForceDeinterlace",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "setForceDeinterlace"
             },
             {
-              "path": "/core/MediaItem#isRememberingPlaybackPosition",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#isRememberingPlaybackPosition",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "isRememberingPlaybackPosition"
             },
             {
-              "path": "/core/MediaItem#setRememberingPlaybackPosition",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#setRememberingPlaybackPosition",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "setRememberingPlaybackPosition"
             },
             {
-              "path": "/core/MediaItem#isShowingPlaybackPosition",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#isShowingPlaybackPosition",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "isShowingPlaybackPosition"
             },
             {
-              "path": "/core/MediaItem#setShowingPlaybackPosition",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#setShowingPlaybackPosition",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "setShowingPlaybackPosition"
             },
             {
-              "path": "/core/MediaItem#getCuePoints",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#getCuePoints",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "getCuePoints"
             },
             {
-              "path": "/core/MediaItem#setCuePoints",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#setCuePoints",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "setCuePoints"
             },
             {
-              "path": "/core/MediaItem#isAudio",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#isAudio",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "isAudio"
             },
             {
-              "path": "/core/MediaItem#isVideo",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#isVideo",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "isVideo"
             },
             {
-              "path": "/core/MediaItem#getVolume",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#getVolume",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "getVolume"
             },
             {
-              "path": "/core/MediaItem#isMute",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#isMute",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "isMute"
             },
             {
-              "path": "/core/MediaItem#setVolume",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#setVolume",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "setVolume"
             },
             {
-              "path": "/core/MediaItem#setMute",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#setMute",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "setMute"
             },
             {
-              "path": "/core/MediaItem#isStreamOnlyAudio",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#isStreamOnlyAudio",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "isStreamOnlyAudio"
             },
             {
-              "path": "/core/MediaItem#setStreamOnlyAudio",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#setStreamOnlyAudio",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "setStreamOnlyAudio"
             },
             {
-              "path": "/core/MediaItem#isAudioAvailable",
-              "partial": "partials/modules//core/MediaItem/index.html",
+              "path": "/core/MediaSource#isAudioAvailable",
+              "partial": "partials/modules//core/MediaSource/index.html",
               "name": "isAudioAvailable"
             }
           ]
@@ -3809,9 +4350,9 @@ angular.module('navigation-modules', [])
           "type": "Class",
           "pages": [
             {
-              "path": "/system/MicrophoneDevice#getDisplayID",
+              "path": "/system/MicrophoneDevice#getDisplayId",
               "partial": "partials/modules//system/MicrophoneDevice/index.html",
-              "name": "getDisplayID"
+              "name": "getDisplayId"
             },
             {
               "path": "/system/MicrophoneDevice#toXML",
@@ -4093,39 +4634,39 @@ angular.module('navigation-modules', [])
       "type": "Module",
       "pages": [
         {
-          "path": "/window/SourceConfigWindow",
-          "partial": "partials/modules//window/SourceConfigWindow/index.html",
-          "name": "SourceConfigWindow",
+          "path": "/window/SourcePropsWindow",
+          "partial": "partials/modules//window/SourcePropsWindow/index.html",
+          "name": "SourcePropsWindow",
           "type": "Class",
           "pages": [
             {
-              "path": "/window/SourceConfigWindow#useFullWindow",
-              "partial": "partials/modules//window/SourceConfigWindow/index.html",
+              "path": "/window/SourcePropsWindow#useFullWindow",
+              "partial": "partials/modules//window/SourcePropsWindow/index.html",
               "name": "useFullWindow"
             },
             {
-              "path": "/window/SourceConfigWindow#useTabbedWindow",
-              "partial": "partials/modules//window/SourceConfigWindow/index.html",
+              "path": "/window/SourcePropsWindow#useTabbedWindow",
+              "partial": "partials/modules//window/SourcePropsWindow/index.html",
               "name": "useTabbedWindow"
             },
             {
-              "path": "/window/SourceConfigWindow#resizeConfig",
-              "partial": "partials/modules//window/SourceConfigWindow/index.html",
-              "name": "resizeConfig"
+              "path": "/window/SourcePropsWindow#resize",
+              "partial": "partials/modules//window/SourcePropsWindow/index.html",
+              "name": "resize"
             },
             {
-              "path": "/window/SourceConfigWindow#requestDialogTitleChange",
-              "partial": "partials/modules//window/SourceConfigWindow/index.html",
+              "path": "/window/SourcePropsWindow#requestDialogTitleChange",
+              "partial": "partials/modules//window/SourcePropsWindow/index.html",
               "name": "requestDialogTitleChange"
             },
             {
-              "path": "/window/SourceConfigWindow#closeConfig",
-              "partial": "partials/modules//window/SourceConfigWindow/index.html",
-              "name": "closeConfig"
+              "path": "/window/SourcePropsWindow#close",
+              "partial": "partials/modules//window/SourcePropsWindow/index.html",
+              "name": "close"
             },
             {
-              "path": "/window/SourceConfigWindow#getInstance",
-              "partial": "partials/modules//window/SourceConfigWindow/index.html",
+              "path": "/window/SourcePropsWindow#getInstance",
+              "partial": "partials/modules//window/SourcePropsWindow/index.html",
               "name": "getInstance"
             }
           ]

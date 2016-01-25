@@ -2,20 +2,18 @@
 <h1 class="class export">Game <span class="type">class</span></h1>
 <p><p>The Game Class is the object returned by <a href='#system/System'>System Class&#39;</a>
 getGames method. It provides you with methods to fetch the game object&#39;s
-attributes, and also provides methods to convert it back to an XML object
-that is compatible with XBC</p>
+attributes, as well as methods to add any game to the current scene.</p>
 <h3 id="basic-usage">Basic Usage</h3>
 <pre><code class="lang-javascript">var XJS = require(&#39;xjs&#39;);
 var System = XJS.System;
 var xml;
 
 System.getGames().then(function(games) {
-    for (var i in games) {
-        if(games[i].isFullscreen()) {
-            xml = games[i].toXML();
-            // Do something with the xml here. Probably add it to the current scene
-        }
-    }
+ for (var i in games) {
+   if(games[i].isFullscreen()) {
+     games[i].addToScene();
+   }
+ }
 });
 </code></pre>
 </p><h2>Members</h2>
@@ -139,8 +137,10 @@ DX9_PresentEx, DX10, DX11, DX11.1, DX11.1_Present1
     <a name="getFpsRender"><h1 id="getFpsRender" class="name">
       getFpsRender
     </h1></a>
-          <p>Get the FPS Render of the game</p>
-      
+    <pre><code>return: number
+</code></pre>
+<p>Get the FPS Render of the game</p>
+
   </section>
 
 
@@ -148,8 +148,10 @@ DX9_PresentEx, DX10, DX11, DX11.1, DX11.1_Present1
     <a name="getFpsCapture"><h1 id="getFpsCapture" class="name">
       getFpsCapture
     </h1></a>
-          <p>Get the Captured FPS of the game</p>
-      
+    <pre><code>return: number
+</code></pre>
+<p>Get the Captured FPS of the game</p>
+
   </section>
 
 
@@ -157,8 +159,10 @@ DX9_PresentEx, DX10, DX11, DX11.1, DX11.1_Present1
     <a name="getImageName"><h1 id="getImageName" class="name">
       getImageName
     </h1></a>
-          <p>Get the image name of the game</p>
-      
+    <pre><code>return: string
+</code></pre>
+<p>Get the image name of the game</p>
+
   </section>
 
 
@@ -166,8 +170,10 @@ DX9_PresentEx, DX10, DX11, DX11.1, DX11.1_Present1
     <a name="getReplace"><h1 id="getReplace" class="name">
       getReplace
     </h1></a>
-          <p>Get the replace image value of the game</p>
-      
+    <pre><code>return: string
+</code></pre>
+<p>Get the replace image value of the game</p>
+
   </section>
 
 
@@ -228,6 +234,6 @@ xjs.Game.autoDetect().addToScene();
   </section>
 
 <p class="module defined-in">exported from <a href='#/system'>system</a><br/>
-defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/system/game.ts#L7-L333">../src/system/game.ts (line 7)</a>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/system/game.ts#L7-L339">../src/system/game.ts (line 7)</a>
 </p>
 

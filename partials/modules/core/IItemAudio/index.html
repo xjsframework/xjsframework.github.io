@@ -1,0 +1,86 @@
+
+<h1 class="class export">IItemAudio <span class="type">interface</span></h1>
+<p></p><h2>Members</h2>
+  <section class="member">
+    <a name="getVolume"><h1 id="getVolume" class="name">
+      getVolume
+    </h1></a>
+    <pre><code>return: Promise&lt;number&gt;
+</code></pre>
+<p>Get source&#39;s volume level expressed as an integer from 0 to 100</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="setVolume"><h1 id="setVolume" class="name">
+      setVolume
+    </h1></a>
+    <pre><code>param: (value: number)
+</code></pre>
+<p>Set volume level of source as an integer from 0 (muted) to 100 (maximum)</p>
+<p><em>Chainable.</em></p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="isMute"><h1 id="isMute" class="name">
+      isMute
+    </h1></a>
+    <pre><code>return: Promise&lt;boolean&gt;
+</code></pre>
+<p>Check if source&#39;s mute option is active</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="setMute"><h1 id="setMute" class="name">
+      setMute
+    </h1></a>
+    <pre><code>param: (value: boolean)
+</code></pre>
+<p>Set source&#39;s Mute property to ON or OFF</p>
+<p><em>Chainable.</em></p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="isStreamOnlyAudio"><h1 id="isStreamOnlyAudio" class="name">
+      isStreamOnlyAudio
+    </h1></a>
+    <pre><code>return: Promise&lt;boolean&gt;
+</code></pre>
+<p>Checks if audio is also output to system sound</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="setStreamOnlyAudio"><h1 id="setStreamOnlyAudio" class="name">
+      setStreamOnlyAudio
+    </h1></a>
+    <pre><code>param: (value: boolean)
+</code></pre>
+<p>Sets whether audio should also be output to system sound</p>
+<p><em>Chainable.</em></p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="isAudioAvailable"><h1 id="isAudioAvailable" class="name">
+      isAudioAvailable
+    </h1></a>
+    <pre><code>return: Promise&lt;boolean&gt;
+</code></pre>
+<p>Checks if audio is available</p>
+
+  </section>
+
+<p class="module defined-in">exported from <a href='#/core'>core</a><br/>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/core/source/iaudio.ts#L4-L62">../src/core/source/iaudio.ts (line 4)</a>
+</p>
+

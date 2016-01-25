@@ -3,7 +3,9 @@
 <p><p>The AudioDevice Class is the object returned by
 <a href='#system/System'>System Class&#39;</a> getAudioDevices method. It provides you
 with methods to fetch the audio device object&#39;s attributes, and also provides
-methods to convert it back to an XML object that is compatible with XBC</p>
+methods to convert it back to an XML object that is compatible with XBC.</p>
+<p>If you are looking to add a microphone device to the stage, please see
+<a href='#system/MicrophoneDevice'>System/MicrophoneDevice</a> instead.</p>
 <h3 id="basic-usage">Basic Usage</h3>
 <pre><code class="lang-javascript">var XJS = require(&#39;xjs&#39;);
 var System = XJS.System;
@@ -157,7 +159,7 @@ System.getAudioDevices().then(function(audios) {
     </h1></a>
     <pre><code>return: string
 </code></pre>
-<p>Converts the AudioDevice item to XML-formatted string</p>
+<p>Converts the AudioDevice object to XML-formatted string</p>
 <h4 id="usage">Usage</h4>
 <pre><code class="lang-javascript">var audioDeviceXMLString = AudioDevice.toString();
 </code></pre>
@@ -229,6 +231,6 @@ System.getAudioDevices().then(function(audios) {
   </section>
 
 <p class="module defined-in">exported from <a href='#/system'>system</a><br/>
-defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/system/audio.ts#L4-L385">../src/system/audio.ts (line 4)</a>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/system/audio.ts#L4-L388">../src/system/audio.ts (line 4)</a>
 </p>
 
