@@ -15,18 +15,18 @@
   There is no standard format for the configuration objects; developers may use any valid JSON. It is the responsibility of the source to load the saved object every time the source is loaded, and to apply the object's various settings onto the source's HTML. This is ideally done when the framework's ready event is fired.
 </p>
 <pre class="language-javascript"><code>var xjs = require('xjs');
-var Item = xjs.Item;
+var Source = xjs.Source;
 
 xjs.ready()
-  .then(Item.getCurrentSource)
-  .then(function(myItem) {
-    return myItem.loadConfig();
+  .then(Source.getCurrentSource)
+  .then(function(mySource) {
+    return mySource.loadConfig();
   }).then(function(config) {
     // apply the loaded configuration object onto the source
   });</code></pre>
 <p>
-  To let the source save its own configuration, it simply needs to call saveConfig() on its <code>Item</code> instance.
+  To let the source save its own configuration, it simply needs to call saveConfig() on its <code>Source</code> instance.
 </p>
 <h3>Source Plugin Window utility</h3>
 <p>
-  There is a utility class for source plugins which is used in conjunction with the configuration window. The <code>SourcePluginWindow</code> class is an Event Emitter. Currently, its only use to plugin developers is to save configuration objects as instructed by the configuration window. See this <a href="tutorials.html#/sourceconfig#man-config-obj" target="_blank">section</a> for more details.
+  There is a utility class for source plugins which is used in conjunction with the properties window. The <code>SourcePluginWindow</code> class is an Event Emitter. Currently, its only use to plugin developers is to save configuration objects as instructed by the properties window. See this <a href="tutorials.html#/sourceconfig#man-config-obj" target="_blank">section</a> for more details.
