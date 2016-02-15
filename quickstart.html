@@ -41,6 +41,9 @@
             <a href="#zipfile">Getting Started from ZIP files</a>
           </li>
           <li>
+            <a href="#cdn">Getting started using our CDN hosted file</a>
+          </li>
+          <li>
             <a href="#createsample">Create a sample plugin</a>
           </li>
           <li>
@@ -184,6 +187,17 @@ bower install xjs-framework</code></pre>
           In case you need to automatically update the framework to the latest available version, you could always execute <code>bower update</code> on your CLI.
         </p>
         <hr />
+        <a id="cdn" name="cdn">
+          <h2>Getting started using our CDN hosted file</h2>
+        </a>
+        <p>
+          In case you need to create a plugin fast, and just want to use our hosted version of XJS Framework, all you have to do is add this line to your html file:
+        </p>
+        <pre class="language-markup"><code>&lt;script src="https://cdn2.xsplit.com/xjs/download/xjs.js"&gt;&lt;/script&gt;</code></pre>
+        <p>
+          The problem with this method is that our servers cache static files, thus we cannot ensure that the file hosted is the latest version of the framework, specially if we just released a new version of the framework within the past 24 hours.
+        </p>
+        <hr />
         <a id="createsample" name="createsample">
           <h2>Let's create a sample plugin!</h2>
         </a>
@@ -284,7 +298,7 @@ xjs.ready().then(xjs.Scene.getActiveScene)
         <h3><em>Twitch Chat Viewer via Twitch Chat Popout</em></h3>
         <p>
           This plugin demonstrates a different take on doing plugins. This involves injecting custom javascript and css to style and add configurability to an already existing webpage. Please do check out the source code at <a href="https://github.com/xjsframework/twitch-chat-viewer-popout" target="_blank">github</a>.
-        </p>        
+        </p>
       </div>
     </div>
     <xsplit-copyright></xsplit-copyright>
