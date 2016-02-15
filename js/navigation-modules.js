@@ -95,6 +95,21 @@ angular.module('navigation-modules', [])
               "name": "isEnhancedResizeEnabled"
             },
             {
+              "path": "/core/Source#getCanvasRotate",
+              "partial": "partials/modules//core/Source/index.html",
+              "name": "getCanvasRotate"
+            },
+            {
+              "path": "/core/Source#getCropping",
+              "partial": "partials/modules//core/Source/index.html",
+              "name": "getCropping"
+            },
+            {
+              "path": "/core/Source#getEnhancedRotate",
+              "partial": "partials/modules//core/Source/index.html",
+              "name": "getEnhancedRotate"
+            },
+            {
               "path": "/core/Source#getPosition",
               "partial": "partials/modules//core/Source/index.html",
               "name": "getPosition"
@@ -113,6 +128,26 @@ angular.module('navigation-modules', [])
               "path": "/core/Source#getRotateZ",
               "partial": "partials/modules//core/Source/index.html",
               "name": "getRotateZ"
+            },
+            {
+              "path": "/core/Source#setCanvasRotate",
+              "partial": "partials/modules//core/Source/index.html",
+              "name": "setCanvasRotate"
+            },
+            {
+              "path": "/core/Source#setCropping",
+              "partial": "partials/modules//core/Source/index.html",
+              "name": "setCropping"
+            },
+            {
+              "path": "/core/Source#setCroppingEnhanced",
+              "partial": "partials/modules//core/Source/index.html",
+              "name": "setCroppingEnhanced"
+            },
+            {
+              "path": "/core/Source#setEnhancedRotate",
+              "partial": "partials/modules//core/Source/index.html",
+              "name": "setEnhancedRotate"
             },
             {
               "path": "/core/Source#setKeepAspectRatio",
@@ -597,6 +632,41 @@ angular.module('navigation-modules', [])
               "path": "/core/IItemLayout#setRotateZ",
               "partial": "partials/modules//core/IItemLayout/index.html",
               "name": "setRotateZ"
+            },
+            {
+              "path": "/core/IItemLayout#getCropping",
+              "partial": "partials/modules//core/IItemLayout/index.html",
+              "name": "getCropping"
+            },
+            {
+              "path": "/core/IItemLayout#setCropping",
+              "partial": "partials/modules//core/IItemLayout/index.html",
+              "name": "setCropping"
+            },
+            {
+              "path": "/core/IItemLayout#getCanvasRotate",
+              "partial": "partials/modules//core/IItemLayout/index.html",
+              "name": "getCanvasRotate"
+            },
+            {
+              "path": "/core/IItemLayout#setCanvasRotate",
+              "partial": "partials/modules//core/IItemLayout/index.html",
+              "name": "setCanvasRotate"
+            },
+            {
+              "path": "/core/IItemLayout#getEnhancedRotate",
+              "partial": "partials/modules//core/IItemLayout/index.html",
+              "name": "getEnhancedRotate"
+            },
+            {
+              "path": "/core/IItemLayout#setEnhancedRotate",
+              "partial": "partials/modules//core/IItemLayout/index.html",
+              "name": "setEnhancedRotate"
+            },
+            {
+              "path": "/core/IItemLayout#setCroppingEnhanced",
+              "partial": "partials/modules//core/IItemLayout/index.html",
+              "name": "setCroppingEnhanced"
             }
           ]
         },
@@ -1196,6 +1266,11 @@ angular.module('navigation-modules', [])
               "path": "/core/Transition#WAVE",
               "partial": "partials/modules//core/Transition/index.html",
               "name": "WAVE"
+            },
+            {
+              "path": "/core/Transition#getSceneTransitions",
+              "partial": "partials/modules//core/Transition/index.html",
+              "name": "getSceneTransitions"
             }
           ]
         },
@@ -1365,6 +1440,21 @@ angular.module('navigation-modules', [])
               "name": "isEnhancedResizeEnabled"
             },
             {
+              "path": "/core/CameraSource#getCanvasRotate",
+              "partial": "partials/modules//core/CameraSource/index.html",
+              "name": "getCanvasRotate"
+            },
+            {
+              "path": "/core/CameraSource#getCropping",
+              "partial": "partials/modules//core/CameraSource/index.html",
+              "name": "getCropping"
+            },
+            {
+              "path": "/core/CameraSource#getEnhancedRotate",
+              "partial": "partials/modules//core/CameraSource/index.html",
+              "name": "getEnhancedRotate"
+            },
+            {
               "path": "/core/CameraSource#getPosition",
               "partial": "partials/modules//core/CameraSource/index.html",
               "name": "getPosition"
@@ -1383,6 +1473,26 @@ angular.module('navigation-modules', [])
               "path": "/core/CameraSource#getRotateZ",
               "partial": "partials/modules//core/CameraSource/index.html",
               "name": "getRotateZ"
+            },
+            {
+              "path": "/core/CameraSource#setCanvasRotate",
+              "partial": "partials/modules//core/CameraSource/index.html",
+              "name": "setCanvasRotate"
+            },
+            {
+              "path": "/core/CameraSource#setCropping",
+              "partial": "partials/modules//core/CameraSource/index.html",
+              "name": "setCropping"
+            },
+            {
+              "path": "/core/CameraSource#setCroppingEnhanced",
+              "partial": "partials/modules//core/CameraSource/index.html",
+              "name": "setCroppingEnhanced"
+            },
+            {
+              "path": "/core/CameraSource#setEnhancedRotate",
+              "partial": "partials/modules//core/CameraSource/index.html",
+              "name": "setEnhancedRotate"
             },
             {
               "path": "/core/CameraSource#setKeepAspectRatio",
@@ -1758,6 +1868,21 @@ angular.module('navigation-modules', [])
               "name": "isEnhancedResizeEnabled"
             },
             {
+              "path": "/core/GameSource#getCanvasRotate",
+              "partial": "partials/modules//core/GameSource/index.html",
+              "name": "getCanvasRotate"
+            },
+            {
+              "path": "/core/GameSource#getCropping",
+              "partial": "partials/modules//core/GameSource/index.html",
+              "name": "getCropping"
+            },
+            {
+              "path": "/core/GameSource#getEnhancedRotate",
+              "partial": "partials/modules//core/GameSource/index.html",
+              "name": "getEnhancedRotate"
+            },
+            {
               "path": "/core/GameSource#getPosition",
               "partial": "partials/modules//core/GameSource/index.html",
               "name": "getPosition"
@@ -1776,6 +1901,26 @@ angular.module('navigation-modules', [])
               "path": "/core/GameSource#getRotateZ",
               "partial": "partials/modules//core/GameSource/index.html",
               "name": "getRotateZ"
+            },
+            {
+              "path": "/core/GameSource#setCanvasRotate",
+              "partial": "partials/modules//core/GameSource/index.html",
+              "name": "setCanvasRotate"
+            },
+            {
+              "path": "/core/GameSource#setCropping",
+              "partial": "partials/modules//core/GameSource/index.html",
+              "name": "setCropping"
+            },
+            {
+              "path": "/core/GameSource#setCroppingEnhanced",
+              "partial": "partials/modules//core/GameSource/index.html",
+              "name": "setCroppingEnhanced"
+            },
+            {
+              "path": "/core/GameSource#setEnhancedRotate",
+              "partial": "partials/modules//core/GameSource/index.html",
+              "name": "setEnhancedRotate"
             },
             {
               "path": "/core/GameSource#setKeepAspectRatio",
@@ -2219,6 +2364,21 @@ angular.module('navigation-modules', [])
               "name": "isEnhancedResizeEnabled"
             },
             {
+              "path": "/core/HtmlSource#getCanvasRotate",
+              "partial": "partials/modules//core/HtmlSource/index.html",
+              "name": "getCanvasRotate"
+            },
+            {
+              "path": "/core/HtmlSource#getCropping",
+              "partial": "partials/modules//core/HtmlSource/index.html",
+              "name": "getCropping"
+            },
+            {
+              "path": "/core/HtmlSource#getEnhancedRotate",
+              "partial": "partials/modules//core/HtmlSource/index.html",
+              "name": "getEnhancedRotate"
+            },
+            {
               "path": "/core/HtmlSource#getPosition",
               "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "getPosition"
@@ -2237,6 +2397,26 @@ angular.module('navigation-modules', [])
               "path": "/core/HtmlSource#getRotateZ",
               "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "getRotateZ"
+            },
+            {
+              "path": "/core/HtmlSource#setCanvasRotate",
+              "partial": "partials/modules//core/HtmlSource/index.html",
+              "name": "setCanvasRotate"
+            },
+            {
+              "path": "/core/HtmlSource#setCropping",
+              "partial": "partials/modules//core/HtmlSource/index.html",
+              "name": "setCropping"
+            },
+            {
+              "path": "/core/HtmlSource#setCroppingEnhanced",
+              "partial": "partials/modules//core/HtmlSource/index.html",
+              "name": "setCroppingEnhanced"
+            },
+            {
+              "path": "/core/HtmlSource#setEnhancedRotate",
+              "partial": "partials/modules//core/HtmlSource/index.html",
+              "name": "setEnhancedRotate"
             },
             {
               "path": "/core/HtmlSource#setKeepAspectRatio",
@@ -2592,6 +2772,21 @@ angular.module('navigation-modules', [])
               "name": "isEnhancedResizeEnabled"
             },
             {
+              "path": "/core/FlashSource#getCanvasRotate",
+              "partial": "partials/modules//core/FlashSource/index.html",
+              "name": "getCanvasRotate"
+            },
+            {
+              "path": "/core/FlashSource#getCropping",
+              "partial": "partials/modules//core/FlashSource/index.html",
+              "name": "getCropping"
+            },
+            {
+              "path": "/core/FlashSource#getEnhancedRotate",
+              "partial": "partials/modules//core/FlashSource/index.html",
+              "name": "getEnhancedRotate"
+            },
+            {
               "path": "/core/FlashSource#getPosition",
               "partial": "partials/modules//core/FlashSource/index.html",
               "name": "getPosition"
@@ -2610,6 +2805,26 @@ angular.module('navigation-modules', [])
               "path": "/core/FlashSource#getRotateZ",
               "partial": "partials/modules//core/FlashSource/index.html",
               "name": "getRotateZ"
+            },
+            {
+              "path": "/core/FlashSource#setCanvasRotate",
+              "partial": "partials/modules//core/FlashSource/index.html",
+              "name": "setCanvasRotate"
+            },
+            {
+              "path": "/core/FlashSource#setCropping",
+              "partial": "partials/modules//core/FlashSource/index.html",
+              "name": "setCropping"
+            },
+            {
+              "path": "/core/FlashSource#setCroppingEnhanced",
+              "partial": "partials/modules//core/FlashSource/index.html",
+              "name": "setCroppingEnhanced"
+            },
+            {
+              "path": "/core/FlashSource#setEnhancedRotate",
+              "partial": "partials/modules//core/FlashSource/index.html",
+              "name": "setEnhancedRotate"
             },
             {
               "path": "/core/FlashSource#setKeepAspectRatio",
@@ -2965,6 +3180,21 @@ angular.module('navigation-modules', [])
               "name": "isEnhancedResizeEnabled"
             },
             {
+              "path": "/core/ScreenSource#getCanvasRotate",
+              "partial": "partials/modules//core/ScreenSource/index.html",
+              "name": "getCanvasRotate"
+            },
+            {
+              "path": "/core/ScreenSource#getCropping",
+              "partial": "partials/modules//core/ScreenSource/index.html",
+              "name": "getCropping"
+            },
+            {
+              "path": "/core/ScreenSource#getEnhancedRotate",
+              "partial": "partials/modules//core/ScreenSource/index.html",
+              "name": "getEnhancedRotate"
+            },
+            {
               "path": "/core/ScreenSource#getPosition",
               "partial": "partials/modules//core/ScreenSource/index.html",
               "name": "getPosition"
@@ -2983,6 +3213,26 @@ angular.module('navigation-modules', [])
               "path": "/core/ScreenSource#getRotateZ",
               "partial": "partials/modules//core/ScreenSource/index.html",
               "name": "getRotateZ"
+            },
+            {
+              "path": "/core/ScreenSource#setCanvasRotate",
+              "partial": "partials/modules//core/ScreenSource/index.html",
+              "name": "setCanvasRotate"
+            },
+            {
+              "path": "/core/ScreenSource#setCropping",
+              "partial": "partials/modules//core/ScreenSource/index.html",
+              "name": "setCropping"
+            },
+            {
+              "path": "/core/ScreenSource#setCroppingEnhanced",
+              "partial": "partials/modules//core/ScreenSource/index.html",
+              "name": "setCroppingEnhanced"
+            },
+            {
+              "path": "/core/ScreenSource#setEnhancedRotate",
+              "partial": "partials/modules//core/ScreenSource/index.html",
+              "name": "setEnhancedRotate"
             },
             {
               "path": "/core/ScreenSource#setKeepAspectRatio",
@@ -3273,6 +3523,21 @@ angular.module('navigation-modules', [])
               "name": "isEnhancedResizeEnabled"
             },
             {
+              "path": "/core/ImageSource#getCanvasRotate",
+              "partial": "partials/modules//core/ImageSource/index.html",
+              "name": "getCanvasRotate"
+            },
+            {
+              "path": "/core/ImageSource#getCropping",
+              "partial": "partials/modules//core/ImageSource/index.html",
+              "name": "getCropping"
+            },
+            {
+              "path": "/core/ImageSource#getEnhancedRotate",
+              "partial": "partials/modules//core/ImageSource/index.html",
+              "name": "getEnhancedRotate"
+            },
+            {
               "path": "/core/ImageSource#getPosition",
               "partial": "partials/modules//core/ImageSource/index.html",
               "name": "getPosition"
@@ -3291,6 +3556,26 @@ angular.module('navigation-modules', [])
               "path": "/core/ImageSource#getRotateZ",
               "partial": "partials/modules//core/ImageSource/index.html",
               "name": "getRotateZ"
+            },
+            {
+              "path": "/core/ImageSource#setCanvasRotate",
+              "partial": "partials/modules//core/ImageSource/index.html",
+              "name": "setCanvasRotate"
+            },
+            {
+              "path": "/core/ImageSource#setCropping",
+              "partial": "partials/modules//core/ImageSource/index.html",
+              "name": "setCropping"
+            },
+            {
+              "path": "/core/ImageSource#setCroppingEnhanced",
+              "partial": "partials/modules//core/ImageSource/index.html",
+              "name": "setCroppingEnhanced"
+            },
+            {
+              "path": "/core/ImageSource#setEnhancedRotate",
+              "partial": "partials/modules//core/ImageSource/index.html",
+              "name": "setEnhancedRotate"
             },
             {
               "path": "/core/ImageSource#setKeepAspectRatio",
@@ -3581,6 +3866,21 @@ angular.module('navigation-modules', [])
               "name": "isEnhancedResizeEnabled"
             },
             {
+              "path": "/core/MediaSource#getCanvasRotate",
+              "partial": "partials/modules//core/MediaSource/index.html",
+              "name": "getCanvasRotate"
+            },
+            {
+              "path": "/core/MediaSource#getCropping",
+              "partial": "partials/modules//core/MediaSource/index.html",
+              "name": "getCropping"
+            },
+            {
+              "path": "/core/MediaSource#getEnhancedRotate",
+              "partial": "partials/modules//core/MediaSource/index.html",
+              "name": "getEnhancedRotate"
+            },
+            {
               "path": "/core/MediaSource#getPosition",
               "partial": "partials/modules//core/MediaSource/index.html",
               "name": "getPosition"
@@ -3599,6 +3899,26 @@ angular.module('navigation-modules', [])
               "path": "/core/MediaSource#getRotateZ",
               "partial": "partials/modules//core/MediaSource/index.html",
               "name": "getRotateZ"
+            },
+            {
+              "path": "/core/MediaSource#setCanvasRotate",
+              "partial": "partials/modules//core/MediaSource/index.html",
+              "name": "setCanvasRotate"
+            },
+            {
+              "path": "/core/MediaSource#setCropping",
+              "partial": "partials/modules//core/MediaSource/index.html",
+              "name": "setCropping"
+            },
+            {
+              "path": "/core/MediaSource#setCroppingEnhanced",
+              "partial": "partials/modules//core/MediaSource/index.html",
+              "name": "setCroppingEnhanced"
+            },
+            {
+              "path": "/core/MediaSource#setEnhancedRotate",
+              "partial": "partials/modules//core/MediaSource/index.html",
+              "name": "setEnhancedRotate"
             },
             {
               "path": "/core/MediaSource#setKeepAspectRatio",

@@ -252,7 +252,170 @@ the stretching and/or shrinking of the source.</p>
 
   </section>
 
+
+  <section class="member">
+    <a name="getCropping"><h1 id="getCropping" class="name">
+      getCropping
+    </h1></a>
+    <pre><code>return: Promise&lt;Object&gt;
+</code></pre>
+<p>Get the cropping of the source</p>
+<p>This returns an object with properties of left, top, right, and bottom
+whose values are between 0 - 1. This object is not a coordinate system.
+Top value indicates the portion of the source removed(cropped) from the top,
+left value indicates the portion of the source removed from the left,
+and so on.</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">source.getCropping().then(function(crop) {
+  // The rest of your code here
+  var left = crop.left;
+  var top = crop.top;
+  var right = crop.right;
+  var bottom = crop.bottom;
+});
+</code></pre>
+
+  </section>
+
+
+  <section class="member">
+    <a name="setCropping"><h1 id="setCropping" class="name">
+      setCropping
+    </h1></a>
+    <pre><code>param: (value: Object)
+</code></pre>
+<p>Set Source cropping.</p>
+<p>This accepts an object with properties left, top, right, and bottom
+whose values are between 0 - 1. This object is not a coordinate system.
+Top value indicates the portion of the source removed(cropped) from the top,
+left value indicates the portion of the source removed from the left,
+and so on.</p>
+<p><em>Chainable.</em></p>
+<p>Please do note that this method will NOT automatically modify/calculate
+the height and width of the source whenever you modify cropping,
+unlike the behavior of XBC when modifying it through the properties window.</p>
+<p>You will need to manually modify the height and width of the source each time
+you modify this value to get the best results. If not, it might result to
+the stretching and/or shrinking of the source.</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">var obj = {};
+obj.left = 0.1;
+obj.top = 0.2;
+obj.right = 0;
+obj.bottom = 0.1;
+source.setCropping(obj).then(function(source) {
+  // Promise resolves with same Source instance
+});
+</code></pre>
+
+  </section>
+
+
+  <section class="member">
+    <a name="getCanvasRotate"><h1 id="getCanvasRotate" class="name">
+      getCanvasRotate
+    </h1></a>
+    <pre><code>return: Promise&lt;number&gt;
+</code></pre>
+<p>Get canvas rotation of the source</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">source.getCanvasRotate().then(function(deg) {
+  // The rest of your code here
+});
+</code></pre>
+
+  </section>
+
+
+  <section class="member">
+    <a name="setCanvasRotate"><h1 id="setCanvasRotate" class="name">
+      setCanvasRotate
+    </h1></a>
+    <pre><code>param: (value: number)
+</code></pre>
+<pre><code>return: Promise&lt;Source&gt;
+</code></pre>
+<p>Set canvas rotation of the source (possible values - 0, 90, 180, 270)</p>
+<p><em>Chainable.</em></p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">source.setCanvasRotate(90).then(function(source) {
+  // Promise resolves with same Source instance
+});
+</code></pre>
+
+  </section>
+
+
+  <section class="member">
+    <a name="getEnhancedRotate"><h1 id="getEnhancedRotate" class="name">
+      getEnhancedRotate
+    </h1></a>
+    <pre><code>return: Promise&lt;number&gt;
+</code></pre>
+<p>Get the z-rotation value as can be seen in the source properties window.
+This value takes into account rotateZ along with canvas rotation.</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">source.getEnhancedRotate().then(function(deg) {
+  // The rest of your code here
+});
+</code></pre>
+
+  </section>
+
+
+  <section class="member">
+    <a name="setEnhancedRotate"><h1 id="setEnhancedRotate" class="name">
+      setEnhancedRotate
+    </h1></a>
+    <pre><code>param: (value: number)
+</code></pre>
+<pre><code>return: Promise&lt;Source&gt;
+</code></pre>
+<p>Set Rotate Z value of the source, also taking into account canvas rotation.</p>
+<p><em>Chainable.</em></p>
+<p>This method automatically modifies/calculates
+the height and width of the source whenever you modify the z-rotation value,
+changing its orientation (vertical / horizontal) at certain angles.
+This behavior is what is exhibited in the source properties window.</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">source.setEnhancedRotate(30).then(function(source) {
+  // Promise resolves with same Source instance
+});
+</code></pre>
+
+  </section>
+
+
+  <section class="member">
+    <a name="setCroppingEnhanced"><h1 id="setCroppingEnhanced" class="name">
+      setCroppingEnhanced
+    </h1></a>
+    <pre><code>param: (value: Object)
+</code></pre>
+<p>Set source cropping while automatically calculating
+and modifying width and height to account for the cropped value.</p>
+<p>This accepts an object with properties left, top, right, and bottom
+whose values are between 0 - 1. This object is not a coordinate system.
+Top value indicates the portion of the source removed(cropped) from the top,
+left value indicates the portion of the source removed from the left,
+and so on.</p>
+<p><em>Chainable.</em></p>
+<p>This behaves the same as in the source properties window
+and is done to prevent source stretching.</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">var obj = {};
+obj.left = 0.1;
+obj.top = 0.2;
+obj.right = 0;
+obj.bottom = 0.1;
+source.setCroppingEnhanced(obj).then(function(source) {
+  // Promise resolves with same Source instance
+});
+</code></pre>
+
+  </section>
+
 <p class="module defined-in">exported from <a href='#/core'>core</a><br/>
-defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/core/source/ilayout.ts#L4-L263">../src/core/source/ilayout.ts (line 4)</a>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/core/source/ilayout.ts#L4-L431">../src/core/source/ilayout.ts (line 4)</a>
 </p>
 
