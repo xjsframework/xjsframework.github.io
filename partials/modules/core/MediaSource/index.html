@@ -12,6 +12,41 @@
  instance.</p>
 </p><h2>Members</h2>
   <section class="member">
+    <a name="getFileInfo"><h1 id="getFileInfo" class="name">
+      getFileInfo
+    </h1></a>
+    <pre><code>return: Promise&lt;object&gt;
+</code></pre>
+<p>Gets file information such as codecs, bitrate, resolution, etc.</p>
+<p>sample file info object format:</p>
+<p>{
+ &quot;audio&quot;: {
+   &quot;duration&quot;:&quot;1436734690&quot;,
+   &quot;samplerate&quot;:&quot;44100&quot;,
+   &quot;bitrate&quot;:&quot;128000&quot;,
+   &quot;codec&quot;:&quot;mp3&quot;},
+ &quot;video&quot;:{
+   &quot;frameduration&quot;:&quot;333670&quot;,
+   &quot;bitrate&quot;:&quot;1132227&quot;,
+   &quot;duration&quot;:&quot;1436436440&quot;,
+   &quot;height&quot;:&quot;240&quot;,
+   &quot;width&quot;:&quot;320&quot;,
+   &quot;codec&quot;:&quot;mpeg4&quot;}
+}</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">mediaSource.getFileInfo().then(function(value) {
+  // Do something with the value
+  var audioCodec;
+  if (typeof value[&#39;audio&#39;] !== &#39;undefined&#39; &amp;&amp; typeof value[&#39;audio&#39;][&#39;codec&#39;]) {
+    audioCodec = value[&#39;audio&#39;][&#39;codec&#39;];
+  }
+});
+</code></pre>
+
+  </section>
+
+
+  <section class="member">
     <a name="isKeepAspectRatio"><h1 id="isKeepAspectRatio" class="name">
       isKeepAspectRatio
     </h1></a>
@@ -255,6 +290,15 @@
 
 
   <section class="member">
+    <a name="isFullDynamicColorRange"><h1 id="isFullDynamicColorRange" class="name">
+      isFullDynamicColorRange
+    </h1></a>
+          <p>See: <a href='#core/IItemColor#isFullDynamicColorRange'>isFullDynamicColorRange</a></p>
+      
+  </section>
+
+
+  <section class="member">
     <a name="setTransparency"><h1 id="setTransparency" class="name">
       setTransparency
     </h1></a>
@@ -304,6 +348,15 @@
       setBorderColor
     </h1></a>
           <p>See: <a href='#core/IItemColor#setBorderColor'>setBorderColor</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="setFullDynamicColorRange"><h1 id="setFullDynamicColorRange" class="name">
+      setFullDynamicColorRange
+    </h1></a>
+          <p>See: <a href='#core/IItemColor#setFullDynamicColorRange'>setFullDynamicColorRange</a></p>
       
   </section>
 
@@ -893,6 +946,6 @@
   </section>
 
 <p class="module defined-in">exported from <a href='#/core'>core</a><br/>
-defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/core/source/media.ts#L19-L538">../src/core/source/media.ts (line 19)</a>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/core/source/media.ts#L20-L616">../src/core/source/media.ts (line 20)</a>
 </p>
 

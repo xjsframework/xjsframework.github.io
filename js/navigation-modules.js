@@ -70,6 +70,11 @@ angular.module('navigation-modules', [])
               "name": "getSceneId"
             },
             {
+              "path": "/core/Source#getView",
+              "partial": "partials/modules//core/Source/index.html",
+              "name": "getView"
+            },
+            {
               "path": "/core/Source#toXML",
               "partial": "partials/modules//core/Source/index.html",
               "name": "toXML"
@@ -554,6 +559,16 @@ angular.module('navigation-modules', [])
               "path": "/core/IItemColor#setBorderColor",
               "partial": "partials/modules//core/IItemColor/index.html",
               "name": "setBorderColor"
+            },
+            {
+              "path": "/core/IItemColor#isFullDynamicColorRange",
+              "partial": "partials/modules//core/IItemColor/index.html",
+              "name": "isFullDynamicColorRange"
+            },
+            {
+              "path": "/core/IItemColor#setFullDynamicColorRange",
+              "partial": "partials/modules//core/IItemColor/index.html",
+              "name": "setFullDynamicColorRange"
             }
           ]
         },
@@ -939,6 +954,11 @@ angular.module('navigation-modules', [])
               "name": "isSourceConfig"
             },
             {
+              "path": "/core/Environment#isSourceProps",
+              "partial": "partials/modules//core/Environment/index.html",
+              "name": "isSourceProps"
+            },
+            {
               "path": "/core/Environment#isExtension",
               "partial": "partials/modules//core/Environment/index.html",
               "name": "isExtension"
@@ -1138,6 +1158,11 @@ angular.module('navigation-modules', [])
               "path": "/core/Scene#getById",
               "partial": "partials/modules//core/Scene/index.html",
               "name": "getById"
+            },
+            {
+              "path": "/core/Scene#getByIdAsync",
+              "partial": "partials/modules//core/Scene/index.html",
+              "name": "getByIdAsync"
             },
             {
               "path": "/core/Scene#getByName",
@@ -1395,6 +1420,11 @@ angular.module('navigation-modules', [])
               "name": "isHardwareEncoder"
             },
             {
+              "path": "/core/CameraSource#isActive",
+              "partial": "partials/modules//core/CameraSource/index.html",
+              "name": "isActive"
+            },
+            {
               "path": "/core/CameraSource#getDelay",
               "partial": "partials/modules//core/CameraSource/index.html",
               "name": "getDelay"
@@ -1423,6 +1453,16 @@ angular.module('navigation-modules', [])
               "path": "/core/CameraSource#setAudioInput",
               "partial": "partials/modules//core/CameraSource/index.html",
               "name": "setAudioInput"
+            },
+            {
+              "path": "/core/CameraSource#isForceDeinterlace",
+              "partial": "partials/modules//core/CameraSource/index.html",
+              "name": "isForceDeinterlace"
+            },
+            {
+              "path": "/core/CameraSource#setForceDeinterlace",
+              "partial": "partials/modules//core/CameraSource/index.html",
+              "name": "setForceDeinterlace"
             },
             {
               "path": "/core/CameraSource#isKeepAspectRatio",
@@ -1560,6 +1600,11 @@ angular.module('navigation-modules', [])
               "name": "getBorderColor"
             },
             {
+              "path": "/core/CameraSource#isFullDynamicColorRange",
+              "partial": "partials/modules//core/CameraSource/index.html",
+              "name": "isFullDynamicColorRange"
+            },
+            {
               "path": "/core/CameraSource#setTransparency",
               "partial": "partials/modules//core/CameraSource/index.html",
               "name": "setTransparency"
@@ -1588,6 +1633,11 @@ angular.module('navigation-modules', [])
               "path": "/core/CameraSource#setBorderColor",
               "partial": "partials/modules//core/CameraSource/index.html",
               "name": "setBorderColor"
+            },
+            {
+              "path": "/core/CameraSource#setFullDynamicColorRange",
+              "partial": "partials/modules//core/CameraSource/index.html",
+              "name": "setFullDynamicColorRange"
             },
             {
               "path": "/core/CameraSource#setColorOptionsPinned",
@@ -1988,6 +2038,11 @@ angular.module('navigation-modules', [])
               "name": "getBorderColor"
             },
             {
+              "path": "/core/GameSource#isFullDynamicColorRange",
+              "partial": "partials/modules//core/GameSource/index.html",
+              "name": "isFullDynamicColorRange"
+            },
+            {
               "path": "/core/GameSource#setTransparency",
               "partial": "partials/modules//core/GameSource/index.html",
               "name": "setTransparency"
@@ -2016,6 +2071,11 @@ angular.module('navigation-modules', [])
               "path": "/core/GameSource#setBorderColor",
               "partial": "partials/modules//core/GameSource/index.html",
               "name": "setBorderColor"
+            },
+            {
+              "path": "/core/GameSource#setFullDynamicColorRange",
+              "partial": "partials/modules//core/GameSource/index.html",
+              "name": "setFullDynamicColorRange"
             },
             {
               "path": "/core/GameSource#isChromaEnabled",
@@ -2349,6 +2409,16 @@ angular.module('navigation-modules', [])
               "name": "setBrowserCustomSize"
             },
             {
+              "path": "/core/HtmlSource#getAllowRightClick",
+              "partial": "partials/modules//core/HtmlSource/index.html",
+              "name": "getAllowRightClick"
+            },
+            {
+              "path": "/core/HtmlSource#setAllowRightClick",
+              "partial": "partials/modules//core/HtmlSource/index.html",
+              "name": "setAllowRightClick"
+            },
+            {
               "path": "/core/HtmlSource#isKeepAspectRatio",
               "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "isKeepAspectRatio"
@@ -2484,6 +2554,11 @@ angular.module('navigation-modules', [])
               "name": "getBorderColor"
             },
             {
+              "path": "/core/HtmlSource#isFullDynamicColorRange",
+              "partial": "partials/modules//core/HtmlSource/index.html",
+              "name": "isFullDynamicColorRange"
+            },
+            {
               "path": "/core/HtmlSource#setTransparency",
               "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "setTransparency"
@@ -2512,6 +2587,11 @@ angular.module('navigation-modules', [])
               "path": "/core/HtmlSource#setBorderColor",
               "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "setBorderColor"
+            },
+            {
+              "path": "/core/HtmlSource#setFullDynamicColorRange",
+              "partial": "partials/modules//core/HtmlSource/index.html",
+              "name": "setFullDynamicColorRange"
             },
             {
               "path": "/core/HtmlSource#isChromaEnabled",
@@ -2757,6 +2837,16 @@ angular.module('navigation-modules', [])
               "name": "setCustomResolution"
             },
             {
+              "path": "/core/FlashSource#getAllowRightClick",
+              "partial": "partials/modules//core/FlashSource/index.html",
+              "name": "getAllowRightClick"
+            },
+            {
+              "path": "/core/FlashSource#setAllowRightClick",
+              "partial": "partials/modules//core/FlashSource/index.html",
+              "name": "setAllowRightClick"
+            },
+            {
               "path": "/core/FlashSource#isKeepAspectRatio",
               "partial": "partials/modules//core/FlashSource/index.html",
               "name": "isKeepAspectRatio"
@@ -2892,6 +2982,11 @@ angular.module('navigation-modules', [])
               "name": "getBorderColor"
             },
             {
+              "path": "/core/FlashSource#isFullDynamicColorRange",
+              "partial": "partials/modules//core/FlashSource/index.html",
+              "name": "isFullDynamicColorRange"
+            },
+            {
               "path": "/core/FlashSource#setTransparency",
               "partial": "partials/modules//core/FlashSource/index.html",
               "name": "setTransparency"
@@ -2920,6 +3015,11 @@ angular.module('navigation-modules', [])
               "path": "/core/FlashSource#setBorderColor",
               "partial": "partials/modules//core/FlashSource/index.html",
               "name": "setBorderColor"
+            },
+            {
+              "path": "/core/FlashSource#setFullDynamicColorRange",
+              "partial": "partials/modules//core/FlashSource/index.html",
+              "name": "setFullDynamicColorRange"
             },
             {
               "path": "/core/FlashSource#isChromaEnabled",
@@ -3300,6 +3400,11 @@ angular.module('navigation-modules', [])
               "name": "getBorderColor"
             },
             {
+              "path": "/core/ScreenSource#isFullDynamicColorRange",
+              "partial": "partials/modules//core/ScreenSource/index.html",
+              "name": "isFullDynamicColorRange"
+            },
+            {
               "path": "/core/ScreenSource#setTransparency",
               "partial": "partials/modules//core/ScreenSource/index.html",
               "name": "setTransparency"
@@ -3328,6 +3433,11 @@ angular.module('navigation-modules', [])
               "path": "/core/ScreenSource#setBorderColor",
               "partial": "partials/modules//core/ScreenSource/index.html",
               "name": "setBorderColor"
+            },
+            {
+              "path": "/core/ScreenSource#setFullDynamicColorRange",
+              "partial": "partials/modules//core/ScreenSource/index.html",
+              "name": "setFullDynamicColorRange"
             },
             {
               "path": "/core/ScreenSource#isChromaEnabled",
@@ -3643,6 +3753,11 @@ angular.module('navigation-modules', [])
               "name": "getBorderColor"
             },
             {
+              "path": "/core/ImageSource#isFullDynamicColorRange",
+              "partial": "partials/modules//core/ImageSource/index.html",
+              "name": "isFullDynamicColorRange"
+            },
+            {
               "path": "/core/ImageSource#setTransparency",
               "partial": "partials/modules//core/ImageSource/index.html",
               "name": "setTransparency"
@@ -3671,6 +3786,11 @@ angular.module('navigation-modules', [])
               "path": "/core/ImageSource#setBorderColor",
               "partial": "partials/modules//core/ImageSource/index.html",
               "name": "setBorderColor"
+            },
+            {
+              "path": "/core/ImageSource#setFullDynamicColorRange",
+              "partial": "partials/modules//core/ImageSource/index.html",
+              "name": "setFullDynamicColorRange"
             },
             {
               "path": "/core/ImageSource#isChromaEnabled",
@@ -3851,6 +3971,11 @@ angular.module('navigation-modules', [])
           "type": "Class",
           "pages": [
             {
+              "path": "/core/MediaSource#getFileInfo",
+              "partial": "partials/modules//core/MediaSource/index.html",
+              "name": "getFileInfo"
+            },
+            {
               "path": "/core/MediaSource#isKeepAspectRatio",
               "partial": "partials/modules//core/MediaSource/index.html",
               "name": "isKeepAspectRatio"
@@ -3986,6 +4111,11 @@ angular.module('navigation-modules', [])
               "name": "getBorderColor"
             },
             {
+              "path": "/core/MediaSource#isFullDynamicColorRange",
+              "partial": "partials/modules//core/MediaSource/index.html",
+              "name": "isFullDynamicColorRange"
+            },
+            {
               "path": "/core/MediaSource#setTransparency",
               "partial": "partials/modules//core/MediaSource/index.html",
               "name": "setTransparency"
@@ -4014,6 +4144,11 @@ angular.module('navigation-modules', [])
               "path": "/core/MediaSource#setBorderColor",
               "partial": "partials/modules//core/MediaSource/index.html",
               "name": "setBorderColor"
+            },
+            {
+              "path": "/core/MediaSource#setFullDynamicColorRange",
+              "partial": "partials/modules//core/MediaSource/index.html",
+              "name": "setFullDynamicColorRange"
             },
             {
               "path": "/core/MediaSource#isChromaEnabled",
@@ -4729,6 +4864,24 @@ angular.module('navigation-modules', [])
               "name": "addToScene"
             }
           ]
+        },
+        {
+          "path": "/system/VideoPlaylist",
+          "partial": "partials/modules//system/VideoPlaylist/index.html",
+          "name": "VideoPlaylist",
+          "type": "Class",
+          "pages": [
+            {
+              "path": "/system/VideoPlaylist#toXML",
+              "partial": "partials/modules//system/VideoPlaylist/index.html",
+              "name": "toXML"
+            },
+            {
+              "path": "/system/VideoPlaylist#addToScene",
+              "partial": "partials/modules//system/VideoPlaylist/index.html",
+              "name": "addToScene"
+            }
+          ]
         }
       ]
     },
@@ -4924,6 +5077,11 @@ angular.module('navigation-modules', [])
               "path": "/util/IO#openFileDialog",
               "partial": "partials/modules//util/IO/index.html",
               "name": "openFileDialog"
+            },
+            {
+              "path": "/util/IO#getVideoDuration",
+              "partial": "partials/modules//util/IO/index.html",
+              "name": "getVideoDuration"
             }
           ]
         },

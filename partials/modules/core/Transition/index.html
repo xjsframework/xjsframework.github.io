@@ -155,8 +155,8 @@ requires XBC v.2.7.1602.0502 and above</p>
 <h4 id="usage">Usage</h4>
 <pre><code class="lang-javascript">Transtition.getSceneTransitions().then(function(transitions) {
   for (var i = 0; i &lt; transitions.length; i++) {
-    transitions[i].toString(); // Returns the value of the transition
-    transitions[i].toTransitionKey(); // Returns the key of the transition
+    transitions.toString(); // Returns the value of the transition
+    transitions.toTransitionKey(); // Returns the key of the transition
   }
 })
 </code></pre>

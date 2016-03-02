@@ -1,0 +1,45 @@
+
+<h1 class="class export">VideoPlaylist <span class="type">class</span></h1>
+<p><p>Special class for adding a video playlist to the stage.</p>
+<h3 id="basic-usage">Basic Usage</h3>
+<pre><code class="lang-javascript">var XJS = require(&#39;xjs&#39;);
+var VideoPlaylist = XJS.VideoPlaylist;
+
+var vids = new VideoPlaylist([&#39;C:\\Users\\Public\\Music\\video1.mp4&#39;,
+      &#39;C:\\Users\\Public\\Music\\video2.mp4&#39;]).addToScene();
+</code></pre>
+</p><h2>Members</h2>
+  <section class="member constructor">
+    <h1 id="constructor" class="name">constructor</h1>
+     <pre><code>param: (files: string[])
+ </code></pre>
+ <p>Creates a VideoPlaylist object for several video files.</p>
+ 
+  </section>
+
+  <section class="member">
+    <a name="toXML"><h1 id="toXML" class="name">
+      toXML
+    </h1></a>
+    <pre><code>return: XML
+</code></pre>
+<p>Creates an XML object with the playlist properties. This method is used
+internally for the <code>addToScene</code> method.</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="addToScene"><h1 id="addToScene" class="name">
+      addToScene
+    </h1></a>
+     <pre><code>Adds the prepared video playlist to the current scene.
+ </code></pre>
+ <p>This function is not available to sources.</p>
+ 
+  </section>
+
+<p class="module defined-in">exported from <a href='#/system'>system</a><br/>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/system/videoplaylist.ts#L8-L109">../src/system/videoplaylist.ts (line 8)</a>
+</p>
+

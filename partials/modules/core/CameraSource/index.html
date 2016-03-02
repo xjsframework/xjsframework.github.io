@@ -76,6 +76,17 @@ if camera device is reinitializing or not present (value defaults to false)</p>
 
 
   <section class="member">
+    <a name="isActive"><h1 id="isActive" class="name">
+      isActive
+    </h1></a>
+    <pre><code>return: Promise&lt;boolean&gt;
+</code></pre>
+<p>Checks if camera device is active and present.</p>
+
+  </section>
+
+
+  <section class="member">
     <a name="getDelay"><h1 id="getDelay" class="name">
       getDelay
     </h1></a>
@@ -140,6 +151,29 @@ rejected if no microphone device is used</p>
     <pre><code>param: (value: number)
 </code></pre>
 <p>Sets the microphone device to be tied as an audio input</p>
+<p><em>Chainable.</em></p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="isForceDeinterlace"><h1 id="isForceDeinterlace" class="name">
+      isForceDeinterlace
+    </h1></a>
+    <pre><code>return: Promise&lt;boolean&gt;
+</code></pre>
+<p>Checks whether deinterlacing is enforced</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="setForceDeinterlace"><h1 id="setForceDeinterlace" class="name">
+      setForceDeinterlace
+    </h1></a>
+    <pre><code>param: (value: boolean)
+</code></pre>
+<p>Enables or disables forcing of deinterlacing</p>
 <p><em>Chainable.</em></p>
 
   </section>
@@ -389,6 +423,15 @@ rejected if no microphone device is used</p>
 
 
   <section class="member">
+    <a name="isFullDynamicColorRange"><h1 id="isFullDynamicColorRange" class="name">
+      isFullDynamicColorRange
+    </h1></a>
+          <p>See: <a href='#core/IItemColor#isFullDynamicColorRange'>isFullDynamicColorRange</a></p>
+      
+  </section>
+
+
+  <section class="member">
     <a name="setTransparency"><h1 id="setTransparency" class="name">
       setTransparency
     </h1></a>
@@ -438,6 +481,15 @@ rejected if no microphone device is used</p>
       setBorderColor
     </h1></a>
           <p>See: <a href='#core/IItemColor#setBorderColor'>setBorderColor</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="setFullDynamicColorRange"><h1 id="setFullDynamicColorRange" class="name">
+      setFullDynamicColorRange
+    </h1></a>
+          <p>See: <a href='#core/IItemColor#setFullDynamicColorRange'>setFullDynamicColorRange</a></p>
       
   </section>
 
@@ -861,6 +913,6 @@ this camera device on the stage.</p>
   </section>
 
 <p class="module defined-in">exported from <a href='#/core'>core</a><br/>
-defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/core/source/camera.ts#L18-L747">../src/core/source/camera.ts (line 18)</a>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/core/source/camera.ts#L18-L810">../src/core/source/camera.ts (line 18)</a>
 </p>
 

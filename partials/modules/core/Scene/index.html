@@ -106,8 +106,28 @@ will be on top (will cover sources below it).</p>
     <pre><code>return: Scene
 </code></pre>
 <p>Get a specific scene object given the scene number.</p>
+<p><strong> FOR DEPRECATION </strong>
+This method doesn&#39;t account for scenes greater than 12,
+which is needed to support for the scene in the XBC preview editor.</p>
 <h4 id="usage">Usage</h4>
 <pre><code class="lang-javascript">var scene1 = Scene.getById(1);
+</code></pre>
+
+  </section>
+
+
+  <section class="member static">
+    <a name="getByIdAsync"><h1 id="getByIdAsync" class="name">
+      <code>static</code> getByIdAsync
+    </h1></a>
+    <pre><code>return: Promise&lt;Scene&gt;
+</code></pre>
+<p>Get a specific scene object given the scene number.</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">var scene1;
+Scene.getByIdAsync(1).then(function(scene) {
+  scene1 = scene;  
+});
 </code></pre>
 
   </section>
@@ -121,8 +141,8 @@ will be on top (will cover sources below it).</p>
 </code></pre>
 <p>Asynchronous functon to get a list of scene objects with a specific name.</p>
 <h4 id="usage">Usage</h4>
-<pre><code class="lang-javascript">var scenes = Scene.getByName(&#39;Game&#39;).then(function(scenes) {
-   // manipulate scenes
+<pre><code class="lang-javascript">Scene.getByName(&#39;Game&#39;).then(function(scenes) {
+  // manipulate scenes
 });
 </code></pre>
 
@@ -135,9 +155,12 @@ will be on top (will cover sources below it).</p>
     </h1></a>
     <pre><code>return: Promise&lt;Scene&gt;
 </code></pre>
-<p>Get the currently active scene.</p>
+<p>Get the currently active scene. Does not work on source plugins.</p>
 <h4 id="usage">Usage</h4>
-<pre><code class="lang-javascript">var myScene = Scene.getActiveScene();
+<pre><code class="lang-javascript">var myScene;
+Scene.getActiveScene().then(function(scene) {
+  myScene = scene;
+});
 </code></pre>
 
   </section>
@@ -274,6 +297,6 @@ This function is only available to extensions.</p>
   </section>
 
 <p class="module defined-in">exported from <a href='#/core'>core</a><br/>
-defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/core/scene.ts#L16-L699">../src/core/scene.ts (line 16)</a>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/core/scene.ts#L16-L739">../src/core/scene.ts (line 16)</a>
 </p>
 

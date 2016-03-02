@@ -4,11 +4,12 @@
  processes. This class also exposes certain important events that the source
  plugin may emit.</p>
 <p>Inherits from: <a href='#util/EventEmitter'>Util/EventEmitter</a></p>
-<p> Currently there are only two events:</p>
+<p> Currently there are only four events:</p>
 <ul>
 <li><code>save-config</code>: signals the source that it should save the configuration object. Handler is a function f(config: JSON)</li>
 <li><code>apply-config</code>: signals the source that it should apply the changes that this configuration object describes. Handler is a function f(config: JSON)</li>
-<li><p><code>set-background-color</code>: only used when the native Color tab is reused and background color is set. Handler is a function f(colorHexNoNumberSign: string)</p>
+<li><code>set-background-color</code>: only used when the native Color tab is reused and background color is set. Handler is a function f(colorHexNoNumberSign: string)</li>
+<li><p><code>scene-load</code>: signals the source that the active scene is the scene where it is loaded. Only works on sources loaded in memory</p>
 <p>Use the <code>on(event: string, handler: Function)</code> function to listen to an event.</p>
 </li>
 </ul>
@@ -28,6 +29,6 @@
   </section>
 
 <p class="module defined-in">exported from <a href='#/window'>window</a><br/>
-defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/window/source.ts#L6-L71">../src/window/source.ts (line 6)</a>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/window/source.ts#L6-L72">../src/window/source.ts (line 6)</a>
 </p>
 

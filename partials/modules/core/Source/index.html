@@ -196,6 +196,8 @@ its type IF you set an invalid string for the current source.</p>
 <pre><code>return: Promise&lt;Source&gt;
 </code></pre>
 <p>Set Keep loaded option to ON or OFF</p>
+<p>Sources with Keep loaded set to ON would emit <code>scene-load</code> event each time
+the active scene switches to the source&#39;s current scene.</p>
 <p><em>Chainable.</em></p>
 <h4 id="usage">Usage</h4>
 <pre><code class="lang-javascript">source.setKeepLoaded(true).then(function(source) {
@@ -249,6 +251,25 @@ its type IF you set an invalid string for the current source.</p>
 <pre><code class="lang-javascript">source.getSceneId().then(function(id) {
   // The rest of your code here
 });
+</code></pre>
+
+  </section>
+
+
+  <section class="member">
+    <a name="getView"><h1 id="getView" class="name">
+      getView
+    </h1></a>
+    <pre><code>return: Promise&lt;ViewTypes&gt;
+</code></pre>
+<p>Get the view type of the source</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">source.getView().then(function(view) {
+  // view values:
+  // 0 = main view
+  // 1 = preview editor
+  // 2 = thumbnail preview
+})
 </code></pre>
 
   </section>
@@ -501,6 +522,6 @@ from the source properties window)</p>
   </section>
 
 <p class="module defined-in">exported from <a href='#/core'>core</a><br/>
-defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/core/source/source.ts#L22-L585">../src/core/source/source.ts (line 22)</a>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/core/source/source.ts#L29-L625">../src/core/source/source.ts (line 29)</a>
 </p>
 
