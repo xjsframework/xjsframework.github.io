@@ -14,7 +14,7 @@
   <li><strong>Unsigned DLLs</strong>: these DLLs do not have signed certificates and will never be loaded by the application even if <a href="api.html#/window/Dll#load" target="_blank"><code>Dll.load()</code></a> is called, unless Developer Mode is activated (Tools > General Settings > Advanced). Developer mode is disabled by default as it is not intended for production use.</li>
 </ol>
 
-<p>We are currently exposing a number of our internal DLLs for you to use. All functions may return a <code>string</code> value. Occasionally, DLL functions may invoke callbacks defined on the global object.</p>
+<p>We are currently exposing a number of our internal DLLs for you to use. All functions take <code>string</code> parameters and may return a <code>string</code> value. Occasionally, DLL functions may invoke callbacks defined on the global object.</p>
 
 <p><i>Important note:</i> This feature of XSplit Broadcaster might change in the future. We will be documenting any relevant changes that might happen on the framework and/or the core application.
 
@@ -98,7 +98,7 @@ xjs.ready().then(function() {
 
 <h2>Existing XSplit DLL documentation</h2>
 
-<p>We are currently exposing the following two DLLs for developers. Note that DLL call return types will always be <code>string</code>. If you find any bugs with the XSplit DLLs, please file an issue at the framework's <a href='https://github.com/xjsframework/xjs/issues/new' target='_new'>Github page.</a></p>
+<p>We are currently exposing the following two DLLs for developers. Note that all DLL call parameters and return types will always be <code>string</code>. If you find any bugs with the XSplit DLLs, please file an issue at the framework's <a href='https://github.com/xjsframework/xjs/issues/new' target='_new'>Github page.</a></p>
 
 <p><i>Important note:</i> For security purposes, only <code>Xjs.dll</code> is automatically loaded, and is considered as a safe DLL. This means that you use <a href="api.html#/window/Dll#call" target="_blank"><code>Dll.call()</code></a> to call its functions. In order to access the functionality of the unsafe <code>XjsEx.dll</code>, you will need to first load it using <a href="api.html#/window/Dll#load" target="_blank"><code>Dll.load()</code></a> as in the sample code above, and use <a href="api.html#/window/Dll#callEx" target="_blank"><code>Dll.callEx()</code></a> instead.</p>
 
