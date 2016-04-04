@@ -11,7 +11,9 @@
 </code></pre>
 <p>Returns a base-64 encoded string of the target file&#39;s contents.
 UTF-8 encoded files may be decoded through:</p>
-<pre><code class="lang-javascript">var decodedContent = decodeURIComponent(escape(window.atob(base64Content));
+<pre><code class="lang-javascript">IO.getFileContent(&#39;C:\\text.txt&#39;).then(function(base64Content) {
+  var actualContent = decodeURIComponent(escape(window.atob(base64Content));
+});
 </code></pre>
 
   </section>
@@ -28,7 +30,9 @@ UTF-8 encoded files may be decoded through:</p>
 <p>Returns a base-64 encoded string of the target endpoint&#39;s contents.
 Redirects are resolved, and this bypasses access-control-allow-origin.</p>
 <p>UTF-8 encoded content may be decoded through:</p>
-<pre><code class="lang-javascript">var decodedContent = decodeURIComponent(escape(window.atob(base64Content));
+<pre><code class="lang-javascript">IO.getWebContent(&#39;http://example.com&#39;).then(function(base64Content) {
+  var actualContent = decodeURIComponent(escape(window.atob(base64Content));
+});
 </code></pre>
 
   </section>
@@ -82,6 +86,6 @@ filter for items to be displayed. It takes two members:</p>
   </section>
 
 <p class="module defined-in">exported from <a href='#/util'>util</a><br/>
-defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/util/io.ts#L4-L149">../src/util/io.ts (line 4)</a>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/util/io.ts#L4-L153">../src/util/io.ts (line 4)</a>
 </p>
 

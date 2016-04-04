@@ -1,11 +1,31 @@
 
-<h1 class="class export">HTMLItem <span class="type">class</span></h1>
-<p><p>The HTMLItem class represents a web page source. This covers both source
+<h1 class="class export">HtmlItem <span class="type">class</span></h1>
+<p><p>The HtmlItem class represents a web page item. This covers both item
 plugins and non-plugin URLs.</p>
 <p>Inherits from: <a href='#core/Item'>Core/Item</a></p>
-<p> All methods marked as <em>Chainable</em> resolve with the original <code>HTMLItem</code>
+<p>Implements: <a href='#core/IItemChroma'>Core/IItemChroma</a>,
+<a href='#core/IItemColor'>Core/IItemColor</a>,
+<a href='#core/IItemLayout'>Core/IItemLayout</a>,
+<a href='#core/IItemTransition'>Core/IItemTransition</a>,
+<a href='#core/IItemAudio'>Core/IItemAudio</a>,
+<a href='#core/IItemConfigurable'>Core/IItemConfigurable</a></p>
+<h3 id="basic-usage">Basic Usage</h3>
+<pre><code class="lang-javascript">var XJS = require(&#39;xjs&#39;);
+
+XJS.Scene.getActiveScene().then(function(scene) {
+  scene.getItems().then(function(items) {
+    for (var i in items) {
+      if (items[i] instanceof XJS.HtmlItem) {
+        // Manipulate your HTML item here
+        items[i].enableBrowserTransparency(true);
+      }
+    }
+  });
+});
+</code></pre>
+<p> All methods marked as <em>Chainable</em> resolve with the original <code>HtmlItem</code>
 instance. Also, any audio setting, i.e. volume, mute, stream only
-may not be properly reflected in the source unless native browser audio support
+may not be properly reflected in the item unless native browser audio support
 is enabled. (Tools menu &gt; General Settings &gt; Advanced tab)</p>
 </p><h2>Members</h2>
   <section class="member">
@@ -14,7 +34,7 @@ is enabled. (Tools menu &gt; General Settings &gt; Advanced tab)</p>
     </h1></a>
     <pre><code>return: Promise&lt;string&gt;
 </code></pre>
-<p>Gets the URL of this webpage source.</p>
+<p>Gets the URL of this webpage item.</p>
 
   </section>
 
@@ -25,9 +45,9 @@ is enabled. (Tools menu &gt; General Settings &gt; Advanced tab)</p>
     </h1></a>
     <pre><code>param: (url: string)
 </code></pre>
-<pre><code>return: Promise&lt;HTMLItem&gt;
+<pre><code>return: Promise&lt;HtmlItem&gt;
 </code></pre>
-<p>Sets the URL of this webpage source.</p>
+<p>Sets the URL of this webpage item.</p>
 <p><em>Chainable.</em></p>
 
   </section>
@@ -39,7 +59,7 @@ is enabled. (Tools menu &gt; General Settings &gt; Advanced tab)</p>
     </h1></a>
     <pre><code>return: Promise&lt;string&gt;
 </code></pre>
-<p>Gets the javascript commands to be executed on source upon load</p>
+<p>Gets the javascript commands to be executed on item upon load</p>
 
   </section>
 
@@ -50,11 +70,11 @@ is enabled. (Tools menu &gt; General Settings &gt; Advanced tab)</p>
     </h1></a>
     <pre><code>param: (js: string, refresh: boolean = false)
 </code></pre>
-<pre><code>return: Promise&lt;HTMLItem&gt;
+<pre><code>return: Promise&lt;HtmlItem&gt;
 </code></pre>
-<p>Sets the javascript commands to be executed on source
+<p>Sets the javascript commands to be executed on item
 right upon setting and on load. Optionally set second parameter
-to true to refresh source (needed to clean previously executed JS code.)</p>
+to true to refresh item (needed to clean previously executed JS code.)</p>
 <p><em>Chainable.</em></p>
 
   </section>
@@ -77,10 +97,10 @@ to true to refresh source (needed to clean previously executed JS code.)</p>
     </h1></a>
     <pre><code>param: (value: boolean)
 </code></pre>
-<pre><code>return: Promise&lt;HTMLItem&gt;
+<pre><code>return: Promise&lt;HtmlItem&gt;
 </code></pre>
 <p>Enables or disables execution of the set BrowserJs upon load.
-Note that disabling this will require source to be refreshed
+Note that disabling this will require item to be refreshed
 in order to remove any BrowserJS previously executed.</p>
 <p><em>Chainable.</em></p>
 
@@ -104,7 +124,7 @@ in order to remove any BrowserJS previously executed.</p>
     </h1></a>
     <pre><code>param: (value: string)
 </code></pre>
-<pre><code>return: Promise&lt;HTMLItem&gt;
+<pre><code>return: Promise&lt;HtmlItem&gt;
 </code></pre>
 <p>Sets the custom CSS to be applied to the document upon loading</p>
 <p><em>Chainable.</em></p>
@@ -129,7 +149,7 @@ in order to remove any BrowserJS previously executed.</p>
     </h1></a>
     <pre><code>param: (value: boolean)
 </code></pre>
-<pre><code>return: Promise&lt;HTMLItem&gt;
+<pre><code>return: Promise&lt;HtmlItem&gt;
 </code></pre>
 <p>Enables or disables application of custom CSS to the document</p>
 <p><em>Chainable.</em></p>
@@ -154,7 +174,7 @@ in order to remove any BrowserJS previously executed.</p>
     </h1></a>
     <pre><code>param: Promise&lt;boolean&gt;
 </code></pre>
-<pre><code>return: Promise&lt;HTMLItem&gt;
+<pre><code>return: Promise&lt;HtmlItem&gt;
 </code></pre>
 <p>Enable or disabled transparency of CEF browser</p>
 <p><em>Chainable.</em></p>
@@ -168,7 +188,7 @@ in order to remove any BrowserJS previously executed.</p>
     </h1></a>
     <pre><code>return: Promise&lt;Rectangle&gt;
 </code></pre>
-<p>Gets the custom browser window size (in pixels) for the source, if set,
+<p>Gets the custom browser window size (in pixels) for the item, if set,
 regardless of its layout on the mixer. Returns a (0, 0) Rectangle if no
 custom size has been set.</p>
 <p>See also: <a href='#util/Rectangle'>Util/Rectangle</a></p>
@@ -182,9 +202,9 @@ custom size has been set.</p>
     </h1></a>
     <pre><code>param: Promise&lt;Rectangle&gt;
 </code></pre>
-<pre><code>return: Promise&lt;HTMLItem&gt;
+<pre><code>return: Promise&lt;HtmlItem&gt;
 </code></pre>
-<p>Sets the custom browser window size for the source
+<p>Sets the custom browser window size for the item
 regardless of its layout on the mixer</p>
 <p><em>Chainable.</em></p>
 <p>See also: <a href='#util/Rectangle'>Util/Rectangle</a></p>
@@ -193,13 +213,47 @@ regardless of its layout on the mixer</p>
 
 
   <section class="member">
-    <a name="isKeepAspectRatio"><h1 id="isKeepAspectRatio" class="name">
-      isKeepAspectRatio
+    <a name="getAllowRightClick"><h1 id="getAllowRightClick" class="name">
+      getAllowRightClick
     </h1></a>
     <pre><code>return: Promise&lt;boolean&gt;
 </code></pre>
-<p>Check if Aspect Ratio is set to ON or OFF</p>
+<p>Check if right click events are sent to the item or not.</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">item.getAllowRightClick().then(function(isRightClickAllowed) {
+  // The rest of your code here
+});
+</code></pre>
 
+  </section>
+
+
+  <section class="member">
+    <a name="setAllowRightClick"><h1 id="setAllowRightClick" class="name">
+      setAllowRightClick
+    </h1></a>
+    <pre><code>param: (value:boolean)
+</code></pre>
+<pre><code>return: Promise&lt;Item&gt;
+</code></pre>
+<p>Allow or disallow right click events to be sent to the item. Note that
+you can only catch right click events using <code>mouseup/mousedown</code></p>
+<p><em>Chainable</em></p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">item.setAllowRightClick(true).then(function(item) {
+  // Promise resolves with the same Item instance
+});
+</code></pre>
+
+  </section>
+
+
+  <section class="member">
+    <a name="isKeepAspectRatio"><h1 id="isKeepAspectRatio" class="name">
+      isKeepAspectRatio
+    </h1></a>
+          <p>See: <a href='#core/IItemLayout#isKeepAspectRatio'>isKeepAspectRatio</a></p>
+      
   </section>
 
 
@@ -207,10 +261,8 @@ regardless of its layout on the mixer</p>
     <a name="isPositionLocked"><h1 id="isPositionLocked" class="name">
       isPositionLocked
     </h1></a>
-    <pre><code>return: Promise&lt;boolean&gt;
-</code></pre>
-<p>Check if Position Locked is set to ON or OFF</p>
-
+          <p>See: <a href='#core/IItemLayout#isPositionLocked'>isPositionLocked</a></p>
+      
   </section>
 
 
@@ -218,10 +270,35 @@ regardless of its layout on the mixer</p>
     <a name="isEnhancedResizeEnabled"><h1 id="isEnhancedResizeEnabled" class="name">
       isEnhancedResizeEnabled
     </h1></a>
-    <pre><code>return: Promise&lt;boolean&gt;
-</code></pre>
-<p>Check if Enhance Resize is Enabled or Disabled</p>
+          <p>See: <a href='#core/IItemLayout#isEnhancedResizeEnabled'>isEnhancedResizeEnabled</a></p>
+      
+  </section>
 
+
+  <section class="member">
+    <a name="getCanvasRotate"><h1 id="getCanvasRotate" class="name">
+      getCanvasRotate
+    </h1></a>
+          <p>See: <a href='#core/IItemLayout#getCanvasRotate'>getCanvasRotate</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="getCropping"><h1 id="getCropping" class="name">
+      getCropping
+    </h1></a>
+          <p>See: <a href='#core/IItemLayout#getCropping'>getCropping</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="getEnhancedRotate"><h1 id="getEnhancedRotate" class="name">
+      getEnhancedRotate
+    </h1></a>
+          <p>See: <a href='#core/IItemLayout#getEnhancedRotate'>getEnhancedRotate</a></p>
+      
   </section>
 
 
@@ -229,11 +306,8 @@ regardless of its layout on the mixer</p>
     <a name="getPosition"><h1 id="getPosition" class="name">
       getPosition
     </h1></a>
-    <pre><code>return: Promise&lt;Rectangle&gt;
-</code></pre>
-<p>Get the position of the item</p>
-<p>See also: <a href='#util/Rectangle'>Util/Rectangle</a></p>
-
+          <p>See: <a href='#core/IItemLayout#getPosition'>getPosition</a></p>
+      
   </section>
 
 
@@ -241,10 +315,8 @@ regardless of its layout on the mixer</p>
     <a name="getRotateY"><h1 id="getRotateY" class="name">
       getRotateY
     </h1></a>
-    <pre><code>return: Promise&lt;number&gt;
-</code></pre>
-<p>Get Rotate Y value of the item</p>
-
+          <p>See: <a href='#core/IItemLayout#getRotateY'>getRotateY</a></p>
+      
   </section>
 
 
@@ -252,10 +324,8 @@ regardless of its layout on the mixer</p>
     <a name="getRotateX"><h1 id="getRotateX" class="name">
       getRotateX
     </h1></a>
-    <pre><code>return: Promise&lt;number&gt;
-</code></pre>
-<p>Get Rotate X value of the item</p>
-
+          <p>See: <a href='#core/IItemLayout#getRotateX'>getRotateX</a></p>
+      
   </section>
 
 
@@ -263,10 +333,44 @@ regardless of its layout on the mixer</p>
     <a name="getRotateZ"><h1 id="getRotateZ" class="name">
       getRotateZ
     </h1></a>
-    <pre><code>return: Promise&lt;number&gt;
-</code></pre>
-<p>Get Rotate Z value of the item</p>
+          <p>See: <a href='#core/IItemLayout#getRotateZ'>getRotateZ</a></p>
+      
+  </section>
 
+
+  <section class="member">
+    <a name="setCanvasRotate"><h1 id="setCanvasRotate" class="name">
+      setCanvasRotate
+    </h1></a>
+          <p>See: <a href='#core/IItemLayout#setCanvasRotate'>setCanvasRotate</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="setCropping"><h1 id="setCropping" class="name">
+      setCropping
+    </h1></a>
+          <p>See: <a href='#core/IItemLayout#setCropping'>setCropping</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="setCroppingEnhanced"><h1 id="setCroppingEnhanced" class="name">
+      setCroppingEnhanced
+    </h1></a>
+          <p>See: <a href='#core/IItemLayout#setCroppingEnhanced'>setCroppingEnhanced</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="setEnhancedRotate"><h1 id="setEnhancedRotate" class="name">
+      setEnhancedRotate
+    </h1></a>
+          <p>See: <a href='#core/IItemLayout#setEnhancedRotate'>setEnhancedRotate</a></p>
+      
   </section>
 
 
@@ -274,11 +378,8 @@ regardless of its layout on the mixer</p>
     <a name="setKeepAspectRatio"><h1 id="setKeepAspectRatio" class="name">
       setKeepAspectRatio
     </h1></a>
-    <pre><code>param: (value: boolean)
-</code></pre>
-<p>Set Aspect Ratio to ON or OFF</p>
-<p><em>Chainable.</em></p>
-
+          <p>See: <a href='#core/IItemLayout#setKeepAspectRatio'>setKeepAspectRatio</a></p>
+      
   </section>
 
 
@@ -286,11 +387,8 @@ regardless of its layout on the mixer</p>
     <a name="setPositionLocked"><h1 id="setPositionLocked" class="name">
       setPositionLocked
     </h1></a>
-    <pre><code>param: (value: boolean)
-</code></pre>
-<p>Set Position Lock to ON or OFF</p>
-<p><em>Chainable.</em></p>
-
+          <p>See: <a href='#core/IItemLayout#setPositionLocked'>setPositionLocked</a></p>
+      
   </section>
 
 
@@ -298,11 +396,8 @@ regardless of its layout on the mixer</p>
     <a name="setEnhancedResizeEnabled"><h1 id="setEnhancedResizeEnabled" class="name">
       setEnhancedResizeEnabled
     </h1></a>
-    <pre><code>param: (value: boolean)
-</code></pre>
-<p>Set Enhance Resize to ON or OFF</p>
-<p><em>Chainable.</em></p>
-
+          <p>See: <a href='#core/IItemLayout#setEnhancedResizeEnabled'>setEnhancedResizeEnabled</a></p>
+      
   </section>
 
 
@@ -310,18 +405,8 @@ regardless of its layout on the mixer</p>
     <a name="setPosition"><h1 id="setPosition" class="name">
       setPosition
     </h1></a>
-    <pre><code>param: (value: Rectangle)
-</code></pre>
-<p>Set Item Position. Relative coordinates (0-1) are required.</p>
-<p><em>Chainable.</em></p>
-<h4 id="usage">Usage</h4>
-<pre><code class="lang-javascript">var rect = xjs.Rectangle.fromCoordinates(0, 0, 1, 1);
-item.setPosition(rect).then(function(item) {
-  // Promise resolves with same Item instance
-});
-</code></pre>
-<p>See also: <a href='#util/Rectangle'>Util/Rectangle</a></p>
-
+          <p>See: <a href='#core/IItemLayout#setPosition'>setPosition</a></p>
+      
   </section>
 
 
@@ -329,11 +414,8 @@ item.setPosition(rect).then(function(item) {
     <a name="setRotateY"><h1 id="setRotateY" class="name">
       setRotateY
     </h1></a>
-    <pre><code>param: (value: number)
-</code></pre>
-<p>Set Rotate Y value of the item</p>
-<p><em>Chainable.</em></p>
-
+          <p>See: <a href='#core/IItemLayout#setRotateY'>setRotateY</a></p>
+      
   </section>
 
 
@@ -341,11 +423,8 @@ item.setPosition(rect).then(function(item) {
     <a name="setRotateX"><h1 id="setRotateX" class="name">
       setRotateX
     </h1></a>
-    <pre><code>param: (value: number)
-</code></pre>
-<p>Set Rotate X value of the item</p>
-<p><em>Chainable.</em></p>
-
+          <p>See: <a href='#core/IItemLayout#setRotateX'>setRotateX</a></p>
+      
   </section>
 
 
@@ -353,11 +432,8 @@ item.setPosition(rect).then(function(item) {
     <a name="setRotateZ"><h1 id="setRotateZ" class="name">
       setRotateZ
     </h1></a>
-    <pre><code>param: (value: number)
-</code></pre>
-<p>Set Rotate Z value of the item</p>
-<p><em>Chainable.</em></p>
-
+          <p>See: <a href='#core/IItemLayout#setRotateZ'>setRotateZ</a></p>
+      
   </section>
 
 
@@ -365,10 +441,8 @@ item.setPosition(rect).then(function(item) {
     <a name="getTransparency"><h1 id="getTransparency" class="name">
       getTransparency
     </h1></a>
-    <pre><code>return: Promise&lt;number&gt;
-</code></pre>
-<p>Get Item Transparency value</p>
-
+          <p>See: <a href='#core/IItemColor#getTransparency'>getTransparency</a></p>
+      
   </section>
 
 
@@ -376,10 +450,8 @@ item.setPosition(rect).then(function(item) {
     <a name="getBrightness"><h1 id="getBrightness" class="name">
       getBrightness
     </h1></a>
-    <pre><code>return: Promise&lt;number&gt;
-</code></pre>
-<p>Get Item Brightness value</p>
-
+          <p>See: <a href='#core/IItemColor#getBrightness'>getBrightness</a></p>
+      
   </section>
 
 
@@ -387,10 +459,8 @@ item.setPosition(rect).then(function(item) {
     <a name="getContrast"><h1 id="getContrast" class="name">
       getContrast
     </h1></a>
-    <pre><code>return: Promise&lt;number&gt;
-</code></pre>
-<p>Get Item Contrast value</p>
-
+          <p>See: <a href='#core/IItemColor#getContrast'>getContrast</a></p>
+      
   </section>
 
 
@@ -398,10 +468,8 @@ item.setPosition(rect).then(function(item) {
     <a name="getHue"><h1 id="getHue" class="name">
       getHue
     </h1></a>
-    <pre><code>return: Promise&lt;number&gt;
-</code></pre>
-<p>Get Item Hue value</p>
-
+          <p>See: <a href='#core/IItemColor#getHue'>getHue</a></p>
+      
   </section>
 
 
@@ -409,10 +477,8 @@ item.setPosition(rect).then(function(item) {
     <a name="getSaturation"><h1 id="getSaturation" class="name">
       getSaturation
     </h1></a>
-    <pre><code>return: Promise&lt;number&gt;
-</code></pre>
-<p>Get Item Saturation value</p>
-
+          <p>See: <a href='#core/IItemColor#getSaturation'>getSaturation</a></p>
+      
   </section>
 
 
@@ -420,10 +486,17 @@ item.setPosition(rect).then(function(item) {
     <a name="getBorderColor"><h1 id="getBorderColor" class="name">
       getBorderColor
     </h1></a>
-    <pre><code>return: Promise&lt;Color&gt;
-</code></pre>
-<p>Get Border Color</p>
+          <p>See: <a href='#core/IItemColor#getBorderColor'>getBorderColor</a></p>
+      
+  </section>
 
+
+  <section class="member">
+    <a name="isFullDynamicColorRange"><h1 id="isFullDynamicColorRange" class="name">
+      isFullDynamicColorRange
+    </h1></a>
+          <p>See: <a href='#core/IItemColor#isFullDynamicColorRange'>isFullDynamicColorRange</a></p>
+      
   </section>
 
 
@@ -431,11 +504,8 @@ item.setPosition(rect).then(function(item) {
     <a name="setTransparency"><h1 id="setTransparency" class="name">
       setTransparency
     </h1></a>
-    <pre><code>param: (value: number)
-</code></pre>
-<p>Set Item Transparency</p>
-<p><em>Chainable.</em></p>
-
+          <p>See: <a href='#core/IItemColor#setTransparency'>setTransparency</a></p>
+      
   </section>
 
 
@@ -443,11 +513,8 @@ item.setPosition(rect).then(function(item) {
     <a name="setBrightness"><h1 id="setBrightness" class="name">
       setBrightness
     </h1></a>
-    <pre><code>param: (value: number)
-</code></pre>
-<p>Set Item Brightness</p>
-<p><em>Chainable.</em></p>
-
+          <p>See: <a href='#core/IItemColor#setBrightness'>setBrightness</a></p>
+      
   </section>
 
 
@@ -455,11 +522,8 @@ item.setPosition(rect).then(function(item) {
     <a name="setContrast"><h1 id="setContrast" class="name">
       setContrast
     </h1></a>
-    <pre><code>param: (value: number)
-</code></pre>
-<p>Set Item Contrast</p>
-<p><em>Chainable.</em></p>
-
+          <p>See: <a href='#core/IItemColor#setContrast'>setContrast</a></p>
+      
   </section>
 
 
@@ -467,11 +531,8 @@ item.setPosition(rect).then(function(item) {
     <a name="setHue"><h1 id="setHue" class="name">
       setHue
     </h1></a>
-    <pre><code>param: (value: number)
-</code></pre>
-<p>Set Item Hue</p>
-<p><em>Chainable.</em></p>
-
+          <p>See: <a href='#core/IItemColor#setHue'>setHue</a></p>
+      
   </section>
 
 
@@ -479,11 +540,8 @@ item.setPosition(rect).then(function(item) {
     <a name="setSaturation"><h1 id="setSaturation" class="name">
       setSaturation
     </h1></a>
-    <pre><code>param: (value: number)
-</code></pre>
-<p>Set Item Saturation</p>
-<p><em>Chainable.</em></p>
-
+          <p>See: <a href='#core/IItemColor#setSaturation'>setSaturation</a></p>
+      
   </section>
 
 
@@ -491,11 +549,17 @@ item.setPosition(rect).then(function(item) {
     <a name="setBorderColor"><h1 id="setBorderColor" class="name">
       setBorderColor
     </h1></a>
-    <pre><code>param: (value: Color)
-</code></pre>
-<p>Set Border Color</p>
-<p><em>Chainable.</em></p>
+          <p>See: <a href='#core/IItemColor#setBorderColor'>setBorderColor</a></p>
+      
+  </section>
 
+
+  <section class="member">
+    <a name="setFullDynamicColorRange"><h1 id="setFullDynamicColorRange" class="name">
+      setFullDynamicColorRange
+    </h1></a>
+          <p>See: <a href='#core/IItemColor#setFullDynamicColorRange'>setFullDynamicColorRange</a></p>
+      
   </section>
 
 
@@ -503,7 +567,7 @@ item.setPosition(rect).then(function(item) {
     <a name="isChromaEnabled"><h1 id="isChromaEnabled" class="name">
       isChromaEnabled
     </h1></a>
-          <p>return: Promise<boolean></p>
+          <p>See: <a href='#core/IItemChroma#isChromaEnabled'>isChromaEnabled</a></p>
       
   </section>
 
@@ -512,10 +576,8 @@ item.setPosition(rect).then(function(item) {
     <a name="setChromaEnabled"><h1 id="setChromaEnabled" class="name">
       setChromaEnabled
     </h1></a>
-    <pre><code>param: (value: boolean)
-</code></pre>
-<p><em>Chainable.</em></p>
-
+          <p>See: <a href='#core/IItemChroma#setChromaEnabled'>setChromaEnabled</a></p>
+      
   </section>
 
 
@@ -523,7 +585,7 @@ item.setPosition(rect).then(function(item) {
     <a name="getKeyingType"><h1 id="getKeyingType" class="name">
       getKeyingType
     </h1></a>
-          <p>return: Promise<KeyingType></p>
+          <p>See: <a href='#core/IItemChroma#getKeyingType'>getKeyingType</a></p>
       
   </section>
 
@@ -532,10 +594,8 @@ item.setPosition(rect).then(function(item) {
     <a name="setKeyingType"><h1 id="setKeyingType" class="name">
       setKeyingType
     </h1></a>
-    <pre><code>param: (value: KeyingType)
-</code></pre>
-<p><em>Chainable.</em></p>
-
+          <p>See: <a href='#core/IItemChroma#setKeyingType'>setKeyingType</a></p>
+      
   </section>
 
 
@@ -543,7 +603,7 @@ item.setPosition(rect).then(function(item) {
     <a name="getChromaAntiAliasLevel"><h1 id="getChromaAntiAliasLevel" class="name">
       getChromaAntiAliasLevel
     </h1></a>
-          <p>return: Promise<ChromaAntiAliasLevel></p>
+          <p>See: <a href='#core/IItemChroma#getChromaAntiAliasLevel'>getChromaAntiAliasLevel</a></p>
       
   </section>
 
@@ -552,10 +612,8 @@ item.setPosition(rect).then(function(item) {
     <a name="setChromaAntiAliasLevel"><h1 id="setChromaAntiAliasLevel" class="name">
       setChromaAntiAliasLevel
     </h1></a>
-    <pre><code>param: (value: ChromaAntiAliasLevel)
-</code></pre>
-<p><em>Chainable.</em></p>
-
+          <p>See: <a href='#core/IItemChroma#setChromaAntiAliasLevel'>setChromaAntiAliasLevel</a></p>
+      
   </section>
 
 
@@ -563,7 +621,7 @@ item.setPosition(rect).then(function(item) {
     <a name="getChromaLegacyBrightness"><h1 id="getChromaLegacyBrightness" class="name">
       getChromaLegacyBrightness
     </h1></a>
-          <p>return: Promise<number></p>
+          <p>See: <a href='#core/IItemChroma#getChromaLegacyBrightness'>getChromaLegacyBrightness</a></p>
       
   </section>
 
@@ -572,10 +630,8 @@ item.setPosition(rect).then(function(item) {
     <a name="setChromaLegacyBrightness"><h1 id="setChromaLegacyBrightness" class="name">
       setChromaLegacyBrightness
     </h1></a>
-    <pre><code>param: (value: number)
-</code></pre>
-<p><em>Chainable.</em></p>
-
+          <p>See: <a href='#core/IItemChroma#setChromaLegacyBrightness'>setChromaLegacyBrightness</a></p>
+      
   </section>
 
 
@@ -583,7 +639,7 @@ item.setPosition(rect).then(function(item) {
     <a name="getChromaLegacySaturation"><h1 id="getChromaLegacySaturation" class="name">
       getChromaLegacySaturation
     </h1></a>
-          <p>return: Promise<number></p>
+          <p>See: <a href='#core/IItemChroma#getChromaLegacySaturation'>getChromaLegacySaturation</a></p>
       
   </section>
 
@@ -592,10 +648,8 @@ item.setPosition(rect).then(function(item) {
     <a name="setChromaLegacySaturation"><h1 id="setChromaLegacySaturation" class="name">
       setChromaLegacySaturation
     </h1></a>
-    <pre><code>param: (value: number)
-</code></pre>
-<p><em>Chainable.</em></p>
-
+          <p>See: <a href='#core/IItemChroma#setChromaLegacySaturation'>setChromaLegacySaturation</a></p>
+      
   </section>
 
 
@@ -603,7 +657,7 @@ item.setPosition(rect).then(function(item) {
     <a name="getChromaLegacyHue"><h1 id="getChromaLegacyHue" class="name">
       getChromaLegacyHue
     </h1></a>
-          <p>return: Promise<number></p>
+          <p>See: <a href='#core/IItemChroma#getChromaLegacyHue'>getChromaLegacyHue</a></p>
       
   </section>
 
@@ -612,10 +666,8 @@ item.setPosition(rect).then(function(item) {
     <a name="setChromaLegacyHue"><h1 id="setChromaLegacyHue" class="name">
       setChromaLegacyHue
     </h1></a>
-    <pre><code>param: (value: number)
-</code></pre>
-<p><em>Chainable.</em></p>
-
+          <p>See: <a href='#core/IItemChroma#setChromaLegacyHue'>setChromaLegacyHue</a></p>
+      
   </section>
 
 
@@ -623,7 +675,7 @@ item.setPosition(rect).then(function(item) {
     <a name="getChromaLegacyThreshold"><h1 id="getChromaLegacyThreshold" class="name">
       getChromaLegacyThreshold
     </h1></a>
-          <p>return: Promise<number></p>
+          <p>See: <a href='#core/IItemChroma#getChromaLegacyThreshold'>getChromaLegacyThreshold</a></p>
       
   </section>
 
@@ -632,10 +684,8 @@ item.setPosition(rect).then(function(item) {
     <a name="setChromaLegacyThreshold"><h1 id="setChromaLegacyThreshold" class="name">
       setChromaLegacyThreshold
     </h1></a>
-    <pre><code>param: (value: number)
-</code></pre>
-<p><em>Chainable.</em></p>
-
+          <p>See: <a href='#core/IItemChroma#setChromaLegacyThreshold'>setChromaLegacyThreshold</a></p>
+      
   </section>
 
 
@@ -643,7 +693,7 @@ item.setPosition(rect).then(function(item) {
     <a name="getChromaLegacyAlphaSmoothing"><h1 id="getChromaLegacyAlphaSmoothing" class="name">
       getChromaLegacyAlphaSmoothing
     </h1></a>
-          <p>return: Promise<number></p>
+          <p>See: <a href='#core/IItemChroma#getChromaLegacyAlphaSmoothing'>getChromaLegacyAlphaSmoothing</a></p>
       
   </section>
 
@@ -652,10 +702,8 @@ item.setPosition(rect).then(function(item) {
     <a name="setChromaLegacyAlphaSmoothing"><h1 id="setChromaLegacyAlphaSmoothing" class="name">
       setChromaLegacyAlphaSmoothing
     </h1></a>
-    <pre><code>param: (value: number)
-</code></pre>
-<p><em>Chainable.</em></p>
-
+          <p>See: <a href='#core/IItemChroma#setChromaLegacyAlphaSmoothing'>setChromaLegacyAlphaSmoothing</a></p>
+      
   </section>
 
 
@@ -663,7 +711,7 @@ item.setPosition(rect).then(function(item) {
     <a name="getChromaRGBKeyPrimaryColor"><h1 id="getChromaRGBKeyPrimaryColor" class="name">
       getChromaRGBKeyPrimaryColor
     </h1></a>
-          <p>return: Promise<ChromaPrimaryColors></p>
+          <p>See: <a href='#core/IItemChroma#getChromaRGBKeyPrimaryColor'>getChromaRGBKeyPrimaryColor</a></p>
       
   </section>
 
@@ -672,10 +720,8 @@ item.setPosition(rect).then(function(item) {
     <a name="setChromaRGBKeyPrimaryColor"><h1 id="setChromaRGBKeyPrimaryColor" class="name">
       setChromaRGBKeyPrimaryColor
     </h1></a>
-    <pre><code>param: (value: ChromaPrimaryColors)
-</code></pre>
-<p><em>Chainable.</em></p>
-
+          <p>See: <a href='#core/IItemChroma#setChromaRGBKeyPrimaryColor'>setChromaRGBKeyPrimaryColor</a></p>
+      
   </section>
 
 
@@ -683,7 +729,7 @@ item.setPosition(rect).then(function(item) {
     <a name="getChromaRGBKeyThreshold"><h1 id="getChromaRGBKeyThreshold" class="name">
       getChromaRGBKeyThreshold
     </h1></a>
-          <p>return: Promise<number></p>
+          <p>See: <a href='#core/IItemChroma#getChromaRGBKeyThreshold'>getChromaRGBKeyThreshold</a></p>
       
   </section>
 
@@ -692,10 +738,8 @@ item.setPosition(rect).then(function(item) {
     <a name="setChromaRGBKeyThreshold"><h1 id="setChromaRGBKeyThreshold" class="name">
       setChromaRGBKeyThreshold
     </h1></a>
-    <pre><code>param: (value: number)
-</code></pre>
-<p><em>Chainable.</em></p>
-
+          <p>See: <a href='#core/IItemChroma#setChromaRGBKeyThreshold'>setChromaRGBKeyThreshold</a></p>
+      
   </section>
 
 
@@ -703,7 +747,7 @@ item.setPosition(rect).then(function(item) {
     <a name="getChromaRGBKeyExposure"><h1 id="getChromaRGBKeyExposure" class="name">
       getChromaRGBKeyExposure
     </h1></a>
-          <p>return: Promise<number></p>
+          <p>See: <a href='#core/IItemChroma#getChromaRGBKeyExposure'>getChromaRGBKeyExposure</a></p>
       
   </section>
 
@@ -712,10 +756,8 @@ item.setPosition(rect).then(function(item) {
     <a name="setChromaRGBKeyExposure"><h1 id="setChromaRGBKeyExposure" class="name">
       setChromaRGBKeyExposure
     </h1></a>
-    <pre><code>param: (value: number)
-</code></pre>
-<p><em>Chainable.</em></p>
-
+          <p>See: <a href='#core/IItemChroma#setChromaRGBKeyExposure'>setChromaRGBKeyExposure</a></p>
+      
   </section>
 
 
@@ -723,7 +765,7 @@ item.setPosition(rect).then(function(item) {
     <a name="getChromaColorKeyThreshold"><h1 id="getChromaColorKeyThreshold" class="name">
       getChromaColorKeyThreshold
     </h1></a>
-          <p>return: Promise<number></p>
+          <p>See: <a href='#core/IItemChroma#getChromaColorKeyThreshold'>getChromaColorKeyThreshold</a></p>
       
   </section>
 
@@ -732,10 +774,8 @@ item.setPosition(rect).then(function(item) {
     <a name="setChromaColorKeyThreshold"><h1 id="setChromaColorKeyThreshold" class="name">
       setChromaColorKeyThreshold
     </h1></a>
-    <pre><code>param: (value: number)
-</code></pre>
-<p><em>Chainable.</em></p>
-
+          <p>See: <a href='#core/IItemChroma#setChromaColorKeyThreshold'>setChromaColorKeyThreshold</a></p>
+      
   </section>
 
 
@@ -743,7 +783,7 @@ item.setPosition(rect).then(function(item) {
     <a name="getChromaColorKeyExposure"><h1 id="getChromaColorKeyExposure" class="name">
       getChromaColorKeyExposure
     </h1></a>
-          <p>return: Promise<number></p>
+          <p>See: <a href='#core/IItemChroma#getChromaColorKeyExposure'>getChromaColorKeyExposure</a></p>
       
   </section>
 
@@ -752,10 +792,8 @@ item.setPosition(rect).then(function(item) {
     <a name="setChromaColorKeyExposure"><h1 id="setChromaColorKeyExposure" class="name">
       setChromaColorKeyExposure
     </h1></a>
-    <pre><code>param: (value: number)
-</code></pre>
-<p><em>Chainable.</em></p>
-
+          <p>See: <a href='#core/IItemChroma#setChromaColorKeyExposure'>setChromaColorKeyExposure</a></p>
+      
   </section>
 
 
@@ -763,7 +801,7 @@ item.setPosition(rect).then(function(item) {
     <a name="getChromaColorKeyColor"><h1 id="getChromaColorKeyColor" class="name">
       getChromaColorKeyColor
     </h1></a>
-          <p>return: Promise<Color></p>
+          <p>See: <a href='#core/IItemChroma#getChromaColorKeyColor'>getChromaColorKeyColor</a></p>
       
   </section>
 
@@ -772,10 +810,8 @@ item.setPosition(rect).then(function(item) {
     <a name="setChromaColorKeyColor"><h1 id="setChromaColorKeyColor" class="name">
       setChromaColorKeyColor
     </h1></a>
-    <pre><code>param: (value: Color)
-</code></pre>
-<p><em>Chainable.</em></p>
-
+          <p>See: <a href='#core/IItemChroma#setChromaColorKeyColor'>setChromaColorKeyColor</a></p>
+      
   </section>
 
 
@@ -783,10 +819,8 @@ item.setPosition(rect).then(function(item) {
     <a name="isVisible"><h1 id="isVisible" class="name">
       isVisible
     </h1></a>
-    <pre><code>return: Promise&lt;boolean&gt;
-</code></pre>
-<p>Check if item is visible on stage</p>
-
+          <p>See: <a href='#core/IItemTransition#isVisible'>isVisible</a></p>
+      
   </section>
 
 
@@ -794,11 +828,8 @@ item.setPosition(rect).then(function(item) {
     <a name="setVisible"><h1 id="setVisible" class="name">
       setVisible
     </h1></a>
-    <pre><code>param: (value: boolean)
-</code></pre>
-<p>Set item to visible or hidden</p>
-<p><em>Chainable.</em></p>
-
+          <p>See: <a href='#core/IItemTransition#setVisible'>setVisible</a></p>
+      
   </section>
 
 
@@ -806,10 +837,8 @@ item.setPosition(rect).then(function(item) {
     <a name="getTransition"><h1 id="getTransition" class="name">
       getTransition
     </h1></a>
-    <pre><code>return: Promise&lt;boolean&gt;
-</code></pre>
-<p>Get item&#39;s transition type for when visibility is toggled</p>
-
+          <p>See: <a href='#core/IItemTransition#getTransition'>getTransition</a></p>
+      
   </section>
 
 
@@ -817,11 +846,8 @@ item.setPosition(rect).then(function(item) {
     <a name="setTransition"><h1 id="setTransition" class="name">
       setTransition
     </h1></a>
-    <pre><code>param: (value: Transition)
-</code></pre>
-<p>Set item&#39;s transition type for when visibility is toggled</p>
-<p><em>Chainable.</em></p>
-
+          <p>See: <a href='#core/IItemTransition#setTransition'>setTransition</a></p>
+      
   </section>
 
 
@@ -829,10 +855,8 @@ item.setPosition(rect).then(function(item) {
     <a name="getTransitionTime"><h1 id="getTransitionTime" class="name">
       getTransitionTime
     </h1></a>
-    <pre><code>return: Promise&lt;number&gt;
-</code></pre>
-<p>Get item&#39;s transition time in milliseconds</p>
-
+          <p>See: <a href='#core/IItemTransition#getTransitionTime'>getTransitionTime</a></p>
+      
   </section>
 
 
@@ -840,11 +864,8 @@ item.setPosition(rect).then(function(item) {
     <a name="setTransitionTime"><h1 id="setTransitionTime" class="name">
       setTransitionTime
     </h1></a>
-    <pre><code>param: (value: number)
-</code></pre>
-<p>Set item&#39;s transition time in milliseconds</p>
-<p><em>Chainable.</em></p>
-
+          <p>See: <a href='#core/IItemTransition#setTransitionTime'>setTransitionTime</a></p>
+      
   </section>
 
 
@@ -852,10 +873,8 @@ item.setPosition(rect).then(function(item) {
     <a name="loadConfig"><h1 id="loadConfig" class="name">
       loadConfig
     </h1></a>
-    <pre><code>return: Promise&lt;any&gt;
-</code></pre>
-<p>Gets the configuration JSON</p>
-
+          <p>See: <a href='#core/IItemConfigurable#loadConfig'>loadConfig</a></p>
+      
   </section>
 
 
@@ -863,11 +882,8 @@ item.setPosition(rect).then(function(item) {
     <a name="saveConfig"><h1 id="saveConfig" class="name">
       saveConfig
     </h1></a>
-    <pre><code>param: config&lt;JSON&gt;
-</code></pre>
-<p>Persists a JSON object for configuration. Available to sources only.</p>
-<p><em>Chainable.</em></p>
-
+          <p>See: <a href='#core/IItemConfigurable#saveConfig'>saveConfig</a></p>
+      
   </section>
 
 
@@ -875,11 +891,8 @@ item.setPosition(rect).then(function(item) {
     <a name="requestSaveConfig"><h1 id="requestSaveConfig" class="name">
       requestSaveConfig
     </h1></a>
-    <pre><code>param: config&lt;JSON&gt;
-</code></pre>
-<p>Requests the source to save a configuration. This makes the source emit the save-config event.</p>
-<p><em>Chainable.</em></p>
-
+          <p>See: <a href='#core/IItemConfigurable#requestSaveConfig'>requestSaveConfig</a></p>
+      
   </section>
 
 
@@ -887,11 +900,8 @@ item.setPosition(rect).then(function(item) {
     <a name="applyConfig"><h1 id="applyConfig" class="name">
       applyConfig
     </h1></a>
-    <pre><code>param: config&lt;JSON&gt;
-</code></pre>
-<p>Requests the source to save a configuration. This makes the source emit the apply-config event.</p>
-<p><em>Chainable.</em></p>
-
+          <p>See: <a href='#core/IItemConfigurable#applyConfig'>applyConfig</a></p>
+      
   </section>
 
 
@@ -899,10 +909,8 @@ item.setPosition(rect).then(function(item) {
     <a name="getVolume"><h1 id="getVolume" class="name">
       getVolume
     </h1></a>
-    <pre><code>return: Promise&lt;number&gt;
-</code></pre>
-<p>Get item&#39;s volume level expressed as an integer from 0 to 100</p>
-
+          <p>See: <a href='#core/IItemAudio#getVolume'>getVolume</a></p>
+      
   </section>
 
 
@@ -910,10 +918,8 @@ item.setPosition(rect).then(function(item) {
     <a name="isMute"><h1 id="isMute" class="name">
       isMute
     </h1></a>
-    <pre><code>return: Promise&lt;boolean&gt;
-</code></pre>
-<p>Check if item&#39;s mute option is active</p>
-
+          <p>See: <a href='#core/IItemAudio#isMute'>isMute</a></p>
+      
   </section>
 
 
@@ -921,11 +927,8 @@ item.setPosition(rect).then(function(item) {
     <a name="setVolume"><h1 id="setVolume" class="name">
       setVolume
     </h1></a>
-    <pre><code>param: value&lt;number&gt;
-</code></pre>
-<p>Set volume level of item as an integer from 0 (muted) to 100 (maximum)</p>
-<p><em>Chainable.</em></p>
-
+          <p>See: <a href='#core/IItemAudio#setVolume'>setVolume</a></p>
+      
   </section>
 
 
@@ -933,11 +936,8 @@ item.setPosition(rect).then(function(item) {
     <a name="setMute"><h1 id="setMute" class="name">
       setMute
     </h1></a>
-    <pre><code>param: value&lt;boolean&gt;
-</code></pre>
-<p>Set item&#39;s Mute property to ON or OFF</p>
-<p><em>Chainable.</em></p>
-
+          <p>See: <a href='#core/IItemAudio#setMute'>setMute</a></p>
+      
   </section>
 
 
@@ -945,10 +945,8 @@ item.setPosition(rect).then(function(item) {
     <a name="isStreamOnlyAudio"><h1 id="isStreamOnlyAudio" class="name">
       isStreamOnlyAudio
     </h1></a>
-    <pre><code>return: Promise&lt;boolean&gt;
-</code></pre>
-<p>Checks if audio is also output to system sound</p>
-
+          <p>See: <a href='#core/IItemAudio#isStreamOnlyAudio'>isStreamOnlyAudio</a></p>
+      
   </section>
 
 
@@ -956,11 +954,8 @@ item.setPosition(rect).then(function(item) {
     <a name="setStreamOnlyAudio"><h1 id="setStreamOnlyAudio" class="name">
       setStreamOnlyAudio
     </h1></a>
-    <pre><code>param: value&lt;boolean&gt;
-</code></pre>
-<p>Sets whether audio should also be output to system sound</p>
-<p><em>Chainable.</em></p>
-
+          <p>See: <a href='#core/IItemAudio#setStreamOnlyAudio'>setStreamOnlyAudio</a></p>
+      
   </section>
 
 
@@ -968,13 +963,11 @@ item.setPosition(rect).then(function(item) {
     <a name="isAudioAvailable"><h1 id="isAudioAvailable" class="name">
       isAudioAvailable
     </h1></a>
-    <pre><code>return: Promise&lt;boolean&gt;
-</code></pre>
-<p>Checks if audio is available</p>
-
+          <p>See: <a href='#core/IItemAudio#isAudioAvailable'>isAudioAvailable</a></p>
+      
   </section>
 
 <p class="module defined-in">exported from <a href='#/core'>core</a><br/>
-defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/core/item/html.ts#L19-L1069">../src/core/item/html.ts (line 19)</a>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/core/items/html.ts#L19-L1030">../src/core/items/html.ts (line 19)</a>
 </p>
 

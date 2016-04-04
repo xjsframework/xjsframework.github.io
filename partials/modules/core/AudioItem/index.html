@@ -3,6 +3,21 @@
 <p><p>The AudioItem class represents an audio device that has been added
 to the stage.</p>
 <p>Inherits from: <a href='#core/Item'>Core/Item</a></p>
+<p>Implements: <a href='#core/IItemAudio'>Core/IItemAudio</a></p>
+<h3 id="basic-usage">Basic Usage</h3>
+<pre><code class="lang-javascript">var XJS = require(&#39;xjs&#39;);
+
+XJS.Scene.getActiveScene().then(function(scene) {
+  scene.getItems().then(function(items) {
+    for (var i in items) {
+      if (items[i] instanceof XJS.AudioItem) {
+        // Manipulate your audio device item here
+        items[i].setSilenceDetectionEnabled(true);
+      }
+    }
+  });
+});
+</code></pre>
 <p> All methods marked as <em>Chainable</em> resolve with the original <code>AudioItem</code>
  instance.</p>
 </p><h2>Members</h2>
@@ -104,10 +119,8 @@ Reaction time before filter removes noice/sound less than threshold</p>
     <a name="getVolume"><h1 id="getVolume" class="name">
       getVolume
     </h1></a>
-    <pre><code>return: Promise&lt;number&gt;
-</code></pre>
-<p>Get item&#39;s volume level expressed as an integer from 0 to 100</p>
-
+          <p>See: <a href='#core/IItemAudio#getVolume'>getVolume</a></p>
+      
   </section>
 
 
@@ -115,10 +128,8 @@ Reaction time before filter removes noice/sound less than threshold</p>
     <a name="isMute"><h1 id="isMute" class="name">
       isMute
     </h1></a>
-    <pre><code>return: Promise&lt;boolean&gt;
-</code></pre>
-<p>Check if item&#39;s mute option is active</p>
-
+          <p>See: <a href='#core/IItemAudio#isMute'>isMute</a></p>
+      
   </section>
 
 
@@ -126,11 +137,8 @@ Reaction time before filter removes noice/sound less than threshold</p>
     <a name="setVolume"><h1 id="setVolume" class="name">
       setVolume
     </h1></a>
-    <pre><code>param: (value: number)
-</code></pre>
-<p>Set volume level of item as an integer from 0 (muted) to 100 (maximum)</p>
-<p><em>Chainable.</em></p>
-
+          <p>See: <a href='#core/IItemAudio#setVolume'>setVolume</a></p>
+      
   </section>
 
 
@@ -138,11 +146,8 @@ Reaction time before filter removes noice/sound less than threshold</p>
     <a name="setMute"><h1 id="setMute" class="name">
       setMute
     </h1></a>
-    <pre><code>param: (value: boolean)
-</code></pre>
-<p>Set item&#39;s Mute property to ON or OFF</p>
-<p><em>Chainable.</em></p>
-
+          <p>See: <a href='#core/IItemAudio#setMute'>setMute</a></p>
+      
   </section>
 
 
@@ -150,10 +155,8 @@ Reaction time before filter removes noice/sound less than threshold</p>
     <a name="isStreamOnlyAudio"><h1 id="isStreamOnlyAudio" class="name">
       isStreamOnlyAudio
     </h1></a>
-    <pre><code>return: Promise&lt;boolean&gt;
-</code></pre>
-<p>Checks if audio is also output to system sound</p>
-
+          <p>See: <a href='#core/IItemAudio#isStreamOnlyAudio'>isStreamOnlyAudio</a></p>
+      
   </section>
 
 
@@ -161,11 +164,8 @@ Reaction time before filter removes noice/sound less than threshold</p>
     <a name="setStreamOnlyAudio"><h1 id="setStreamOnlyAudio" class="name">
       setStreamOnlyAudio
     </h1></a>
-    <pre><code>param: (value: boolean)
-</code></pre>
-<p>Sets whether audio should also be output to system sound</p>
-<p><em>Chainable.</em></p>
-
+          <p>See: <a href='#core/IItemAudio#setStreamOnlyAudio'>setStreamOnlyAudio</a></p>
+      
   </section>
 
 
@@ -173,13 +173,11 @@ Reaction time before filter removes noice/sound less than threshold</p>
     <a name="isAudioAvailable"><h1 id="isAudioAvailable" class="name">
       isAudioAvailable
     </h1></a>
-    <pre><code>return: Promise&lt;boolean&gt;
-</code></pre>
-<p>Checks if audio is available</p>
-
+          <p>See: <a href='#core/IItemAudio#isAudioAvailable'>isAudioAvailable</a></p>
+      
   </section>
 
 <p class="module defined-in">exported from <a href='#/core'>core</a><br/>
-defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/core/item/audio.ts#L8-L214">../src/core/item/audio.ts (line 8)</a>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/core/items/audio.ts#L8-L199">../src/core/items/audio.ts (line 8)</a>
 </p>
 

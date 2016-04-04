@@ -1,0 +1,314 @@
+
+<h1 class="class export">IItemEffect <span class="type">interface</span></h1>
+<p></p><h2>Members</h2>
+  <section class="member">
+    <a name="getMaskEffect"><h1 id="getMaskEffect" class="name">
+      getMaskEffect
+    </h1></a>
+    <pre><code>return: Promise&lt;MaskEffect&gt;
+</code></pre>
+<p>Determines the mask effect being used</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="setMaskEffect"><h1 id="setMaskEffect" class="name">
+      setMaskEffect
+    </h1></a>
+    <pre><code>param: (value: MaskEffect)
+</code></pre>
+<p>Sets the mask effect to any one of three possible choices: Shape/Edge effects, File masking (both bind to stage and bind to source), or None(mask effect disabled).</p>
+<p><em>Chainable.</em></p>
+<p>After setting the mask effect, you may tweak settings specific to that effect.</p>
+<ul>
+<li>None</li>
+<li>Shape: methods prefixed with <code>getBorderEffect-*</code>, <code>getShadowEffect-*</code>, <code>setBorderEffect-*</code>, or <code>setShadowEffect-*</code></li>
+<li>File: methods <code>getFileMask</code>, <code>setFileMask</code>, <code>showFileMaskingGuide</code> and <code>isFileMaskingGuideVisible</code></li>
+</ul>
+
+  </section>
+
+
+  <section class="member">
+    <a name="getBorderEffectRadius"><h1 id="getBorderEffectRadius" class="name">
+      getBorderEffectRadius
+    </h1></a>
+    <pre><code>return: Promise&lt;number&gt;
+</code></pre>
+<p>Gets the border effect radius (0 - 100), relative to the size of the source.
+Only relevant when mask effect is set to shape</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="setBorderEffectRadius"><h1 id="setBorderEffectRadius" class="name">
+      setBorderEffectRadius
+    </h1></a>
+    <pre><code>param: (value: number)
+</code></pre>
+<p>Sets the border effect radius (0 - 100), relative to the size of the source.
+Only relevant when mask effect is set to shape</p>
+<p><em>Chainable.</em></p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="getBorderEffectThickness"><h1 id="getBorderEffectThickness" class="name">
+      getBorderEffectThickness
+    </h1></a>
+    <pre><code>return: Promise&lt;number&gt;
+</code></pre>
+<p>Gets the border effect thickness (0 - 100), relative to the size of the source.
+Only relevant when mask effect is set to shape</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="setBorderEffectThickness"><h1 id="setBorderEffectThickness" class="name">
+      setBorderEffectThickness
+    </h1></a>
+    <pre><code>param: (value: number)
+</code></pre>
+<p>Sets the border effect thickness (0 - 100), relative to the size of the source.
+Only relevant when mask effect is set to shape</p>
+<p><em>Chainable.</em></p>
+<p>Note that since a source occupies its own &#39;window&#39; in the XBC stage,
+it is specifically made that the edge effects are still within the boundaries of the source,
+such that increasing border thickness adds the layer inwards instead of outwards.</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="getBorderEffectOpacity"><h1 id="getBorderEffectOpacity" class="name">
+      getBorderEffectOpacity
+    </h1></a>
+    <pre><code>return: Promise&lt;number&gt;
+</code></pre>
+<p>Gets the border effect opacity (0 - 100). Only relevant when mask effect is set to shape</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="setBorderEffectOpacity"><h1 id="setBorderEffectOpacity" class="name">
+      setBorderEffectOpacity
+    </h1></a>
+    <pre><code>param: (value: number)
+</code></pre>
+<p>Sets the border effect opacity (0 - 100). Only relevant when mask effect is set to shape</p>
+<p><em>Chainable.</em></p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="getBorderEffectColor"><h1 id="getBorderEffectColor" class="name">
+      getBorderEffectColor
+    </h1></a>
+    <pre><code>return: Promise&lt;Color&gt;
+</code></pre>
+<p>Gets the border effect color. Only relevant when mask effect is set to shape</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="setBorderEffectColor"><h1 id="setBorderEffectColor" class="name">
+      setBorderEffectColor
+    </h1></a>
+    <pre><code>param: (value: Color)
+</code></pre>
+<p>Sets the border effect color. Only relevant when mask effect is set to shape</p>
+<p><em>Chainable.</em></p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="getShadowEffectThickness"><h1 id="getShadowEffectThickness" class="name">
+      getShadowEffectThickness
+    </h1></a>
+    <pre><code>return: Promise&lt;number&gt;
+</code></pre>
+<p>Gets the shadow effect thickness (0 - 100), relative to the size of the source.
+Only relevant when mask effect is set to shape</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="setShadowEffectThickness"><h1 id="setShadowEffectThickness" class="name">
+      setShadowEffectThickness
+    </h1></a>
+    <pre><code>param: (value: number)
+</code></pre>
+<p>Sets the shadow effect thickness (0 - 100), relative to the size of the source.
+Only relevant when mask effect is set to shape</p>
+<p><em>Chainable.</em></p>
+<p>Note that since a source occupies its own &#39;window&#39; in the XBC stage,
+it is specifically made that the edge effects are still within the boundaries of the source,
+such that increasing thickness adds the layer inwards instead of outwards.</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="getShadowEffectBlur"><h1 id="getShadowEffectBlur" class="name">
+      getShadowEffectBlur
+    </h1></a>
+    <pre><code>return: Promise&lt;number&gt;
+</code></pre>
+<p>Gets the shadow effect blur (0 - 100). Only relevant when mask effect is set to shape</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="setShadowEffectBlur"><h1 id="setShadowEffectBlur" class="name">
+      setShadowEffectBlur
+    </h1></a>
+    <pre><code>param: (value: number)
+</code></pre>
+<p>Sets the shadow effect blur (0 - 100). Only relevant when mask effect is set to shape</p>
+<p><em>Chainable.</em></p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="getShadowEffectOpacity"><h1 id="getShadowEffectOpacity" class="name">
+      getShadowEffectOpacity
+    </h1></a>
+    <pre><code>return: Promise&lt;number&gt;
+</code></pre>
+<p>Gets the shadow effect opacity (0 - 100). Only relevant when mask effect is set to shape</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="setShadowEffectOpacity"><h1 id="setShadowEffectOpacity" class="name">
+      setShadowEffectOpacity
+    </h1></a>
+    <pre><code>param: (value: number)
+</code></pre>
+<p>Sets the shadow effect opacity (0 - 100). Only relevant when mask effect is set to shape</p>
+<p><em>Chainable.</em></p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="getShadowEffectOffsetX"><h1 id="getShadowEffectOffsetX" class="name">
+      getShadowEffectOffsetX
+    </h1></a>
+    <pre><code>return: Promise&lt;number&gt;
+</code></pre>
+<p>Gets the horizontal shadow effect offset (-100 to -100), relative to the size of the source.
+Only relevant when mask effect is set to shape</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="setShadowEffectOffsetX"><h1 id="setShadowEffectOffsetX" class="name">
+      setShadowEffectOffsetX
+    </h1></a>
+    <pre><code>param: (value: number)
+</code></pre>
+<p>Sets the horizontal shadow effect offset (-100 to 100), relative to the size of the source.
+Only relevant when mask effect is set to shape</p>
+<p><em>Chainable.</em></p>
+<p>A positive horizontal offset shifts the shadow to the right of the horizontal center at the background,
+which visually seems to decrease the left portion of the shadow.
+A negative horizontal offset in turn shifts the shadow to the left,
+visually decreasing the right portion of the shadow.</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="getShadowEffectOffsetY"><h1 id="getShadowEffectOffsetY" class="name">
+      getShadowEffectOffsetY
+    </h1></a>
+    <pre><code>return: Promise&lt;number&gt;
+</code></pre>
+<p>Gets the vertical shadow effect offset (-100 to 100), relative to the size of the source.
+Only relevant when mask effect is set to shape</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="setShadowEffectOffsetY"><h1 id="setShadowEffectOffsetY" class="name">
+      setShadowEffectOffsetY
+    </h1></a>
+    <pre><code>param: (value: number)
+</code></pre>
+<p>Sets the vertical shadow effect offset (-100 to 100), relative to the size of the source.
+Only relevant when mask effect is set to shape</p>
+<p><em>Chainable.</em></p>
+<p>A positive vertical offset shifts the shadow below the vertical center at the background,
+which visually seems to decrease the top portion of the shadow.
+A negative vertical offset in turn shifts the shadow above,
+visually decreasing the bottom portion of the shadow.</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="getFileMask"><h1 id="getFileMask" class="name">
+      getFileMask
+    </h1></a>
+    <pre><code>return: Promise&lt;string&gt;
+</code></pre>
+<p>Determines the image used to mask the source. Only relevant when mask effect is set to file</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="setFileMask"><h1 id="setFileMask" class="name">
+      setFileMask
+    </h1></a>
+    <pre><code>param: (value: string)
+</code></pre>
+<p>Sets the image to be used used to mask the source. Only relevant when mask effect is set to file</p>
+<p><em>Chainable.</em></p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="isFileMaskingGuideVisible"><h1 id="isFileMaskingGuideVisible" class="name">
+      isFileMaskingGuideVisible
+    </h1></a>
+    <pre><code>return: Promise&lt;boolean&gt;
+</code></pre>
+<p>Check whether the file masking guide is visible or not. Only relevant when mask effect is set to file</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="showFileMaskingGuide"><h1 id="showFileMaskingGuide" class="name">
+      showFileMaskingGuide
+    </h1></a>
+    <pre><code>param: (value: boolean)
+</code></pre>
+<p>shows or hides the file masking guide. Only relevant when mask effect is set to file</p>
+<p><em>Chainable.</em></p>
+<p>The file masking guide highlights the area of the source that is currently being masked.
+Please note that resetting mask effect also resets this to false</p>
+
+  </section>
+
+<p class="module defined-in">exported from <a href='#/core'>core</a><br/>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/core/source/ieffects.ts#L40-L276">../src/core/source/ieffects.ts (line 40)</a>
+</p>
+
