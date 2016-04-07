@@ -58,7 +58,7 @@ propsWindow.on('set-selected-tab', function(selected) {
 var Item = xjs.Item;
 
 xjs.ready()
-  .then(Item.getCurrentSource)
+  .then(Item.getItemList)
   .then(function(myItem) {
     return myItem.loadConfig();
   }).then(function(config) {
@@ -69,14 +69,14 @@ xjs.ready()
 </p>
 <pre class="language-javascript"><code>// somewhere in properties window
 mySaveButton.addEventListener('click', function() {
-  myItem.requestSaveConfig(configObj); // myItem from Source.getCurrentSource
+  myItem.requestSaveConfig(configObj); // myItem from Item.getItemlist
 });</code></pre>
 <pre class="language-javascript"><code>// in source
 var xjs = require('xjs');
-var sourceWindow = xjs.SourcePluginWindow.getInstance();
+var itemWindow = xjs.SourcePluginWindow.getInstance();
 
-sourceWindow.on('save-config', function(configObj) {
-  myItem.saveConfig(configObj); // myItem from Source.getCurrentSource
+itemWindow.on('save-config', function(configObj) {
+  myItem.saveConfig(configObj); // myItem from Item.getItemlist
 });</code></pre>
 <p>
   There may be some cases when the plugin may need to change some settings without the need for saving the configuration object, which is illustrated below:
