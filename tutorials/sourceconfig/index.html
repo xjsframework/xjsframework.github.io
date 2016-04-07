@@ -89,7 +89,7 @@ myPropertyChanger.addEventListener('click', function() {
 <pre class="language-javascript"><code>// somewhere in source
 var myDiv = document.getElementById('myDiv');
 
-sourceWindow.on('apply-config', function(configObj) {
+itemWindow.on('apply-config', function(configObj) {
   if (configObj.hasOwnProperty('text')) {
     myDiv.textContent = configObj.text;
   }
