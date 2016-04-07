@@ -9,24 +9,24 @@
 </p>
 <h3>Configuration objects</h3>
 <p>
-  Aside from the basic set of source properties (which include position and chroma keying, among many others), a custom configuration object may also be used for sources. Configuration objects are simple JSON objects that sources can save to memory.
+  Aside from the basic set of item properties (which include position and chroma keying, among many others), a custom configuration object may also be used for items. Configuration objects are simple JSON objects that items can save to memory.
 </p>
 <p>
-  There is no standard format for the configuration objects; developers may use any valid JSON. It is the responsibility of the source to load the saved object every time the source is loaded, and to apply the object's various settings onto the source's HTML. This is ideally done when the framework's ready event is fired.
+  There is no standard format for the configuration objects; developers may use any valid JSON. It is the responsibility of the item to load the saved object every time the item is loaded, and to apply the object's various settings onto the item's HTML. This is ideally done when the framework's ready event is fired.
 </p>
 <pre class="language-javascript"><code>var xjs = require('xjs');
-var Source = xjs.Source;
+var Item = xjs.Item;
 
 xjs.ready()
-  .then(Source.getCurrentSource)
-  .then(function(mySource) {
-    return mySource.loadConfig();
+  .then(Item.getCurrentSource)
+  .then(function(myItem) {
+    return myItem.loadConfig();
   }).then(function(config) {
-    // apply the loaded configuration object onto the source
+    // apply the loaded configuration object onto the item
   });</code></pre>
 <p>
-  To let the source save its own configuration, it simply needs to call saveConfig() on its <code>Source</code> instance.
+  To let items save its own configuration, it simply needs to call saveConfig() on its <code>Item</code> instance.
 </p>
-<h3>Source Plugin Window utility</h3>
+<h3>Item Plugin Window utility</h3>
 <p>
   There is a utility class for source plugins which is used in conjunction with the properties window. The <code>SourcePluginWindow</code> class is an Event Emitter. Currently, its only use to plugin developers is to save configuration objects as instructed by the properties window. See this <a href="tutorials.html#/sourceconfig#man-config-obj" target="_blank">section</a> for more details.
