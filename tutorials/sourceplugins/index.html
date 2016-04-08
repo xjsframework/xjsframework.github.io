@@ -33,7 +33,7 @@ xjs.ready()
   .then(function(mySource) {
     //Do something with your source here.
   });</code></pre>
-<h3>Initializing Items/Sources</h3>
+<h3>Initializing Source Plugins</h3>
 <p>As a source plugin developer, you must take into account the user-definable settings like size, position, position locking, keeping loaded in memory and etc. Setting these properties only once (on initial add) is ideal, to prevent it from overwriting user defined changes.</p>
 <p>This can be done by checking the configuration of the source on initialization. If the configuration is empty, this would mean that the source was just added into the scene. If not, then the source/item was already added to the stage and was just refreshed, the scene was reloaded or changed into, or XBC was just opened.</p>
 <pre class="language-javascript"><code>var xjs = require('xjs');
