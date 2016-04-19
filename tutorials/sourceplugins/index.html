@@ -1,37 +1,44 @@
 <h1>Developing Sources</h1>
+<h4>This section has changed significantly in the transition between xjs@1.3.0 and newer versions. Please check the paragraphs marked <em>Migration Notes</em> for more information.</h4>
 <h3>Basics</h3>
 <p>
-  To create your own source, all you need to do is to write an HTML file. Whatever you see on the screen will be visible on the stage during recording or streaming.
+  To create your own source plugin, all you need to do is to write an HTML file. This page will be visible on the stage during recording or streaming.
 </p>
 <h3>Usage</h3>
 <p>
   You can test your own source by dragging the HTML file onto the stage. Alternatively, if you are locally or remotely hosting the source, you may add the file by clicking Add > Other > Webpage URL on the bottom panel of XSplit Broadcaster.
 </p>
-<h3>Items and Sources</h3>
-<p>The main difference between the source and the item is that the source pertains to the base object while the item pertains to an object that inherits from the source.</p>
-<p>In XSplit Broadcaster, the items that you see in the stage is usually an Item. Under the hood, each item extends from a base object that we refer to as the source. Changing the property of a source will affect all Items that extends from that source, whereas each item can have its own unique property.</p>
-<p>The reason why we had to separate this two entities right now is due to the introduction of Global Sources, which is basically a feature of having multiple items sharing the same source. When one of the item updates a source level property, all its siblings will reflect those changes.</p>
-<h3>Items</h3>
+<h3>Video Items and Sources</h3>
+<p>An important concept in the underlying architecture of XSplit Broadcaster is the idea of sources and video items (the <code>Item</code> class in the framework.) The main difference between the two is that the source pertains to the base object that supplies the relevant stream of information to be displayed, while the item pertains to a renderer object that inherits some characteristics from the source.</p>
+<p>In XSplit Broadcaster, the objects that you see in the stage are Items. Under the hood, each item simply renders whatever data is fed from the source (such as a camera feed, or a live stream, or the content from a web page). Any property change at the source level will reflect in all video items linked to that source. However, there are certain properties that belong only to an individual item: for example, items linked to the same source can all have different positions and cropping settings in the stage.</p>
+<p><strong>Migration Notes:</strong> For developers using xjs@1.3.0 or older, you will notice that we previously used the <code>Source</code> subclasses to manipulate plugins. The reason why we had to separate the two entities right now is due to the introduction of Global Sources in XSplit Broadcaster 2.8, essentially allowing multiple items to share the same source even across scenes. xjs@1.4.0 contains a compatibility layer to allow your old code to continue working, but you should update the code as soon as possible to avoid problems.</p>
+<h3>Sample code for manipulating Items</h3>
 <pre class="language-javascript"><code>var xjs = require('xjs');
 
-//For version 2.8 up
+// For XBC version 2.8 and up
 var Item = xjs.Item;
 
 xjs.ready()
   .then(Item.getItemList)
-  .then(function(myItem) {
-    //Do something with your item here.
+  .then(function(myItems) {
+    // myItems is an array of all video items sharing the same source.
+    // If the source is not a global source, then myItems will only contain one item.
   });</code></pre>
-<p><code>getItemList</code> returns the first item of the array from the items on the scene.</p>
-<h3>Sources</h3>
-<pre class="language-javascript"><code>var xjs = require('xjs');
-//For version 2.7 and lower
+<p><code>getItemList</code> returns the list of items that are rendering the web page source from where this function was called.</p>
+<p><strong>Migration Notes:</strong> Developers using xjs@1.3.0 or older are familiar with getting the current <code>Source</code> object and manipulating its properties. However, we now strongly suggest using the <code>Item</code> to set properties instead. Any item-specific properties such as layout-oriented ones will be acquired only by that <code>Item</code> instance, but source-level property changes will actually be bubbled up from the video item to the source. For example, it is safe to call <code><a href="http://xjsframework.github.io/api.html#/core/IItemConfigurable#saveConfig">Item#saveConfig</a></code> to manipulate the webpage source's configuration object, and these changes will reflect in all items that are rendering that source. For more information on item-specific properties, please see the Renderer Properties section below.</p>
+<h3>Sample code for manipulating Sources</h3>
+<pre class="language-javascript"><code>// The Source class and related methods are now deprecated.
+// While this sample code still works with xjs@1.4.0 and XBC 2.8, we suggest you migrate to using Items as in the sample code above.
+var xjs = require('xjs');
+// For XBC version 2.7 and lower
 var Source = xjs.Source;
 
 xjs.ready()
   .then(Source.getCurrentSource)
   .then(function(mySource) {
-    //Do something with your source here.
+    // Do something with mySource here.
+    // Note that this code does not work perfectly with XBC 2.8 Global Sources.
+    // mySource actually refers to the first video item in the item list for this source.
   });</code></pre>
 <h3>Initializing Source Plugins</h3>
 <p>As a source plugin developer, you must take into account the user-definable settings like size, position, position locking, keeping loaded in memory and etc. Setting these properties only once (on initial add) is ideal, to prevent it from overwriting user defined changes.</p>
@@ -50,28 +57,32 @@ xjs.ready()
       //Set initial item rendering settings here
     }
   });</code></pre>
-  <p>This assumes that you are setting and saving predefiened configuations on your source plugins.</p>
+  <p>This assumes that you are setting and saving predefined configurations on your source plugins.</p>
 <h3>Configuration objects</h3>
 <p>
-  Aside from the basic set of item properties (which include position and chroma keying, among many others), a custom configuration object may also be used for items. Configuration objects are simple JSON objects that items can save to memory.
+  Aside from the set of item-level properties (see the Renderer Properties section below), a custom configuration object may also be applied to sources. Configuration objects are simple JSON objects that sources can save to memory. Configuration objects are primarily only meaningful to HTML sources and not others (such as image sources), but this includes plugins that you create!
 </p>
 <p>
-  There is no standard format for the configuration objects; developers may use any valid JSON. It is the responsibility of the item to load the saved object every time the item is loaded, and to apply the object's various settings onto the item's HTML. This is ideally done when the framework's ready event is fired.
+  There is no standard format for the configuration objects; developers may use any valid JSON. It is the responsibility of the source to load the saved object every time the source is loaded, and to apply the object's various settings onto the source's HTML. This is ideally done when the framework's ready event is fired.
 </p>
 <pre class="language-javascript"><code>var xjs = require('xjs');
 
-//For version 2.8 up
+// For XBC 2.8 and up, and xjs@1.4.0 or higher
 var Item = xjs.Item;
 
 xjs.ready()
   .then(Item.getItemList)
-  .then(function(myItem) {
-    return myItem.loadConfig();
+  .then(function(myItems) {
+    // We want to get any item in the list of items linked to this web source.
+    // The loadConfig() call bubbles up to the source because it is not a renderer-specific property.
+    return myItems[0].loadConfig();
   }).then(function(config) {
-    // apply the loaded configuration object onto the item
+    // apply the loaded configuration object onto the source
+    // configuration may include things specific to your plugin, such as font color
   });
 
-//For version 2.7 and lower
+// For XBC 2.7 and lower, and xjs@1.3.0 and older
+// Note that code below still works with XBC 2.8 and xjs@1.4.0 but migration is highly recommended
 var Source = xjs.Source;
 
 xjs.ready()
@@ -83,8 +94,8 @@ xjs.ready()
   });
   </code></pre>
 <p>
-  To let items save its own configuration, it simply needs to call saveConfig() on its <code>Item</code> instance.
+  To let the webpage source modify its own configuration, it simply needs to call <code>saveConfig()</code> on any <code>Item</code> instance rendering it.
 </p>
-<h3>Item Plugin Window utility</h3>
+<h3>Source Plugin Window utility</h3>
 <p>
   There is a utility class for source plugins which is used in conjunction with the properties window. The <code>SourcePluginWindow</code> class is an Event Emitter. Currently, its only use to plugin developers is to save configuration objects as instructed by the properties window. See this <a href="tutorials.html#/sourceconfig#man-config-obj" target="_blank">section</a> for more details.
