@@ -55,9 +55,15 @@ xjs.ready()
       //Load previous settings
     } else {
       //Set initial item rendering settings here
+      myItem.setName('NewNameHere')
+      .then(function(myItem) {
+      // Promise resolves with same Item instance when name has been set
+      })
     }
   });</code></pre>
-  <p>This assumes that you are setting and saving predefined configurations on your source plugins.</p>
+  <p>This assumes that you are setting and saving predefined configurations on your source plugins. Additionally, these initial rendering properties would only work reliable when the source is not made global yet.</p>
+
+  <p>It also good to know that the Configuration Object that is being called by <code>loadConfig</code> is a Source-level property, which means you are calling the underlying source of the Item.</p>
 
 <h3>Configuration objects</h3>
 <p>
