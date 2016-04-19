@@ -58,6 +58,7 @@ xjs.ready()
     }
   });</code></pre>
   <p>This assumes that you are setting and saving predefined configurations on your source plugins.</p>
+
 <h3>Configuration objects</h3>
 <p>
   Aside from the set of item-level properties (see the Renderer Properties section below), a custom configuration object may also be applied to sources. Configuration objects are simple JSON objects that sources can save to memory. Configuration objects are primarily only meaningful to HTML sources and not others (such as image sources), but this includes plugins that you create!
@@ -99,3 +100,78 @@ xjs.ready()
 <h3>Source Plugin Window utility</h3>
 <p>
   There is a utility class for source plugins which is used in conjunction with the properties window. The <code>SourcePluginWindow</code> class is an Event Emitter. Currently, its only use to plugin developers is to save configuration objects as instructed by the properties window. See this <a href="tutorials.html#/sourceconfig#man-config-obj" target="_blank">section</a> for more details.
+</p>
+
+
+<table>
+  <caption>Rendering Properties</caption>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Description</th>
+      <th>API Reference</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>name</td>
+      <td>Modify the name of your Item.</td>
+      <td><code><a href="http://xjsframework.github.io/api.html#/core/Source#setName">Source#setName<a></code></td>
+    </tr>
+    <tr>
+      <td>cname</td>
+      <td>Modify the custom name of the Item.</td>
+      <td><code><a href="http://xjsframework.github.io/api.html#/core/Source#setCustomName">Source#setCustomName</a></code></td>
+    </tr>
+    <tr>
+      <td>pos</td>
+      <td>Set Item Position. Relative coordinates (0-1) are required.</td>
+      <td><code><a href="http://xjsframework.github.io/api.html#/core/IItemLayout#setPosition">IItemLayout#setPosition</a></code></td>
+    </tr>
+    <tr>
+      <td>crop</td>
+      <td>Set Item cropping.</td>
+      <td><code><a href="http://xjsframework.github.io/api.html#/core/IItemLayout#setCropping">IItemLayout#setCropping</a></code></td>
+    </tr>
+    <tr>
+      <td>lockmove</td>
+      <td>Set Position Lock to ON or OFF</td>
+      <td><code><a href="http://xjsframework.github.io/api.html#/core/IItemLayout#isPositionLocked">IItemLayout#isPositionLocked</a></code></td>
+    </tr>
+    <tr>
+      <td>visible</td>
+      <td>Checks if Item is visible on stage.</td>
+      <td><code><a href="http://xjsframework.github.io/api.html#/core/IItemTransition#isVisible">IItemTransition#isVisible</a></code></td>
+    </tr>
+    <tr>
+      <td>alpha</td>
+      <td>Sets the alpha smoothing setting (0-255).</td>
+      <td><code><a href="http://xjsframework.github.io/api.html#/core/IItemChroma#getChromaLegacyAlphaSmoothing">IItemChroma#getChromaLegacyAlphaSmoothing</a></code></td>
+    </tr>
+    <tr>
+      <td>border</td>
+      <td>Set the border color of your Item</td>
+      <td><code><a href="http://xjsframework.github.io/api.html#/core/IItemColor#getBorderColor">IItemColor#getBorderColor</a></code></td>
+    </tr>
+    <tr>
+      <td>color correction/chroma key</td>
+      <td>You can set different chroma keying options </td>
+      <td><code><a href="http://xjsframework.github.io/api.html#/core/IItemChroma#isChromaEnabled">IItemChroma#isChromaEnabled</a></code></td>
+    </tr>
+    <tr>
+      <td>rotate</td>
+      <td>Ability to rotate your Items</td>
+      <td><code><a href="http://xjsframework.github.io/api.html#/core/IItemLayout#setPosition">IItemLayout#setPosition</a></code></td>
+    </tr>
+    <tr>
+      <td>transition</td>
+      <td>Set different transition options.</td>
+      <td><code><a href="http://xjsframework.github.io/api.html#/core/IItemTransition">IItemTransition</a></code></td>
+    </tr>
+    <tr>
+      <td>edgeeffect</td>
+      <td>Sets the mask effect to any one of three possible choices: Shape/Edge effects, File masking, or None.</td>
+      <td><code><a href="http://xjsframework.github.io/api.html#/core/IItemEffect">IItemEffect</a></code></td>
+    </tr>
+  </tbody>
+</table>
