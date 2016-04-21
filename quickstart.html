@@ -210,7 +210,7 @@ bower install xjs-framework</code></pre>
 
 xjs.ready().then(xjs.Item.getItemList) //Use Source.getCurrentSource for version 2.7
   .then(function(item){
-     return item.getSceneId();
+     return item[0].getSceneId();
   }).then(function(id){
     return xjs.Scene.getById(id)
   }).then(function(scene){
@@ -236,10 +236,10 @@ xjs.ready().then(xjs.Item.getItemList) //Use Source.getCurrentSource for version
         </p>
         <pre class="language-javascript"><code>xjs.ready().then(xjs.Item.getItemList)</code></pre>
         <p>
-          XSplit Broadcaster exposes a number of scenes to the user. <code>getItemList</code> will resolve with the current active item of the plugin, then <code>getSceneId</code> would return the Scene number of the source plugin.
+          XSplit Broadcaster exposes a number of scenes to the user. <code>getItemList</code> will resolve with the active items of the plugin, where we get the first, then <code>getSceneId</code> would return the Scene number of the source plugin.
         </p>
         <pre class="language-javascript"><code>.then(function(item){
-    return item.getSceneId();
+    return item[0].getSceneId();
 })
 </code></pre>
         <p>

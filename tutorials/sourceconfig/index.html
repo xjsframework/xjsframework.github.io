@@ -52,7 +52,7 @@ propsWindow.on('set-selected-tab', function(selected) {
   The source’s custom configuration object can be manipulated similarly to how the source itself does it (<a href="tutorials.html#/sourceplugins" target="_blank">see this article</a>), but there are some differences.
 </p>
 <p>
-  When the framework’s ready event fires, developers should opt to load the item’s configuration object in order to update the settings displayed on the properties window. This is done in exactly the same manner as the item does.
+  When the framework’s ready promise resolves, developers should opt to load the item’s configuration object in order to update the settings displayed on the properties window. This is done in exactly the same manner as the item does.
 </p>
 <pre class="language-javascript"><code>var xjs = require('xjs');
 var Item = xjs.Item;
