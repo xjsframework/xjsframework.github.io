@@ -13,4 +13,13 @@
 
 <p>Once this is done, simply open <code>localhost:<em>&lt;port&gt;</em></code> (the remote debugging discovery page) on your browser. You will see a list of links, each pertaining to a plugin/webpage URL source and labeled through their TITLE element, or if not present, their URL. Click the link pertaining to your plugin to begin debugging.</p>
 
-<p><strong>Important note</strong>: Debugging for the source properties window is not available at this time.</p>
+<h2>Debugging Your Source Properties Window</h2>
+<p>You can now also debug your source properties window. To do this, you would need to download the <code>xsplitprops.html</code> file <a href = "http://cdn2.xsplit.com/xjs/download/xsplitprops.html" target="_blank" download>here</a> and move it to the same folder where <code>XSplit.Core.exe</code> is located.</p>
+
+<p>After this, you would need to add the startup parameter: <code>enablehtmlprop:2</code>.</p>
+
+<img class="centered" src="assets/enablehtmlprop.png">
+
+<p>You will now then be able to see the <code>XBC Source Properties_debugger</code> item on the list of links together with your plugin/s. Click on this link and you can start debugging the source property window of plugin.</p>
+
+<p><strong>Note: </strong><i>The XBC Source Properties_debugger will allow you to debug the source properties of the source that was last opened. With that said, make sure that you open your plugin's source properties first before debugging.</i></p>
