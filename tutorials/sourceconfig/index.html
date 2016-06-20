@@ -1,6 +1,6 @@
 <h1>Developing Source Properties Windows</h1>
 <p>
-  The properties window is a very important tool to allow customization of your source plugin. This article details how to use the framework to layout the window, and to allow the window access to the source's custom configuration object. Developers begin by creating HTML for the properties window's graphical interface.
+  The properties window is a very important tool to allow customization of your source plugin. This article details how to use the framework to layout the window, and to allow the window access to the item's custom configuration object. Developers begin by creating HTML for the properties window's graphical interface.
 </p>
 <h3>Specifying the properties window</h3>
 <p>
@@ -29,7 +29,7 @@ xjs.ready()
     propsWindow.useFullWindow();
   });</code></pre>
 <p>
-  The following images illustrate the difference between the two modes as specified by the above code snippets. Right-clicking the source (yellow) opens the properties window. The blue area indicates where the developer's own HTML will be rendered.
+  The following images illustrate the difference between the two modes as specified by the above code snippets. Right-clicking the item (yellow) opens the properties window. The blue area indicates where the developer's own HTML will be rendered.
 </p>
 <img src="assets/tabbed-config.png">
 <img src="assets/full-config.png">
@@ -52,44 +52,44 @@ propsWindow.on('set-selected-tab', function(selected) {
   The source’s custom configuration object can be manipulated similarly to how the source itself does it (<a href="tutorials.html#/sourceplugins" target="_blank">see this article</a>), but there are some differences.
 </p>
 <p>
-  When the framework’s ready event fires, developers should opt to load the source’s configuration object in order to update the settings displayed on the properties window. This is done in exactly the same manner as the source does.
+  When the framework’s ready promise resolves, developers should opt to load the item’s configuration object in order to update the settings displayed on the properties window. This is done in exactly the same manner as the item does.
 </p>
 <pre class="language-javascript"><code>var xjs = require('xjs');
-var Source = xjs.Source;
+var Item = xjs.Item;
 
 xjs.ready()
-  .then(Source.getCurrentSource)
-  .then(function(mySource) {
-    return mySource.loadConfig();
+  .then(Item.getItemList)
+  .then(function(myItem) {
+    return myItem.loadConfig();
   }).then(function(config) {
-    // update the source properties window's UI based on the last saved configuration
+    // update the item properties window's UI based on the last saved configuration
   });</code></pre>
 <p>
-  The main difference is in saving the configuration: because of the underlying architecture of the application, the properties window is only allowed to signal the source to save the configuration. It is still the source’s responsibility to actually save the configuration. The following code snippet illustrates this. (Lines pertaining to the ready event have been removed but you should always do your processing when the framework is ready.)
+  The main difference is in saving the configuration: because of the underlying architecture of the application, the properties window is only allowed to signal the item to save the configuration. It is still the item’s responsibility to actually save the configuration. The following code snippet illustrates this. (Lines pertaining to the ready event have been removed but you should always do your processing when the framework is ready.)
 </p>
 <pre class="language-javascript"><code>// somewhere in properties window
 mySaveButton.addEventListener('click', function() {
-  mySource.requestSaveConfig(configObj); // mySource from Source.getCurrentSource
+  myItem.requestSaveConfig(configObj); // myItem from Item.getItemlist
 });</code></pre>
 <pre class="language-javascript"><code>// in source
 var xjs = require('xjs');
-var sourceWindow = xjs.SourcePluginWindow.getInstance();
+var itemWindow = xjs.SourcePluginWindow.getInstance();
 
-sourceWindow.on('save-config', function(configObj) {
-  mySource.saveConfig(configObj); // mySource from Source.getCurrentSource
+itemWindow.on('save-config', function(configObj) {
+  myItem.saveConfig(configObj); // myItem from Item.getItemlist
 });</code></pre>
 <p>
   There may be some cases when the plugin may need to change some settings without the need for saving the configuration object, which is illustrated below:
 </p>
 <pre class="language-javascript"><code>// somewhere in properties window
 myPropertyChanger.addEventListener('click', function() {
-  mySource.applyConfig(configObj); // does not ask to save
+  myItem.applyConfig(configObj); // does not ask to save
 });</code></pre>
 
 <pre class="language-javascript"><code>// somewhere in source
 var myDiv = document.getElementById('myDiv');
 
-sourceWindow.on('apply-config', function(configObj) {
+itemWindow.on('apply-config', function(configObj) {
   if (configObj.hasOwnProperty('text')) {
     myDiv.textContent = configObj.text;
   }
