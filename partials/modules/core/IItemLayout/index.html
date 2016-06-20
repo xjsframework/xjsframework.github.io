@@ -9,7 +9,7 @@
 </code></pre>
 <p>Check if Aspect Ratio is set to ON or OFF</p>
 <h4 id="usage">Usage</h4>
-<pre><code class="lang-javascript">source.isKeepAspectRatio().then(function(bool) {
+<pre><code class="lang-javascript">item.isKeepAspectRatio().then(function(bool) {
   // The rest of your code here
 });
 </code></pre>
@@ -23,13 +23,13 @@
     </h1></a>
     <pre><code>param: (value: boolean)
 </code></pre>
-<pre><code>return: Promise&lt;Source&gt;
+<pre><code>return: Promise&lt;Item&gt;
 </code></pre>
 <p>Set Aspect Ratio to ON or OFF</p>
 <p><em>Chainable.</em></p>
 <h4 id="usage">Usage</h4>
-<pre><code class="lang-javascript">source.setKeepAspectRatio(true).then(function(source) {
-  // Promise resolves with same Source instance
+<pre><code class="lang-javascript">item.setKeepAspectRatio(true).then(function(item) {
+  // Promise resolves with same Item instance
 });
 </code></pre>
 
@@ -44,7 +44,7 @@
 </code></pre>
 <p>Check if Position Locked is set to ON or OFF</p>
 <h4 id="usage">Usage</h4>
-<pre><code class="lang-javascript">source.isPositionLocked().then(function(bool) {
+<pre><code class="lang-javascript">item.isPositionLocked().then(function(bool) {
   // The rest of your code here
 });
 </code></pre>
@@ -58,13 +58,13 @@
     </h1></a>
     <pre><code>param: (value: boolean)
 </code></pre>
-<pre><code>return: Promise&lt;Source&gt;
+<pre><code>return: Promise&lt;Item&gt;
 </code></pre>
 <p>Set Position Lock to ON or OFF</p>
 <p><em>Chainable.</em></p>
 <h4 id="usage">Usage</h4>
-<pre><code class="lang-javascript">source.setPositionLocked(true).then(function(source) {
-  // Promise resolves with same Source instance
+<pre><code class="lang-javascript">item.setPositionLocked(true).then(function(item) {
+  // Promise resolves with same Item instance
 });
 </code></pre>
 
@@ -79,7 +79,7 @@
 </code></pre>
 <p>Check if Enhance Resize is Enabled or Disabled</p>
 <h4 id="usage">Usage</h4>
-<pre><code class="lang-javascript">source.isEnhancedResizeEnabled().then(function(bool) {
+<pre><code class="lang-javascript">item.isEnhancedResizeEnabled().then(function(bool) {
   // The rest of your code here
 });
 </code></pre>
@@ -93,13 +93,13 @@
     </h1></a>
     <pre><code>param: (value: boolean)
 </code></pre>
-<pre><code>return: Promise&lt;Source&gt;
+<pre><code>return: Promise&lt;Item&gt;
 </code></pre>
 <p>Set Enhance Resize to ON or OFF</p>
 <p><em>Chainable.</em></p>
 <h4 id="usage">Usage</h4>
-<pre><code class="lang-javascript">source.setEnhancedResizeEnabled(true).then(function(source) {
-  // Promise resolves with same Source instance
+<pre><code class="lang-javascript">item.setEnhancedResizeEnabled(true).then(function(item) {
+  // Promise resolves with same Item instance
 });
 </code></pre>
 
@@ -112,10 +112,10 @@
     </h1></a>
     <pre><code>return: Promise&lt;Rectangle&gt;
 </code></pre>
-<p>Get the position of the source</p>
+<p>Get the position of the item</p>
 <p>See also: <a href='#util/Rectangle'>Util/Rectangle</a></p>
 <h4 id="usage">Usage</h4>
-<pre><code class="lang-javascript">source.getPosition().then(function(pos) {
+<pre><code class="lang-javascript">item.getPosition().then(function(pos) {
   // The rest of your code here
 });
 </code></pre>
@@ -129,12 +129,12 @@
     </h1></a>
     <pre><code>param: (value: Rectangle)
 </code></pre>
-<p>Set Source Position. Relative coordinates (0-1) are required.</p>
+<p>Set Item Position. Relative coordinates (0-1) are required.</p>
 <p><em>Chainable.</em></p>
 <h4 id="usage">Usage</h4>
 <pre><code class="lang-javascript">var rect = xjs.Rectangle.fromCoordinates(0, 0, 1, 1);
-source.setPosition(rect).then(function(source) {
-  // Promise resolves with same Source instance
+item.setPosition(rect).then(function(item) {
+  // Promise resolves with same Item instance
 });
 </code></pre>
 <p>See also: <a href='#util/Rectangle'>Util/Rectangle</a></p>
@@ -148,9 +148,9 @@ source.setPosition(rect).then(function(source) {
     </h1></a>
     <pre><code>return: Promise&lt;number&gt;
 </code></pre>
-<p>Get Rotate Y value of the source</p>
+<p>Get Rotate Y value of the item</p>
 <h4 id="usage">Usage</h4>
-<pre><code class="lang-javascript">source.getRotateY().then(function(deg) {
+<pre><code class="lang-javascript">item.getRotateY().then(function(deg) {
   // The rest of your code here
 });
 </code></pre>
@@ -164,13 +164,13 @@ source.setPosition(rect).then(function(source) {
     </h1></a>
     <pre><code>param: (value: number)
 </code></pre>
-<pre><code>return: Promise&lt;Source&gt;
+<pre><code>return: Promise&lt;Item&gt;
 </code></pre>
-<p>Set Rotate Y value of the source</p>
+<p>Set Rotate Y value of the item</p>
 <p><em>Chainable.</em></p>
 <h4 id="usage">Usage</h4>
-<pre><code class="lang-javascript">source.setRotateY(30).then(function(source) {
-  // Promise resolves with same Source instance
+<pre><code class="lang-javascript">item.setRotateY(30).then(function(item) {
+  // Promise resolves with same Item instance
 });
 </code></pre>
 
@@ -183,9 +183,9 @@ source.setPosition(rect).then(function(source) {
     </h1></a>
     <pre><code>return: Promise&lt;number&gt;
 </code></pre>
-<p>Get Rotate X value of the source</p>
+<p>Get Rotate X value of the item</p>
 <h4 id="usage">Usage</h4>
-<pre><code class="lang-javascript">source.getRotateX().then(function(deg) {
+<pre><code class="lang-javascript">item.getRotateX().then(function(deg) {
   // The rest of your code here
 });
 </code></pre>
@@ -199,13 +199,13 @@ source.setPosition(rect).then(function(source) {
     </h1></a>
     <pre><code>param: (value: number)
 </code></pre>
-<pre><code>return: Promise&lt;Source&gt;
+<pre><code>return: Promise&lt;Item&gt;
 </code></pre>
-<p>Set Rotate X value of the source</p>
+<p>Set Rotate X value of the item</p>
 <p><em>Chainable.</em></p>
 <h4 id="usage">Usage</h4>
-<pre><code class="lang-javascript">source.setRotateX(30).then(function(source) {
-  // Promise resolves with same Source instance
+<pre><code class="lang-javascript">item.setRotateX(30).then(function(item) {
+  // Promise resolves with same Item instance
 });
 </code></pre>
 
@@ -218,9 +218,9 @@ source.setPosition(rect).then(function(source) {
     </h1></a>
     <pre><code>return: Promise&lt;number&gt;
 </code></pre>
-<p>Get Rotate Z value of the source.</p>
+<p>Get Rotate Z value of the item.</p>
 <h4 id="usage">Usage</h4>
-<pre><code class="lang-javascript">source.getRotateX().then(function(deg) {
+<pre><code class="lang-javascript">item.getRotateX().then(function(deg) {
   // The rest of your code here
 });
 </code></pre>
@@ -234,19 +234,19 @@ source.setPosition(rect).then(function(source) {
     </h1></a>
     <pre><code>param: (value: number)
 </code></pre>
-<pre><code>return: Promise&lt;Source&gt;
+<pre><code>return: Promise&lt;Item&gt;
 </code></pre>
-<p>Set Rotate Z value of the source.</p>
+<p>Set Rotate Z value of the item.</p>
 <p><em>Chainable.</em></p>
 <p>Please do note that this method will NOT automatically modify/calculate
-the height and width of the source whenever you modify the rotate Z value,
+the height and width of the item whenever you modify the rotate Z value,
 unlike the behavior of XBC when modifying it through the properties window.</p>
-<p>You will need to manually modify the height and width of the source each time
+<p>You will need to manually modify the height and width of the item each time
 you modify this value to get the best results. If not, it might result to
-the stretching and/or shrinking of the source.</p>
+the stretching and/or shrinking of the item.</p>
 <h4 id="usage">Usage</h4>
-<pre><code class="lang-javascript">source.setRotateZ(30).then(function(source) {
-  // Promise resolves with same Source instance
+<pre><code class="lang-javascript">item.setRotateZ(30).then(function(item) {
+  // Promise resolves with same Item instance
 });
 </code></pre>
 
@@ -259,14 +259,14 @@ the stretching and/or shrinking of the source.</p>
     </h1></a>
     <pre><code>return: Promise&lt;Object&gt;
 </code></pre>
-<p>Get the cropping of the source</p>
+<p>Get the cropping of the item</p>
 <p>This returns an object with properties of left, top, right, and bottom
 whose values are between 0 - 1. This object is not a coordinate system.
-Top value indicates the portion of the source removed(cropped) from the top,
-left value indicates the portion of the source removed from the left,
+Top value indicates the portion of the item removed(cropped) from the top,
+left value indicates the portion of the item removed from the left,
 and so on.</p>
 <h4 id="usage">Usage</h4>
-<pre><code class="lang-javascript">source.getCropping().then(function(crop) {
+<pre><code class="lang-javascript">item.getCropping().then(function(crop) {
   // The rest of your code here
   var left = crop.left;
   var top = crop.top;
@@ -284,27 +284,27 @@ and so on.</p>
     </h1></a>
     <pre><code>param: (value: Object)
 </code></pre>
-<p>Set Source cropping.</p>
+<p>Set Item cropping.</p>
 <p>This accepts an object with properties left, top, right, and bottom
 whose values are between 0 - 1. This object is not a coordinate system.
-Top value indicates the portion of the source removed(cropped) from the top,
-left value indicates the portion of the source removed from the left,
+Top value indicates the portion of the item removed(cropped) from the top,
+left value indicates the portion of the item removed from the left,
 and so on.</p>
 <p><em>Chainable.</em></p>
 <p>Please do note that this method will NOT automatically modify/calculate
-the height and width of the source whenever you modify cropping,
+the height and width of the item whenever you modify cropping,
 unlike the behavior of XBC when modifying it through the properties window.</p>
-<p>You will need to manually modify the height and width of the source each time
+<p>You will need to manually modify the height and width of the item each time
 you modify this value to get the best results. If not, it might result to
-the stretching and/or shrinking of the source.</p>
+the stretching and/or shrinking of the item.</p>
 <h4 id="usage">Usage</h4>
 <pre><code class="lang-javascript">var obj = {};
 obj.left = 0.1;
 obj.top = 0.2;
 obj.right = 0;
 obj.bottom = 0.1;
-source.setCropping(obj).then(function(source) {
-  // Promise resolves with same Source instance
+item.setCropping(obj).then(function(item) {
+  // Promise resolves with same Item instance
 });
 </code></pre>
 
@@ -317,9 +317,9 @@ source.setCropping(obj).then(function(source) {
     </h1></a>
     <pre><code>return: Promise&lt;number&gt;
 </code></pre>
-<p>Get canvas rotation of the source</p>
+<p>Get canvas rotation of the item</p>
 <h4 id="usage">Usage</h4>
-<pre><code class="lang-javascript">source.getCanvasRotate().then(function(deg) {
+<pre><code class="lang-javascript">item.getCanvasRotate().then(function(deg) {
   // The rest of your code here
 });
 </code></pre>
@@ -333,13 +333,13 @@ source.setCropping(obj).then(function(source) {
     </h1></a>
     <pre><code>param: (value: number)
 </code></pre>
-<pre><code>return: Promise&lt;Source&gt;
+<pre><code>return: Promise&lt;Item&gt;
 </code></pre>
-<p>Set canvas rotation of the source (possible values - 0, 90, 180, 270)</p>
+<p>Set canvas rotation of the item (possible values - 0, 90, 180, 270)</p>
 <p><em>Chainable.</em></p>
 <h4 id="usage">Usage</h4>
-<pre><code class="lang-javascript">source.setCanvasRotate(90).then(function(source) {
-  // Promise resolves with same Source instance
+<pre><code class="lang-javascript">item.setCanvasRotate(90).then(function(item) {
+  // Promise resolves with same Item instance
 });
 </code></pre>
 
@@ -352,10 +352,10 @@ source.setCropping(obj).then(function(source) {
     </h1></a>
     <pre><code>return: Promise&lt;number&gt;
 </code></pre>
-<p>Get the z-rotation value as can be seen in the source properties window.
+<p>Get the z-rotation value as can be seen in the item properties window.
 This value takes into account rotateZ along with canvas rotation.</p>
 <h4 id="usage">Usage</h4>
-<pre><code class="lang-javascript">source.getEnhancedRotate().then(function(deg) {
+<pre><code class="lang-javascript">item.getEnhancedRotate().then(function(deg) {
   // The rest of your code here
 });
 </code></pre>
@@ -369,17 +369,17 @@ This value takes into account rotateZ along with canvas rotation.</p>
     </h1></a>
     <pre><code>param: (value: number)
 </code></pre>
-<pre><code>return: Promise&lt;Source&gt;
+<pre><code>return: Promise&lt;Item&gt;
 </code></pre>
-<p>Set Rotate Z value of the source, also taking into account canvas rotation.</p>
+<p>Set Rotate Z value of the item, also taking into account canvas rotation.</p>
 <p><em>Chainable.</em></p>
 <p>This method automatically modifies/calculates
-the height and width of the source whenever you modify the z-rotation value,
+the height and width of the item whenever you modify the z-rotation value,
 changing its orientation (vertical / horizontal) at certain angles.
-This behavior is what is exhibited in the source properties window.</p>
+This behavior is what is exhibited in the item properties window.</p>
 <h4 id="usage">Usage</h4>
-<pre><code class="lang-javascript">source.setEnhancedRotate(30).then(function(source) {
-  // Promise resolves with same Source instance
+<pre><code class="lang-javascript">item.setEnhancedRotate(30).then(function(item) {
+  // Promise resolves with same Item instance
 });
 </code></pre>
 
@@ -392,30 +392,30 @@ This behavior is what is exhibited in the source properties window.</p>
     </h1></a>
     <pre><code>param: (value: Object)
 </code></pre>
-<p>Set source cropping while automatically calculating
+<p>Set item cropping while automatically calculating
 and modifying width and height to account for the cropped value.</p>
 <p>This accepts an object with properties left, top, right, and bottom
 whose values are between 0 - 1. This object is not a coordinate system.
-Top value indicates the portion of the source removed(cropped) from the top,
-left value indicates the portion of the source removed from the left,
+Top value indicates the portion of the item removed(cropped) from the top,
+left value indicates the portion of the item removed from the left,
 and so on.</p>
 <p><em>Chainable.</em></p>
-<p>This behaves the same as in the source properties window
-and is done to prevent source stretching.</p>
+<p>This behaves the same as in the item properties window
+and is done to prevent item stretching.</p>
 <h4 id="usage">Usage</h4>
 <pre><code class="lang-javascript">var obj = {};
 obj.left = 0.1;
 obj.top = 0.2;
 obj.right = 0;
 obj.bottom = 0.1;
-source.setCroppingEnhanced(obj).then(function(source) {
-  // Promise resolves with same Source instance
+item.setCroppingEnhanced(obj).then(function(item) {
+  // Promise resolves with same Item instance
 });
 </code></pre>
 
   </section>
 
 <p class="module defined-in">exported from <a href='#/core'>core</a><br/>
-defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/core/source/ilayout.ts#L4-L431">../src/core/source/ilayout.ts (line 4)</a>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/core/items/ilayout.ts#L4-L431">../src/core/items/ilayout.ts (line 4)</a>
 </p>
 

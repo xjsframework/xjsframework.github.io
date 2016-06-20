@@ -57,11 +57,33 @@
     </h1></a>
     <pre><code>return: Promise&lt;Source[]&gt;
 </code></pre>
+<blockquote>
+<h4 id="for-deprecation">For Deprecation</h4>
+<p>This method is deprecated and will be removed soon.
+Please use <a href='#core/Scene#getItems'>getItems</a> instead.</p>
+</blockquote>
 <p>Gets all the sources in a specific scene.
 See also: <a href='#core/Source'>Core/Source</a></p>
 <h4 id="usage">Usage</h4>
 <pre><code class="lang-javascript">myScene.getSources().then(function(sources) {
  // do something to each source in sources array
+});
+</code></pre>
+
+  </section>
+
+
+  <section class="member">
+    <a name="getItems"><h1 id="getItems" class="name">
+      getItems
+    </h1></a>
+    <pre><code>return: Promise&lt;Item[]&gt;
+</code></pre>
+<p>Gets all the sources in a specific scene.
+See also: <a href='#core/Source'>Core/Source</a></p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">myScene.getItems().then(function(items) {
+ // do something to each source in items array
 });
 </code></pre>
 
@@ -93,8 +115,43 @@ See also: <a href='#core/Source'>Core/Source</a></p>
 </code></pre>
 <pre><code>return: Promise&lt;Scene&gt;
 </code></pre>
+<blockquote>
+<h4 id="for-deprecation">For Deprecation</h4>
+<p>This method is deprecated and will be removed soon.
+Please use <a href='#core/Scene#setItemOrder'>setItemOrder</a> instead.</p>
+</blockquote>
 <p>Sets the source order of the current scene. The first source in the array
 will be on top (will cover sources below it).</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="setItemOrder"><h1 id="setItemOrder" class="name">
+      setItemOrder
+    </h1></a>
+    <pre><code>param: Array&lt;Source&gt; | Array&lt;string&gt; (source IDs)
+</code></pre>
+<pre><code>return: Promise&lt;Scene&gt;
+</code></pre>
+<p>Sets the item order of the current scene. The first item in the array
+will be on top (will cover sources below it).</p>
+
+  </section>
+
+
+  <section class="member static">
+    <a name="getSceneCount"><h1 id="getSceneCount" class="name">
+      <code>static</code> getSceneCount
+    </h1></a>
+    <pre><code>return: Promise&lt;number&gt;
+</code></pre>
+<p>Get the specific number of scenes loaded.</p>
+<pre><code class="lang-javascript">var sceneCount;
+Scene.getSceneCount().then(function(count) {
+  sceneCount = count;
+});
+</code></pre>
 
   </section>
 
@@ -105,10 +162,12 @@ will be on top (will cover sources below it).</p>
     </h1></a>
     <pre><code>return: Scene
 </code></pre>
+<blockquote>
+<h4 id="for-deprecation">For Deprecation</h4>
+<p>This method is deprecated and will be removed soon.
+Please use <a href='#core/Scene#getByIdAsync'>getByIdAsync</a> instead.</p>
+</blockquote>
 <p>Get a specific scene object given the scene number.</p>
-<p><strong> FOR DEPRECATION </strong>
-This method doesn&#39;t account for scenes greater than 12,
-which is needed to support for the scene in the XBC preview editor.</p>
 <h4 id="usage">Usage</h4>
 <pre><code class="lang-javascript">var scene1 = Scene.getById(1);
 </code></pre>
@@ -126,7 +185,7 @@ which is needed to support for the scene in the XBC preview editor.</p>
 <h4 id="usage">Usage</h4>
 <pre><code class="lang-javascript">var scene1;
 Scene.getByIdAsync(1).then(function(scene) {
-  scene1 = scene;  
+  scene1 = scene;
 });
 </code></pre>
 
@@ -180,11 +239,113 @@ Scene.getActiveScene().then(function(scene) {
 
 
   <section class="member static">
+    <a name="searchItemsById"><h1 id="searchItemsById" class="name">
+      <code>static</code> searchItemsById
+    </h1></a>
+    <pre><code>return: Promise&lt;Item&gt;
+</code></pre>
+<p>Searches all scenes for an item by ID. ID search will return exactly 1 result (IDs are unique) or null.</p>
+<p>See also: <a href='#core/Item'>Core/Item</a></p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">Scene.searchItemsById(&#39;{10F04AE-6215-3A88-7899-950B12186359}&#39;).then(function(item) {
+  // result is either an Item or null
+});
+</code></pre>
+
+  </section>
+
+
+  <section class="member static">
+    <a name="searchScenesByItemId"><h1 id="searchScenesByItemId" class="name">
+      <code>static</code> searchScenesByItemId
+    </h1></a>
+    <pre><code>return: Promise&lt;Scene&gt;
+</code></pre>
+<p>Searches all scenes for one that contains the given item ID.</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">Scene.searchScenesByItemId(&#39;{10F04AE-6215-3A88-7899-950B12186359}&#39;).then(function(scene) {
+  // scene contains the item
+});
+</code></pre>
+
+  </section>
+
+
+  <section class="member static">
+    <a name="searchItemsByName"><h1 id="searchItemsByName" class="name">
+      <code>static</code> searchItemsByName
+    </h1></a>
+    <pre><code>return: Promise&lt;Items[]&gt;
+</code></pre>
+<p>Searches all items for a item by name substring. This function
+compares against custom name first (recommended) before falling back to the
+name property of the item.</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">Scene.searchItemsByName(&#39;camera&#39;).then(function(items) {
+  // do something to each item in items array
+});
+</code></pre>
+
+  </section>
+
+
+  <section class="member static">
+    <a name="filterItems"><h1 id="filterItems" class="name">
+      <code>static</code> filterItems
+    </h1></a>
+    <pre><code>param: function(item, resolve)
+</code></pre>
+<pre><code>return: Promise&lt;Item[]&gt;
+</code></pre>
+<p>Searches all scenes for items that satisfies the provided testing function.</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">Scene.filterItems(function(item, resolve) {
+  // We&#39;ll only fetch Flash Items by resolving &#39;true&#39; if the item is an
+  // instance of FlashItem
+  resolve((item instanceof FlashItem));
+}).then(function(items) {
+  // items would either be an empty array if no Flash items was found,
+  // or an array of FlashItem objects
+});
+</code></pre>
+
+  </section>
+
+
+  <section class="member static">
+    <a name="filterScenesByItems"><h1 id="filterScenesByItems" class="name">
+      <code>static</code> filterScenesByItems
+    </h1></a>
+    <pre><code>param: function(item, resolve)
+</code></pre>
+<pre><code>return: Promise&lt;Scene[]&gt;
+</code></pre>
+<p>Searches all scenes for items that satisfies the provided testing
+function, and then return the scene that contains the item.</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">Scene.filterScenesByItems(function(item, resolve) {
+  // We&#39;ll only fetch the scenes with flash items by resolving &#39;true&#39; if
+  // the item is an instance of FlashItem
+  resolve((item instanceof FlashItem));
+}).then(function(scenes) {
+  // scenes would be an array of all scenes with FlashItem
+});
+</code></pre>
+
+  </section>
+
+
+  <section class="member static">
     <a name="searchSourcesById"><h1 id="searchSourcesById" class="name">
       <code>static</code> searchSourcesById
     </h1></a>
     <pre><code>return: Promise&lt;Source&gt;
 </code></pre>
+<blockquote>
+<h4 id="for-deprecation">For Deprecation</h4>
+<p>This method is deprecated and will be removed soon.
+Please use <a href='#core/Scene#searchItemsById'>searchItemsById</a> instead.</p>
+</blockquote>
 <p>Searches all scenes for an source by ID. ID search will return exactly 1 result (IDs are unique) or null.</p>
 <p>See also: <a href='#core/Source'>Core/Source</a></p>
 <h4 id="usage">Usage</h4>
@@ -202,6 +363,11 @@ Scene.getActiveScene().then(function(scene) {
     </h1></a>
     <pre><code>return: Promise&lt;Scene&gt;
 </code></pre>
+<blockquote>
+<h4 id="for-deprecation">For Deprecation</h4>
+<p>This method is deprecated and will be removed soon.
+Please use <a href='#core/Scene#searchScenesByItemId'>searchScenesByItemId</a> instead.</p>
+</blockquote>
 <p>Searches all scenes for one that contains the given source ID.</p>
 <h4 id="usage">Usage</h4>
 <pre><code class="lang-javascript">Scene.searchScenesBySourceId(&#39;{10F04AE-6215-3A88-7899-950B12186359}&#39;).then(function(scene) {
@@ -218,6 +384,11 @@ Scene.getActiveScene().then(function(scene) {
     </h1></a>
     <pre><code>return: Promise&lt;Source[]&gt;
 </code></pre>
+<blockquote>
+<h4 id="for-deprecation">For Deprecation</h4>
+<p>This method is deprecated and will be removed soon.
+Please use <a href='#core/Scene#searchItemsByName'>searchItemsByName</a> instead.</p>
+</blockquote>
 <p>Searches all scenes for a source by name substring. This function
 compares against custom name first (recommended) before falling back to the
 name property of the source.</p>
@@ -238,6 +409,11 @@ name property of the source.</p>
 </code></pre>
 <pre><code>return: Promise&lt;Source[]&gt;
 </code></pre>
+<blockquote>
+<h4 id="for-deprecation">For Deprecation</h4>
+<p>This method is deprecated and will be removed soon.
+Please use <a href='#core/Scene#filterItems'>filterItems</a> instead.</p>
+</blockquote>
 <p>Searches all scenes for sources that satisfies the provided testing function.</p>
 <h4 id="usage">Usage</h4>
 <pre><code class="lang-javascript">Scene.filterSources(function(source, resolve) {
@@ -261,6 +437,11 @@ name property of the source.</p>
 </code></pre>
 <pre><code>return: Promise&lt;Scene[]&gt;
 </code></pre>
+<blockquote>
+<h4 id="for-deprecation">For Deprecation</h4>
+<p>This method is deprecated and will be removed soon.
+Please use <a href='#core/Scene#filterScenesByItems'>filterScenesByItems</a> instead.</p>
+</blockquote>
 <p>Searches all scenes for sources that satisfies the provided testing
 function, and then return the scene that contains the source.</p>
 <h4 id="usage">Usage</h4>
@@ -297,6 +478,6 @@ This function is only available to extensions.</p>
   </section>
 
 <p class="module defined-in">exported from <a href='#/core'>core</a><br/>
-defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/core/scene.ts#L17-L744">../src/core/scene.ts (line 17)</a>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/core/scene.ts#L34-L1256">../src/core/scene.ts (line 34)</a>
 </p>
 

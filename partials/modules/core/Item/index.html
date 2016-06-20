@@ -276,6 +276,23 @@ the active scene switches to the item&#39;s current scene.</p>
 
 
   <section class="member">
+    <a name="getSourceId"><h1 id="getSourceId" class="name">
+      getSourceId
+    </h1></a>
+    <pre><code>return: Promise&lt;string&gt;
+</code></pre>
+<p>Get the Source ID of the item.
+<em>Available only on XSplit Broadcaster verions higher than 2.8.1603.0401</em></p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">item.getSourceId().then(function(id) {
+  // The rest of your code here
+});
+</code></pre>
+
+  </section>
+
+
+  <section class="member">
     <a name="toXML"><h1 id="toXML" class="name">
       toXML
     </h1></a>
@@ -285,6 +302,28 @@ the active scene switches to the item&#39;s current scene.</p>
 get the string version of the returned object.</p>
 <h4 id="usage">Usage</h4>
 <pre><code class="lang-javascript">var xml = item.toXML();
+</code></pre>
+
+  </section>
+
+
+  <section class="member">
+    <a name="getItemList"><h1 id="getItemList" class="name">
+      getItemList
+    </h1></a>
+    <pre><code>return: Promise&lt;Item[]&gt;
+</code></pre>
+<p>Get the item list of the attached item. This is useful when an item is
+an instance of a global source, with multiple other items having the same
+source as the current item.</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">// item pertains to an actual item instance
+item.getItemList().then(function(item) {
+  // This will fetch the item list of the current item
+}).catch(function(err) {
+  // Handle the error here. Errors would only occur
+  // if we try to execute this method on Extension plugins
+});
 </code></pre>
 
   </section>
@@ -309,6 +348,15 @@ get the string version of the returned object.</p>
  });
  </code></pre>
  
+  </section>
+
+
+  <section class="member">
+    <a name="duplicate"><h1 id="duplicate" class="name">
+      duplicate
+    </h1></a>
+          <p>Duplicate current item. Will duplicate item into the current scene</p>
+      
   </section>
 
 
@@ -509,8 +557,8 @@ get the string version of the returned object.</p>
 </code></pre>
 <blockquote>
 <h4 id="for-deprecation">For Deprecation</h4>
-<p>This method is deprecated and will be removed soon. Please use
-<a href='#core/Item#getItemList'>getItemList</a> instead.</p>
+<p>This method is deprecated and will be removed soon.
+Please use <a href='#core/Item#getItemList'>getItemList</a> instead.</p>
 </blockquote>
 <p>Get the current source (when function is called by sources), or the source
 that was right-clicked to open the source properties window (when function is called
@@ -533,12 +581,10 @@ from the source properties window)</p>
     </h1></a>
     <pre><code>return: Promise&lt;Item[]&gt;
 </code></pre>
-<p>Get the current item (when function is called by items), or the item
-that was right-clicked to open the source properties window (when function is called
-from the source properties window)</p>
+<p>Get the Item List of the current source</p>
 <h4 id="usage">Usage</h4>
 <pre><code class="lang-javascript">xjs.Item.getItemList().then(function(item) {
-  // This will fetch the current item (the plugin)
+  // This will fetch the item list of the current source
 }).catch(function(err) {
   // Handle the error here. Errors would only occur
   // if we try to execute this method on Extension plugins
@@ -548,6 +594,6 @@ from the source properties window)</p>
   </section>
 
 <p class="module defined-in">exported from <a href='#/core'>core</a><br/>
-defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/core/items/item.ts#L29-L673">../src/core/items/item.ts (line 29)</a>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/core/items/item.ts#L34-L816">../src/core/items/item.ts (line 34)</a>
 </p>
 

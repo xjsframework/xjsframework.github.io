@@ -1,0 +1,49 @@
+
+<h1 class="class export">ChannelManager <span class="type">class</span></h1>
+<p><p>The ChannelManager class allows limited access to channels (also termed as outputs)
+ that are being used or set in XSplit Broadcaster.
+ This function is not available on Source Properties.</p>
+<p> The class also emits events for developers to know when a stream has started
+ or ended.</p>
+<p> The following events are emitted.</p>
+<ul>
+<li><code>stream-start</code></li>
+<li><p><code>stream-end</code></p>
+<p>Use the <code>on(event: string, handler: Function)</code> function to listen to events.</p>
+</li>
+</ul>
+</p><h2>Members</h2>
+  <section class="member static">
+    <a name="emit"><h1 id="emit" class="name">
+      <code>static</code> emit
+    </h1></a>
+     <pre><code>param: (event: string, ...params: any[])
+ </code></pre>
+ <p>Allows this class to emit an event.</p>
+ 
+  </section>
+
+
+  <section class="member static">
+    <a name="on"><h1 id="on" class="name">
+      <code>static</code> on
+    </h1></a>
+    <pre><code>param: (event: string, handler: Function)
+</code></pre>
+<p> Allows listening to events that this class emits. Currently there are two:
+ <code>stream-start</code> and <code>stream-end</code>.</p>
+<p> Sample usage:</p>
+<pre><code class="lang-javascript">ChannelManager.on(&#39;stream-start&#39;, function(res) {
+  if (!res.error) { // No error
+    var channel = res.channel; // Channel Object
+    var streamTime = res.streamTime;
+  }
+});
+</code></pre>
+
+  </section>
+
+<p class="module defined-in">exported from <a href='#/core'>core</a><br/>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/core/channelmanager.ts#L7-L96">../src/core/channelmanager.ts (line 7)</a>
+</p>
+
