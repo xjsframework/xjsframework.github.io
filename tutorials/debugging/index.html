@@ -1,9 +1,16 @@
 <h1>Debugging Your Plugins</h1>
+<div class="notice"><strong>Important Notice:</strong> Google Chrome removed support for remote debugging starting from Chrome 50. For developers who updated to the said version or higher, you may use the following alternatives:
+	<ul>
+		<li>load the remote debugging discovery page as an extension in XBC OR</li>
+		<li>download independent CEF builds (Chromium 49 and lower) from <a href="https://cefbuilds.com/" target="_blank">https://cefbuilds.com/</a>and use them to load the remote debugging discovery page</li>
+	</ul>
+</div>
+
 <p>XSplit Broadcaster allows you to debug your pages by exposing the DevTools. To do this, create a shortcut to <code>XSplit.Core.exe</code>, and right-click to open the properties window to add the startup parameter: <code>remotedebug:<em>&lt;port&gt;</em></code>. We usually use port 9222 (unless another process is also using it.)
 </p>
 
 <img class="centered" src="assets/debug-params-gray.png">
 
-<p>Once this is done, simply open <code>localhost:<em>&lt;port&gt;</em></code> on your browser. You will see a list of links, each pertaining to a plugin/webpage URL source and labeled through their TITLE element, or if not present, their URL. Click the link pertaining to your plugin to begin debugging.</p>
+<p>Once this is done, simply open <code>localhost:<em>&lt;port&gt;</em></code> (the remote debugging discovery page) on your browser. You will see a list of links, each pertaining to a plugin/webpage URL source and labeled through their TITLE element, or if not present, their URL. Click the link pertaining to your plugin to begin debugging.</p>
 
 <p><strong>Important note</strong>: Debugging for the source properties window is not available at this time.</p>

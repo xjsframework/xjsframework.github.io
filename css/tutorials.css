@@ -61,6 +61,11 @@ p em {
   font-size: 13px;
 }
 
+div.notice {
+  border: 1px solid #cdcdcd;
+  padding: 10px 10px;
+}
+
 #header {
   margin: 68px auto 0;
   width: 100%;
