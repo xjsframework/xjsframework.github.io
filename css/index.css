@@ -15,7 +15,8 @@ html {
 
 body {
   margin: 0;
-  background: url('../assets/bg_home.jpg');
+  background: url('../assets/squares.jpg');
+  background-size: auto 100%;
   min-height: 100%;
 }
 
@@ -33,11 +34,24 @@ body * {
   width: 100%;
 }
 
+#overlay {
+  background-color: #00102a;
+  opacity: .95;
+  height: 390px;
+}
+
 #logo {
   width: 745px;
   height: 114px;
   background-image: url('../assets/img_logo.png');
-  align-self: center;
+}
+
+#logo-big {
+  width: 745px;
+  height: 114px;
+  background-image: url('../assets/img_logo.png');
+  margin: 0 auto;
+  margin-top: 35px;
 }
 
 #subtitle {
@@ -56,20 +70,20 @@ body * {
 
 #getStarted,
 #download {
-  width: 246px;
-  height: 47px;
+  width: 250px;
+  height: 57px;
   display: inline-block;
   margin-left: 5px;
 }
 
 #getStarted:hover,
 #download:hover {
-  background-position-y: -47px;
+  background-position-y: -60px;
 }
 
 #getStarted:active,
 #download:active {
-  background-position-y: -94px;
+  background-position-y: -120px;
 }
 
 
@@ -79,6 +93,27 @@ body * {
 
 #download {
   background-image: url('../assets/btn_download.png');
+}
+
+#buttonText {
+  position: absolute;
+  bottom: 8px;
+  margin-left: 70px;
+  color: #fff;
+}
+
+#alternate {
+  font-size: 17px;
+  line-height: 12px;
+  color: #0095de;
+  position: relative;
+  top: 85px;
+  background-color: transparent;
+  font-family: 'Roboto regular', sans-serif;
+}
+
+#alternate:hover {
+  color: #ffffff;
 }
 
 #copyright {

@@ -11,11 +11,15 @@
 <body>
   <xsplit-navbar></xsplit-navbar>
   <div id="wrap">
-    <div id="logo"></div>
-    <div id="subtitle">The development framework for building awesome XSplit Broadcaster Plugins</div>
-    <div id="buttons">
-      <button id="getStarted"></button>
-      <button id="download"></button>
+    <div id="overlay">
+      <div id="logo-big"></div>
+      <div id="subtitle">The development framework for building awesome XSplit Broadcaster Plugins</div>
+      <div id="buttons">
+        <button id="getStarted"></button>
+        <button id="download"><div id="buttonText">XJS version 1.4.0</div></button>
+
+      </div>
+      <div><button id="alternate">Download minified version</button></div>
     </div>
   </div>
   <div id="copyright">
@@ -37,6 +41,11 @@
   document.getElementById('download').addEventListener('click', function(e) {
     if (e.which === 1) {
       window.location = 'http://cdn2.xsplit.com/xjs/download/xjs.js';
+    }
+  });
+  document.getElementById('alternate').addEventListener('click', function(e) {
+    if (e.which === 1) {
+      window.location = 'http://cdn2.xsplit.com/xjs/download/xjs.min.js';
     }
   });
   </script>
