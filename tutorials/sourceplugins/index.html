@@ -3,7 +3,7 @@
 <h3>Introduction</h3>
 <p>
   <em>If you are migrating from <code>xjs@1.3.0</code> or lower, you may want to
-  read about some <a href="#migration">important changes to sources</a>. This has affected our API for versions 1.4.0 and higher.</em>
+  read about some <a href="tutorials.html#/sourceplugins#migration">important changes to sources</a>. This has affected our API for versions 1.4.0 and higher.</em>
 </p>
 <p>
   Sources are objects that may be added to your presentation. While XSplit does provide native source plugins such as cameras, games, and even RTMP streams,
@@ -48,12 +48,12 @@
     <tr>
       <td>name</td>
       <td>Modify the name of your item.</td>
-      <td><code><a href="http://xjsframework.github.io/api.html#/core/Item#setName">item#setName<a></code></td>
+      <td><code><a href="http://xjsframework.github.io/api.html#/core/Item#setName">Item#setName<a></code></td>
     </tr>
     <tr>
       <td>cname</td>
       <td>Modify the custom name of the item.</td>
-      <td><code><a href="http://xjsframework.github.io/api.html#/core/Item#setCustomName">item#setCustomName</a></code></td>
+      <td><code><a href="http://xjsframework.github.io/api.html#/core/Item#setCustomName">Item#setCustomName</a></code></td>
     </tr>
     <tr>
       <td>pos</td>
@@ -140,7 +140,7 @@
     <tr>
       <td>srcid</td>
       <td>Gets the ID for this source.</td>
-      <td><code>TODO: TO BE IMPLEMENTED IN xjs</td>
+      <td><code>TODO: TO BE IMPLEMENTED IN xjs</code></td>
     </tr>
     <tr>
       <td>globalsrc</td>
@@ -177,7 +177,8 @@ xjs.ready()
 </p>
 <p>
   To do more advanced initialization (such as loading of a more complex
-  configuration for your source), please check this tutorial. TODO
+  configuration for your source), please read about Configuration Objects here.
+  TODO
 </p>
 <p>
   More advanced use cases such as extensions creating a global source and
@@ -186,11 +187,78 @@ xjs.ready()
 </p>
 
 <h3>Configuration Objects</h3>
+<p>
+  A custom configuration object may also be applied to sources. Configuration
+  objects are simple JSON objects that sources can save to memory.
+  Configuration objects are primarily only meaningful to HTML sources and not
+  others (such as image sources), but this includes plugins that you create!
+</p>
+<p>
+  There are no standards prescribed for the configuration object; developers may
+  use any valid JSON object. It is the responsibility of the source to load the
+  saved object every time the source is loaded, and to apply the object's
+  various settings onto the source's HTML. This is ideally done upon resolution
+  of the framework's ready promise.
+</p>
+<p>
+  In order to persist the configuration object for a specific source, you can
+  use the <code><a href="http://xjsframework.github.io/api.html#/core/IItemConfig#saveConfig">IItemConfig#saveConfig</a></code>
+  method on your item object (<code>myItems[0]</code> in the code snippet above.)
+  As a standard practice, we suggest you allow users to configure your source
+  through the source properties dialog. For more information on that, please
+  have a look at this tutorial. TODO
+</p>
+<p>
+  To get you started with loading your plugin's configuration, here's a code
+  snippet.
+</p>
+<pre class="language-javascript"><code>var xjs = require('xjs');
+var Item = xjs.Item;
 
+xjs.ready()
+  .then(Item.getItemList)
+  .then(function(itemList) {
+    return itemList[0];
+  }).then(function(myItem) {
+    // load any previously saved configuration
+    return myItem.loadConfig();
+  }).then(function(config) {
+    // do some checking to see if we already have settings saved
+    if (Object.keys(config) > 0) {
+      // Load previous settings, based on the structure of your configuration object.
+      // Note that if you already have saved settings, you probably shouldn't force
+      // the default settings again, such as the default name of the source, or
+      // whether your HTML page should occupy the entire mixer.
+    } else {
+      // Set initial item rendering settings here.
+      myItem.setName('NewNameHere')
+      .then(function(myItem) {
+        // Property setters are chainable, so they resolve with same Item instance!
+        // This means you can continue setting any properties.
+        return myItem.setPosition(xjs.Rectangle.fromCoordinates(0, 0, 1, 1));
+      }).then(function(myItem) {
+        return myItem.setKeepAspectRatio(true);
+      }).then(function(myItem) {
+        // Continue initialization as necessary. We recommend saving a dummy
+        // value in the configuration object to indicate that the defaults have
+        // already been applied. If the user refreshes the source, you will
+        // know not to override your user's position/size settings!
+        myItem.saveConfig({
+          defaultsLoaded: true
+        });
+      });
+    }
+  });</code></pre>
 
-
-
-
+<h3><a id="migration">Migration notes</a></h3>
+<p>
+  Global sources were not yet implemented before XSplit Broadcaster 2.8. When it
+  was released, we released <code>xjs@1.4.0</code> that aimed to provide a layer
+  of compatibility with any old (pre-1.4.0) code.
+</p>
+<p>
+  TODO
+</p>
 
 <h3>Video Items and Sources</h3>
 <p>An important concept in the underlying architecture of XSplit Broadcaster is the idea of sources and video items (the <code>Item</code> class in the framework.) The main difference between the two is that the source pertains to the base object that supplies the relevant stream of information to be displayed, while the item pertains to a renderer object that inherits some characteristics from the source.</p>
