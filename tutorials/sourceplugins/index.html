@@ -170,11 +170,11 @@
 </p>
 <pre class="language-javascript"><code>// get necessary classes
 var xjs = require('xjs');
-var Item = xjs.Item;
+var Source = xjs.Source;
 
 // wait for the framework to finish initialization
 xjs.ready()
-  .then(Item.getItemList)
+  .then(Source.getItemList)
   .then(function(myItems) {
     // myItems is an array of all video items sharing the same source.
     // If the source is not a global source, then myItems will only contain one item.
@@ -216,7 +216,7 @@ xjs.ready()
 </p>
 <p>
   In order to persist the configuration object for a specific source, you can
-  use the <code><a href="http://xjsframework.github.io/api.html#/core/IItemConfig#saveConfig">IItemConfig#saveConfig</a></code>
+  use the <code><a href="http://xjsframework.github.io/api.html#/core/IItemConfigurable#saveConfig">IItemConfigurable#saveConfig</a></code>
   method on your item object (<code>myItems[0]</code> in the code snippet above.)
   As a standard practice, we suggest you allow users to configure your source
   through the source properties dialog. For more information on that, please
@@ -227,10 +227,10 @@ xjs.ready()
   snippet.
 </p>
 <pre class="language-javascript"><code>var xjs = require('xjs');
-var Item = xjs.Item;
+var Source = xjs.Source;
 
 xjs.ready()
-  .then(Item.getItemList)
+  .then(Source.getItemList)
   .then(function(itemList) {
     return itemList[0];
   }).then(function(myItem) {
@@ -294,7 +294,7 @@ xjs.ready()
   Old code required you to get the <code>Source</code> instance you are
   working with through <code>Source.getCurrentSource</code>. Since the
   sources are now clearly separated from the video items rendering them, you
-  will need to do <code>Item.getItemList</code> instead, and take the first
+  will need to do <code>Source.getItemList</code> instead, and take the first
   <code>Item</code> instance from there if you want to modify item properties
   such as position and layout.
   </li>
@@ -303,7 +303,7 @@ xjs.ready()
   <code>Source.getCurrentSource</code> method is modified to return the first
   <code>Item</code> instance in the item list, when executed in XBC version
   2.8 or higher. We are also deprecating <code>Source.getCurrentSource</code>
-  in favor of <code>Item.getItemList</code>.
+  in favor of <code>Source.getItemList</code>.
   </li>
   <li>
   In the rare case when you might actually want to get the actual instance of
@@ -317,8 +317,8 @@ xjs.ready()
   Despite how things such as your HTML plugin's configuration object is not
   tied to specific video items (they are tied to the HTML source because the
   renderer part has nothing to do with the configuration object), it is still
-  safe to call <code>Item#saveConfig</code> on the items returned by the
-  <code>Item.getItemList</code> method. This is because any non-item property
+  safe to call <code>IItemConfigurable#saveConfig</code> on the items returned by the
+  <code>Source.getItemList</code> method. This is because any non-item property
   accessor requests are bubbled up to the actual source.
   </li>
 </ol>

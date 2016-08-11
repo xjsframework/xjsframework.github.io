@@ -1,16 +1,19 @@
 <h1>Developing Extension Plugins</h1>
 <p>
-  Extensions occupy their own window separate from the main XSplit Broadcaster application. They can be used to do many kinds of tasks in the global scope of the application.
+  Extensions are powerful plugins that manipulate the application, its scenes, and its sources. They can be used to do many kinds of tasks to enhance your workflow or your streams.
 </p>
-<h3>How to use extensions</h3>
-<p>Currently, extensions may be added through their URLs. To do this, go to Tools > Extensions > Add Extension, and input your extension's URL. It should now appear in the same Extensions menu until you choose to remove it.</p>
+<h3>Basics</h3>
+<p>
+</p>
+<p>Extensions are now part of XSplit's plugin store. There are a number of preinstalled extensions for you to try out. To add your own custom extension, simply write an HTML page, and add it through the <em>Extensions > Add custom extension...</em> menu.</p>
 
 <img src="assets/xbc-add-extensions.png">
 
 <h3>What extensions can do</h3>
-<p>This section outlines some of the possible things one can do with extensions. Note that this list is not exhaustive. Explore the <a href="api.html">API reference</a> to learn more, or contact us at <a href-"support.html">our support channels</a> for any inquiries or feature requests.</p>
+<p>This section outlines some of the possible things one can do with extensions. Note that this list is not exhaustive. Explore the <a href="api.html">API reference</a> to learn more, or contact us at <a href-"support.html">our support channels</a> for any inquiries or feature requests. Generally speaking, extensions have access to most of the API exposed by XSplit Broadcaster. You can also take a look at the default extensions for XSplit to gain a better idea of their potential.</p>
 <ul>
-  <li><strong>Adding new items to the stage.</strong> Extensions are capable of adding system-related items: <code>CameraDevice, Game, MicrophoneDevice</code> (more will be added in the future). Simply call the relevant system call (<code>System.getCameraDevices()</code>, for example) and call <code>addToScene()</code> on the appropriate object. Note that this is currently limited to adding to the currently active scene.</li>
-  <li><strong>Manipulating sources.</strong> Extensions are allowed to manipulate sources, their properties, and even their custom configuration objects just as a properties window might, as detailed <a href="tutorials.html#/sourceconfig#man-config-obj">here</a>.</li>
+  <li><strong>Adding new sources to the stage.</strong> Extensions are capable of adding system-related sources through classes such as <code>CameraDevice</code>. Simply call the relevant call (<code>System.getCameraDevices()</code>, for example) and call <code>addToScene()</code> on the appropriate object. Please peruse the set of classes in the <a href="api.html#/system">System module</a> to see a list of entities that can be added to the stage as a new source. <em>Note that this is currently limited to adding to the currently active scene.</em></li>
+  <li><strong>Manipulating sources and video items.</strong> Extensions are allowed to manipulate sources, their properties, and even their custom configuration objects just as a source properties window might, as detailed <a href="tutorials.html#/sourceconfig#man-config-obj">here</a>.</li>
   <li><strong>Setting application-wide properties.</strong> Extensions are much more powerful than sources and are able to manipulate the application itself. For example, they may use the App class change the transition settings when changing scenes. See the <a href="api.html">API reference</a> for more information.</li>
+  <li><strong>Listen to important application events.</strong>The <code><a href="api.html#/window/ExtensionWindow">ExtensionWindow</a></code> class is an event emitter that is useful for responding to application events that extensions are able to receive. <code>scene-load</code> is one such event. (In addition, this class also allows you to set windowing options for extensions.)</li>
 </ul>

@@ -1,6 +1,6 @@
 <h1>Developing Source Properties Windows</h1>
 <p>
-  The properties window is a very important tool to allow customization of your source plugin. This article details how to use the framework to layout the window, and to allow the window access to the item's custom configuration object. Developers begin by creating HTML for the properties window's graphical interface.
+  The properties window is a very important tool to allow customization of your source plugin. This article details how to use the framework to layout the window, and to allow the window access to the source's custom configuration object. Developers begin by creating HTML for the properties window's graphical interface.
 </p>
 <h3>Specifying the properties window</h3>
 <p>
@@ -19,7 +19,7 @@ xjs.ready()
   .then(function() {
     propsWindow.useTabbedWindow({
       customTabs: ['Custom'],
-      tabOrder: ['Custom', 'Layout', 'Color', 'Transition']
+      tabOrder: ['Custom', 'Layout', 'Color', 'Transition'] // Layout/Color/Transition are optional XSplit tabs
     });
   });
 
@@ -29,7 +29,7 @@ xjs.ready()
     propsWindow.useFullWindow();
   });</code></pre>
 <p>
-  The following images illustrate the difference between the two modes as specified by the above code snippets. Right-clicking the item (yellow) opens the properties window. The blue area indicates where the developer's own HTML will be rendered.
+  The following images illustrate the difference between the two modes as specified by the above code snippets. Right-clicking the video item (yellow) opens the properties window. The blue area indicates where the developer's own HTML will be rendered.
 </p>
 <img src="assets/tabbed-config.png">
 <img src="assets/full-config.png">
@@ -52,36 +52,38 @@ propsWindow.on('set-selected-tab', function(selected) {
   The source’s custom configuration object can be manipulated similarly to how the source itself does it (<a href="tutorials.html#/sourceplugins" target="_blank">see this article</a>), but there are some differences.
 </p>
 <p>
-  When the framework’s ready promise resolves, developers should opt to load the item’s configuration object in order to update the settings displayed on the properties window. This is done in exactly the same manner as the item does.
+  When the framework’s ready promise resolves, developers should opt to load the configuration object in order to update the settings displayed on the properties window. This is done in exactly the same manner as the item does.
 </p>
 <pre class="language-javascript"><code>var xjs = require('xjs');
-var Item = xjs.Item;
+var Source = xjs.Source;
 
 xjs.ready()
-  .then(Item.getItemList)
-  .then(function(myItem) {
+  .then(Source.getItemList)
+  .then(function(items) {
+    return items[0];
+  }).then(function(myItem) {
     return myItem.loadConfig();
   }).then(function(config) {
-    // update the item properties window's UI based on the last saved configuration
+    // update any forms in source properties window to display last saved configuration
   });</code></pre>
 <p>
-  The main difference is in saving the configuration: because of the underlying architecture of the application, the properties window is only allowed to signal the item to save the configuration. It is still the item’s responsibility to actually save the configuration. The following code snippet illustrates this. (Lines pertaining to the ready event have been removed but you should always do your processing when the framework is ready.)
+  The main difference is in saving the configuration: because of the underlying architecture of the application, the properties window is only allowed to signal the source to save the configuration. It is still the source's responsibility to actually save the configuration. The following code snippet illustrates this. (Lines pertaining to the <code>ready()</code> event have been removed but you should always do your processing when the framework is ready.)
 </p>
 <pre class="language-javascript"><code>// somewhere in properties window
 mySaveButton.addEventListener('click', function() {
-  myItem.requestSaveConfig(configObj); // myItem from Item.getItemlist
+  myItem.requestSaveConfig(configObj); // myItem from Source.getItemlist
 });</code></pre>
 <pre class="language-javascript"><code>// in source
 var xjs = require('xjs');
-var itemWindow = xjs.SourcePluginWindow.getInstance();
+var sourceWindow = xjs.SourcePluginWindow.getInstance();
 
-itemWindow.on('save-config', function(configObj) {
-  myItem.saveConfig(configObj); // myItem from Item.getItemlist
+sourceWindow.on('save-config', function(configObj) {
+  myItem.saveConfig(configObj); // myItem from Source.getItemlist
 });</code></pre>
 <p>
-  There may be some cases when the plugin may need to change some settings without the need for saving the configuration object, which is illustrated below:
+  There may be some cases when the plugin may need to change some settings without the need for saving the configuration object. This can be useful in such cases as allowing a "preview" of the changes when hovering over a color swatch. Sample code below:
 </p>
-<pre class="language-javascript"><code>// somewhere in properties window
+<pre class="language-javascript"><code>// somewhere in source properties window
 myPropertyChanger.addEventListener('click', function() {
   myItem.applyConfig(configObj); // does not ask to save
 });</code></pre>
@@ -95,5 +97,5 @@ itemWindow.on('apply-config', function(configObj) {
   }
 });</code></pre>
 <p>
-  Although the above two methods are made available to developers, in practice, most plugins will simply call both <code>applyConfig</code> and <code>requestSaveConfig</code> in the same code for handling any changes to the configuration object. Developers will also have separate logic for the <code>apply&#8209;config</code> and <code>save-config</code> events.
+  Although the above two methods are made available to developers, in practice, most plugins will simply call both <code>applyConfig</code> and <code>requestSaveConfig</code> in the same code for handling any changes to the configuration object. Developers will also have separate logic for the <code>apply-config</code> and <code>save-config</code> events.
 </p>
