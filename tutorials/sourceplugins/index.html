@@ -3,7 +3,10 @@
 <h3>Introduction</h3>
 <p>
   <em>If you are migrating from <code>xjs@1.3.0</code> or lower, you may want to
-  read about some <a href="tutorials.html#/sourceplugins#migration">important changes to sources</a>. This has affected our API for versions 1.4.0 and higher.</em>
+  read about some <a href="tutorials.html#/sourceplugins#migration">important
+  changes to sources</a>. This has affected our API for versions 1.4.0 and
+  higher. Please make sure to also read about XSplit's new
+  Source/Item Architecture below.</em>
 </p>
 <p>
   Sources are objects that may be added to your presentation. While XSplit does provide native source plugins such as cameras, games, and even RTMP streams,
@@ -145,7 +148,7 @@
     <tr>
       <td>globalsrc</td>
       <td>Toggles global source. (This is a special property. Check API docs for more details)</td>
-      <td><code><a href="http://xjsframework.github.io/api.html#/core/Item#setKeepLoaded">Item#setKeepLoaded</a></code></td>
+      <td><code><a href="http://xjsframework.github.io/api.html#/core/Source#setGlobalSource">Source#setGlobalSource</a></code></td>
     </tr>
   </tbody>
 </table>
@@ -257,8 +260,43 @@ xjs.ready()
   of compatibility with any old (pre-1.4.0) code.
 </p>
 <p>
-  TODO
+  If you had worked with <code>xjs@1.3.0</code> or lower, please be informed of
+  the following important changes:
 </p>
+<ol>
+  <li>
+  Old code required you to get the <code>Source</code> instance you are
+  working with through <code>Source.getCurrentSource</code>. Since the
+  sources are now clearly separated from the video items rendering them, you
+  will need to do <code>Item.getItemList</code> instead, and take the first
+  <code>Item</code> instance from there if you want to modify item properties
+  such as position and layout.
+  </li>
+  <li>
+  To preserve compatibility with older source code, the
+  <code>Source.getCurrentSource</code> method is modified to return the first
+  <code>Item</code> instance in the item list, when executed in XBC version
+  2.8 or higher. We are also deprecating <code>Source.getCurrentSource</code>
+  in favor of <code>Item.getItemList</code>.
+  </li>
+  <li>
+  In the rare case when you might actually want to get the actual instance of
+  <code>Source</code> instead of <code>Item</code> (for example, if you want to
+  compare source IDs), a new method is available: <code>Source.getSource()</code>.
+  That method gets the <code>Source</code> object for the executing HTML page.
+  You may also get the <code>Source</code> object for a different, unrelated
+  <code>Item</code> through <code>Item#getSource</code>.
+  </li>
+  <li>
+  Despite how things such as your HTML plugin's configuration object is not
+  tied to specific video items (they are tied to the HTML source because the
+  renderer part has nothing to do with the configuration object), it is still
+  safe to call <code>Item#saveConfig</code> on the items returned by the
+  <code>Item.getItemList</code> method. This is because any non-item property
+  accessor requests are bubbled up to the actual source.
+  </li>
+</ol>
+
 
 <h3>Video Items and Sources</h3>
 <p>An important concept in the underlying architecture of XSplit Broadcaster is the idea of sources and video items (the <code>Item</code> class in the framework.) The main difference between the two is that the source pertains to the base object that supplies the relevant stream of information to be displayed, while the item pertains to a renderer object that inherits some characteristics from the source.</p>
