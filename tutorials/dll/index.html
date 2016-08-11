@@ -38,7 +38,7 @@ dll.load(['Scriptdlls\\SplitMediaLabs\\dllA.dll','Scriptdlls\\SplitMediaLabs\\dl
 window.OnInputHookEvent = function(msg, wparam, lparam) { }</code></pre>
 
 <h4>Miscellaneous</h4>
-<p>Optionally, developers can choose to subscribe to the <code>access-granted</code> and <code>access-revoked</code> events of the Dll object. 
+<p>Optionally, developers can choose to subscribe to the <code>access-granted</code> and <code>access-revoked</code> events of the Dll object.
 <p><pre class="language-javascript"><code>Dll.on('access-revoked').then(function() {
   // do something
 });</code></pre></p>
@@ -273,6 +273,8 @@ xjs.ready().then(function() {
       <td><code>xsplit.Zip</code></td>
       <td>input, zipPath, overwriteFlag<br /><br />
         Overwrite flag must be 0 or 1. 1 means it will create a new zip containing only input as end result, and 0 means it will append to an existing zip file.
+
+        TODO: @meso please fix this description
       </td>
       <td>Creates a zip archive</td>
     </tr>
@@ -336,6 +338,6 @@ xjs.ready().then(function() {
        <td><code>xsplit.Md5Result</code></td>
        <td>id</td>
        <td>Returns Md5 hex string.</td>
-     </tr> 
+     </tr>
   </tbody>
 </table>

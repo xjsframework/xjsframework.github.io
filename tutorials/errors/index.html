@@ -7,9 +7,5 @@
 <p>To get around this restriction, you may either set the sources to be always kept in memory, or only manipulate sources if they are in the currently active scene.</p>
 <p>As an additional note, currently all global sources are set to be kept in memory.</p>
 
-<h2>Extensions handling multiple scenes</h2>
-<p>For performance purposes, not all scenes are initialized when the application runs. On application startup, it initializes only those scenes starting from Scene 1, all the way to the currently active scene or the last scene containing a source, whichever is later. Extensions that try to manipulate these uninitialized scenes will possibly encounter errors when using the Scene class.</p>
-<p>The safest way to avoid this is to call <code>Scene.initializeScenes()</code>, which will initialize all the scenes in the application. (As an added note, <code>Scene.setActiveScene()</code> will also perform initialization for all scenes up to and including the target scene.)</p>
-
 <h2>Pages not refreshing</h2>
-<p>Running into caching issues while testing? Try adding a query parameter (<code>test.html?random=0</code>) to your page's URL.</p>
+<p>Running into caching issues while testing? Try adding a query parameter (<code>test.html?random=0</code>) to your page's URL. TODO: check if there is anything more we can say about this; such as when caching issues might occur, anything about manually refreshing, etc.</p>
