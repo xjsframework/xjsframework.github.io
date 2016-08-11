@@ -23,6 +23,11 @@ angular.module('navigation-tutorials', [])
       "name": "Developing Extension Plugins"
     },
     {
+      "path": "debugging",
+      "partial": "tutorials/debugging",
+      "name": "Debugging Your Plugins"
+    },
+    {
       "path": "es6",
       "partial": "tutorials/es6",
       "name": "Developing with ES2015"
@@ -31,11 +36,6 @@ angular.module('navigation-tutorials', [])
       "path": "errors",
       "partial": "tutorials/errors",
       "name": "Common Errors"
-    },
-    {
-      "path": "debugging",
-      "partial": "tutorials/debugging",
-      "name": "Debugging Your Plugins"
     },
     {
       "path": "authentication",
