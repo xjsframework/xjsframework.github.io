@@ -35,10 +35,10 @@ dll.load(['Scriptdlls\\SplitMediaLabs\\dllA.dll','Scriptdlls\\SplitMediaLabs\\dl
 <h4>Callback usage</h4>
 <p>Some DLLs can call functions defined on the global scope. Consult your DLL documentation for these functions and the callbacks they may call.</p>
 <p><pre class="language-javascript"><code>// handle values from xsplit.HookSubscribe DLL call
-window.OnInputHookEvent = function(msg, wparam, lparam) { }</code></pre>
+window.OnDllOnInputHookEvent = function(msg, wparam, lparam) { }</code></pre>
 
 <h4>Miscellaneous</h4>
-<p>Optionally, developers can choose to subscribe to the <code>access-granted</code> and <code>access-revoked</code> events of the Dll object. 
+<p>Optionally, developers can choose to subscribe to the <code>access-granted</code> and <code>access-revoked</code> events of the Dll object.
 <p><pre class="language-javascript"><code>Dll.on('access-revoked').then(function() {
   // do something
 });</code></pre></p>
@@ -310,7 +310,7 @@ xjs.ready().then(function() {
     <tr>
       <td><code>xsplit.HookSubscribe</code></td>
       <td></td>
-      <td>Subscribes to global keyboard/mouse hook. Hook events will use the callback <code>OnInputHookEvent</code> with parameters:<br />
+      <td>Subscribes to global keyboard/mouse hook. Hook events will use the callback <code>OnDllOnInputHookEvent</code> with parameters:<br />
       <ol>
         <li><code>msg</code> - one of this values <code>WM_KEYDOWN</code>, <code>WM_KEYUP</code>, <code>WM_SYSKEYDOWN</code>, or <code>WM_SYSKEYUP</code> for keyboard events, or <code>WM_LBUTTONDOWN</code>, <code>WM_LBUTTONUP</code>, <code>WM_MOUSEMOVE</code>, <code>WM_MOUSEWHEEL</code>, <code>WM_MOUSEHWHEEL</code>, <code>WM_RBUTTONDOWN</code>, or <code>WM_RBUTTONUP</code>. - for mouse events.</li>
         <li><code>wparam</code></li>
