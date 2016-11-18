@@ -141,11 +141,11 @@ button {
 }
 
 #download:hover {
-  background-position-y: -47px;
+  background-position-y: -60px;
 }
 
 #download:active {
-  background-position-y: -94px;
+  background-position-y: -120px;
 }
 
 #download {
