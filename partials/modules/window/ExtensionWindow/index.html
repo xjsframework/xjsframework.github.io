@@ -7,7 +7,10 @@
 <ul>
 <li><code>scene-load</code>: notifies in the event of a scene change. Handler is a function f(sceneNumber: number)</li>
 <li><code>sources-list-highlight</code>: notifies when a user hovers over a source in the stage, returning its source id, or when the mouse moves out of a source bounding box, returning null. Source id is also returned when hovering over the bottom panel. Handler is a function f(id: string)</li>
-<li><p><code>sources-list-select</code>: notifies when a user clicks a source in the stage. Handler is a function f(id: string)</p>
+<li><code>sources-list-select</code>: notifies when a user clicks a source in the stage. Source id is also returned when source is selected from the bottom panel. Handler is a function f(id: string)</li>
+<li><code>sources-list-update</code>: notifies when there are changes on list sources whether on stage or bottom panel. Handler is a function(ids: string) where ids are comma separated source ids.</li>
+<li><code>scene-delete</code> : notifies when a user deletes a scene. Handler is a function f(index: number). Works only on version 2.8.1606.1601 or higher.</li>
+<li><p><code>scene-add</code> : notifies when a user adds a scene. Handler is a function f(index: number). Works only on version 2.8.1606.1701 or higher.</p>
 <p>Use the <code>on(event: string, handler: Function)</code> function to listen to an event.</p>
 </li>
 </ul>
@@ -93,7 +96,29 @@
       
   </section>
 
+
+  <section class="member static">
+    <a name="emit"><h1 id="emit" class="name">
+      <code>static</code> emit
+    </h1></a>
+     <pre><code>param: (event: string, ...params: any[])
+ </code></pre>
+ <p>Allows this class to emit an event.</p>
+ 
+  </section>
+
+
+  <section class="member static">
+    <a name="on"><h1 id="on" class="name">
+      <code>static</code> on
+    </h1></a>
+     <pre><code>param: (event: string, handler: Function)
+ </code></pre>
+ <p>Allows listening to events that this class emits.</p>
+ 
+  </section>
+
 <p class="module defined-in">exported from <a href='#/window'>window</a><br/>
-defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/window/extension.ts#L8-L103">../src/window/extension.ts (line 8)</a>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/window/extension.ts#L13-L170">../src/window/extension.ts (line 13)</a>
 </p>
 

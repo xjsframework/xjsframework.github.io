@@ -8,10 +8,12 @@
 <p> The following events are emitted.</p>
 <ul>
 <li><code>access-granted</code></li>
-<li><p><code>access-revoked</code></p>
-<p>Use the <code>on(event: string, handler: Function)</code> function to listen to events.</p>
-</li>
+<li><code>access-revoked</code></li>
 </ul>
+<p> Use the <code>on(event: string, handler: Function)</code> function to listen to events.</p>
+<p> For more detailed information about using DLLs in XSplit, please see the
+ <a href='tutorials.html#/dll'>DLL tutorial</a>. That link also includes a list of
+ methods exposed by the DLLs that ship with XSplit.</p>
 </p><h2>Members</h2>
   <section class="member static">
     <a name="load"><h1 id="load" class="name">
@@ -31,17 +33,6 @@
 
 
   <section class="member static">
-    <a name="emit"><h1 id="emit" class="name">
-      <code>static</code> emit
-    </h1></a>
-     <pre><code>param: (event: string, ...params: any[])
- </code></pre>
- <p>Allows this class to emit an event.</p>
- 
-  </section>
-
-
-  <section class="member static">
     <a name="on"><h1 id="on" class="name">
       <code>static</code> on
     </h1></a>
@@ -54,12 +45,23 @@
 
 
   <section class="member static">
+    <a name="emit"><h1 id="emit" class="name">
+      <code>static</code> emit
+    </h1></a>
+     <pre><code>param: (event: string, ...params: any[])
+ </code></pre>
+ <p>Allows this class to emit an event. Generally only useful for testing.</p>
+ 
+  </section>
+
+
+  <section class="member static">
     <a name="call"><h1 id="call" class="name">
       <code>static</code> call
     </h1></a>
      <pre><code>param: (funcName: string, ...params: string[])
  </code></pre>
- <p>return: string (see DLL documentation)</p>
+ <p>return: Promise<string> (see <a href='tutorials.html#/dll'>DLL documentation</a>)</p>
  <p>Calls a function from a loaded &quot;safe&quot; DLL. The only safe DLL we are
  currently exposing is <code>Xjs.dll</code>.</p>
  
@@ -72,12 +74,13 @@
     </h1></a>
      <pre><code>param: (funcName: string, ...params: string[])
  </code></pre>
- <p>return: string (see DLL documentation)</p>
+ <p>return: Promise<string> (see <a href='tutorials.html#/dll'>DLL documentation</a>)</p>
  <p>Calls a function from a loaded &quot;unsafe&quot; DLL. The first DLL containing
  the function name will be called, so you need to ensure there are no
  function name collisions among DLLs for functions you require.</p>
  <p>Some DLLs have callbacks. Assign a handler function to that callback in
- the global namespace, and the DLL will call that function accordingly.</p>
+ the global namespace (<code>window.callbackName = ...</code>), and the DLL will call
+ that function accordingly.</p>
  <p>See the documentation of your specific DLL for more details.</p>
  
   </section>
@@ -89,12 +92,12 @@
     </h1></a>
      <pre><code>return: Promise&lt;boolean&gt;
  </code></pre>
- <p>Determines if user has granted DLL access for this plugin, or whether
- DLL security is disabled altogether.</p>
+ <p>Determines if user has granted DLL access for this plugin. This also
+ resolves to true if DLL security is disabled altogether.</p>
  
   </section>
 
 <p class="module defined-in">exported from <a href='#/core'>core</a><br/>
-defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/core/dll.ts#L4-L124">../src/core/dll.ts (line 4)</a>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/core/dll.ts#L4-L130">../src/core/dll.ts (line 4)</a>
 </p>
 
