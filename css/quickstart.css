@@ -153,43 +153,51 @@ button {
 }
 
 .download-xbc {
-  background-color: #0095de;
+  background: linear-gradient(to right,#24a898,#1a8477);
+  background-color: #24a898;
   display: inline-block;
-  height: 60px;
-  width: 375px;
+  height: 65px;
+  width: 300px;
   border-radius: 3px;
+  font-size: 16px;
+}
+
+.download-xbc a {
+  vertical-align: top;
+  margin: 5px 10px;
+  display: inline-block;
 }
 
 .download-xbc .softwareIcon {
   height: 50px;
   width: 50px;
-  background-image: url('../assets/Slices-2_download.png');
-  float: left;
-  background-position: 98px 0;
-  margin: 6px 10px 0 15px;
+  background-image: url('../assets/xbc-white.png');
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.download-xbc .softwareInfo {
+  margin-left: 1px;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .download-xbc .softwareDownloadText {
-  font-size: 30px;
   display: block;
-  height: 35px;
+  vertical-align: middle;
+  text-align: center;
 }
 
 .download-xbc .softwareVersion {
-  float: left;
-  margin-left: 2px;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 12px;
 }
 
 .download-xbc .softwareRelease {
-  border-left: 1px solid white;
-  margin-left: 8px;
-  padding-left: 8px;
-  float: left;
-}
-
-.download-xbc .softwareVersion,
-.download-xbc .softwareRelease {
-  font-size: 13px;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 12px;
 }
 
 .download-xbc .softwareDownloadText,
