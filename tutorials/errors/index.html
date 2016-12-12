@@ -3,9 +3,13 @@
 
 <h2>Sources in memory</h2>
 <p>Sources are not kept loaded in memory by default. Every time a user switches scenes, the current set of sources is unloaded (except for those configured to be kept loaded), which can lead to issues such as a stopwatch resetting to 0. The new scene's sources will then be loaded into memory.</p>
-<p>The caveat with sources that are not loaded is that while it is possible to get a listing of all items through the <code>getItems()</code> call of a <code>Scene</code>, it is (currently) not possible to get or set any of its properties (with the exception of the <code>getID()</code> and <code>getSceneID()</code> calls).</p>
+<p>The caveat with sources that are not loaded is that while it is possible to get a listing of all sources through the <code>getSources()</code> call of a <code>Scene</code>, it is (currently) not possible to access any of its source properties.</p>
 <p>To get around this restriction, you may either set the sources to be always kept in memory, or only manipulate sources if they are in the currently active scene.</p>
-<p>As an additional note, currently all global sources are set to be kept in memory.</p>
+<p><em>Note about global sources</em>: XSplit 2.8 introduced the concept of "global sources". Global sources were implemented to be always kept loaded in memory. With the arrival of XSplit 2.9, the concept was refined into "linked sources", where a single source could be linked to several renderer items that may even be scattered across different scenes. These sources are not necessarily always kept in memory.</p>
 
-<h2>Pages not refreshing</h2>
-<p>Running into caching issues while testing? Try adding a query parameter (<code>test.html?random=0</code>) to your page's URL. TODO: check if there is anything more we can say about this; such as when caching issues might occur, anything about manually refreshing, etc.</p>
+<h2>Pages not refreshing</h2><p>Running into caching issues while testing? Try adding a query parameter (<code>test.html?random=0</code>) to your page's URL.</p>
+
+<h2>Extensions handling multiple scenes</h2>
+<p><em>Note: This section is only applicable when running plugins in XSplit 2.7 or below.</em></p>
+<p>For performance purposes, not all scenes are initialized when the application runs. On application startup, it initializes only those scenes starting from the first scene, all the way to the currently active scene or the last scene containing a source, whichever comes last. Extensions that try to manipulate these uninitialized scenes will possibly encounter errors when using the Scene class.</p>
+<p>The safest way to avoid this is to call <code>Scene.initializeScenes()</code> before doing scene-related manipulation, which will initialize all the scenes in the application. (As an added note, <code>Scene.setActiveScene()</code> will also perform initialization for all scenes up to and including the target scene.)</p>
