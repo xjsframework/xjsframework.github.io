@@ -3,7 +3,7 @@
 <p><p>The AudioItem class represents an audio device that has been added
 to the stage.</p>
 <p>Inherits from: <a href='#core/Item'>Core/Item</a></p>
-<p>Implements: <a href='#core/IItemAudio'>Core/IItemAudio</a></p>
+<p>Implements: <a href='#core/IAudio'>Core/IAudio</a></p>
 <h3 id="basic-usage">Basic Usage</h3>
 <pre><code class="lang-javascript">var XJS = require(&#39;xjs&#39;);
 
@@ -25,10 +25,8 @@ XJS.Scene.getActiveScene().then(function(scene) {
     <a name="isSilenceDetectionEnabled"><h1 id="isSilenceDetectionEnabled" class="name">
       isSilenceDetectionEnabled
     </h1></a>
-    <pre><code>return: Promise&lt;boolean&gt;
-</code></pre>
-<p>Check if silence detection is on or off</p>
-
+          <p>See: <a href='#core/AudioSource#isSilenceDetectionEnabled'>isSilenceDetectionEnabled</a></p>
+      
   </section>
 
 
@@ -36,11 +34,8 @@ XJS.Scene.getActiveScene().then(function(scene) {
     <a name="setSilenceDetectionEnabled"><h1 id="setSilenceDetectionEnabled" class="name">
       setSilenceDetectionEnabled
     </h1></a>
-    <pre><code>param: (value: boolean)
-</code></pre>
-<p>Set silence detection to ON or OFF</p>
-<p><em>Chainable.</em></p>
-
+          <p>See: <a href='#core/AudioSource#setSilenceDetectionEnabled'>setSilenceDetectionEnabled</a></p>
+      
   </section>
 
 
@@ -48,11 +43,8 @@ XJS.Scene.getActiveScene().then(function(scene) {
     <a name="getSilenceThreshold"><h1 id="getSilenceThreshold" class="name">
       getSilenceThreshold
     </h1></a>
-    <pre><code>return: Promise&lt;number&gt;
-</code></pre>
-<p>Gets silenced detection threshold.
-Amplitude less than threshold will be detected as silence.</p>
-
+          <p>See: <a href='#core/AudioSource#getSilenceThreshold'>getSilenceThreshold</a></p>
+      
   </section>
 
 
@@ -60,11 +52,8 @@ Amplitude less than threshold will be detected as silence.</p>
     <a name="setSilenceThreshold"><h1 id="setSilenceThreshold" class="name">
       setSilenceThreshold
     </h1></a>
-    <pre><code>param: (value: number)
-</code></pre>
-<p>Sets silence detection threshold, min of 0, max of 128</p>
-<p><em>Chainable.</em></p>
-
+          <p>See: <a href='#core/AudioSource#setSilenceThreshold'>setSilenceThreshold</a></p>
+      
   </section>
 
 
@@ -72,11 +61,8 @@ Amplitude less than threshold will be detected as silence.</p>
     <a name="getSilencePeriod"><h1 id="getSilencePeriod" class="name">
       getSilencePeriod
     </h1></a>
-    <pre><code>return: Promise&lt;number&gt;
-</code></pre>
-<p>Gets silenced detection period in ms time unit.
-Reaction time before filter removes noice/sound less than threshold</p>
-
+          <p>See: <a href='#core/AudioSource#getSilencePeriod'>getSilencePeriod</a></p>
+      
   </section>
 
 
@@ -84,11 +70,8 @@ Reaction time before filter removes noice/sound less than threshold</p>
     <a name="setSilencePeriod"><h1 id="setSilencePeriod" class="name">
       setSilencePeriod
     </h1></a>
-    <pre><code>param: (value: number)
-</code></pre>
-<p>Sets silence detection period, min of 0, max of 10000</p>
-<p><em>Chainable.</em></p>
-
+          <p>See: <a href='#core/AudioSource#setSilencePeriod'>setSilencePeriod</a></p>
+      
   </section>
 
 
@@ -96,10 +79,8 @@ Reaction time before filter removes noice/sound less than threshold</p>
     <a name="getAudioOffset"><h1 id="getAudioOffset" class="name">
       getAudioOffset
     </h1></a>
-    <pre><code>return: Promise&lt;number&gt;
-</code></pre>
-<p>Gets audio delay (1 unit = 100ns)</p>
-
+          <p>See: <a href='#core/AudioSource#getAudioOffset'>getAudioOffset</a></p>
+      
   </section>
 
 
@@ -107,11 +88,8 @@ Reaction time before filter removes noice/sound less than threshold</p>
     <a name="setAudioOffset"><h1 id="setAudioOffset" class="name">
       setAudioOffset
     </h1></a>
-    <pre><code>param: (value: number)
-</code></pre>
-<p>Sets audio delay, accepts only positive delay</p>
-<p><em>Chainable.</em></p>
-
+          <p>See: <a href='#core/AudioSource#setAudioOffset'>setAudioOffset</a></p>
+      
   </section>
 
 
@@ -119,7 +97,7 @@ Reaction time before filter removes noice/sound less than threshold</p>
     <a name="getVolume"><h1 id="getVolume" class="name">
       getVolume
     </h1></a>
-          <p>See: <a href='#core/IItemAudio#getVolume'>getVolume</a></p>
+          <p>See: <a href='#core/IAudio#getVolume'>getVolume</a></p>
       
   </section>
 
@@ -128,7 +106,7 @@ Reaction time before filter removes noice/sound less than threshold</p>
     <a name="isMute"><h1 id="isMute" class="name">
       isMute
     </h1></a>
-          <p>See: <a href='#core/IItemAudio#isMute'>isMute</a></p>
+          <p>See: <a href='#core/IAudio#isMute'>isMute</a></p>
       
   </section>
 
@@ -137,7 +115,7 @@ Reaction time before filter removes noice/sound less than threshold</p>
     <a name="setVolume"><h1 id="setVolume" class="name">
       setVolume
     </h1></a>
-          <p>See: <a href='#core/IItemAudio#setVolume'>setVolume</a></p>
+          <p>See: <a href='#core/IAudio#setVolume'>setVolume</a></p>
       
   </section>
 
@@ -146,7 +124,7 @@ Reaction time before filter removes noice/sound less than threshold</p>
     <a name="setMute"><h1 id="setMute" class="name">
       setMute
     </h1></a>
-          <p>See: <a href='#core/IItemAudio#setMute'>setMute</a></p>
+          <p>See: <a href='#core/IAudio#setMute'>setMute</a></p>
       
   </section>
 
@@ -155,7 +133,7 @@ Reaction time before filter removes noice/sound less than threshold</p>
     <a name="isStreamOnlyAudio"><h1 id="isStreamOnlyAudio" class="name">
       isStreamOnlyAudio
     </h1></a>
-          <p>See: <a href='#core/IItemAudio#isStreamOnlyAudio'>isStreamOnlyAudio</a></p>
+          <p>See: <a href='#core/IAudio#isStreamOnlyAudio'>isStreamOnlyAudio</a></p>
       
   </section>
 
@@ -164,7 +142,7 @@ Reaction time before filter removes noice/sound less than threshold</p>
     <a name="setStreamOnlyAudio"><h1 id="setStreamOnlyAudio" class="name">
       setStreamOnlyAudio
     </h1></a>
-          <p>See: <a href='#core/IItemAudio#setStreamOnlyAudio'>setStreamOnlyAudio</a></p>
+          <p>See: <a href='#core/IAudio#setStreamOnlyAudio'>setStreamOnlyAudio</a></p>
       
   </section>
 
@@ -173,11 +151,11 @@ Reaction time before filter removes noice/sound less than threshold</p>
     <a name="isAudioAvailable"><h1 id="isAudioAvailable" class="name">
       isAudioAvailable
     </h1></a>
-          <p>See: <a href='#core/IItemAudio#isAudioAvailable'>isAudioAvailable</a></p>
+          <p>See: <a href='#core/IAudio#isAudioAvailable'>isAudioAvailable</a></p>
       
   </section>
 
 <p class="module defined-in">exported from <a href='#/core'>core</a><br/>
-defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/core/items/audio.ts#L8-L199">../src/core/items/audio.ts (line 8)</a>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/F:/Users/MiYb/Documents/Projects/git/xjs/src/core/items/audio.ts#L9-L89">F:/Users/MiYb/Documents/Projects/git/xjs/src/core/items/audio.ts (line 9)</a>
 </p>
 
