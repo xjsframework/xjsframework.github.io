@@ -18,6 +18,11 @@ angular.module('navigation-tutorials', [])
       "name": "Developing the Source Properties Window"
     },
     {
+      "path": "linkedsources",
+      "partial": "tutorials/linkedsources",
+      "name": "Linked Sources"
+    },
+    {
       "path": "extensions",
       "partial": "tutorials/extensions",
       "name": "Developing Extension Plugins"
