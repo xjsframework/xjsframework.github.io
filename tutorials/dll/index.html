@@ -35,7 +35,7 @@ dll.load(['Scriptdlls\\SplitMediaLabs\\dllA.dll','Scriptdlls\\SplitMediaLabs\\dl
 <h4>Callback usage</h4>
 <p>Some DLLs can call functions defined on the global scope. Consult your DLL documentation for these functions and the callbacks they may call.</p>
 <p><pre class="language-javascript"><code>// handle values from xsplit.HookSubscribe DLL call
-window.OnInputHookEvent = function(msg, wparam, lparam) { }</code></pre>
+window.OnDllOnInputHookEvent = function(msg, wparam, lparam) { }</code></pre>
 
 <h4>Miscellaneous</h4>
 <p>Optionally, developers can choose to subscribe to the <code>access-granted</code> and <code>access-revoked</code> events of the Dll object.
@@ -298,6 +298,12 @@ xjs.ready().then(function() {
     </tr>
 
     <tr>
+      <td><code>xsplit.Unzip</code></td>
+      <td>zipFile, unzipPath</td>
+      <td>Extracts a Zip file</td>
+    </tr>
+
+    <tr>
       <td><code>xsplit.Exists</code></td>
       <td>item_path</td>
       <td>Checks for the existence of a file or folder. Returns "1" if it exists, and "0" otherwise.</td>
@@ -306,7 +312,7 @@ xjs.ready().then(function() {
     <tr>
       <td><code>xsplit.HookSubscribe</code></td>
       <td></td>
-      <td>Subscribes to global keyboard/mouse hook. Hook events will use the callback <code>OnInputHookEvent</code> with parameters:<br />
+      <td>Subscribes to global keyboard/mouse hook. Hook events will use the callback <code>OnDllOnInputHookEvent</code> with parameters:<br />
       <ol>
         <li><code>msg</code> - one of this values <code>WM_KEYDOWN</code>, <code>WM_KEYUP</code>, <code>WM_SYSKEYDOWN</code>, or <code>WM_SYSKEYUP</code> for keyboard events, or <code>WM_LBUTTONDOWN</code>, <code>WM_LBUTTONUP</code>, <code>WM_MOUSEMOVE</code>, <code>WM_MOUSEWHEEL</code>, <code>WM_MOUSEHWHEEL</code>, <code>WM_RBUTTONDOWN</code>, or <code>WM_RBUTTONUP</code>. - for mouse events.</li>
         <li><code>wparam</code></li>
@@ -321,23 +327,5 @@ xjs.ready().then(function() {
       <td></td>
       <td>Unsubscribe from global keyboard/mouse hook.</td>
     </tr>
-
-    <tr>
-       <td><code>xsplit.Md5Create</code></td>
-       <td></td>
-       <td>Creates an Md5 object. Returns its integer id.</td>
-     </tr>
-
-     <tr>
-       <td><code>xsplit.Md5Update</code></td>
-       <td>id,base64_string_data</td>
-       <td>Updates Md5 internal data.</td>
-     </tr>
-
-     <tr>
-       <td><code>xsplit.Md5Result</code></td>
-       <td>id</td>
-       <td>Returns Md5 hex string.</td>
-     </tr>
   </tbody>
 </table>

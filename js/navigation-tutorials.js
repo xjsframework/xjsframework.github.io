@@ -46,6 +46,11 @@ angular.module('navigation-tutorials', [])
       "path": "dll",
       "partial": "tutorials/dll",
       "name": "Using DLLs for Extensibility"
+    },
+    {
+      "path": "60fps",
+      "partial": "tutorials/60fps",
+      "name": "60 FPS Browser Sources"
     }
   ]
 });

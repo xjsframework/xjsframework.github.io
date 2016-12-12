@@ -95,6 +95,11 @@ angular.module('navigation-modules', [])
               "name": "refresh"
             },
             {
+              "path": "/core/Item#remove",
+              "partial": "partials/modules//core/Item/index.html",
+              "name": "remove"
+            },
+            {
               "path": "/core/Item#duplicate",
               "partial": "partials/modules//core/Item/index.html",
               "name": "duplicate"
@@ -1557,14 +1562,14 @@ angular.module('navigation-modules', [])
               "name": "load"
             },
             {
-              "path": "/core/Dll#emit",
-              "partial": "partials/modules//core/Dll/index.html",
-              "name": "emit"
-            },
-            {
               "path": "/core/Dll#on",
               "partial": "partials/modules//core/Dll/index.html",
               "name": "on"
+            },
+            {
+              "path": "/core/Dll#emit",
+              "partial": "partials/modules//core/Dll/index.html",
+              "name": "emit"
             },
             {
               "path": "/core/Dll#call",
@@ -6783,6 +6788,16 @@ angular.module('navigation-modules', [])
               "path": "/window/SourcePluginWindow#getInstance",
               "partial": "partials/modules//window/SourcePluginWindow/index.html",
               "name": "getInstance"
+            },
+            {
+              "path": "/window/SourcePluginWindow#emit",
+              "partial": "partials/modules//window/SourcePluginWindow/index.html",
+              "name": "emit"
+            },
+            {
+              "path": "/window/SourcePluginWindow#on",
+              "partial": "partials/modules//window/SourcePluginWindow/index.html",
+              "name": "on"
             }
           ]
         },
@@ -6826,6 +6841,16 @@ angular.module('navigation-modules', [])
               "path": "/window/ExtensionWindow#getInstance",
               "partial": "partials/modules//window/ExtensionWindow/index.html",
               "name": "getInstance"
+            },
+            {
+              "path": "/window/ExtensionWindow#emit",
+              "partial": "partials/modules//window/ExtensionWindow/index.html",
+              "name": "emit"
+            },
+            {
+              "path": "/window/ExtensionWindow#on",
+              "partial": "partials/modules//window/ExtensionWindow/index.html",
+              "name": "on"
             }
           ]
         },
