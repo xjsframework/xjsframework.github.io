@@ -2,237 +2,117 @@
 
 <h3>Introduction</h3>
 <p>
-  <em>If you are migrating from <code>xjs@1.3.0</code> or lower, you may want to
-  read about some <a href="tutorials.html#/sourceplugins#migration">important
-  changes to sources</a>. This has affected our API for versions 1.4.0 and
-  higher. Please make sure to also read about XSplit's new
-  Source/Item Architecture below.</em>
+  Sources are objects that may be added to your presentation to be included in
+  your streams and recordings. While XSplit does provide native source plugins
+  such as cameras, games, and even RTMP streams, it is also possible to create
+  your own source plugin using HTML.
 </p>
 <p>
-  Sources are objects that may be added to your presentation. While XSplit does provide native source plugins such as cameras, games, and even RTMP streams,
-  it is also possible to create your own source plugin using HTML. This page will
-  be visible in your streams or recordings.
+  To test your HTML plugin, simply drag the HTML file onto the stage.
+  Alternatively, if you are locally or remotely hosting the source, you may add
+  the hosted page by clicking Sources > Other > Webpage URL within
+  XSplit Broadcaster.
 </p>
-<p>
-  To test your HTML plugin, simply drag the file onto the stage. Alternatively,
-  if you are locally or remotely hosting the source, you may add the file by clicking Sources > Other > Webpage URL within XSplit Broadcaster.
-</p>
-
-<h3>Source/Item Architecture</h3>
-<p>
-  When talking about sources, it is important to understand the internal
-  architecture in XSplit. Sources are rendered by one or more "video items".
-  When you add a source to XSplit, a single video item is created by default.
-</p>
-<p>
-  XSplit Broadcaster 2.8 includes the ability to convert a source into a global
-  source. A global source is one that may be rendered by multiple items! Each
-  item may have a different position, a different size, or even be located in
-  different scenes.
-</p>
-<p>
-  Because of the source/item architecture, some properties belong specifically
-  to video items while others belong to the source. Source properties are
-  actually shared across all video items rendering the source, while video item
-  properties may be different for several video items for a given source. The
-  following table contains a list of item properties exposed by <code>xjs</code>.
-</p>
-
-<table>
-  <caption>Rendering Properties (for configuring a video item)</caption>
-  <thead>
-    <tr>
-      <th>Property</th>
-      <th>Description</th>
-      <th>API Reference</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>name</td>
-      <td>Modify the name of your item.</td>
-      <td><code><a href="http://xjsframework.github.io/api.html#/core/Item#setName">Item#setName<a></code></td>
-    </tr>
-    <tr>
-      <td>cname</td>
-      <td>Modify the custom name of the item.</td>
-      <td><code><a href="http://xjsframework.github.io/api.html#/core/Item#setCustomName">Item#setCustomName</a></code></td>
-    </tr>
-    <tr>
-      <td>layout</td>
-      <td>Set item position, cropping, rotation.</td>
-      <td>All <code><a href="http://xjsframework.github.io/api.html#/core/IItemLayout">IItemLayout</a></code> methods.</td>
-    </tr>
-    <tr>
-      <td>color</td>
-      <td>Sets color options and transparency for video items.</td>
-      <td>All <code><a href="http://xjsframework.github.io/api.html#/core/IItemColor">IItemColor</a></code> methods</td>
-    </tr>
-    <tr>
-      <td>color correction/chroma key</td>
-      <td>Set different chroma keying options for video items.</td>
-      <td>All <code><a href="http://xjsframework.github.io/api.html#/core/IItemChroma">IItemChroma</a></code> methods</td>
-    </tr>
-    <tr>
-      <td>transition</td>
-      <td>Set different transition options when visibility is toggled.</td>
-      <td>All <code><a href="http://xjsframework.github.io/api.html#/core/IItemTransition">IItemTransition</a></code> methods</td>
-    </tr>
-    <tr>
-      <td>edgeeffect</td>
-      <td>Sets the mask effect to any one of three possible choices: Shape/Edge effects, File masking, or None.</td>
-      <td>All <code><a href="http://xjsframework.github.io/api.html#/core/IItemEffect">IItemEffect</a></code> methods</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>
-  All other properties not listed above as a video item property is a source
-  property. The following is a non-exhaustive list of source properties. (You
-  might notice that most of the properties actually belong to some subclass of
-  <code>Item</code>, but this is fine. If you configure a source property
-  by giving a specific item's ID, the underlying call will actually bubble up to
-  the appropriate source instead of the specified video item!)
-</p>
-
-<table>
-  <caption>Examples of Source Properties</caption>
-  <thead>
-    <tr>
-      <th>Property</th>
-      <th>Description</th>
-      <th>API Reference</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>itemlist</td>
-      <td>Gets the complete set of IDs for video items that are rendering this source.</td>
-      <td><code><a href="http://xjsframework.github.io/api.html#/core/Source#getItemList">Source#getItemList TODO need to also add this method to Source<a></code></td>
-    </tr>
-    <tr>
-      <td>srcid</td>
-      <td>Gets the ID for this source.</td>
-      <td><code>TODO: TO BE IMPLEMENTED IN xjs</code></td>
-    </tr>
-    <tr>
-      <td>globalsrc</td>
-      <td>Toggles global source. (This is a special property. Check API docs for more details)</td>
-      <td><code><a href="http://xjsframework.github.io/api.html#/core/Source#setGlobalSource">Source#setGlobalSource</a></code></td>
-    </tr>
-  </tbody>
-</table>
-
-<p>
-  The following is a visual representation of what it means for a source to be
-  global. A global source can be thought of as not existing in one specific
-  scene; instead, it is only visible through its renderers (video items).
-  Video items are in charge of a number of properties including position and
-  transparency. The source is in charge of "global" source properties, which
-  includes the source's configuration.
-</p>
-
-<img src="assets/globalsource.jpg">
 
 <h3>Initializing Source Plugins</h3>
 <p>
-  Let's get right to some sample code!
+  Let's get right to some sample code! This initializes the source plugin's name.
 </p>
 <pre class="language-javascript"><code>// get necessary classes
 var xjs = require('xjs');
 var Source = xjs.Source;
 
-// wait for the framework to finish initialization
+// always wait for the framework to finish initialization
 xjs.ready()
-  .then(Source.getItemList)
-  .then(function(myItems) {
-    // myItems is an array of all video items sharing the same source.
-    // If the source is not a global source, then myItems will only contain one item.
-
-    return myItems[0]; // gets the video item. You can now set its position, chroma key, etc.
+  .then(Source.getCurrentSource)
+  .then(function(mySource) {
+    return mySource.setName('My First Source Plugin');
   });</code></pre>
 <p>
-  For the most part, you can just stick with using <code>myItems[0]</code> and
-  your plugin should work just fine. A common use case for the above pattern
-  include letting the plugin take the entire size of the stage on
-  initialization; because there is exactly one video item created when a user
-  adds your plugin, your initialization code doesn't need to worry about
-  multiple video items rendering your HTML source!
+  Occasionally, you might want to create a source plugin that is meant to be
+  overlaid on the entire viewport. This means you will want to configure the
+  actual renderer (video items) of the source. In order to do this, you will
+  have to acquire references to the video item list, as seen in the code sample
+  below. (For more information on video items, please see the tutorial about
+  <a href="xjsframework.github.io/tutorials.html#/linkedsources">linked
+  sources</a>.)
 </p>
+<pre class="language-javascript"><code>
+mySource.getItemList()
+  .then(function(items) {
+    // when your source is first created, there should be exactly one renderer
+    return items[0];
+  }).then(function(initialItem) {
+    // initialize the item to occupy the entire scene
+    initialItem.setPosition(xjs.Rectangle.fromCoordinates(0, 0, 1, 1));
+  });</code></pre>
 <p>
   To do more advanced initialization (such as loading of a more complex
-  configuration for your source), please read about Configuration Objects here.
-  TODO
-</p>
-<p>
-  More advanced use cases such as extensions creating a global source and
-  then creating and position new video items for that source may require
-  awareness of the item list. For more information on extensions, see here. TODO
+  configuration for your source), you will need to define your own
+  configuration objects.
 </p>
 
 <h3>Configuration Objects</h3>
 <p>
   A custom configuration object may also be applied to sources. Configuration
   objects are simple JSON objects that sources can save to memory.
-  Configuration objects are primarily only meaningful to HTML sources and not
-  others (such as image sources), but this includes plugins that you create!
 </p>
 <p>
   There are no standards prescribed for the configuration object; developers may
   use any valid JSON object. It is the responsibility of the source to load the
   saved object every time the source is loaded, and to apply the object's
-  various settings onto the source's HTML. This is ideally done upon resolution
-  of the framework's ready promise.
+  various settings onto the source. This should be done when the framework is
+  <code>ready()</code>.
 </p>
 <p>
-  In order to persist the configuration object for a specific source, you can
-  use the <code><a href="http://xjsframework.github.io/api.html#/core/IItemConfigurable#saveConfig">IItemConfigurable#saveConfig</a></code>
-  method on your item object (<code>myItems[0]</code> in the code snippet above.)
-  As a standard practice, we suggest you allow users to configure your source
-  through the source properties dialog. For more information on that, please
-  have a look at this tutorial. TODO
+  The source plugins you create are <code>HTMLSource</code> instances. They
+  implement the <a href="http://xjsframework.github.io/api.html#/core/ISourceConfigurable">
+  <code>ISourceConfigurable</code></a> interface, and can thus persist
+  a configuration object. You can use the <code>saveConfig</code> method to save
+  your configuration. As a standard practice, we suggest that you do not allow
+  configuration within the source HTML itself; instead, allow users to configure
+  the source through the source properties dialog. More information can be found
+  <a href="xjsframework.github.io/tutorials.html#/sourceconfig">here</a>.
 </p>
 <p>
-  To get you started with loading your plugin's configuration, here's a code
-  snippet.
+  Once your plugin has defined and saved a configuration object, it is your task
+  as a plugin developer to load and apply these configurations. Take a look:
 </p>
 <pre class="language-javascript"><code>var xjs = require('xjs');
 var Source = xjs.Source;
 
+// within the source HTML, we initialize the settings
 xjs.ready()
-  .then(Source.getItemList)
-  .then(function(itemList) {
-    return itemList[0];
-  }).then(function(myItem) {
-    // load any previously saved configuration
-    return myItem.loadConfig();
+  .then(Source.getCurrentSource)
+  .then(function(mySource) {
+    return mySource.loadConfig();
   }).then(function(config) {
-    // do some checking to see if we already have settings saved
+    // Do some checking to see if we already have settings saved.
+    // The config should be empty if this is the first time the source is added.
     if (Object.keys(config) > 0) {
       // Load previous settings, based on the structure of your configuration object.
       // Note that if you already have saved settings, you probably shouldn't force
-      // the default settings again, such as the default name of the source, or
-      // whether your HTML page should occupy the entire mixer.
+      // any default settings.
+
+      // do something with config here...
     } else {
-      // Set initial item rendering settings here.
-      myItem.setName('NewNameHere')
-      .then(function(myItem) {
-        // Property setters are chainable, so they resolve with same Item instance!
-        // This means you can continue setting any properties.
-        return myItem.setPosition(xjs.Rectangle.fromCoordinates(0, 0, 1, 1));
-      }).then(function(myItem) {
-        return myItem.setKeepAspectRatio(true);
-      }).then(function(myItem) {
-        // Continue initialization as necessary. We recommend saving a dummy
-        // value in the configuration object to indicate that the defaults have
-        // already been applied. If the user refreshes the source, you will
-        // know not to override your user's position/size settings!
-        myItem.saveConfig({
-          defaultsLoaded: true
-        });
+      // Set initial settings here.
+      return mySource.setName('My newly added source!')
+    }).then(function(mySource) {
+      // Property setters are chainable, so they resolve with the same object!
+      // This means you can continue setting any properties.
+      return mySource.setKeepLoaded(true); // always keep loaded in memory
+    }).then(function(mySource) {
+      // Continue initialization as necessary. We recommend saving a dummy
+      // value in the configuration object to indicate that the defaults have
+      // already been applied. If the user refreshes the source, you will
+      // know not to override your user's position/size settings!
+      mySource.saveConfig({
+        defaultsLoaded: true
       });
-    }
-  });</code></pre>
+    });
+  }
+});</code></pre>
 
 <h3>Source Plugin Window utility</h3>
 <p>
