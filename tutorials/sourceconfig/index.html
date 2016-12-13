@@ -11,7 +11,8 @@
 <p>
   The framework allows developers two different layout schemes for the properties window. The first is called tabbed mode, which allows users to leverage XSplit's existing tab system, and even to reuse a number of existing core tabs. The second is called full mode, which gives the developers total control over the full space of the window (the title bar and the Keep Source in Memory checkbox is already supplied).
 </p>
-<pre class="language-javascript"><code>var xjs = require('xjs');
+<pre class="language-javascript"><code>// within your config HTML
+var xjs = require('xjs');
 var propsWindow = xjs.SourcePropsWindow.getInstance();
 
 // Option 1: Use XSplit's existing tab system
@@ -19,7 +20,7 @@ xjs.ready()
   .then(function() {
     propsWindow.useTabbedWindow({
       customTabs: ['Custom'],
-      tabOrder: ['Custom', 'Layout', 'Color', 'Transition'] // Layout/Color/Transition are optional XSplit tabs
+      tabOrder: ['Custom', 'Layout', 'Color', 'Transition'] // Layout/Color/Transition are optional reusable XSplit tabs
     });
   });
 
@@ -29,7 +30,7 @@ xjs.ready()
     propsWindow.useFullWindow();
   });</code></pre>
 <p>
-  The following images illustrate the difference between the two modes as specified by the above code snippets. Right-clicking the video item (yellow) opens the properties window. The blue area indicates where the developer's own HTML will be rendered.
+  The following images illustrate the difference between the two modes as specified by the above code snippets. Right-clicking the video item (yellow) opens the properties window. The blue area indicates where the developer's own HTML will be rendered. You can see tabbed mode on the left, and full mode on the right.
 </p>
 <img src="assets/tabbed-config.png">
 <img src="assets/full-config.png">
@@ -42,56 +43,54 @@ xjs.ready()
 <p>
   Developers should also note that since there is only one HTML file for their properties window, multiple custom tabs have to be handled in the same file. In order to achieve this, the window needs to listen to the <code>set-selected-tab</code> event emitted by the properties window's event emitter. (This event only fires when a custom tab is selected.)
 </p>
-<pre class="language-javascript"><code>// propsWindow is the SourcePropsWindow instance as in the above snippet
-propsWindow.on('set-selected-tab', function(selected) {
-  // selected is the exact tab title passed to the customTabs node
-  // at this point, developers might use CSS to show only content from the relevant tab
+<pre class="language-javascript"><code>var propsWindow = xjs.SourcePropsWindow.getInstance();
+propsWindow.on('set-selected-tab', function(selectedTab) {
+  // selectedTab is the exact tab title passed to the customTabs node
+  // Plugin developers should let the page render the correct tab here, perhaps through CSS
 });</code></pre>
 <a name="man-config-obj"><h3>Manipulating the configuration object</h3></a>
 <p>
   The source’s custom configuration object can be manipulated similarly to how the source itself does it (<a href="tutorials.html#/sourceplugins" target="_blank">see this article</a>), but there are some differences.
 </p>
 <p>
-  When the framework’s ready promise resolves, developers should opt to load the configuration object in order to update the settings displayed on the properties window. This is done in exactly the same manner as the item does.
+  When the framework is ready, the source properties window doesn't need to apply any saved settings to the source. It only needs to concern itself to update its settings UI to display the last saved settings. This is done in exactly the same manner as is done in the source itself.
 </p>
 <pre class="language-javascript"><code>var xjs = require('xjs');
 var Source = xjs.Source;
 
 xjs.ready()
-  .then(Source.getItemList)
-  .then(function(items) {
-    return items[0];
-  }).then(function(myItem) {
-    return myItem.loadConfig();
+  .then(Source.getCurrentSource)
+  .then(function(mySource) {
+    return mySource.loadConfig();
   }).then(function(config) {
-    // update any forms in source properties window to display last saved configuration
+    // update any checkboxes/inputs/etc. in source properties window to display last saved configuration
   });</code></pre>
 <p>
-  The main difference is in saving the configuration: because of the underlying architecture of the application, the properties window is only allowed to signal the source to save the configuration. It is still the source's responsibility to actually save the configuration. The following code snippet illustrates this. (Lines pertaining to the <code>ready()</code> event have been removed but you should always do your processing when the framework is ready.)
+  When manipulating the configuration object, the main difference is in saving the configuration: because of the underlying architecture, the properties window is only allowed to signal or request the source to save the configuration itself. It is still the source's responsibility to actually save the configuration. The following code snippet illustrates this.
 </p>
-<pre class="language-javascript"><code>// somewhere in properties window
+<pre class="language-javascript"><code>// config.html
 mySaveButton.addEventListener('click', function() {
-  myItem.requestSaveConfig(configObj); // myItem from Source.getItemlist
+  mySource.requestSaveConfig(configObj); // this sends the 'save-config' event to the source's window
 });</code></pre>
-<pre class="language-javascript"><code>// in source
+<pre class="language-javascript"><code>// source.html
 var xjs = require('xjs');
 var sourceWindow = xjs.SourcePluginWindow.getInstance();
 
 sourceWindow.on('save-config', function(configObj) {
-  myItem.saveConfig(configObj); // myItem from Source.getItemlist
+  mySource.saveConfig(configObj);
 });</code></pre>
 <p>
   There may be some cases when the plugin may need to change some settings without the need for saving the configuration object. This can be useful in such cases as allowing a "preview" of the changes when hovering over a color swatch. Sample code below:
 </p>
-<pre class="language-javascript"><code>// somewhere in source properties window
+<pre class="language-javascript"><code>// config.html
 myPropertyChanger.addEventListener('click', function() {
-  myItem.applyConfig(configObj); // does not ask to save
+  mySource.applyConfig(configObj); // does not ask to save
 });</code></pre>
 
-<pre class="language-javascript"><code>// somewhere in source
+<pre class="language-javascript"><code>// source.html
 var myDiv = document.getElementById('myDiv');
 
-itemWindow.on('apply-config', function(configObj) {
+sourceWindow.on('apply-config', function(configObj) {
   if (configObj.hasOwnProperty('text')) {
     myDiv.textContent = configObj.text;
   }
