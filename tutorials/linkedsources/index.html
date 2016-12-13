@@ -76,6 +76,14 @@
 
 <h3>Additional technical information</h3>
 
+<p><strong>Linking.</strong> There are some additional processes that occur when you link an item through XSplit Broadcaster (Ctrl+V). This process is not automatically performed if you duplicate programmatically through <code>Item.duplicate</code>. Unless you are creating something advanced such as an extension that primarily deals with linked sources, you probably don't need to consider this.</p>
+
+<ul>
+<li>Upon linking, the application checks if the source has no native resolution (basically browser sources). If so, then a browser size is automatically set based on the renderer's actual size, and this browser size is stored.</li>
+
+<li>Upon unlinking a source without a native resolution, then the application compares that source's browser size with the stored browser size. If the size was changed, then do nothing (users might have changed the browser size themselves); otherwise, set it to 0, 0.</li>
+</ul>
+
 <p><strong>Unlinking.</strong> When you unlink an item, it now renders a source that is totally separate from the original. There is no way to re-link back to the original source.</p>
 
 <p><strong>XSplit 2.8.</strong> The original implementation of global/linked sources in XSplit conflated the ideas of a "Global Source" with a "Source kept in memory." <code>xjs@1.4.0+</code> reflected this application behavior; thus, calling <code>setKeepLoaded(true)</code> automatically converted a source to be "global". XSplit 2.9 did away with this idea. Now, sources can be linked to several items without being kept in memory themselves. <code>xjs@2.0.0+</code> also reflects this breaking behavior, and now more faithfully represents the difference between sources and their corresponding items.</p>
