@@ -8,7 +8,7 @@
 
 <p>The <code>Source</code> contains source-level properties such as the target window of a <code>ScreenSource</code>, audio input settings for a <code>CameraSource</code>, and whether to show the mouse cursor in a <code>GameSource</code>. The corresponding renderers (<code>ScreenItem</code>, <code>CameraItem</code>, <code>GameItem</code>, etc.) handle the renderer-level properties: Should this rendering item be visible in its scene? Should the item be cropped?</p>
 
-<p>Generally speaking, you can code your sources using mostly source properties, especially if you define your own configuration object (read about <a href="xjsframework.github.io/tutorials.html#/sourceplugins">Configuration Objects</a> for more details.) From experience, a source only needs to bother with item properties in use cases such as letting the source be displayed on the entire viewport on initialization.</p>
+<p>Generally speaking, you can code your sources using mostly source properties, especially if you define your own configuration object (read about <a href="tutorials.html#/sourceplugins">Configuration Objects</a> for more details.) From experience, a source only needs to bother with item properties in use cases such as letting the source be displayed on the entire viewport on initialization.</p>
 
 <p>You can check the available source properties through their respective class documentation in the API docs (check the different <code>Source</code> classes). As for item-level properties, you can check the <code>Item</code> classes, or just refer to the following table for a complete list.</p>
 
@@ -25,37 +25,37 @@
     <tr>
       <td>name*</td>
       <td>Modify the name of your item.</td>
-      <td><code><a href="http://xjsframework.github.io/api.html#/core/Source#setName">Source.setName<a></code></td>
+      <td><code><a href="api.html#/core/Source#setName">Source.setName<a></code></td>
     </tr>
     <tr>
       <td>cname*</td>
       <td>Modify the custom name of the item.</td>
-      <td><code><a href="http://xjsframework.github.io/api.html#/core/Source#setCustomName">Source.setCustomName</a></code></td>
+      <td><code><a href="api.html#/core/Source#setCustomName">Source.setCustomName</a></code></td>
     </tr>
     <tr>
       <td>layout</td>
       <td>Set item position, cropping, rotation.</td>
-      <td>All <code><a href="http://xjsframework.github.io/api.html#/core/IItemLayout">IItemLayout</a></code> methods.</td>
+      <td>All <code><a href="api.html#/core/IItemLayout">IItemLayout</a></code> methods.</td>
     </tr>
     <tr>
       <td>color</td>
       <td>Sets color options and transparency for video items.</td>
-      <td>All <code><a href="http://xjsframework.github.io/api.html#/core/IItemColor">IItemColor</a></code> methods</td>
+      <td>All <code><a href="api.html#/core/IItemColor">IItemColor</a></code> methods</td>
     </tr>
     <tr>
       <td>color correction/chroma key</td>
       <td>Set different chroma keying options for video items.</td>
-      <td>All <code><a href="http://xjsframework.github.io/api.html#/core/IItemChroma">IItemChroma</a></code> methods</td>
+      <td>All <code><a href="api.html#/core/IItemChroma">IItemChroma</a></code> methods</td>
     </tr>
     <tr>
       <td>transition</td>
       <td>Set different transition options when visibility is toggled.</td>
-      <td>All <code><a href="http://xjsframework.github.io/api.html#/core/IItemTransition">IItemTransition</a></code> methods</td>
+      <td>All <code><a href="api.html#/core/IItemTransition">IItemTransition</a></code> methods</td>
     </tr>
     <tr>
       <td>edgeeffect</td>
       <td>Sets the mask effect to any one of three possible choices: Shape/Edge effects, File masking, or None.</td>
-      <td>All <code><a href="http://xjsframework.github.io/api.html#/core/IItemEffect">IItemEffect</a></code> methods</td>
+      <td>All <code><a href="api.html#/core/IItemEffect">IItemEffect</a></code> methods</td>
     </tr>
   </tbody>
 </table>
@@ -68,7 +68,7 @@
 
 <p>In order to create a linked source, simply copy (Ctrl+C) on a source, then paste (Ctrl+V). This creates a second item that is linked to the same source as the original. If you want to copy as a separate source (i.e., unlinked copy), you can use Ctrl+Shift+V instead.</p>
 
-<p>The XSplit JS Framework allows you to programmatically paste items, through <a href="xjsframework.github.io/api.html#/core/Item#duplicate"><code>Item.duplicate()</code></a>. You can get a specific video item, and executing duplicate should paste a second item in the exact same position as the first. You also have the option to paste linked, and even to paste to another scene entirely.</p>
+<p>The XSplit JS Framework allows you to programmatically paste items, through <a href="api.html#/core/Item#duplicate"><code>Item.duplicate()</code></a>. You can get a specific video item, and executing duplicate should paste a second item in the exact same position as the first. You also have the option to paste linked, and even to paste to another scene entirely.</p>
 
 <p>The following illustration shows the process of pasting a new source. You can see that the unlinked text (above) is in a different scrolling state from the linked texts (below). The linked ones show the exact same text despite being in different positions.</p>
 
