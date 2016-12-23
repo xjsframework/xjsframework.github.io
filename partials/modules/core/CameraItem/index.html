@@ -9,7 +9,7 @@ CameraItem object if there&#39;s a camera item on the specified scene.</p>
 <a href='#core/IItemColor'>Core/IItemColor</a>,
 <a href='#core/IItemLayout'>Core/IItemLayout</a>,
 <a href='#core/IItemTransition'>Core/IItemTransition</a>,
-<a href='#core/IItemAudio'>Core/IItemAudio</a>,
+<a href='#core/IAudio'>Core/IAudio</a>,
 <a href='#core/IItemEffect'>Core/IItemEffect</a></p>
 <h3 id="basic-usage">Basic Usage</h3>
 <pre><code class="lang-javascript">var XJS = require(&#39;xjs&#39;);
@@ -34,79 +34,8 @@ XJS.Scene.getActiveScene().then(function(scene) {
     <a name="getDeviceId"><h1 id="getDeviceId" class="name">
       getDeviceId
     </h1></a>
-    <pre><code>return: Promise&lt;string&gt;
-</code></pre>
-<p>Gets the device ID of the underlying camera device.</p>
-
-  </section>
-
-
-  <section class="member">
-    <a name="isStreamPaused"><h1 id="isStreamPaused" class="name">
-      isStreamPaused
-    </h1></a>
-    <pre><code>return: Promise&lt;boolean&gt;
-</code></pre>
-<p>Checks if camera feed is paused</p>
-
-  </section>
-
-
-  <section class="member">
-    <a name="setStreamPaused"><h1 id="setStreamPaused" class="name">
-      setStreamPaused
-    </h1></a>
-    <pre><code>param: (value: boolean)
-</code></pre>
-<p>Sets whether camera feed is paused or not</p>
-<p><em>Chainable.</em></p>
-
-  </section>
-
-
-  <section class="member">
-    <a name="isHardwareEncoder"><h1 id="isHardwareEncoder" class="name">
-      isHardwareEncoder
-    </h1></a>
-    <pre><code>return: Promise&lt;boolean&gt;
-</code></pre>
-<p>Checks if camera device is a hardware encoder or not. This check may fail
-if camera device is reinitializing or not present (value defaults to false)</p>
-
-  </section>
-
-
-  <section class="member">
-    <a name="isActive"><h1 id="isActive" class="name">
-      isActive
-    </h1></a>
-    <pre><code>return: Promise&lt;boolean&gt;
-</code></pre>
-<p>Checks if camera device is active and present.</p>
-
-  </section>
-
-
-  <section class="member">
-    <a name="getDelay"><h1 id="getDelay" class="name">
-      getDelay
-    </h1></a>
-    <pre><code>return: Promise&lt;number&gt;
-</code></pre>
-<p>Gets feed capture delay in milliseconds</p>
-
-  </section>
-
-
-  <section class="member">
-    <a name="setDelay"><h1 id="setDelay" class="name">
-      setDelay
-    </h1></a>
-    <pre><code>param: (value: number)
-</code></pre>
-<p>Sets feed capture delay in milliseconds, accepts only positive delay</p>
-<p><em>Chainable.</em></p>
-
+          <p>See: <a href='#core/CameraSource#getDeviceId'>getDeviceId</a></p>
+      
   </section>
 
 
@@ -114,10 +43,8 @@ if camera device is reinitializing or not present (value defaults to false)</p>
     <a name="getAudioOffset"><h1 id="getAudioOffset" class="name">
       getAudioOffset
     </h1></a>
-    <pre><code>return: Promise&lt;number&gt;
-</code></pre>
-<p>Gets audio delay with respect to video feed in milliseconds</p>
-
+          <p>See: <a href='#core/CameraSource#getAudioOffset'>getAudioOffset</a></p>
+      
   </section>
 
 
@@ -125,11 +52,8 @@ if camera device is reinitializing or not present (value defaults to false)</p>
     <a name="setAudioOffset"><h1 id="setAudioOffset" class="name">
       setAudioOffset
     </h1></a>
-    <pre><code>param: (value: number)
-</code></pre>
-<p>Sets audio delay with respect to video feed in milliseconds</p>
-<p><em>Chainable.</em></p>
-
+          <p>See: <a href='#core/CameraSource#setAudioOffset'>setAudioOffset</a></p>
+      
   </section>
 
 
@@ -137,11 +61,8 @@ if camera device is reinitializing or not present (value defaults to false)</p>
     <a name="getAudioInput"><h1 id="getAudioInput" class="name">
       getAudioInput
     </h1></a>
-    <pre><code>return: Promise&lt;MicrophoneDevice&gt;
-</code></pre>
-<p>Gets the microphone device tied as an audio input,
-rejected if no microphone device is used</p>
-
+          <p>See: <a href='#core/CameraSource#getAudioInput'>getAudioInput</a></p>
+      
   </section>
 
 
@@ -149,11 +70,62 @@ rejected if no microphone device is used</p>
     <a name="setAudioInput"><h1 id="setAudioInput" class="name">
       setAudioInput
     </h1></a>
-    <pre><code>param: (value: number)
-</code></pre>
-<p>Sets the microphone device to be tied as an audio input</p>
-<p><em>Chainable.</em></p>
+          <p>See: <a href='#core/CameraSource#setAudioInput'>setAudioInput</a></p>
+      
+  </section>
 
+
+  <section class="member">
+    <a name="isStreamPaused"><h1 id="isStreamPaused" class="name">
+      isStreamPaused
+    </h1></a>
+          <p>See: <a href='#core/CameraSource#isStreamPaused'>isStreamPaused</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="setStreamPaused"><h1 id="setStreamPaused" class="name">
+      setStreamPaused
+    </h1></a>
+          <p>See: <a href='#core/CameraSource#setStreamPaused'>setStreamPaused</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="isHardwareEncoder"><h1 id="isHardwareEncoder" class="name">
+      isHardwareEncoder
+    </h1></a>
+          <p>See: <a href='#core/CameraSource#isHardwareEncoder'>isHardwareEncoder</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="isActive"><h1 id="isActive" class="name">
+      isActive
+    </h1></a>
+          <p>See: <a href='#core/CameraSource#isActive'>isActive</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="getDelay"><h1 id="getDelay" class="name">
+      getDelay
+    </h1></a>
+          <p>See: <a href='#core/CameraSource#getDelay'>getDelay</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="setDelay"><h1 id="setDelay" class="name">
+      setDelay
+    </h1></a>
+          <p>See: <a href='#core/CameraSource#setDelay'>setDelay</a></p>
+      
   </section>
 
 
@@ -161,10 +133,8 @@ rejected if no microphone device is used</p>
     <a name="isForceDeinterlace"><h1 id="isForceDeinterlace" class="name">
       isForceDeinterlace
     </h1></a>
-    <pre><code>return: Promise&lt;boolean&gt;
-</code></pre>
-<p>Checks whether deinterlacing is enforced</p>
-
+          <p>See: <a href='#core/CameraSource#isForceDeinterlace'>isForceDeinterlace</a></p>
+      
   </section>
 
 
@@ -172,11 +142,8 @@ rejected if no microphone device is used</p>
     <a name="setForceDeinterlace"><h1 id="setForceDeinterlace" class="name">
       setForceDeinterlace
     </h1></a>
-    <pre><code>param: (value: boolean)
-</code></pre>
-<p>Enables or disables forcing of deinterlacing</p>
-<p><em>Chainable.</em></p>
-
+          <p>See: <a href='#core/CameraSource#setForceDeinterlace'>setForceDeinterlace</a></p>
+      
   </section>
 
 
@@ -855,7 +822,7 @@ this camera device on the stage.</p>
     <a name="getVolume"><h1 id="getVolume" class="name">
       getVolume
     </h1></a>
-          <p>See: <a href='#core/IItemAudio#getVolume'>getVolume</a></p>
+          <p>See: <a href='#core/IAudio#getVolume'>getVolume</a></p>
       
   </section>
 
@@ -864,7 +831,7 @@ this camera device on the stage.</p>
     <a name="isMute"><h1 id="isMute" class="name">
       isMute
     </h1></a>
-          <p>See: <a href='#core/IItemAudio#isMute'>isMute</a></p>
+          <p>See: <a href='#core/IAudio#isMute'>isMute</a></p>
       
   </section>
 
@@ -873,7 +840,7 @@ this camera device on the stage.</p>
     <a name="setVolume"><h1 id="setVolume" class="name">
       setVolume
     </h1></a>
-          <p>See: <a href='#core/IItemAudio#setVolume'>setVolume</a></p>
+          <p>See: <a href='#core/IAudio#setVolume'>setVolume</a></p>
       
   </section>
 
@@ -882,7 +849,7 @@ this camera device on the stage.</p>
     <a name="setMute"><h1 id="setMute" class="name">
       setMute
     </h1></a>
-          <p>See: <a href='#core/IItemAudio#setMute'>setMute</a></p>
+          <p>See: <a href='#core/IAudio#setMute'>setMute</a></p>
       
   </section>
 
@@ -891,7 +858,7 @@ this camera device on the stage.</p>
     <a name="isStreamOnlyAudio"><h1 id="isStreamOnlyAudio" class="name">
       isStreamOnlyAudio
     </h1></a>
-          <p>See: <a href='#core/IItemAudio#isStreamOnlyAudio'>isStreamOnlyAudio</a></p>
+          <p>See: <a href='#core/IAudio#isStreamOnlyAudio'>isStreamOnlyAudio</a></p>
       
   </section>
 
@@ -900,7 +867,7 @@ this camera device on the stage.</p>
     <a name="setStreamOnlyAudio"><h1 id="setStreamOnlyAudio" class="name">
       setStreamOnlyAudio
     </h1></a>
-          <p>See: <a href='#core/IItemAudio#setStreamOnlyAudio'>setStreamOnlyAudio</a></p>
+          <p>See: <a href='#core/IAudio#setStreamOnlyAudio'>setStreamOnlyAudio</a></p>
       
   </section>
 
@@ -909,7 +876,7 @@ this camera device on the stage.</p>
     <a name="isAudioAvailable"><h1 id="isAudioAvailable" class="name">
       isAudioAvailable
     </h1></a>
-          <p>See: <a href='#core/IItemAudio#isAudioAvailable'>isAudioAvailable</a></p>
+          <p>See: <a href='#core/IAudio#isAudioAvailable'>isAudioAvailable</a></p>
       
   </section>
 
@@ -1148,6 +1115,6 @@ this camera device on the stage.</p>
   </section>
 
 <p class="module defined-in">exported from <a href='#/core'>core</a><br/>
-defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/core/items/camera.ts#L19-L892">../src/core/items/camera.ts (line 19)</a>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/C:/Users/viab/Documents/Repositories/SourceTree/xjsframework/src/core/items/camera.ts#L21-L657">C:/Users/viab/Documents/Repositories/SourceTree/xjsframework/src/core/items/camera.ts (line 21)</a>
 </p>
 

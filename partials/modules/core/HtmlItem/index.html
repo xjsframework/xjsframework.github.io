@@ -7,8 +7,8 @@ plugins and non-plugin URLs.</p>
 <a href='#core/IItemColor'>Core/IItemColor</a>,
 <a href='#core/IItemLayout'>Core/IItemLayout</a>,
 <a href='#core/IItemTransition'>Core/IItemTransition</a>,
-<a href='#core/IItemAudio'>Core/IItemAudio</a>,
-<a href='#core/IItemConfigurable'>Core/IItemConfigurable</a></p>
+<a href='#core/IAudio'>Core/IAudio</a>,
+<a href='#core/ISourceConfigurable'>Core/ISourceConfigurable</a></p>
 <h3 id="basic-usage">Basic Usage</h3>
 <pre><code class="lang-javascript">var XJS = require(&#39;xjs&#39;);
 
@@ -29,226 +29,6 @@ may not be properly reflected in the item unless native browser audio support
 is enabled. (Tools menu &gt; General Settings &gt; Advanced tab)</p>
 </p><h2>Members</h2>
   <section class="member">
-    <a name="getURL"><h1 id="getURL" class="name">
-      getURL
-    </h1></a>
-    <pre><code>return: Promise&lt;string&gt;
-</code></pre>
-<p>Gets the URL of this webpage item.</p>
-
-  </section>
-
-
-  <section class="member">
-    <a name="setURL"><h1 id="setURL" class="name">
-      setURL
-    </h1></a>
-    <pre><code>param: (url: string)
-</code></pre>
-<pre><code>return: Promise&lt;HtmlItem&gt;
-</code></pre>
-<p>Sets the URL of this webpage item.</p>
-<p><em>Chainable.</em></p>
-
-  </section>
-
-
-  <section class="member">
-    <a name="getBrowserJS"><h1 id="getBrowserJS" class="name">
-      getBrowserJS
-    </h1></a>
-    <pre><code>return: Promise&lt;string&gt;
-</code></pre>
-<p>Gets the javascript commands to be executed on item upon load</p>
-
-  </section>
-
-
-  <section class="member">
-    <a name="setBrowserJS"><h1 id="setBrowserJS" class="name">
-      setBrowserJS
-    </h1></a>
-    <pre><code>param: (js: string, refresh: boolean = false)
-</code></pre>
-<pre><code>return: Promise&lt;HtmlItem&gt;
-</code></pre>
-<p>Sets the javascript commands to be executed on item
-right upon setting and on load. Optionally set second parameter
-to true to refresh item (needed to clean previously executed JS code.)</p>
-<p><em>Chainable.</em></p>
-
-  </section>
-
-
-  <section class="member">
-    <a name="isBrowserJSEnabled"><h1 id="isBrowserJSEnabled" class="name">
-      isBrowserJSEnabled
-    </h1></a>
-    <pre><code>return: Promise&lt;boolean&gt;
-</code></pre>
-<p>Gets if BrowserJS is enabled and executed on load</p>
-
-  </section>
-
-
-  <section class="member">
-    <a name="enableBrowserJS"><h1 id="enableBrowserJS" class="name">
-      enableBrowserJS
-    </h1></a>
-    <pre><code>param: (value: boolean)
-</code></pre>
-<pre><code>return: Promise&lt;HtmlItem&gt;
-</code></pre>
-<p>Enables or disables execution of the set BrowserJs upon load.
-Note that disabling this will require item to be refreshed
-in order to remove any BrowserJS previously executed.</p>
-<p><em>Chainable.</em></p>
-
-  </section>
-
-
-  <section class="member">
-    <a name="getCustomCSS"><h1 id="getCustomCSS" class="name">
-      getCustomCSS
-    </h1></a>
-    <pre><code>return: Promise&lt;string&gt;
-</code></pre>
-<p>Gets the custom CSS applied to the document upon loading</p>
-
-  </section>
-
-
-  <section class="member">
-    <a name="setCustomCSS"><h1 id="setCustomCSS" class="name">
-      setCustomCSS
-    </h1></a>
-    <pre><code>param: (value: string)
-</code></pre>
-<pre><code>return: Promise&lt;HtmlItem&gt;
-</code></pre>
-<p>Sets the custom CSS to be applied to the document upon loading</p>
-<p><em>Chainable.</em></p>
-
-  </section>
-
-
-  <section class="member">
-    <a name="isCustomCSSEnabled"><h1 id="isCustomCSSEnabled" class="name">
-      isCustomCSSEnabled
-    </h1></a>
-    <pre><code>return: Promise&lt;boolean&gt;
-</code></pre>
-<p>Gets if custom CSS is enabled and applied to the document on load</p>
-
-  </section>
-
-
-  <section class="member">
-    <a name="enableCustomCSS"><h1 id="enableCustomCSS" class="name">
-      enableCustomCSS
-    </h1></a>
-    <pre><code>param: (value: boolean)
-</code></pre>
-<pre><code>return: Promise&lt;HtmlItem&gt;
-</code></pre>
-<p>Enables or disables application of custom CSS to the document</p>
-<p><em>Chainable.</em></p>
-
-  </section>
-
-
-  <section class="member">
-    <a name="isBrowserTransparent"><h1 id="isBrowserTransparent" class="name">
-      isBrowserTransparent
-    </h1></a>
-    <pre><code>return: Promise&lt;boolean&gt;
-</code></pre>
-<p>Check if browser is rendered transparent</p>
-
-  </section>
-
-
-  <section class="member">
-    <a name="enableBrowserTransparency"><h1 id="enableBrowserTransparency" class="name">
-      enableBrowserTransparency
-    </h1></a>
-    <pre><code>param: Promise&lt;boolean&gt;
-</code></pre>
-<pre><code>return: Promise&lt;HtmlItem&gt;
-</code></pre>
-<p>Enable or disabled transparency of CEF browser</p>
-<p><em>Chainable.</em></p>
-
-  </section>
-
-
-  <section class="member">
-    <a name="getBrowserCustomSize"><h1 id="getBrowserCustomSize" class="name">
-      getBrowserCustomSize
-    </h1></a>
-    <pre><code>return: Promise&lt;Rectangle&gt;
-</code></pre>
-<p>Gets the custom browser window size (in pixels) for the item, if set,
-regardless of its layout on the mixer. Returns a (0, 0) Rectangle if no
-custom size has been set.</p>
-<p>See also: <a href='#util/Rectangle'>Util/Rectangle</a></p>
-
-  </section>
-
-
-  <section class="member">
-    <a name="setBrowserCustomSize"><h1 id="setBrowserCustomSize" class="name">
-      setBrowserCustomSize
-    </h1></a>
-    <pre><code>param: Promise&lt;Rectangle&gt;
-</code></pre>
-<pre><code>return: Promise&lt;HtmlItem&gt;
-</code></pre>
-<p>Sets the custom browser window size for the item
-regardless of its layout on the mixer</p>
-<p><em>Chainable.</em></p>
-<p>See also: <a href='#util/Rectangle'>Util/Rectangle</a></p>
-
-  </section>
-
-
-  <section class="member">
-    <a name="getAllowRightClick"><h1 id="getAllowRightClick" class="name">
-      getAllowRightClick
-    </h1></a>
-    <pre><code>return: Promise&lt;boolean&gt;
-</code></pre>
-<p>Check if right click events are sent to the item or not.</p>
-<h4 id="usage">Usage</h4>
-<pre><code class="lang-javascript">item.getAllowRightClick().then(function(isRightClickAllowed) {
-  // The rest of your code here
-});
-</code></pre>
-
-  </section>
-
-
-  <section class="member">
-    <a name="setAllowRightClick"><h1 id="setAllowRightClick" class="name">
-      setAllowRightClick
-    </h1></a>
-    <pre><code>param: (value:boolean)
-</code></pre>
-<pre><code>return: Promise&lt;Item&gt;
-</code></pre>
-<p>Allow or disallow right click events to be sent to the item. Note that
-you can only catch right click events using <code>mouseup/mousedown</code></p>
-<p><em>Chainable</em></p>
-<h4 id="usage">Usage</h4>
-<pre><code class="lang-javascript">item.setAllowRightClick(true).then(function(item) {
-  // Promise resolves with the same Item instance
-});
-</code></pre>
-
-  </section>
-
-
-  <section class="member">
     <a name="call"><h1 id="call" class="name">
       call
     </h1></a>
@@ -256,8 +36,152 @@ you can only catch right click events using <code>mouseup/mousedown</code></p>
 </code></pre>
 <pre><code>return: Promise&lt;HtmlItem&gt;
 </code></pre>
-<p>Allow this source to communicate with another source.</p>
+<p>Allow this item to call a pre-exposed function within the HTML Item</p>
 
+  </section>
+
+
+  <section class="member">
+    <a name="getURL"><h1 id="getURL" class="name">
+      getURL
+    </h1></a>
+          <p>See: <a href='#core/HtmlSource#getURL'>getURL</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="setURL"><h1 id="setURL" class="name">
+      setURL
+    </h1></a>
+          <p>See: <a href='#core/HtmlSource#setURL'>setURL</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="isBrowserTransparent"><h1 id="isBrowserTransparent" class="name">
+      isBrowserTransparent
+    </h1></a>
+          <p>See: <a href='#core/HtmlSource#isBrowserTransparent'>isBrowserTransparent</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="enableBrowserTransparency"><h1 id="enableBrowserTransparency" class="name">
+      enableBrowserTransparency
+    </h1></a>
+          <p>See: <a href='#core/HtmlSource#getBrowserCustomSize'>getBrowserCustomSize</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="getBrowserCustomSize"><h1 id="getBrowserCustomSize" class="name">
+      getBrowserCustomSize
+    </h1></a>
+          <p>See: <a href='#core/HtmlSource#getBrowserCustomSize'>getBrowserCustomSize</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="setBrowserCustomSize"><h1 id="setBrowserCustomSize" class="name">
+      setBrowserCustomSize
+    </h1></a>
+          <p>See: <a href='#core/HtmlSource#setBrowserCustomSize'>setBrowserCustomSize</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="getAllowRightClick"><h1 id="getAllowRightClick" class="name">
+      getAllowRightClick
+    </h1></a>
+          <p>See: <a href='#core/HtmlSource#getAllowRightClick'>getAllowRightClick</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="setAllowRightClick"><h1 id="setAllowRightClick" class="name">
+      setAllowRightClick
+    </h1></a>
+          <p>See: <a href='#core/HtmlSource#setAllowRightClick'>setAllowRightClick</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="getBrowserJS"><h1 id="getBrowserJS" class="name">
+      getBrowserJS
+    </h1></a>
+          <p>See: <a href='#core/HtmlSource#getBrowserJS'>getBrowserJS</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="setBrowserJS"><h1 id="setBrowserJS" class="name">
+      setBrowserJS
+    </h1></a>
+          <p>See: <a href='#core/HtmlSource#setBrowserJS'>setBrowserJS</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="isBrowserJSEnabled"><h1 id="isBrowserJSEnabled" class="name">
+      isBrowserJSEnabled
+    </h1></a>
+          <p>See: <a href='#core/HtmlSource#isBrowserJSEnabled'>isBrowserJSEnabled</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="enableBrowserJS"><h1 id="enableBrowserJS" class="name">
+      enableBrowserJS
+    </h1></a>
+          <p>See: <a href='#core/HtmlSource#enableBrowserJS'>enableBrowserJS</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="getCustomCSS"><h1 id="getCustomCSS" class="name">
+      getCustomCSS
+    </h1></a>
+          <p>See: <a href='#core/HtmlSource#getCustomCSS'>getCustomCSS</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="setCustomCSS"><h1 id="setCustomCSS" class="name">
+      setCustomCSS
+    </h1></a>
+          <p>See: <a href='#core/HtmlSource#setCustomCSS'>setCustomCSS</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="isCustomCSSEnabled"><h1 id="isCustomCSSEnabled" class="name">
+      isCustomCSSEnabled
+    </h1></a>
+          <p>See: <a href='#core/HtmlSource#isCustomCSSEnabled'>isCustomCSSEnabled</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="enableCustomCSS"><h1 id="enableCustomCSS" class="name">
+      enableCustomCSS
+    </h1></a>
+          <p>See: <a href='#core/HtmlSource#enableCustomCSS'>enableCustomCSS</a></p>
+      
   </section>
 
 
@@ -886,7 +810,7 @@ you can only catch right click events using <code>mouseup/mousedown</code></p>
     <a name="loadConfig"><h1 id="loadConfig" class="name">
       loadConfig
     </h1></a>
-          <p>See: <a href='#core/IItemConfigurable#loadConfig'>loadConfig</a></p>
+          <p>See: <a href='#core/ISourceConfigurable#loadConfig'>loadConfig</a></p>
       
   </section>
 
@@ -895,7 +819,7 @@ you can only catch right click events using <code>mouseup/mousedown</code></p>
     <a name="saveConfig"><h1 id="saveConfig" class="name">
       saveConfig
     </h1></a>
-          <p>See: <a href='#core/IItemConfigurable#saveConfig'>saveConfig</a></p>
+          <p>See: <a href='#core/ISourceConfigurable#saveConfig'>saveConfig</a></p>
       
   </section>
 
@@ -904,7 +828,7 @@ you can only catch right click events using <code>mouseup/mousedown</code></p>
     <a name="requestSaveConfig"><h1 id="requestSaveConfig" class="name">
       requestSaveConfig
     </h1></a>
-          <p>See: <a href='#core/IItemConfigurable#requestSaveConfig'>requestSaveConfig</a></p>
+          <p>See: <a href='#core/ISourceConfigurable#requestSaveConfig'>requestSaveConfig</a></p>
       
   </section>
 
@@ -913,7 +837,7 @@ you can only catch right click events using <code>mouseup/mousedown</code></p>
     <a name="applyConfig"><h1 id="applyConfig" class="name">
       applyConfig
     </h1></a>
-          <p>See: <a href='#core/IItemConfigurable#applyConfig'>applyConfig</a></p>
+          <p>See: <a href='#core/ISourceConfigurable#applyConfig'>applyConfig</a></p>
       
   </section>
 
@@ -922,7 +846,7 @@ you can only catch right click events using <code>mouseup/mousedown</code></p>
     <a name="getVolume"><h1 id="getVolume" class="name">
       getVolume
     </h1></a>
-          <p>See: <a href='#core/IItemAudio#getVolume'>getVolume</a></p>
+          <p>See: <a href='#core/IAudio#getVolume'>getVolume</a></p>
       
   </section>
 
@@ -931,7 +855,7 @@ you can only catch right click events using <code>mouseup/mousedown</code></p>
     <a name="isMute"><h1 id="isMute" class="name">
       isMute
     </h1></a>
-          <p>See: <a href='#core/IItemAudio#isMute'>isMute</a></p>
+          <p>See: <a href='#core/IAudio#isMute'>isMute</a></p>
       
   </section>
 
@@ -940,7 +864,7 @@ you can only catch right click events using <code>mouseup/mousedown</code></p>
     <a name="setVolume"><h1 id="setVolume" class="name">
       setVolume
     </h1></a>
-          <p>See: <a href='#core/IItemAudio#setVolume'>setVolume</a></p>
+          <p>See: <a href='#core/IAudio#setVolume'>setVolume</a></p>
       
   </section>
 
@@ -949,7 +873,7 @@ you can only catch right click events using <code>mouseup/mousedown</code></p>
     <a name="setMute"><h1 id="setMute" class="name">
       setMute
     </h1></a>
-          <p>See: <a href='#core/IItemAudio#setMute'>setMute</a></p>
+          <p>See: <a href='#core/IAudio#setMute'>setMute</a></p>
       
   </section>
 
@@ -958,7 +882,7 @@ you can only catch right click events using <code>mouseup/mousedown</code></p>
     <a name="isStreamOnlyAudio"><h1 id="isStreamOnlyAudio" class="name">
       isStreamOnlyAudio
     </h1></a>
-          <p>See: <a href='#core/IItemAudio#isStreamOnlyAudio'>isStreamOnlyAudio</a></p>
+          <p>See: <a href='#core/IAudio#isStreamOnlyAudio'>isStreamOnlyAudio</a></p>
       
   </section>
 
@@ -967,7 +891,7 @@ you can only catch right click events using <code>mouseup/mousedown</code></p>
     <a name="setStreamOnlyAudio"><h1 id="setStreamOnlyAudio" class="name">
       setStreamOnlyAudio
     </h1></a>
-          <p>See: <a href='#core/IItemAudio#setStreamOnlyAudio'>setStreamOnlyAudio</a></p>
+          <p>See: <a href='#core/IAudio#setStreamOnlyAudio'>setStreamOnlyAudio</a></p>
       
   </section>
 
@@ -976,7 +900,7 @@ you can only catch right click events using <code>mouseup/mousedown</code></p>
     <a name="isAudioAvailable"><h1 id="isAudioAvailable" class="name">
       isAudioAvailable
     </h1></a>
-          <p>See: <a href='#core/IItemAudio#isAudioAvailable'>isAudioAvailable</a></p>
+          <p>See: <a href='#core/IAudio#isAudioAvailable'>isAudioAvailable</a></p>
       
   </section>
 
@@ -1215,6 +1139,6 @@ you can only catch right click events using <code>mouseup/mousedown</code></p>
   </section>
 
 <p class="module defined-in">exported from <a href='#/core'>core</a><br/>
-defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/core/items/html.ts#L20-L1135">../src/core/items/html.ts (line 20)</a>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/C:/Users/viab/Documents/Repositories/SourceTree/xjsframework/src/core/items/html.ts#L22-L647">C:/Users/viab/Documents/Repositories/SourceTree/xjsframework/src/core/items/html.ts (line 22)</a>
 </p>
 

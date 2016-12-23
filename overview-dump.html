@@ -27,41 +27,21 @@
   <h3>Item</h3>
       <h4></h4>
     
-      <h4>setName</h4>
-    
-      <h4>getName</h4>
-    
-      <h4>setCustomName</h4>
-    
-      <h4>getCustomName</h4>
-    
-      <h4>getValue</h4>
-    
-      <h4>setValue</h4>
-    
-      <h4>getKeepLoaded</h4>
-    
-      <h4>setKeepLoaded</h4>
-    
-      <h4>getType</h4>
-    
       <h4>getId</h4>
-    
-      <h4>getSceneId</h4>
     
       <h4>getView</h4>
     
-      <h4>getSourceId</h4>
+      <h4>getSceneId</h4>
     
       <h4>toXML</h4>
     
+      <h4>duplicate</h4>
+    
+      <h4>unlink</h4>
+    
       <h4>getItemList</h4>
     
-      <h4>refresh</h4>
-    
-      <h4>remove</h4>
-    
-      <h4>duplicate</h4>
+      <h4>getSource</h4>
     
       <h4>isKeepAspectRatio</h4>
     
@@ -105,9 +85,26 @@
     
       <h4>setRotateZ</h4>
     
-
-  
-  <h3>Source</h3>
+      <h4>setName</h4>
+    
+      <h4>getName</h4>
+    
+      <h4>setCustomName</h4>
+    
+      <h4>getCustomName</h4>
+    
+      <h4>getValue</h4>
+    
+      <h4>setValue</h4>
+    
+      <h4>getKeepLoaded</h4>
+    
+      <h4>setKeepLoaded</h4>
+    
+      <h4>refresh</h4>
+    
+      <h4>getType</h4>
+    
 
   
   <h3>KeyingType</h3>
@@ -134,34 +131,6 @@
       <h4>LOW</h4>
     
       <h4>HIGH</h4>
-    
-
-  
-  <h3>ActionAfterPlayback</h3>
-      <h4>NONE</h4>
-    
-      <h4>REWIND</h4>
-    
-      <h4>LOOP</h4>
-    
-      <h4>TRANSPARENT</h4>
-    
-      <h4>HIDE</h4>
-    
-
-  
-  <h3>CuePoint</h3>
-      <h4></h4>
-    
-      <h4>toString</h4>
-    
-      <h4>setTime</h4>
-    
-      <h4>setAction</h4>
-    
-      <h4>getTime</h4>
-    
-      <h4>getAction</h4>
     
 
   
@@ -315,7 +284,115 @@
     
 
   
-  <h3>IItemAudio</h3>
+  <h3>IItemEffect</h3>
+      <h4>getMaskEffect</h4>
+    
+      <h4>setMaskEffect</h4>
+    
+      <h4>getBorderEffectRadius</h4>
+    
+      <h4>setBorderEffectRadius</h4>
+    
+      <h4>getBorderEffectThickness</h4>
+    
+      <h4>setBorderEffectThickness</h4>
+    
+      <h4>getBorderEffectOpacity</h4>
+    
+      <h4>setBorderEffectOpacity</h4>
+    
+      <h4>getBorderEffectColor</h4>
+    
+      <h4>setBorderEffectColor</h4>
+    
+      <h4>getShadowEffectThickness</h4>
+    
+      <h4>setShadowEffectThickness</h4>
+    
+      <h4>getShadowEffectBlur</h4>
+    
+      <h4>setShadowEffectBlur</h4>
+    
+      <h4>getShadowEffectOpacity</h4>
+    
+      <h4>setShadowEffectOpacity</h4>
+    
+      <h4>getShadowEffectOffsetX</h4>
+    
+      <h4>setShadowEffectOffsetX</h4>
+    
+      <h4>getShadowEffectOffsetY</h4>
+    
+      <h4>setShadowEffectOffsetY</h4>
+    
+      <h4>getFileMask</h4>
+    
+      <h4>setFileMask</h4>
+    
+      <h4>isFileMaskingGuideVisible</h4>
+    
+      <h4>showFileMaskingGuide</h4>
+    
+
+  
+  <h3>Source</h3>
+      <h4></h4>
+    
+      <h4>setName</h4>
+    
+      <h4>getName</h4>
+    
+      <h4>setCustomName</h4>
+    
+      <h4>getCustomName</h4>
+    
+      <h4>getValue</h4>
+    
+      <h4>setValue</h4>
+    
+      <h4>getKeepLoaded</h4>
+    
+      <h4>setKeepLoaded</h4>
+    
+      <h4>getId</h4>
+    
+      <h4>getItemList</h4>
+    
+      <h4>refresh</h4>
+    
+      <h4>getType</h4>
+    
+
+  
+  <h3>ActionAfterPlayback</h3>
+      <h4>NONE</h4>
+    
+      <h4>REWIND</h4>
+    
+      <h4>LOOP</h4>
+    
+      <h4>TRANSPARENT</h4>
+    
+      <h4>HIDE</h4>
+    
+
+  
+  <h3>CuePoint</h3>
+      <h4></h4>
+    
+      <h4>toString</h4>
+    
+      <h4>setTime</h4>
+    
+      <h4>setAction</h4>
+    
+      <h4>getTime</h4>
+    
+      <h4>getAction</h4>
+    
+
+  
+  <h3>IAudio</h3>
       <h4>getVolume</h4>
     
       <h4>setVolume</h4>
@@ -332,7 +409,7 @@
     
 
   
-  <h3>IItemConfigurable</h3>
+  <h3>ISourceConfigurable</h3>
       <h4>loadConfig</h4>
     
       <h4>saveConfig</h4>
@@ -343,7 +420,7 @@
     
 
   
-  <h3>IItemPlayback</h3>
+  <h3>ISourcePlayback</h3>
       <h4>isSeekable</h4>
     
       <h4>getPlaybackPosition</h4>
@@ -398,54 +475,33 @@
     
 
   
-  <h3>IItemEffect</h3>
-      <h4>getMaskEffect</h4>
+  <h3>ViewTypes</h3>
+      <h4>MAIN</h4>
     
-      <h4>setMaskEffect</h4>
+      <h4>PREVIEW</h4>
     
-      <h4>getBorderEffectRadius</h4>
+      <h4>THUMBNAIL</h4>
     
-      <h4>setBorderEffectRadius</h4>
+
+  
+  <h3>ItemTypes</h3>
+      <h4>UNDEFINED</h4>
     
-      <h4>getBorderEffectThickness</h4>
+      <h4>FILE</h4>
     
-      <h4>setBorderEffectThickness</h4>
+      <h4>LIVE</h4>
     
-      <h4>getBorderEffectOpacity</h4>
+      <h4>TEXT</h4>
     
-      <h4>setBorderEffectOpacity</h4>
+      <h4>BITMAP</h4>
     
-      <h4>getBorderEffectColor</h4>
+      <h4>SCREEN</h4>
     
-      <h4>setBorderEffectColor</h4>
+      <h4>FLASHFILE</h4>
     
-      <h4>getShadowEffectThickness</h4>
+      <h4>GAMESOURCE</h4>
     
-      <h4>setShadowEffectThickness</h4>
-    
-      <h4>getShadowEffectBlur</h4>
-    
-      <h4>setShadowEffectBlur</h4>
-    
-      <h4>getShadowEffectOpacity</h4>
-    
-      <h4>setShadowEffectOpacity</h4>
-    
-      <h4>getShadowEffectOffsetX</h4>
-    
-      <h4>setShadowEffectOffsetX</h4>
-    
-      <h4>getShadowEffectOffsetY</h4>
-    
-      <h4>setShadowEffectOffsetY</h4>
-    
-      <h4>getFileMask</h4>
-    
-      <h4>setFileMask</h4>
-    
-      <h4>isFileMaskingGuideVisible</h4>
-    
-      <h4>showFileMaskingGuide</h4>
+      <h4>HTML</h4>
     
 
   
@@ -516,19 +572,17 @@
   <h3>Scene</h3>
       <h4></h4>
     
+      <h4>getSources</h4>
+    
       <h4>getSceneNumber</h4>
     
       <h4>getName</h4>
     
       <h4>setName</h4>
     
-      <h4>getSources</h4>
-    
       <h4>getItems</h4>
     
       <h4>isEmpty</h4>
-    
-      <h4>setSourceOrder</h4>
     
       <h4>setItemOrder</h4>
     
@@ -574,6 +628,14 @@
   <h3>CameraItem</h3>
       <h4>getDeviceId</h4>
     
+      <h4>getAudioOffset</h4>
+    
+      <h4>setAudioOffset</h4>
+    
+      <h4>getAudioInput</h4>
+    
+      <h4>setAudioInput</h4>
+    
       <h4>isStreamPaused</h4>
     
       <h4>setStreamPaused</h4>
@@ -585,14 +647,6 @@
       <h4>getDelay</h4>
     
       <h4>setDelay</h4>
-    
-      <h4>getAudioOffset</h4>
-    
-      <h4>setAudioOffset</h4>
-    
-      <h4>getAudioInput</h4>
-    
-      <h4>setAudioInput</h4>
     
       <h4>isForceDeinterlace</h4>
     
@@ -1051,9 +1105,23 @@
 
   
   <h3>HtmlItem</h3>
+      <h4>call</h4>
+    
       <h4>getURL</h4>
     
       <h4>setURL</h4>
+    
+      <h4>isBrowserTransparent</h4>
+    
+      <h4>enableBrowserTransparency</h4>
+    
+      <h4>getBrowserCustomSize</h4>
+    
+      <h4>setBrowserCustomSize</h4>
+    
+      <h4>getAllowRightClick</h4>
+    
+      <h4>setAllowRightClick</h4>
     
       <h4>getBrowserJS</h4>
     
@@ -1070,20 +1138,6 @@
       <h4>isCustomCSSEnabled</h4>
     
       <h4>enableCustomCSS</h4>
-    
-      <h4>isBrowserTransparent</h4>
-    
-      <h4>enableBrowserTransparency</h4>
-    
-      <h4>getBrowserCustomSize</h4>
-    
-      <h4>setBrowserCustomSize</h4>
-    
-      <h4>getAllowRightClick</h4>
-    
-      <h4>setAllowRightClick</h4>
-    
-      <h4>call</h4>
     
       <h4>isKeepAspectRatio</h4>
     
@@ -1515,14 +1569,6 @@
 
   
   <h3>ScreenItem</h3>
-      <h4>getCaptureArea</h4>
-    
-      <h4>setCaptureArea</h4>
-    
-      <h4>isClientArea</h4>
-    
-      <h4>setClientArea</h4>
-    
       <h4>isStickToTitle</h4>
     
       <h4>setStickToTitle</h4>
@@ -1542,6 +1588,14 @@
       <h4>getShowMouse</h4>
     
       <h4>setShowMouse</h4>
+    
+      <h4>getCaptureArea</h4>
+    
+      <h4>setCaptureArea</h4>
+    
+      <h4>isClientArea</h4>
+    
+      <h4>setClientArea</h4>
     
       <h4>isKeepAspectRatio</h4>
     
@@ -1736,6 +1790,10 @@
 
   
   <h3>ImageItem</h3>
+      <h4>getValue</h4>
+    
+      <h4>setValue</h4>
+    
       <h4>isKeepAspectRatio</h4>
     
       <h4>isPositionLocked</h4>
@@ -2190,9 +2248,9 @@
     
       <h4>setVideoNowPlaying</h4>
     
-      <h4>getVideoPlaylistItems</h4>
+      <h4>getVideoPlaylistSources</h4>
     
-      <h4>setVideoPlaylistItems</h4>
+      <h4>setVideoPlaylistSources</h4>
     
       <h4>isKeepAspectRatio</h4>
     
@@ -2340,33 +2398,399 @@
     
       <h4>applyConfig</h4>
     
+      <h4>isSeekable</h4>
+    
+      <h4>getPlaybackPosition</h4>
+    
+      <h4>setPlaybackPosition</h4>
+    
+      <h4>getPlaybackDuration</h4>
+    
+      <h4>isPlaying</h4>
+    
+      <h4>setPlaying</h4>
+    
+      <h4>getPlaybackStartPosition</h4>
+    
+      <h4>setPlaybackStartPosition</h4>
+    
+      <h4>getPlaybackEndPosition</h4>
+    
+      <h4>setPlaybackEndPosition</h4>
+    
+      <h4>getActionAfterPlayback</h4>
+    
+      <h4>setActionAfterPlayback</h4>
+    
+      <h4>isAutostartOnSceneLoad</h4>
+    
+      <h4>setAutostartOnSceneLoad</h4>
+    
+      <h4>isForceDeinterlace</h4>
+    
+      <h4>setForceDeinterlace</h4>
+    
+      <h4>isRememberingPlaybackPosition</h4>
+    
+      <h4>setRememberingPlaybackPosition</h4>
+    
+      <h4>isShowingPlaybackPosition</h4>
+    
+      <h4>setShowingPlaybackPosition</h4>
+    
+      <h4>getCuePoints</h4>
+    
+      <h4>setCuePoints</h4>
+    
+      <h4>isAudio</h4>
+    
+      <h4>isVideo</h4>
+    
 
   
   <h3>CameraSource</h3>
+      <h4>getDeviceId</h4>
+    
+      <h4>getAudioOffset</h4>
+    
+      <h4>setAudioOffset</h4>
+    
+      <h4>getAudioInput</h4>
+    
+      <h4>setAudioInput</h4>
+    
+      <h4>isStreamPaused</h4>
+    
+      <h4>setStreamPaused</h4>
+    
+      <h4>isHardwareEncoder</h4>
+    
+      <h4>isActive</h4>
+    
+      <h4>getDelay</h4>
+    
+      <h4>setDelay</h4>
+    
+      <h4>isForceDeinterlace</h4>
+    
+      <h4>setForceDeinterlace</h4>
+    
+      <h4>getVolume</h4>
+    
+      <h4>isMute</h4>
+    
+      <h4>setVolume</h4>
+    
+      <h4>setMute</h4>
+    
+      <h4>isStreamOnlyAudio</h4>
+    
+      <h4>setStreamOnlyAudio</h4>
+    
+      <h4>isAudioAvailable</h4>
+    
 
   
   <h3>GameSource</h3>
+      <h4>isSpecialOptimizationEnabled</h4>
+    
+      <h4>setSpecialOptimizationEnabled</h4>
+    
+      <h4>isShowMouseEnabled</h4>
+    
+      <h4>setShowMouseEnabled</h4>
+    
+      <h4>setOfflineImage</h4>
+    
+      <h4>getOfflineImage</h4>
+    
 
   
   <h3>AudioSource</h3>
+      <h4>isSilenceDetectionEnabled</h4>
+    
+      <h4>setSilenceDetectionEnabled</h4>
+    
+      <h4>getSilenceThreshold</h4>
+    
+      <h4>setSilenceThreshold</h4>
+    
+      <h4>getSilencePeriod</h4>
+    
+      <h4>setSilencePeriod</h4>
+    
+      <h4>getAudioOffset</h4>
+    
+      <h4>setAudioOffset</h4>
+    
+      <h4>getVolume</h4>
+    
+      <h4>isMute</h4>
+    
+      <h4>setVolume</h4>
+    
+      <h4>setMute</h4>
+    
+      <h4>isStreamOnlyAudio</h4>
+    
+      <h4>setStreamOnlyAudio</h4>
+    
+      <h4>isAudioAvailable</h4>
+    
 
   
   <h3>HtmlSource</h3>
+      <h4>getURL</h4>
+    
+      <h4>setURL</h4>
+    
+      <h4>isBrowserTransparent</h4>
+    
+      <h4>enableBrowserTransparency</h4>
+    
+      <h4>getBrowserCustomSize</h4>
+    
+      <h4>setBrowserCustomSize</h4>
+    
+      <h4>getAllowRightClick</h4>
+    
+      <h4>setAllowRightClick</h4>
+    
+      <h4>getBrowserJS</h4>
+    
+      <h4>setBrowserJS</h4>
+    
+      <h4>isBrowserJSEnabled</h4>
+    
+      <h4>enableBrowserJS</h4>
+    
+      <h4>getCustomCSS</h4>
+    
+      <h4>setCustomCSS</h4>
+    
+      <h4>isCustomCSSEnabled</h4>
+    
+      <h4>enableCustomCSS</h4>
+    
+      <h4>loadConfig</h4>
+    
+      <h4>saveConfig</h4>
+    
+      <h4>requestSaveConfig</h4>
+    
+      <h4>applyConfig</h4>
+    
+      <h4>getVolume</h4>
+    
+      <h4>isMute</h4>
+    
+      <h4>setVolume</h4>
+    
+      <h4>setMute</h4>
+    
+      <h4>isStreamOnlyAudio</h4>
+    
+      <h4>setStreamOnlyAudio</h4>
+    
+      <h4>isAudioAvailable</h4>
+    
 
   
   <h3>FlashSource</h3>
+      <h4>getCustomResolution</h4>
+    
+      <h4>setCustomResolution</h4>
+    
+      <h4>getAllowRightClick</h4>
+    
+      <h4>setAllowRightClick</h4>
+    
+      <h4>getVolume</h4>
+    
+      <h4>isMute</h4>
+    
+      <h4>setVolume</h4>
+    
+      <h4>setMute</h4>
+    
+      <h4>isStreamOnlyAudio</h4>
+    
+      <h4>setStreamOnlyAudio</h4>
+    
+      <h4>isAudioAvailable</h4>
+    
 
   
   <h3>ScreenSource</h3>
+      <h4>isStickToTitle</h4>
+    
+      <h4>setStickToTitle</h4>
+    
+      <h4>getCaptureLayered</h4>
+    
+      <h4>setCaptureLayered</h4>
+    
+      <h4>getOptimizedCapture</h4>
+    
+      <h4>setOptimizedCapture</h4>
+    
+      <h4>getShowMouseClicks</h4>
+    
+      <h4>setShowMouseClicks</h4>
+    
+      <h4>getShowMouse</h4>
+    
+      <h4>setShowMouse</h4>
+    
+      <h4>getCaptureArea</h4>
+    
+      <h4>setCaptureArea</h4>
+    
+      <h4>isClientArea</h4>
+    
+      <h4>setClientArea</h4>
+    
 
   
   <h3>ImageSource</h3>
+      <h4>getValue</h4>
+    
+      <h4>setValue</h4>
+    
 
   
   <h3>MediaSource</h3>
+      <h4>getFileInfo</h4>
+    
+      <h4>isAudio</h4>
+    
+      <h4>isVideo</h4>
+    
+      <h4>isSeekable</h4>
+    
+      <h4>getPlaybackPosition</h4>
+    
+      <h4>setPlaybackPosition</h4>
+    
+      <h4>getPlaybackDuration</h4>
+    
+      <h4>isPlaying</h4>
+    
+      <h4>setPlaying</h4>
+    
+      <h4>getPlaybackStartPosition</h4>
+    
+      <h4>setPlaybackStartPosition</h4>
+    
+      <h4>getPlaybackEndPosition</h4>
+    
+      <h4>setPlaybackEndPosition</h4>
+    
+      <h4>getActionAfterPlayback</h4>
+    
+      <h4>setActionAfterPlayback</h4>
+    
+      <h4>isAutostartOnSceneLoad</h4>
+    
+      <h4>setAutostartOnSceneLoad</h4>
+    
+      <h4>isForceDeinterlace</h4>
+    
+      <h4>setForceDeinterlace</h4>
+    
+      <h4>isRememberingPlaybackPosition</h4>
+    
+      <h4>setRememberingPlaybackPosition</h4>
+    
+      <h4>isShowingPlaybackPosition</h4>
+    
+      <h4>setShowingPlaybackPosition</h4>
+    
+      <h4>getCuePoints</h4>
+    
+      <h4>setCuePoints</h4>
+    
+      <h4>getVolume</h4>
+    
+      <h4>isMute</h4>
+    
+      <h4>setVolume</h4>
+    
+      <h4>setMute</h4>
+    
+      <h4>isStreamOnlyAudio</h4>
+    
+      <h4>setStreamOnlyAudio</h4>
+    
+      <h4>isAudioAvailable</h4>
+    
 
   
   <h3>VideoPlaylistSource</h3>
+      <h4>getVideoNowPlaying</h4>
+    
+      <h4>setVideoNowPlaying</h4>
+    
+      <h4>getVideoPlaylistSources</h4>
+    
+      <h4>setVideoPlaylistSources</h4>
+    
+      <h4>loadConfig</h4>
+    
+      <h4>saveConfig</h4>
+    
+      <h4>requestSaveConfig</h4>
+    
+      <h4>applyConfig</h4>
+    
+      <h4>isSeekable</h4>
+    
+      <h4>getPlaybackPosition</h4>
+    
+      <h4>setPlaybackPosition</h4>
+    
+      <h4>getPlaybackDuration</h4>
+    
+      <h4>isPlaying</h4>
+    
+      <h4>setPlaying</h4>
+    
+      <h4>getPlaybackStartPosition</h4>
+    
+      <h4>setPlaybackStartPosition</h4>
+    
+      <h4>getPlaybackEndPosition</h4>
+    
+      <h4>setPlaybackEndPosition</h4>
+    
+      <h4>getActionAfterPlayback</h4>
+    
+      <h4>setActionAfterPlayback</h4>
+    
+      <h4>isAutostartOnSceneLoad</h4>
+    
+      <h4>setAutostartOnSceneLoad</h4>
+    
+      <h4>isForceDeinterlace</h4>
+    
+      <h4>setForceDeinterlace</h4>
+    
+      <h4>isRememberingPlaybackPosition</h4>
+    
+      <h4>setRememberingPlaybackPosition</h4>
+    
+      <h4>isShowingPlaybackPosition</h4>
+    
+      <h4>setShowingPlaybackPosition</h4>
+    
+      <h4>getCuePoints</h4>
+    
+      <h4>setCuePoints</h4>
+    
+      <h4>isAudio</h4>
+    
+      <h4>isVideo</h4>
+    
 
   
 
@@ -2571,6 +2995,8 @@
   
   <h3>EventEmitter</h3>
       <h4>on</h4>
+    
+      <h4>off</h4>
     
       <h4>emit</h4>
     

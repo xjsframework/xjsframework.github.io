@@ -6,8 +6,8 @@
 <a href='#core/IItemColor'>Core/IItemColor</a>,
 <a href='#core/IItemLayout'>Core/IItemLayout</a>,
 <a href='#core/IItemTransition'>Core/IItemTransition</a>,
-<a href='#core/IItemAudio'>Core/IItemAudio</a>,
-<a href='#core/IItemPlayback'>Core/IItemPlayback</a></p>
+<a href='#core/IAudio'>Core/IAudio</a>,
+<a href='#core/ISourcePlayback'>Core/ISourcePlayback</a></p>
 <p> All methods marked as <em>Chainable</em> resolve with the original <code>MediaItem</code>
  instance.</p>
 </p><h2>Members</h2>
@@ -15,34 +15,8 @@
     <a name="getFileInfo"><h1 id="getFileInfo" class="name">
       getFileInfo
     </h1></a>
-    <pre><code>return: Promise&lt;object&gt;
-</code></pre>
-<p>Gets file information such as codecs, bitrate, resolution, etc.</p>
-<p>sample file info object format:</p>
-<p>{
- &quot;audio&quot;: {
-   &quot;duration&quot;:&quot;1436734690&quot;,
-   &quot;samplerate&quot;:&quot;44100&quot;,
-   &quot;bitrate&quot;:&quot;128000&quot;,
-   &quot;codec&quot;:&quot;mp3&quot;},
- &quot;video&quot;:{
-   &quot;frameduration&quot;:&quot;333670&quot;,
-   &quot;bitrate&quot;:&quot;1132227&quot;,
-   &quot;duration&quot;:&quot;1436436440&quot;,
-   &quot;height&quot;:&quot;240&quot;,
-   &quot;width&quot;:&quot;320&quot;,
-   &quot;codec&quot;:&quot;mpeg4&quot;}
-}</p>
-<h4 id="usage">Usage</h4>
-<pre><code class="lang-javascript">mediaItem.getFileInfo().then(function(value) {
-  // Do something with the value
-  var audioCodec;
-  if (typeof value[&#39;audio&#39;] !== &#39;undefined&#39; &amp;&amp; typeof value[&#39;audio&#39;][&#39;codec&#39;]) {
-    audioCodec = value[&#39;audio&#39;][&#39;codec&#39;];
-  }
-});
-</code></pre>
-
+          <p>See: <a href='#core/MediaSource#getFileInfo'>getFileInfo</a></p>
+      
   </section>
 
 
@@ -671,7 +645,7 @@
     <a name="isSeekable"><h1 id="isSeekable" class="name">
       isSeekable
     </h1></a>
-          <p>See: <a href='#core/IItemPlayback#isSeekable'>isSeekable</a></p>
+          <p>See: <a href='#core/ISourcePlayback#isSeekable'>isSeekable</a></p>
       
   </section>
 
@@ -680,7 +654,7 @@
     <a name="getPlaybackPosition"><h1 id="getPlaybackPosition" class="name">
       getPlaybackPosition
     </h1></a>
-          <p>See: <a href='#core/IItemPlayback#getPlaybackPosition'>getPlaybackPosition</a></p>
+          <p>See: <a href='#core/ISourcePlayback#getPlaybackPosition'>getPlaybackPosition</a></p>
       
   </section>
 
@@ -689,7 +663,7 @@
     <a name="setPlaybackPosition"><h1 id="setPlaybackPosition" class="name">
       setPlaybackPosition
     </h1></a>
-          <p>See: <a href='#core/IItemPlayback#setPlaybackPosition'>setPlaybackPosition</a></p>
+          <p>See: <a href='#core/ISourcePlayback#setPlaybackPosition'>setPlaybackPosition</a></p>
       
   </section>
 
@@ -698,7 +672,7 @@
     <a name="getPlaybackDuration"><h1 id="getPlaybackDuration" class="name">
       getPlaybackDuration
     </h1></a>
-          <p>See: <a href='#core/IItemPlayback#getPlaybackDuration'>getPlaybackDuration</a></p>
+          <p>See: <a href='#core/ISourcePlayback#getPlaybackDuration'>getPlaybackDuration</a></p>
       
   </section>
 
@@ -707,7 +681,7 @@
     <a name="isPlaying"><h1 id="isPlaying" class="name">
       isPlaying
     </h1></a>
-          <p>See: <a href='#core/IItemPlayback#isPlaying'>isPlaying</a></p>
+          <p>See: <a href='#core/ISourcePlayback#isPlaying'>isPlaying</a></p>
       
   </section>
 
@@ -716,7 +690,7 @@
     <a name="setPlaying"><h1 id="setPlaying" class="name">
       setPlaying
     </h1></a>
-          <p>See: <a href='#core/IItemPlayback#setPlaying'>setPlaying</a></p>
+          <p>See: <a href='#core/ISourcePlayback#setPlaying'>setPlaying</a></p>
       
   </section>
 
@@ -725,7 +699,7 @@
     <a name="getPlaybackStartPosition"><h1 id="getPlaybackStartPosition" class="name">
       getPlaybackStartPosition
     </h1></a>
-          <p>See: <a href='#core/IItemPlayback#getPlaybackStartPosition'>getPlaybackStartPosition</a></p>
+          <p>See: <a href='#core/ISourcePlayback#getPlaybackStartPosition'>getPlaybackStartPosition</a></p>
       
   </section>
 
@@ -734,7 +708,7 @@
     <a name="setPlaybackStartPosition"><h1 id="setPlaybackStartPosition" class="name">
       setPlaybackStartPosition
     </h1></a>
-          <p>See: <a href='#core/IItemPlayback#setPlaybackStartPosition'>setPlaybackStartPosition</a></p>
+          <p>See: <a href='#core/ISourcePlayback#setPlaybackStartPosition'>setPlaybackStartPosition</a></p>
       
   </section>
 
@@ -743,7 +717,7 @@
     <a name="getPlaybackEndPosition"><h1 id="getPlaybackEndPosition" class="name">
       getPlaybackEndPosition
     </h1></a>
-          <p>See: <a href='#core/IItemPlayback#getPlaybackEndPosition'>getPlaybackEndPosition</a></p>
+          <p>See: <a href='#core/ISourcePlayback#getPlaybackEndPosition'>getPlaybackEndPosition</a></p>
       
   </section>
 
@@ -752,7 +726,7 @@
     <a name="setPlaybackEndPosition"><h1 id="setPlaybackEndPosition" class="name">
       setPlaybackEndPosition
     </h1></a>
-          <p>See: <a href='#core/IItemPlayback#setPlaybackEndPosition'>setPlaybackEndPosition</a></p>
+          <p>See: <a href='#core/ISourcePlayback#setPlaybackEndPosition'>setPlaybackEndPosition</a></p>
       
   </section>
 
@@ -761,7 +735,7 @@
     <a name="getActionAfterPlayback"><h1 id="getActionAfterPlayback" class="name">
       getActionAfterPlayback
     </h1></a>
-          <p>See: <a href='#core/IItemPlayback#getActionAfterPlayback'>getActionAfterPlayback</a></p>
+          <p>See: <a href='#core/ISourcePlayback#getActionAfterPlayback'>getActionAfterPlayback</a></p>
       
   </section>
 
@@ -770,7 +744,7 @@
     <a name="setActionAfterPlayback"><h1 id="setActionAfterPlayback" class="name">
       setActionAfterPlayback
     </h1></a>
-          <p>See: <a href='#core/IItemPlayback#setActionAfterPlayback'>setActionAfterPlayback</a></p>
+          <p>See: <a href='#core/ISourcePlayback#setActionAfterPlayback'>setActionAfterPlayback</a></p>
       
   </section>
 
@@ -779,7 +753,7 @@
     <a name="isAutostartOnSceneLoad"><h1 id="isAutostartOnSceneLoad" class="name">
       isAutostartOnSceneLoad
     </h1></a>
-          <p>See: <a href='#core/IItemPlayback#isAutostartOnSceneLoad'>isAutostartOnSceneLoad</a></p>
+          <p>See: <a href='#core/ISourcePlayback#isAutostartOnSceneLoad'>isAutostartOnSceneLoad</a></p>
       
   </section>
 
@@ -788,7 +762,7 @@
     <a name="setAutostartOnSceneLoad"><h1 id="setAutostartOnSceneLoad" class="name">
       setAutostartOnSceneLoad
     </h1></a>
-          <p>See: <a href='#core/IItemPlayback#setAutostartOnSceneLoad'>setAutostartOnSceneLoad</a></p>
+          <p>See: <a href='#core/ISourcePlayback#setAutostartOnSceneLoad'>setAutostartOnSceneLoad</a></p>
       
   </section>
 
@@ -797,7 +771,7 @@
     <a name="isForceDeinterlace"><h1 id="isForceDeinterlace" class="name">
       isForceDeinterlace
     </h1></a>
-          <p>See: <a href='#core/IItemPlayback#isForceDeinterlace'>isForceDeinterlace</a></p>
+          <p>See: <a href='#core/ISourcePlayback#isForceDeinterlace'>isForceDeinterlace</a></p>
       
   </section>
 
@@ -806,7 +780,7 @@
     <a name="setForceDeinterlace"><h1 id="setForceDeinterlace" class="name">
       setForceDeinterlace
     </h1></a>
-          <p>See: <a href='#core/IItemPlayback#setForceDeinterlace'>setForceDeinterlace</a></p>
+          <p>See: <a href='#core/ISourcePlayback#setForceDeinterlace'>setForceDeinterlace</a></p>
       
   </section>
 
@@ -815,7 +789,7 @@
     <a name="isRememberingPlaybackPosition"><h1 id="isRememberingPlaybackPosition" class="name">
       isRememberingPlaybackPosition
     </h1></a>
-          <p>See: <a href='#core/IItemPlayback#isRememberingPlaybackPosition'>isRememberingPlaybackPosition</a></p>
+          <p>See: <a href='#core/ISourcePlayback#isRememberingPlaybackPosition'>isRememberingPlaybackPosition</a></p>
       
   </section>
 
@@ -824,7 +798,7 @@
     <a name="setRememberingPlaybackPosition"><h1 id="setRememberingPlaybackPosition" class="name">
       setRememberingPlaybackPosition
     </h1></a>
-          <p>See: <a href='#core/IItemPlayback#setRememberingPlaybackPosition'>setRememberingPlaybackPosition</a></p>
+          <p>See: <a href='#core/ISourcePlayback#setRememberingPlaybackPosition'>setRememberingPlaybackPosition</a></p>
       
   </section>
 
@@ -833,7 +807,7 @@
     <a name="isShowingPlaybackPosition"><h1 id="isShowingPlaybackPosition" class="name">
       isShowingPlaybackPosition
     </h1></a>
-          <p>See: <a href='#core/IItemPlayback#isShowingPlaybackPosition'>isShowingPlaybackPosition</a></p>
+          <p>See: <a href='#core/ISourcePlayback#isShowingPlaybackPosition'>isShowingPlaybackPosition</a></p>
       
   </section>
 
@@ -842,7 +816,7 @@
     <a name="setShowingPlaybackPosition"><h1 id="setShowingPlaybackPosition" class="name">
       setShowingPlaybackPosition
     </h1></a>
-          <p>See: <a href='#core/IItemPlayback#setShowingPlaybackPosition'>setShowingPlaybackPosition</a></p>
+          <p>See: <a href='#core/ISourcePlayback#setShowingPlaybackPosition'>setShowingPlaybackPosition</a></p>
       
   </section>
 
@@ -851,7 +825,7 @@
     <a name="getCuePoints"><h1 id="getCuePoints" class="name">
       getCuePoints
     </h1></a>
-          <p>See: <a href='#core/IItemPlayback#getCuePoints'>getCuePoints</a></p>
+          <p>See: <a href='#core/ISourcePlayback#getCuePoints'>getCuePoints</a></p>
       
   </section>
 
@@ -860,7 +834,7 @@
     <a name="setCuePoints"><h1 id="setCuePoints" class="name">
       setCuePoints
     </h1></a>
-          <p>See: <a href='#core/IItemPlayback#setCuePoints'>setCuePoints</a></p>
+          <p>See: <a href='#core/ISourcePlayback#setCuePoints'>setCuePoints</a></p>
       
   </section>
 
@@ -869,7 +843,7 @@
     <a name="isAudio"><h1 id="isAudio" class="name">
       isAudio
     </h1></a>
-          <p>See: <a href='#core/IItemPlayback#isAudio'>isAudio</a></p>
+          <p>See: <a href='#core/ISourcePlayback#isAudio'>isAudio</a></p>
       
   </section>
 
@@ -878,7 +852,7 @@
     <a name="isVideo"><h1 id="isVideo" class="name">
       isVideo
     </h1></a>
-          <p>See: <a href='#core/IItemPlayback#isVideo'>isVideo</a></p>
+          <p>See: <a href='#core/ISourcePlayback#isVideo'>isVideo</a></p>
       
   </section>
 
@@ -887,7 +861,7 @@
     <a name="getVolume"><h1 id="getVolume" class="name">
       getVolume
     </h1></a>
-          <p>See: <a href='#core/IItemAudio#getVolume'>getVolume</a></p>
+          <p>See: <a href='#core/IAudio#getVolume'>getVolume</a></p>
       
   </section>
 
@@ -896,7 +870,7 @@
     <a name="isMute"><h1 id="isMute" class="name">
       isMute
     </h1></a>
-          <p>See: <a href='#core/IItemAudio#isMute'>isMute</a></p>
+          <p>See: <a href='#core/IAudio#isMute'>isMute</a></p>
       
   </section>
 
@@ -905,7 +879,7 @@
     <a name="setVolume"><h1 id="setVolume" class="name">
       setVolume
     </h1></a>
-          <p>See: <a href='#core/IItemAudio#setVolume'>setVolume</a></p>
+          <p>See: <a href='#core/IAudio#setVolume'>setVolume</a></p>
       
   </section>
 
@@ -914,7 +888,7 @@
     <a name="setMute"><h1 id="setMute" class="name">
       setMute
     </h1></a>
-          <p>See: <a href='#core/IItemAudio#setMute'>setMute</a></p>
+          <p>See: <a href='#core/IAudio#setMute'>setMute</a></p>
       
   </section>
 
@@ -923,7 +897,7 @@
     <a name="isStreamOnlyAudio"><h1 id="isStreamOnlyAudio" class="name">
       isStreamOnlyAudio
     </h1></a>
-          <p>See: <a href='#core/IItemAudio#isStreamOnlyAudio'>isStreamOnlyAudio</a></p>
+          <p>See: <a href='#core/IAudio#isStreamOnlyAudio'>isStreamOnlyAudio</a></p>
       
   </section>
 
@@ -932,7 +906,7 @@
     <a name="setStreamOnlyAudio"><h1 id="setStreamOnlyAudio" class="name">
       setStreamOnlyAudio
     </h1></a>
-          <p>See: <a href='#core/IItemAudio#setStreamOnlyAudio'>setStreamOnlyAudio</a></p>
+          <p>See: <a href='#core/IAudio#setStreamOnlyAudio'>setStreamOnlyAudio</a></p>
       
   </section>
 
@@ -941,7 +915,7 @@
     <a name="isAudioAvailable"><h1 id="isAudioAvailable" class="name">
       isAudioAvailable
     </h1></a>
-          <p>See: <a href='#core/IItemAudio#isAudioAvailable'>isAudioAvailable</a></p>
+          <p>See: <a href='#core/IAudio#isAudioAvailable'>isAudioAvailable</a></p>
       
   </section>
 
@@ -1180,6 +1154,6 @@
   </section>
 
 <p class="module defined-in">exported from <a href='#/core'>core</a><br/>
-defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/core/items/media.ts#L21-L697">../src/core/items/media.ts (line 21)</a>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/C:/Users/viab/Documents/Repositories/SourceTree/xjsframework/src/core/items/media.ts#L22-L635">C:/Users/viab/Documents/Repositories/SourceTree/xjsframework/src/core/items/media.ts (line 22)</a>
 </p>
 

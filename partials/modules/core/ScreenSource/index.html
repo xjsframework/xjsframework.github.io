@@ -1,12 +1,213 @@
 
 <h1 class="class export">ScreenSource <span class="type">class</span></h1>
-<p><blockquote>
-<h4 id="for-deprecation">For Deprecation</h4>
-<p>This Class is deprecated and will be removed soon. Please use
-<a href='#core/ScreenItem'>ScreenItem</a> instead. This Class shares the same
-methods with ScreenItem.</p>
-</blockquote>
-</p><p class="module defined-in">exported from <a href='#/core'>core</a><br/>
-defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/core/source/screen.ts#L3-L12">../src/core/source/screen.ts (line 3)</a>
+<p><p>The ScreenSource class represents the sources of the screen device items that
+has been added to the stage. A single source could have multiple items linked
+into it and any changes to the source would affect all items linked to it.</p>
+<p>Each item is represented by the ScreenItem class.
+See: <a href='#core/ScreenItem'>Core/ScreenItem</a></p>
+<p>Inherits from: <a href='#core/Source'>Core/Source</a></p>
+<h3 id="basic-usage">Basic Usage</h3>
+<pre><code class="lang-javascript">var xjs = require(&#39;xjs&#39;);
+
+xjs.Scene.getActiveScene().then(function(scene) {
+  scene.getSources().then(function(sources) {
+  for (var i in sources) {
+      if (sources[i] instanceof XJS.ScreenSource) {
+        // Manipulate your screen source here
+        sources[i].setSilenceDetectionEnabled(true);
+      }
+    }
+  })
+})
+</code></pre>
+<p> All methods marked as <em>Chainable</em> resolve with the original <code>ScreenSource</code>
+ instance.</p>
+</p><h2>Members</h2>
+  <section class="member">
+    <a name="isStickToTitle"><h1 id="isStickToTitle" class="name">
+      isStickToTitle
+    </h1></a>
+    <pre><code>return: Promise&lt;boolean&gt;
+</code></pre>
+<p>Checks if the Screen Capture Item captures a window based on
+the window&#39;s title.</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="setStickToTitle"><h1 id="setStickToTitle" class="name">
+      setStickToTitle
+    </h1></a>
+    <pre><code>param: Promise&lt;boolean&gt;
+</code></pre>
+<pre><code>return: Promise&lt;ScreenSource&gt;
+</code></pre>
+<p>Set the Screen Capture to capture the window based on the window title.
+Useful when capturing programs with multiple tabs, for you to only
+capture a particular tab.</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="getCaptureLayered"><h1 id="getCaptureLayered" class="name">
+      getCaptureLayered
+    </h1></a>
+    <pre><code>return: Promise&lt;boolean&gt;
+</code></pre>
+<p>Checks if the Screen Capture layered window is selected.</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="setCaptureLayered"><h1 id="setCaptureLayered" class="name">
+      setCaptureLayered
+    </h1></a>
+    <pre><code>param: (value: boolean)
+</code></pre>
+<pre><code>return: Promise&lt;ScreenSource&gt;
+</code></pre>
+<p>Sets the Screen Capture Layered window</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="getOptimizedCapture"><h1 id="getOptimizedCapture" class="name">
+      getOptimizedCapture
+    </h1></a>
+    <pre><code>return: Promise&lt;boolean&gt;
+</code></pre>
+<p>Checks if the Exclusive Window capture is selected.</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="setOptimizedCapture"><h1 id="setOptimizedCapture" class="name">
+      setOptimizedCapture
+    </h1></a>
+    <pre><code>param: (value: boolean)
+</code></pre>
+<pre><code>return: Promise&lt;ScreenSource&gt;
+</code></pre>
+<p>Sets the Exclusive Window capture.</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="getShowMouseClicks"><h1 id="getShowMouseClicks" class="name">
+      getShowMouseClicks
+    </h1></a>
+    <pre><code>return: Promise&lt;boolean&gt;
+</code></pre>
+<p>Checks if the Show mouse clicks is selected.</p>
+<p>ShowMouseClicks determine if you would want to display the clicks
+you&#39;re doing inside your screen captured area.</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="setShowMouseClicks"><h1 id="setShowMouseClicks" class="name">
+      setShowMouseClicks
+    </h1></a>
+    <pre><code>param: (value: boolean)
+</code></pre>
+<pre><code>return: Promise&lt;ScreenSource&gt;
+</code></pre>
+<p>Sets the Show mouse clicks.</p>
+<p>ShowMouseClicks determine if you would want to display the clicks
+you&#39;re doing inside your screen captured area.</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="getShowMouse"><h1 id="getShowMouse" class="name">
+      getShowMouse
+    </h1></a>
+    <pre><code>return: Promise&lt;boolean&gt;
+</code></pre>
+<p>Checks if the Show mouse is selected.</p>
+<p>ShowMouse determine if you would want to display the mouse on your
+screen captured area.</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="setShowMouse"><h1 id="setShowMouse" class="name">
+      setShowMouse
+    </h1></a>
+    <pre><code>param: (value: boolean)
+</code></pre>
+<pre><code>return: Promise&lt;ScreenSource&gt;
+</code></pre>
+<p>Sets the Show Mouse.</p>
+<p>ShowMouse determine if you would want to display the mouse on your
+screen captured area.</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="getCaptureArea"><h1 id="getCaptureArea" class="name">
+      getCaptureArea
+    </h1></a>
+    <pre><code>return: Promise&lt;Rectangle&gt;
+</code></pre>
+<p>Gets the Capture Area of the Screen Capture Item. Returns a Rectangle
+object.</p>
+<p>See also: <a href='#util/Rectangle'>Util/Rectangle</a></p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="setCaptureArea"><h1 id="setCaptureArea" class="name">
+      setCaptureArea
+    </h1></a>
+    <pre><code>param: Promise&lt;Rectangle&gt;
+</code></pre>
+<pre><code>return: Promise&lt;ScreenSource&gt;
+</code></pre>
+<p>Sets the Window Capture Area of the Screen Capture Item.</p>
+<p><em>Chainable.</em></p>
+<p>See also: <a href='#util/Rectangle'>Util/Rectangle</a></p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="isClientArea"><h1 id="isClientArea" class="name">
+      isClientArea
+    </h1></a>
+    <pre><code>return: Promise&lt;boolean&gt;
+</code></pre>
+<p>Checks if the Screen Capture Item only captures the
+Client area (does not capture the title bar, menu bar, window border, etc.)</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="setClientArea"><h1 id="setClientArea" class="name">
+      setClientArea
+    </h1></a>
+    <pre><code>param: Promise&lt;boolean&gt;
+</code></pre>
+<pre><code>return: Promise&lt;ScreenSource&gt;
+</code></pre>
+<p>Set the Screen Capture to capture the Client area only or include
+the titlebar, menu bar, window border, etc.</p>
+
+  </section>
+
+<p class="module defined-in">exported from <a href='#/core'>core</a><br/>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/C:/Users/viab/Documents/Repositories/SourceTree/xjsframework/src/core/source/screen.ts#L5-L181">C:/Users/viab/Documents/Repositories/SourceTree/xjsframework/src/core/source/screen.ts (line 5)</a>
 </p>
 

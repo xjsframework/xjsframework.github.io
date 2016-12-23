@@ -1,12 +1,347 @@
 
 <h1 class="class export">HtmlSource <span class="type">class</span></h1>
-<p><blockquote>
-<h4 id="for-deprecation">For Deprecation</h4>
-<p>This Class is deprecated and will be removed soon. Please use
-<a href='#core/HtmlItem'>HtmlItem</a> instead. This Class shares the same
-methods with HtmlItem.</p>
-</blockquote>
-</p><p class="module defined-in">exported from <a href='#/core'>core</a><br/>
-defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/core/source/html.ts#L3-L12">../src/core/source/html.ts (line 3)</a>
+<p><p>The HtmlSource class represents the sources of the html items that
+has been added to the stage. A single source could have multiple items linked
+into it and any changes to the source would affect all items linked to it.</p>
+<p>Each item is represented by the HtmlItem class.
+See: <a href='#core/HtmlItem'>Core/HtmlItem</a></p>
+<p>Inherits from: <a href='#core/Source'>Core/Source</a></p>
+<h3 id="basic-usage">Basic Usage</h3>
+<pre><code class="lang-javascript">var xjs = require(&#39;xjs&#39;);
+
+xjs.Scene.getActiveScene().then(function(scene) {
+  scene.getSources().then(function(sources) {
+  for (var i in sources) {
+      if (sources[i] instanceof XJS.HtmlSource) {
+        // Manipulate your html source here
+        sources[i].setSilenceDetectionEnabled(true);
+      }
+    }
+  })
+})
+</code></pre>
+<p>All methods marked as <em>Chainable</em> resolve with the original <code>HtmlSource</code>
+instance.</p>
+</p><h2>Members</h2>
+  <section class="member">
+    <a name="getURL"><h1 id="getURL" class="name">
+      getURL
+    </h1></a>
+    <pre><code>return: Promise&lt;string&gt;
+</code></pre>
+<p>Gets the URL of this webpage source.</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="setURL"><h1 id="setURL" class="name">
+      setURL
+    </h1></a>
+    <pre><code>param: (url: string)
+</code></pre>
+<pre><code>return: Promise&lt;HtmlSource&gt;
+</code></pre>
+<p>Sets the URL of this webpage source.</p>
+<p><em>Chainable.</em></p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="isBrowserTransparent"><h1 id="isBrowserTransparent" class="name">
+      isBrowserTransparent
+    </h1></a>
+    <pre><code>return: Promise&lt;boolean&gt;
+</code></pre>
+<p>Check if browser is rendered transparent</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="enableBrowserTransparency"><h1 id="enableBrowserTransparency" class="name">
+      enableBrowserTransparency
+    </h1></a>
+    <pre><code>param: Promise&lt;boolean&gt;
+</code></pre>
+<pre><code>return: Promise&lt;HtmlSource&gt;
+</code></pre>
+<p>Enable or disabled transparency of CEF browser</p>
+<p><em>Chainable.</em></p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="getBrowserCustomSize"><h1 id="getBrowserCustomSize" class="name">
+      getBrowserCustomSize
+    </h1></a>
+    <pre><code>return: Promise&lt;Rectangle&gt;
+</code></pre>
+<p>Gets the custom browser window size (in pixels) for the item, if set,
+regardless of its layout on the mixer. Returns a (0, 0) Rectangle if no
+custom size has been set.</p>
+<p>See also: <a href='#util/Rectangle'>Util/Rectangle</a></p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="setBrowserCustomSize"><h1 id="setBrowserCustomSize" class="name">
+      setBrowserCustomSize
+    </h1></a>
+    <pre><code>param: Promise&lt;Rectangle&gt;
+</code></pre>
+<pre><code>return: Promise&lt;HtmlSource&gt;
+</code></pre>
+<p>Sets the custom browser window size for the item
+regardless of its layout on the mixer</p>
+<p><em>Chainable.</em></p>
+<p>See also: <a href='#util/Rectangle'>Util/Rectangle</a></p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="getAllowRightClick"><h1 id="getAllowRightClick" class="name">
+      getAllowRightClick
+    </h1></a>
+    <pre><code>return: Promise&lt;boolean&gt;
+</code></pre>
+<p>Check if right click events are sent to the item or not.</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">item.getAllowRightClick().then(function(isRightClickAllowed) {
+  // The rest of your code here
+});
+</code></pre>
+
+  </section>
+
+
+  <section class="member">
+    <a name="setAllowRightClick"><h1 id="setAllowRightClick" class="name">
+      setAllowRightClick
+    </h1></a>
+    <pre><code>param: (value:boolean)
+</code></pre>
+<pre><code>return: Promise&lt;Source&gt;
+</code></pre>
+<p>Allow or disallow right click events to be sent to the item. Note that
+you can only catch right click events using <code>mouseup/mousedown</code></p>
+<p><em>Chainable</em></p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">item.setAllowRightClick(true).then(function(item) {
+  // Promise resolves with the same Item instance
+});
+</code></pre>
+
+  </section>
+
+
+  <section class="member">
+    <a name="getBrowserJS"><h1 id="getBrowserJS" class="name">
+      getBrowserJS
+    </h1></a>
+    <pre><code>return: Promise&lt;string&gt;
+</code></pre>
+<p>Gets the javascript commands to be executed on item upon load</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="setBrowserJS"><h1 id="setBrowserJS" class="name">
+      setBrowserJS
+    </h1></a>
+    <pre><code>param: (js: string, refresh: boolean = false)
+</code></pre>
+<pre><code>return: Promise&lt;ISourceHtml&gt;
+</code></pre>
+<p>Sets the javascript commands to be executed on item
+right upon setting and on load. Optionally set second parameter
+to true to refresh item (needed to clean previously executed JS code.)</p>
+<p><em>Chainable.</em></p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="isBrowserJSEnabled"><h1 id="isBrowserJSEnabled" class="name">
+      isBrowserJSEnabled
+    </h1></a>
+    <pre><code>return: Promise&lt;boolean&gt;
+</code></pre>
+<p>Gets if BrowserJS is enabled and executed on load</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="enableBrowserJS"><h1 id="enableBrowserJS" class="name">
+      enableBrowserJS
+    </h1></a>
+    <pre><code>param: (value: boolean)
+</code></pre>
+<pre><code>return: Promise&lt;HtmlSource&gt;
+</code></pre>
+<p>Enables or disables execution of the set BrowserJs upon load.
+Note that disabling this will require item to be refreshed
+in order to remove any BrowserJS previously executed.</p>
+<p><em>Chainable.</em></p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="getCustomCSS"><h1 id="getCustomCSS" class="name">
+      getCustomCSS
+    </h1></a>
+    <pre><code>return: Promise&lt;string&gt;
+</code></pre>
+<p>Gets the custom CSS applied to the document upon loading</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="setCustomCSS"><h1 id="setCustomCSS" class="name">
+      setCustomCSS
+    </h1></a>
+    <pre><code>param: (value: string)
+</code></pre>
+<pre><code>return: Promise&lt;HtmlSource&gt;
+</code></pre>
+<p>Sets the custom CSS to be applied to the document upon loading</p>
+<p><em>Chainable.</em></p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="isCustomCSSEnabled"><h1 id="isCustomCSSEnabled" class="name">
+      isCustomCSSEnabled
+    </h1></a>
+    <pre><code>return: Promise&lt;boolean&gt;
+</code></pre>
+<p>Gets if custom CSS is enabled and applied to the document on load</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="enableCustomCSS"><h1 id="enableCustomCSS" class="name">
+      enableCustomCSS
+    </h1></a>
+    <pre><code>param: (value: boolean)
+</code></pre>
+<pre><code>return: Promise&lt;HtmlSource&gt;
+</code></pre>
+<p>Enables or disables application of custom CSS to the document</p>
+<p><em>Chainable.</em></p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="loadConfig"><h1 id="loadConfig" class="name">
+      loadConfig
+    </h1></a>
+          <p>See: <a href='#core/ISourceConfigurable#loadConfig'>loadConfig</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="saveConfig"><h1 id="saveConfig" class="name">
+      saveConfig
+    </h1></a>
+          <p>See: <a href='#core/ISourceConfigurable#saveConfig'>saveConfig</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="requestSaveConfig"><h1 id="requestSaveConfig" class="name">
+      requestSaveConfig
+    </h1></a>
+          <p>See: <a href='#core/ISourceConfigurable#requestSaveConfig'>requestSaveConfig</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="applyConfig"><h1 id="applyConfig" class="name">
+      applyConfig
+    </h1></a>
+          <p>See: <a href='#core/ISourceConfigurable#applyConfig'>applyConfig</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="getVolume"><h1 id="getVolume" class="name">
+      getVolume
+    </h1></a>
+          <p>See: <a href='#core/IAudio#getVolume'>getVolume</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="isMute"><h1 id="isMute" class="name">
+      isMute
+    </h1></a>
+          <p>See: <a href='#core/IAudio#isMute'>isMute</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="setVolume"><h1 id="setVolume" class="name">
+      setVolume
+    </h1></a>
+          <p>See: <a href='#core/IAudio#setVolume'>setVolume</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="setMute"><h1 id="setMute" class="name">
+      setMute
+    </h1></a>
+          <p>See: <a href='#core/IAudio#setMute'>setMute</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="isStreamOnlyAudio"><h1 id="isStreamOnlyAudio" class="name">
+      isStreamOnlyAudio
+    </h1></a>
+          <p>See: <a href='#core/IAudio#isStreamOnlyAudio'>isStreamOnlyAudio</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="setStreamOnlyAudio"><h1 id="setStreamOnlyAudio" class="name">
+      setStreamOnlyAudio
+    </h1></a>
+          <p>See: <a href='#core/IAudio#setStreamOnlyAudio'>setStreamOnlyAudio</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="isAudioAvailable"><h1 id="isAudioAvailable" class="name">
+      isAudioAvailable
+    </h1></a>
+          <p>See: <a href='#core/IAudio#isAudioAvailable'>isAudioAvailable</a></p>
+      
+  </section>
+
+<p class="module defined-in">exported from <a href='#/core'>core</a><br/>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/C:/Users/viab/Documents/Repositories/SourceTree/xjsframework/src/core/source/html.ts#L12-L272">C:/Users/viab/Documents/Repositories/SourceTree/xjsframework/src/core/source/html.ts (line 12)</a>
 </p>
 

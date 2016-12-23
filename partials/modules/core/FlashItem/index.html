@@ -7,7 +7,7 @@ loaded to XSplit Broadcaster.</p>
 <a href='#core/IItemColor'>Core/IItemColor</a>,
 <a href='#core/IItemLayout'>Core/IItemLayout</a>,
 <a href='#core/IItemTransition'>Core/IItemTransition</a>,
-<a href='#core/IItemAudio'>Core/IItemAudio</a>,
+<a href='#core/IAudio'>Core/IAudio</a>,
 <a href='#core/IItemEffect'>Core/IItemEffect</a></p>
 <p> All methods marked as <em>Chainable</em> resolve with the original <code>FlashItem</code>
 instance. Also, any audio setting, i.e. volume, mute, stream only
@@ -18,13 +18,8 @@ is enabled. (Tools menu &gt; General Settings &gt; Advanced tab)</p>
     <a name="getCustomResolution"><h1 id="getCustomResolution" class="name">
       getCustomResolution
     </h1></a>
-    <pre><code>return: Promise&lt;Rectangle&gt;
-</code></pre>
-<p>Gets the custom resolution (in pixels) for the item, if set,
-regardless of its layout on the mixer. Returns a (0, 0) Rectangle if no
-custom resolution has been set.</p>
-<p>See also: <a href='#util/Rectangle'>Util/Rectangle</a></p>
-
+          <p>See: <a href='#core/FlashSource#getCustomResolution'>getCustomResolution</a></p>
+      
   </section>
 
 
@@ -32,15 +27,8 @@ custom resolution has been set.</p>
     <a name="setCustomResolution"><h1 id="setCustomResolution" class="name">
       setCustomResolution
     </h1></a>
-    <pre><code>param: (value: Rectangle)
-</code></pre>
-<pre><code>return: Promise&lt;FlashItem&gt;
-</code></pre>
-<p>Sets the custom resolution for the item
-regardless of its layout on the mixer</p>
-<p><em>Chainable.</em></p>
-<p>See also: <a href='#util/Rectangle'>Util/Rectangle</a></p>
-
+          <p>See: <a href='#core/FlashSource#setCustomResolution'>setCustomResolution</a></p>
+      
   </section>
 
 
@@ -48,15 +36,8 @@ regardless of its layout on the mixer</p>
     <a name="getAllowRightClick"><h1 id="getAllowRightClick" class="name">
       getAllowRightClick
     </h1></a>
-    <pre><code>return: Promise&lt;boolean&gt;
-</code></pre>
-<p>Check if right click events are sent to the item or not.</p>
-<h4 id="usage">Usage</h4>
-<pre><code class="lang-javascript">item.getAllowRightClick().then(function(isRightClickAllowed) {
-  // The rest of your code here
-});
-</code></pre>
-
+          <p>See: <a href='#core/FlashSource#getAllowRightClick'>getAllowRightClick</a></p>
+      
   </section>
 
 
@@ -64,19 +45,8 @@ regardless of its layout on the mixer</p>
     <a name="setAllowRightClick"><h1 id="setAllowRightClick" class="name">
       setAllowRightClick
     </h1></a>
-    <pre><code>param: (value:boolean)
-</code></pre>
-<pre><code>return: Promise&lt;Item&gt;
-</code></pre>
-<p>Allow or disallow right click events to be sent to the item. Note that
-you can only catch right click events using <code>mouseup/mousedown</code></p>
-<p><em>Chainable</em></p>
-<h4 id="usage">Usage</h4>
-<pre><code class="lang-javascript">item.setAllowRightClick(true).then(function(item) {
-  // Promise resolves with the same Item instance
-});
-</code></pre>
-
+          <p>See: <a href='#core/FlashSource#setAllowRightClick'>setAllowRightClick</a></p>
+      
   </section>
 
 
@@ -705,7 +675,7 @@ you can only catch right click events using <code>mouseup/mousedown</code></p>
     <a name="getVolume"><h1 id="getVolume" class="name">
       getVolume
     </h1></a>
-          <p>See: <a href='#core/IItemAudio#getVolume'>getVolume</a></p>
+          <p>See: <a href='#core/IAudio#getVolume'>getVolume</a></p>
       
   </section>
 
@@ -714,7 +684,7 @@ you can only catch right click events using <code>mouseup/mousedown</code></p>
     <a name="isMute"><h1 id="isMute" class="name">
       isMute
     </h1></a>
-          <p>See: <a href='#core/IItemAudio#isMute'>isMute</a></p>
+          <p>See: <a href='#core/IAudio#isMute'>isMute</a></p>
       
   </section>
 
@@ -723,7 +693,7 @@ you can only catch right click events using <code>mouseup/mousedown</code></p>
     <a name="setVolume"><h1 id="setVolume" class="name">
       setVolume
     </h1></a>
-          <p>See: <a href='#core/IItemAudio#setVolume'>setVolume</a></p>
+          <p>See: <a href='#core/IAudio#setVolume'>setVolume</a></p>
       
   </section>
 
@@ -732,7 +702,7 @@ you can only catch right click events using <code>mouseup/mousedown</code></p>
     <a name="setMute"><h1 id="setMute" class="name">
       setMute
     </h1></a>
-          <p>See: <a href='#core/IItemAudio#setMute'>setMute</a></p>
+          <p>See: <a href='#core/IAudio#setMute'>setMute</a></p>
       
   </section>
 
@@ -741,7 +711,7 @@ you can only catch right click events using <code>mouseup/mousedown</code></p>
     <a name="isStreamOnlyAudio"><h1 id="isStreamOnlyAudio" class="name">
       isStreamOnlyAudio
     </h1></a>
-          <p>See: <a href='#core/IItemAudio#isStreamOnlyAudio'>isStreamOnlyAudio</a></p>
+          <p>See: <a href='#core/IAudio#isStreamOnlyAudio'>isStreamOnlyAudio</a></p>
       
   </section>
 
@@ -750,7 +720,7 @@ you can only catch right click events using <code>mouseup/mousedown</code></p>
     <a name="setStreamOnlyAudio"><h1 id="setStreamOnlyAudio" class="name">
       setStreamOnlyAudio
     </h1></a>
-          <p>See: <a href='#core/IItemAudio#setStreamOnlyAudio'>setStreamOnlyAudio</a></p>
+          <p>See: <a href='#core/IAudio#setStreamOnlyAudio'>setStreamOnlyAudio</a></p>
       
   </section>
 
@@ -759,7 +729,7 @@ you can only catch right click events using <code>mouseup/mousedown</code></p>
     <a name="isAudioAvailable"><h1 id="isAudioAvailable" class="name">
       isAudioAvailable
     </h1></a>
-          <p>See: <a href='#core/IItemAudio#isAudioAvailable'>isAudioAvailable</a></p>
+          <p>See: <a href='#core/IAudio#isAudioAvailable'>isAudioAvailable</a></p>
       
   </section>
 
@@ -998,6 +968,6 @@ you can only catch right click events using <code>mouseup/mousedown</code></p>
   </section>
 
 <p class="module defined-in">exported from <a href='#/core'>core</a><br/>
-defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/core/items/flash.ts#L19-L601">../src/core/items/flash.ts (line 19)</a>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/C:/Users/viab/Documents/Repositories/SourceTree/xjsframework/src/core/items/flash.ts#L20-L521">C:/Users/viab/Documents/Repositories/SourceTree/xjsframework/src/core/items/flash.ts (line 20)</a>
 </p>
 
