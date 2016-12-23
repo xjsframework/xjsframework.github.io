@@ -8,7 +8,7 @@
     <pre><code>return: Promise&lt;boolean&gt;
 </code></pre>
 <p>Determines if it is possible to move the playback position of this media
-item. It is possible for some video formats to not allow seeking of the
+source. It is possible for some video formats to not allow seeking of the
 playback position.</p>
 
   </section>
@@ -20,7 +20,7 @@ playback position.</p>
     </h1></a>
     <pre><code>return: Promise&lt;number&gt;
 </code></pre>
-<p>Gets the playback position of this item in seconds. The system can
+<p>Gets the playback position of this source in seconds. The system can
 store precision up to 100ns.</p>
 
   </section>
@@ -32,7 +32,7 @@ store precision up to 100ns.</p>
     </h1></a>
     <pre><code>param: (value: number)
 </code></pre>
-<p>Sets the playback position of this item. Parameter is in seconds, up to
+<p>Sets the playback position of this source. Parameter is in seconds, up to
 a precision level of 100ns.</p>
 <p><em>Chainable.</em></p>
 
@@ -45,7 +45,7 @@ a precision level of 100ns.</p>
     </h1></a>
     <pre><code>return: Promise&lt;number&gt;
 </code></pre>
-<p>Gets the total playback duration of this item in seconds. Precision is up
+<p>Gets the total playback duration of this source in seconds. Precision is up
 to 100ns units.</p>
 
   </section>
@@ -57,7 +57,7 @@ to 100ns units.</p>
     </h1></a>
     <pre><code>return: Promise&lt;boolean&gt;
 </code></pre>
-<p>Checks if current item is playing.</p>
+<p>Checks if current source is playing.</p>
 
   </section>
 
@@ -68,7 +68,7 @@ to 100ns units.</p>
     </h1></a>
     <pre><code>param: (value: boolean)
 </code></pre>
-<p>Plays (or pauses playback for) this item.</p>
+<p>Plays (or pauses playback for) this source.</p>
 <p><em>Chainable.</em></p>
 
   </section>
@@ -80,8 +80,8 @@ to 100ns units.</p>
     </h1></a>
     <pre><code>return: Promise&lt;number&gt;
 </code></pre>
-<p>Gets the specified start position in seconds for this item, with precision
-up to 100ns. If this item loops or is set to rewind, the playback position
+<p>Gets the specified start position in seconds for this source, with precision
+up to 100ns. If this source loops or is set to rewind, the playback position
 will return to the start position.</p>
 
   </section>
@@ -93,8 +93,8 @@ will return to the start position.</p>
     </h1></a>
     <pre><code>return: Promise&lt;number&gt;
 </code></pre>
-<p>Sets the specified start position in seconds for this item, with precision
-up to 100ns. If this item loops or is set to rewind, the playback position
+<p>Sets the specified start position in seconds for this source, with precision
+up to 100ns. If this source loops or is set to rewind, the playback position
 will return to the start position.</p>
 <p><em>Chainable.</em></p>
 
@@ -107,8 +107,8 @@ will return to the start position.</p>
     </h1></a>
     <pre><code>return: Promise&lt;number&gt;
 </code></pre>
-<p>Gets the specified end position in seconds for this item, with precision
-up to 100ns. If playback reaches the end position, this item will then
+<p>Gets the specified end position in seconds for this source, with precision
+up to 100ns. If playback reaches the end position, this source will then
 execute the specified action after playback (rewind, loop, etc.)</p>
 
   </section>
@@ -120,8 +120,8 @@ execute the specified action after playback (rewind, loop, etc.)</p>
     </h1></a>
     <pre><code>return: Promise&lt;number&gt;
 </code></pre>
-<p>Sets the specified end position in seconds for this item, with precision
-up to 100ns. If playback reaches the end position, this item will then
+<p>Sets the specified end position in seconds for this source, with precision
+up to 100ns. If playback reaches the end position, this source will then
 execute the specified action after playback (rewind, loop, etc.)</p>
 <p><em>Chainable.</em></p>
 
@@ -134,7 +134,7 @@ execute the specified action after playback (rewind, loop, etc.)</p>
     </h1></a>
     <pre><code>return: Promise&lt;ActionAfterPlayback&gt;
 </code></pre>
-<p>Gets the specified action after playback for this item is done (either
+<p>Gets the specified action after playback for this source is done (either
 playback reaches the end of the video, or the specified playback end
 position.)</p>
 <p>See also: <a href='#core/ActionAfterPlayback'>Core/ActionAfterPlayback</a></p>
@@ -148,7 +148,7 @@ position.)</p>
     </h1></a>
     <pre><code>param: (value: ActionAfterPlayback)
 </code></pre>
-<p>Sets the action to be executed on this item once playback is done (either
+<p>Sets the action to be executed on this source once playback is done (either
 playback reaches the end of the video, or the specified playback end
 position.)</p>
 <p><em>Chainable.</em></p>
@@ -163,8 +163,8 @@ position.)</p>
     </h1></a>
     <pre><code>return: Promise&lt;boolean&gt;
 </code></pre>
-<p>Checks whether this item is set to start playback when the application
-switches to this item&#39;s scene.</p>
+<p>Checks whether this source is set to start playback when the application
+switches to this source&#39;s scene.</p>
 
   </section>
 
@@ -175,8 +175,8 @@ switches to this item&#39;s scene.</p>
     </h1></a>
     <pre><code>param: (value: boolean)
 </code></pre>
-<p>Specifies whether this item is set to start playback when the application
-switches to this item&#39;s scene.</p>
+<p>Specifies whether this source is set to start playback when the application
+switches to this source&#39;s scene.</p>
 <p><em>Chainable.</em></p>
 
   </section>
@@ -211,7 +211,7 @@ switches to this item&#39;s scene.</p>
     </h1></a>
     <pre><code>return: Promise&lt;boolean&gt;
 </code></pre>
-<p>Check whether this item should retain its playback position when switching
+<p>Check whether this source should retain its playback position when switching
 scenes.</p>
 
   </section>
@@ -223,7 +223,7 @@ scenes.</p>
     </h1></a>
     <pre><code>param: (value: boolean)
 </code></pre>
-<p>Sets whether this item should retain its playback position when switching
+<p>Sets whether this source should retain its playback position when switching
 scenes.</p>
 <p><em>Chainable.</em></p>
 
@@ -236,7 +236,7 @@ scenes.</p>
     </h1></a>
     <pre><code>return: Promise&lt;boolean&gt;
 </code></pre>
-<p>Checks if this item is set to display its playback position.</p>
+<p>Checks if this source is set to display its playback position.</p>
 
   </section>
 
@@ -247,7 +247,7 @@ scenes.</p>
     </h1></a>
     <pre><code>param: (value: boolean)
 </code></pre>
-<p>Sets whether this item should display its playback position.</p>
+<p>Sets whether this source should display its playback position.</p>
 <p><em>Chainable.</em></p>
 
   </section>
@@ -259,7 +259,7 @@ scenes.</p>
     </h1></a>
     <pre><code>return: Promise&lt;CuePoint[]&gt;
 </code></pre>
-<p>Gets the set of Cue Points created for this item.</p>
+<p>Gets the set of Cue Points created for this source.</p>
 <p>See also: <a href='#core/CuePoint'>Core/CuePoint</a></p>
 
   </section>
@@ -271,7 +271,7 @@ scenes.</p>
     </h1></a>
     <pre><code>param: (value: CuePoint[])
 </code></pre>
-<p>Assign the specified array of Cue Points for this item.</p>
+<p>Assign the specified array of Cue Points for this source.</p>
 <p><em>Chainable.</em></p>
 <p>See also: <a href='#core/CuePoint'>Core/CuePoint</a></p>
 
@@ -300,7 +300,7 @@ scenes.</p>
     </h1></a>
     <pre><code>return: Promise&lt;boolean&gt;
 </code></pre>
-<p>Checks if this item&#39;s file type is an audio file type.</p>
+<p>Checks if this source&#39;s file type is an audio file type.</p>
 
   </section>
 
@@ -311,11 +311,11 @@ scenes.</p>
     </h1></a>
     <pre><code>return: Promise&lt;boolean&gt;
 </code></pre>
-<p>Checks if this item&#39;s file type is a video file type.</p>
+<p>Checks if this source&#39;s file type is a video file type.</p>
 
   </section>
 
 <p class="module defined-in">exported from <a href='#/core'>core</a><br/>
-defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/F:/Users/MiYb/Documents/Projects/git/xjs/src/core/source/iplayback.ts#L23-L246">F:/Users/MiYb/Documents/Projects/git/xjs/src/core/source/iplayback.ts (line 23)</a>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/C:/Users/viab/Documents/Repositories/SourceTree/xjsframework/src/core/source/iplayback.ts#L21-L244">C:/Users/viab/Documents/Repositories/SourceTree/xjsframework/src/core/source/iplayback.ts (line 21)</a>
 </p>
 

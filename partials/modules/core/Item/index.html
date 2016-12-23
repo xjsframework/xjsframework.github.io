@@ -2,10 +2,9 @@
 <h1 class="class export">Item <span class="type">class</span></h1>
 <p><p>An <code>Item</code> is rendered from a <a href='#core/Source'>Source</a> and represents an
 object that is used as an item on the stage. Multiple items may be linked to
-a singled source and any changes made to the source would affect all linked
+a single source and any changes made to the source would affect all linked
 items.</p>
-<p>Implements: <a href='#core/ISource'>Core/ISource</a>
-<a href='#core/IItemLayout'>Core/IItemLayout</a></p>
+<p>Implements: <a href='#core/IItemLayout'>Core/IItemLayout</a></p>
 <h3 id="basic-usage">Basic Usage</h3>
 <pre><code class="lang-javascript">var xjs = require(&#39;xjs&#39;);
 var Scene = xjs.Scene.getById(1);
@@ -15,7 +14,7 @@ Scene.getItems().then(function(items) {
 
   // There&#39;s a valid item, let&#39;s use that
   var item = items[items.length - 1];
-  return item.getId(&#39;ItemTesting&#39;);
+  return item.setKeepAspectRatio(true);
 }).then(function(item) {
   // Do something else here
 });
@@ -23,18 +22,20 @@ Scene.getItems().then(function(items) {
 <p>All methods marked as <em>Chainable</em> resolve with the original <code>Item</code> instance.
 This allows you to perform sequential operations correctly:</p>
 <pre><code class="lang-javascript">var xjs = require(&#39;xjs&#39;);
-var Item = xjs.Item;
+var Source = xjs.Source;
 
 // an item that sets its own properties on load
 xjs.ready()
-   .then(Item.getItemList)
-   .then(function(item) {
-    return item.setCustomName(&#39;MyCustomName&#39;);
- }).then(function(item) {
-    return item.setKeepLoaded(true);
- }).then(function(item) {
-    // set more properties here
- });
+   .then(Source.getCurrentSource)
+   .then(function(source) {
+   return source.getItemList()
+ }).then(function(items) {
+   return items[0].setEnhancedResizeEnabled(true)
+ }).then(function(items) {
+   return items[0].setPositionLocked(true)
+ }).then(function(items) {
+   //set more properties here
+ })
 </code></pre>
 </p><h2>Members</h2>
   <section class="member constructor">
@@ -116,16 +117,21 @@ get the string version of the returned object.</p>
 </code></pre>
 <pre><code>return: Promise&lt;Item&gt;
 </code></pre>
-<p>Duplicate current item. Will duplicate item into the current scene
-or specified scene as Linked or Unlinked.</p>
+<p>Duplicate an item into the current scene or to a specified scene as
+Linked or Unlinked.</p>
 <p>Linked items would generally have a single source, and any changes in the
 property of an item would be applied to all linked items.</p>
 <p> <em>Chainable</em></p>
 <h4 id="usage">Usage</h4>
-<pre><code class="lang-javascript">xjs.Item.getItemList().then(function(item){
-  // get a scene to place duplicate on
-  item.duplicate(); // Default is linked: false, scene: current scene
-});
+<pre><code class="lang-javascript">// item pertains to an actual Item instance
+// Sample 1
+item.duplicate() // duplicate selected item to the current scene as unlinked
+</code></pre>
+<p>Duplicate the selected item to a specific scene and set it to be linked to
+a single source with the original item.</p>
+<pre><code class="lang-javascript">// Sample 2
+var toScene = xjs.Scene.getById(2)
+item.duplicate({linked:true, scene:toScene})
 </code></pre>
 
   </section>
@@ -137,13 +143,13 @@ property of an item would be applied to all linked items.</p>
     </h1></a>
     <pre><code>return: Promise&lt;Item&gt;
 </code></pre>
-<p>Unlinks selected item from linked items.</p>
-<p>Unlinking an item would make it independent of the changes made on other
-similar items.</p>
+<p>Unlinks selected item.</p>
+<p>Unlinks an item to the source of other linked items and renders its
+own source.</p>
 <h4 id="usage">Usage</h4>
 <pre><code class="lang-javascript">item.unlink()
 </code></pre>
-<p>Note: Once you unlink an Item, there&#39;s still no method to reverses the
+<p>Note: Once you unlink an Item, there&#39;s still no method to reverse the
 process.</p>
 
   </section>
@@ -153,25 +159,8 @@ process.</p>
     <a name="getItemList"><h1 id="getItemList" class="name">
       getItemList
     </h1></a>
-    <pre><code>return: Promise&lt;Item[]&gt;
-</code></pre>
-<p>Get the item list of the current item instance. This is useful when an item is
-an instance of a linked item, with multiple other items having the same
-source.</p>
-<h4 id="usage">Usage</h4>
-<pre><code class="lang-javascript">// item pertains to an actual item instance
-item.getItemList().then(function(items) {
-  // This will fetch the linked items list of the current item
-  for (var i = 0 ; i &lt; items.length ; i++) {
-    // Manipulate each item here
-    items[0].getSceneId()
-  }
-}).catch(function(err) {
-  // Handle the error here. Errors would only occur
-  // if we try to execute this method on Extension plugins
-});
-</code></pre>
-
+          <p>See: <a href='#core/Source#getItemList'>getItemList</a></p>
+      
   </section>
 
 
@@ -455,15 +444,6 @@ item.getItemList().then(function(items) {
 
 
   <section class="member">
-    <a name="getSourceId"><h1 id="getSourceId" class="name">
-      getSourceId
-    </h1></a>
-          <p>See: <a href='#core/Source#getSourceId'>getSourceId</a></p>
-      
-  </section>
-
-
-  <section class="member">
     <a name="refresh"><h1 id="refresh" class="name">
       refresh
     </h1></a>
@@ -480,7 +460,29 @@ item.getItemList().then(function(items) {
       
   </section>
 
+
+  <section class="member static">
+    <a name="getItemList"><h1 id="getItemList" class="name">
+      <code>static</code> getItemList
+    </h1></a>
+    <pre><code>return: Promise&lt;Item[]&gt;
+</code></pre>
+<p>Gets the list of linked items of the current Item.
+Linked items are items linked to a single source.</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">xjs.Item.getItemList().then(function(items) {
+  for (var i = 0 ; i &lt; items.length ; i++) {
+    // Manipulate each item here
+    items[i].setKeepAspectRatio(true);
+  }
+})
+</code></pre>
+<p>This is simply a shortcut to:
+<code>xjs.Item.getCurrentSource()</code> -&gt; <code>source.getItemList()</code></p>
+
+  </section>
+
 <p class="module defined-in">exported from <a href='#/core'>core</a><br/>
-defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/F:/Users/MiYb/Documents/Projects/git/xjs/src/core/items/item.ts#L40-L565">F:/Users/MiYb/Documents/Projects/git/xjs/src/core/items/item.ts (line 40)</a>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/C:/Users/viab/Documents/Repositories/SourceTree/xjsframework/src/core/items/item.ts#L40-L564">C:/Users/viab/Documents/Repositories/SourceTree/xjsframework/src/core/items/item.ts (line 40)</a>
 </p>
 

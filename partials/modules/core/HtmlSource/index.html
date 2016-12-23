@@ -4,21 +4,50 @@
 has been added to the stage. A single source could have multiple items linked
 into it and any changes to the source would affect all items linked to it.</p>
 <p>Each item is represented by the HtmlItem class.
-See: {@link: #core/HtmlItem Core/HtmlItem}</p>
+See: <a href='#core/HtmlItem'>Core/HtmlItem</a></p>
+<p>Inherits from: <a href='#core/Source'>Core/Source</a></p>
 <h3 id="basic-usage">Basic Usage</h3>
-<p>```javascript
-var xjs = require(&#39;xjs&#39;);</p>
-<p>xjs.Scene.getActiveScene().then(function(scene) {
+<pre><code class="lang-javascript">var xjs = require(&#39;xjs&#39;);
+
+xjs.Scene.getActiveScene().then(function(scene) {
   scene.getSources().then(function(sources) {
   for (var i in sources) {
       if (sources[i] instanceof XJS.HtmlSource) {
-        // Manipulate your audio device source here
+        // Manipulate your html source here
         sources[i].setSilenceDetectionEnabled(true);
       }
     }
   })
-})</p>
+})
+</code></pre>
+<p>All methods marked as <em>Chainable</em> resolve with the original <code>HtmlSource</code>
+instance.</p>
 </p><h2>Members</h2>
+  <section class="member">
+    <a name="getURL"><h1 id="getURL" class="name">
+      getURL
+    </h1></a>
+    <pre><code>return: Promise&lt;string&gt;
+</code></pre>
+<p>Gets the URL of this webpage source.</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="setURL"><h1 id="setURL" class="name">
+      setURL
+    </h1></a>
+    <pre><code>param: (url: string)
+</code></pre>
+<pre><code>return: Promise&lt;HtmlSource&gt;
+</code></pre>
+<p>Sets the URL of this webpage source.</p>
+<p><em>Chainable.</em></p>
+
+  </section>
+
+
   <section class="member">
     <a name="isBrowserTransparent"><h1 id="isBrowserTransparent" class="name">
       isBrowserTransparent
@@ -64,7 +93,7 @@ custom size has been set.</p>
     </h1></a>
     <pre><code>param: Promise&lt;Rectangle&gt;
 </code></pre>
-<pre><code>return: Promise&lt;ISourceHtml&gt;
+<pre><code>return: Promise&lt;HtmlSource&gt;
 </code></pre>
 <p>Sets the custom browser window size for the item
 regardless of its layout on the mixer</p>
@@ -313,6 +342,6 @@ in order to remove any BrowserJS previously executed.</p>
   </section>
 
 <p class="module defined-in">exported from <a href='#/core'>core</a><br/>
-defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/F:/Users/MiYb/Documents/Projects/git/xjs/src/core/source/html.ts#L12-L247">F:/Users/MiYb/Documents/Projects/git/xjs/src/core/source/html.ts (line 12)</a>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/C:/Users/viab/Documents/Repositories/SourceTree/xjsframework/src/core/source/html.ts#L12-L272">C:/Users/viab/Documents/Repositories/SourceTree/xjsframework/src/core/source/html.ts (line 12)</a>
 </p>
 

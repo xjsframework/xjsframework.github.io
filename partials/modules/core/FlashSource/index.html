@@ -4,20 +4,24 @@
 has been added to the stage. A single source could have multiple items linked
 into it and any changes to the source would affect all items linked to it.</p>
 <p>Each item is represented by the FlashItem class.
-See: {@link: #core/FlashItem Core/FlashItem}</p>
+See: <a href='#core/FlashItem'>Core/FlashItem</a></p>
+<p>Inherits from: <a href='#core/Source'>Core/Source</a></p>
 <h3 id="basic-usage">Basic Usage</h3>
-<p>```javascript
-var xjs = require(&#39;xjs&#39;);</p>
-<p>xjs.Scene.getActiveScene().then(function(scene) {
+<pre><code class="lang-javascript">var xjs = require(&#39;xjs&#39;);
+
+xjs.Scene.getActiveScene().then(function(scene) {
   scene.getSources().then(function(sources) {
   for (var i in sources) {
       if (sources[i] instanceof XJS.FlashSource) {
-        // Manipulate your audio device source here
+        // Manipulate your game source here
         sources[i].setSilenceDetectionEnabled(true);
       }
     }
   })
-})</p>
+})
+</code></pre>
+<p>All methods marked as <em>Chainable</em> resolve with the original <code>FlashSource</code>
+instance.</p>
 </p><h2>Members</h2>
   <section class="member">
     <a name="getCustomResolution"><h1 id="getCustomResolution" class="name">
@@ -148,6 +152,6 @@ you can only catch right click events using <code>mouseup/mousedown</code></p>
   </section>
 
 <p class="module defined-in">exported from <a href='#/core'>core</a><br/>
-defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/F:/Users/MiYb/Documents/Projects/git/xjs/src/core/source/flash.ts#L7-L118">F:/Users/MiYb/Documents/Projects/git/xjs/src/core/source/flash.ts (line 7)</a>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/C:/Users/viab/Documents/Repositories/SourceTree/xjsframework/src/core/source/flash.ts#L7-L124">C:/Users/viab/Documents/Repositories/SourceTree/xjsframework/src/core/source/flash.ts (line 7)</a>
 </p>
 

@@ -200,11 +200,6 @@ angular.module('navigation-modules', [])
               "name": "setKeepLoaded"
             },
             {
-              "path": "/core/Item#getSourceId",
-              "partial": "partials/modules//core/Item/index.html",
-              "name": "getSourceId"
-            },
-            {
               "path": "/core/Item#refresh",
               "partial": "partials/modules//core/Item/index.html",
               "name": "refresh"
@@ -213,89 +208,11 @@ angular.module('navigation-modules', [])
               "path": "/core/Item#getType",
               "partial": "partials/modules//core/Item/index.html",
               "name": "getType"
-            }
-          ]
-        },
-        {
-          "path": "/core/Source",
-          "partial": "partials/modules//core/Source/index.html",
-          "name": "Source",
-          "type": "Class",
-          "pages": [
-            {
-              "path": "/core/Source#setName",
-              "partial": "partials/modules//core/Source/index.html",
-              "name": "setName"
             },
             {
-              "path": "/core/Source#getName",
-              "partial": "partials/modules//core/Source/index.html",
-              "name": "getName"
-            },
-            {
-              "path": "/core/Source#setCustomName",
-              "partial": "partials/modules//core/Source/index.html",
-              "name": "setCustomName"
-            },
-            {
-              "path": "/core/Source#getCustomName",
-              "partial": "partials/modules//core/Source/index.html",
-              "name": "getCustomName"
-            },
-            {
-              "path": "/core/Source#getValue",
-              "partial": "partials/modules//core/Source/index.html",
-              "name": "getValue"
-            },
-            {
-              "path": "/core/Source#setValue",
-              "partial": "partials/modules//core/Source/index.html",
-              "name": "setValue"
-            },
-            {
-              "path": "/core/Source#getKeepLoaded",
-              "partial": "partials/modules//core/Source/index.html",
-              "name": "getKeepLoaded"
-            },
-            {
-              "path": "/core/Source#setKeepLoaded",
-              "partial": "partials/modules//core/Source/index.html",
-              "name": "setKeepLoaded"
-            },
-            {
-              "path": "/core/Source#getSourceId",
-              "partial": "partials/modules//core/Source/index.html",
-              "name": "getSourceId"
-            },
-            {
-              "path": "/core/Source#getItemList",
-              "partial": "partials/modules//core/Source/index.html",
+              "path": "/core/Item#getItemList",
+              "partial": "partials/modules//core/Item/index.html",
               "name": "getItemList"
-            },
-            {
-              "path": "/core/Source#refresh",
-              "partial": "partials/modules//core/Source/index.html",
-              "name": "refresh"
-            },
-            {
-              "path": "/core/Source#getType",
-              "partial": "partials/modules//core/Source/index.html",
-              "name": "getType"
-            },
-            {
-              "path": "/core/Source#getCurrentSource",
-              "partial": "partials/modules//core/Source/index.html",
-              "name": "getCurrentSource"
-            },
-            {
-              "path": "/core/Source#getItemList",
-              "partial": "partials/modules//core/Source/index.html",
-              "name": "getItemList"
-            },
-            {
-              "path": "/core/Source#getAllSources",
-              "partial": "partials/modules//core/Source/index.html",
-              "name": "getAllSources"
             }
           ]
         },
@@ -874,6 +791,89 @@ angular.module('navigation-modules', [])
           ]
         },
         {
+          "path": "/core/Source",
+          "partial": "partials/modules//core/Source/index.html",
+          "name": "Source",
+          "type": "Class",
+          "pages": [
+            {
+              "path": "/core/Source#setName",
+              "partial": "partials/modules//core/Source/index.html",
+              "name": "setName"
+            },
+            {
+              "path": "/core/Source#getName",
+              "partial": "partials/modules//core/Source/index.html",
+              "name": "getName"
+            },
+            {
+              "path": "/core/Source#setCustomName",
+              "partial": "partials/modules//core/Source/index.html",
+              "name": "setCustomName"
+            },
+            {
+              "path": "/core/Source#getCustomName",
+              "partial": "partials/modules//core/Source/index.html",
+              "name": "getCustomName"
+            },
+            {
+              "path": "/core/Source#getValue",
+              "partial": "partials/modules//core/Source/index.html",
+              "name": "getValue"
+            },
+            {
+              "path": "/core/Source#setValue",
+              "partial": "partials/modules//core/Source/index.html",
+              "name": "setValue"
+            },
+            {
+              "path": "/core/Source#getKeepLoaded",
+              "partial": "partials/modules//core/Source/index.html",
+              "name": "getKeepLoaded"
+            },
+            {
+              "path": "/core/Source#setKeepLoaded",
+              "partial": "partials/modules//core/Source/index.html",
+              "name": "setKeepLoaded"
+            },
+            {
+              "path": "/core/Source#getId",
+              "partial": "partials/modules//core/Source/index.html",
+              "name": "getId"
+            },
+            {
+              "path": "/core/Source#getItemList",
+              "partial": "partials/modules//core/Source/index.html",
+              "name": "getItemList"
+            },
+            {
+              "path": "/core/Source#refresh",
+              "partial": "partials/modules//core/Source/index.html",
+              "name": "refresh"
+            },
+            {
+              "path": "/core/Source#getType",
+              "partial": "partials/modules//core/Source/index.html",
+              "name": "getType"
+            },
+            {
+              "path": "/core/Source#getCurrentSource",
+              "partial": "partials/modules//core/Source/index.html",
+              "name": "getCurrentSource"
+            },
+            {
+              "path": "/core/Source#getItemList",
+              "partial": "partials/modules//core/Source/index.html",
+              "name": "getItemList"
+            },
+            {
+              "path": "/core/Source#getAllSources",
+              "partial": "partials/modules//core/Source/index.html",
+              "name": "getAllSources"
+            }
+          ]
+        },
+        {
           "path": "/core/ActionAfterPlayback",
           "partial": "partials/modules//core/ActionAfterPlayback/index.html",
           "name": "ActionAfterPlayback",
@@ -1160,6 +1160,82 @@ angular.module('navigation-modules', [])
               "path": "/core/ISourcePlayback#isVideo",
               "partial": "partials/modules//core/ISourcePlayback/index.html",
               "name": "isVideo"
+            }
+          ]
+        },
+        {
+          "path": "/core/ViewTypes",
+          "partial": "partials/modules//core/ViewTypes/index.html",
+          "name": "ViewTypes",
+          "type": "Enum",
+          "pages": [
+            {
+              "path": "/core/ViewTypes#MAIN",
+              "partial": "partials/modules//core/ViewTypes/index.html",
+              "name": "MAIN"
+            },
+            {
+              "path": "/core/ViewTypes#PREVIEW",
+              "partial": "partials/modules//core/ViewTypes/index.html",
+              "name": "PREVIEW"
+            },
+            {
+              "path": "/core/ViewTypes#THUMBNAIL",
+              "partial": "partials/modules//core/ViewTypes/index.html",
+              "name": "THUMBNAIL"
+            }
+          ]
+        },
+        {
+          "path": "/core/ItemTypes",
+          "partial": "partials/modules//core/ItemTypes/index.html",
+          "name": "ItemTypes",
+          "type": "Enum",
+          "pages": [
+            {
+              "path": "/core/ItemTypes#UNDEFINED",
+              "partial": "partials/modules//core/ItemTypes/index.html",
+              "name": "UNDEFINED"
+            },
+            {
+              "path": "/core/ItemTypes#FILE",
+              "partial": "partials/modules//core/ItemTypes/index.html",
+              "name": "FILE"
+            },
+            {
+              "path": "/core/ItemTypes#LIVE",
+              "partial": "partials/modules//core/ItemTypes/index.html",
+              "name": "LIVE"
+            },
+            {
+              "path": "/core/ItemTypes#TEXT",
+              "partial": "partials/modules//core/ItemTypes/index.html",
+              "name": "TEXT"
+            },
+            {
+              "path": "/core/ItemTypes#BITMAP",
+              "partial": "partials/modules//core/ItemTypes/index.html",
+              "name": "BITMAP"
+            },
+            {
+              "path": "/core/ItemTypes#SCREEN",
+              "partial": "partials/modules//core/ItemTypes/index.html",
+              "name": "SCREEN"
+            },
+            {
+              "path": "/core/ItemTypes#FLASHFILE",
+              "partial": "partials/modules//core/ItemTypes/index.html",
+              "name": "FLASHFILE"
+            },
+            {
+              "path": "/core/ItemTypes#GAMESOURCE",
+              "partial": "partials/modules//core/ItemTypes/index.html",
+              "name": "GAMESOURCE"
+            },
+            {
+              "path": "/core/ItemTypes#HTML",
+              "partial": "partials/modules//core/ItemTypes/index.html",
+              "name": "HTML"
             }
           ]
         },
@@ -6106,6 +6182,126 @@ angular.module('navigation-modules', [])
               "path": "/core/VideoPlaylistItem#applyConfig",
               "partial": "partials/modules//core/VideoPlaylistItem/index.html",
               "name": "applyConfig"
+            },
+            {
+              "path": "/core/VideoPlaylistItem#isSeekable",
+              "partial": "partials/modules//core/VideoPlaylistItem/index.html",
+              "name": "isSeekable"
+            },
+            {
+              "path": "/core/VideoPlaylistItem#getPlaybackPosition",
+              "partial": "partials/modules//core/VideoPlaylistItem/index.html",
+              "name": "getPlaybackPosition"
+            },
+            {
+              "path": "/core/VideoPlaylistItem#setPlaybackPosition",
+              "partial": "partials/modules//core/VideoPlaylistItem/index.html",
+              "name": "setPlaybackPosition"
+            },
+            {
+              "path": "/core/VideoPlaylistItem#getPlaybackDuration",
+              "partial": "partials/modules//core/VideoPlaylistItem/index.html",
+              "name": "getPlaybackDuration"
+            },
+            {
+              "path": "/core/VideoPlaylistItem#isPlaying",
+              "partial": "partials/modules//core/VideoPlaylistItem/index.html",
+              "name": "isPlaying"
+            },
+            {
+              "path": "/core/VideoPlaylistItem#setPlaying",
+              "partial": "partials/modules//core/VideoPlaylistItem/index.html",
+              "name": "setPlaying"
+            },
+            {
+              "path": "/core/VideoPlaylistItem#getPlaybackStartPosition",
+              "partial": "partials/modules//core/VideoPlaylistItem/index.html",
+              "name": "getPlaybackStartPosition"
+            },
+            {
+              "path": "/core/VideoPlaylistItem#setPlaybackStartPosition",
+              "partial": "partials/modules//core/VideoPlaylistItem/index.html",
+              "name": "setPlaybackStartPosition"
+            },
+            {
+              "path": "/core/VideoPlaylistItem#getPlaybackEndPosition",
+              "partial": "partials/modules//core/VideoPlaylistItem/index.html",
+              "name": "getPlaybackEndPosition"
+            },
+            {
+              "path": "/core/VideoPlaylistItem#setPlaybackEndPosition",
+              "partial": "partials/modules//core/VideoPlaylistItem/index.html",
+              "name": "setPlaybackEndPosition"
+            },
+            {
+              "path": "/core/VideoPlaylistItem#getActionAfterPlayback",
+              "partial": "partials/modules//core/VideoPlaylistItem/index.html",
+              "name": "getActionAfterPlayback"
+            },
+            {
+              "path": "/core/VideoPlaylistItem#setActionAfterPlayback",
+              "partial": "partials/modules//core/VideoPlaylistItem/index.html",
+              "name": "setActionAfterPlayback"
+            },
+            {
+              "path": "/core/VideoPlaylistItem#isAutostartOnSceneLoad",
+              "partial": "partials/modules//core/VideoPlaylistItem/index.html",
+              "name": "isAutostartOnSceneLoad"
+            },
+            {
+              "path": "/core/VideoPlaylistItem#setAutostartOnSceneLoad",
+              "partial": "partials/modules//core/VideoPlaylistItem/index.html",
+              "name": "setAutostartOnSceneLoad"
+            },
+            {
+              "path": "/core/VideoPlaylistItem#isForceDeinterlace",
+              "partial": "partials/modules//core/VideoPlaylistItem/index.html",
+              "name": "isForceDeinterlace"
+            },
+            {
+              "path": "/core/VideoPlaylistItem#setForceDeinterlace",
+              "partial": "partials/modules//core/VideoPlaylistItem/index.html",
+              "name": "setForceDeinterlace"
+            },
+            {
+              "path": "/core/VideoPlaylistItem#isRememberingPlaybackPosition",
+              "partial": "partials/modules//core/VideoPlaylistItem/index.html",
+              "name": "isRememberingPlaybackPosition"
+            },
+            {
+              "path": "/core/VideoPlaylistItem#setRememberingPlaybackPosition",
+              "partial": "partials/modules//core/VideoPlaylistItem/index.html",
+              "name": "setRememberingPlaybackPosition"
+            },
+            {
+              "path": "/core/VideoPlaylistItem#isShowingPlaybackPosition",
+              "partial": "partials/modules//core/VideoPlaylistItem/index.html",
+              "name": "isShowingPlaybackPosition"
+            },
+            {
+              "path": "/core/VideoPlaylistItem#setShowingPlaybackPosition",
+              "partial": "partials/modules//core/VideoPlaylistItem/index.html",
+              "name": "setShowingPlaybackPosition"
+            },
+            {
+              "path": "/core/VideoPlaylistItem#getCuePoints",
+              "partial": "partials/modules//core/VideoPlaylistItem/index.html",
+              "name": "getCuePoints"
+            },
+            {
+              "path": "/core/VideoPlaylistItem#setCuePoints",
+              "partial": "partials/modules//core/VideoPlaylistItem/index.html",
+              "name": "setCuePoints"
+            },
+            {
+              "path": "/core/VideoPlaylistItem#isAudio",
+              "partial": "partials/modules//core/VideoPlaylistItem/index.html",
+              "name": "isAudio"
+            },
+            {
+              "path": "/core/VideoPlaylistItem#isVideo",
+              "partial": "partials/modules//core/VideoPlaylistItem/index.html",
+              "name": "isVideo"
             }
           ]
         },
@@ -6344,6 +6540,16 @@ angular.module('navigation-modules', [])
           "name": "HtmlSource",
           "type": "Class",
           "pages": [
+            {
+              "path": "/core/HtmlSource#getURL",
+              "partial": "partials/modules//core/HtmlSource/index.html",
+              "name": "getURL"
+            },
+            {
+              "path": "/core/HtmlSource#setURL",
+              "partial": "partials/modules//core/HtmlSource/index.html",
+              "name": "setURL"
+            },
             {
               "path": "/core/HtmlSource#isBrowserTransparent",
               "partial": "partials/modules//core/HtmlSource/index.html",
@@ -6843,6 +7049,126 @@ angular.module('navigation-modules', [])
               "path": "/core/VideoPlaylistSource#applyConfig",
               "partial": "partials/modules//core/VideoPlaylistSource/index.html",
               "name": "applyConfig"
+            },
+            {
+              "path": "/core/VideoPlaylistSource#isSeekable",
+              "partial": "partials/modules//core/VideoPlaylistSource/index.html",
+              "name": "isSeekable"
+            },
+            {
+              "path": "/core/VideoPlaylistSource#getPlaybackPosition",
+              "partial": "partials/modules//core/VideoPlaylistSource/index.html",
+              "name": "getPlaybackPosition"
+            },
+            {
+              "path": "/core/VideoPlaylistSource#setPlaybackPosition",
+              "partial": "partials/modules//core/VideoPlaylistSource/index.html",
+              "name": "setPlaybackPosition"
+            },
+            {
+              "path": "/core/VideoPlaylistSource#getPlaybackDuration",
+              "partial": "partials/modules//core/VideoPlaylistSource/index.html",
+              "name": "getPlaybackDuration"
+            },
+            {
+              "path": "/core/VideoPlaylistSource#isPlaying",
+              "partial": "partials/modules//core/VideoPlaylistSource/index.html",
+              "name": "isPlaying"
+            },
+            {
+              "path": "/core/VideoPlaylistSource#setPlaying",
+              "partial": "partials/modules//core/VideoPlaylistSource/index.html",
+              "name": "setPlaying"
+            },
+            {
+              "path": "/core/VideoPlaylistSource#getPlaybackStartPosition",
+              "partial": "partials/modules//core/VideoPlaylistSource/index.html",
+              "name": "getPlaybackStartPosition"
+            },
+            {
+              "path": "/core/VideoPlaylistSource#setPlaybackStartPosition",
+              "partial": "partials/modules//core/VideoPlaylistSource/index.html",
+              "name": "setPlaybackStartPosition"
+            },
+            {
+              "path": "/core/VideoPlaylistSource#getPlaybackEndPosition",
+              "partial": "partials/modules//core/VideoPlaylistSource/index.html",
+              "name": "getPlaybackEndPosition"
+            },
+            {
+              "path": "/core/VideoPlaylistSource#setPlaybackEndPosition",
+              "partial": "partials/modules//core/VideoPlaylistSource/index.html",
+              "name": "setPlaybackEndPosition"
+            },
+            {
+              "path": "/core/VideoPlaylistSource#getActionAfterPlayback",
+              "partial": "partials/modules//core/VideoPlaylistSource/index.html",
+              "name": "getActionAfterPlayback"
+            },
+            {
+              "path": "/core/VideoPlaylistSource#setActionAfterPlayback",
+              "partial": "partials/modules//core/VideoPlaylistSource/index.html",
+              "name": "setActionAfterPlayback"
+            },
+            {
+              "path": "/core/VideoPlaylistSource#isAutostartOnSceneLoad",
+              "partial": "partials/modules//core/VideoPlaylistSource/index.html",
+              "name": "isAutostartOnSceneLoad"
+            },
+            {
+              "path": "/core/VideoPlaylistSource#setAutostartOnSceneLoad",
+              "partial": "partials/modules//core/VideoPlaylistSource/index.html",
+              "name": "setAutostartOnSceneLoad"
+            },
+            {
+              "path": "/core/VideoPlaylistSource#isForceDeinterlace",
+              "partial": "partials/modules//core/VideoPlaylistSource/index.html",
+              "name": "isForceDeinterlace"
+            },
+            {
+              "path": "/core/VideoPlaylistSource#setForceDeinterlace",
+              "partial": "partials/modules//core/VideoPlaylistSource/index.html",
+              "name": "setForceDeinterlace"
+            },
+            {
+              "path": "/core/VideoPlaylistSource#isRememberingPlaybackPosition",
+              "partial": "partials/modules//core/VideoPlaylistSource/index.html",
+              "name": "isRememberingPlaybackPosition"
+            },
+            {
+              "path": "/core/VideoPlaylistSource#setRememberingPlaybackPosition",
+              "partial": "partials/modules//core/VideoPlaylistSource/index.html",
+              "name": "setRememberingPlaybackPosition"
+            },
+            {
+              "path": "/core/VideoPlaylistSource#isShowingPlaybackPosition",
+              "partial": "partials/modules//core/VideoPlaylistSource/index.html",
+              "name": "isShowingPlaybackPosition"
+            },
+            {
+              "path": "/core/VideoPlaylistSource#setShowingPlaybackPosition",
+              "partial": "partials/modules//core/VideoPlaylistSource/index.html",
+              "name": "setShowingPlaybackPosition"
+            },
+            {
+              "path": "/core/VideoPlaylistSource#getCuePoints",
+              "partial": "partials/modules//core/VideoPlaylistSource/index.html",
+              "name": "getCuePoints"
+            },
+            {
+              "path": "/core/VideoPlaylistSource#setCuePoints",
+              "partial": "partials/modules//core/VideoPlaylistSource/index.html",
+              "name": "setCuePoints"
+            },
+            {
+              "path": "/core/VideoPlaylistSource#isAudio",
+              "partial": "partials/modules//core/VideoPlaylistSource/index.html",
+              "name": "isAudio"
+            },
+            {
+              "path": "/core/VideoPlaylistSource#isVideo",
+              "partial": "partials/modules//core/VideoPlaylistSource/index.html",
+              "name": "isVideo"
             }
           ]
         }
@@ -7543,6 +7869,11 @@ angular.module('navigation-modules', [])
               "path": "/window/SourcePluginWindow#on",
               "partial": "partials/modules//window/SourcePluginWindow/index.html",
               "name": "on"
+            },
+            {
+              "path": "/window/SourcePluginWindow#off",
+              "partial": "partials/modules//window/SourcePluginWindow/index.html",
+              "name": "off"
             }
           ]
         },

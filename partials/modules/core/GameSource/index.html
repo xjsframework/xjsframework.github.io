@@ -4,11 +4,12 @@
 has been added to the stage. A single source could have multiple items linked
 into it and any changes to the source would affect all items linked to it.</p>
 <p>Each item is represented by the GameItem class.
-See: {@link: #core/GameItem Core/GameItem}</p>
+See: <a href='#core/GameItem'>Core/GameItem</a></p>
+<p>Inherits from: <a href='#core/Source'>Core/Source</a></p>
 <h3 id="basic-usage">Basic Usage</h3>
-<p>```javascript
-var xjs = require(&#39;xjs&#39;);</p>
-<p>xjs.Scene.getActiveScene().then(function(scene) {
+<pre><code class="lang-javascript">var xjs = require(&#39;xjs&#39;);
+
+xjs.Scene.getActiveScene().then(function(scene) {
   scene.getSources().then(function(sources) {
   for (var i in sources) {
       if (sources[i] instanceof XJS.GameSource) {
@@ -17,7 +18,10 @@ var xjs = require(&#39;xjs&#39;);</p>
       }
     }
   })
-})</p>
+})
+</code></pre>
+<p>All methods marked as <em>Chainable</em> resolve with the original <code>GameSource</code>
+instance.</p>
 </p><h2>Members</h2>
   <section class="member">
     <a name="isSpecialOptimizationEnabled"><h1 id="isSpecialOptimizationEnabled" class="name">
@@ -71,7 +75,7 @@ var xjs = require(&#39;xjs&#39;);</p>
     </h1></a>
     <pre><code>param: path&lt;string&gt;
 </code></pre>
-<p>Set the offline image of a game item</p>
+<p>Set the offline image of a game source</p>
 <p><em>Chainable.</em></p>
 
   </section>
@@ -83,11 +87,11 @@ var xjs = require(&#39;xjs&#39;);</p>
     </h1></a>
     <pre><code>return: Promise&lt;string&gt;
 </code></pre>
-<p>Get the offline image of a game item</p>
+<p>Get the offline image of a game source</p>
 
   </section>
 
 <p class="module defined-in">exported from <a href='#/core'>core</a><br/>
-defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/F:/Users/MiYb/Documents/Projects/git/xjs/src/core/source/game.ts#L7-L83">F:/Users/MiYb/Documents/Projects/git/xjs/src/core/source/game.ts (line 7)</a>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/C:/Users/viab/Documents/Repositories/SourceTree/xjsframework/src/core/source/game.ts#L7-L89">C:/Users/viab/Documents/Repositories/SourceTree/xjsframework/src/core/source/game.ts (line 7)</a>
 </p>
 

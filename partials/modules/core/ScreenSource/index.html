@@ -4,20 +4,24 @@
 has been added to the stage. A single source could have multiple items linked
 into it and any changes to the source would affect all items linked to it.</p>
 <p>Each item is represented by the ScreenItem class.
-See: {@link: #core/ScreenItem Core/ScreenItem}</p>
+See: <a href='#core/ScreenItem'>Core/ScreenItem</a></p>
+<p>Inherits from: <a href='#core/Source'>Core/Source</a></p>
 <h3 id="basic-usage">Basic Usage</h3>
-<p>```javascript
-var xjs = require(&#39;xjs&#39;);</p>
-<p>xjs.Scene.getActiveScene().then(function(scene) {
+<pre><code class="lang-javascript">var xjs = require(&#39;xjs&#39;);
+
+xjs.Scene.getActiveScene().then(function(scene) {
   scene.getSources().then(function(sources) {
   for (var i in sources) {
       if (sources[i] instanceof XJS.ScreenSource) {
-        // Manipulate your audio device source here
+        // Manipulate your screen source here
         sources[i].setSilenceDetectionEnabled(true);
       }
     }
   })
-})</p>
+})
+</code></pre>
+<p> All methods marked as <em>Chainable</em> resolve with the original <code>ScreenSource</code>
+ instance.</p>
 </p><h2>Members</h2>
   <section class="member">
     <a name="isStickToTitle"><h1 id="isStickToTitle" class="name">
@@ -50,7 +54,7 @@ capture a particular tab.</p>
     <a name="getCaptureLayered"><h1 id="getCaptureLayered" class="name">
       getCaptureLayered
     </h1></a>
-    <pre><code>return Promise&lt;boolean&gt;
+    <pre><code>return: Promise&lt;boolean&gt;
 </code></pre>
 <p>Checks if the Screen Capture layered window is selected.</p>
 
@@ -63,7 +67,7 @@ capture a particular tab.</p>
     </h1></a>
     <pre><code>param: (value: boolean)
 </code></pre>
-<pre><code>return Promise&lt;ScreenSource&gt;
+<pre><code>return: Promise&lt;ScreenSource&gt;
 </code></pre>
 <p>Sets the Screen Capture Layered window</p>
 
@@ -74,7 +78,7 @@ capture a particular tab.</p>
     <a name="getOptimizedCapture"><h1 id="getOptimizedCapture" class="name">
       getOptimizedCapture
     </h1></a>
-    <pre><code>return Promise&lt;boolean&gt;
+    <pre><code>return: Promise&lt;boolean&gt;
 </code></pre>
 <p>Checks if the Exclusive Window capture is selected.</p>
 
@@ -87,7 +91,7 @@ capture a particular tab.</p>
     </h1></a>
     <pre><code>param: (value: boolean)
 </code></pre>
-<pre><code>return Promise&lt;ScreenSource&gt;
+<pre><code>return: Promise&lt;ScreenSource&gt;
 </code></pre>
 <p>Sets the Exclusive Window capture.</p>
 
@@ -98,9 +102,11 @@ capture a particular tab.</p>
     <a name="getShowMouseClicks"><h1 id="getShowMouseClicks" class="name">
       getShowMouseClicks
     </h1></a>
-    <pre><code>return Promise&lt;boolean&gt;
+    <pre><code>return: Promise&lt;boolean&gt;
 </code></pre>
 <p>Checks if the Show mouse clicks is selected.</p>
+<p>ShowMouseClicks determine if you would want to display the clicks
+you&#39;re doing inside your screen captured area.</p>
 
   </section>
 
@@ -111,9 +117,11 @@ capture a particular tab.</p>
     </h1></a>
     <pre><code>param: (value: boolean)
 </code></pre>
-<pre><code>return Promise&lt;ScreenSource&gt;
+<pre><code>return: Promise&lt;ScreenSource&gt;
 </code></pre>
 <p>Sets the Show mouse clicks.</p>
+<p>ShowMouseClicks determine if you would want to display the clicks
+you&#39;re doing inside your screen captured area.</p>
 
   </section>
 
@@ -122,9 +130,11 @@ capture a particular tab.</p>
     <a name="getShowMouse"><h1 id="getShowMouse" class="name">
       getShowMouse
     </h1></a>
-    <pre><code>return Promise&lt;boolean&gt;
+    <pre><code>return: Promise&lt;boolean&gt;
 </code></pre>
 <p>Checks if the Show mouse is selected.</p>
+<p>ShowMouse determine if you would want to display the mouse on your
+screen captured area.</p>
 
   </section>
 
@@ -135,9 +145,11 @@ capture a particular tab.</p>
     </h1></a>
     <pre><code>param: (value: boolean)
 </code></pre>
-<pre><code>return Promise&lt;ScreenSource&gt;
+<pre><code>return: Promise&lt;ScreenSource&gt;
 </code></pre>
 <p>Sets the Show Mouse.</p>
+<p>ShowMouse determine if you would want to display the mouse on your
+screen captured area.</p>
 
   </section>
 
@@ -196,6 +208,6 @@ the titlebar, menu bar, window border, etc.</p>
   </section>
 
 <p class="module defined-in">exported from <a href='#/core'>core</a><br/>
-defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/F:/Users/MiYb/Documents/Projects/git/xjs/src/core/source/screen.ts#L5-L165">F:/Users/MiYb/Documents/Projects/git/xjs/src/core/source/screen.ts (line 5)</a>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/C:/Users/viab/Documents/Repositories/SourceTree/xjsframework/src/core/source/screen.ts#L5-L181">C:/Users/viab/Documents/Repositories/SourceTree/xjsframework/src/core/source/screen.ts (line 5)</a>
 </p>
 
