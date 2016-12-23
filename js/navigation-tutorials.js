@@ -18,9 +18,19 @@ angular.module('navigation-tutorials', [])
       "name": "Developing the Source Properties Window"
     },
     {
+      "path": "linkedsources",
+      "partial": "tutorials/linkedsources",
+      "name": "Linked Sources"
+    },
+    {
       "path": "extensions",
       "partial": "tutorials/extensions",
       "name": "Developing Extension Plugins"
+    },
+    {
+      "path": "debugging",
+      "partial": "tutorials/debugging",
+      "name": "Debugging Your Plugins"
     },
     {
       "path": "es6",
@@ -31,11 +41,6 @@ angular.module('navigation-tutorials', [])
       "path": "errors",
       "partial": "tutorials/errors",
       "name": "Common Errors"
-    },
-    {
-      "path": "debugging",
-      "partial": "tutorials/debugging",
-      "name": "Debugging Your Plugins"
     },
     {
       "path": "authentication",

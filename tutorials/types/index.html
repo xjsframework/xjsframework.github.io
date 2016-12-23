@@ -1,13 +1,16 @@
 <h1>Types of Plugins</h1>
 <p>
-  The framework allows developers to create two types of plugins for XSplit Broadcaster: source plugins and extension plugins. Sources are added to the stage to be recorded or streamed live, while extensions occupy their own window and are given elevated privileges to manipulate sources and certain application properties.
+  The XSplit JS Framework allows developers to create two types of plugins for XSplit Broadcaster: source plugins and extension plugins. Sources are added to the stage to be recorded or streamed live, while extensions occupy their own window and are given elevated privileges to manipulate sources and certain application properties. A third type of plugin in our plugin store, outputs, are not possible to create using the JS Framework.
 </p>
 <h3>Sources</h3>
 <p>
-   A source is a plugin placed on the stage. Right-clicking the source opens its properties window. Using HTML/CSS/JavaScript, developers can create any kind of source, and a properties window for that source. For more information on developing sources, <a href="tutorials.html#/sourceplugins">click here</a>.
+   A source is a plugin meant to be captured through your stream or recording. With the exception of the native audio device source (<code>AudioSource</code> class), all sources occupy some position in the stage. Right-clicking the source opens its properties window, allowing users to customize the source and configure it. Using HTML/CSS/JavaScript, developers can create an HTML source, and specify the properties for that source. For more information on developing sources, <a href="tutorials.html#/sourceplugins">click here</a>.
 </p>
 <h3>Extensions</h3>
 <p>
-   Extensions are plugins on the global level. They are still developed using HTML, and have all the capabilities of sources and more. Please check out the API for the current set of implemented features, and drop us a line here to discuss any feature requests. A list of additional notes regarding extensions can be found <a href="tutorials.html#/extensions">here</a>.
-
+   Extensions are plugins on the application level that empower you to create more dynamic presentations by manipulating sources, changing the application's settings, switching scenes, and more. They are also developed using HTML. Please check out the API for the current set of implemented features, and drop us a line <a href="http://xjsframework.github.io/support.html">at xjs support</a> to discuss any feature requests. A list of additional notes regarding extensions can be found <a href="tutorials.html#/extensions">here</a>.
+</p>
+<h3>Outputs</h3>
+<p>
+   Outputs are plugins built into the application that configuring streaming and recording settings for streaming services and the like. They are also in charge of authenticating to these services, and managing any channels or live videos that are set up on the services. Currently, the XSplit JS Framework cannot be used to create any Output Plugins. If you manage a streaming service and would like to discuss integration with XSplit, please contact us through XSplit's primary <a href="https://supportdesk.xsplit.com/">support channel</a>.
 </p>

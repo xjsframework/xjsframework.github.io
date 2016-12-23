@@ -7,6 +7,28 @@
   </section>
 
   <section class="member">
+    <a name="getSources"><h1 id="getSources" class="name">
+      getSources
+    </h1></a>
+    <pre><code>return: Promise&lt;Source[]&gt;
+</code></pre>
+<p>Get all unique Sources from the current scene.
+Total number of Sources returned may be less that total number of Items on
+the scenes due to <code>Linked</code> items only having a single Source.</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">xjs.Scene.getSources().then(function(sources) {
+  for(var i = 0 ; i &lt; sources.length ; i++) {
+     if(sources[i] instanceof xjs.HtmlSource) {
+       // Manipulate HTML Source here
+     }
+  }
+})
+</code></pre>
+
+  </section>
+
+
+  <section class="member">
     <a name="getSceneNumber"><h1 id="getSceneNumber" class="name">
       getSceneNumber
     </h1></a>
@@ -52,34 +74,12 @@
 
 
   <section class="member">
-    <a name="getSources"><h1 id="getSources" class="name">
-      getSources
-    </h1></a>
-    <pre><code>return: Promise&lt;Source[]&gt;
-</code></pre>
-<blockquote>
-<h4 id="for-deprecation">For Deprecation</h4>
-<p>This method is deprecated and will be removed soon.
-Please use <a href='#core/Scene#getItems'>getItems</a> instead.</p>
-</blockquote>
-<p>Gets all the sources in a specific scene.
-See also: <a href='#core/Source'>Core/Source</a></p>
-<h4 id="usage">Usage</h4>
-<pre><code class="lang-javascript">myScene.getSources().then(function(sources) {
- // do something to each source in sources array
-});
-</code></pre>
-
-  </section>
-
-
-  <section class="member">
     <a name="getItems"><h1 id="getItems" class="name">
       getItems
     </h1></a>
     <pre><code>return: Promise&lt;Item[]&gt;
 </code></pre>
-<p>Gets all the sources in a specific scene.
+<p>Gets all the items in a specific scene.
 See also: <a href='#core/Source'>Core/Source</a></p>
 <h4 id="usage">Usage</h4>
 <pre><code class="lang-javascript">myScene.getItems().then(function(items) {
@@ -108,34 +108,15 @@ See also: <a href='#core/Source'>Core/Source</a></p>
 
 
   <section class="member">
-    <a name="setSourceOrder"><h1 id="setSourceOrder" class="name">
-      setSourceOrder
-    </h1></a>
-    <pre><code>param: Array&lt;Source&gt; | Array&lt;string&gt; (source IDs)
-</code></pre>
-<pre><code>return: Promise&lt;Scene&gt;
-</code></pre>
-<blockquote>
-<h4 id="for-deprecation">For Deprecation</h4>
-<p>This method is deprecated and will be removed soon.
-Please use <a href='#core/Scene#setItemOrder'>setItemOrder</a> instead.</p>
-</blockquote>
-<p>Sets the source order of the current scene. The first source in the array
-will be on top (will cover sources below it).</p>
-
-  </section>
-
-
-  <section class="member">
     <a name="setItemOrder"><h1 id="setItemOrder" class="name">
       setItemOrder
     </h1></a>
-    <pre><code>param: Array&lt;Source&gt; | Array&lt;string&gt; (source IDs)
+    <pre><code>param: Array&lt;Item&gt; | Array&lt;string&gt; (item IDs)
 </code></pre>
 <pre><code>return: Promise&lt;Scene&gt;
 </code></pre>
 <p>Sets the item order of the current scene. The first item in the array
-will be on top (will cover sources below it).</p>
+will be on top (will cover items below it).</p>
 
   </section>
 
@@ -160,25 +141,6 @@ Scene.getSceneCount().then(function(count) {
     <a name="getById"><h1 id="getById" class="name">
       <code>static</code> getById
     </h1></a>
-    <pre><code>return: Scene
-</code></pre>
-<blockquote>
-<h4 id="for-deprecation">For Deprecation</h4>
-<p>This method is deprecated and will be removed soon.
-Please use <a href='#core/Scene#getByIdAsync'>getByIdAsync</a> instead.</p>
-</blockquote>
-<p>Get a specific scene object given the scene number.</p>
-<h4 id="usage">Usage</h4>
-<pre><code class="lang-javascript">var scene1 = Scene.getById(1);
-</code></pre>
-
-  </section>
-
-
-  <section class="member static">
-    <a name="getByIdAsync"><h1 id="getByIdAsync" class="name">
-      <code>static</code> getByIdAsync
-    </h1></a>
     <pre><code>return: Promise&lt;Scene&gt;
 </code></pre>
 <p>Get a specific scene object given the scene number.</p>
@@ -198,7 +160,7 @@ Scene.getByIdAsync(1).then(function(scene) {
     </h1></a>
     <pre><code>return: Promise&lt;Scene[]&gt;
 </code></pre>
-<p>Asynchronous functon to get a list of scene objects with a specific name.</p>
+<p>Asynchronous function to get a list of scene objects with a specific name.</p>
 <h4 id="usage">Usage</h4>
 <pre><code class="lang-javascript">Scene.getByName(&#39;Game&#39;).then(function(scenes) {
   // manipulate scenes
@@ -277,7 +239,7 @@ Scene.getActiveScene().then(function(scene) {
     </h1></a>
     <pre><code>return: Promise&lt;Items[]&gt;
 </code></pre>
-<p>Searches all items for a item by name substring. This function
+<p>Searches all items for an item by name substring. This function
 compares against custom name first (recommended) before falling back to the
 name property of the item.</p>
 <h4 id="usage">Usage</h4>
@@ -285,6 +247,9 @@ name property of the item.</p>
   // do something to each item in items array
 });
 </code></pre>
+<p>Note: With the XBC 2.9 change, linked items would have the same
+Name and Custom Name. Changes made on an item would reflect on all
+linked items.</p>
 
   </section>
 
@@ -341,12 +306,8 @@ function, and then return the scene that contains the item.</p>
     </h1></a>
     <pre><code>return: Promise&lt;Source&gt;
 </code></pre>
-<blockquote>
-<h4 id="for-deprecation">For Deprecation</h4>
-<p>This method is deprecated and will be removed soon.
-Please use <a href='#core/Scene#searchItemsById'>searchItemsById</a> instead.</p>
-</blockquote>
-<p>Searches all scenes for an source by ID. ID search will return exactly 1 result (IDs are unique) or null.</p>
+<p>Searches all scenes for a source by ID. ID search will return exactly 1
+result (IDs are unique) or null.</p>
 <p>See also: <a href='#core/Source'>Core/Source</a></p>
 <h4 id="usage">Usage</h4>
 <pre><code class="lang-javascript">Scene.searchSourcesById(&#39;{10F04AE-6215-3A88-7899-950B12186359}&#39;).then(function(source) {
@@ -363,14 +324,10 @@ Please use <a href='#core/Scene#searchItemsById'>searchItemsById</a> instead.</p
     </h1></a>
     <pre><code>return: Promise&lt;Scene&gt;
 </code></pre>
-<blockquote>
-<h4 id="for-deprecation">For Deprecation</h4>
-<p>This method is deprecated and will be removed soon.
-Please use <a href='#core/Scene#searchScenesByItemId'>searchScenesByItemId</a> instead.</p>
-</blockquote>
 <p>Searches all scenes for one that contains the given source ID.</p>
 <h4 id="usage">Usage</h4>
-<pre><code class="lang-javascript">Scene.searchScenesBySourceId(&#39;{10F04AE-6215-3A88-7899-950B12186359}&#39;).then(function(scene) {
+<pre><code class="lang-javascript">Scene.searchScenesBySourceId(&#39;{10F04AE-6215-3A88-7899-950B12186359}&#39;)
+.then(function(scene) {
   // scene contains the source
 });
 </code></pre>
@@ -384,11 +341,6 @@ Please use <a href='#core/Scene#searchScenesByItemId'>searchScenesByItemId</a> i
     </h1></a>
     <pre><code>return: Promise&lt;Source[]&gt;
 </code></pre>
-<blockquote>
-<h4 id="for-deprecation">For Deprecation</h4>
-<p>This method is deprecated and will be removed soon.
-Please use <a href='#core/Scene#searchItemsByName'>searchItemsByName</a> instead.</p>
-</blockquote>
 <p>Searches all scenes for a source by name substring. This function
 compares against custom name first (recommended) before falling back to the
 name property of the source.</p>
@@ -409,11 +361,6 @@ name property of the source.</p>
 </code></pre>
 <pre><code>return: Promise&lt;Source[]&gt;
 </code></pre>
-<blockquote>
-<h4 id="for-deprecation">For Deprecation</h4>
-<p>This method is deprecated and will be removed soon.
-Please use <a href='#core/Scene#filterItems'>filterItems</a> instead.</p>
-</blockquote>
 <p>Searches all scenes for sources that satisfies the provided testing function.</p>
 <h4 id="usage">Usage</h4>
 <pre><code class="lang-javascript">Scene.filterSources(function(source, resolve) {
@@ -437,11 +384,6 @@ Please use <a href='#core/Scene#filterItems'>filterItems</a> instead.</p>
 </code></pre>
 <pre><code>return: Promise&lt;Scene[]&gt;
 </code></pre>
-<blockquote>
-<h4 id="for-deprecation">For Deprecation</h4>
-<p>This method is deprecated and will be removed soon.
-Please use <a href='#core/Scene#filterScenesByItems'>filterScenesByItems</a> instead.</p>
-</blockquote>
 <p>Searches all scenes for sources that satisfies the provided testing
 function, and then return the scene that contains the source.</p>
 <h4 id="usage">Usage</h4>
@@ -478,6 +420,6 @@ This function is only available to extensions.</p>
   </section>
 
 <p class="module defined-in">exported from <a href='#/core'>core</a><br/>
-defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/core/scene.ts#L34-L1280">../src/core/scene.ts (line 34)</a>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/F:/Users/MiYb/Documents/Projects/git/xjs/src/core/scene.ts#L35-L1161">F:/Users/MiYb/Documents/Projects/git/xjs/src/core/scene.ts (line 35)</a>
 </p>
 

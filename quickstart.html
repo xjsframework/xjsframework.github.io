@@ -206,27 +206,27 @@ bower install xjs-framework</code></pre>
           <h2>Let's create a sample plugin!</h2>
         </a>
         <p>
-         Let's try making a <strong>source plugin</strong> that would display all the items loaded on the same scene. So let's open up <code>main.js</code>, and write the following code:
+         Let's try making a <strong>source plugin</strong> that would display all the sources displayed in the very first scene. If you started with the Yeoman generator, let's open up <code>main.js</code>, and write the following code:
         </p>
         <pre class="language-javascript"><code>var xjs = require('xjs');
 
-xjs.ready().then(xjs.Item.getItemList) //Use Source.getCurrentSource for version 2.7
-  .then(function(item){
-     return item[0].getSceneId();
-  }).then(function(id){
-    return xjs.Scene.getById(id)
-  }).then(function(scene){
-    return scene.getItems();
-  }).then(function(items){
-      var p;
-      for (var i in items) {
-        items[i].getName().then(function(name) {
-          p = document.createElement('p');
-          p.textContent = name;
-          document.body.appendChild(p);
-        });
-      }
-  });</code></pre>
+// always perform xjs functions when it is ready
+xjs.ready().then(function() {
+  // get the first scene
+  return xjs.Scene.getById(0)
+}).then(function(scene) {
+  // enumerate all unique sources in the scene
+  return scene.getSources();
+}).then(function(sources) {
+  for (var i in sources) {
+    // get the name of each scene
+    sources[i].getName().then(function(name) {
+      var p = document.createElement('p');
+      p.textContent = name;
+      document.body.appendChild(p);
+    });
+  }
+});</code></pre>
         <p>
           Let's dissect the sample code above.
         </p>
@@ -236,35 +236,28 @@ xjs.ready().then(xjs.Item.getItemList) //Use Source.getCurrentSource for version
         <p>
           The first line of the code loads the framework and save it to the <code>xjs</code> variable. We then accessed the framework's <code>ready()</code> method; a method that returns a promise, which will resolve when XSplit JS Framework is ready to use. Always make sure to do your development when the framework is ready!
         </p>
-        <pre class="language-javascript"><code>xjs.ready().then(xjs.Item.getItemList)</code></pre>
+        <pre class="language-javascript"><code>xjs.ready()</code></pre>
         <p>
-          XSplit Broadcaster exposes a number of scenes to the user. <code>getItemList</code> will resolve with the active items of the plugin, where we get the first, then <code>getSceneId</code> would return the Scene number of the source plugin.
+          XSplit Broadcaster exposes a number of scenes to the user. <code>Scene.getById</code> will resolve with a <code>Scene</code> object corresponding to the index you supply.
         </p>
-        <pre class="language-javascript"><code>.then(function(item){
-    return item[0].getSceneId();
+        <pre class="language-javascript"><code>.then(function(){
+  return xjs.Scene.getById(0);
 })
 </code></pre>
         <p>
-        The Scene number would be used by <code>getById(id)</code> to get the specific Scene object of the current scene.
-        </p>
-        <pre class="language-javascript"><code>.then(function(id){
-  return xjs.Scene.getById(id)
-})
-</code></pre>
-        <p>
-          This Scene object has a method named <code>getItems</code> which will eventually resolve with an array of Item instances, each referring to an item placed on the current scene.
+          This Scene object has a method named <code>getSources</code> which will resolve with an array of Source instances, each referring to a source placed on the current scene.
         </p>
         <pre class="language-javascript"><code>.then(function(scene) {
-  return scene.getItems();
+  return scene.getSources();
 })</code></pre>
         <p>
-          Each of the items is an instance of Item or a subclass thereof. However, all types of Item instances have <a href="api.html#/core/Item" target="_blank">common methods</a>, which includes the <code>getName</code> method. <code>getName</code> returns a Promise which will resolve with a string as the parameter. That string is the name of the item/source, which is what this plugin wants to print back to the DOM.
+          Each of the sources is an instance of <code>Source</code> or a subclass thereof. However, all types of <code>Source</code> instances have <a href="api.html#/core/Source" target="_blank">common methods</a>, which includes the <code>getName</code> method. <code>Source.getName</code> returns a Promise which will resolve with a string as the parameter.
         </p>
-        <pre class="language-javascript"><code>.then(function(items) {
-  var p;
-  for (var i in items) {
-    items[i].getName().then(function(name) {
-      p = document.createElement('p');
+        <pre class="language-javascript"><code>.then(function(sources) {
+  for (var i in sources) {
+    // get the name of each scene
+    sources[i].getName().then(function(name) {
+      var p = document.createElement('p');
       p.textContent = name;
       document.body.appendChild(p);
     });
@@ -307,7 +300,7 @@ xjs.ready().then(xjs.Item.getItemList) //Use Source.getCurrentSource for version
           <h2>Sample Plugins</h2>
         </a>
         <p>
-          Here are a couple of sample plugins that showcases what you can actually do using XSplit JS Framework. You could check out the source codes to get a better understanding on how the plugin works.
+          Here are a couple of sample plugins that showcases what you can actually do using XSplit JS Framework. You could check out the source code to get a better understanding on how the plugin works.
         </p>
         <h3><em>Scene Rotator Extension plugin</em></h3>
         <p>

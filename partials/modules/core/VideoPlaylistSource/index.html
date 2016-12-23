@@ -1,12 +1,114 @@
 
 <h1 class="class export">VideoPlaylistSource <span class="type">class</span></h1>
-<p><blockquote>
-<h4 id="for-deprecation">For Deprecation</h4>
-<p>This Class is deprecated and will be removed soon. Please use
-<a href='#core/VideoPlaylistItem'>VideoPlaylistItem</a> instead. This Class shares
-the same methods with VideoPlaylistItem.</p>
-</blockquote>
-</p><p class="module defined-in">exported from <a href='#/core'>core</a><br/>
-defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/core/source/videoplaylist.ts#L3-L12">../src/core/source/videoplaylist.ts (line 3)</a>
+<p><p>The VideoPlaylistSource class represents the sources of the videoplaylist items that
+has been added to the stage. A single source could have multiple items linked
+into it and any changes to the source would affect all items linked to it.</p>
+<p>Each item is represented by the VideoPlaylistItem class.
+See: {@link: #core/VideoPlaylistItem Core/VideoPlaylistItem}</p>
+<h3 id="basic-usage">Basic Usage</h3>
+<p>```javascript
+var xjs = require(&#39;xjs&#39;);</p>
+<p>xjs.Scene.getActiveScene().then(function(scene) {
+  scene.getSources().then(function(sources) {
+  for (var i in sources) {
+      if (sources[i] instanceof XJS.VideoPlaylistSource) {
+        // Manipulate your audio device source here
+        sources[i].setSilenceDetectionEnabled(true);
+      }
+    }
+  })
+})</p>
+</p><h2>Members</h2>
+  <section class="member">
+    <a name="getVideoNowPlaying"><h1 id="getVideoNowPlaying" class="name">
+      getVideoNowPlaying
+    </h1></a>
+    <pre><code>return: Promise&lt;string&gt;
+</code></pre>
+<p>Gets the now playing video of this VideoPlaylist item.</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="setVideoNowPlaying"><h1 id="setVideoNowPlaying" class="name">
+      setVideoNowPlaying
+    </h1></a>
+    <pre><code>param: (value: string|number)
+</code></pre>
+<p>return: Promise<VideoPlaylistSource></p>
+<p>Sets the now playing video of this VideoPlaylist item.</p>
+<h2 id="possible-values">Possible Values</h2>
+<ul>
+<li>STRING - file path</li>
+<li>NUMBER - number|within the range of fileplaylist array length</li>
+</ul>
+
+  </section>
+
+
+  <section class="member">
+    <a name="getVideoPlaylistSources"><h1 id="getVideoPlaylistSources" class="name">
+      getVideoPlaylistSources
+    </h1></a>
+    <pre><code>return: Promise&lt;string[]&gt;
+</code></pre>
+<p>Gets the file paths of the playlist of this VideoPlaylist item.</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="setVideoPlaylistSources"><h1 id="setVideoPlaylistSources" class="name">
+      setVideoPlaylistSources
+    </h1></a>
+    <pre><code>param: (file: string[])
+</code></pre>
+<p>return: Promise<string></p>
+<p>Sets the playlist of this VideoPlaylist item according to the specified
+file paths.</p>
+<p>This call would replace all the items on the playlist.
+The now playing item is also set to the first item of the new FilePlaylist.</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="loadConfig"><h1 id="loadConfig" class="name">
+      loadConfig
+    </h1></a>
+          <p>See: <a href='#core/ISourceConfigurable#loadConfig'>loadConfig</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="saveConfig"><h1 id="saveConfig" class="name">
+      saveConfig
+    </h1></a>
+          <p>See: <a href='#core/ISourceConfigurable#saveConfig'>saveConfig</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="requestSaveConfig"><h1 id="requestSaveConfig" class="name">
+      requestSaveConfig
+    </h1></a>
+          <p>See: <a href='#core/ISourceConfigurable#requestSaveConfig'>requestSaveConfig</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="applyConfig"><h1 id="applyConfig" class="name">
+      applyConfig
+    </h1></a>
+          <p>See: <a href='#core/ISourceConfigurable#applyConfig'>applyConfig</a></p>
+      
+  </section>
+
+<p class="module defined-in">exported from <a href='#/core'>core</a><br/>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/F:/Users/MiYb/Documents/Projects/git/xjs/src/core/source/videoplaylist.ts#L8-L102">F:/Users/MiYb/Documents/Projects/git/xjs/src/core/source/videoplaylist.ts (line 8)</a>
 </p>
 
