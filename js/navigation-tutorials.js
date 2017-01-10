@@ -28,6 +28,11 @@ angular.module('navigation-tutorials', [])
       "name": "Developing Extension Plugins"
     },
     {
+      "path": "broadcastcontrol",
+      "partial": "tutorials/broadcastcontrol",
+      "name": "Start/Stop Broadcast"
+    },
+    {
       "path": "debugging",
       "partial": "tutorials/debugging",
       "name": "Debugging Your Plugins"

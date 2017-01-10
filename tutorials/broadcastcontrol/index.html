@@ -1,0 +1,51 @@
+<h1>Start/Stop Broadcast</h1>
+
+<h3>Introduction</h3>
+<p>
+  XSplit now allows users the ability to Start or Stop a Broadcast through the framework
+  and Pause or Unpause a Local Recording. This will be really useful for things such as Scheduled
+  Streaming.
+</p>
+
+<h3>How to Start your Broadcast</h3>
+<p>
+  Before one can start broadcasting, you should know your available Output Channels
+  and which ones you want to start broadcasting to.
+</p>
+
+<pre class="language-javascript"><code>
+// get necessary classes
+var xjs = require('xjs');
+var Output = xjs.Output;
+
+xjs.ready()
+  .then(Output.getOutputList)
+  .then(function(outputs) {
+    output = outputs[0] // or your chosen output
+  })
+
+</code></pre>
+<p>
+  This will provide you an array of all the Output instance that's available/installed on your
+  XSplit Broadcaster. You can then continue to select which instance you would like to
+  start or stop broadcasting to.
+</p>
+<p>
+  Once you've selected the output instance you want to start broadcasting to. You can just
+  immediately start/stop the broadcast from there.
+</p>
+<pre class="language-javascript"><code>
+  output.startBroadcast();
+  // or
+  output.stopBroadcast();
+</code></pre>
+<p>
+  Additionally, if you're only on a Local Recording, you can choose to call <strong><code>output.pauseLocalRecording()</code></strong> or <strong><code>output.unpauseLocalRecording()</code></strong> to pause/unpause the
+  local recording.
+</p>
+
+<h3>Additional technical information</h3>
+<p>
+  Output plugins such as YouTube or Facebook that has pre streaming dialogs, would still need to be done manually. Any other output plugins would work immediately using the predefined configuration the user has saved initially.
+</p>
+
