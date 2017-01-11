@@ -1274,9 +1274,9 @@ angular.module('navigation-modules', [])
           "type": "Class",
           "pages": [
             {
-              "path": "/core/App#getFrametime",
+              "path": "/core/App#getFrameTime",
               "partial": "partials/modules//core/App/index.html",
-              "name": "getFrametime"
+              "name": "getFrameTime"
             },
             {
               "path": "/core/App#getResolution",
@@ -1632,34 +1632,39 @@ angular.module('navigation-modules', [])
           ]
         },
         {
-          "path": "/core/Channel",
-          "partial": "partials/modules//core/Channel/index.html",
-          "name": "Channel",
+          "path": "/core/StreamInfo",
+          "partial": "partials/modules//core/StreamInfo/index.html",
+          "name": "StreamInfo",
           "type": "Class",
           "pages": [
             {
-              "path": "/core/Channel#getName",
-              "partial": "partials/modules//core/Channel/index.html",
+              "path": "/core/StreamInfo#getName",
+              "partial": "partials/modules//core/StreamInfo/index.html",
               "name": "getName"
             },
             {
-              "path": "/core/Channel#getStreamDrops",
-              "partial": "partials/modules//core/Channel/index.html",
+              "path": "/core/StreamInfo#getStreamDrops",
+              "partial": "partials/modules//core/StreamInfo/index.html",
               "name": "getStreamDrops"
             },
             {
-              "path": "/core/Channel#getStreamRenderedFrames",
-              "partial": "partials/modules//core/Channel/index.html",
+              "path": "/core/StreamInfo#getStreamRenderedFrames",
+              "partial": "partials/modules//core/StreamInfo/index.html",
               "name": "getStreamRenderedFrames"
             },
             {
-              "path": "/core/Channel#getStreamTime",
-              "partial": "partials/modules//core/Channel/index.html",
+              "path": "/core/StreamInfo#getStreamTime",
+              "partial": "partials/modules//core/StreamInfo/index.html",
               "name": "getStreamTime"
             },
             {
-              "path": "/core/Channel#getActiveStreamChannels",
-              "partial": "partials/modules//core/Channel/index.html",
+              "path": "/core/StreamInfo#getBandwidthUsage",
+              "partial": "partials/modules//core/StreamInfo/index.html",
+              "name": "getBandwidthUsage"
+            },
+            {
+              "path": "/core/StreamInfo#getActiveStreamChannels",
+              "partial": "partials/modules//core/StreamInfo/index.html",
               "name": "getActiveStreamChannels"
             }
           ]
@@ -1737,9 +1742,52 @@ angular.module('navigation-modules', [])
               "name": "loadConfig"
             },
             {
+              "path": "/core/Extension#getId",
+              "partial": "partials/modules//core/Extension/index.html",
+              "name": "getId"
+            },
+            {
               "path": "/core/Extension#getInstance",
               "partial": "partials/modules//core/Extension/index.html",
               "name": "getInstance"
+            }
+          ]
+        },
+        {
+          "path": "/core/Output",
+          "partial": "partials/modules//core/Output/index.html",
+          "name": "Output",
+          "type": "Class",
+          "pages": [
+            {
+              "path": "/core/Output#getName",
+              "partial": "partials/modules//core/Output/index.html",
+              "name": "getName"
+            },
+            {
+              "path": "/core/Output#startBroadcast",
+              "partial": "partials/modules//core/Output/index.html",
+              "name": "startBroadcast"
+            },
+            {
+              "path": "/core/Output#stopBroadcast",
+              "partial": "partials/modules//core/Output/index.html",
+              "name": "stopBroadcast"
+            },
+            {
+              "path": "/core/Output#pauseLocalRecording",
+              "partial": "partials/modules//core/Output/index.html",
+              "name": "pauseLocalRecording"
+            },
+            {
+              "path": "/core/Output#unpauseLocalRecording",
+              "partial": "partials/modules//core/Output/index.html",
+              "name": "unpauseLocalRecording"
+            },
+            {
+              "path": "/core/Output#getOutputList",
+              "partial": "partials/modules//core/Output/index.html",
+              "name": "getOutputList"
             }
           ]
         },

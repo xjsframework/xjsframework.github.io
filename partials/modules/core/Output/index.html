@@ -1,55 +1,97 @@
 
-<h1 class="class export">Extension <span class="type">class</span></h1>
-<p></p><h2>Members</h2>
+<h1 class="class export">Output <span class="type">class</span></h1>
+<p><p>The Output class provides methods to start and stop a stream/recording
+and pause or unpause a Local Recording.</p>
+</p><h2>Members</h2>
   <section class="member constructor">
     <h1 id="constructor" class="name">constructor</h1>
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
   </section>
 
   <section class="member">
-    <a name="saveConfig"><h1 id="saveConfig" class="name">
-      saveConfig
-    </h1></a>
-    <pre><code>param: (configObj: JSON)
-</code></pre>
-<pre><code>return: Promise&lt;ExtensionWindow|Error&gt;
-</code></pre>
-<p>Save the configuration object to the presentation</p>
-
-  </section>
-
-
-  <section class="member">
-    <a name="loadConfig"><h1 id="loadConfig" class="name">
-      loadConfig
-    </h1></a>
-    <pre><code>return: Promise&lt;JSON&gt;
-</code></pre>
-<p>Get the saved configuration from the presentation</p>
-
-  </section>
-
-
-  <section class="member">
-    <a name="getId"><h1 id="getId" class="name">
-      getId
+    <a name="getName"><h1 id="getName" class="name">
+      getName
     </h1></a>
      <pre><code>return: Promise&lt;string&gt;
  </code></pre>
- <p>Get the extension id.</p>
+ <p>Gets the name of the Output.</p>
  
   </section>
 
 
-  <section class="member static">
-    <a name="getInstance"><h1 id="getInstance" class="name">
-      <code>static</code> getInstance
+  <section class="member">
+    <a name="startBroadcast"><h1 id="startBroadcast" class="name">
+      startBroadcast
     </h1></a>
-          <p>Gets the instance of the Extension class. Use this instead of the constructor.</p>
-      
+    <pre><code>return: Promise&lt;boolean&gt;
+</code></pre>
+<p>Start a broadcast of the provided channel.</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="stopBroadcast"><h1 id="stopBroadcast" class="name">
+      stopBroadcast
+    </h1></a>
+    <pre><code>return: Promise&lt;boolean&gt;
+</code></pre>
+<p>Stop a broadcast of the provided channel.</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="pauseLocalRecording"><h1 id="pauseLocalRecording" class="name">
+      pauseLocalRecording
+    </h1></a>
+    <pre><code>return: Promise&lt;boolean&gt;
+</code></pre>
+<p>Pause a local recording.</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="unpauseLocalRecording"><h1 id="unpauseLocalRecording" class="name">
+      unpauseLocalRecording
+    </h1></a>
+    <pre><code>return: Promise&lt;boolean&gt;
+</code></pre>
+<p>Unpause a local recording.</p>
+
+  </section>
+
+
+  <section class="member static">
+    <a name="getOutputList"><h1 id="getOutputList" class="name">
+      <code>static</code> getOutputList
+    </h1></a>
+    <pre><code>param: (id: string)
+</code></pre>
+<pre><code>return Promise&lt;Output[]&gt;
+</code></pre>
+<p>Fetch all available Outputs you can broadcast on based on your installed
+Broadcast plugin.</p>
+<h3 id="basic-usage">Basic Usage</h3>
+<pre><code class="lang-javascript">var xjs = require(&#39;xjs&#39;);
+
+xjs.Output.getOutputList()
+.then(function(outputs) {
+  outputs.map(output =&gt; {
+   output.getName()
+   .then(function(name) {
+     if(name.includes(&#39;Twitch&#39;)) {
+       output.startBroadcast();
+     }
+   })
+ })
+})
+</code></pre>
+
   </section>
 
 <p class="module defined-in">exported from <a href='#/core'>core</a><br/>
-defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/C:/Users/viab/Documents/Repositories/SourceTree/xjsframework/src/core/extension.ts#L5-L88">C:/Users/viab/Documents/Repositories/SourceTree/xjsframework/src/core/extension.ts (line 5)</a>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/C:/Users/viab/Documents/Repositories/SourceTree/xjsframework/src/core/output.ts#L10-L191">C:/Users/viab/Documents/Repositories/SourceTree/xjsframework/src/core/output.ts (line 10)</a>
 </p>
 
