@@ -28,6 +28,10 @@ span a, p a {
   font-style: italic;
   font-size: 15px;
 }
+#warning {
+  margin-right: 5px;
+  color: red;
+}
 
 i {
   font-family: 'Source Sans Pro Light', sans-serif;
@@ -202,3 +206,13 @@ td {
  padding: 4px 7px;
 }
 
+/* Warning */
+.warning {
+  color: #9F6000;
+  background-color: #FEEFB3;
+  background-image: url('warning.png');
+  padding-left: 10px;
+  border-radius: 5px;
+  border: 1px solid;
+  border-color: #643d29;
+}

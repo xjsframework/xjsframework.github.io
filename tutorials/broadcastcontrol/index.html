@@ -21,7 +21,14 @@ var Output = xjs.Output;
 xjs.ready()
   .then(Output.getOutputList)
   .then(function(outputs) {
-    output = outputs[0] // or your chosen output
+    outputs.map(output => {
+      output.getName()
+      .then(function(name) {
+        if(name.includes('Twitch')) {
+          output.startBroadcast();
+        }
+      })
+    })
   })
 
 </code></pre>
@@ -44,8 +51,11 @@ xjs.ready()
   local recording.
 </p>
 
-<h3>Additional technical information</h3>
-<p>
-  Output plugins such as YouTube or Facebook that has pre streaming dialogs, would still need to be done manually. Any other output plugins would work immediately using the predefined configuration the user has saved initially.
-</p>
+<div class="warning">
+  <h3><span id='warning'>&#9888;</span>Current Limitation</h3>
+  <p>
+    Output plugins such as YouTube or Facebook that has pre streaming dialogs, would still need to be set-up manually. Any other output plugins would work immediately using the predefined configuration the user has saved initially.
+  </p>
+</div>
+
 
