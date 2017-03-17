@@ -18,19 +18,9 @@ angular.module('navigation-tutorials', [])
       "name": "Developing the Source Properties Window"
     },
     {
-      "path": "linkedsources",
-      "partial": "tutorials/linkedsources",
-      "name": "Linked Sources"
-    },
-    {
       "path": "extensions",
       "partial": "tutorials/extensions",
       "name": "Developing Extension Plugins"
-    },
-    {
-      "path": "broadcastcontrol",
-      "partial": "tutorials/broadcastcontrol",
-      "name": "Start/Stop Broadcast"
     },
     {
       "path": "debugging",
@@ -41,6 +31,16 @@ angular.module('navigation-tutorials', [])
       "path": "es6",
       "partial": "tutorials/es6",
       "name": "Developing with ES2015"
+    },
+    {
+      "path": "linkedsources",
+      "partial": "tutorials/linkedsources",
+      "name": "Linked Sources"
+    },
+    {
+      "path": "broadcastcontrol",
+      "partial": "tutorials/broadcastcontrol",
+      "name": "Start/Stop Broadcast"
     },
     {
       "path": "errors",
@@ -61,6 +61,11 @@ angular.module('navigation-tutorials', [])
       "path": "60fps",
       "partial": "tutorials/60fps",
       "name": "60 FPS Browser Sources"
+    },
+    {
+      "path": "remotexjs",
+      "partial": "tutorials/remotexjs",
+      "name": "Remote XJS(BETA)"
     }
   ]
 });

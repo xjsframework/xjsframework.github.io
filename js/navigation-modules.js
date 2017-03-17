@@ -1750,6 +1750,11 @@ angular.module('navigation-modules', [])
               "path": "/core/Extension#getInstance",
               "partial": "partials/modules//core/Extension/index.html",
               "name": "getInstance"
+            },
+            {
+              "path": "/core/Extension#finalCallback",
+              "partial": "partials/modules//core/Extension/index.html",
+              "name": "finalCallback"
             }
           ]
         },
@@ -1788,6 +1793,11 @@ angular.module('navigation-modules', [])
               "path": "/core/Output#getOutputList",
               "partial": "partials/modules//core/Output/index.html",
               "name": "getOutputList"
+            },
+            {
+              "path": "/core/Output#finalCallback",
+              "partial": "partials/modules//core/Output/index.html",
+              "name": "finalCallback"
             }
           ]
         },
@@ -7825,6 +7835,11 @@ angular.module('navigation-modules', [])
               "path": "/util/IO#getVideoDuration",
               "partial": "partials/modules//util/IO/index.html",
               "name": "getVideoDuration"
+            },
+            {
+              "path": "/util/IO#finalCallback",
+              "partial": "partials/modules//util/IO/index.html",
+              "name": "finalCallback"
             }
           ]
         },
@@ -7848,6 +7863,16 @@ angular.module('navigation-modules', [])
               "path": "/util/EventEmitter#emit",
               "partial": "partials/modules//util/EventEmitter/index.html",
               "name": "emit"
+            },
+            {
+              "path": "/util/EventEmitter#setCallback",
+              "partial": "partials/modules//util/EventEmitter/index.html",
+              "name": "setCallback"
+            },
+            {
+              "path": "/util/EventEmitter#finalCallback",
+              "partial": "partials/modules//util/EventEmitter/index.html",
+              "name": "finalCallback"
             }
           ]
         }
@@ -8038,6 +8063,37 @@ angular.module('navigation-modules', [])
               "path": "/window/Dialog#return",
               "partial": "partials/modules//window/Dialog/index.html",
               "name": "return"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/internal",
+      "partial": "partials/modules/internal/index.html",
+      "name": "Internal",
+      "type": "Module",
+      "pages": [
+        {
+          "path": "/internal/Remote",
+          "partial": "partials/modules//internal/Remote/index.html",
+          "name": "Remote",
+          "type": "Class",
+          "pages": [
+            {
+              "path": "/internal/Remote#sendMessage",
+              "partial": "partials/modules//internal/Remote/index.html",
+              "name": "sendMessage"
+            },
+            {
+              "path": "/internal/Remote#remoteType",
+              "partial": "partials/modules//internal/Remote/index.html",
+              "name": "remoteType"
+            },
+            {
+              "path": "/internal/Remote#receiveMessage",
+              "partial": "partials/modules//internal/Remote/index.html",
+              "name": "receiveMessage"
             }
           ]
         }
