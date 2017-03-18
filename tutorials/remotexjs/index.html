@@ -148,7 +148,7 @@ connection.onmessage = function (message) {
 };
 </code></pre>
 <p>
-    The set-up made above with websocket does not include the <code>server.js</code> that handles the websocket events.
+    The set-up made above with websocket does not include the <code>server.js</code> that handles websocket in its entirety.
     This is just a simple representation of how it can be used inside the JS file of a plugin. For a simple example of a webscoket chat server that
     works similarly to the given example above, you can check out
     <a href='http://usualcarrot.com/nodejs-and-websocket-simple-chat-tutorial' target='_blank'>Node.js & WebSocket - Simple chat tutorial</a>.
@@ -161,10 +161,13 @@ connection.onmessage = function (message) {
   <p>
     Also, SourcePropsWindow and Dialog Window events are not included in handling remotely.
   </p>
-  <p>
-    We might have a proxy..  bla bla.. in the future
-  </p>
 </div>
+<h3>What's ahead?</h3>
+<p>
+    Other than the current feature, we are also thinking of a possibility of hosting a single proxy through websocket server that can be used by any number of users
+    at the same time. This would definitely help the users a lot and have fewer things to think about other than connecting to the server. But we still have no definite
+    time as to when this would be put in to work.
+  </p>
 
 
 
