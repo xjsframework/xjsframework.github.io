@@ -70,15 +70,115 @@
             </a>
         </div>
         <p>
-          You can install or start using the framework in a lot of ways, but fastest and the most basic way is to download <a href='http://cdn2.xsplit.com/xjs/download/2.1.1/xjs.js'><code>xjs.js</code></a>, add it on your project folder, import it on your html file, and you are good to go in using it.
-          Outlined below is a simple demonstration on how you can use the framework in creating your own plugin.
+          You can install or start using the framework in a lot of ways, but fastest and the most basic way is to download <a href='http://cdn2.xsplit.com/xjs/download/2.1.1/xjs.js'><code>XSplit JS Framework</code></a>, add it on your project folder, import it on your html file, and you are good to go.
         </p>
         <a id="xjs-start" name="xjs-start">
           <h2>Getting Started with xjs.js</h2>
-
+          <p>
+            With XSplit JS framework together with XSplit Broadcaster, you can do a lot of things to improve your streams/recordings or even make your tasks easier with the use of plugins.
+          </p>
+          <p>
+            So what do you need to do to get started? Simply download the XSplit JS Framework and you can use it immediately.
+            Outlined below is a simple demonstration on how you can use the framework in creating your own plugin.
+          </p>
+          <p>
+            Please note that you will need working knowledge of JavaScript and ES6 Promises to use the framework.
+          </p>
         <a id="source-start" name="source-start">
           <h2>Creating your first Source Plugin</h2>
         </a>
+        <p>
+          For this example, we'll create a source plugin that would change text automatically when you start your stream.
+          This example would use the <code>ChannelManager</code> class of the framework, that can be used to listen for the <code>stream-start</code> and <code>stream-end</code> of XSplit Broadcaster.
+        </p>
+<pre class="language-markup">
+<code>
+&lt;html&gt;
+&lt;head&gt;
+  &lt;link rel="stylesheet" href="css/style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div id="stream-status"&gt;
+  Stream is not Live
+  &lt;/div"&gt;
+  &lt;script src="js/xjs.js"&gt;&lt;/script&gt;
+  &lt;script src="js/main.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code>
+</pre>
+<p>
+  You can see above, we have set up an initial html file that imports the framework.
+  We have also created a div that contains the intial text when the stream is not yet live/recording, and would change immediately when the stream would start.
+</p>
+<p>
+  Next, we would now use the framework on our <code>main.js</code> file.
+</p>
+<pre class="language-javascript">
+<code>
+var xjs = require('xjs');
+
+xjs.ready().then(function(){
+  xjs.ChannelManager.on('stream-start', function(){
+    document.getElementById('stream-status').innerHTML = 'Stream is Live';
+  })
+
+  xjs.ChannelManager.on('stream-end', function(){
+    document.getElementById('stream-status').innerHTML = 'Stream is not Live';
+  })
+})</code>
+</pre>
+<p>
+  First, the framework is loaded and saved into the <code>xjs</code> variable. We would thenn access the frameworks <code>ready()</code> method; a method that returns a promise,
+  which resolves when XSplit JS Framework is ready to use. Always make sure to do your development when the framework is ready!
+</p>
+<p>
+  Let's disect the code further...
+</p>
+XSplit Broadcaster emits an event <code>stream-start/end</code>, and the <code>ChannelManager</code> class has access to listen to these events.
+<pre class="language-javascript">
+<code>
+xjs.ChannelManager.on('stream-start')
+
+xjs.ChannelManager.on('stream-end')</code>
+</pre>
+<p>
+  Here, we include a handler that would make the action when the your stream has started/stopped. Since, this class would only listen
+  to when the event would be emitted, we would have to set it here as to what should be done when it happens.
+</p>
+<pre class="language-javascript">
+<code>
+function(){
+    document.getElementById('stream-status').innerHTML = 'Stream is not Live/Live';
+  }</code>
+</pre>
+<p>
+  And then, you can create a CSS file and update how your plugin would look like.
+  For this example, I set the background-color as transparent for it to blend in with the scene and only the text would be visible.
+</p>
+<pre class="language-css">
+<code>
+body {
+  background-color: transparent;
+  color: white;
+}</code>
+</pre>
+<p>
+  Once, you are done with all of this, you would have to add and test your plugin. You can simply drag the index.html file to the stage or add it as a media file:
+</p>
+<p class="center inner-padding-10">
+  <img src="assets/add-media.png">
+  <img src="assets/add-media-2.png">
+</p>
+<p>
+  Of course, we need to check it out right? Check it out below:
+</p>
+<p class="center inner-padding-10">
+  <img src="assets/sample-source.gif">
+</p>
+<p>
+  And there you have it, your very first Source plugin!
+</p>
+
 
         <a id="ext-start" name="ext-start">
           <h2>Creating your first Extension Plugin</h2>
@@ -96,7 +196,7 @@
         </p>
         <h3>Read more Tutorials</h3>
         <p>
-          You can also go ahead and check the <a href="tutorial.html">Tutorial</a> section to know more about the more advanced stuff you can use and do using xjs framework.
+          You can also go ahead and check the <a href="tutorials.html">Tutorial</a> section to know more about the more advanced stuff you can use and do using xjs framework.
           There are also advanced plugin examples there that you might be interested in checking and may find useful.
         </p>
         <p>
@@ -105,11 +205,11 @@
         </p>
         <h3>Contribute</h3>
         <p>
-          You may have ideas of your own or have found a bug on the framework, and we have an incredible community of developers who are passionate about solving problems and would
+          You may have ideas of your own or have found a bug on the framework, we have an incredible community of developers who are passionate about solving problems and would
           want to listen to your ideas. For this, you could send us some questions or suggestions at <a href="https://github.com/xjsframework/xjs/issues/new">Github</a> or directly chat with us on <a href="https://gitter.im/xjsframework/xjs">Gitter</a>.
         </p>
         <p>
-          We hope to hear from you and even show us the awesome plugins you've created.
+          We hope to hear from you and would love to check out the plugins you've created.
         </p>
 
         <a id="sample" name="sample">
