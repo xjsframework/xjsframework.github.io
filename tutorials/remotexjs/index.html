@@ -3,26 +3,25 @@
 <h3>What is Remote XJS?</h3>
 <p>
     Remote XJS, is like having a server and a client for XJS framework.
-    Where a <strong>client</strong> would be able to make xjs calls that would be sent and processed in the <strong>server</strong> and then returned
-    to the remote as if the call was just done locally.
+    Where a <strong>client</strong> would make calls that is sent and processed in the <strong>server</strong> and then returned
+    to the client.
 </p>
 <p>
-    &#128187;Proxy &#x21e8; would work like a server, that handles all the calls that is sent from Remote.
-    <br>Proxy would have the actual result of the calls and just relays it back to Remote.
+  Remote XJS would generally work like this:
 </p>
 <p>
-    &#128187;Remote &#x21e8; would represent as the view and controller, and initiates the calls that would be sent to the Proxy.
+    &#128187;<strong>Proxy</strong> &#x21e8; would work like a server, that handles all the calls that is sent from Remote. Proxy would have the actual result of the calls and then sends it back to Remote.
+</p>
+<p>
+    &#128187;<strong>Remote</strong> &#x21e8; would represent as the view and controller that initiates the calls that would be sent to the Proxy.
     <br>
 
-</p>
-<p>
-    From here on, the server will be referred to as <strong>proxy</strong> and the client as <strong>remote</strong>.
 </p>
 
 <h3>Prerequisite</h3>
 <p>
     Just like how a server and client communicates, Remote xjs would also need to have a means of communicating with each other.
-    This change in the framework however is only the handling of the calls from remote/proxy, the mode of transport/communication is not included in these changes and should be provided
+    This change in the framework however only handles the calls from remote/proxy, the mode of transport/communication is not included in these changes and should be provided
     by the user.
 </p>
 <p>
@@ -57,22 +56,24 @@ xjs.Remote.receiveMessage(message)
 <h3>Sample Set-up using Websocket server</h3>
 <p>
     Here is a simple example as to how to set-up your connection with the remote and proxy using a local
-    Websocket server.
+    Websocket server. This however does not show the changes made on the server files of websocket, but only
+    how it's used and assigned on the framework.
 </p>
 
 <h4>Remote</h4>
 <p>
-    In this example, after ready(where we've set-up it's type and sendMessage), set to listen for the stream start and stream end events are set.
+    In this example, after ready(where we've set-up it's type and sendMessage), is set to listen for the stream start/end events that would be emitted by
+    XSplit Broadcaster.
 </p>
 <pre class="language-javascript"><code>
-var connection = new WebSocket('ws://localhost:1337');
+var myConnection = new WebSocket('ws://localhost:1337');
 
 var xjs = require('xjs');
 
 
-connection.onopen = function () {
+myConnection.onopen = function (){
   // Set an identity
-  connection.send('Remote')
+  myConnection.send('Remote')
 
   xjs.ready({
   remote: {
@@ -81,7 +82,7 @@ connection.onopen = function () {
       myConnection.send(message) // this will be assigned to Remote.sendMessage
     }
   }
-  }).then(function () {
+  }).then(function (){
       xjs.ChannelManager.on('stream-start', function(res) {
         // Do something when the stream starts.
       })
@@ -91,7 +92,7 @@ connection.onopen = function () {
     })
 }
 
-connection.onmessage = function (message) {
+myConnection.onmessage = function (message) {
     // Because we know that the server always returns JSON
     try {
       var json = JSON.parse(message.data);
@@ -107,10 +108,19 @@ connection.onmessage = function (message) {
 
 };
 </code></pre>
+<p>
+    You can see from the code above, that <code>myConnection.send()</code> which is the method for sending a message for websocket is set to <code>xjs.Remote.ready()</code> and will be used
+    by the framework throughout the connection.
+</p>
+<p>
+    Also, you can see that on <code>myConnection.onmessage</code>, the received message if not sent by the author, is just sent to <code>xjs.Remote.receiveMessage()</code>.
+    It is here that the calls will parsed and delivered to its appropriate functions.
+</p>
 <h4>Proxy</h4>
 <p>
-    This would only have a basic set-up, since proxy would only receive and process the message to be
-    sent to the proper method and return the result to remote.
+    The same way, proxy would have the same basic set-up with remote.
+    Except for all the other additional calls that you may want to add on your code.
+    Since it is here that the calls would be processed and sent back to remote.
 </p>
 <pre class="language-javascript"><code>
 var connection = new WebSocket('ws://localhost:1337');
@@ -148,7 +158,7 @@ connection.onmessage = function (message) {
 };
 </code></pre>
 <p>
-    The set-up made above with websocket does not include the <code>server.js</code> that handles websocket in its entirety.
+    The set-up made above with websocket does not show the <code>server.js</code> that handles websocket in its entirety.
     This is just a simple representation of how it can be used inside the JS file of a plugin. For a simple example of a webscoket chat server that
     works similarly to the given example above, you can check out
     <a href='http://usualcarrot.com/nodejs-and-websocket-simple-chat-tutorial' target='_blank'>Node.js & WebSocket - Simple chat tutorial</a>.
