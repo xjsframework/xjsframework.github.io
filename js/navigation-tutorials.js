@@ -65,7 +65,7 @@ angular.module('navigation-tutorials', [])
     {
       "path": "remotexjs",
       "partial": "tutorials/remotexjs",
-      "name": "Remote XJS(BETA)"
+      "name": "Remote XJS (BETA)"
     }
   ]
 });
