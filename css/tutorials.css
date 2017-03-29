@@ -224,3 +224,8 @@ td {
   border: 1px solid;
   border-color: #643d29;
 }
+
+.information a {
+  color: #ded900;
+  text-decoration: underline;
+}

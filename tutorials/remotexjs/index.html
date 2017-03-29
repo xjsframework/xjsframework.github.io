@@ -40,12 +40,6 @@
 // initialize xjs
 var xjs = require('xjs');
 
-// Relay any received message (string) to xjs for processing
-// This code will vary depending on your chosen mode of communication
-myConnection.on('new-message', function(message) {
-  xjs.Remote.receiveMessage(message);
-});
-
 // And instruct xjs on how it sends messages across the network
 xjs.ready({
  remote: {
@@ -55,6 +49,12 @@ xjs.ready({
    }
  }
 })
+
+// Relay any received message (string) to xjs for processing
+// This code will vary depending on your chosen mode of communication
+myConnection.on('new-message', function(message) {
+  xjs.Remote.receiveMessage(message);
+});
 </code></pre>
 <p>
     Once the <code>sendMessage</code> and <code>receiveMessage</code> functions are set up, you can use xjs like usual and the framework would do the rest.
@@ -69,75 +69,77 @@ xjs.ready({
 
 <h4>Remote</h4>
 <p>
-    In this example, after ready(where we've set-up it's type and sendMessage), is set to listen for the stream start/end events that would be emitted by
-    XSplit Broadcaster.
+    In this example, once the connection has been established, <code>onopen</code> signifies the final handshake of the connection,
+    thus we set the ready here and assign the <code>sendMessage</code> that xjs would use to communicate across the network.
 </p>
 <pre class="language-javascript"><code>
 var myConnection = new WebSocket('ws://localhost:1337');
 
 var xjs = require('xjs');
 
-
+// Initialize ready when the connection is accepted on handshake at onopen.
 myConnection.onopen = function (){
-  // Set an identity
-  myConnection.send('Remote')
+  // Depending on how you set your server up, you may need to have an identifier/author
+  // that you would need to set up and provide the server before you start sending messages.
+  // You should set it up on this part, before we initialize xjs ready.
 
   xjs.ready({
-  remote: {
-    type: 'remote'
-    sendMessage: function(message) {
-      myConnection.send(message) // this will be assigned to Remote.sendMessage
+    remote: {
+      type: 'remote'
+      sendMessage: function(message) {
+        myConnection.send(message)
+      }
     }
-  }
-  }).then(function (){
-      xjs.ChannelManager.on('stream-start', function(res) {
-        // Do something when the stream starts.
-      })
-      xjs.ChannelManager.on('stream-end', function(res) {
-        // Do something when the stream ends.
-      })
-    })
+  })
 }
 
+// Relay received messages from the network to xjs.Remote.receiveMessage
 myConnection.onmessage = function (message) {
-    // Because we know that the server always returns JSON
-    try {
-      var json = JSON.parse(message.data);
-    } catch (e) {
-      console.log('This doesn\'t look like a valid JSON: ', message.data);
-      return;
-    }
+  // Because we know that the server always returns JSON
+  try {
+    var json = JSON.parse(message.data);
+  } catch (e) {
+    console.log('This doesn\'t look like a valid JSON: ', message.data);
+    return;
+  }
 
-    if (json.data.author === 'Proxy') {
-      //Relay the message to receiveMessage
-      xjs.Remote.receiveMessage(json.data.text)
-    }
-
+  // Websocket messages are transmitted to every one that is connected to the server.
+  // The identifier/author that you've set up on onopen should be used here and just
+  // set it to relay messages received from Proxy.
+  xjs.Remote.receiveMessage(json.data.text)
 };
+
+// After assigning the send and receive methods, proceed to make the xjs calls.
+xjs.ChannelManager.on('stream-start', function(res) {
+  // Do something when the stream starts.
+})
+xjs.ChannelManager.on('stream-end', function(res) {
+  // Do something when the stream ends.
+})
 </code></pre>
 <p>
-    You can see from the code above, that <code>myConnection.send()</code> which is the method for sending a message for websocket is set to <code>xjs.Remote.ready()</code> and will be used
-    by the framework throughout the connection.
+  We then proceed with setting <code>myConnnection.onMessage</code> to relay the message to <code>xjs.Remote.receiveMessage</code>
+  every time the network receives a message that is not sent by the author.
 </p>
 <p>
-    Also, you can see that on <code>myConnection.onmessage</code>, the received message if not sent by the author, is just sent to <code>xjs.Remote.receiveMessage()</code>.
-    It is here that the calls will parsed and delivered to its appropriate functions.
+  After those assignments, we then proceed with making the xjs calls like usual and so on.
+  This would help us avoid the usual point of failure where a sendMessage is already called even
+  before the connection handshake has been establised.
 </p>
 <h4>Proxy</h4>
 <p>
     The same way, proxy would have the same basic set-up with remote.
     Except for all the other additional calls that you may want to add on your code.
-    Since it is here that the calls would be processed and sent back to remote.
+    Since it is here that the calls would be received, processed and sent back to remote.
 </p>
 <pre class="language-javascript"><code>
 var connection = new WebSocket('ws://localhost:1337');
 
 var xjs = require('xjs');
 
-
 connection.onopen = function () {
-  // Set an identity
-  connection.send('Proxy')
+  // Same set-up with remote should be done here.
+  // You may need to give an identifier/aurthor for this connection.
 
   xjs.ready({
   remote: {
@@ -150,25 +152,27 @@ connection.onopen = function () {
 }
 
 connection.onmessage = function (message) {
-    try {
-      var json = JSON.parse(message.data);
-    } catch (e) {
-      console.log('This doesn\'t look like a valid JSON: ', message.data);
-      return;
-    }
+  try {
+    var json = JSON.parse(message.data);
+  } catch (e) {
+    console.log('This doesn\'t look like a valid JSON: ', message.data);
+    return;
+  }
 
-    if (json.data.author === 'Remote') {
-      //Relay the message to receiveMessage
-      xjs.Remote.receiveMessage(json.data.text)
-    }
-
+  // Same kind of filtering should be done here.
+  // Only messages received from Remote should be relayed to receiveMessage
+  xjs.Remote.receiveMessage(json.data.text)
 };
 </code></pre>
 <p>
-    The set-up made above with websocket does not show the <code>server.js</code> that handles websocket in its entirety.
-    This is just a simple representation of how it can be used inside the JS file of a plugin. For a simple example of a websocket chat server that
-    works similarly to the given example above, you can check out
-    <a href='http://usualcarrot.com/nodejs-and-websocket-simple-chat-tutorial' target='_blank'>Node.js & WebSocket - Simple chat tutorial</a>.
+    The set-up made above with websocket does not show the server part where you set the port/host where you'll run the websocket server,
+    the callback function that listens everytime you make a connection to the server or
+    the actualy message structure.
+    This is just a simple representation of how it can be used inside the JS file of a plugin.
+</p>
+<p>
+  For a simple example of a websocket chat server that works similarly to the given example above, you can check out
+  <a href='http://usualcarrot.com/nodejs-and-websocket-simple-chat-tutorial' target='_blank'>Node.js & WebSocket - Simple chat tutorial</a>.
 </p>
 <div class="information">
   <h3><span id='information'>&#128712; </span>Additional Information/Limitation</h3>
