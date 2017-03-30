@@ -218,7 +218,7 @@ td {
 }
 
 /* Image hover style */
-.hover-enlarge:selected, .hover-enlarge-2:selected {
+.hover-enlarge:hover, .hover-enlarge-2:hover {
   color: #424242;
   -webkit-transition: all .3s ease-in;
   -moz-transition: all .3s ease-in;
