@@ -6,10 +6,30 @@
 	</ul>
 </div>
 
-<p>XSplit Broadcaster allows you to debug your pages by exposing the DevTools. To do this, create a shortcut to <code>XSplit.Core.exe</code>, and right-click to open the properties window to add the startup parameter: <code>remotedebug:<em>&lt;port&gt;</em></code>. The default is port 9222, but you can use your preferred port (just ensure that no other process is also using it.)
+<p>
+	XSplit Broadcaster allows you to debug your pages by exposing the DevTools.
+	You can do this in two ways, first is to set it on the Settings window for XBC
+	or add a startup parameter on your XBC shortcut.
+</p>
+<p>
+	Changing it through Settings, open the settings window through Tools > Settings.
+	At the Settings window, click the Advanced tab, then check <strong>Enable developer mode</strong>.
+</p>
+<img class="centered" src="assets/debug-settings.png">
+<p>
+	XSplit Broadcaster would need to restart to apply the changes.
+	After, you can then just open <code>http://localhost:9222</code>.
+</p>
+<p>
+	Alternatively, if you want to select a specific port, setting a startup parameter is also acceptable.
+	To do this, create a shortcut to <code>XSplit.Core.exe</code>,
+	and right-click to open the properties window to add the startup parameter:
+	<code>remotedebug:<em>&lt;port&gt;</em></code>.
+	The default is port 9222, but you can use your preferred port
+	(just ensure that no other process is also using it.)
 </p>
 
-<img class="centered" src="assets/debug-params-gray.png">
+<img class="centered" src="assets/debug-params.png">
 
 <p>Once this is done, simply open <code>http://localhost:<em>&lt;port&gt;</em></code> (the remote debugging discovery page) on your browser. You will see a list of links, each pertaining to a plugin/webpage URL and labeled through their <code>&lt;title&gt;</code> element, or if not present, their URL. Click the link pertaining to your plugin to begin debugging. Note that this is not just for sources, but for extensions as well!</p>
 
@@ -18,7 +38,7 @@
 
 <p>After this, you would need to add the startup parameter to XSplit: <code>enablehtmlprop:2</code>.</p>
 
-<img class="centered" src="assets/enablehtmlprop.png">
+<img class="centered" src="assets/debug-params-props.png">
 
 <p>You will now then be able to see the <code>XBC Source Properties_debugger</code> item on the remote debugging page, together with your plugins. Click on this link and you can start debugging the source property window you wrote.</p>
 

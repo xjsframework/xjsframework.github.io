@@ -11,6 +11,15 @@
 <p>
   Add the custom script above anywhere on your <code>script</code> tag on your HTML or add it inside your JS file.
 </p>
+<pre class="language-javascript">
+<code>
+window.external.SetLocalProperty("prop:Browser60fps","1");
+
+var xjs = require('xjs')
+
+xjs.ready()
+// All other codes
+</code></pre>
 <h4>Inject custom JS</h4>
 <p>
   You can inject the code above through the Custom Code option on an HTML Source source property window.
