@@ -1,0 +1,71 @@
+
+<h1 class="class export">Remote <span class="type">class</span></h1>
+<p><p>This class is used as a middleware for communication for a remote and proxy
+xjs. Receiving, Sending and Routing of messages is done here to make the
+calls reach their supposed methods, be processed and then returned to the
+caller as if it is just running locally.</p>
+<p>Note that this class does not create/handle the connection used to send/receive
+messages and should be declared initially upon readying the xjs, together with
+what type it is (remote/proxy).
+You can use websockets, datachannnels, etc... for this.</p>
+<p>Initial declaration on ready:</p>
+<pre><code class="lang-javascript">var xjs = require(&#39;xjs&#39;);
+
+xjs.ready({
+ remote: {
+   type: &#39;remote&#39; // remote/proxy, default is local
+   sendMessage: function(message) {
+     myConnection.send(message) // this will be assigned to Remote.sendMessage
+   }
+ }
+})
+
+// Then handle received messages(string) should be passed to
+xjs.Remote.receiveMessage(message)
+</code></pre>
+<p>Once this is set up, you can already use xjs normally as if you are just making
+calls locally.</p>
+</p><h2>Members</h2>
+  <section class="member static">
+    <a name="sendMessage"><h1 id="sendMessage" class="name">
+      <code>static</code> sendMessage
+    </h1></a>
+    <pre><code>Initial assignment should be done on xjs.ready()
+</code></pre>
+<p>Assign preferred method of sending message.</p>
+
+  </section>
+
+
+  <section class="member static">
+    <a name="remoteType"><h1 id="remoteType" class="name">
+      <code>static</code> remoteType
+    </h1></a>
+    <pre><code>Initial assignment should be done on xjs.ready()
+</code></pre>
+<p>Types:</p>
+<ul>
+<li>local (default)</li>
+<li>remote</li>
+<li>proxy</li>
+</ul>
+
+  </section>
+
+
+  <section class="member static">
+    <a name="receiveMessage"><h1 id="receiveMessage" class="name">
+      <code>static</code> receiveMessage
+    </h1></a>
+    <pre><code>param: (value: string)
+</code></pre>
+<p>Handles received messages to properly relay it to either the proxy
+and make the actual calls, or remote and return the results from
+proxy.</p>
+
+  </section>
+
+<p class="module defined-in">exported from <a href='#/internal'>internal</a><br/>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/C:/Users/viab/Documents/Repositories/SourceTree/xjsframework/src/internal/remote.ts#L10-L241">C:/Users/viab/Documents/Repositories/SourceTree/xjsframework/src/internal/remote.ts (line 10)</a>
+</p>
+
