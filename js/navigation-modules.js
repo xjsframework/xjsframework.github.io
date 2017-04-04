@@ -1750,11 +1750,6 @@ angular.module('navigation-modules', [])
               "path": "/core/Extension#getInstance",
               "partial": "partials/modules//core/Extension/index.html",
               "name": "getInstance"
-            },
-            {
-              "path": "/core/Extension#finalCallback",
-              "partial": "partials/modules//core/Extension/index.html",
-              "name": "finalCallback"
             }
           ]
         },
@@ -1793,11 +1788,6 @@ angular.module('navigation-modules', [])
               "path": "/core/Output#getOutputList",
               "partial": "partials/modules//core/Output/index.html",
               "name": "getOutputList"
-            },
-            {
-              "path": "/core/Output#finalCallback",
-              "partial": "partials/modules//core/Output/index.html",
-              "name": "finalCallback"
             }
           ]
         },
@@ -7855,11 +7845,6 @@ angular.module('navigation-modules', [])
               "path": "/util/IO#getVideoDuration",
               "partial": "partials/modules//util/IO/index.html",
               "name": "getVideoDuration"
-            },
-            {
-              "path": "/util/IO#finalCallback",
-              "partial": "partials/modules//util/IO/index.html",
-              "name": "finalCallback"
             }
           ]
         },
@@ -7883,16 +7868,6 @@ angular.module('navigation-modules', [])
               "path": "/util/EventEmitter#emit",
               "partial": "partials/modules//util/EventEmitter/index.html",
               "name": "emit"
-            },
-            {
-              "path": "/util/EventEmitter#setCallback",
-              "partial": "partials/modules//util/EventEmitter/index.html",
-              "name": "setCallback"
-            },
-            {
-              "path": "/util/EventEmitter#finalCallback",
-              "partial": "partials/modules//util/EventEmitter/index.html",
-              "name": "finalCallback"
             }
           ]
         }
