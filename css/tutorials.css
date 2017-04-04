@@ -210,7 +210,6 @@ td {
 .warning {
   color: #9F6000;
   background-color: #FEEFB3;
-  background-image: url('warning.png');
   padding-left: 10px;
   border-radius: 5px;
   border: 1px solid;
@@ -229,6 +228,20 @@ td {
   transform: scale(2);
   -ms-transform: scale(2); /* IE 9 */
   -webkit-transform: scale(2); /* Safari and Chrome */
+}
+/* information */
+.information {
+  color: #000;
+  background-color: #009EDE;
+  padding-left: 10px;
+  border-radius: 5px;
+  border: 1px solid;
+  border-color: #643d29;
+}
+
+.information a {
+  color: #ded900;
+  text-decoration: underline;
 }
 
 .hover-enlarge {

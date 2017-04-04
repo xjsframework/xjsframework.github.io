@@ -1,0 +1,195 @@
+<h1>Remote XJS (BETA)</h1>
+
+<h3>What is Remote XJS?</h3>
+<p>
+  XJS can be configured to allow remote calls by setting up something like a server and a client.
+  A <strong>"Remote"</strong> would make calls that are sent to and processed in the <strong>"Proxy"</strong> before returning a value back to the Remote.
+</p>
+<p>
+  Remote XJS would generally work like this:
+</p>
+<p>
+    &#128187;<strong>Proxy</strong> &#x21e8; acts like a middleman between XSplit and any number of Remotes. Proxy listens to function calls from the Remotes, gets the actual result of these calls, and then sends the result back to the corresponding Remote. The Proxy is also in charge of sending any emitted events to Remotes that have registered to listen to those events.
+</p>
+<p>
+    &#128187;<strong>Remote</strong> &#x21e8; represents the user interface, and the controller that initiates the calls for an XSplit instance. Remotes will need to connect to a Proxy in order to work. After configuring Remote XJS, you can simply code the same way in a Remote as you do when working locally.
+    <br>
+
+</p>
+
+<h3>Prerequisite</h3>
+<p>
+  Just like how a server and client communicates, the two parties for Remote XJS (Remote and Proxy) would also need to have a means of communicating with each other.
+  The framework itself only handles serialization of the calls from either the remote or the proxy; however, the mode of data transport/communication is not included in XJS itself
+  and needs to be provided by the developer.
+</p>
+<p>
+  A communication channel between the remote and proxy should be first chosen and set up. This could be anything from <i>websocket servers</i>, <i>data channels</i> or whatever other option you prefer. Based on how you want to communicate, you need to configure <code>xjs.Remote</code> to handle the corresponding send/receive functions for communication.
+</p>
+
+<h3>Initializing in xjs.ready()</h3>
+<p>
+    In <code>xjs.ready()</code>, you can tell xjs whether to behave as a Remote or as a Proxy. (See sample code below.)
+</p>
+<p>
+  Once the mode of communication has been initialized (for example, setting up a websocket connection), assign a <code>sendMessage</code> function for xjs. Your connection's "onmessage" function (or its equivalent) should relay the message received through <code>xjs.Remote.receiveMessage(message)</code>. Note that this should be done on both the remote and proxy.
+</p>
+<pre class="language-javascript"><code>
+// initialize your connection
+
+// initialize xjs
+var xjs = require('xjs');
+
+// And instruct xjs on how it sends messages across the network
+xjs.ready({
+  remote: {
+    type: 'remote', // 'remote' or 'proxy' (default is local)
+    sendMessage: function(message) {
+      myConnection.send(message) // this will be assigned to Remote.sendMessage
+    }
+  }
+})
+
+// Relay any received message (string) to xjs for processing
+// This code will vary depending on your chosen mode of communication
+myConnection.on('new-message', function(message) {
+  xjs.Remote.receiveMessage(message);
+});
+</code></pre>
+<p>
+  Once the <code>sendMessage</code> and <code>receiveMessage</code> functions are set up, you can use xjs like usual and the framework would do the rest.
+</p>
+
+<h3>Sample Set-up using Websocket server</h3>
+<p>
+  Here is a simple example as to how to set-up your connection with the remote and proxy using a local
+  Websocket server. This however does not show the changes made on the server files of websocket, but only
+  how it's used and assigned on the framework.
+</p>
+
+<h4>Remote</h4>
+<p>
+  In this example, once the connection has been established, <code>onopen</code> signifies the final handshake of the connection,
+  thus we set the ready here and assign the <code>sendMessage</code> that xjs would use to communicate across the network.
+</p>
+<pre class="language-javascript"><code>
+var myConnection = new WebSocket('ws://localhost:1337');
+
+var xjs = require('xjs');
+
+// Initialize ready when the connection is accepted on handshake at onopen.
+myConnection.onopen = function (){
+  // Depending on how you set your server, you may need to have an identifier for this client
+  // that you would need to set up and provide the server before you start sending messages.
+
+  xjs.ready({
+    remote: {
+      type: 'remote'
+      sendMessage: function(message) {
+        myConnection.send(message)
+      }
+    }
+  })
+}
+
+// Relay received messages from the network to xjs.Remote.receiveMessage
+myConnection.onmessage = function (message) {
+  // Because we know that the server always returns JSON
+  try {
+    var json = JSON.parse(message.data);
+  } catch (e) {
+    console.log('This doesn\'t look like a valid JSON: ', message.data);
+    return;
+  }
+
+  // Websocket messages are transmitted to every one that is connected to the server.
+  // The client identifier that you've set up on onopen should be used here and just
+  // set it to relay messages received from Proxy.
+  xjs.Remote.receiveMessage(json.data.text)
+};
+
+// After assigning the send and receive methods, proceed to make the xjs calls.
+xjs.ChannelManager.on('stream-start', function(res) {
+  // Do something when the stream starts.
+})
+xjs.ChannelManager.on('stream-end', function(res) {
+  // Do something when the stream ends.
+})
+</code></pre>
+<p>
+  We then proceed with setting <code>myConnnection.onMessage</code> to relay the message to <code>xjs.Remote.receiveMessage</code>
+  every time the network receives a message that is not sent by the author.
+</p>
+<p>
+  After those assignments, we then proceed with making the xjs calls like usual.
+  This would help us avoid the usual point of failure where a sendMessage is already called even
+  before the connection handshake has been establised.
+</p>
+<h4>Proxy</h4>
+<p>
+  The same way, proxy would have the same basic set-up with remote.
+  Except for all the other additional calls that you may want to add on your code.
+  Since it is here that the calls would be received, processed and sent back to remote.
+</p>
+<pre class="language-javascript"><code>
+var connection = new WebSocket('ws://localhost:1337');
+
+var xjs = require('xjs');
+
+connection.onopen = function () {
+  // Same set-up with remote should be done here.
+  // Where you should have an identifier for this client.
+
+  xjs.ready({
+  remote: {
+    type: 'proxy'
+    sendMessage: function(message) {
+      myConnection.send(message) // this will be assigned to Remote.sendMessage
+    }
+  }
+  })
+}
+
+connection.onmessage = function (message) {
+  try {
+    var json = JSON.parse(message.data);
+  } catch (e) {
+    console.log('This doesn\'t look like a valid JSON: ', message.data);
+    return;
+  }
+
+  // Same kind of filtering should be done here.
+  // Only messages received from Remote should be relayed to receiveMessage
+  xjs.Remote.receiveMessage(json.data.text)
+};
+</code></pre>
+<p>
+  The set-up made above using websocket is only a simple representation of how it can be used inside the JS fille of a plugin.
+  Other set-ups needed with the server such as setting port/host, other callback function listeners, or actual message structure
+  should be done beforehand.
+</p>
+<p>
+  Also, assigning or creating an identifier for each client is important so
+  that only the correct messages are relayed to remote. Alternatively, you may set your server
+  up in a way where it would send the message to a specific client exluding the sender.
+</p>
+<p>
+  For a simple example of a websocket chat server that works similarly to the given example above, you can check out
+  <a href='http://usualcarrot.com/nodejs-and-websocket-simple-chat-tutorial' target='_blank'>Node.js & WebSocket - Simple chat tutorial</a>.
+</p>
+<div class="information">
+  <h3><span id='information'>&#128712; </span>Additional Information/Limitation</h3>
+  <p>
+    This feature is still in its <strong>BETA</strong> phase and there might still be instances/methods that may not be handled properly yet. Please report any bugs you find to our <a href="https://github.com/xjsframework/xjs/issues/">Github issues</a>.
+  </p>
+  <p>
+    As a hard limitation, <a href="api.html#/window/SourcePropsWindow">SourcePropsWindow</a> and <a href="api.html#/window/Dialog">Dialog</a> events cannot be handled remotely, as you cannot use the source properties dialog or any popup dialog as a Proxy.
+  </p>
+</div>
+<h3>What's ahead?</h3>
+<p>
+    We are considering a built-in websocket-based extension that serves as a Proxy for any number of Remote HTML pages. This will help developers avoid the complexity of setting up their own communication channel. Please stay tuned for news on this!
+  </p>
+
+
+
