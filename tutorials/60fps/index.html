@@ -1,7 +1,47 @@
 <h1>60 FPS Browser Sources</h1>
+<p>
+  By default, HTML sources run at a maximum of 30 frames per second.
+  For more advanced uses, your HTML page may request to use up to 60 FPS instead.
+</p>
+<p>
+  This can be achieved by adding <code>window.external.SetLocalProperty("prop:Browser60fps","1");</code> on your source.
+</p>
+<h3>You can do any of the following to enable 60fps on your HTML Sources:</h3>
+<h4>Modify original HTML/JS</h4>
+<p>
+  Add the custom script above anywhere on your <code>script</code> tag on your HTML or add it inside your JS file.
+</p>
+<pre class="language-javascript">
+<code>
+window.external.SetLocalProperty("prop:Browser60fps","1");
 
-<p>By default, HTML sources run at a maximum of 30 frames per second. For more advanced uses, your HTML page may request to use up to 60 FPS instead. To do this, simply execute the following code within a source:</p>
+var xjs = require('xjs')
 
-<p><code>window.external.SetLocalProperty("prop:Browser60fps","1");</code></p>
+xjs.ready()
+// All other codes
+</code></pre>
+<h4>Inject custom JS</h4>
+<p>
+  You can inject the code above through the Custom Code option on an HTML Source source property window.
+</p>
+<img class="hover-enlarge" src="assets/custom-js.png">
+<img class="hover-enlarge" src="assets/custom-js-add.png">
+<p>
+  After adding the custom script, this would automatically take effect and your source would refresh itself if needed.
+</p>
+<h4>Manually change Presentation file</h4>
+<p>
+  You can also save the presentation where you have your HTML Source, and manually change the 60fps file property of your source.
+</p>
+<p>
+  First, save the presentation that contains your HTML Source, that would create a file with a <code>BPres</code> extension.
+  Open this file on any text editor and search for <code>Browser60fps</code> property and set it to 1, save, then load the presentation again.
+</p>
+<img class="hover-enlarge-2" src="assets/presentation-edit.png">
 
-<p>Please be informed that this is currently an experimental feature, and may not work perfectly for different machines.</p>
+<div class="warning" style="margin-top:20px">
+  <p>
+    &#9888; Please be informed that this is currently an experimental feature.
+    This may not work perfectly on some machines and may end up just showing a black or empty screen.
+  </p>
+</div>

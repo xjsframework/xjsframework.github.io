@@ -216,3 +216,25 @@ td {
   border: 1px solid;
   border-color: #643d29;
 }
+
+/* Image hover style */
+.hover-enlarge:hover, .hover-enlarge-2:hover {
+  color: #424242;
+  -webkit-transition: all .3s ease-in;
+  -moz-transition: all .3s ease-in;
+  -ms-transition: all .3s ease-in;
+  -o-transition: all .3s ease-in;
+  transition: all .3s ease-in;
+  opacity: 1;
+  transform: scale(2);
+  -ms-transform: scale(2); /* IE 9 */
+  -webkit-transform: scale(2); /* Safari and Chrome */
+}
+
+.hover-enlarge {
+  width: 49%;
+}
+
+.hover-enlarge-2 {
+  width: 70%;
+}
