@@ -129,6 +129,9 @@ xjs.ready().then(function(){
 })</code>
 </pre>
 <p>
+  <em>* We're assuming that you are knowledgeable with Promises in JavaScript. If you are not, please do check it out on <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Promise" target="_blank">MDN</a> or other articles about Promise programming.</em>
+</p>
+<p>
   First, the framework is loaded and saved into the <code>xjs</code> variable. We would thenn access the frameworks <code>ready()</code> method; a method that returns a promise,
   which resolves when XSplit JS Framework is ready to use. Always make sure to do your development when the framework is ready!
 </p>
@@ -186,9 +189,102 @@ body {
         </a>
         <p>
           The same way that Source Plugins are created, we also start with setting up an initial HTML file.
-
+          For this one, we'll be creating an extension plugin that would load up all the scenes into buttons
+          and also display your current scene.
         </p>
+<pre class="language-markup">
+<code>
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;p&gt;Sample Scene Switch&lt;/p&gt;
+    &lt;div id='scene-id'&gt;
+    &lt;/div&gt;
+    &lt;script src="js/xjs.js"&gt;&lt;/script&gt;
+    &lt;script src="js/main.js"&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code>
+</pre>
+<p>
+  In the above hmtl, the div with id <code>scene-id</code> is where all the detected scenes will be appended.
+  We then have the <code>main.js</code> file that would contain the use of the framework.
+</p>
+<pre class="language-javascript">
+<code>var xjs = require('xjs');
 
+xjs.ready()
+.then(function(){
+  return xjs.Scene.getSceneCount()
+}).then(function(count){
+  for(var i = 1; i < count + 1; i++){
+    xjs.Scene.getById(i).then(function(scene){
+      var newElement = document.createElement('BUTTON');
+      var t = document.createTextNode('Scene:: '+ (scene._id + 1))
+      newElement.appendChild(t)
+      document.getElementById('scene-id').appendChild(newElement)
+      newElement.addEventListener('click', function(){
+        xjs.Scene.setActiveScene(scene._id + 1)
+      })
+    })
+  }
+})</code>
+</pre>
+<p>
+  Now, let's dissect the sample code above.
+</p>
+<p>
+  XSplit Broadcaster can have any number of scenes and we can get the current number using <code>getSceneCount</code>.
+</p>
+<pre class="language-javascript">
+<code>
+.then(function(){
+  return xjs.Scene.getSceneCount()
+})</code>
+</pre>
+<p>
+  After we get the scene count from the code above, we use this number to get the id of each scene
+  for us to be abple to map into an element.
+</p>
+<p>
+  The code below then gets the scene object using the scene counts as an id.
+  with this, we can map each scene and add it on to our extension and assign a button for each scene.
+</p>
+<pre class="language-javascript">
+<code>
+xjs.Scene.getById(i).then(function(scene){
+  var newElement = document.createElement('BUTTON');
+  var t = document.createTextNode('Scene:: '+ (scene._id + 1))
+  newElement.appendChild(t)
+  document.getElementById('scene-id').appendChild(newElement)
+  newElement.addEventListener('click', function(){
+    xjs.Scene.setActiveScene(scene._id + 1)
+  })
+})</code></pre>
+<p>
+  After assigning each instance of Scene with a button, we also add a click event listener on them and call <code>setActiveScene</code>
+  on them to change the scene to clicked scene number on the extension.
+</p>
+<pre class="language-javascript">
+<code>
+newElement.addEventListener('click', function(){
+  xjs.Scene.setActiveScene(scene._id + 1)
+})</code></pre>
+<p>
+  Once this is all done, you could add your extension. This though, would be different to adding a Source plugin.
+  Here, you would need to add it on the Extensions option and then browse the file.
+</p>
+<p class="center inner-padding-10">
+  <img class="quick-img" src="assets/add_ext_1.png">
+  <img class="quick-img" src="assets/add_ext_2.png">
+</p>
+<p>
+  After selecting the file, you will then see it on the Extensions option, clicking this would open your Extension on a separate window.
+</p>
+<p class="center inner-padding-10">
+  <img class="quick-img" src="assets/extension_sample.gif">
+</p>
         <a id="next" name="next">
           <h2>Where to go from here?</h2>
         </a>
