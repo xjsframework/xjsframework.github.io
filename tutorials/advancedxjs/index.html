@@ -1,0 +1,150 @@
+<h1>Installing XJS - Advanced</h1>
+
+<p>
+  Other than what we've introduced in our quickstart, there are still other ways
+  you can install xjs on your projects. You can select any of the ways below on
+  how you would wish to start on installing the framework.
+</p>
+
+<hr />
+<a id="yeoman" name="yeoman">
+  <h2>Getting started using Yoeman Generator</h2>
+</a>
+<h3>Dependencies</h3>
+<p>
+  You'll need to have Node.js and npm installed first.
+  If you have that installed already, great! If not,
+  you should go to the <a href="https://nodejs.org/en/" target="_blank">
+  official website</a>, download and install it.
+  Also, do make sure that you have the latest version of npm
+  to avoid issues with other tools.
+  Finally, you will need <a href="https://git-scm.com/downloads" target="_blank">Git</a> on your machine.
+</p>
+<h3>Installation</h3>
+<p>
+  Let's get started first with installing yeoman and XSplit JS Framework generator through npm.
+</p>
+<pre class="language-shell"><code>npm install -g bower
+npm install -g yo
+npm install -g generator-xjs</code></pre>
+<p>
+  That will allow you to generate XSplit JS Framework based projects through the command <code>yo xjs</code>.
+</p>
+<p>
+  To use our generator, you'll have to create your project folder, and then scaffold your project in there:
+</p>
+<pre class="language-shell"><code>mkdir YOUR_DIR
+cd YOUR_DIR
+yo xjs</code></pre>
+<p>
+  You will be prompted with a number of options like project name, version, plugin type, and package name.
+</p>
+<p>
+  That should create the basic structure for your plugin, including a generic HTML file you can use to get started. The directory should now also include the file <code>xjs.js</code>, which contains the framework code. We also included <code>browsersync</code> for you to test your plugin on a browser first; all you have to do is execute <code>gulp</code> in the root folder of your project.
+</p>
+<hr />
+
+<a id="bower" name="bower">
+  <h2>Getting started using bower</h2>
+</a>
+<p>
+  Our Yeoman Generator also makes use of bower, but the generator simply executes it automatically. In this section, we assume that you hate automation, and that you would love to use bower by yourself for whatever reason.
+</p>
+<h3>Installation</h3>
+<p>
+  To use bower, install it first, and then fetch <code>xjs-framework</code> through bower.
+</p>
+<pre class="language-shell"><code>npm install -g bower
+bower install xjs-framework</code></pre>
+<p>
+<p>
+  This creates a <code>bower_components</code> folder. The relevant file is <code>bower_components/xjs-framework/dist/xjs.js</code>, which you should include in your plugin's HTML file. All other details of the project structure are up to you. See the following example for what a basic plugin might look like.
+</p>
+<h4>Example:</h4>
+<pre class="language-markup"><code>&lt;html&gt;
+&lt;body&gt;
+&lt;script src="bower_components/xjs-framework/dist/xjs.js"&gt;&lt;/script&gt;
+&lt;script src="js/main.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p>
+  For plugin publishing, you will also need to create an XML file&mdash;this is actually automatically generated for you if you used Yeoman! (Please note that as of time of writing, the details regarding the plugin store and plugin publishing methodology are still being worked out.) The following is the XML you will need; simply replace the values in the <code>&lt;Name&gt;</code> and <code>&lt;ProperName&gt;</code> nodes with your desired plugin name.
+</p>
+<pre class="language-markup"><code>&lt;?xml version="1.0"?&gt;
+&lt;config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+&lt;CanPause&gt;false&lt;/CanPause&gt;
+&lt;CanPlay&gt;false&lt;/CanPlay&gt;
+&lt;CanSetVolume&gt;false&lt;/CanSetVolume&gt;
+&lt;CanStepBackward&gt;false&lt;/CanStepBackward&gt;
+&lt;CanStepForward&gt;false&lt;/CanStepForward&gt;
+&lt;CanStop&gt;false&lt;/CanStop&gt;
+&lt;Description /&gt;
+&lt;HelpLink /&gt;
+&lt;HelpText /&gt;
+&lt;Name&gt;test&lt;/Name&gt;
+&lt;param name="flashvars" value="" /&gt;
+&lt;ProperName&gt;test&lt;/ProperName&gt;
+&lt;Category&gt;&lt;/Category&gt;
+&lt;ShowConfigOnAdd&gt;false&lt;/ShowConfigOnAdd&gt;
+&lt;MinCompatibleVersion&gt;2.3.1505.0516&lt;/MinCompatibleVersion&gt;
+&lt;MinFxVersion&gt;2.3.1505.0516&lt;/MinFxVersion&gt;
+&lt;Version&gt;0.1.0&lt;/Version&gt;
+&lt;/config&gt;</code></pre>
+<hr />
+
+<a id="npm" name="npm">
+  <h2>Getting started using NPM</h2>
+</a>
+<p>
+  Usage of NPM is similar to using Bower to fetch the XSplit JS Framework.
+</p>
+<h3>Installation</h3>
+<p>
+  At this point, we already have npm installed. Just execute this in your CLI:
+</p>
+<pre class="language-shell"><code>npm install xjs-framework</code></pre>
+<p>
+  This would create a <code>node_modules</code> folder. The relevant file is <code>node_modules/xjs-framework/dist/xjs.js</code>, which you should include in your plugin's HTML file. All other details of the project structure are up to you. Sample usage can be seen in the <a href="#sample">sample plugin code</a> below.
+</p>
+<p>
+  This approach also opens up an alternative coding method. You can create your plugins using TypeScript or ES6 due to the availability of the <code>package.json</code> file and the source code written in TypeScript. To learn more, see <a href="tutorials.html#/es6" target="_blank">our tutorials</a>.
+</p>
+<hr />
+
+<a id="zipfile" name="zipfile">
+  <h2>Getting started from ZIP files</h2>
+</a>
+<p>
+  In case you hate modern methods, you could always use the dinasour aged approach by downloading our framework as a ZIP file. Please click the button below to download it.
+</p>
+<p>
+  <button id="download"></button>
+</p>
+<p>
+  When you download XSplit JS Framework as a ZIP file, you would get the initial structure of a Source Plugin along the xjs file located under bower_components folder.
+</p>
+<p>
+  In case you need to automatically update the framework to the latest available version, you could always execute <code>bower update</code> on your CLI.
+</p>
+<hr />
+
+<a id="cdn" name="cdn">
+  <h2>Getting started using our CDN hosted file</h2>
+</a>
+<p>
+  In case you need to create a plugin fast, and just want to use our hosted version of XJS Framework, all you have to do is add this line to your html file:
+</p>
+<pre class="language-markup"><code>&lt;script src="https://cdn2.xsplit.com/xjs/download/xjs.js"&gt;&lt;/script&gt;</code></pre>
+<p>Or use the minified version:</p>
+<pre class="language-markup"><code>&lt;script src="https://cdn2.xsplit.com/xjs/download/xjs.min.js"&gt;&lt;/script&gt;</code></pre>
+<p>
+  The problem with this method is that our servers cache static files, thus we cannot ensure that the file hosted is the latest version of the framework, specially if we just released a new version of the framework within the past 24 hours.
+</p>
+<hr />
+<script>
+  document.getElementById('download').addEventListener('click', function(e) {
+    if (e.which === 1) {
+      window.location = 'http://cdn2.xsplit.com/xjs/download/sourceplugin.zip';
+    }
+  });
+</script>

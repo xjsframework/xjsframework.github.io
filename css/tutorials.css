@@ -28,6 +28,7 @@ span a, p a {
   font-style: italic;
   font-size: 15px;
 }
+
 #warning {
   margin-right: 5px;
   color: red;
@@ -215,4 +216,28 @@ td {
   border-radius: 5px;
   border: 1px solid;
   border-color: #643d29;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+#download {
+  width: 246px;
+  height: 47px;
+  display: inline-block;
+  margin-left: 5px;
+}
+
+#download:hover {
+  background-position-y: -60px;
+}
+
+#download:active {
+  background-position-y: -120px;
+}
+
+#download {
+  background-image: url('../assets/btn_download.png');
 }
