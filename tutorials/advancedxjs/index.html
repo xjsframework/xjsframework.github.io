@@ -62,10 +62,10 @@ bower install xjs-framework</code></pre>
 </p>
 <h4>Example:</h4>
 <pre class="language-markup"><code>&lt;html&gt;
-&lt;body&gt;
-&lt;script src="bower_components/xjs-framework/dist/xjs.js"&gt;&lt;/script&gt;
-&lt;script src="js/main.js"&gt;&lt;/script&gt;
-&lt;/body&gt;
+  &lt;body&gt;
+  &lt;script src="bower_components/xjs-framework/dist/xjs.js"&gt;&lt;/script&gt;
+  &lt;script src="js/main.js"&gt;&lt;/script&gt;
+  &lt;/body&gt;
 &lt;/html&gt;</code></pre>
 <p>
   For plugin publishing, you will also need to create an XML file&mdash;this is actually automatically generated for you if you used Yeoman! (Please note that as of time of writing, the details regarding the plugin store and plugin publishing methodology are still being worked out.) The following is the XML you will need; simply replace the values in the <code>&lt;Name&gt;</code> and <code>&lt;ProperName&gt;</code> nodes with your desired plugin name.
@@ -141,6 +141,100 @@ bower install xjs-framework</code></pre>
   The problem with this method is that our servers cache static files, thus we cannot ensure that the file hosted is the latest version of the framework, specially if we just released a new version of the framework within the past 24 hours.
 </p>
 <hr />
+
+<h2>Let's create a sample plugin!</h2>
+<p>
+  Let's try making a <strong>source plugin</strong> that would display all the sources displayed in the very first scene. If you started with the Yeoman generator, let's open up <code>main.js</code>, and write the following code:
+</p>
+<pre class="language-javascript"><code>var xjs = require('xjs');
+
+// always perform xjs functions when it is ready
+xjs.ready().then(function() {
+  // get the first scene
+  return xjs.Scene.getById(0)
+}).then(function(scene) {
+  // enumerate all unique sources in the scene
+  return scene.getSources();
+}).then(function(sources) {
+  for (var i in sources) {
+    // get the name of each scene
+    sources[i].getName().then(function(name) {
+      var p = document.createElement('p');
+      p.textContent = name;
+      document.body.appendChild(p);
+    });
+  }
+});</code></pre>
+<p>
+  Let's dissect the sample code above.
+</p>
+<p>
+  <em>* We're assuming that you are knowledgeable with Promises in JavaScript. If you are not, please do check it out on <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Promise" target="_blank">MDN</a> or other articles about Promise programming.</em>
+</p>
+<p>
+  The first line of the code loads the framework and save it to the <code>xjs</code> variable. We then accessed the framework's <code>ready()</code> method; a method that returns a promise, which will resolve when XSplit JS Framework is ready to use. Always make sure to do your development when the framework is ready!
+</p>
+<pre class="language-javascript"><code>xjs.ready()</code></pre>
+<p>
+  XSplit Broadcaster exposes a number of scenes to the user. <code>Scene.getById</code> will resolve with a <code>Scene</code> object corresponding to the index you supply.
+</p>
+<pre class="language-javascript"><code>.then(function(){
+  return xjs.Scene.getById(0);
+})
+</code></pre>
+<p>
+  This Scene object has a method named <code>getSources</code> which will resolve with an array of Source instances, each referring to a source placed on the current scene.
+</p>
+<pre class="language-javascript"><code>.then(function(scene) {
+  return scene.getSources();
+})</code></pre>
+<p>
+  Each of the sources is an instance of <code>Source</code> or a subclass thereof. However, all types of <code>Source</code> instances have <a href="api.html#/core/Source" target="_blank">common methods</a>, which includes the <code>getName</code> method. <code>Source.getName</code> returns a Promise which will resolve with a string as the parameter.
+</p>
+<pre class="language-javascript"><code>.then(function(sources) {
+  for (var i in sources) {
+    // get the name of each scene
+    sources[i].getName().then(function(name) {
+      var p = document.createElement('p');
+      p.textContent = name;
+      document.body.appendChild(p);
+    });
+  }
+});</code></pre>
+<p>
+  For more in-depth information, please do check out our <a href="api.html" target="_blank">API</a>, or our <a href="tutorials.html" target="_blank">tutorials</a> for articles on achieving certain tasks using the framework.
+</p>
+<p>
+  For now, let's update the CSS file located on the css folder, and set the background to white.
+</p>
+<pre class="language-css"><code>body {
+background: #FFF;
+}</code></pre>
+<p>
+  To test our plugin, we could run <code>gulp</code> on your project root. <strong>(Note: this will only work if you scaffolded your project using our generator! You may host your HTML locally otherwise.)</strong> This should create a temporary dev server that would host your plugin, which you can access at <code>http://localhost:9001</code>. This method has the added advantage of automatically refreshing your plugin in XSplit when changes are detected inside your code.
+</p>
+<p>
+  Now open up your XSplit Broadcaster, log-in, and add a web URL source with the URL set to <code>http://localhost:9001</code>.
+</p>
+<p class="center inner-padding-10">
+  <img class="quick-img" src="assets/add_sample_1.png" />
+  <img class="quick-img" src="assets/add_sample_2.png" />
+</p>
+<p>
+  That should add your plugin to the stage, and it should list all items placed in the active scene.
+</p>
+<p>
+  If you manually created your plugin project, you can simply drag the <code>index.html</code> file to the stage. That should work. Or, you add it as a media file:
+</p>
+<p class="center inner-padding-10">
+  <img class="quick-img" src="assets/add_sample_3.png" />
+  <img class="quick-img" src="assets/xbc-add-media2.png" />
+</p>
+<p>
+  And there you have it. You've created a plugin using the files provided through installing xjs framework in any of the methods mentioned above.
+</p>
+
+
 <script>
   document.getElementById('download').addEventListener('click', function(e) {
     if (e.which === 1) {
