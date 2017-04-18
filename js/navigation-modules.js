@@ -7404,21 +7404,6 @@ angular.module('navigation-modules', [])
               "name": "toString"
             },
             {
-              "path": "/system/AudioDevice#STATE_ACTIVE",
-              "partial": "partials/modules//system/AudioDevice/index.html",
-              "name": "STATE_ACTIVE"
-            },
-            {
-              "path": "/system/AudioDevice#DATAFLOW_RENDER",
-              "partial": "partials/modules//system/AudioDevice/index.html",
-              "name": "DATAFLOW_RENDER"
-            },
-            {
-              "path": "/system/AudioDevice#DATAFLOW_CAPTURE",
-              "partial": "partials/modules//system/AudioDevice/index.html",
-              "name": "DATAFLOW_CAPTURE"
-            },
-            {
               "path": "/system/AudioDevice#SYSTEM_LEVEL_MUTE",
               "partial": "partials/modules//system/AudioDevice/index.html",
               "name": "SYSTEM_LEVEL_MUTE"

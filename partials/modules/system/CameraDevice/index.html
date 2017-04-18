@@ -1,7 +1,7 @@
 
 <h1 class="class export">CameraDevice <span class="type">class</span></h1>
 <p><p>The CameraDevice Class is the object returned by
-<a href='#system/System'>System Class&#39;</a> getCameraDevices method. It provides
+<a href='#system/System'>System Class</a> getCameraDevices method. It provides
 you with methods to fetch the Camera Device&#39;s id, name, and to add it as
 a source in the current scene.</p>
 <h3 id="basic-usage">Basic Usage</h3>
@@ -10,11 +10,8 @@ var System = XJS.System;
 
 System.getCameraDevices().then(function(cameras) {
   for (var i in cameras) {
-    // Do not include the imaginary xsplit camera if that ever exist
-    if (cameras[i].getName().indexOf(&#39;xsplit&#39;) === -1) {
-      xml = cameras[i].toXML();
-      // do something with the XML here
-    }
+    xml = cameras[i].toXML();
+    // do something with the XML here
   }
 });
 </code></pre>
@@ -92,6 +89,6 @@ attribute of the devices XML</p>
   </section>
 
 <p class="module defined-in">exported from <a href='#/system'>system</a><br/>
-defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/C:/Users/viab/Documents/Repositories/SourceTree/xjsframework/src/system/camera.ts#L6-L122">C:/Users/viab/Documents/Repositories/SourceTree/xjsframework/src/system/camera.ts (line 6)</a>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/C:/Users/viab/Documents/Repositories/SourceTree/xjsframework/src/system/camera.ts#L6-L119">C:/Users/viab/Documents/Repositories/SourceTree/xjsframework/src/system/camera.ts (line 6)</a>
 </p>
 

@@ -101,7 +101,7 @@ System.getSystemFonts().then(function(fontsArray) {
   var fontsArrayLength = fontsArray.length;
   for (var i = 0; i &lt; fontsArrayLength; ++i) {
     var option = document.createElement(&#39;option&#39;);
-    option.text = &#39;Kiwi&#39;;
+    option.text = fontsArray[i];
     mySelect.add(option);
   }
 });
