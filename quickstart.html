@@ -79,15 +79,19 @@
             With XSplit JS framework together with XSplit Broadcaster, you can do a lot of things to improve your streams/recordings or even make your tasks easier with the use of plugins.
           </p>
           <p>
-            So what do you need to do to get started? Simply download the XSplit JS Framework and you can use it immediately.
+            So what do you need to do to get started? Simply <a href="http://cdn2.xsplit.com/xjs/download/2.1.1/xjs.js">download</a> the XSplit JS Framework and you can use it immediately.
             Outlined below is a simple demonstration on how you can use the framework in creating your own plugin.
           </p>
           <p>
             Please note that you will need working knowledge of JavaScript and ES6 Promises to use the framework.
           </p>
         <a id="source" name="source">
-          <h2>Creating your first Source Plugin</h2>
+          <h2>Create a Source Plugin</h2>
         </a>
+        <p>
+          What is a Source plugin? Source plugins are objects that may be added to your presentation to be included in your streams and recordings.
+          Shown below is an example of a Source plugin.
+        </p>
         <p>
           For this example, we'll create a source plugin that would change text automatically when you start your stream.
           This example would use the <code>ChannelManager</code> class of the framework, that can be used to listen for the <code>stream-start</code> and <code>stream-end</code> of XSplit Broadcaster.
@@ -189,12 +193,16 @@ body {
 <hr />
 
         <a id="extension" name="extension">
-          <h2>Creating your first Extension Plugin</h2>
+          <h2>Create an Extension Plugin</h2>
         </a>
         <p>
+          What is an Extension? Extension plugins are tools that you can use to do different kinds of tasks to manipulate
+          the XSplit Broadcaster Application.
+        </p>
+        <p>
           The same way that Source Plugins are created, we also start with setting up an initial HTML file.
-          For this one, we'll be creating an extension plugin that would load up all the scenes into buttons
-          and also display your current scene.
+          For this one, we'll be creating an extension plugin that would load up all the scenes into buttons,
+          that you can use to switch scenes
         </p>
 <pre class="language-markup">
 <code>
@@ -316,6 +324,12 @@ newElement.addEventListener('click', function(){
           There are also other guides on the tutorials section about the common errors that you may encounter and debugging tips that you may find
           useful while you create your own plugin.
         </p>
+        <h3>Take a look at the Plugin Store</h3>
+        <p>
+          The XSplit Broadcaster App has a <strong>Plugin Store</strong> that already have loads of plugins that you can download and use for free at our Plugin Store,
+          and we make a constant effort to make new ones to provide you with the needed tools to make your
+          streams and recordings have the elements that you need.
+        </p>
         <h3>Contribute</h3>
         <p>
           You may have ideas of your own or have found a bug on the framework, we have an incredible community of developers who are passionate about solving problems and would
@@ -324,7 +338,7 @@ newElement.addEventListener('click', function(){
         <p>
           We hope to hear from you and would love to check out the plugins you've created.
         </p>
-<hr />
+        <hr />
 
         <a id="sample" name="sample">
           <h2>Sample Plugins</h2>
