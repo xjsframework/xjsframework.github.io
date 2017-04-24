@@ -29,7 +29,7 @@
             <a href="#intro">Introduction</a>
           </li>
           <li>
-            <a href="#start">Getting Started with <code>xjs.js<code></a>
+            <a href="#start">Installing XSplit JS Framework<code></a>
           </li>
           <li>
             <a href="#source">Creating your first Source Plugin</a>
@@ -55,9 +55,11 @@
         <p>
           We will walk you through on how to get started building your own XSplit Broadcaster plugin using this framework.
         </p>
-        <h1>Installing XSplit JS Framework</h1>
+        <a id="start" name="start">
+          <h1>Installing XSplit JS Framework</h1>
+        </a>
         <p>
-          You will need the latest developer build of XSplit Broadcaster to use the XSplit JS Framework. The framework requires minimum XBC version 2.7.1512.2124, unless stated otherwise in the API documentation.
+          First, you will need the latest developer build of XSplit Broadcaster to use the XSplit JS Framework. The framework requires minimum XBC version 2.7.1512.2124, unless stated otherwise in the API documentation.
         </p>
         <div class="download-xbc">
             <a href="http://cdn2.xsplit.com/download/bc/m32/XSplit_Broadcaster_2.9.1701.1616.exe" title="Latest Developer Build">
@@ -71,29 +73,22 @@
         </div>
         <p>
           You can install or start using the framework in a lot of ways, but fastest and the most basic way is to download <a href='http://cdn2.xsplit.com/xjs/download/2.1.1/xjs.js'><code>XSplit JS Framework</code></a>, add it on your project folder, import it on your html file, and you are good to go.
+          Outlined below are simple demonstrations on how you can use the framework in creating your own <a href="#source">Source</a> or <a href="#extension">Extension</a> plugin.
         </p>
-        <a id="start" name="start">
-          <h2>Getting Started with xjs.js</h2>
-        </a>
-          <p>
-            With XSplit JS framework together with XSplit Broadcaster, you can do a lot of things to improve your streams/recordings or even make your tasks easier with the use of plugins.
-          </p>
-          <p>
-            So what do you need to do to get started? Simply <a href="http://cdn2.xsplit.com/xjs/download/2.1.1/xjs.js">download</a> the XSplit JS Framework and you can use it immediately.
-            Outlined below is a simple demonstration on how you can use the framework in creating your own plugin.
-          </p>
-          <p>
-            Please note that you will need working knowledge of JavaScript and ES6 Promises to use the framework.
-          </p>
         <a id="source" name="source">
           <h2>Create a Source Plugin</h2>
         </a>
         <p>
           What is a Source plugin? Source plugins are objects that may be added to your presentation to be included in your streams and recordings.
-          Shown below is an example of a Source plugin.
         </p>
         <p>
-          For this example, we'll create a source plugin that would change text automatically when you start your stream.
+          The image below is an example of a source plugin. This in particular, changes text once you start/stop a stream or recording.
+        </p>
+        <p class="center inner-padding-10">
+          <img class="quick-img" src="assets/sample-source.gif">
+        </p>
+        <p>
+          Demonstrated below, are the things needed to create this plugin.
           This example would use the <code>ChannelManager</code> class of the framework, that can be used to listen for the <code>stream-start</code> and <code>stream-end</code> of XSplit Broadcaster.
         </p>
 <pre class="language-markup">
@@ -178,13 +173,10 @@ body {
   <img class="quick-img" src="assets/add-media-2.png">
 </p>
 <p>
-  Of course, we need to check it out right?
+  And there you have it, your very first Source plugin!
 </p>
 <p class="center inner-padding-10">
   <img class="quick-img" src="assets/sample-source.gif">
-</p>
-<p>
-  And there you have it, your very first Source plugin!
 </p>
 <p>
   For more information about Sources and other things you can do with them like applying <strong>Custom Configuration Object</strong>,
@@ -197,7 +189,10 @@ body {
         </a>
         <p>
           What is an Extension? Extension plugins are tools that you can use to do different kinds of tasks to manipulate
-          the XSplit Broadcaster Application.
+          the XSplit Broadcaster Application. Seen below is a sample scene switching extension and the guide to make it follows.
+        </p>
+        <p class="center inner-padding-10">
+          <img class="quick-img" src="assets/extension_sample.gif">
         </p>
         <p>
           The same way that Source Plugins are created, we also start with setting up an initial HTML file.
@@ -304,6 +299,114 @@ newElement.addEventListener('click', function(){
   For more information on the things you can do with Extensions,
   you can read more about it on <a href="tutorials.html#/extensions">Developing Extension Plugins</a> tutorials page.
 </p>
+<h3>Sample Snippets</h3>
+
+<div class="lightbox-content">
+          <!-- SAMPLE SNIPPET 1 -->
+          <a href="javascript:void(0)" onclick="document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'">
+            <div class="open-snippet" id="open-snippet">
+              Spawning Dialogs
+            </div>
+          </a>
+          <div id="light" class="white_content">
+            <a href="javascript:void(0)" onclick="document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'">Close</a>
+            <div class="code-snippet">
+<pre class="language-javascript">
+<code>
+xjs.Dialog.createDialog('https://www.xsplit.com/')
+  .setSize(300, 300)
+  .setTitle('This is a sample dialog')
+  .setBorderOptions(true, false)
+  .setButtons(true, true)
+  .show()
+})</code>
+</pre>
+              <p>
+                Dialog class is used to spawn new browser processes that can be used to open other URLs.
+                Source plugins do not have this functionality (but their properties windows may use this.)
+              </p>
+
+              <p>
+                View more information about the Dialog class on it's <a href="api.html#/window/Dialog">Dialog API</a> page.
+              </p>
+            </div>
+            <div class="code-working">
+              <img class="snippet-img" src="assets/quickstart/spawndialog.gif">
+            </div>
+          </div>
+
+          <!-- SAMPLE SNIPPET 2 -->
+          <a href="javascript:void(0)" onclick="document.getElementById('light-4').style.display='block';document.getElementById('fade').style.display='block'">
+            <div class="open-snippet" id="open-snippet">
+              Start/Stop Stream
+            </div>
+          </a>
+          <div id="light-4" class="white_content">
+          <a href="javascript:void(0)" onclick="document.getElementById('light-4').style.display='none';document.getElementById('fade').style.display='none'">Close</a>
+            <div class="code-snippet">
+<pre class="language-javascript">
+<code>button1.addEventListener('click', function(){
+  stream.startBroadcast()
+})
+button2.addEventListener('click', function(){
+  stream.stopBroadcast()
+})</code>
+</pre>
+              <p>
+                <em>* <code>stream</code> is an instance of an Output that you can get using <code>Output.getOutputList()</code></em>
+              </p>
+              <p>
+                The Output class provides methods to start and stop a stream/recording and pause or unpause a Local Recording.
+              </p>
+
+              <p>
+                View more information about the Output class on it's <a href="api.html#/core/Output">Ouput API</a> page.
+              </p>
+            </div>
+            <div class="code-working">
+              <img class="snippet-img" src="assets/quickstart/stream.gif">
+            </div>
+          </div>
+
+          <!-- SAMPLE SNIPPET 3 -->
+          <a href="javascript:void(0)" onclick="document.getElementById('light-5').style.display='block';document.getElementById('fade').style.display='block'">
+            <div class="open-snippet" id="open-snippet">
+              Media Control
+            </div>
+          </a>
+          <div id="light-5" class="white_content">
+          <a href="javascript:void(0)" onclick="document.getElementById('light-5').style.display='none';document.getElementById('fade').style.display='none'">Close</a>
+            <div class="code-snippet">
+<pre class="language-javascript">
+<code>if(sources[0] instanceof xjs.MediaSource) {
+  playBtn.addEventListener('click', function(){
+    sources[0].setPlaying(true)
+  })
+
+  pauseBtn.addEventListener('click', function(){
+    sources[0].setPlaying(false)
+  })
+}</code>
+</pre>
+              <p>
+                <em>* <code>sources</code> is an instance of a Source that you can get using <code>scene.getSources()</code>.</em>
+              </p>
+              <p>
+                The MediaSource class represents the sources of the media items that has been added to the stage.
+              </p>
+              <p>
+                View more information about the Media Class on it's <a href="api.html#/core/MediaSource">Media Source API</a> page.
+              </p>
+            </div>
+            <div class="code-working">
+              <img class="snippet-img" src="assets/quickstart/media.gif">
+            </div>
+          </div>
+
+          <div id="fade" class="black_overlay"></div>
+</div>
+
+
 <hr />
         <a id="next" name="next">
           <h2>Where to go from here?</h2>
@@ -339,7 +442,6 @@ newElement.addEventListener('click', function(){
           We hope to hear from you and would love to check out the plugins you've created.
         </p>
         <hr />
-
         <a id="sample" name="sample">
           <h2>Sample Plugins</h2>
         </a>
