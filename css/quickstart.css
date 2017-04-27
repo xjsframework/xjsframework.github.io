@@ -199,6 +199,7 @@ button {
   transform: scale(2);
   -ms-transform: scale(2); /* IE 9 */
   -webkit-transform: scale(2); /* Safari and Chrome */
+  margin: 0 auto;
 }
 
 .quick-img {
@@ -230,14 +231,15 @@ button {
   background-color: white;
   z-index: 1002;
   overflow: auto;
+  border-radius: 5px;
 }
 
 .open-snippet {
-  background: linear-gradient(to right,#49ACFF,#3a89cc);
+  background: linear-gradient(#49ACFF,#3a89cc);
   background-color: #49ACFF;
   display: inline-block;
   height: 65px;
-  width: 245px;
+  width: 33%;
   border-radius: 5px;
   font-size: 16px;
   text-align: center;
@@ -245,10 +247,11 @@ button {
   vertical-align: middle;
   font-size: 25px;
   color: black;
+  margin-top: 5px;
 }
 
 .open-snippet:hover {
-  background: linear-gradient(to left,#49ACFF,#3a89cc);
+  background: linear-gradient(to top,#49ACFF,#3a89cc);
 }
 
 .code-snippet {
@@ -256,8 +259,8 @@ button {
   display: inline-block;
   position: absolute;
   left: 0px;
-  margin-top: 15px;
-  padding: 20px;
+  margin-top: 28px;
+  padding: 5px 0 0 10px;
 }
 
 .code-working {
@@ -265,10 +268,23 @@ button {
   display: inline-block;
   position: absolute;
   right: 0px;
-  margin-top: 15px;
+  margin-top: 20px;
 }
 
 .snippet-img {
   width: 545px;
   height: 423px;
+}
+
+.close-overlay {
+  border: 2px solid #3a89cc;
+  border-radius: 5px;
+  margin: 3px 0 0 3px;
+  background-color: #49ACFF;
+  width: 43px;
+  height: 25px;
+  text-align: center;
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
 }

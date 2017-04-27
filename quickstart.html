@@ -215,7 +215,7 @@ body {
 &lt;/html&gt;</code>
 </pre>
 <p>
-  In the above hmtl, the div with id <code>scene-id</code> is where all the detected scenes will be appended.
+  In the above html, the div with id <code>scene-id</code> is where all the detected scenes will be appended.
   We then have the <code>main.js</code> file that would contain the use of the framework.
 </p>
 <pre class="language-javascript">
@@ -279,7 +279,7 @@ newElement.addEventListener('click', function(){
   xjs.Scene.setActiveScene(scene._id + 1)
 })</code></pre>
 <p>
-  Once this is all done, you could add your extension. This though, would be different to adding a Source plugin.
+  Once this is all done, you can now add your extension to XSplit Broadcaster. This though, would be different to adding a Source plugin.
   Here, you would need to add it on the Extensions option and then browse the file.
 </p>
 <p class="center inner-padding-10">
@@ -309,7 +309,11 @@ newElement.addEventListener('click', function(){
             </div>
           </a>
           <div id="light" class="white_content">
-            <a href="javascript:void(0)" onclick="document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'">Close</a>
+            <a href="javascript:void(0)" onclick="document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'">
+              <div class="close-overlay">
+                Close
+              </div>
+            </a>
             <div class="code-snippet">
 <pre class="language-javascript">
 <code>
@@ -342,7 +346,11 @@ xjs.Dialog.createDialog('https://www.xsplit.com/')
             </div>
           </a>
           <div id="light-4" class="white_content">
-          <a href="javascript:void(0)" onclick="document.getElementById('light-4').style.display='none';document.getElementById('fade').style.display='none'">Close</a>
+          <a ref="javascript:void(0)" onclick="document.getElementById('light-4').style.display='none';document.getElementById('fade').style.display='none'">
+            <div class="close-overlay">
+              Close
+            </div>
+          </a>
             <div class="code-snippet">
 <pre class="language-javascript">
 <code>button1.addEventListener('click', function(){
@@ -375,7 +383,11 @@ button2.addEventListener('click', function(){
             </div>
           </a>
           <div id="light-5" class="white_content">
-          <a href="javascript:void(0)" onclick="document.getElementById('light-5').style.display='none';document.getElementById('fade').style.display='none'">Close</a>
+          <a ref="javascript:void(0)" onclick="document.getElementById('light-5').style.display='none';document.getElementById('fade').style.display='none'">
+            <div class="close-overlay">
+              Close
+            </div>
+          </a>
             <div class="code-snippet">
 <pre class="language-javascript">
 <code>if(sources[0] instanceof xjs.MediaSource) {
