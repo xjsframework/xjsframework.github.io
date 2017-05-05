@@ -1,0 +1,60 @@
+<h1>Creating Advanced Plugins</h1>
+<h2>Introduction</h2>
+<p>
+  After the introduction of Developing Sources and Extensions, and the information
+  provided on our API. The next thing we should discuss is to the ability to create
+  some more advanced plugins.
+</p>
+<p>
+  An advanced plugin can be anything from utilizing our API, using DLL's' or even incorporating
+  other services API. This could be anything that our API can support and your mind
+  can conceive. With that in mind, what we can give you here are some ways and ideas
+  that you may use in developing your own special plugin.
+</p>
+
+<h2>The API</h2>
+<p>
+  Our API is continuously being updated and improved to accommodate the new features and
+  the growing needs of developers. If you still haven't checked our API, you should definitely
+  do so to have a general idea of how framework works.
+</p>
+<p>
+  The best way to utilize our API is by combining them to create a whole system that would
+  trigger each other. One example for this is when you're starting your stream up and plays
+  a video at the start. You can have set it up so that when the video is done playing, it
+  would switch up to your next scene.
+</p>
+<p>
+  This example will be devided into 3 parts. First, is the way you could get the vide item
+  from the Scene. Second, is the start of stream that would then play the video.
+  Lastly, is the scene switch after the video plays.
+</p>
+<pre class="language-javascript">
+<code>
+var xjs = require('xjs');
+xjs.ready().then(() => {
+  let video;
+
+  xjs.Scene.getActiveScene()
+  .then(scene => {return scene})
+  .then(scene => {return scene.getItems()})
+  .then(items => {
+    for (var item in items) {
+      if (items[item] instanceof MediaItem) {
+        video = items[item]
+      }
+    }
+  })
+
+  xjs.ChannelManager.on('stream-start', start => {
+    video.setPlaying(true)
+  })
+});
+</code>
+</pre>
+<p>
+  Should include another chain of scene switch after the video plays...
+</p>
+<h2>DLL Utilization</h2>
+
+<h2>Other Services API</h2>

@@ -33,6 +33,11 @@ angular.module('navigation-tutorials', [])
       "name": "Developing Extension Plugins"
     },
     {
+      "path": "advancedplugins",
+      "partial": "tutorials/advancedplugins",
+      "name": "Advanced Plugins"
+    },
+    {
       "path": "broadcastcontrol",
       "partial": "tutorials/broadcastcontrol",
       "name": "Start/Stop Broadcast"
