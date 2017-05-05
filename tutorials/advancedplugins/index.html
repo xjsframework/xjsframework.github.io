@@ -25,35 +25,57 @@
   would switch up to your next scene.
 </p>
 <p>
-  This example will be devided into 3 parts. First, is the way you could get the vide item
-  from the Scene. Second, is the start of stream that would then play the video.
-  Lastly, is the scene switch after the video plays.
+  This <b>Exntension Plugin</b> example will be devided into 3 parts:
+</p>
+<pre class="language-javascript">
+<code>let video;
+
+xjs.Scene.getActiveScene()
+.then(function(scene) {return scene})
+.then(function(scene) {return scene.getItems()})
+.then(function(items) {
+  for (var item in items) {
+    if (items[item] instanceof MediaItem) {
+      video = items[item]
+    }
+  }
+})</code>
+</pre>
+<p>
+  First, is the way you could get the video item from the Scene. You would generally start
+  on your Video/Intro scene and begin the stream from there. Here, you would get your video
+  item and assign it to a variable, this will then be used on the second part.
+</p>
+<pre class="language-javascript">
+<code>xjs.ChannelManager.on('stream-start', function(start) {
+  video.getPlaybackDuration().then(function(time) {
+    //Set a timeout that would change the active scene
+    //to desired scene after video plays.
+    setTimeout(function() {
+      xjs.Scene.setActiveScene(2)
+    }, time * 1000)
+  })
+
+  //Ensure Video would begin from the start before playing
+  video.setPlaybackPosition(0)
+  video.setPlaying(true)
+})</code>
+</pre>
+<p>
+  Second, is to create an function that would listen for the <code>stream-start</code> event
+  that would start a timer based on the video duration and switch the scene. At the same time,
+  the video play duration will be triggered here. As an alternative option, you could set an additional
+  delay as to when your video would start and should also be added on the scene change timer. This
+  would be most helpful if you're still waiting for people to join your stream.
 </p>
 <pre class="language-javascript">
 <code>
-var xjs = require('xjs');
-xjs.ready().then(() => {
-  let video;
-
-  xjs.Scene.getActiveScene()
-  .then(scene => {return scene})
-  .then(scene => {return scene.getItems()})
-  .then(items => {
-    for (var item in items) {
-      if (items[item] instanceof MediaItem) {
-        video = items[item]
-      }
-    }
-  })
-
-  xjs.ChannelManager.on('stream-start', start => {
-    video.setPlaying(true)
-  })
-});
-</code>
+//You can do anything here! :)</code>
 </pre>
 <p>
-  Should include another chain of scene switch after the video plays...
+  And last but not the least, is anything! You can do anything you want to add on this extension plugin.
+  You can do anything from <i>Add Stream Controls, Scene Switching Controls, Display Stream Data or
+  even some Source control</i>
 </p>
 <h2>DLL Utilization</h2>
 
