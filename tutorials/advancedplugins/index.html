@@ -78,5 +78,70 @@ xjs.Scene.getActiveScene()
   even some Source control</i>
 </p>
 <h2>DLL Utilization</h2>
+<p>
+  Other than just using the API to create your own advanced plugins. You can then also combine this with some
+  DLLs and utilize it's function or even use it on its own for you to accomplish different functionalities on your plugin.
+</p>
+<h3>Development</h3>
+<p>
+  In creating a DLL for you plugin, you would need to first implement the XSplit plugin interface, implemment
+  some functions in global namespace, and define <i>IXSplitScriptDllContext</i>
+</p>
+<p>The following functions must be implemented in global namespace:</p>
+<pre class="language-javascript">
+<code>
+BOOLWINAPIXSplitScriptPluginInit();
+BOOLWINAPIXSplitScriptPluginCall(IXSplitScriptDllContext*pContext,BSTR
+functionName,BSTR*argumentsArray,UINTargumentsCount,BSTR*returnValue);
+voidWINAPIXSplitScriptPluginDestroy();</code>
+</pre>
+<p>Define <i>IXSplitScriptDllContext</i> as follows:</p>
+<pre class="language-javascript">
+<code>
+[uuid("9A554D8A-912F-4F1E-9A26-CC002B3B99BD")]
+DECLARE_INTERFACE_(IXSplitScriptDllContext,IUnknown)
+{
+STDMETHOD(Callback)(BSTRfunctionName,BSTR*argumentsArray,UINT
+argumentsCount)PURE;
+};</code>
+</pre>
+<p>
+  For the full document and guide on creating your DLL for XSplitBroadcaster please see <a href="assets/WritingcustomXSplitscriptDLLsinC.pdf">this document</a>
+</p>
+<h3>Usage</h3>
+<p>
+  There are two ways you can use your DLLs, after loading them into your plugin through <a href="api.html#/core/Dll"><code>Dll.load()</code></a>.
+  First is by calling the functions directly through <a href="api.html#/core/Dll"><code>Dll.call()</code></a> or <a href="api.html#/core/Dll"><code>Dll.callEx()</code></a> and the first
+  parameter is the function name.
+</p>
+<pre class="language-javascript">
+<code>
+var dll = xjs.Dll;
+dll.load(['Scriptdlls\\SplitMediaLabs\\dllA.dll','Scriptdlls\\SplitMediaLabs\\dllB.dll']);
+
+dll.call('xsplit.EnumProcesses').then(function(value) {console.log(value);});
+// sample return value: "0,4,456,608,724,856,864,940,972,620,1012"</code>
+</pre>
+<p>
+  The full information and detailed guide regarding the creation and use of DLL can be checked
+  at <a href="tutorials.html#/dll">Using DLLs for Extensibility</a> tutorials page. We also already have
+  an existing XSplit DLL documentation which you can check on tutorials page listed above.
+</p>
 
 <h2>Other Services API</h2>
+<p>
+  Other than the use of our API and DLLs, you can also use other services API in developing
+  your own plugin. These extenral services can be used to display relevant data on the stage,
+  the most common example of this kind of services are chat and alerts, which streamers are
+  very familiar with.
+</p>
+<p>
+  Though we've already provided some plugins that does this for the more
+  famous platforms, there may still be other sources that you might want to handle and create
+  for your own.
+</p>
+<h3>Prerequisites</h3>
+<p>
+  The very first thing you would need for this is that if the service you are trying to create
+  a plugin from provides an API and a guide on how to use it.
+</p>
