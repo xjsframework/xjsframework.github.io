@@ -75,7 +75,8 @@ xjs.Scene.getActiveScene()
 <p>
   And last but not the least, is anything! You can do anything you want to add on this extension plugin.
   You can do anything from <i>Add Stream Controls, Scene Switching Controls, Display Stream Data or
-  even some Source control</i>
+  even some Source control</i> and even incorporate the next items on this tutorials page,
+  <strong>DLL</strong> and <strong>other Services API</strong>.
 </p>
 <h2>DLL Utilization</h2>
 <p>
@@ -140,8 +141,56 @@ dll.call('xsplit.EnumProcesses').then(function(value) {console.log(value);});
   famous platforms, there may still be other sources that you might want to handle and create
   for your own.
 </p>
-<h3>Prerequisites</h3>
+<h3>Authorization</h3>
 <p>
-  The very first thing you would need for this is that if the service you are trying to create
-  a plugin from provides an API and a guide on how to use it.
+  Each service has their own Authorization process, which can be handled in different ways.
+  For example Facebook and Twitch:
+</p>
+<p>
+  <a href="https://developers.facebook.com/" target="_blank"><strong>Facebook</strong></a> requires you to include a short piece of
+  JavaScript in your HTML that will load the basic Facebook SDK on your page:
+</p>
+<pre class="language-javascript">
+<code>window.fbAsyncInit = function() {
+  FB.init({
+    appId      : 'your-app-id',
+    xfbml      : true,
+    version    : 'v2.9'
+  });
+  FB.AppEvents.logPageView();
+};
+
+(function(d, s, id){
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) {return;}
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</code>
+</pre>
+<p>
+  While <a href="https://dev.twitch.tv/" target="_blank"><strong>Twitch</strong></a> authentication involves 3 things.
+</p>
+<ul>
+  <li><a href="https://dev.twitch.tv/docs/v5/guides/authentication/#registration" target="_blank">Registering your app</a> to obtain a client ID and client secret.</li>
+  <li><a href="https://dev.twitch.tv/docs/v5/guides/authentication/#getting-access-tokens" target="_blank">Getting an access token</a>. This includes specifying scopes, or the permissions your app requires.</li>
+  <li><a href="https://dev.twitch.tv/docs/v5/guides/authentication/#sending-access-tokens" target="_blank">Sending the access token</a> in your API request, to authenticate API requests.</li>
+</ul>
+<p>
+  These two are just examples of how you can make use and authorize other services API into your
+  plugin. Which is why it's important to know if the service you want to create a plugin with has
+  guides and tutorial on how you can make use of their service.
+</p>
+<h3>Next Steps</h3>
+<p>
+  After having access to these API services, you can now make use of the data that is made available to
+  you from these services and include them to your plugins.
+</p>
+
+<hr />
+<p>
+  The ones listed above are not the only ways you can create some more advanced plugins. You can incorporate
+  other modules that you may be using and create a way for them to communicate or pass the information around.
+  And if you're stuck with something in what your doing for your plugin, please don't hesitate to reach out to
+  us on <a href="https://github.com/xjsframework/xjs/issues/new">Github</a> or <a href="https://gitter.im/xjsframework/xjs">Gitter</a>.
 </p>
