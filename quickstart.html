@@ -32,10 +32,10 @@
             <a href="#start">Installing XSplit JS Framework<code></a>
           </li>
           <li>
-            <a href="#source">Creating your first Source Plugin</a>
+            <a href="#source">Creating your First Source Plugin</a>
           </li>
           <li>
-            <a href="#extension">Creating your first Extension Plugin</a>
+            <a href="#extension">Creating your First Extension Plugin</a>
           </li>
           <li>
             <a href="#next">What's next?</a>
@@ -76,7 +76,7 @@
           Outlined below are simple demonstrations on how you can use the framework in creating your own <a href="#source">Source</a> or <a href="#extension">Extension</a> plugin.
         </p>
         <a id="source" name="source">
-          <h2>Create a Source Plugin</h2>
+          <h2>Creating your First Source Plugin</h2>
         </a>
         <p>
           What is a Source plugin? Source plugins are objects that may be added to your presentation to be included in your streams and recordings.
@@ -88,8 +88,7 @@
           <img class="quick-img" src="assets/sample-source.gif">
         </p>
         <p>
-          Demonstrated below, are the things needed to create this plugin.
-          This example would use the <code>ChannelManager</code> class of the framework, that can be used to listen for the <code>stream-start</code> and <code>stream-end</code> of XSplit Broadcaster.
+          Let's build this plugin step by step! This example would need to use the <code>ChannelManager</code> class of the framework to listen for the <code>stream-start</code> and <code>stream-end</code> events from XSplit Broadcaster.
         </p>
 <pre class="language-markup">
 <code>
@@ -107,56 +106,55 @@
 &lt;/html&gt;</code>
 </pre>
 <p>
-  You can see above, we have set up an initial html file that imports the framework.
-  We have also created a div that contains the intial text when the stream is not yet live/recording, and would change immediately when the stream would start.
+  You can see above that we have set up an initial html file that imports the framework.
+  We have also created a <code>&lt;div&gt;</code> that contains the initial text when the stream is not yet live/recording. This text should change immediately when the stream starts.
 </p>
 <p>
-  Next, we would now use the framework on our <code>main.js</code> file.
+  Next, let's use the framework through our <code>main.js</code> file.
 </p>
 <pre class="language-javascript">
 <code>
 var xjs = require('xjs');
 
-xjs.ready().then(function(){
-  xjs.ChannelManager.on('stream-start', function(){
+xjs.ready().then(function() {
+  xjs.ChannelManager.on('stream-start', function() {
     document.getElementById('stream-status').innerHTML = 'Stream is Live';
-  })
+  });
 
-  xjs.ChannelManager.on('stream-end', function(){
+  xjs.ChannelManager.on('stream-end', function() {
     document.getElementById('stream-status').innerHTML = 'Stream is not Live';
-  })
+  });
 })</code>
 </pre>
 <p>
   <em>* We're assuming that you are knowledgeable with Promises in JavaScript. If you are not, please do check it out on <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Promise" target="_blank">MDN</a> or other articles about Promise programming.</em>
 </p>
 <p>
-  First, the framework is loaded and saved into the <code>xjs</code> variable. We would thenn access the frameworks <code>ready()</code> method; a method that returns a promise,
-  which resolves when XSplit JS Framework is ready to use. Always make sure to do your development when the framework is ready!
+  First, the framework is loaded and saved into the <code>xjs</code> variable. We would then access the framework's <code>ready()</code> method; a method that returns a promise,
+  which resolves when XSplit JS Framework is ready to use. Always make sure your app checks when the framework is ready before it starts to use the framework!
 </p>
 <p>
-  Let's disect the code further...
+  Let's dissect the code further...
 </p>
-XSplit Broadcaster emits an event <code>stream-start/end</code>, and the <code>ChannelManager</code> class has access to listen to these events.
+<p>XSplit Broadcaster emits the <code>stream-start</code> and <code>stream-end</code> events through the <code>ChannelManager</code> class.</p>
 <pre class="language-javascript">
 <code>
-xjs.ChannelManager.on('stream-start')
+xjs.ChannelManager.on('stream-start', ...)
 
-xjs.ChannelManager.on('stream-end')</code>
+xjs.ChannelManager.on('stream-end', ...)</code>
 </pre>
 <p>
-  Here, we include a handler that would make the action when the your stream has started/stopped. Since, this class would only listen
-  to when the event would be emitted, we would have to set it here as to what should be done when it happens.
+  Here, we include a handler for when your stream has started/stopped. For our sample plugin, we can just change the text of the appropriate <code>&lt;div&gt;</code>.
 </p>
 <pre class="language-javascript">
 <code>
-function(){
+function() {
     document.getElementById('stream-status').innerHTML = 'Stream is not Live/Live';
   }</code>
 </pre>
 <p>
   And then, you can create a CSS file and update how your plugin would look like.
-  For this example, I set the background-color as transparent for it to blend in with the scene and only the text would be visible.
+  For this example, I set the background-color as transparent for it to blend in with the scene and only the text would be visible. (By default, text color is black.)
 </p>
 <pre class="language-css">
 <code>
@@ -173,32 +171,31 @@ body {
   <img class="quick-img" src="assets/add-media-2.png">
 </p>
 <p>
-  And there you have it, your very first Source plugin!
+  And there you have it, your very first Source Plugin!
 </p>
 <p class="center inner-padding-10">
   <img class="quick-img" src="assets/sample-source.gif">
 </p>
 <p>
-  For more information about Sources and other things you can do with them like applying <strong>Custom Configuration Object</strong>,
+  For more information about Sources and other things you can do with them (such as applying a <strong>Custom Configuration Object</strong>),
   please check the <a href="tutorials.html#/sourceplugins">Developing Sources</a> tutorials page.
 </p>
 <hr />
 
-        <a id="extension" name="extension">
-          <h2>Create an Extension Plugin</h2>
-        </a>
-        <p>
-          What is an Extension? Extension plugins are tools that you can use to do different kinds of tasks to manipulate
-          the XSplit Broadcaster Application. Seen below is a sample scene switching extension and the guide to make it follows.
-        </p>
-        <p class="center inner-padding-10">
-          <img class="quick-img" src="assets/extension_sample.gif">
-        </p>
-        <p>
-          The same way that Source Plugins are created, we also start with setting up an initial HTML file.
-          For this one, we'll be creating an extension plugin that would load up all the scenes into buttons,
-          that you can use to switch scenes
-        </p>
+<a id="extension" name="extension">
+  <h2>Create your first Extension Plugin</h2>
+</a>
+<p>
+  What is an Extension? Extension plugins are tools that you can use to do different kinds of tasks to manipulate
+  the XSplit Broadcaster application itself. Seen below is a sample scene switching extension, followed by a step-by-step guide to make it.
+</p>
+<p class="center inner-padding-10">
+  <img class="quick-img" src="assets/extension_sample.gif">
+</p>
+<p>
+  Much like how Source Plugins are created, extensions also require an HTML file.
+  For this one, we'll be creating an extension plugin that would load up all the scenes, creating buttons for each of them that allows you to switch to that scene.
+</p>
 <pre class="language-markup">
 <code>
 &lt;html&gt;
@@ -215,28 +212,27 @@ body {
 &lt;/html&gt;</code>
 </pre>
 <p>
-  In the above html, the div with id <code>scene-id</code> is where all the detected scenes will be appended.
-  We then have the <code>main.js</code> file that would contain the use of the framework.
+  In the above html, we will append the scene buttons to the<code>scene-id</code> element. Let's check out what we need to do in <code>main.js</code>.
 </p>
 <pre class="language-javascript">
 <code>var xjs = require('xjs');
 
 xjs.ready()
-.then(function(){
-  return xjs.Scene.getSceneCount()
-}).then(function(count){
-  for(var i = 1; i < count + 1; i++){
-    xjs.Scene.getById(i).then(function(scene){
+.then(function() {
+  return xjs.Scene.getSceneCount();
+}).then(function(count) {
+  for(let i = 1; i < count + 1; i++) {
+    xjs.Scene.getById(i).then(function(scene) {
       var newElement = document.createElement('BUTTON');
-      var t = document.createTextNode('Scene:: '+ (scene._id + 1))
-      newElement.appendChild(t)
-      document.getElementById('scene-id').appendChild(newElement)
-      newElement.addEventListener('click', function(){
-        xjs.Scene.setActiveScene(scene._id + 1)
-      })
-    })
+      var t = document.createTextNode('Scene:: '+ i);
+      newElement.appendChild(t);
+      document.getElementById('scene-id').appendChild(newElement);
+      newElement.addEventListener('click', function() {
+        xjs.Scene.setActiveScene(scene);
+      });
+    });
   }
-})</code>
+});</code>
 </pre>
 <p>
   Now, let's dissect the sample code above.
@@ -246,48 +242,38 @@ xjs.ready()
 </p>
 <pre class="language-javascript">
 <code>
-.then(function(){
-  return xjs.Scene.getSceneCount()
+.then(function() {
+  return xjs.Scene.getSceneCount();
 })</code>
 </pre>
 <p>
-  After we get the scene count from the code above, we use this number to get the id of each scene
-  for us to be abple to map into an element.
-</p>
-<p>
-  The code below then gets the scene object using the scene counts as an id.
-  with this, we can map each scene and add it on to our extension and assign a button for each scene.
+  With the scene count, we then loop through the scenes and create buttons for each one of them.
 </p>
 <pre class="language-javascript">
 <code>
-xjs.Scene.getById(i).then(function(scene){
+xjs.Scene.getById(i).then(function(scene) {
   var newElement = document.createElement('BUTTON');
-  var t = document.createTextNode('Scene:: '+ (scene._id + 1))
-  newElement.appendChild(t)
-  document.getElementById('scene-id').appendChild(newElement)
-  newElement.addEventListener('click', function(){
-    xjs.Scene.setActiveScene(scene._id + 1)
-  })
-})</code></pre>
+  var t = document.createTextNode('Scene:: '+ i);
+  newElement.appendChild(t);
+  document.getElementById('scene-id').appendChild(newElement);
+});</code></pre>
 <p>
-  After assigning each instance of Scene with a button, we also add a click event listener on them and call <code>setActiveScene</code>
-  on them to change the scene to clicked scene number on the extension.
+  After assigning each instance of Scene with a button, we also add a click event listener on them. To change scenes, we can pass the desired <code>Scene</code> object into <code>setActiveScene()</code>.
 </p>
 <pre class="language-javascript">
 <code>
 newElement.addEventListener('click', function(){
-  xjs.Scene.setActiveScene(scene._id + 1)
-})</code></pre>
+  xjs.Scene.setActiveScene(scene);
+});</code></pre>
 <p>
-  Once this is all done, you can now add your extension to XSplit Broadcaster. This though, would be different to adding a Source plugin.
-  Here, you would need to add it on the Extensions option and then browse the file.
+  Once this is all done, you can now add your extension to XSplit Broadcaster. Navigate to the extensions menu to add a custom extension and add your HTML file.
 </p>
 <p class="center inner-padding-10">
   <img class="quick-img" src="assets/add_ext_1.png">
   <img class="quick-img" src="assets/add_ext_2.png">
 </p>
 <p>
-  After selecting the file, you will then see it on the Extensions option, clicking this would open your Extension on a separate window.
+  You will then see it on the Extensions menu. Click on your extension to open it in a separate window.
 </p>
 <p class="center inner-padding-10">
   <img class="quick-img" src="assets/extension_sample.gif">
@@ -300,6 +286,8 @@ newElement.addEventListener('click', function(){
   you can read more about it on <a href="tutorials.html#/extensions">Developing Extension Plugins</a> tutorials page.
 </p>
 <h3>Sample Snippets</h3>
+
+<p>Here are some more sample snippets you can check out to get a better idea of how the framework might be used. Many of these will work only in extensions.</p>
 
 <div class="lightbox-content">
           <!-- SAMPLE SNIPPET 1 -->
@@ -322,16 +310,16 @@ xjs.Dialog.createDialog('https://www.xsplit.com/')
   .setTitle('This is a sample dialog')
   .setBorderOptions(true, false)
   .setButtons(true, true)
-  .show()
-})</code>
+  .show();
+});</code>
 </pre>
               <p>
                 Dialog class is used to spawn new browser processes that can be used to open other URLs.
-                Source plugins do not have this functionality (but their properties windows may use this.)
+                Source plugins do not have this functionality (but their source properties windows may use this.)
               </p>
 
               <p>
-                View more information about the Dialog class on it's <a href="api.html#/window/Dialog">Dialog API</a> page.
+                View more information about the Dialog class on its <a href="api.html#/window/Dialog">Dialog API</a> page.
               </p>
             </div>
             <div class="code-working">
@@ -354,21 +342,21 @@ xjs.Dialog.createDialog('https://www.xsplit.com/')
             <div class="code-snippet">
 <pre class="language-javascript">
 <code>button1.addEventListener('click', function(){
-  stream.startBroadcast()
-})
+  stream.startBroadcast();
+});
 button2.addEventListener('click', function(){
-  stream.stopBroadcast()
-})</code>
+  stream.stopBroadcast();
+});</code>
 </pre>
               <p>
-                <em>* <code>stream</code> is an instance of an Output that you can get using <code>Output.getOutputList()</code></em>
+                <em>* <code>stream</code> is an instance of <code>Output</code> that you can get using <code>Output.getOutputList()</code></em>
               </p>
               <p>
-                The Output class provides methods to start and stop a stream/recording and pause or unpause a Local Recording.
+                The <code>Output</code> class provides methods to start and stop a stream/recording, and to pause or unpause a Local Recording.
               </p>
 
               <p>
-                View more information about the Output class on it's <a href="api.html#/core/Output">Ouput API</a> page.
+                View more information about the Output class on its <a href="api.html#/core/Output">Output API</a> page.
               </p>
             </div>
             <div class="code-working">
@@ -390,24 +378,24 @@ button2.addEventListener('click', function(){
           </a>
             <div class="code-snippet">
 <pre class="language-javascript">
-<code>if(sources[0] instanceof xjs.MediaSource) {
+<code>if (sources[0] instanceof xjs.MediaSource) {
   playBtn.addEventListener('click', function(){
-    sources[0].setPlaying(true)
-  })
+    sources[0].setPlaying(true);
+  });
 
   pauseBtn.addEventListener('click', function(){
-    sources[0].setPlaying(false)
-  })
+    sources[0].setPlaying(false);
+  });
 }</code>
 </pre>
               <p>
-                <em>* <code>sources</code> is an instance of a Source that you can get using <code>scene.getSources()</code>.</em>
+                <em>* <code>sources</code> is an instance of a <code>Source</code> that you can get using <code>scene.getSources()</code>.</em>
               </p>
               <p>
-                The MediaSource class represents the sources of the media items that has been added to the stage.
+                The <code>MediaSource</code> class represents the media sources (such as video) that has been added to the stage.
               </p>
               <p>
-                View more information about the Media Class on it's <a href="api.html#/core/MediaSource">Media Source API</a> page.
+                View more information about the MediaSource Class on its <a href="api.html#/core/MediaSource">MediaSource API</a> page.
               </p>
             </div>
             <div class="code-working">
@@ -425,15 +413,15 @@ button2.addEventListener('click', function(){
         </a>
         <h3>Check the API</h3>
         <p>
-          We highly suggest you check our <a href="api.html">API</a> to further explore on the things you can do using the framework.
-          Here, you can check a more detailed information about the Classes and methods that we've used on the examples and all the other
+          We highly suggest you check our <a href="api.html">API</a> to further explore the things you can do using the framework.
+          Here, you can see more detailed information about the classes and methods that we've used in the examples and all the other
           ones you can still use in the future.
-          We are constantly adding features on our framework and the best place to read more about them is here.
+          We are constantly adding features to our framework and the best place to read more about them is here.
         </p>
         <h3>Read more Tutorials</h3>
         <p>
-          You can also go ahead and check the <a href="tutorials.html">Tutorial</a> section to know more about the more advanced stuff you can use and do using xjs framework.
-          There are also advanced plugin examples there that you might be interested in checking and may find useful.
+          You can also go ahead and check the <a href="tutorials.html">Tutorials</a> section to learn more about specific use cases, as well as advanced stuff you do with xjs framework.
+          There are also more plugin examples there that you might be interested in checking and may find useful.
         </p>
         <p>
           There are also other guides on the tutorials section about the common errors that you may encounter and debugging tips that you may find
@@ -447,7 +435,7 @@ button2.addEventListener('click', function(){
         </p>
         <h3>Contribute</h3>
         <p>
-          You may have ideas of your own or have found a bug on the framework, we have an incredible community of developers who are passionate about solving problems and would
+          You may have ideas of your own or have found a bug on the framework. We have an incredible community of developers who are passionate about solving problems and
           want to listen to your ideas. For this, you could send us some questions or suggestions at <a href="https://github.com/xjsframework/xjs/issues/new">Github</a> or directly chat with us on <a href="https://gitter.im/xjsframework/xjs">Gitter</a>.
         </p>
         <p>
