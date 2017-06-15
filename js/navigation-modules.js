@@ -15,6 +15,16 @@ angular.module('navigation-modules', [])
           "type": "Class",
           "pages": [
             {
+              "path": "/core/Item#on",
+              "partial": "partials/modules//core/Item/index.html",
+              "name": "on"
+            },
+            {
+              "path": "/core/Item#off",
+              "partial": "partials/modules//core/Item/index.html",
+              "name": "off"
+            },
+            {
               "path": "/core/Item#getId",
               "partial": "partials/modules//core/Item/index.html",
               "name": "getId"
@@ -981,6 +991,16 @@ angular.module('navigation-modules', [])
               "name": "setMute"
             },
             {
+              "path": "/core/IAudio#isAutoMute",
+              "partial": "partials/modules//core/IAudio/index.html",
+              "name": "isAutoMute"
+            },
+            {
+              "path": "/core/IAudio#setAutoMute",
+              "partial": "partials/modules//core/IAudio/index.html",
+              "name": "setAutoMute"
+            },
+            {
               "path": "/core/IAudio#isStreamOnlyAudio",
               "partial": "partials/modules//core/IAudio/index.html",
               "name": "isStreamOnlyAudio"
@@ -1648,6 +1668,11 @@ angular.module('navigation-modules', [])
               "name": "getStreamDrops"
             },
             {
+              "path": "/core/StreamInfo#getGOPDrops",
+              "partial": "partials/modules//core/StreamInfo/index.html",
+              "name": "getGOPDrops"
+            },
+            {
               "path": "/core/StreamInfo#getStreamRenderedFrames",
               "partial": "partials/modules//core/StreamInfo/index.html",
               "name": "getStreamRenderedFrames"
@@ -2238,6 +2263,11 @@ angular.module('navigation-modules', [])
               "name": "isMute"
             },
             {
+              "path": "/core/CameraItem#isAutoMute",
+              "partial": "partials/modules//core/CameraItem/index.html",
+              "name": "isAutoMute"
+            },
+            {
               "path": "/core/CameraItem#setVolume",
               "partial": "partials/modules//core/CameraItem/index.html",
               "name": "setVolume"
@@ -2246,6 +2276,11 @@ angular.module('navigation-modules', [])
               "path": "/core/CameraItem#setMute",
               "partial": "partials/modules//core/CameraItem/index.html",
               "name": "setMute"
+            },
+            {
+              "path": "/core/CameraItem#setAutoMute",
+              "partial": "partials/modules//core/CameraItem/index.html",
+              "name": "setAutoMute"
             },
             {
               "path": "/core/CameraItem#isStreamOnlyAudio",
@@ -2964,6 +2999,11 @@ angular.module('navigation-modules', [])
               "name": "isMute"
             },
             {
+              "path": "/core/AudioItem#isAutoMute",
+              "partial": "partials/modules//core/AudioItem/index.html",
+              "name": "isAutoMute"
+            },
+            {
               "path": "/core/AudioItem#setVolume",
               "partial": "partials/modules//core/AudioItem/index.html",
               "name": "setVolume"
@@ -2972,6 +3012,11 @@ angular.module('navigation-modules', [])
               "path": "/core/AudioItem#setMute",
               "partial": "partials/modules//core/AudioItem/index.html",
               "name": "setMute"
+            },
+            {
+              "path": "/core/AudioItem#setAutoMute",
+              "partial": "partials/modules//core/AudioItem/index.html",
+              "name": "setAutoMute"
             },
             {
               "path": "/core/AudioItem#isStreamOnlyAudio",
@@ -3467,6 +3512,11 @@ angular.module('navigation-modules', [])
               "name": "isMute"
             },
             {
+              "path": "/core/HtmlItem#isAutoMute",
+              "partial": "partials/modules//core/HtmlItem/index.html",
+              "name": "isAutoMute"
+            },
+            {
               "path": "/core/HtmlItem#setVolume",
               "partial": "partials/modules//core/HtmlItem/index.html",
               "name": "setVolume"
@@ -3475,6 +3525,11 @@ angular.module('navigation-modules', [])
               "path": "/core/HtmlItem#setMute",
               "partial": "partials/modules//core/HtmlItem/index.html",
               "name": "setMute"
+            },
+            {
+              "path": "/core/HtmlItem#setAutoMute",
+              "partial": "partials/modules//core/HtmlItem/index.html",
+              "name": "setAutoMute"
             },
             {
               "path": "/core/HtmlItem#isStreamOnlyAudio",
@@ -4005,6 +4060,11 @@ angular.module('navigation-modules', [])
               "name": "isMute"
             },
             {
+              "path": "/core/FlashItem#isAutoMute",
+              "partial": "partials/modules//core/FlashItem/index.html",
+              "name": "isAutoMute"
+            },
+            {
               "path": "/core/FlashItem#setVolume",
               "partial": "partials/modules//core/FlashItem/index.html",
               "name": "setVolume"
@@ -4013,6 +4073,11 @@ angular.module('navigation-modules', [])
               "path": "/core/FlashItem#setMute",
               "partial": "partials/modules//core/FlashItem/index.html",
               "name": "setMute"
+            },
+            {
+              "path": "/core/FlashItem#setAutoMute",
+              "partial": "partials/modules//core/FlashItem/index.html",
+              "name": "setAutoMute"
             },
             {
               "path": "/core/FlashItem#isStreamOnlyAudio",
@@ -5694,6 +5759,11 @@ angular.module('navigation-modules', [])
               "name": "isMute"
             },
             {
+              "path": "/core/MediaItem#isAutoMute",
+              "partial": "partials/modules//core/MediaItem/index.html",
+              "name": "isAutoMute"
+            },
+            {
               "path": "/core/MediaItem#setVolume",
               "partial": "partials/modules//core/MediaItem/index.html",
               "name": "setVolume"
@@ -5702,6 +5772,11 @@ angular.module('navigation-modules', [])
               "path": "/core/MediaItem#setMute",
               "partial": "partials/modules//core/MediaItem/index.html",
               "name": "setMute"
+            },
+            {
+              "path": "/core/MediaItem#setAutoMute",
+              "partial": "partials/modules//core/MediaItem/index.html",
+              "name": "setAutoMute"
             },
             {
               "path": "/core/MediaItem#isStreamOnlyAudio",
@@ -6445,6 +6520,11 @@ angular.module('navigation-modules', [])
               "name": "isMute"
             },
             {
+              "path": "/core/CameraSource#isAutoMute",
+              "partial": "partials/modules//core/CameraSource/index.html",
+              "name": "isAutoMute"
+            },
+            {
               "path": "/core/CameraSource#setVolume",
               "partial": "partials/modules//core/CameraSource/index.html",
               "name": "setVolume"
@@ -6453,6 +6533,11 @@ angular.module('navigation-modules', [])
               "path": "/core/CameraSource#setMute",
               "partial": "partials/modules//core/CameraSource/index.html",
               "name": "setMute"
+            },
+            {
+              "path": "/core/CameraSource#setAutoMute",
+              "partial": "partials/modules//core/CameraSource/index.html",
+              "name": "setAutoMute"
             },
             {
               "path": "/core/CameraSource#isStreamOnlyAudio",
@@ -6566,6 +6651,11 @@ angular.module('navigation-modules', [])
               "name": "isMute"
             },
             {
+              "path": "/core/AudioSource#isAutoMute",
+              "partial": "partials/modules//core/AudioSource/index.html",
+              "name": "isAutoMute"
+            },
+            {
               "path": "/core/AudioSource#setVolume",
               "partial": "partials/modules//core/AudioSource/index.html",
               "name": "setVolume"
@@ -6574,6 +6664,11 @@ angular.module('navigation-modules', [])
               "path": "/core/AudioSource#setMute",
               "partial": "partials/modules//core/AudioSource/index.html",
               "name": "setMute"
+            },
+            {
+              "path": "/core/AudioSource#setAutoMute",
+              "partial": "partials/modules//core/AudioSource/index.html",
+              "name": "setAutoMute"
             },
             {
               "path": "/core/AudioSource#isStreamOnlyAudio",
@@ -6719,6 +6814,11 @@ angular.module('navigation-modules', [])
               "name": "isMute"
             },
             {
+              "path": "/core/HtmlSource#isAutoMute",
+              "partial": "partials/modules//core/HtmlSource/index.html",
+              "name": "isAutoMute"
+            },
+            {
               "path": "/core/HtmlSource#setVolume",
               "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "setVolume"
@@ -6727,6 +6827,11 @@ angular.module('navigation-modules', [])
               "path": "/core/HtmlSource#setMute",
               "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "setMute"
+            },
+            {
+              "path": "/core/HtmlSource#setAutoMute",
+              "partial": "partials/modules//core/HtmlSource/index.html",
+              "name": "setAutoMute"
             },
             {
               "path": "/core/HtmlSource#isStreamOnlyAudio",
@@ -6782,6 +6887,11 @@ angular.module('navigation-modules', [])
               "name": "isMute"
             },
             {
+              "path": "/core/FlashSource#isAutoMute",
+              "partial": "partials/modules//core/FlashSource/index.html",
+              "name": "isAutoMute"
+            },
+            {
               "path": "/core/FlashSource#setVolume",
               "partial": "partials/modules//core/FlashSource/index.html",
               "name": "setVolume"
@@ -6790,6 +6900,11 @@ angular.module('navigation-modules', [])
               "path": "/core/FlashSource#setMute",
               "partial": "partials/modules//core/FlashSource/index.html",
               "name": "setMute"
+            },
+            {
+              "path": "/core/FlashSource#setAutoMute",
+              "partial": "partials/modules//core/FlashSource/index.html",
+              "name": "setAutoMute"
             },
             {
               "path": "/core/FlashSource#isStreamOnlyAudio",
@@ -7046,6 +7161,11 @@ angular.module('navigation-modules', [])
               "name": "isMute"
             },
             {
+              "path": "/core/MediaSource#isAutoMute",
+              "partial": "partials/modules//core/MediaSource/index.html",
+              "name": "isAutoMute"
+            },
+            {
               "path": "/core/MediaSource#setVolume",
               "partial": "partials/modules//core/MediaSource/index.html",
               "name": "setVolume"
@@ -7054,6 +7174,11 @@ angular.module('navigation-modules', [])
               "path": "/core/MediaSource#setMute",
               "partial": "partials/modules//core/MediaSource/index.html",
               "name": "setMute"
+            },
+            {
+              "path": "/core/MediaSource#setAutoMute",
+              "partial": "partials/modules//core/MediaSource/index.html",
+              "name": "setAutoMute"
             },
             {
               "path": "/core/MediaSource#isStreamOnlyAudio",
@@ -7686,6 +7811,16 @@ angular.module('navigation-modules', [])
               "name": "setIbgr"
             },
             {
+              "path": "/util/Color#setTransparent",
+              "partial": "partials/modules//util/Color/index.html",
+              "name": "setTransparent"
+            },
+            {
+              "path": "/util/Color#isTransparent",
+              "partial": "partials/modules//util/Color/index.html",
+              "name": "isTransparent"
+            },
+            {
               "path": "/util/Color#fromRGBString",
               "partial": "partials/modules//util/Color/index.html",
               "name": "fromRGBString"
@@ -7704,6 +7839,11 @@ angular.module('navigation-modules', [])
               "path": "/util/Color#fromBGRInt",
               "partial": "partials/modules//util/Color/index.html",
               "name": "fromBGRInt"
+            },
+            {
+              "path": "/util/Color#fromTransparent",
+              "partial": "partials/modules//util/Color/index.html",
+              "name": "fromTransparent"
             }
           ]
         },
@@ -7985,6 +8125,36 @@ angular.module('navigation-modules', [])
               "path": "/window/ExtensionWindow#off",
               "partial": "partials/modules//window/ExtensionWindow/index.html",
               "name": "off"
+            },
+            {
+              "path": "/window/ExtensionWindow#resize",
+              "partial": "partials/modules//window/ExtensionWindow/index.html",
+              "name": "resize"
+            },
+            {
+              "path": "/window/ExtensionWindow#setTitle",
+              "partial": "partials/modules//window/ExtensionWindow/index.html",
+              "name": "setTitle"
+            },
+            {
+              "path": "/window/ExtensionWindow#setBorder",
+              "partial": "partials/modules//window/ExtensionWindow/index.html",
+              "name": "setBorder"
+            },
+            {
+              "path": "/window/ExtensionWindow#close",
+              "partial": "partials/modules//window/ExtensionWindow/index.html",
+              "name": "close"
+            },
+            {
+              "path": "/window/ExtensionWindow#disableClose",
+              "partial": "partials/modules//window/ExtensionWindow/index.html",
+              "name": "disableClose"
+            },
+            {
+              "path": "/window/ExtensionWindow#enableClose",
+              "partial": "partials/modules//window/ExtensionWindow/index.html",
+              "name": "enableClose"
             }
           ]
         },

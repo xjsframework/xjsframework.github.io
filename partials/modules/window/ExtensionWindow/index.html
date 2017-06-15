@@ -17,18 +17,18 @@
 </p><h2>Members</h2>
   <section class="member constructor">
     <h1 id="constructor" class="name">constructor</h1>
-          <p>Use getInstance() instead.</p>
-      
+     <pre><code>** For Deprecation
+ </code></pre>
+ <p>Use getInstance()</p>
+ 
   </section>
 
   <section class="member">
     <a name="resize"><h1 id="resize" class="name">
       resize
     </h1></a>
-     <pre><code>param: (width: number, height: number)
- </code></pre>
- <p>Resizes this extension&#39;s window.</p>
- 
+          <p><code>** For deprecation, please use the static method instead</code></p>
+      
   </section>
 
 
@@ -36,10 +36,8 @@
     <a name="setTitle"><h1 id="setTitle" class="name">
       setTitle
     </h1></a>
-    <pre><code>param: (value: string)
-</code></pre>
-<p>Renames the extension window.</p>
-
+          <p><code>** For deprecation, please use the static method instead</code></p>
+      
   </section>
 
 
@@ -47,17 +45,8 @@
     <a name="setBorder"><h1 id="setBorder" class="name">
       setBorder
     </h1></a>
-    <pre><code>param (flag: number)
-</code></pre>
-<p>Modifies this extension&#39;s window border.</p>
-<p>&#39;4&#39; is th e base command on setting border flags.</p>
-<p>Flags can be:
-    (bit 0 - enable border)
-    (bit 1 - enable caption)
-    (bit 2 - enable sizing)
-    (bit 3 - enable minimize btn)
-    (bit 4 - enable maximize btn)</p>
-
+          <p><code>** For deprecation, please use the static method instead</code></p>
+      
   </section>
 
 
@@ -65,7 +54,7 @@
     <a name="close"><h1 id="close" class="name">
       close
     </h1></a>
-          <p>Closes this extension window</p>
+          <p><code>** For deprecation, please use the static method instead</code></p>
       
   </section>
 
@@ -74,7 +63,7 @@
     <a name="disableClose"><h1 id="disableClose" class="name">
       disableClose
     </h1></a>
-          <p>Disable Close Button on this extension&#39;s window</p>
+          <p><code>** For deprecation, please use the static method instead</code></p>
       
   </section>
 
@@ -83,7 +72,7 @@
     <a name="enableClose"><h1 id="enableClose" class="name">
       enableClose
     </h1></a>
-          <p>Enable Close Button on this extension&#39;s window</p>
+          <p><code>** For deprecation, please use the static method instead</code></p>
       
   </section>
 
@@ -92,8 +81,11 @@
     <a name="getInstance"><h1 id="getInstance" class="name">
       <code>static</code> getInstance
     </h1></a>
-          <p>Gets the instance of the window utility. Use this instead of the constructor.</p>
-      
+    <pre><code>** For deprecation, the need for getting the instance of an ExtensionWindow looks redundant,
+</code></pre>
+<p><code>** since an ExtensionWinow should technically have a single instance</code></p>
+<p>Gets the instance of the window utility. Use this instead of the constructor.</p>
+
   </section>
 
 
@@ -126,7 +118,74 @@
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
   </section>
 
+
+  <section class="member static">
+    <a name="resize"><h1 id="resize" class="name">
+      <code>static</code> resize
+    </h1></a>
+     <pre><code>param: (width: number, height: number)
+ </code></pre>
+ <p>Resizes this extension&#39;s window.</p>
+ 
+  </section>
+
+
+  <section class="member static">
+    <a name="setTitle"><h1 id="setTitle" class="name">
+      <code>static</code> setTitle
+    </h1></a>
+    <pre><code>param: (value: string)
+</code></pre>
+<p>Renames the extension window.</p>
+
+  </section>
+
+
+  <section class="member static">
+    <a name="setBorder"><h1 id="setBorder" class="name">
+      <code>static</code> setBorder
+    </h1></a>
+    <pre><code>param (flag: number)
+</code></pre>
+<p>Modifies this extension&#39;s window border.</p>
+<p>&#39;4&#39; is th e base command on setting border flags.</p>
+<p>Flags can be:
+    (bit 0 - enable border)
+    (bit 1 - enable caption)
+    (bit 2 - enable sizing)
+    (bit 3 - enable minimize btn)
+    (bit 4 - enable maximize btn)</p>
+
+  </section>
+
+
+  <section class="member static">
+    <a name="close"><h1 id="close" class="name">
+      <code>static</code> close
+    </h1></a>
+          <p>Closes this extension window</p>
+      
+  </section>
+
+
+  <section class="member static">
+    <a name="disableClose"><h1 id="disableClose" class="name">
+      <code>static</code> disableClose
+    </h1></a>
+          <p>Disable Close Button on this extension&#39;s window</p>
+      
+  </section>
+
+
+  <section class="member static">
+    <a name="enableClose"><h1 id="enableClose" class="name">
+      <code>static</code> enableClose
+    </h1></a>
+          <p>Enable Close Button on this extension&#39;s window</p>
+      
+  </section>
+
 <p class="module defined-in">exported from <a href='#/window'>window</a><br/>
-defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/C:/Users/viab/Documents/Repositories/SourceTree/xjsframework/src/window/extension.ts#L17-L209">C:/Users/viab/Documents/Repositories/SourceTree/xjsframework/src/window/extension.ts (line 17)</a>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/C:/Users/viab/Documents/Repositories/SourceTree/xjsframework/src/window/extension.ts#L17-L270">C:/Users/viab/Documents/Repositories/SourceTree/xjsframework/src/window/extension.ts (line 17)</a>
 </p>
 

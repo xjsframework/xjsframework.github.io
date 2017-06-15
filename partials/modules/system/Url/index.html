@@ -23,14 +23,18 @@ var urlPromise = new Url(&#39;https://www.xsplit.com&#39;).addToScene();
     <a name="addToScene"><h1 id="addToScene" class="name">
       addToScene
     </h1></a>
-     <pre><code>return: Promise&lt;boolean&gt;
- </code></pre>
- <p>Adds this URL to the current scene as an HTML source.</p>
- <p>Will raise an error if URL is not http or https.</p>
- 
+    <pre><code>param: (value?: number | Scene)
+</code></pre>
+<pre><code>return: Promise&lt;boolean&gt;
+</code></pre>
+<p>Adds this URL to the current scene as an HTML source by default.
+Accepts an optional parameter value, which, when supplied,
+points to the scene where item will be added instead.</p>
+<p> Will raise an error if URL is not http or https.</p>
+
   </section>
 
 <p class="module defined-in">exported from <a href='#/system'>system</a><br/>
-defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/C:/Users/viab/Documents/Repositories/SourceTree/xjsframework/src/system/url.ts#L4-L64">C:/Users/viab/Documents/Repositories/SourceTree/xjsframework/src/system/url.ts (line 4)</a>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/C:/Users/viab/Documents/Repositories/SourceTree/xjsframework/src/system/url.ts#L5-L103">C:/Users/viab/Documents/Repositories/SourceTree/xjsframework/src/system/url.ts (line 5)</a>
 </p>
 

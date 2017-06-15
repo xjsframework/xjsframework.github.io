@@ -1,0 +1,289 @@
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  width: 100%;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body * {
+  font-family: 'Source Sans Pro', sans-serif;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+a.no-hover:hover{
+  text-decoration: none;
+}
+
+span a, p a {
+  color: #0095de;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 15px;
+}
+
+#warning {
+  margin-right: 5px;
+  color: red;
+}
+
+i {
+  font-family: 'Source Sans Pro Light', sans-serif;
+  box-sizing: border-box;
+  font-size: 0.85em;
+}
+
+p code,
+ul code,
+ol code,
+td code {
+  background: #f7fafb;
+  border: #e3edf3 1px solid;
+  border-radius: 2px;
+  font-family: 'Consolas', Courier, monospace;
+  font-size: 0.85em;
+  line-height: 1.2em;
+  padding: 1px 3px;
+  white-space: pre-wrap;
+}
+
+pre code {
+  background: transparent;
+  border: 0;
+}
+
+p.center {
+  text-align: center;
+}
+
+p.inner-padding-10 * {
+  padding: 10px;
+}
+
+p em {
+  font-family: Arial;
+  font-size: 13px;
+}
+
+div.notice {
+  border: 1px solid #cdcdcd;
+  padding: 10px 10px;
+}
+
+#header {
+  margin: 68px auto 0;
+  width: 100%;
+  height: 133px;
+
+  background-image: url('../assets/squares.jpg');
+  background-size: 1700px;
+  background-position-y: -150px;
+
+  color: #FFF;
+  font-size: 38px;
+  font-weight: 600; /* semibold */
+
+  padding-left: 10%;
+  padding-top: 46px;
+}
+
+#container {
+  display: flex;
+  width: 65%;
+  margin: auto;
+}
+
+#left {
+  width: 20%;
+  min-width: 200px;
+  position: relative;
+}
+
+#right {
+  flex: 1;
+}
+
+.vertical-menu {
+  list-style: none;
+  border-left: 5px solid #0095de;
+  padding: 0;
+}
+
+.vertical-menu.stick {
+  position: fixed;
+  top: 70px;
+}
+
+.vertical-menu li {
+  padding: 10px 15px;
+}
+
+.vertical-menu li a {
+  color: #000;
+}
+
+.vertical-menu li a:hover {
+  text-decoration: underline;
+}
+
+.vertical-menu li a.active {
+  color: #0095de;
+}
+
+/* Footer stuff here */
+#copyright {
+  width: 65%;
+  height: 40px;
+  margin: auto;
+  margin-top: 125px;
+  font-size: 14px;
+  color: #666;
+  line-height: 28px;
+}
+
+.company-name {
+  font-weight: bold;
+}
+
+.quicklink {
+  list-style: none;
+  padding: 0;
+}
+
+.quicklink li {
+  margin: 15px 0;
+}
+
+.quicklink h3 {
+  text-transform: capitalize;
+}
+
+.quicklink a,
+.member {
+  border: 1px solid #cdcdcd;
+  color: #222;
+  display: block;
+  padding: 24px 38px;
+  text-decoration: none;
+  transition: all ease 0.5s;
+}
+
+.quicklink a:hover {
+  box-shadow: 0 0 10px 0 #cdcdcd;
+  border-left: 5px solid #0095de;
+}
+
+img.centered {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Tables */
+table {
+  border-collapse: collapse;
+}
+
+table code {
+  background: #ddeaff;
+}
+caption {
+  font-weight: lighter;
+  line-height: 2em;
+}
+
+tr:nth-child(even) {
+  background: #f0f4fe;
+}
+
+td {
+ padding: 4px 7px;
+}
+
+/* Warning */
+.warning {
+  color: #9F6000;
+  background-color: #FEEFB3;
+  padding-left: 10px;
+  border-radius: 5px;
+  border: 1px solid;
+  border-color: #643d29;
+}
+
+<<<<<<< HEAD
+/* Image hover style */
+.hover-enlarge:hover, .hover-enlarge-2:hover {
+=======
+button {
+  border: none;
+  cursor: pointer;
+}
+
+#download {
+  width: 246px;
+  height: 47px;
+  display: inline-block;
+  margin-left: 5px;
+}
+
+#download:hover {
+  background-position-y: -60px;
+}
+
+#download:active {
+  background-position-y: -120px;
+}
+
+#download {
+  background-image: url('../assets/btn_download.png');
+}
+
+/* Image hover style */
+.quick-img:hover {
+>>>>>>> issue-26
+  color: #424242;
+  -webkit-transition: all .3s ease-in;
+  -moz-transition: all .3s ease-in;
+  -ms-transition: all .3s ease-in;
+  -o-transition: all .3s ease-in;
+  transition: all .3s ease-in;
+  opacity: 1;
+  transform: scale(2);
+  -ms-transform: scale(2); /* IE 9 */
+  -webkit-transform: scale(2); /* Safari and Chrome */
+}
+<<<<<<< HEAD
+/* information */
+.information {
+  color: #000;
+  background-color: #009EDE;
+  padding-left: 10px;
+  border-radius: 5px;
+  border: 1px solid;
+  border-color: #643d29;
+}
+
+.information a {
+  color: #ded900;
+  text-decoration: underline;
+}
+
+.hover-enlarge {
+  width: 49%;
+}
+
+.hover-enlarge-2 {
+  width: 70%;
+=======
+
+.quick-img {
+  width: 49%;
+>>>>>>> issue-26
+}

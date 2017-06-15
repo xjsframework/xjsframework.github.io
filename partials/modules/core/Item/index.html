@@ -44,6 +44,74 @@ xjs.ready()
   </section>
 
   <section class="member">
+    <a name="on"><h1 id="on" class="name">
+      on
+    </h1></a>
+    <pre><code>param: (event: string,  handler: Function)
+</code></pre>
+<p>Allows listening to events per instance.
+Currently there are only two:
+<code>item-changed</code> and <code>item-destroyed</code>.</p>
+<p>Item change is triggered thru any property change:</p>
+<ul>
+<li>via js(source plugin/extension),</li>
+<li>via visibility-toggling through the sources list,</li>
+<li><p>or via the source properties dialog</p>
+<h4 id="usage-">Usage:</h4>
+</li>
+</ul>
+<pre><code class="lang-javascript">let itemChange = function(...args) {
+  console.log(&#39;Item has changed&#39;);
+}
+
+let current;
+let items;
+xjs.Scene.getActiveScene()
+.then( scene =&gt; {
+  current = scene;
+  return current.getItems();
+}).then( list =&gt; {
+  items = list;
+  items[0].on(&#39;item-changed&#39;, itemChange);
+});
+</code></pre>
+<p>Duplicate handlers are allowed.</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="off"><h1 id="off" class="name">
+      off
+    </h1></a>
+    <pre><code>param: (event: string,  handler: Function)
+</code></pre>
+<p>Removes specificied event handler bound by <code>on</code>.
+Note that this can only be done for named function handlers.</p>
+<h4 id="usage-">Usage:</h4>
+<pre><code class="lang-javascript">let itemChange = function(...args) {
+  console.log(&#39;Item has changed&#39;);
+}
+
+let current;
+let items;
+xjs.Scene.getActiveScene()
+.then( scene =&gt; {
+  current = scene;
+  return current.getItems();
+}).then( list =&gt; {
+  items = list;
+  items[0].on(&#39;item-changed&#39;, itemChange);
+  setTimeout( ()=&gt; {
+    items[0].off(&#39;item-changed&#39;, itemChange);
+  }, 10000);
+});
+</code></pre>
+
+  </section>
+
+
+  <section class="member">
     <a name="getId"><h1 id="getId" class="name">
       getId
     </h1></a>
@@ -483,6 +551,6 @@ Linked items are items linked to a single source.</p>
   </section>
 
 <p class="module defined-in">exported from <a href='#/core'>core</a><br/>
-defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/C:/Users/viab/Documents/Repositories/SourceTree/xjsframework/src/core/items/item.ts#L40-L569">C:/Users/viab/Documents/Repositories/SourceTree/xjsframework/src/core/items/item.ts (line 40)</a>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/C:/Users/viab/Documents/Repositories/SourceTree/xjsframework/src/core/items/item.ts#L43-L660">C:/Users/viab/Documents/Repositories/SourceTree/xjsframework/src/core/items/item.ts (line 43)</a>
 </p>
 
