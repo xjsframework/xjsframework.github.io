@@ -69,73 +69,71 @@ xjs.Scene.getActiveScene()
 </p>
 <p>
   That's the idea behind a plugin that orchestrates your stream! You can add
-  more features to this extension plugin as well, such as  <i>stream controls,
-  scene switching controls, a display of stream data, or even some source controls</i>.
+  more features to this extension plugin as well, such as stream controls,
+  scene switching controls, a display of stream data, or even some source controls.
   You can let this extension occupy a second monitor so you can control your
   stream from there.
 </p>
 <h2>DLL Utilization</h2>
 <p>
-  Other than just using the API to create your own advanced plugins. You can then also combine this with some
-  DLLs and utilize its function or even use it on its own for you to accomplish different functionalities on your plugin.
+  More advanced plugins could require low-level functions that operate on the system
+  itself, which is where DLLs can come in handy.
 </p>
 <h3>Development</h3>
 <p>
-  In creating a DLL for you plugin, you would need to first implement the XSplit plugin interface, implemment
-  some functions in global namespace, and define <i>IXSplitScriptDllContext</i>
+  If you are interested in creating a DLL for your plugin, you would need to
+  first implement the XSplit plugin interface, implement
+  some functions in global namespace, and define <code>IXSplitScriptDllContext</code>.
 </p>
 <p>The following functions must be implemented in global namespace:</p>
 <pre class="language-javascript">
 <code>
-BOOLWINAPIXSplitScriptPluginInit();
-BOOLWINAPIXSplitScriptPluginCall(IXSplitScriptDllContext*pContext,BSTR
-functionName,BSTR*argumentsArray,UINTargumentsCount,BSTR*returnValue);
-voidWINAPIXSplitScriptPluginDestroy();</code>
+BOOL WINAPI XSplitScriptPluginInit();
+BOOL WINAPI XSplitScriptPluginCall(IXSplitScriptDllContext * pContext, BSTR
+functionName, BSTR * argumentsArray, UINT argumentsCount, BSTR * returnValue);
+void WINAPI XSplitScriptPluginDestroy();</code>
 </pre>
-<p>Define <i>IXSplitScriptDllContext</i> as follows:</p>
+<p>Define <code>IXSplitScriptDllContext</code> as follows:</p>
 <pre class="language-javascript">
 <code>
 [uuid("9A554D8A-912F-4F1E-9A26-CC002B3B99BD")]
-DECLARE_INTERFACE_(IXSplitScriptDllContext,IUnknown)
+DECLARE_INTERFACE_(IXSplitScriptDllContext, IUnknown)
 {
-STDMETHOD(Callback)(BSTRfunctionName,BSTR*argumentsArray,UINT
-argumentsCount)PURE;
+    STDMETHOD(Callback)(BSTRfunctionName, BSTR * argumentsArray, UINT argumentsCount) PURE;
 };</code>
 </pre>
 <p>
-  For the full document and guide on creating your DLL for XSplitBroadcaster please see <a href="assets/WritingcustomXSplitscriptDLLsinC.pdf">this document</a>
+  For the full document and guide on creating your DLL for XSplitBroadcaster please see <a href="assets/WritingcustomXSplitscriptDLLsinC.pdf">this document.</a>
 </p>
 <h3>Usage</h3>
 <p>
-  There are two ways you can use your DLLs, after loading them into your plugin through <a href="api.html#/core/Dll"><code>Dll.load()</code></a>.
-  First is by calling the functions directly through <a href="api.html#/core/Dll"><code>Dll.call()</code></a> or <a href="api.html#/core/Dll"><code>Dll.callEx()</code></a> and the first
-  parameter is the function name.
+  After loading them into your plugin through <a href="api.html#/core/Dll"><code>Dll.load()</code></a>, you can start using the DLLs.
 </p>
 <pre class="language-javascript">
 <code>
 var dll = xjs.Dll;
 dll.load(['Scriptdlls\\SplitMediaLabs\\dllA.dll','Scriptdlls\\SplitMediaLabs\\dllB.dll']);
 
-dll.call('xsplit.EnumProcesses').then(function(value) {console.log(value);});
+dll.call('xsplit.EnumProcesses').then(function(value) { console.log(value); });
 // sample return value: "0,4,456,608,724,856,864,940,972,620,1012"</code>
 </pre>
 <p>
   The full information and detailed guide regarding the creation and use of DLL can be checked
-  at <a href="tutorials.html#/dll">Using DLLs for Extensibility</a> tutorials page. We also already have
-  an existing XSplit DLL documentation which you can check on tutorials page listed above.
+  at <a href="tutorials.html#/dll">Using DLLs for Extensibility</a> tutorials page. That tutorial
+  also documents the existing DLL functions that are already exposed for developers.
 </p>
 
-<h2>Other Services API</h2>
+<h2>External APIs</h2>
 <p>
-  Other than the use of our API and DLLs, you can also use other services API in developing
-  your own plugin. These extenral services can be used to display relevant data on the stage,
-  the most common example of this kind of services are chat and alerts, which streamers are
+  You can also use other services' APIs in developing
+  your own plugin. These external services can be used to display relevant information on the stage,
+  the most common example of which are chat and subscriber alerts, which streamers are
   very familiar with.
 </p>
 <p>
-  Though we've already provided some plugins that does this for the more
-  famous platforms, there may still be other sources that you might want to handle and create
-  for your own.
+  Though we've already provided some plugins that do exactly this for several services,
+  there may still be other services where you might want to handle and create
+  your own.
 </p>
 <h3>Authorization</h3>
 <p>
@@ -162,10 +160,10 @@ dll.call('xsplit.EnumProcesses').then(function(value) {console.log(value);});
     js = d.createElement(s); js.id = id;
     js.src = "//connect.facebook.net/en_US/sdk.js";
     fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));</code>
+}(document, 'script', 'facebook-jssdk'));</code>
 </pre>
 <p>
-  While <a href="https://dev.twitch.tv/" target="_blank"><strong>Twitch</strong></a> authentication involves 3 things.
+  Meanwhile <a href="https://dev.twitch.tv/" target="_blank"><strong>Twitch</strong></a> authentication involves 3 things.
 </p>
 <ul>
   <li><a href="https://dev.twitch.tv/docs/v5/guides/authentication/#registration" target="_blank">Registering your app</a> to obtain a client ID and client secret.</li>
@@ -174,15 +172,9 @@ dll.call('xsplit.EnumProcesses').then(function(value) {console.log(value);});
 </ul>
 <p>
   These two are just examples of how you can make use and authorize other services API into your
-  plugin. Which is why it's important to know if the service you want to create a plugin with has
-  guides and tutorial on how you can make use of their service.
+  plugin. An important tutorial you might want to look up is <a href="tutorials.html#/authentication">Authenticating to External Services</a>,
+  which helps you integrate external APIs into your XSplit plugins.
 </p>
-<h3>Next Steps</h3>
-<p>
-  After having access to these API services, you can now make use of the data that is made available to
-  you from these services and include them to your plugins.
-</p>
-
 <hr />
 <p>
   The ones listed above are not the only ways you can create some more advanced plugins. You can incorporate
