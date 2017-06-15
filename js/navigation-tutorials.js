@@ -8,6 +8,11 @@ angular.module('navigation-tutorials', [])
       "name": "Types of Plugins"
     },
     {
+      "path": "advancedxjs",
+      "partial": "tutorials/advancedxjs",
+      "name": "Installing XJS - Advanced"
+    },
+    {
       "path": "sourceplugins",
       "partial": "tutorials/sourceplugins",
       "name": "Developing Source Plugins"
@@ -21,6 +26,11 @@ angular.module('navigation-tutorials', [])
       "path": "extensions",
       "partial": "tutorials/extensions",
       "name": "Developing Extension Plugins"
+    },
+    {
+      "path": "advancedplugins",
+      "partial": "tutorials/advancedplugins",
+      "name": "Advanced Plugins"
     },
     {
       "path": "debugging",

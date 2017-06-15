@@ -60,7 +60,4 @@ $(document).ready(function() {
 
   $window.scroll(setSticky);
 
-  $download.on('click', function() {
-    window.location = 'http://cdn2.xsplit.com/xjs/download/sourceplugin.zip';
-  });
 });

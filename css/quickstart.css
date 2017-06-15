@@ -133,25 +133,6 @@ button {
   font-weight: bold;
 }
 
-#download {
-  width: 246px;
-  height: 47px;
-  display: inline-block;
-  margin-left: 5px;
-}
-
-#download:hover {
-  background-position-y: -60px;
-}
-
-#download:active {
-  background-position-y: -120px;
-}
-
-#download {
-  background-image: url('../assets/btn_download.png');
-}
-
 .download-xbc {
   background: linear-gradient(to right,#24a898,#1a8477);
   background-color: #24a898;
@@ -206,4 +187,104 @@ button {
   font-family: Segoe UI, Frutiger, Frutiger Linotype, Helvetica Neue, Arial, sans-serif;
   color: #FFFFFF;
 }
+/* Image hover style */
+.quick-img:hover {
+  color: #424242;
+  -webkit-transition: all .3s ease-in;
+  -moz-transition: all .3s ease-in;
+  -ms-transition: all .3s ease-in;
+  -o-transition: all .3s ease-in;
+  transition: all .3s ease-in;
+  opacity: 1;
+  transform: scale(2);
+  -ms-transform: scale(2); /* IE 9 */
+  -webkit-transform: scale(2); /* Safari and Chrome */
+  margin: 0 auto;
+}
 
+.quick-img {
+  width: 49%;
+}
+
+/* Text hover style */
+.black_overlay {
+  display: none;
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  z-index: 1001;
+  -moz-opacity: 0.8;
+  opacity: .80;
+  filter: alpha(opacity=80);
+}
+.white_content {
+  display: none;
+  position: fixed;
+  top: 20%;
+  left: 10%;
+  width: 80%;
+  height: 60%;
+  border: 16px solid #3a89cc;
+  background-color: white;
+  z-index: 1002;
+  overflow: auto;
+  border-radius: 5px;
+}
+
+.open-snippet {
+  background: linear-gradient(#49ACFF,#3a89cc);
+  background-color: #49ACFF;
+  display: inline-block;
+  height: 65px;
+  width: 33%;
+  border-radius: 5px;
+  font-size: 16px;
+  text-align: center;
+  line-height: 65px;
+  vertical-align: middle;
+  font-size: 25px;
+  color: black;
+  margin-top: 5px;
+}
+
+.open-snippet:hover {
+  background: linear-gradient(to top,#49ACFF,#3a89cc);
+}
+
+.code-snippet {
+  width: 49%;
+  display: inline-block;
+  position: absolute;
+  left: 0px;
+  margin-top: 28px;
+  padding: 5px 0 0 10px;
+}
+
+.code-working {
+  width: 49%;
+  display: inline-block;
+  position: absolute;
+  right: 0px;
+  margin-top: 20px;
+}
+
+.snippet-img {
+  width: 545px;
+  height: 423px;
+}
+
+.close-overlay {
+  border: 2px solid #3a89cc;
+  border-radius: 5px;
+  margin: 3px 0 0 3px;
+  background-color: #49ACFF;
+  width: 43px;
+  height: 25px;
+  text-align: center;
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+}

@@ -1,0 +1,192 @@
+<h1>Creating Advanced Plugins</h1>
+<h2>Introduction</h2>
+<p>
+  After the introduction to plugins in the Developing Sources and Developing Extensions sections,
+  this tutorial shows some techniques for creating more powerful plugins.
+</p>
+<p>
+  Plugins can make creative use of the xjs API, utilize any DLLs that ship with XSplit
+  (or developed by you!), or even incorporating the API of other services.
+  What we can give you here are some ways and ideas that you may use in
+  developing your own special plugin.
+</p>
+
+<h2>Orchestrating Your Stream</h2>
+<p>
+  Our API is continuously being updated and improved to accommodate the new
+  features and the growing needs of developers. If you still haven't checked our
+  <a href="api.html">API documentation</a>, you should definitely do so to have a general idea
+  of how the framework works.
+</p>
+<p>
+  A creative way to utilize our API is to combine them to create a whole system
+  that would control the entire flow of your stream. For example, when the stream
+  starts, a video source begins to play. Then you can set it up so that when the
+  video is done playing, it would switch to your next scene.
+</p>
+<p>
+  This is a proof-of-concept <b>Extension Plugin</b> that accomplishes the above.
+</p>
+<pre class="language-javascript">
+<code>let video;
+
+xjs.Scene.getActiveScene()
+.then(function(scene) { return scene.getItems(); })
+.then(function(items) {
+  for (var item in items) {
+    if (items[item] instanceof MediaItem) {
+      video = items[item];
+    }
+  }
+});</code>
+</pre>
+<p>
+  This code is a simple way to get the video source from the current scene (under
+  the assumption that there is exactly one video). This source should be located
+  in the scene you wish to use as your Intro scene for your stream.
+</p>
+<pre class="language-javascript">
+<code>xjs.ChannelManager.on('stream-start', function(start) {
+  video.getPlaybackDuration().then(function(time) {
+    // Set a timeout that would change the active scene
+    // to desired scene after video plays.
+    setTimeout(function() {
+      xjs.Scene.setActiveScene(2); // the next scene in your program flow
+    }, time / 1000); // time is in seconds
+
+    // Ensure video would begin from the start before playing
+    video.setPlaybackPosition(0);
+    video.setPlaying(true);
+  });
+})</code>
+</pre>
+<p>
+  The above code creates an function that would listen for the <code>stream-start</code> event;
+  once the stream begins, the video starts playing from the beginning, and a scene
+  change is triggered when the video is done. As an alternative option, you could
+  set an additional delay as to the scene change timer, and keep your video on loop. This
+  would be most helpful if you're still waiting for people to join your stream.
+</p>
+<p>
+  That's the idea behind a plugin that orchestrates your stream! You can add
+  more features to this extension plugin as well, such as  <i>stream controls,
+  scene switching controls, a display of stream data, or even some source controls</i>.
+  You can let this extension occupy a second monitor so you can control your
+  stream from there.
+</p>
+<h2>DLL Utilization</h2>
+<p>
+  Other than just using the API to create your own advanced plugins. You can then also combine this with some
+  DLLs and utilize its function or even use it on its own for you to accomplish different functionalities on your plugin.
+</p>
+<h3>Development</h3>
+<p>
+  In creating a DLL for you plugin, you would need to first implement the XSplit plugin interface, implemment
+  some functions in global namespace, and define <i>IXSplitScriptDllContext</i>
+</p>
+<p>The following functions must be implemented in global namespace:</p>
+<pre class="language-javascript">
+<code>
+BOOLWINAPIXSplitScriptPluginInit();
+BOOLWINAPIXSplitScriptPluginCall(IXSplitScriptDllContext*pContext,BSTR
+functionName,BSTR*argumentsArray,UINTargumentsCount,BSTR*returnValue);
+voidWINAPIXSplitScriptPluginDestroy();</code>
+</pre>
+<p>Define <i>IXSplitScriptDllContext</i> as follows:</p>
+<pre class="language-javascript">
+<code>
+[uuid("9A554D8A-912F-4F1E-9A26-CC002B3B99BD")]
+DECLARE_INTERFACE_(IXSplitScriptDllContext,IUnknown)
+{
+STDMETHOD(Callback)(BSTRfunctionName,BSTR*argumentsArray,UINT
+argumentsCount)PURE;
+};</code>
+</pre>
+<p>
+  For the full document and guide on creating your DLL for XSplitBroadcaster please see <a href="assets/WritingcustomXSplitscriptDLLsinC.pdf">this document</a>
+</p>
+<h3>Usage</h3>
+<p>
+  There are two ways you can use your DLLs, after loading them into your plugin through <a href="api.html#/core/Dll"><code>Dll.load()</code></a>.
+  First is by calling the functions directly through <a href="api.html#/core/Dll"><code>Dll.call()</code></a> or <a href="api.html#/core/Dll"><code>Dll.callEx()</code></a> and the first
+  parameter is the function name.
+</p>
+<pre class="language-javascript">
+<code>
+var dll = xjs.Dll;
+dll.load(['Scriptdlls\\SplitMediaLabs\\dllA.dll','Scriptdlls\\SplitMediaLabs\\dllB.dll']);
+
+dll.call('xsplit.EnumProcesses').then(function(value) {console.log(value);});
+// sample return value: "0,4,456,608,724,856,864,940,972,620,1012"</code>
+</pre>
+<p>
+  The full information and detailed guide regarding the creation and use of DLL can be checked
+  at <a href="tutorials.html#/dll">Using DLLs for Extensibility</a> tutorials page. We also already have
+  an existing XSplit DLL documentation which you can check on tutorials page listed above.
+</p>
+
+<h2>Other Services API</h2>
+<p>
+  Other than the use of our API and DLLs, you can also use other services API in developing
+  your own plugin. These extenral services can be used to display relevant data on the stage,
+  the most common example of this kind of services are chat and alerts, which streamers are
+  very familiar with.
+</p>
+<p>
+  Though we've already provided some plugins that does this for the more
+  famous platforms, there may still be other sources that you might want to handle and create
+  for your own.
+</p>
+<h3>Authorization</h3>
+<p>
+  Each service has their own Authorization process, which can be handled in different ways.
+  For example Facebook and Twitch:
+</p>
+<p>
+  <a href="https://developers.facebook.com/" target="_blank"><strong>Facebook</strong></a> requires you to include a short piece of
+  JavaScript in your HTML that will load the basic Facebook SDK on your page:
+</p>
+<pre class="language-javascript">
+<code>window.fbAsyncInit = function() {
+  FB.init({
+    appId      : 'your-app-id',
+    xfbml      : true,
+    version    : 'v2.9'
+  });
+  FB.AppEvents.logPageView();
+};
+
+(function(d, s, id){
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) {return;}
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</code>
+</pre>
+<p>
+  While <a href="https://dev.twitch.tv/" target="_blank"><strong>Twitch</strong></a> authentication involves 3 things.
+</p>
+<ul>
+  <li><a href="https://dev.twitch.tv/docs/v5/guides/authentication/#registration" target="_blank">Registering your app</a> to obtain a client ID and client secret.</li>
+  <li><a href="https://dev.twitch.tv/docs/v5/guides/authentication/#getting-access-tokens" target="_blank">Getting an access token</a>. This includes specifying scopes, or the permissions your app requires.</li>
+  <li><a href="https://dev.twitch.tv/docs/v5/guides/authentication/#sending-access-tokens" target="_blank">Sending the access token</a> in your API request, to authenticate API requests.</li>
+</ul>
+<p>
+  These two are just examples of how you can make use and authorize other services API into your
+  plugin. Which is why it's important to know if the service you want to create a plugin with has
+  guides and tutorial on how you can make use of their service.
+</p>
+<h3>Next Steps</h3>
+<p>
+  After having access to these API services, you can now make use of the data that is made available to
+  you from these services and include them to your plugins.
+</p>
+
+<hr />
+<p>
+  The ones listed above are not the only ways you can create some more advanced plugins. You can incorporate
+  other modules that you may be using and create a way for them to communicate or pass the information around.
+  And if you're stuck with something in what your doing for your plugin, please don't hesitate to reach out to
+  us on <a href="https://github.com/xjsframework/xjs/issues/new">Github</a> or <a href="https://gitter.im/xjsframework/xjs">Gitter</a>.
+</p>

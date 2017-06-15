@@ -28,6 +28,7 @@ span a, p a {
   font-style: italic;
   font-size: 15px;
 }
+
 #warning {
   margin-right: 5px;
   color: red;
@@ -216,6 +217,30 @@ td {
   border-color: #643d29;
 }
 
+button {
+  border: none;
+  cursor: pointer;
+}
+
+#download {
+  width: 246px;
+  height: 47px;
+  display: inline-block;
+  margin-left: 5px;
+}
+
+#download:hover {
+  background-position-y: -60px;
+}
+
+#download:active {
+  background-position-y: -120px;
+}
+
+#download {
+  background-image: url('../assets/btn_download.png');
+}
+
 /* Image hover style */
 .hover-enlarge:hover, .hover-enlarge-2:hover {
   color: #424242;
@@ -250,4 +275,10 @@ td {
 
 .hover-enlarge-2 {
   width: 70%;
+}
+  -webkit-transform: scale(2); /* Safari and Chrome */
+}
+
+.quick-img {
+  width: 49%;
 }

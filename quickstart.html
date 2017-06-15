@@ -29,22 +29,16 @@
             <a href="#intro">Introduction</a>
           </li>
           <li>
-            <a href="#yeoman">Getting Started using Yeoman Generator</a>
+            <a href="#start">Installing XSplit JS Framework<code></a>
           </li>
           <li>
-            <a href="#bower">Getting Started using Bower</a>
+            <a href="#source">Creating your First Source Plugin</a>
           </li>
           <li>
-            <a href="#npm">Getting Started using NPM</a>
+            <a href="#extension">Creating your First Extension Plugin</a>
           </li>
           <li>
-            <a href="#zipfile">Getting Started from ZIP files</a>
-          </li>
-          <li>
-            <a href="#cdn">Getting started using our CDN hosted file</a>
-          </li>
-          <li>
-            <a href="#createsample">Create a sample plugin</a>
+            <a href="#next">What's next?</a>
           </li>
           <li>
             <a href="#sample">Sample plugins</a>
@@ -59,11 +53,13 @@
           Plugins are important tools for extending the functionality of XSplit Broadcaster. In order to allow developers to create useful plugins for the community, we created the XSplit JS Framework to encapsulate the capabilities of the application in an easy-to-understand manner.
         </p>
         <p>
-          We will walk you through on how to get started building your own XSplit Broadcaster plugin using this framework and the tools that we made along with it.
+          We will walk you through on how to get started building your own XSplit Broadcaster plugin using this framework.
         </p>
-        <h1>Installing XSplit JS Framework</h1>
+        <a id="start" name="start">
+          <h1>Installing XSplit JS Framework</h1>
+        </a>
         <p>
-          You will need the latest developer build of XSplit Broadcaster to use the XSplit JS Framework. The framework requires minimum XBC version 2.7.1512.2124, unless stated otherwise in the API documentation.
+          First, you will need the latest developer build of XSplit Broadcaster to use the XSplit JS Framework. The framework requires minimum XBC version 2.7.1512.2124, unless stated otherwise in the API documentation.
         </p>
         <div class="download-xbc">
             <a href="http://cdn2.xsplit.com/download/bc/m32/XSplit_Broadcaster_2.9.1701.1635.exe" title="Latest Developer Build">
@@ -76,224 +72,374 @@
             </a>
         </div>
         <p>
-          We recommend using Yeoman to create your first plugin, but also outlined below are alternative methods to get development started. Please note that you will need working knowledge of JavaScript and ES6 Promises to use the framework.
+          You can install or start using the framework in a lot of ways, but fastest and the most basic way is to download <a href='http://cdn2.xsplit.com/xjs/download/2.1.1/xjs.js'><code>XSplit JS Framework</code></a>, add it on your project folder, import it on your html file, and you are good to go.
+          Outlined below are simple demonstrations on how you can use the framework in creating your own <a href="#source">Source</a> or <a href="#extension">Extension</a> plugin.
         </p>
-        <a id="yeoman" name="yeoman">
-          <h2>Getting started using Yeoman Generator</h2>
-        </a>
-        <h3>Dependencies</h3>
-        <p>
-          You'll need to have Node.js and npm installed first. If you have that installed already, great! If not, you should go to the <a href="https://nodejs.org/en/" target="_blank">official website</a>, download and install it. Also, do make sure that you have the latest version of npm to avoid issues with other tools. Finally, you will need <a href="https://git-scm.com/downloads" target="_blank">Git</a> on your machine.
-        </p>
-        <h3>Installation</h3>
-        <p>
-          Let's get started first with installing yeoman and XSplit JS Framework generator through npm.
-        </p>
-        <pre class="language-shell"><code>npm install -g bower
-npm install -g yo
-npm install -g generator-xjs</code></pre>
-        <p>
-          That will allow you to generate XSplit JS Framework based projects through the command <code>yo xjs</code>.
-        </p>
-        <p>
-          To use our generator, you'll have to create your project folder, and then scaffold your project in there:
-        </p>
-        <pre class="language-shell"><code>mkdir YOUR_DIR
-cd YOUR_DIR
-yo xjs</code></pre>
-        <p>
-          You will be prompted with a number of options like project name, version, plugin type, and package name.
-        </p>
-        <p>
-          That should create the basic structure for your plugin, including a generic HTML file you can use to get started. The directory should now also include the file <code>xjs.js</code>, which contains the framework code. We also included <code>browsersync</code> for you to test your plugin on a browser first; all you have to do is execute <code>gulp</code> in the root folder of your project.
-        </p>
-        <hr />
-        <a id="bower" name="bower">
-          <h2>Getting started using bower</h2>
+        <a id="source" name="source">
+          <h2>Creating your First Source Plugin</h2>
         </a>
         <p>
-          Our Yeoman Generator also makes use of bower, but the generator simply executes it automatically. In this section, we assume that you hate automation, and that you would love to use bower by yourself for whatever reason.
+          What is a Source plugin? Source plugins are objects that may be added to your presentation to be included in your streams and recordings.
         </p>
-        <h3>Installation</h3>
         <p>
-          To use bower, install it first, and then fetch <code>xjs-framework</code> through bower.
+          The image below is an example of a source plugin. This in particular, changes text once you start/stop a stream or recording.
         </p>
-        <pre class="language-shell"><code>npm install -g bower
-bower install xjs-framework</code></pre>
-        <p>
-        <p>
-          This creates a <code>bower_components</code> folder. The relevant file is <code>bower_components/xjs-framework/dist/xjs.js</code>, which you should include in your plugin's HTML file. All other details of the project structure are up to you. See the following example for what a basic plugin might look like.
+        <p class="center inner-padding-10">
+          <img class="quick-img" src="assets/sample-source.gif">
         </p>
-        <h4>Example:</h4>
-        <pre class="language-markup"><code>&lt;html&gt;
+        <p>
+          Let's build this plugin step by step! This example would need to use the <code>ChannelManager</code> class of the framework to listen for the <code>stream-start</code> and <code>stream-end</code> events from XSplit Broadcaster.
+        </p>
+<pre class="language-markup">
+<code>
+&lt;html&gt;
+&lt;head&gt;
+  &lt;link rel="stylesheet" href="css/style.css"&gt;
+&lt;/head&gt;
 &lt;body&gt;
-  &lt;script src="bower_components/xjs-framework/dist/xjs.js"&gt;&lt;/script&gt;
+  &lt;div id="stream-status"&gt;
+  Stream is not Live
+  &lt;/div"&gt;
+  &lt;script src="js/xjs.js"&gt;&lt;/script&gt;
   &lt;script src="js/main.js"&gt;&lt;/script&gt;
 &lt;/body&gt;
-&lt;/html&gt;</code></pre>
-        <p>
-          For plugin publishing, you will also need to create an XML file&mdash;this is actually automatically generated for you if you used Yeoman! (Please note that as of time of writing, the details regarding the plugin store and plugin publishing methodology are still being worked out.) The following is the XML you will need; simply replace the values in the <code>&lt;Name&gt;</code> and <code>&lt;ProperName&gt;</code> nodes with your desired plugin name.
-        </p>
-        <pre class="language-markup"><code>&lt;?xml version="1.0"?&gt;
-&lt;config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;CanPause&gt;false&lt;/CanPause&gt;
-  &lt;CanPlay&gt;false&lt;/CanPlay&gt;
-  &lt;CanSetVolume&gt;false&lt;/CanSetVolume&gt;
-  &lt;CanStepBackward&gt;false&lt;/CanStepBackward&gt;
-  &lt;CanStepForward&gt;false&lt;/CanStepForward&gt;
-  &lt;CanStop&gt;false&lt;/CanStop&gt;
-  &lt;Description /&gt;
-  &lt;HelpLink /&gt;
-  &lt;HelpText /&gt;
-  &lt;Name&gt;test&lt;/Name&gt;
-  &lt;param name="flashvars" value="" /&gt;
-  &lt;ProperName&gt;test&lt;/ProperName&gt;
-  &lt;Category&gt;&lt;/Category&gt;
-  &lt;ShowConfigOnAdd&gt;false&lt;/ShowConfigOnAdd&gt;
-  &lt;MinCompatibleVersion&gt;2.3.1505.0516&lt;/MinCompatibleVersion&gt;
-  &lt;MinFxVersion&gt;2.3.1505.0516&lt;/MinFxVersion&gt;
-  &lt;Version&gt;0.1.0&lt;/Version&gt;
-&lt;/config&gt;</code></pre>
-        <hr />
-        <a id="npm" name="npm">
-          <h2>Getting started using NPM</h2>
-        </a>
-        <p>
-          Usage of NPM is similar to using Bower to fetch the XSplit JS Framework.
-        </p>
-        <h3>Installation</h3>
-        <p>
-          At this point, we already have npm installed. Just execute this in your CLI:
-        </p>
-        <pre class="language-shell"><code>npm install xjs-framework</code></pre>
-        <p>
-          This would create a <code>node_modules</code> folder. The relevant file is <code>node_modules/xjs-framework/dist/xjs.js</code>, which you should include in your plugin's HTML file. All other details of the project structure are up to you. Sample usage can be seen in the <a href="#sample">sample plugin code</a> below.
-        </p>
-        <p>
-          This approach also opens up an alternative coding method. You can create your plugins using TypeScript or ES6 due to the availability of the <code>package.json</code> file and the source code written in TypeScript. To learn more, see <a href="tutorials.html#/es6" target="_blank">our tutorials</a>.
-        </p>
-        <hr />
-        <a id="zipfile" name="zipfile">
-          <h2>Getting started from ZIP files</h2>
-        </a>
-        <p>
-          In case you hate modern methods, you could always use the dinasour aged approach by downloading our framework as a ZIP file. Please click the button below to download it.
-        </p>
-        <p>
-          <button id="download"></button>
-        </p>
-        <p>
-          When you download XSplit JS Framework as a ZIP file, you would get the initial structure of a Source Plugin along the xjs file located under bower_components folder.
-        </p>
-        <p>
-          In case you need to automatically update the framework to the latest available version, you could always execute <code>bower update</code> on your CLI.
-        </p>
-        <hr />
-        <a id="cdn" name="cdn">
-          <h2>Getting started using our CDN hosted file</h2>
-        </a>
-        <p>
-          In case you need to create a plugin fast, and just want to use our hosted version of XJS Framework, all you have to do is add this line to your html file:
-        </p>
-        <pre class="language-markup"><code>&lt;script src="https://cdn2.xsplit.com/xjs/download/xjs.js"&gt;&lt;/script&gt;</code></pre>
-        <p>Or use the minified version:</p>
-        <pre class="language-markup"><code>&lt;script src="https://cdn2.xsplit.com/xjs/download/xjs.min.js"&gt;&lt;/script&gt;</code></pre>
-        <p>
-          The problem with this method is that our servers cache static files, thus we cannot ensure that the file hosted is the latest version of the framework, specially if we just released a new version of the framework within the past 24 hours.
-        </p>
-        <hr />
-        <a id="createsample" name="createsample">
-          <h2>Let's create a sample plugin!</h2>
-        </a>
-        <p>
-         Let's try making a <strong>source plugin</strong> that would display all the sources displayed in the very first scene. If you started with the Yeoman generator, let's open up <code>main.js</code>, and write the following code:
-        </p>
-        <pre class="language-javascript"><code>var xjs = require('xjs');
+&lt;/html&gt;</code>
+</pre>
+<p>
+  You can see above that we have set up an initial html file that imports the framework.
+  We have also created a <code>&lt;div&gt;</code> that contains the initial text when the stream is not yet live/recording. This text should change immediately when the stream starts.
+</p>
+<p>
+  Next, let's use the framework through our <code>main.js</code> file.
+</p>
+<pre class="language-javascript">
+<code>
+var xjs = require('xjs');
 
-// always perform xjs functions when it is ready
 xjs.ready().then(function() {
-  // get the first scene
-  return xjs.Scene.getById(0)
-}).then(function(scene) {
-  // enumerate all unique sources in the scene
-  return scene.getSources();
-}).then(function(sources) {
-  for (var i in sources) {
-    // get the name of each scene
-    sources[i].getName().then(function(name) {
-      var p = document.createElement('p');
-      p.textContent = name;
-      document.body.appendChild(p);
+  xjs.ChannelManager.on('stream-start', function() {
+    document.getElementById('stream-status').innerHTML = 'Stream is Live';
+  });
+
+  xjs.ChannelManager.on('stream-end', function() {
+    document.getElementById('stream-status').innerHTML = 'Stream is not Live';
+  });
+})</code>
+</pre>
+<p>
+  <em>* We're assuming that you are knowledgeable with Promises in JavaScript. If you are not, please do check it out on <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Promise" target="_blank">MDN</a> or other articles about Promise programming.</em>
+</p>
+<p>
+  First, the framework is loaded and saved into the <code>xjs</code> variable. We would then access the framework's <code>ready()</code> method; a method that returns a promise,
+  which resolves when XSplit JS Framework is ready to use. Always make sure your app checks when the framework is ready before it starts to use the framework!
+</p>
+<p>
+  Let's dissect the code further...
+</p>
+<p>XSplit Broadcaster emits the <code>stream-start</code> and <code>stream-end</code> events through the <code>ChannelManager</code> class.</p>
+<pre class="language-javascript">
+<code>
+xjs.ChannelManager.on('stream-start', ...)
+
+xjs.ChannelManager.on('stream-end', ...)</code>
+</pre>
+<p>
+  Here, we include a handler for when your stream has started/stopped. For our sample plugin, we can just change the text of the appropriate <code>&lt;div&gt;</code>.
+</p>
+<pre class="language-javascript">
+<code>
+function() {
+    document.getElementById('stream-status').innerHTML = 'Stream is not Live/Live';
+  }</code>
+</pre>
+<p>
+  And then, you can create a CSS file and update how your plugin would look like.
+  For this example, I set the background-color as transparent for it to blend in with the scene and only the text would be visible. (By default, text color is black.)
+</p>
+<pre class="language-css">
+<code>
+body {
+  background-color: transparent;
+  color: white;
+}</code>
+</pre>
+<p>
+  Once, you are done with all of this, you would have to add and test your plugin. You can simply drag the index.html file to the stage or add it as a media file:
+</p>
+<p class="center inner-padding-10">
+  <img class="quick-img" src="assets/add-media.png">
+  <img class="quick-img" src="assets/add-media-2.png">
+</p>
+<p>
+  And there you have it, your very first Source Plugin!
+</p>
+<p class="center inner-padding-10">
+  <img class="quick-img" src="assets/sample-source.gif">
+</p>
+<p>
+  For more information about Sources and other things you can do with them (such as applying a <strong>Custom Configuration Object</strong>),
+  please check the <a href="tutorials.html#/sourceplugins">Developing Sources</a> tutorials page.
+</p>
+<hr />
+
+<a id="extension" name="extension">
+  <h2>Create your first Extension Plugin</h2>
+</a>
+<p>
+  What is an Extension? Extension plugins are tools that you can use to do different kinds of tasks to manipulate
+  the XSplit Broadcaster application itself. Seen below is a sample scene switching extension, followed by a step-by-step guide to make it.
+</p>
+<p class="center inner-padding-10">
+  <img class="quick-img" src="assets/extension_sample.gif">
+</p>
+<p>
+  Much like how Source Plugins are created, extensions also require an HTML file.
+  For this one, we'll be creating an extension plugin that would load up all the scenes, creating buttons for each of them that allows you to switch to that scene.
+</p>
+<pre class="language-markup">
+<code>
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;p&gt;Sample Scene Switch&lt;/p&gt;
+    &lt;div id='scene-id'&gt;
+    &lt;/div&gt;
+    &lt;script src="js/xjs.js"&gt;&lt;/script&gt;
+    &lt;script src="js/main.js"&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code>
+</pre>
+<p>
+  In the above html, we will append the scene buttons to the<code>scene-id</code> element. Let's check out what we need to do in <code>main.js</code>.
+</p>
+<pre class="language-javascript">
+<code>var xjs = require('xjs');
+
+xjs.ready()
+.then(function() {
+  return xjs.Scene.getSceneCount();
+}).then(function(count) {
+  for(let i = 1; i < count + 1; i++) {
+    xjs.Scene.getById(i).then(function(scene) {
+      var newElement = document.createElement('BUTTON');
+      var t = document.createTextNode('Scene:: '+ i);
+      newElement.appendChild(t);
+      document.getElementById('scene-id').appendChild(newElement);
+      newElement.addEventListener('click', function() {
+        xjs.Scene.setActiveScene(scene);
+      });
     });
   }
+});</code>
+</pre>
+<p>
+  Now, let's dissect the sample code above.
+</p>
+<p>
+  XSplit Broadcaster can have any number of scenes and we can get the current number using <code>getSceneCount</code>.
+</p>
+<pre class="language-javascript">
+<code>
+.then(function() {
+  return xjs.Scene.getSceneCount();
+})</code>
+</pre>
+<p>
+  With the scene count, we then loop through the scenes and create buttons for each one of them.
+</p>
+<pre class="language-javascript">
+<code>
+xjs.Scene.getById(i).then(function(scene) {
+  var newElement = document.createElement('BUTTON');
+  var t = document.createTextNode('Scene:: '+ i);
+  newElement.appendChild(t);
+  document.getElementById('scene-id').appendChild(newElement);
 });</code></pre>
-        <p>
-          Let's dissect the sample code above.
-        </p>
-        <p>
-          <em>* We're assuming that you are knowledgeable with Promises in JavaScript. If you are not, please do check it out on <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Promise" target="_blank">MDN</a> or other articles about Promise programming.</em>
-        </p>
-        <p>
-          The first line of the code loads the framework and save it to the <code>xjs</code> variable. We then accessed the framework's <code>ready()</code> method; a method that returns a promise, which will resolve when XSplit JS Framework is ready to use. Always make sure to do your development when the framework is ready!
-        </p>
-        <pre class="language-javascript"><code>xjs.ready()</code></pre>
-        <p>
-          XSplit Broadcaster exposes a number of scenes to the user. <code>Scene.getById</code> will resolve with a <code>Scene</code> object corresponding to the index you supply.
-        </p>
-        <pre class="language-javascript"><code>.then(function(){
-  return xjs.Scene.getById(0);
-})
-</code></pre>
-        <p>
-          This Scene object has a method named <code>getSources</code> which will resolve with an array of Source instances, each referring to a source placed on the current scene.
-        </p>
-        <pre class="language-javascript"><code>.then(function(scene) {
-  return scene.getSources();
-})</code></pre>
-        <p>
-          Each of the sources is an instance of <code>Source</code> or a subclass thereof. However, all types of <code>Source</code> instances have <a href="api.html#/core/Source" target="_blank">common methods</a>, which includes the <code>getName</code> method. <code>Source.getName</code> returns a Promise which will resolve with a string as the parameter.
-        </p>
-        <pre class="language-javascript"><code>.then(function(sources) {
-  for (var i in sources) {
-    // get the name of each scene
-    sources[i].getName().then(function(name) {
-      var p = document.createElement('p');
-      p.textContent = name;
-      document.body.appendChild(p);
-    });
-  }
+<p>
+  After assigning each instance of Scene with a button, we also add a click event listener on them. To change scenes, we can pass the desired <code>Scene</code> object into <code>setActiveScene()</code>.
+</p>
+<pre class="language-javascript">
+<code>
+newElement.addEventListener('click', function(){
+  xjs.Scene.setActiveScene(scene);
 });</code></pre>
+<p>
+  Once this is all done, you can now add your extension to XSplit Broadcaster. Navigate to the extensions menu to add a custom extension and add your HTML file.
+</p>
+<p class="center inner-padding-10">
+  <img class="quick-img" src="assets/add_ext_1.png">
+  <img class="quick-img" src="assets/add_ext_2.png">
+</p>
+<p>
+  You will then see it on the Extensions menu. Click on your extension to open it in a separate window.
+</p>
+<p class="center inner-padding-10">
+  <img class="quick-img" src="assets/extension_sample.gif">
+</p>
+<p>
+  And there you have it! An extension plugin that contains all your scenes and can also switch scenes.
+</p>
+<p>
+  For more information on the things you can do with Extensions,
+  you can read more about it on <a href="tutorials.html#/extensions">Developing Extension Plugins</a> tutorials page.
+</p>
+<h3>Sample Snippets</h3>
+
+<p>Here are some more sample snippets you can check out to get a better idea of how the framework might be used. Many of these will work only in extensions.</p>
+
+<div class="lightbox-content">
+          <!-- SAMPLE SNIPPET 1 -->
+          <a href="javascript:void(0)" onclick="document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'">
+            <div class="open-snippet" id="open-snippet">
+              Spawning Dialogs
+            </div>
+          </a>
+          <div id="light" class="white_content">
+            <a href="javascript:void(0)" onclick="document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'">
+              <div class="close-overlay">
+                Close
+              </div>
+            </a>
+            <div class="code-snippet">
+<pre class="language-javascript">
+<code>
+xjs.Dialog.createDialog('https://www.xsplit.com/')
+  .setSize(300, 300)
+  .setTitle('This is a sample dialog')
+  .setBorderOptions(true, false)
+  .setButtons(true, true)
+  .show();
+});</code>
+</pre>
+              <p>
+                Dialog class is used to spawn new browser processes that can be used to open other URLs.
+                Source plugins do not have this functionality (but their source properties windows may use this.)
+              </p>
+
+              <p>
+                View more information about the Dialog class on its <a href="api.html#/window/Dialog">Dialog API</a> page.
+              </p>
+            </div>
+            <div class="code-working">
+              <img class="snippet-img" src="assets/quickstart/spawndialog.gif">
+            </div>
+          </div>
+
+          <!-- SAMPLE SNIPPET 2 -->
+          <a href="javascript:void(0)" onclick="document.getElementById('light-4').style.display='block';document.getElementById('fade').style.display='block'">
+            <div class="open-snippet" id="open-snippet">
+              Start/Stop Stream
+            </div>
+          </a>
+          <div id="light-4" class="white_content">
+          <a ref="javascript:void(0)" onclick="document.getElementById('light-4').style.display='none';document.getElementById('fade').style.display='none'">
+            <div class="close-overlay">
+              Close
+            </div>
+          </a>
+            <div class="code-snippet">
+<pre class="language-javascript">
+<code>button1.addEventListener('click', function(){
+  stream.startBroadcast();
+});
+button2.addEventListener('click', function(){
+  stream.stopBroadcast();
+});</code>
+</pre>
+              <p>
+                <em>* <code>stream</code> is an instance of <code>Output</code> that you can get using <code>Output.getOutputList()</code></em>
+              </p>
+              <p>
+                The <code>Output</code> class provides methods to start and stop a stream/recording, and to pause or unpause a Local Recording.
+              </p>
+
+              <p>
+                View more information about the Output class on its <a href="api.html#/core/Output">Output API</a> page.
+              </p>
+            </div>
+            <div class="code-working">
+              <img class="snippet-img" src="assets/quickstart/stream.gif">
+            </div>
+          </div>
+
+          <!-- SAMPLE SNIPPET 3 -->
+          <a href="javascript:void(0)" onclick="document.getElementById('light-5').style.display='block';document.getElementById('fade').style.display='block'">
+            <div class="open-snippet" id="open-snippet">
+              Media Control
+            </div>
+          </a>
+          <div id="light-5" class="white_content">
+          <a ref="javascript:void(0)" onclick="document.getElementById('light-5').style.display='none';document.getElementById('fade').style.display='none'">
+            <div class="close-overlay">
+              Close
+            </div>
+          </a>
+            <div class="code-snippet">
+<pre class="language-javascript">
+<code>if (sources[0] instanceof xjs.MediaSource) {
+  playBtn.addEventListener('click', function(){
+    sources[0].setPlaying(true);
+  });
+
+  pauseBtn.addEventListener('click', function(){
+    sources[0].setPlaying(false);
+  });
+}</code>
+</pre>
+              <p>
+                <em>* <code>sources</code> is an instance of a <code>Source</code> that you can get using <code>scene.getSources()</code>.</em>
+              </p>
+              <p>
+                The <code>MediaSource</code> class represents the media sources (such as video) that has been added to the stage.
+              </p>
+              <p>
+                View more information about the MediaSource Class on its <a href="api.html#/core/MediaSource">MediaSource API</a> page.
+              </p>
+            </div>
+            <div class="code-working">
+              <img class="snippet-img" src="assets/quickstart/media.gif">
+            </div>
+          </div>
+
+          <div id="fade" class="black_overlay"></div>
+</div>
+
+
+<hr />
+        <a id="next" name="next">
+          <h2>Where to go from here?</h2>
+        </a>
+        <h3>Check the API</h3>
         <p>
-          For more in-depth information, please do check out our <a href="api.html" target="_blank">API</a>, or our <a href="tutorials.html" target="_blank">tutorials</a> for articles on achieving certain tasks using the framework.
+          We highly suggest you check our <a href="api.html">API</a> to further explore the things you can do using the framework.
+          Here, you can see more detailed information about the classes and methods that we've used in the examples and all the other
+          ones you can still use in the future.
+          We are constantly adding features to our framework and the best place to read more about them is here.
+        </p>
+        <h3>Read more Tutorials</h3>
+        <p>
+          You can also go ahead and check the <a href="tutorials.html">Tutorials</a> section to learn more about specific use cases, as well as advanced stuff you do with xjs framework.
+          There are also more plugin examples there that you might be interested in checking and may find useful.
         </p>
         <p>
-          For now, let's update the CSS file located on the css folder, and set the background to white.
+          There are also other guides on the tutorials section about the common errors that you may encounter and debugging tips that you may find
+          useful while you create your own plugin.
         </p>
-        <pre class="language-css"><code>body {
-  background: #FFF;
-}</code></pre>
+        <h3>Take a look at the Plugin Store</h3>
         <p>
-          To test our plugin, we could run <code>gulp</code> on your project root. <strong>(Note: this will only work if you scaffolded your project using our generator! You may host your HTML locally otherwise.)</strong> This should create a temporary dev server that would host your plugin, which you can access at <code>http://localhost:9001</code>. This method has the added advantage of automatically refreshing your plugin in XSplit when changes are detected inside your code.
+          The XSplit Broadcaster App has a <strong>Plugin Store</strong> that already have loads of plugins that you can download and use for free at our Plugin Store,
+          and we make a constant effort to make new ones to provide you with the needed tools to make your
+          streams and recordings have the elements that you need.
         </p>
+        <h3>Contribute</h3>
         <p>
-          Now open up your XSplit Broadcaster, log-in, and add a web URL source with the URL set to <code>http://localhost:9001</code>.
-        </p>
-        <p class="center inner-padding-10">
-          <img src="assets/xbc-add-othersource.png" />
-          <img src="assets/xbc-add-url.png" />
-        </p>
-        <p>
-          That should add your plugin to the stage, and it should list all items placed in the active scene.
+          You may have ideas of your own or have found a bug on the framework. We have an incredible community of developers who are passionate about solving problems and
+          want to listen to your ideas. For this, you could send us some questions or suggestions at <a href="https://github.com/xjsframework/xjs/issues/new">Github</a> or directly chat with us on <a href="https://gitter.im/xjsframework/xjs">Gitter</a>.
         </p>
         <p>
-          If you manually created your plugin project, you can simply drag the <code>index.html</code> file to the stage. That should work. Or, you add it as a media file:
-        </p>
-        <p class="center inner-padding-10">
-          <img src="assets/xbc-add-media.png" />
-          <img src="assets/xbc-add-media2.png" />
-        </p>
-        <p>
-          For more information or guides, please do check out our <a href="tutorials.html" target="_blank">tutorials</a>.
+          We hope to hear from you and would love to check out the plugins you've created.
         </p>
         <hr />
         <a id="sample" name="sample">
