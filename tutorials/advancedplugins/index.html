@@ -123,17 +123,17 @@ dll.call('xsplit.EnumProcesses').then(function(value) { console.log(value); });
   also documents the existing DLL functions that are already exposed for developers.
 </p>
 
-<h2>Other Services API</h2>
+<h2>External APIs</h2>
 <p>
-  Other than the use of our API and DLLs, you can also use other services API in developing
-  your own plugin. These extenral services can be used to display relevant data on the stage,
-  the most common example of this kind of services are chat and alerts, which streamers are
+  You can also use other services' APIs in developing
+  your own plugin. These external services can be used to display relevant information on the stage,
+  the most common example of which are chat and subscriber alerts, which streamers are
   very familiar with.
 </p>
 <p>
-  Though we've already provided some plugins that does this for the more
-  famous platforms, there may still be other sources that you might want to handle and create
-  for your own.
+  Though we've already provided some plugins that do exactly this for several services,
+  there may still be other services where you might want to handle and create
+  your own.
 </p>
 <h3>Authorization</h3>
 <p>
@@ -160,10 +160,10 @@ dll.call('xsplit.EnumProcesses').then(function(value) { console.log(value); });
     js = d.createElement(s); js.id = id;
     js.src = "//connect.facebook.net/en_US/sdk.js";
     fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));</code>
+}(document, 'script', 'facebook-jssdk'));</code>
 </pre>
 <p>
-  While <a href="https://dev.twitch.tv/" target="_blank"><strong>Twitch</strong></a> authentication involves 3 things.
+  Meanwhile <a href="https://dev.twitch.tv/" target="_blank"><strong>Twitch</strong></a> authentication involves 3 things.
 </p>
 <ul>
   <li><a href="https://dev.twitch.tv/docs/v5/guides/authentication/#registration" target="_blank">Registering your app</a> to obtain a client ID and client secret.</li>
@@ -172,15 +172,9 @@ dll.call('xsplit.EnumProcesses').then(function(value) { console.log(value); });
 </ul>
 <p>
   These two are just examples of how you can make use and authorize other services API into your
-  plugin. Which is why it's important to know if the service you want to create a plugin with has
-  guides and tutorial on how you can make use of their service.
+  plugin. An important tutorial you might want to look up is <a href="tutorials.html#/authentication">Authenticating to External Services</a>,
+  which helps you integrate external APIs into your XSplit plugins.
 </p>
-<h3>Next Steps</h3>
-<p>
-  After having access to these API services, you can now make use of the data that is made available to
-  you from these services and include them to your plugins.
-</p>
-
 <hr />
 <p>
   The ones listed above are not the only ways you can create some more advanced plugins. You can incorporate
