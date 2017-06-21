@@ -4,7 +4,7 @@
 </p>
 <h3>Specifying the properties window</h3>
 <p>
-  For the application to locate the correct properties window HTML file, the source HTML must contain metadata to specify this. If you are using our Yeoman generator to quickly generate a source plugin (<a href="quickstart.html#yeoman" target="_blank">see here</a>), this is automatically generated for you.
+  For the application to locate the correct properties window HTML file, the source HTML must contain metadata to specify this. If you are using our Yeoman generator to quickly generate a source plugin (<a href="quickstart.html#yeoman" target="_blank">see here</a>), this is automatically generated for you. <strong>Make sure that xjs is imported in your source! Otherwise, this metadata cannot be read properly!</strong>
 </p>
 <pre class="language-html"><code>&lt;meta name="xsplit:config-url" content="./config.html"&gt;</code></pre>
 <h3>Properties window layouts</h3>
