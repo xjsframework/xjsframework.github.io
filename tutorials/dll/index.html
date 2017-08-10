@@ -52,7 +52,8 @@ window.OnDllOnInputHookEvent = function(msg, wparam, lparam) { }</code></pre>
 var dll = xjs.Dll;
 
 xjs.ready().then(function() {
-  dll.load(['Scriptdlls\\SplitMediaLabs\\XjsEx.dll']); // path for loading is relative to the application folder
+  // path for loading is relative to the application folder
+  dll.load(['Scriptdlls\\SplitMediaLabs\\XjsEx.dll']);
 
   // update the element with whether the file exists
   var fileStatus = document.getElementById('fileStatus');
