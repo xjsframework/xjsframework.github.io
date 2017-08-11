@@ -3,7 +3,7 @@
   The properties window is a very important tool to allow customization of your source plugin. This article details how to use the framework to layout the window, and to allow the window access to the source's custom configuration object. Developers begin by creating HTML for the properties window's graphical interface.
 </p>
 
-<h2>Prerequisite</h2>
+<h2><span id='information'>&#9888; </span> Prerequisite</h2>
   <p>
     Before you can begin on creating and designing the Source Properties Window,
     the items listed here should first be met. Missing one or more of these requiremts
@@ -11,11 +11,11 @@
   </p>
   <ul>
     <li>
-      The Source Plugin that you are developing this Source Properties should have
-      <strong>xjs</strong> imported in it and <code>xjs.ready()</code> has been called
+      The Source that you are developing this Source Properties should have
+      <strong>xjs</strong> imported in it and <code>xjs.ready()</code> called.
     </li>
     <li>
-      The Source Plugin should the meta tag below:
+      The Source should contain the meta tag below:
       <pre class="language-html">
       <code>&lt;meta name="xsplit:config-url" content="./config.html"&gt;</code></pre>
     </li>
@@ -28,6 +28,12 @@
       <strong>useTabbedWindow</strong> or <strong>useFullWindow</strong>
     </li>
   </ul>
+  <p>
+    If you are using Yeoman generator to quickly generate a source plugin
+    (<a href="tutorials.html#/advancedxjs#yeoman">see here</a>) or have opt to use
+    the simple approach by downloading the zip file(<a href="tutorials.html#/advancedxjs#zipfile">see here</a>),
+    this is automatically generated for you.
+  </p>
 <h3>Properties window layouts</h3>
 <p>
   The framework allows developers two different layout schemes for the properties window. The first is called tabbed mode, which allows users to leverage XSplit's existing tab system, and even to reuse a number of existing core tabs. The second is called full mode, which gives the developers total control over the full space of the window (the title bar and the Keep Source in Memory checkbox is already supplied).
