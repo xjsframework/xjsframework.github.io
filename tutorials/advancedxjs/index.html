@@ -99,7 +99,7 @@ bower install xjs-framework</code></pre>
   In case you need a very simple approach, you can just use this zip file. It contains a basic folder structure for a source plugin (but it can be used for extensions as well.) Please click the button below to download it.
 </p>
 <p>
-  <button id="download"></button>
+  <button id="download" onclick="downloadZip();"></button>
 </p>
 <p>
   In case you need to update the framework to the latest available version, you could always execute <code>bower update</code> on your CLI.
@@ -119,11 +119,3 @@ bower install xjs-framework</code></pre>
   The problem with this method is that our servers cache static files, thus we cannot ensure that the file hosted is the latest version of the framework, especially if we just released a new version of the framework within the past 24 hours. <strong>We recommend exploring the other options instead of linking to our CDN if you are developing a plugin, and not merely testing out the capabilities of the framework.</strong>
 </p>
 <hr />
-
-<script>
-  document.getElementById('download').addEventListener('click', function(e) {
-    if (e.which === 1) {
-      window.location = 'http://cdn2.xsplit.com/xjs/download/sourceplugin.zip';
-    }
-  });
-</script>
