@@ -2,6 +2,45 @@
 <h1 class="class export">Output <span class="type">class</span></h1>
 <p><p>The Output class provides methods to start and stop a stream/recording
 and pause or unpause a Local Recording.</p>
+<p>This can be used together with <a href='#core/StreamInfo'>StreamInfo Class</a>,
+where you can check the status of the outputs you start.</p>
+<h3 id="basic-usage">Basic Usage</h3>
+<pre><code class="lang-javascript">var xjs = require(&#39;xjs&#39;);
+var streamName;
+xjs.Output.getOutputList()
+.then(function(outputs) {
+  outputs.map(output =&gt; {
+   output.getName()
+   .then(function(name) {
+     // You can also save the name on a variable to be able to use it
+     // when checking for the stream info.
+     if(name.includes(&#39;Twitch&#39;)) {
+       streamName = name
+       output.startBroadcast();
+     }
+   })
+ })
+})
+</code></pre>
+<p>Once there&#39;s an active stream, StreamInfo class can be used at any time to
+check the stream status of that output.</p>
+<pre><code class="lang-javascript">xjs.StreamInfo.getActiveStreamChannels
+.then(function(channels) {
+  var stream = []
+  channels.forEach(function(channel){
+    channel.getName()
+    .then(name =&gt; {
+      if(name === streamName) {
+        stream.push(channel)
+      }
+    })
+  })
+  return stream
+}).then(function(stream) {
+  // Get any stream information you need here
+  return stream[0].getStreamRenderedFrames()
+})
+</code></pre>
 </p><h2>Members</h2>
   <section class="member constructor">
     <h1 id="constructor" class="name">constructor</h1>
@@ -23,9 +62,17 @@ and pause or unpause a Local Recording.</p>
     <a name="startBroadcast"><h1 id="startBroadcast" class="name">
       startBroadcast
     </h1></a>
-    <pre><code>return: Promise&lt;boolean&gt;
+    <pre><code>param: ([options]) -- see below
+</code></pre>
+<pre><code>return: Promise&lt;boolean&gt;
 </code></pre>
 <p>Start a broadcast of the provided channel.</p>
+<p>Accepts an optional JSON object argument,
+which can be used to indicate certain flags, such as (additional options may be added):</p>
+<ul>
+<li><code>suppressPrestreamDialog</code> : used to bypass the showing of the pre-stream dialog
+of the outputs supporting it, will use last settings provided</li>
+</ul>
 
   </section>
 
@@ -82,7 +129,9 @@ xjs.Output.getOutputList()
    output.getName()
    .then(function(name) {
      if(name.includes(&#39;Twitch&#39;)) {
-       output.startBroadcast();
+       output.startBroadcast({
+         suppressPrestreamDialog : true
+       });
      }
    })
  })
@@ -92,6 +141,6 @@ xjs.Output.getOutputList()
   </section>
 
 <p class="module defined-in">exported from <a href='#/core'>core</a><br/>
-defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/core/output.ts#L11-L227">../src/core/output.ts (line 11)</a>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/src/core/output.ts#L17-L299">../src/core/output.ts (line 17)</a>
 </p>
 

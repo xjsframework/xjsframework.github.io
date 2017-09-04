@@ -1,7 +1,30 @@
 
 <h1 class="class export">StreamInfo <span class="type">class</span></h1>
-<p><p>The StreamInfo class provides methods to monitor the current stream activity
-and other details.</p>
+<p><p>The StreamInfo class provides methods to monitor the current active streams
+ activity and other details.</p>
+<p>This can be used together with <a href='#core/Output'>Output Class</a> and check
+the details of the currently live outputs.</p>
+<h3 id="basic-usage">Basic Usage</h3>
+<pre><code class="lang-javascript">var xjs = require(&#39;xjs&#39;);
+
+xjs.ready()
+.then(xjs.StreamInfo.getActiveStreamChannels)
+.then(function(channels) {
+  var stream = []
+  channels.forEach(function(channel){
+    channel.getName()
+    .then(name =&gt; {
+      if(name.includes(&#39;Twitch&#39;)) {
+        stream.push(channel)
+      }
+    })
+  })
+  return stream
+}).then(function(stream) {
+  // Get any stream information you need here
+  return stream[0].getStreamRenderedFrames()
+})
+</code></pre>
 </p><h2>Members</h2>
   <section class="member constructor">
     <h1 id="constructor" class="name">constructor</h1>
@@ -86,6 +109,6 @@ and other details.</p>
   </section>
 
 <p class="module defined-in">exported from <a href='#/core'>core</a><br/>
-defined in <a href="https://github.com/xjsframework/xjs/tree/master/modules/../src/core/streaminfo.ts#L4-L146">../src/core/streaminfo.ts (line 4)</a>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/src/core/streaminfo.ts#L4-L177">../src/core/streaminfo.ts (line 4)</a>
 </p>
 

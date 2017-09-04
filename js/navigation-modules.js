@@ -65,6 +65,16 @@ angular.module('navigation-modules', [])
               "name": "getSource"
             },
             {
+              "path": "/core/Item#bringForward",
+              "partial": "partials/modules//core/Item/index.html",
+              "name": "bringForward"
+            },
+            {
+              "path": "/core/Item#bringToFront",
+              "partial": "partials/modules//core/Item/index.html",
+              "name": "bringToFront"
+            },
+            {
               "path": "/core/Item#isKeepAspectRatio",
               "partial": "partials/modules//core/Item/index.html",
               "name": "isKeepAspectRatio"
@@ -113,6 +123,16 @@ angular.module('navigation-modules', [])
               "path": "/core/Item#getRotateZ",
               "partial": "partials/modules//core/Item/index.html",
               "name": "getRotateZ"
+            },
+            {
+              "path": "/core/Item#sendBackward",
+              "partial": "partials/modules//core/Item/index.html",
+              "name": "sendBackward"
+            },
+            {
+              "path": "/core/Item#sendToBack",
+              "partial": "partials/modules//core/Item/index.html",
+              "name": "sendToBack"
             },
             {
               "path": "/core/Item#setCanvasRotate",
@@ -631,6 +651,26 @@ angular.module('navigation-modules', [])
               "path": "/core/IItemLayout#setCroppingEnhanced",
               "partial": "partials/modules//core/IItemLayout/index.html",
               "name": "setCroppingEnhanced"
+            },
+            {
+              "path": "/core/IItemLayout#bringForward",
+              "partial": "partials/modules//core/IItemLayout/index.html",
+              "name": "bringForward"
+            },
+            {
+              "path": "/core/IItemLayout#sendBackward",
+              "partial": "partials/modules//core/IItemLayout/index.html",
+              "name": "sendBackward"
+            },
+            {
+              "path": "/core/IItemLayout#bringToFront",
+              "partial": "partials/modules//core/IItemLayout/index.html",
+              "name": "bringToFront"
+            },
+            {
+              "path": "/core/IItemLayout#sendToBack",
+              "partial": "partials/modules//core/IItemLayout/index.html",
+              "name": "sendToBack"
             }
           ]
         },
@@ -797,6 +837,34 @@ angular.module('navigation-modules', [])
               "path": "/core/IItemEffect#showFileMaskingGuide",
               "partial": "partials/modules//core/IItemEffect/index.html",
               "name": "showFileMaskingGuide"
+            }
+          ]
+        },
+        {
+          "path": "/core/MaskEffect",
+          "partial": "partials/modules//core/MaskEffect/index.html",
+          "name": "MaskEffect",
+          "type": "Enum",
+          "pages": [
+            {
+              "path": "/core/MaskEffect#NONE",
+              "partial": "partials/modules//core/MaskEffect/index.html",
+              "name": "NONE"
+            },
+            {
+              "path": "/core/MaskEffect#SHAPE",
+              "partial": "partials/modules//core/MaskEffect/index.html",
+              "name": "SHAPE"
+            },
+            {
+              "path": "/core/MaskEffect#FILE_BIND_TO_SOURCE",
+              "partial": "partials/modules//core/MaskEffect/index.html",
+              "name": "FILE_BIND_TO_SOURCE"
+            },
+            {
+              "path": "/core/MaskEffect#FILE_BIND_TO_STAGE",
+              "partial": "partials/modules//core/MaskEffect/index.html",
+              "name": "FILE_BIND_TO_STAGE"
             }
           ]
         },
@@ -1888,6 +1956,16 @@ angular.module('navigation-modules', [])
               "name": "setForceDeinterlace"
             },
             {
+              "path": "/core/CameraItem#bringForward",
+              "partial": "partials/modules//core/CameraItem/index.html",
+              "name": "bringForward"
+            },
+            {
+              "path": "/core/CameraItem#bringToFront",
+              "partial": "partials/modules//core/CameraItem/index.html",
+              "name": "bringToFront"
+            },
+            {
               "path": "/core/CameraItem#isKeepAspectRatio",
               "partial": "partials/modules//core/CameraItem/index.html",
               "name": "isKeepAspectRatio"
@@ -1936,6 +2014,16 @@ angular.module('navigation-modules', [])
               "path": "/core/CameraItem#getRotateZ",
               "partial": "partials/modules//core/CameraItem/index.html",
               "name": "getRotateZ"
+            },
+            {
+              "path": "/core/CameraItem#sendBackward",
+              "partial": "partials/modules//core/CameraItem/index.html",
+              "name": "sendBackward"
+            },
+            {
+              "path": "/core/CameraItem#sendToBack",
+              "partial": "partials/modules//core/CameraItem/index.html",
+              "name": "sendToBack"
             },
             {
               "path": "/core/CameraItem#setCanvasRotate",
@@ -2466,6 +2554,16 @@ angular.module('navigation-modules', [])
               "name": "getOfflineImage"
             },
             {
+              "path": "/core/GameItem#bringForward",
+              "partial": "partials/modules//core/GameItem/index.html",
+              "name": "bringForward"
+            },
+            {
+              "path": "/core/GameItem#bringToFront",
+              "partial": "partials/modules//core/GameItem/index.html",
+              "name": "bringToFront"
+            },
+            {
               "path": "/core/GameItem#isKeepAspectRatio",
               "partial": "partials/modules//core/GameItem/index.html",
               "name": "isKeepAspectRatio"
@@ -2514,6 +2612,16 @@ angular.module('navigation-modules', [])
               "path": "/core/GameItem#getRotateZ",
               "partial": "partials/modules//core/GameItem/index.html",
               "name": "getRotateZ"
+            },
+            {
+              "path": "/core/GameItem#sendBackward",
+              "partial": "partials/modules//core/GameItem/index.html",
+              "name": "sendBackward"
+            },
+            {
+              "path": "/core/GameItem#sendToBack",
+              "partial": "partials/modules//core/GameItem/index.html",
+              "name": "sendToBack"
             },
             {
               "path": "/core/GameItem#setCanvasRotate",
@@ -3137,6 +3245,16 @@ angular.module('navigation-modules', [])
               "name": "enableCustomCSS"
             },
             {
+              "path": "/core/HtmlItem#bringForward",
+              "partial": "partials/modules//core/HtmlItem/index.html",
+              "name": "bringForward"
+            },
+            {
+              "path": "/core/HtmlItem#bringToFront",
+              "partial": "partials/modules//core/HtmlItem/index.html",
+              "name": "bringToFront"
+            },
+            {
               "path": "/core/HtmlItem#isKeepAspectRatio",
               "partial": "partials/modules//core/HtmlItem/index.html",
               "name": "isKeepAspectRatio"
@@ -3185,6 +3303,16 @@ angular.module('navigation-modules', [])
               "path": "/core/HtmlItem#getRotateZ",
               "partial": "partials/modules//core/HtmlItem/index.html",
               "name": "getRotateZ"
+            },
+            {
+              "path": "/core/HtmlItem#sendBackward",
+              "partial": "partials/modules//core/HtmlItem/index.html",
+              "name": "sendBackward"
+            },
+            {
+              "path": "/core/HtmlItem#sendToBack",
+              "partial": "partials/modules//core/HtmlItem/index.html",
+              "name": "sendToBack"
             },
             {
               "path": "/core/HtmlItem#setCanvasRotate",
@@ -3705,6 +3833,16 @@ angular.module('navigation-modules', [])
               "name": "setAllowRightClick"
             },
             {
+              "path": "/core/FlashItem#bringForward",
+              "partial": "partials/modules//core/FlashItem/index.html",
+              "name": "bringForward"
+            },
+            {
+              "path": "/core/FlashItem#bringToFront",
+              "partial": "partials/modules//core/FlashItem/index.html",
+              "name": "bringToFront"
+            },
+            {
               "path": "/core/FlashItem#isKeepAspectRatio",
               "partial": "partials/modules//core/FlashItem/index.html",
               "name": "isKeepAspectRatio"
@@ -3753,6 +3891,16 @@ angular.module('navigation-modules', [])
               "path": "/core/FlashItem#getRotateZ",
               "partial": "partials/modules//core/FlashItem/index.html",
               "name": "getRotateZ"
+            },
+            {
+              "path": "/core/FlashItem#sendBackward",
+              "partial": "partials/modules//core/FlashItem/index.html",
+              "name": "sendBackward"
+            },
+            {
+              "path": "/core/FlashItem#sendToBack",
+              "partial": "partials/modules//core/FlashItem/index.html",
+              "name": "sendToBack"
             },
             {
               "path": "/core/FlashItem#setCanvasRotate",
@@ -4303,6 +4451,16 @@ angular.module('navigation-modules', [])
               "name": "setClientArea"
             },
             {
+              "path": "/core/ScreenItem#bringForward",
+              "partial": "partials/modules//core/ScreenItem/index.html",
+              "name": "bringForward"
+            },
+            {
+              "path": "/core/ScreenItem#bringToFront",
+              "partial": "partials/modules//core/ScreenItem/index.html",
+              "name": "bringToFront"
+            },
+            {
               "path": "/core/ScreenItem#isKeepAspectRatio",
               "partial": "partials/modules//core/ScreenItem/index.html",
               "name": "isKeepAspectRatio"
@@ -4351,6 +4509,16 @@ angular.module('navigation-modules', [])
               "path": "/core/ScreenItem#getRotateZ",
               "partial": "partials/modules//core/ScreenItem/index.html",
               "name": "getRotateZ"
+            },
+            {
+              "path": "/core/ScreenItem#sendBackward",
+              "partial": "partials/modules//core/ScreenItem/index.html",
+              "name": "sendBackward"
+            },
+            {
+              "path": "/core/ScreenItem#sendToBack",
+              "partial": "partials/modules//core/ScreenItem/index.html",
+              "name": "sendToBack"
             },
             {
               "path": "/core/ScreenItem#setCanvasRotate",
@@ -4796,6 +4964,16 @@ angular.module('navigation-modules', [])
               "name": "setValue"
             },
             {
+              "path": "/core/ImageItem#bringForward",
+              "partial": "partials/modules//core/ImageItem/index.html",
+              "name": "bringForward"
+            },
+            {
+              "path": "/core/ImageItem#bringToFront",
+              "partial": "partials/modules//core/ImageItem/index.html",
+              "name": "bringToFront"
+            },
+            {
               "path": "/core/ImageItem#isKeepAspectRatio",
               "partial": "partials/modules//core/ImageItem/index.html",
               "name": "isKeepAspectRatio"
@@ -4844,6 +5022,16 @@ angular.module('navigation-modules', [])
               "path": "/core/ImageItem#getRotateZ",
               "partial": "partials/modules//core/ImageItem/index.html",
               "name": "getRotateZ"
+            },
+            {
+              "path": "/core/ImageItem#sendBackward",
+              "partial": "partials/modules//core/ImageItem/index.html",
+              "name": "sendBackward"
+            },
+            {
+              "path": "/core/ImageItem#sendToBack",
+              "partial": "partials/modules//core/ImageItem/index.html",
+              "name": "sendToBack"
             },
             {
               "path": "/core/ImageItem#setCanvasRotate",
@@ -5284,6 +5472,11 @@ angular.module('navigation-modules', [])
               "name": "getFileInfo"
             },
             {
+              "path": "/core/MediaItem#bringForward",
+              "partial": "partials/modules//core/MediaItem/index.html",
+              "name": "bringForward"
+            },
+            {
               "path": "/core/MediaItem#isKeepAspectRatio",
               "partial": "partials/modules//core/MediaItem/index.html",
               "name": "isKeepAspectRatio"
@@ -5332,6 +5525,11 @@ angular.module('navigation-modules', [])
               "path": "/core/MediaItem#getRotateZ",
               "partial": "partials/modules//core/MediaItem/index.html",
               "name": "getRotateZ"
+            },
+            {
+              "path": "/core/MediaItem#sendBackward",
+              "partial": "partials/modules//core/MediaItem/index.html",
+              "name": "sendBackward"
             },
             {
               "path": "/core/MediaItem#setCanvasRotate",
@@ -5952,6 +6150,16 @@ angular.module('navigation-modules', [])
               "name": "setVideoPlaylistSources"
             },
             {
+              "path": "/core/VideoPlaylistItem#bringForward",
+              "partial": "partials/modules//core/VideoPlaylistItem/index.html",
+              "name": "bringForward"
+            },
+            {
+              "path": "/core/VideoPlaylistItem#bringToFront",
+              "partial": "partials/modules//core/VideoPlaylistItem/index.html",
+              "name": "bringToFront"
+            },
+            {
               "path": "/core/VideoPlaylistItem#isKeepAspectRatio",
               "partial": "partials/modules//core/VideoPlaylistItem/index.html",
               "name": "isKeepAspectRatio"
@@ -6000,6 +6208,16 @@ angular.module('navigation-modules', [])
               "path": "/core/VideoPlaylistItem#getRotateZ",
               "partial": "partials/modules//core/VideoPlaylistItem/index.html",
               "name": "getRotateZ"
+            },
+            {
+              "path": "/core/VideoPlaylistItem#sendBackward",
+              "partial": "partials/modules//core/VideoPlaylistItem/index.html",
+              "name": "sendBackward"
+            },
+            {
+              "path": "/core/VideoPlaylistItem#sendToBack",
+              "partial": "partials/modules//core/VideoPlaylistItem/index.html",
+              "name": "sendToBack"
             },
             {
               "path": "/core/VideoPlaylistItem#setCanvasRotate",
@@ -6694,6 +6912,11 @@ angular.module('navigation-modules', [])
           "type": "Class",
           "pages": [
             {
+              "path": "/core/HtmlSource#call",
+              "partial": "partials/modules//core/HtmlSource/index.html",
+              "name": "call"
+            },
+            {
               "path": "/core/HtmlSource#getURL",
               "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "getURL"
@@ -7362,6 +7585,51 @@ angular.module('navigation-modules', [])
               "path": "/core/VideoPlaylistSource#isVideo",
               "partial": "partials/modules//core/VideoPlaylistSource/index.html",
               "name": "isVideo"
+            },
+            {
+              "path": "/core/VideoPlaylistSource#getVolume",
+              "partial": "partials/modules//core/VideoPlaylistSource/index.html",
+              "name": "getVolume"
+            },
+            {
+              "path": "/core/VideoPlaylistSource#isMute",
+              "partial": "partials/modules//core/VideoPlaylistSource/index.html",
+              "name": "isMute"
+            },
+            {
+              "path": "/core/VideoPlaylistSource#isAutoMute",
+              "partial": "partials/modules//core/VideoPlaylistSource/index.html",
+              "name": "isAutoMute"
+            },
+            {
+              "path": "/core/VideoPlaylistSource#setVolume",
+              "partial": "partials/modules//core/VideoPlaylistSource/index.html",
+              "name": "setVolume"
+            },
+            {
+              "path": "/core/VideoPlaylistSource#setMute",
+              "partial": "partials/modules//core/VideoPlaylistSource/index.html",
+              "name": "setMute"
+            },
+            {
+              "path": "/core/VideoPlaylistSource#setAutoMute",
+              "partial": "partials/modules//core/VideoPlaylistSource/index.html",
+              "name": "setAutoMute"
+            },
+            {
+              "path": "/core/VideoPlaylistSource#isStreamOnlyAudio",
+              "partial": "partials/modules//core/VideoPlaylistSource/index.html",
+              "name": "isStreamOnlyAudio"
+            },
+            {
+              "path": "/core/VideoPlaylistSource#setStreamOnlyAudio",
+              "partial": "partials/modules//core/VideoPlaylistSource/index.html",
+              "name": "setStreamOnlyAudio"
+            },
+            {
+              "path": "/core/VideoPlaylistSource#isAudioAvailable",
+              "partial": "partials/modules//core/VideoPlaylistSource/index.html",
+              "name": "isAudioAvailable"
             }
           ]
         }
