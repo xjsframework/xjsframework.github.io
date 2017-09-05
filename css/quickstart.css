@@ -143,13 +143,23 @@ button {
   font-size: 16px;
 }
 
-.download-xbc a {
+.download-xbc-ptr {
+  background: linear-gradient(to right,#161616,#6d6d6d);
+  background-color: #161616;
+  display: inline-block;
+  height: 65px;
+  width: 305px;
+  border-radius: 3px;
+  font-size: 16px;
+}
+
+.download-xbc a, .download-xbc-ptr a {
   vertical-align: top;
   padding: 5px 10px 10px 10px;
   display: inline-block;
 }
 
-.download-xbc .softwareIcon {
+.download-xbc .softwareIcon, .download-xbc-ptr .softwareIcon {
   height: 50px;
   width: 50px;
   background-image: url('../assets/xbc-white.png');
@@ -157,25 +167,25 @@ button {
   vertical-align: middle;
 }
 
-.download-xbc .softwareInfo {
+.download-xbc .softwareInfo, .download-xbc-ptr .softwareInfo {
   margin-left: 1px;
   display: inline-block;
   vertical-align: middle;
 }
 
-.download-xbc .softwareDownloadText {
+.download-xbc .softwareDownloadText, .download-xbc-ptr .softwareDownloadText {
   display: block;
   vertical-align: middle;
   text-align: center;
 }
 
-.download-xbc .softwareVersion {
+.download-xbc .softwareVersion, .download-xbc-ptr .softwareVersion {
   display: inline-block;
   vertical-align: middle;
   font-size: 12px;
 }
 
-.download-xbc .softwareRelease {
+.download-xbc .softwareRelease, .download-xbc-ptr .softwareRelease {
   display: inline-block;
   vertical-align: middle;
   font-size: 12px;
@@ -183,7 +193,10 @@ button {
 
 .download-xbc .softwareDownloadText,
 .download-xbc .softwareVersion,
-.download-xbc .softwareRelease {
+.download-xbc .softwareRelease,
+.download-xbc-ptr .softwareDownloadText,
+.download-xbc-ptr .softwareVersion,
+.download-xbc-ptr .softwareRelease {
   font-family: Segoe UI, Frutiger, Frutiger Linotype, Helvetica Neue, Arial, sans-serif;
   color: #FFFFFF;
 }
