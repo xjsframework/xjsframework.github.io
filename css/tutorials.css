@@ -186,6 +186,10 @@ img.centered {
   margin-right: auto;
 }
 
+img.big {
+  width: 100%;
+}
+
 /* Tables */
 table {
   border-collapse: collapse;

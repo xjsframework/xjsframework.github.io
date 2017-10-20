@@ -99,7 +99,10 @@ void WINAPI XSplitScriptPluginDestroy();</code>
 [uuid("9A554D8A-912F-4F1E-9A26-CC002B3B99BD")]
 DECLARE_INTERFACE_(IXSplitScriptDllContext, IUnknown)
 {
-    STDMETHOD(Callback)(BSTRfunctionName, BSTR * argumentsArray, UINT argumentsCount) PURE;
+    STDMETHOD(Callback)
+      (BSTRfunctionName,
+       BSTR * argumentsArray,
+       UINT argumentsCount) PURE;
 };</code>
 </pre>
 <p>
