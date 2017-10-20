@@ -88,6 +88,23 @@ See also: <a href='#system/MicrophoneDevice'>System/MicrophoneDevice</a></p>
 
 
   <section class="member static">
+    <a name="getAvailableScreens"><h1 id="getAvailableScreens" class="name">
+      <code>static</code> getAvailableScreens
+    </h1></a>
+    <pre><code>return: Promise&lt;Screen[]&gt;
+</code></pre>
+<p>Gets all available screen/windows that may be added to the stage
+See also: <a href='#system/Screen'>System/Screen</a></p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">System.getAvailableScreens().then(function(screens) {
+  screens[0].addToScene(); // add first screen to stage
+});
+</code></pre>
+
+  </section>
+
+
+  <section class="member static">
     <a name="getFonts"><h1 id="getFonts" class="name">
       <code>static</code> getFonts
     </h1></a>
@@ -141,6 +158,6 @@ System.getSystemFonts().then(function(fontsArray) {
   </section>
 
 <p class="module defined-in">exported from <a href='#/system'>system</a><br/>
-defined in <a href="https://github.com/xjsframework/xjs/tree/master/src/system/system.ts#L47-L313">../src/system/system.ts (line 47)</a>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/src/system/system.ts#L49-L370">../src/system/system.ts (line 49)</a>
 </p>
 

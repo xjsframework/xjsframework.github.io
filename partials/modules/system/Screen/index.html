@@ -1,11 +1,44 @@
 
 <h1 class="class export">Screen <span class="type">class</span></h1>
-<p><p>This class serves to allow developers to add new screen regions or window
- regions to the stage in XSplit Broadcaster.</p>
+<p><p>The Screen Class is the object returned by <a href='#system/System'>System Class</a>
+getAvailableScreens method. It provides you with methods to add the screen object
+to the current scene or any scene specified or use it&#39;s static method to fire a
+selector for you to manually select a screen/screen region to capture and add on
+your selected scene.</p>
+<h3 id="basic-usage">Basic Usage</h3>
+<pre><code class="lang-javascript">var XJS = require(&#39;xjs&#39;);
+var System = XJS.System;
+
+System.getAvailableScreens().then(function(screens) {
+ for (var i in screens) {
+   screens[i].addToScene();
+ }
+});
+</code></pre>
 </p><h2>Members</h2>
+  <section class="member constructor">
+    <h1 id="constructor" class="name">constructor</h1>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
+  </section>
+
   <section class="member">
     <a name="addToScene"><h1 id="addToScene" class="name">
       addToScene
+    </h1></a>
+    <pre><code>param: (value?: number | Scene)
+</code></pre>
+<pre><code>return: Promise&lt;boolean&gt;
+</code></pre>
+<p>Adds the prepared screen instance to the current screen by defualt.
+Accpets optional parameter value, whhich when supplied, points
+to the scene where the item will be added instead.</p>
+
+  </section>
+
+
+  <section class="member static">
+    <a name="addToScene"><h1 id="addToScene" class="name">
+      <code>static</code> addToScene
     </h1></a>
     <pre><code>param: (value?: number | Scene)
 </code></pre>
@@ -18,7 +51,24 @@ points to the scene where item will be added instead.</p>
 
   </section>
 
+
+  <section class="member static">
+    <a name="parse"><h1 id="parse" class="name">
+      <code>static</code> parse
+    </h1></a>
+    <pre><code>param: Object
+</code></pre>
+<pre><code>return Screen
+</code></pre>
+<p>Converts an object into a Screen object.</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">var XJS = require(&#39;xjs&#39;);
+var screen = XJS.Screen.parse(jsonObj);
+</code></pre>
+
+  </section>
+
 <p class="module defined-in">exported from <a href='#/system'>system</a><br/>
-defined in <a href="https://github.com/xjsframework/xjs/tree/master/src/system/screen.ts#L3-L63">../src/system/screen.ts (line 3)</a>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/src/system/screen.ts#L9-L200">../src/system/screen.ts (line 9)</a>
 </p>
 

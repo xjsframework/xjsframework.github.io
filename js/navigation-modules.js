@@ -30,6 +30,11 @@ angular.module('navigation-modules', [])
               "name": "getId"
             },
             {
+              "path": "/core/Item#getFPS",
+              "partial": "partials/modules//core/Item/index.html",
+              "name": "getFPS"
+            },
+            {
               "path": "/core/Item#getView",
               "partial": "partials/modules//core/Item/index.html",
               "name": "getView"
@@ -53,6 +58,11 @@ angular.module('navigation-modules', [])
               "path": "/core/Item#unlink",
               "partial": "partials/modules//core/Item/index.html",
               "name": "unlink"
+            },
+            {
+              "path": "/core/Item#remove",
+              "partial": "partials/modules//core/Item/index.html",
+              "name": "remove"
             },
             {
               "path": "/core/Item#getItemList",
@@ -1525,6 +1535,16 @@ angular.module('navigation-modules', [])
               "name": "getSceneNumber"
             },
             {
+              "path": "/core/Scene#getSceneIndex",
+              "partial": "partials/modules//core/Scene/index.html",
+              "name": "getSceneIndex"
+            },
+            {
+              "path": "/core/Scene#getSceneUid",
+              "partial": "partials/modules//core/Scene/index.html",
+              "name": "getSceneUid"
+            },
+            {
               "path": "/core/Scene#getName",
               "partial": "partials/modules//core/Scene/index.html",
               "name": "getName"
@@ -1558,6 +1578,16 @@ angular.module('navigation-modules', [])
               "path": "/core/Scene#getById",
               "partial": "partials/modules//core/Scene/index.html",
               "name": "getById"
+            },
+            {
+              "path": "/core/Scene#getBySceneIndex",
+              "partial": "partials/modules//core/Scene/index.html",
+              "name": "getBySceneIndex"
+            },
+            {
+              "path": "/core/Scene#getBySceneUid",
+              "partial": "partials/modules//core/Scene/index.html",
+              "name": "getBySceneUid"
             },
             {
               "path": "/core/Scene#getByName",
@@ -1776,6 +1806,24 @@ angular.module('navigation-modules', [])
             {
               "path": "/core/ChannelManager#on",
               "partial": "partials/modules//core/ChannelManager/index.html",
+              "name": "on"
+            }
+          ]
+        },
+        {
+          "path": "/core/LanguageInfo",
+          "partial": "partials/modules//core/LanguageInfo/index.html",
+          "name": "LanguageInfo",
+          "type": "Class",
+          "pages": [
+            {
+              "path": "/core/LanguageInfo#emit",
+              "partial": "partials/modules//core/LanguageInfo/index.html",
+              "name": "emit"
+            },
+            {
+              "path": "/core/LanguageInfo#on",
+              "partial": "partials/modules//core/LanguageInfo/index.html",
               "name": "on"
             }
           ]
@@ -3243,6 +3291,11 @@ angular.module('navigation-modules', [])
               "path": "/core/HtmlItem#enableCustomCSS",
               "partial": "partials/modules//core/HtmlItem/index.html",
               "name": "enableCustomCSS"
+            },
+            {
+              "path": "/core/HtmlItem#isBrowserOptimized",
+              "partial": "partials/modules//core/HtmlItem/index.html",
+              "name": "isBrowserOptimized"
             },
             {
               "path": "/core/HtmlItem#bringForward",
@@ -7007,6 +7060,11 @@ angular.module('navigation-modules', [])
               "name": "enableCustomCSS"
             },
             {
+              "path": "/core/HtmlSource#isBrowserOptimized",
+              "partial": "partials/modules//core/HtmlSource/index.html",
+              "name": "isBrowserOptimized"
+            },
+            {
               "path": "/core/HtmlSource#loadConfig",
               "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "loadConfig"
@@ -7724,6 +7782,11 @@ angular.module('navigation-modules', [])
               "name": "getMicrophones"
             },
             {
+              "path": "/system/System#getAvailableScreens",
+              "partial": "partials/modules//system/System/index.html",
+              "name": "getAvailableScreens"
+            },
+            {
               "path": "/system/System#getFonts",
               "partial": "partials/modules//system/System/index.html",
               "name": "getFonts"
@@ -7990,6 +8053,16 @@ angular.module('navigation-modules', [])
               "path": "/system/Screen#addToScene",
               "partial": "partials/modules//system/Screen/index.html",
               "name": "addToScene"
+            },
+            {
+              "path": "/system/Screen#addToScene",
+              "partial": "partials/modules//system/Screen/index.html",
+              "name": "addToScene"
+            },
+            {
+              "path": "/system/Screen#parse",
+              "partial": "partials/modules//system/Screen/index.html",
+              "name": "parse"
             }
           ]
         },

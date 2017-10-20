@@ -128,6 +128,22 @@ xjs.Scene.getActiveScene()
 
 
   <section class="member">
+    <a name="getFPS"><h1 id="getFPS" class="name">
+      getFPS
+    </h1></a>
+    <pre><code>return: Promise&lt;Number&gt;
+</code></pre>
+<p>Get the frames rendered per second of an item</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">item.getFPS().then(function(fps) {
+  // The rest of your code here
+});
+</code></pre>
+
+  </section>
+
+
+  <section class="member">
     <a name="getView"><h1 id="getView" class="name">
       getView
     </h1></a>
@@ -219,6 +235,20 @@ own source.</p>
 </code></pre>
 <p>Note: Once you unlink an Item, there&#39;s still no method to reverse the
 process.</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="remove"><h1 id="remove" class="name">
+      remove
+    </h1></a>
+    <pre><code>return: Promise&lt;boolean&gt;
+</code></pre>
+<p>Removes selected item</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">item.remove()
+</code></pre>
 
   </section>
 
@@ -587,6 +617,6 @@ Linked items are items linked to a single source.</p>
   </section>
 
 <p class="module defined-in">exported from <a href='#/core'>core</a><br/>
-defined in <a href="https://github.com/xjsframework/xjs/tree/master/src/core/items/item.ts#L43-L680">../src/core/items/item.ts (line 43)</a>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/src/core/items/item.ts#L43-L730">../src/core/items/item.ts (line 43)</a>
 </p>
 
