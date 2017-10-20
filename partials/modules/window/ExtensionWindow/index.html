@@ -5,7 +5,7 @@
  for all events that the window should be able to handle.</p>
 <p> Currently, the following events are available:</p>
 <ul>
-<li><code>scene-load</code>: notifies in the event of a scene change. Handler is a function f(sceneNumber: number)</li>
+<li><code>scene-load</code>: notifies in the event of a scene change. Handler is a function f(sceneNumber: number). For Split Mode <code>scene-load</code> listens to the changes on the preview window.</li>
 <li><code>sources-list-highlight</code>: notifies when a user hovers over a source in the stage, returning its source id, or when the mouse moves out of a source bounding box, returning null. Source id is also returned when hovering over the bottom panel. Handler is a function f(id: string)</li>
 <li><code>sources-list-select</code>: notifies when a user clicks a source in the stage. Source id is also returned when source is selected from the bottom panel. Handler is a function f(id: string)</li>
 <li><code>sources-list-update</code>: notifies when there are changes on list sources whether on stage or bottom panel. Handler is a function(ids: string) where ids are comma separated source ids.</li>
@@ -186,6 +186,6 @@
   </section>
 
 <p class="module defined-in">exported from <a href='#/window'>window</a><br/>
-defined in <a href="https://github.com/xjsframework/xjs/tree/master/src/window/extension.ts#L17-L270">../src/window/extension.ts (line 17)</a>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/src/window/extension.ts#L17-L273">../src/window/extension.ts (line 17)</a>
 </p>
 

@@ -41,6 +41,39 @@ See also: <a href='#core/Source'>Core/Source</a></p>
  console.log(&#39;My scene is scene number &#39; + num);
 });
 </code></pre>
+<p>** For deprecation, please use getSceneIndex instead.</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="getSceneIndex"><h1 id="getSceneIndex" class="name">
+      getSceneIndex
+    </h1></a>
+    <pre><code>return: number
+</code></pre>
+<p>Get the 0-indexed scene number of this scene object.</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">myScene.getSceneIndex().then(function(num) {
+ console.log(&#39;Scene index is &#39; + num);
+});
+</code></pre>
+
+  </section>
+
+
+  <section class="member">
+    <a name="getSceneUid"><h1 id="getSceneUid" class="name">
+      getSceneUid
+    </h1></a>
+    <pre><code>return: string
+</code></pre>
+<p>Get the unique id of this scene object.</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">myScene.getSceneUid().then(function(res) {
+ console.log(&#39;Scene unique id is  &#39; + res);
+});
+</code></pre>
 
   </section>
 
@@ -150,6 +183,42 @@ Scene.getSceneCount().then(function(count) {
 <h4 id="usage">Usage</h4>
 <pre><code class="lang-javascript">var scene1;
 Scene.getById(1).then(function(scene) {
+  scene1 = scene;
+});
+</code></pre>
+<p>** For deprecation, please use getBySceneIndex instead.</p>
+
+  </section>
+
+
+  <section class="member static">
+    <a name="getBySceneIndex"><h1 id="getBySceneIndex" class="name">
+      <code>static</code> getBySceneIndex
+    </h1></a>
+    <pre><code>return: Promise&lt;Scene&gt;
+</code></pre>
+<p>Get a specific scene object given the scene index.</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">var scene1;
+Scene.getBySceneIndex(0).then(function(scene) {
+  scene1 = scene;
+});
+</code></pre>
+
+  </section>
+
+
+  <section class="member static">
+    <a name="getBySceneUid"><h1 id="getBySceneUid" class="name">
+      <code>static</code> getBySceneUid
+    </h1></a>
+    <pre><code>return: Promise&lt;Scene&gt;
+</code></pre>
+<p>Get a specific scene object given the scene unique Id.</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">var scene1;
+Scene.getBySceneUid(&#39;{056936DD-DFAA-4148-9D08-21C8E83CE37C}&#39;)
+.then(function(scene) {
   scene1 = scene;
 });
 </code></pre>
@@ -428,6 +497,6 @@ This function is only available to extensions.</p>
   </section>
 
 <p class="module defined-in">exported from <a href='#/core'>core</a><br/>
-defined in <a href="https://github.com/xjsframework/xjs/tree/master/src/core/scene.ts#L35-L1210">../src/core/scene.ts (line 35)</a>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/src/core/scene.ts#L35-L1360">../src/core/scene.ts (line 35)</a>
 </p>
 

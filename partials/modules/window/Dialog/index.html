@@ -20,10 +20,11 @@ xjs.ready().then(function() {
     .setTitle(&#39;ThisDialogReturnsAString&#39;)
     .setBorderOptions(true, false)
     .setButtons(true, true)
-    .show()
-    .getResult().then(function(result) {
-      document.getElementById(&#39;input&#39;).value = result;
-    });
+    .show(function(dialog) {
+      dialog.getResult().then(function(result) {
+        document.getElementById(&#39;input&#39;).value = result;
+      });
+    })
   });
 });
 
@@ -93,7 +94,7 @@ xjs.ready().then(function() {
     <a name="show"><h1 id="show" class="name">
       show
     </h1></a>
-    <pre><code>return: Dialog
+    <pre><code>return: Promise&lt;Dialog&gt;
 </code></pre>
 <p> After configuring the dialog, call this function to spawn it.</p>
 <p><em>Chainable.</em></p>
@@ -166,6 +167,6 @@ xjs.ready().then(function() {
   </section>
 
 <p class="module defined-in">exported from <a href='#/window'>window</a><br/>
-defined in <a href="https://github.com/xjsframework/xjs/tree/master/src/window/dialog.ts#L11-L323">../src/window/dialog.ts (line 11)</a>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/src/window/dialog.ts#L11-L324">../src/window/dialog.ts (line 11)</a>
 </p>
 
