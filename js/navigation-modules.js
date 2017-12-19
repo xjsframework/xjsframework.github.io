@@ -1811,6 +1811,13 @@ angular.module('navigation-modules', [])
           ]
         },
         {
+          "path": "/core/_subscribeEventManager",
+          "partial": "partials/modules//core/_subscribeEventManager/index.html",
+          "name": "_subscribeEventManager",
+          "type": "Function",
+          "pages": []
+        },
+        {
           "path": "/core/LanguageInfo",
           "partial": "partials/modules//core/LanguageInfo/index.html",
           "name": "LanguageInfo",
@@ -3296,6 +3303,11 @@ angular.module('navigation-modules', [])
               "path": "/core/HtmlItem#isBrowserOptimized",
               "partial": "partials/modules//core/HtmlItem/index.html",
               "name": "isBrowserOptimized"
+            },
+            {
+              "path": "/core/HtmlItem#getBrowserLoadStatus",
+              "partial": "partials/modules//core/HtmlItem/index.html",
+              "name": "getBrowserLoadStatus"
             },
             {
               "path": "/core/HtmlItem#bringForward",
@@ -7065,6 +7077,11 @@ angular.module('navigation-modules', [])
               "name": "isBrowserOptimized"
             },
             {
+              "path": "/core/HtmlSource#getBrowserLoadStatus",
+              "partial": "partials/modules//core/HtmlSource/index.html",
+              "name": "getBrowserLoadStatus"
+            },
+            {
               "path": "/core/HtmlSource#loadConfig",
               "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "loadConfig"
@@ -7299,6 +7316,11 @@ angular.module('navigation-modules', [])
               "name": "setValue"
             }
           ]
+        },
+        {
+          "name": "MediaTypes",
+          "type": "Let",
+          "pages": []
         },
         {
           "path": "/core/MediaSource",

@@ -209,6 +209,25 @@ is enabled. (Tools menu &gt; General Settings &gt; Advanced tab)</p>
 
 
   <section class="member">
+    <a name="getBrowserLoadStatus"><h1 id="getBrowserLoadStatus" class="name">
+      getBrowserLoadStatus
+    </h1></a>
+    <pre><code>return: Promise&lt;string&gt;
+</code></pre>
+<p>Gets the load status of the html
+May return as any of the following:</p>
+<ul>
+<li>&#39;LOADED&#39; -&gt; HTML is already loaded</li>
+<li>&#39;NOT LOADED&#39; -&gt; HTML is not yet loaded</li>
+<li>&#39;LOAD ERROR&#39; -&gt; Error in loading HTML</li>
+<li>&#39;UNKNOWN&#39; -&gt; URL used is invalid or when status is checked right after adding new HTML source</li>
+<li>&#39;UNAVAILABLE&#39; -&gt; Method for getting load status is unavailable for the XBC version</li>
+</ul>
+
+  </section>
+
+
+  <section class="member">
     <a name="bringForward"><h1 id="bringForward" class="name">
       bringForward
     </h1></a>
@@ -1216,6 +1235,6 @@ is enabled. (Tools menu &gt; General Settings &gt; Advanced tab)</p>
   </section>
 
 <p class="module defined-in">exported from <a href='#/core'>core</a><br/>
-defined in <a href="https://github.com/xjsframework/xjs/tree/master/src/core/items/html.ts#L22-L675">../src/core/items/html.ts (line 22)</a>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/src/core/items/html.ts#L22-L688">../src/core/items/html.ts (line 22)</a>
 </p>
 
