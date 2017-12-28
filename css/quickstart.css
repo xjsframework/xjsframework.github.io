@@ -239,8 +239,10 @@ button {
   top: 20%;
   left: 10%;
   width: 80%;
-  height: 60%;
-  border: 16px solid #3a89cc;
+  max-width: 1055px;
+  min-width: 570px;
+  height: 50%;
+  border: 5px solid #3a89cc;
   background-color: white;
   z-index: 1002;
   overflow: auto;
@@ -268,19 +270,15 @@ button {
 }
 
 .code-snippet {
-  width: 49%;
+  width: 450px;
   display: inline-block;
-  position: absolute;
-  left: 0px;
   margin-top: 28px;
   padding: 5px 0 0 10px;
 }
 
 .code-working {
-  width: 49%;
+  width: 545px;
   display: inline-block;
-  position: absolute;
-  right: 0px;
   margin-top: 20px;
 }
 
@@ -290,14 +288,26 @@ button {
 }
 
 .close-overlay {
-  border: 2px solid #3a89cc;
-  border-radius: 5px;
-  margin: 3px 0 0 3px;
-  background-color: #49ACFF;
-  width: 43px;
-  height: 25px;
-  text-align: center;
-  display: inline-block;
-  vertical-align: middle;
+  background-image: url('../assets/closeBtn.png');
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  right: 2px;
+  top: 2px;
   cursor: pointer;
+}
+
+@media screen and (max-width: 1300px){
+  .white_content {
+    height: 85%;
+    top: 8%;
+  }
+
+  .code-snippet, .code-working {
+    width: 80%;
+    margin: 0 auto;
+    display: block
+  }
 }
