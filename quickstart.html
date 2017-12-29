@@ -145,7 +145,12 @@ xjs.ready().then(function() {
 </p>
 <p>
   First, the framework is loaded and saved into the <code>xjs</code> variable. We would then access the framework's <code>ready()</code> method; a method that returns a promise,
-  which resolves when XSplit JS Framework is ready to use. Always make sure your app checks when the framework is ready before it starts to use the framework!
+  which resolves when XSplit JS Framework is ready to use.
+  <br />
+  <p><a><i>
+    * It is important to note that the use of any kind of xjs calls (Environment checking, Initialization, getInstance,
+    and any other xjs calls) should be done after <code>xjs.ready</code> to avoid any issues.
+  </i></a></p>
 </p>
 <p>
   Let's dissect the code further...
