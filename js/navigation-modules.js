@@ -1811,13 +1811,6 @@ angular.module('navigation-modules', [])
           ]
         },
         {
-          "path": "/core/_subscribeEventManager",
-          "partial": "partials/modules//core/_subscribeEventManager/index.html",
-          "name": "_subscribeEventManager",
-          "type": "Function",
-          "pages": []
-        },
-        {
           "path": "/core/LanguageInfo",
           "partial": "partials/modules//core/LanguageInfo/index.html",
           "name": "LanguageInfo",
@@ -7316,11 +7309,6 @@ angular.module('navigation-modules', [])
               "name": "setValue"
             }
           ]
-        },
-        {
-          "name": "MediaTypes",
-          "type": "Let",
-          "pages": []
         },
         {
           "path": "/core/MediaSource",
