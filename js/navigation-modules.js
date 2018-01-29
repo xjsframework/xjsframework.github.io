@@ -1906,6 +1906,11 @@ angular.module('navigation-modules', [])
               "name": "getName"
             },
             {
+              "path": "/core/Output#getDisplayName",
+              "partial": "partials/modules//core/Output/index.html",
+              "name": "getDisplayName"
+            },
+            {
               "path": "/core/Output#startBroadcast",
               "partial": "partials/modules//core/Output/index.html",
               "name": "startBroadcast"

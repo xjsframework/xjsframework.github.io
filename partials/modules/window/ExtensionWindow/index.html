@@ -9,8 +9,10 @@
 <li><code>sources-list-highlight</code>: notifies when a user hovers over a source in the stage, returning its source id, or when the mouse moves out of a source bounding box, returning null. Source id is also returned when hovering over the bottom panel. Handler is a function f(id: string)</li>
 <li><code>sources-list-select</code>: notifies when a user clicks a source in the stage. Source id is also returned when source is selected from the bottom panel. Handler is a function f(id: string)</li>
 <li><code>sources-list-update</code>: notifies when there are changes on list sources whether on stage or bottom panel. Handler is a function(ids: string) where ids are comma separated source ids.</li>
-<li><code>scene-delete</code> : notifies when a user deletes a scene. Handler is a function f(index: number). Works only on version 2.8.1606.1601 or higher.</li>
-<li><p><code>scene-add</code> : notifies when a user adds a scene. Handler is a function f(index: number). Works only on version 2.8.1606.1701 or higher.</p>
+<li><code>scene-delete</code> : notifies when a scene is deleted. Handler is a function f(index: number, uid: string). Works only on version 2.8.1606.1601 or higher.</li>
+<li><code>scene-add</code> : notifies when a scene is added. Handler is a function f(index: number, uid: string). Works only on version 2.8.1606.1701 or higher.</li>
+<li><code>scene-delete-all</code> : notifies all scenes are deleted. Handler is a function f(type: newpres/loadpres). Works only on version 3.3.1801.1901 or higher.</li>
+<li><p><code>bscn-load</code> : notifies when user loads a scene file via XBC, File menu &gt; Load Scene...</p>
 <p>Use the <code>on(event: string, handler: Function)</code> function to listen to an event.</p>
 </li>
 </ul>
@@ -186,6 +188,6 @@
   </section>
 
 <p class="module defined-in">exported from <a href='#/window'>window</a><br/>
-defined in <a href="https://github.com/xjsframework/xjs/tree/master/src/window/extension.ts#L18-L275">../src/window/extension.ts (line 18)</a>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/src/window/extension.ts#L21-L343">../src/window/extension.ts (line 21)</a>
 </p>
 
