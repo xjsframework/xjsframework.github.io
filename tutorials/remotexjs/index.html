@@ -177,6 +177,25 @@ connection.onmessage = function (message) {
   For a simple example of a websocket chat server that works similarly to the given example above, you can check out
   <a href='http://usualcarrot.com/nodejs-and-websocket-simple-chat-tutorial' target='_blank'>Node.js & WebSocket - Simple chat tutorial</a>.
 </p>
+<h3>Additional Options</h3>
+<p>
+  There may be instances where the connection is reset or your proxy needs to calls an <code>xjs</code> method locally.
+  We've added these methods to help on this situations.
+</p>
+<h4>Re-Initializing sendMessage</h4>
+<p>
+  For instances where the connection could be cut off and re-initialized, you can now just re-set <code>sendMessage</code>
+  using <code>xjs.Remote.setSendMessage(myConnection.send)</code>
+</p>
+<h4>Setting the Remote type</h4>
+<p>
+  The option to set <code>xjs.Remote.remoteType</code> has been added and can be done using <code>xjs.Remote.setRemoteType(remoteType)</code>.
+  This has been added for instances where there's a need for the extension to perform a local xjs call.
+</p>
+<p>
+  It is important that when switching remote types, to make calls only for that type specifically and that it should be switched
+  back to it's original type for the remote functionality to continue to work.
+</p>
 <div class="information">
   <h3><span id='information'>&#128712; </span>Additional Information/Limitation</h3>
   <p>
