@@ -54,6 +54,31 @@ calls locally.</p>
 
 
   <section class="member static">
+    <a name="setRemoteType"><h1 id="setRemoteType" class="name">
+      <code>static</code> setRemoteType
+    </h1></a>
+    <pre><code>param: (value: string) / remoteType
+</code></pre>
+<p>Allows user to set the remoteType.
+May be used for instances that the extension may need to call a method locally.</p>
+<p><code>Note: This may break handling of calls if the type is not returned to its original assignment</code></p>
+
+  </section>
+
+
+  <section class="member static">
+    <a name="setSendMessage"><h1 id="setSendMessage" class="name">
+      <code>static</code> setSendMessage
+    </h1></a>
+    <pre><code>param: (value: connection)
+</code></pre>
+<p>Allows reassigning of <code>Remote.sendMessage</code> for instances when sending messages
+is replaced.</p>
+
+  </section>
+
+
+  <section class="member static">
     <a name="receiveMessage"><h1 id="receiveMessage" class="name">
       <code>static</code> receiveMessage
     </h1></a>
@@ -66,6 +91,6 @@ proxy.</p>
   </section>
 
 <p class="module defined-in">exported from <a href='#/internal'>internal</a><br/>
-defined in <a href="https://github.com/xjsframework/xjs/tree/master/src/internal/remote.ts#L10-L251">../src/internal/remote.ts (line 10)</a>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/src/internal/remote.ts#L10-L286">../src/internal/remote.ts (line 10)</a>
 </p>
 
