@@ -1,5 +1,5 @@
 <h1>Debugging Your Plugins</h1>
-<div class="notice"><strong>Important Notice:</strong> For users of XSplit 2.9 and lower, you will need a special CEF build to enable remote debugging (any build using Chromium 49 at maximum). You can <a href="http://cdn2.xsplit.com/xjs/download/cef-build/cef_binary_3.2704.1434.gec3e9ed_windows32_client.7z" target="_blank">download this build (this uses Chromium 49)</a> to open a functional remote debugging page.
+<div class="notice"><strong>Important Notice:</strong> For users of XSplit 2.9 and lower, you will need a special CEF build to enable remote debugging (any build using Chromium 49 at maximum). You can <a href="https://cdn2.xsplit.com/xjs/download/cef-build/cef_binary_3.2704.1434.gec3e9ed_windows32_client.7z" target="_blank">download this build (this uses Chromium 49)</a> to open a functional remote debugging page.
 </div>
 
 <p>
@@ -30,7 +30,7 @@
 <p>Once this is done, simply open <code>http://localhost:<em>&lt;port&gt;</em></code> (the remote debugging discovery page) on your browser. You will see a list of links, each pertaining to a plugin/webpage URL and labeled through their <code>&lt;title&gt;</code> element, or if not present, their URL. Click the link pertaining to your plugin to begin debugging. Note that this is not just for sources, but for extensions as well!</p>
 
 <h2>Debugging Your Source Properties Window</h2>
-<p>Debugging the source properties window is a bit tricky. To do this, you would need to download the <code>xsplitprops.html</code> file <a href = "http://cdn2.xsplit.com/xjs/download/xsplitprops.html" target="_blank" download>here</a> and move it to the same folder where <code>XSplit.Core.exe</code> is located. This is a special build for debugging.</p>
+<p>Debugging the source properties window is a bit tricky. To do this, you would need to download the <code>xsplitprops.html</code> file <a href = "https://cdn2.xsplit.com/xjs/download/xsplitprops.html" target="_blank" download>here</a> and move it to the same folder where <code>XSplit.Core.exe</code> is located. This is a special build for debugging.</p>
 
 <p>After this, you would need to add the startup parameter to XSplit:  <code>enablehtmlprop:2</code>.</p>
 
