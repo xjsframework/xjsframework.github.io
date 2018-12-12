@@ -27,11 +27,14 @@ System.getAvailableScreens().then(function(screens) {
     </h1></a>
     <pre><code>param: (value?: number | Scene)
 </code></pre>
-<pre><code>return: Promise&lt;boolean&gt;
+<pre><code>return: Promise&lt;any&gt;
 </code></pre>
 <p>Adds the prepared screen instance to the current screen by defualt.
 Accpets optional parameter value, whhich when supplied, points
-to the scene where the item will be added instead.</p>
+to the scene where the item will be added instead.
+If ready config {listenToItemAdd: true} it returns item id,
+else returns boolean.</p>
+<p>Note: There is yet no way to detect error responses for this action.</p>
 
   </section>
 
@@ -42,12 +45,15 @@ to the scene where the item will be added instead.</p>
     </h1></a>
     <pre><code>param: (value?: number | Scene)
 </code></pre>
-<pre><code>return: Promise&lt;boolean&gt;
+<pre><code>return: Promise&lt;any&gt;
 </code></pre>
 <p>Initializes the screen region selector crosshair
 so user may select a desktop region or a window to add to the stage in the current scene.
 Accepts an optional parameter value, which, when supplied,
-points to the scene where item will be added instead.</p>
+points to the scene where item will be added instead.
+If ready config {listenToItemAdd: true} it returns item id,
+else returns boolean.</p>
+<p>Note: There is yet no way to detect error responses for this action.</p>
 
   </section>
 
@@ -69,6 +75,6 @@ var screen = XJS.Screen.parse(jsonObj);
   </section>
 
 <p class="module defined-in">exported from <a href='#/system'>system</a><br/>
-defined in <a href="https://github.com/xjsframework/xjs/tree/master/src/system/screen.ts#L10-L124">../src/system/screen.ts (line 10)</a>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/src/system/screen.ts#L10-L131">../src/system/screen.ts (line 10)</a>
 </p>
 

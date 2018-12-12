@@ -47,11 +47,14 @@ System.getMicrophones().then(function(microphones) {
     </h1></a>
     <pre><code>param: (value?: number | Scene)
 </code></pre>
-<pre><code>return: Promise&lt;boolean&gt;
+<pre><code>return: Promise&lt;any&gt;
 </code></pre>
 <p>Adds this microphone device to the current scene by default.
 Accepts an optional parameter value, which, when supplied,
-points to the scene where item will be added instead.</p>
+points to the scene where item will be added instead.
+If ready config {listenToItemAdd: true} it returns item id,
+else returns boolean.</p>
+<p>Note: There is yet no way to detect error responses for this action.</p>
 
   </section>
 
@@ -69,6 +72,6 @@ points to the scene where item will be added instead.</p>
   </section>
 
 <p class="module defined-in">exported from <a href='#/system'>system</a><br/>
-defined in <a href="https://github.com/xjsframework/xjs/tree/master/src/system/microphone.ts#L8-L107">../src/system/microphone.ts (line 8)</a>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/src/system/microphone.ts#L8-L111">../src/system/microphone.ts (line 8)</a>
 </p>
 
