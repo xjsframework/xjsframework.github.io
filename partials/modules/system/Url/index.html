@@ -25,16 +25,19 @@ var urlPromise = new Url(&#39;https://www.xsplit.com&#39;).addToScene();
     </h1></a>
     <pre><code>param: (value?: number | Scene)
 </code></pre>
-<pre><code>return: Promise&lt;boolean&gt;
+<pre><code>return: Promise&lt;any&gt;
 </code></pre>
 <p>Adds this URL to the current scene as an HTML source by default.
 Accepts an optional parameter value, which, when supplied,
-points to the scene where item will be added instead.</p>
-<p> Will raise an error if URL is not http or https.</p>
+points to the scene where item will be added instead.
+If ready config {listenToItemAdd: true} it returns item id,
+else returns boolean.</p>
+<p>Will only raise an error if URL is not http or https.</p>
+<p>Note: There is yet no way to detect error responses for this action.</p>
 
   </section>
 
 <p class="module defined-in">exported from <a href='#/system'>system</a><br/>
-defined in <a href="https://github.com/xjsframework/xjs/tree/master/src/system/url.ts#L6-L75">../src/system/url.ts (line 6)</a>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/src/system/url.ts#L6-L79">../src/system/url.ts (line 6)</a>
 </p>
 

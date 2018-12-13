@@ -1807,6 +1807,11 @@ angular.module('navigation-modules', [])
               "path": "/core/ChannelManager#on",
               "partial": "partials/modules//core/ChannelManager/index.html",
               "name": "on"
+            },
+            {
+              "path": "/core/ChannelManager#off",
+              "partial": "partials/modules//core/ChannelManager/index.html",
+              "name": "off"
             }
           ]
         },
@@ -1947,6 +1952,11 @@ angular.module('navigation-modules', [])
               "path": "/core/CameraItem#getDeviceId",
               "partial": "partials/modules//core/CameraItem/index.html",
               "name": "getDeviceId"
+            },
+            {
+              "path": "/core/CameraItem#getResolution",
+              "partial": "partials/modules//core/CameraItem/index.html",
+              "name": "getResolution"
             },
             {
               "path": "/core/CameraItem#getAudioOffset",
@@ -6731,6 +6741,11 @@ angular.module('navigation-modules', [])
               "name": "getDeviceId"
             },
             {
+              "path": "/core/CameraSource#getResolution",
+              "partial": "partials/modules//core/CameraSource/index.html",
+              "name": "getResolution"
+            },
+            {
               "path": "/core/CameraSource#getAudioOffset",
               "partial": "partials/modules//core/CameraSource/index.html",
               "name": "getAudioOffset"
@@ -7314,6 +7329,11 @@ angular.module('navigation-modules', [])
               "name": "setValue"
             }
           ]
+        },
+        {
+          "name": "MediaTypes",
+          "type": "Let",
+          "pages": []
         },
         {
           "path": "/core/MediaSource",
@@ -8392,6 +8412,11 @@ angular.module('navigation-modules', [])
               "name": "close"
             },
             {
+              "path": "/window/SourcePropsWindow#showLoading",
+              "partial": "partials/modules//window/SourcePropsWindow/index.html",
+              "name": "showLoading"
+            },
+            {
               "path": "/window/SourcePropsWindow#getInstance",
               "partial": "partials/modules//window/SourcePropsWindow/index.html",
               "name": "getInstance"
@@ -8541,6 +8566,11 @@ angular.module('navigation-modules', [])
               "name": "setButtons"
             },
             {
+              "path": "/window/Dialog#setCookiePath",
+              "partial": "partials/modules//window/Dialog/index.html",
+              "name": "setCookiePath"
+            },
+            {
               "path": "/window/Dialog#show",
               "partial": "partials/modules//window/Dialog/index.html",
               "name": "show"
@@ -8595,6 +8625,16 @@ angular.module('navigation-modules', [])
               "path": "/internal/Remote#remoteType",
               "partial": "partials/modules//internal/Remote/index.html",
               "name": "remoteType"
+            },
+            {
+              "path": "/internal/Remote#setRemoteType",
+              "partial": "partials/modules//internal/Remote/index.html",
+              "name": "setRemoteType"
+            },
+            {
+              "path": "/internal/Remote#setSendMessage",
+              "partial": "partials/modules//internal/Remote/index.html",
+              "name": "setSendMessage"
             },
             {
               "path": "/internal/Remote#receiveMessage",

@@ -35,16 +35,19 @@ internally for the <code>addToScene</code> method.</p>
     </h1></a>
     <pre><code>param: (value?: number | Scene)
 </code></pre>
-<pre><code>return: Promise&lt;boolean&gt;
+<pre><code>return: Promise&lt;any&gt;
 </code></pre>
 <p>Adds the prepared video playlist to the current scene by default.
 Accepts an optional parameter value, which when supplied,
 points to the scene where item will be added instead.
+If ready config {listenToItemAdd: true} it returns item id,
+else returns boolean.
 This function is not available to sources.</p>
+<p>Note: There is yet no way to detect error responses for this action.</p>
 
   </section>
 
 <p class="module defined-in">exported from <a href='#/system'>system</a><br/>
-defined in <a href="https://github.com/xjsframework/xjs/tree/master/src/system/videoplaylist.ts#L10-L161">../src/system/videoplaylist.ts (line 10)</a>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/src/system/videoplaylist.ts#L11-L166">../src/system/videoplaylist.ts (line 11)</a>
 </p>
 
