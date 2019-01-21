@@ -72,12 +72,15 @@ xjs.ready()
 <p>
   Developers should also note that since there is only one HTML file for their properties window, multiple custom tabs have to be handled in the same file. In order to achieve this, the window needs to listen to the <code>set-selected-tab</code> event emitted by the properties window's event emitter. (This event only fires when a custom tab is selected.)
 </p>
-<pre class="language-javascript"><code>// Do this after xjs.ready()
-const propsWindow = xjs.SourcePropsWindow.getInstance();
-propsWindow.on('set-selected-tab', function(selectedTab) {
-  // selectedTab is the exact tab title passed to the customTabs node
-  // Plugin developers should let the page render the correct tab here, perhaps through CSS
-});</code></pre>
+<pre class="language-javascript"><code>
+xjs.ready()
+  .then(function() {
+    const propsWindow = xjs.SourcePropsWindow.getInstance();
+    propsWindow.on('set-selected-tab', function(selectedTab) {
+      // selectedTab is the exact tab title passed to the customTabs node
+      // Plugin developers should let the page render the correct tab here, perhaps through CSS
+    });
+   });</code></pre>
 <a name="man-config-obj"><h3>Manipulating the configuration object</h3></a>
 <p>
   The source’s custom configuration object can be manipulated similarly to how the source itself does it (<a href="tutorials.html#/sourceplugins" target="_blank">see this article</a>), but there are some differences.
