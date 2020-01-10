@@ -101,7 +101,7 @@ xjs.ready().then(function() {
 
 <p>We are currently exposing the following two DLLs for developers. Note that all DLL call parameters and return types will always be <code>string</code>. If you find any bugs with the XSplit DLLs, please file an issue at the framework's <a href='https://github.com/xjsframework/xjs/issues/new' target='_new'>Github page.</a></p>
 
-<p><i>Important note:</i> For security purposes, only <code>Xjs.dll</code> is automatically loaded, and is considered as a safe DLL. This means that you use <a href="api.html#/window/Dll#call" target="_blank"><code>Dll.call()</code></a> to call its functions. In order to access the functionality of the unsafe <code>XjsEx.dll</code>, you will need to first load it using <a href="api.html#/window/Dll#load" target="_blank"><code>Dll.load()</code></a> as in the sample code above, and use <a href="api.html#/window/Dll#callEx" target="_blank"><code>Dll.callEx()</code></a> instead.</p>
+<p><i>Important note:</i> For security purposes, only <code>Xjs.dll</code> is automatically loaded, and is considered as a safe DLL. This means that you use <a href="api.html#/core/Dll#call" target="_blank"><code>Dll.call()</code></a> to call its functions. In order to access the functionality of the unsafe <code>XjsEx.dll</code>, you will need to first load it using <a href="api.html#/core/Dll#load" target="_blank"><code>Dll.load()</code></a> as in the sample code above, and use <a href="api.html#/core/Dll#callEx" target="_blank"><code>Dll.callEx()</code></a> instead.</p>
 
 <table>
   <caption>Xjs.dll (auto-loaded)</caption>
