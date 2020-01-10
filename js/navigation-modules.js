@@ -6726,6 +6726,51 @@ angular.module('navigation-modules', [])
               "path": "/core/VideoPlaylistItem#isVideo",
               "partial": "partials/modules//core/VideoPlaylistItem/index.html",
               "name": "isVideo"
+            },
+            {
+              "path": "/core/VideoPlaylistItem#getVolume",
+              "partial": "partials/modules//core/VideoPlaylistItem/index.html",
+              "name": "getVolume"
+            },
+            {
+              "path": "/core/VideoPlaylistItem#isMute",
+              "partial": "partials/modules//core/VideoPlaylistItem/index.html",
+              "name": "isMute"
+            },
+            {
+              "path": "/core/VideoPlaylistItem#isAutoMute",
+              "partial": "partials/modules//core/VideoPlaylistItem/index.html",
+              "name": "isAutoMute"
+            },
+            {
+              "path": "/core/VideoPlaylistItem#setVolume",
+              "partial": "partials/modules//core/VideoPlaylistItem/index.html",
+              "name": "setVolume"
+            },
+            {
+              "path": "/core/VideoPlaylistItem#setMute",
+              "partial": "partials/modules//core/VideoPlaylistItem/index.html",
+              "name": "setMute"
+            },
+            {
+              "path": "/core/VideoPlaylistItem#setAutoMute",
+              "partial": "partials/modules//core/VideoPlaylistItem/index.html",
+              "name": "setAutoMute"
+            },
+            {
+              "path": "/core/VideoPlaylistItem#isStreamOnlyAudio",
+              "partial": "partials/modules//core/VideoPlaylistItem/index.html",
+              "name": "isStreamOnlyAudio"
+            },
+            {
+              "path": "/core/VideoPlaylistItem#setStreamOnlyAudio",
+              "partial": "partials/modules//core/VideoPlaylistItem/index.html",
+              "name": "setStreamOnlyAudio"
+            },
+            {
+              "path": "/core/VideoPlaylistItem#isAudioAvailable",
+              "partial": "partials/modules//core/VideoPlaylistItem/index.html",
+              "name": "isAudioAvailable"
             }
           ]
         },
@@ -8574,6 +8619,11 @@ angular.module('navigation-modules', [])
               "path": "/window/Dialog#show",
               "partial": "partials/modules//window/Dialog/index.html",
               "name": "show"
+            },
+            {
+              "path": "/window/Dialog#showWithJS",
+              "partial": "partials/modules//window/Dialog/index.html",
+              "name": "showWithJS"
             },
             {
               "path": "/window/Dialog#getResult",
