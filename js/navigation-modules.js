@@ -7376,11 +7376,6 @@ angular.module('navigation-modules', [])
           ]
         },
         {
-          "name": "MediaTypes",
-          "type": "Let",
-          "pages": []
-        },
-        {
           "path": "/core/MediaSource",
           "partial": "partials/modules//core/MediaSource/index.html",
           "name": "MediaSource",
