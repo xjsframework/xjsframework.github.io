@@ -103,8 +103,9 @@ of the outputs supporting it, will use last settings provided</li>
     <a name="pauseLocalRecording"><h1 id="pauseLocalRecording" class="name">
       pauseLocalRecording
     </h1></a>
-    <pre><code>return: Promise&lt;boolean&gt;
+    <pre><code>** For Deprecation, please use the static method instead
 </code></pre>
+<p>return: Promise<boolean></p>
 <p>Pause a local recording.</p>
 
   </section>
@@ -114,8 +115,9 @@ of the outputs supporting it, will use last settings provided</li>
     <a name="unpauseLocalRecording"><h1 id="unpauseLocalRecording" class="name">
       unpauseLocalRecording
     </h1></a>
-    <pre><code>return: Promise&lt;boolean&gt;
+    <pre><code>** For Deprecation, please use the static method instead
 </code></pre>
+<p>return: Promise<boolean></p>
 <p>Unpause a local recording.</p>
 
   </section>
@@ -151,7 +153,64 @@ xjs.Output.getOutputList()
 
   </section>
 
+
+  <section class="member static">
+    <a name="setSceneToRecord"><h1 id="setSceneToRecord" class="name">
+      <code>static</code> setSceneToRecord
+    </h1></a>
+    <pre><code>param: scene&lt;number|Scene&gt;
+</code></pre>
+<pre><code>return: Promise&lt;boolean&gt;
+</code></pre>
+<p>Sets a scene to record. Set to live scene or blank string to reset</p>
+
+  </section>
+
+
+  <section class="member static">
+    <a name="startLocalRecording"><h1 id="startLocalRecording" class="name">
+      <code>static</code> startLocalRecording
+    </h1></a>
+    <pre><code>return: Promise&lt;boolean&gt;
+</code></pre>
+<p>Start a local recording.</p>
+
+  </section>
+
+
+  <section class="member static">
+    <a name="stopLocalRecording"><h1 id="stopLocalRecording" class="name">
+      <code>static</code> stopLocalRecording
+    </h1></a>
+    <pre><code>return: Promise&lt;boolean&gt;
+</code></pre>
+<p>Unpause a local recording.</p>
+
+  </section>
+
+
+  <section class="member static">
+    <a name="pauseLocalRecording"><h1 id="pauseLocalRecording" class="name">
+      <code>static</code> pauseLocalRecording
+    </h1></a>
+    <pre><code>return: Promise&lt;boolean&gt;
+</code></pre>
+<p>Pause a local recording.</p>
+
+  </section>
+
+
+  <section class="member static">
+    <a name="unpauseLocalRecording"><h1 id="unpauseLocalRecording" class="name">
+      <code>static</code> unpauseLocalRecording
+    </h1></a>
+    <pre><code>return: Promise&lt;boolean&gt;
+</code></pre>
+<p>Unpause a local recording.</p>
+
+  </section>
+
 <p class="module defined-in">exported from <a href='#/core'>core</a><br/>
-defined in <a href="https://github.com/xjsframework/xjs/tree/master/src/core/output.ts#L18-L354">../src/core/output.ts (line 18)</a>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/src/core/output.ts#L18-L436">../src/core/output.ts (line 18)</a>
 </p>
 

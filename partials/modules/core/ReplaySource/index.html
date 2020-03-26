@@ -1,0 +1,208 @@
+
+<h1 class="class export">ReplaySource <span class="type">class</span></h1>
+<p><p>The ReplaySource class represents the sources of the replay items that
+has been added to the stage. A single source could have multiple items linked
+into it and any changes to the source would affect all items linked to it.</p>
+<p>Each item is represented by the ReplayItem class.
+See: <a href='#core/ReplayItem'>Core/ReplayItem</a></p>
+<p>Inherits from: <a href='#core/Source'>Core/Source</a></p>
+<h3 id="basic-usage">Basic Usage</h3>
+<pre><code class="lang-javascript">var xjs = require(&#39;xjs&#39;);
+
+xjs.Scene.getActiveScene().then(function(scene) {
+  scene.getSources().then(function(sources) {
+  for (var i in sources) {
+      if (sources[i] instanceof XJS.ReplaySource) {
+        // Manipulate your game source here
+        sources[i].setSilenceDetectionEnabled(true);
+      }
+    }
+  })
+})
+</code></pre>
+<p>All methods marked as <em>Chainable</em> resolve with the original <code>ReplaySource</code>
+instance.</p>
+</p><h2>Members</h2>
+  <section class="member">
+    <a name="getChannel"><h1 id="getChannel" class="name">
+      getChannel
+    </h1></a>
+          <p>See: <a href='#core/ISourceReplay#getChannel'>getChannel</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="setChannel"><h1 id="setChannel" class="name">
+      setChannel
+    </h1></a>
+          <p>See: <a href='#core/ISourceReplay#setChannel'>setChannel</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="getHotkey"><h1 id="getHotkey" class="name">
+      getHotkey
+    </h1></a>
+          <p>See: <a href='#core/ISourceReplay#getHotkey'>getHotkey</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="setHotkey"><h1 id="setHotkey" class="name">
+      setHotkey
+    </h1></a>
+          <p>See: <a href='#core/ISourceReplay#setHotkey'>setHotkey</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="getReplayTime"><h1 id="getReplayTime" class="name">
+      getReplayTime
+    </h1></a>
+          <p>See: <a href='#core/ISourceReplay#getReplayTime'>getReplayTime</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="setReplayTime"><h1 id="setReplayTime" class="name">
+      setReplayTime
+    </h1></a>
+          <p>See: <a href='#core/ISourceReplay#setReplayTime'>setReplayTime</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="startReplay"><h1 id="startReplay" class="name">
+      startReplay
+    </h1></a>
+          <p>See: <a href='#core/ISourceReplay#startReplay'>startReplay</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="stopReplay"><h1 id="stopReplay" class="name">
+      stopReplay
+    </h1></a>
+          <p>See: <a href='#core/ISourceReplay#stopReplay'>stopReplay</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="getReplayState"><h1 id="getReplayState" class="name">
+      getReplayState
+    </h1></a>
+          <p>See: <a href='#core/ISourceReplay#getReplayState'>getReplayState</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="isAutostartOnSceneLoad"><h1 id="isAutostartOnSceneLoad" class="name">
+      isAutostartOnSceneLoad
+    </h1></a>
+          <p>See: <a href='#core/ISourceReplay#isAutostartOnSceneLoad'>isAutostartOnSceneLoad</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="setAutostartOnSceneLoad"><h1 id="setAutostartOnSceneLoad" class="name">
+      setAutostartOnSceneLoad
+    </h1></a>
+          <p>See: <a href='#core/ISourceReplay#setAutostartOnSceneLoad'>setAutostartOnSceneLoad</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="getVolume"><h1 id="getVolume" class="name">
+      getVolume
+    </h1></a>
+          <p>See: <a href='#core/IAudio#getVolume'>getVolume</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="isMute"><h1 id="isMute" class="name">
+      isMute
+    </h1></a>
+          <p>See: <a href='#core/IAudio#isMute'>isMute</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="isAutoMute"><h1 id="isAutoMute" class="name">
+      isAutoMute
+    </h1></a>
+          <p>See: <a href='#core/IAudio#isAutoMute'>isAutoMute</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="setVolume"><h1 id="setVolume" class="name">
+      setVolume
+    </h1></a>
+          <p>See: <a href='#core/IAudio#setVolume'>setVolume</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="setMute"><h1 id="setMute" class="name">
+      setMute
+    </h1></a>
+          <p>See: <a href='#core/IAudio#setMute'>setMute</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="setAutoMute"><h1 id="setAutoMute" class="name">
+      setAutoMute
+    </h1></a>
+          <p>See: <a href='#core/IAudio#setAutoMute'>setAutoMute</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="isStreamOnlyAudio"><h1 id="isStreamOnlyAudio" class="name">
+      isStreamOnlyAudio
+    </h1></a>
+          <p>See: <a href='#core/IAudio#isStreamOnlyAudio'>isStreamOnlyAudio</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="setStreamOnlyAudio"><h1 id="setStreamOnlyAudio" class="name">
+      setStreamOnlyAudio
+    </h1></a>
+          <p>See: <a href='#core/IAudio#setStreamOnlyAudio'>setStreamOnlyAudio</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="isAudioAvailable"><h1 id="isAudioAvailable" class="name">
+      isAudioAvailable
+    </h1></a>
+          <p>See: <a href='#core/IAudio#isAudioAvailable'>isAudioAvailable</a></p>
+      
+  </section>
+
+<p class="module defined-in">exported from <a href='#/core'>core</a><br/>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/src/core/source/replay.ts#L6-L102">../src/core/source/replay.ts (line 6)</a>
+</p>
+

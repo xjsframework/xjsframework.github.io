@@ -308,7 +308,58 @@ Please note that resetting mask effect also resets this to false</p>
 
   </section>
 
+
+  <section class="member">
+    <a name="getFilter"><h1 id="getFilter" class="name">
+      getFilter
+    </h1></a>
+    <pre><code>return: Promise&lt;Filter&gt;
+</code></pre>
+<p>Gets the post processing shader used</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="setFilter"><h1 id="setFilter" class="name">
+      setFilter
+    </h1></a>
+    <pre><code>param: (value: Filter or transitionString)
+</code></pre>
+<p>Sets the post processing shader to be used for the Item</p>
+<p><em>Chainable.</em></p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="removeFilter"><h1 id="removeFilter" class="name">
+      removeFilter
+    </h1></a>
+    <pre><code>Removes the set post-processing shader used.
+</code></pre>
+<p>Similar to setting to NONE</p>
+<p><em>Chainable.</em></p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="getFilterConfig"><h1 id="getFilterConfig" class="name">
+      getFilterConfig
+    </h1></a>
+    <pre><code>return: Promise&lt;Filter&gt;
+</code></pre>
+<p>Gets the post-processing shader configurations
+as an object possibly having properties such as:</p>
+<ul>
+<li><code>intensity</code> : percentage of filter applied</li>
+<li><code>resourceFile</code> : PNG image used as a reference for LUTs</li>
+</ul>
+
+  </section>
+
 <p class="module defined-in">exported from <a href='#/core'>core</a><br/>
-defined in <a href="https://github.com/xjsframework/xjs/tree/master/src/core/items/ieffects.ts#L40-L276">../src/core/items/ieffects.ts (line 40)</a>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/src/core/items/ieffects.ts#L42-L315">../src/core/items/ieffects.ts (line 42)</a>
 </p>
 

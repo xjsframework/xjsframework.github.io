@@ -1,0 +1,44 @@
+
+<h1 class="class export">SceneSource <span class="type">class</span></h1>
+<p><p>The SceneSource class represents the sources of the scene items that
+has been added to the stage. A single source could have multiple items linked
+into it and any changes to the source would affect all items linked to it.</p>
+<p>Each item is represented by the SceneItem class.
+See: <a href='#core/SceneItem'>Core/SceneItem</a></p>
+<p>Inherits from: <a href='#core/Source'>Core/Source</a></p>
+<h3 id="basic-usage">Basic Usage</h3>
+<pre><code class="lang-javascript">var xjs = require(&#39;xjs&#39;);
+
+xjs.Scene.getActiveScene().then(function(scene) {
+  scene.getSources().then(function(sources) {
+  for (var i in sources) {
+      if (sources[i] instanceof XJS.SceneSource) {
+        // Manipulate your scene source here
+        sources[i].setSilenceDetectionEnabled(true);
+      }
+    }
+  })
+})
+</code></pre>
+</p><h2>Members</h2>
+  <section class="member">
+    <a name="getScene"><h1 id="getScene" class="name">
+      getScene
+    </h1></a>
+          <p>See: <a href='#core/ISourceScene#getScene'>getScene</a></p>
+      
+  </section>
+
+
+  <section class="member">
+    <a name="setScene"><h1 id="setScene" class="name">
+      setScene
+    </h1></a>
+          <p>See: <a href='#core/ISourceScene#setScene'>setScene</a></p>
+      
+  </section>
+
+<p class="module defined-in">exported from <a href='#/core'>core</a><br/>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/src/core/source/scenesource.ts#L6-L45">../src/core/source/scenesource.ts (line 6)</a>
+</p>
+

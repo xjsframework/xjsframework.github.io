@@ -1,0 +1,72 @@
+
+<h1 class="class export">ISourceFlash <span class="type">interface</span></h1>
+<p></p><h2>Members</h2>
+  <section class="member">
+    <a name="getCustomResolution"><h1 id="getCustomResolution" class="name">
+      getCustomResolution
+    </h1></a>
+    <pre><code>return: Promise&lt;Rectangle&gt;
+</code></pre>
+<p>Gets the custom resolution (in pixels) for the item, if set,
+regardless of its layout on the mixer. Returns a (0, 0) Rectangle if no
+custom resolution has been set.</p>
+<p>See also: <a href='#util/Rectangle'>Util/Rectangle</a></p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="setCustomResolution"><h1 id="setCustomResolution" class="name">
+      setCustomResolution
+    </h1></a>
+    <pre><code>param: (value: Rectangle)
+</code></pre>
+<pre><code>return: Promise&lt;FlashSource&gt;
+</code></pre>
+<p>Sets the custom resolution for the item
+regardless of its layout on the mixer</p>
+<p><em>Chainable.</em></p>
+<p>See also: <a href='#util/Rectangle'>Util/Rectangle</a></p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="getAllowRightClick"><h1 id="getAllowRightClick" class="name">
+      getAllowRightClick
+    </h1></a>
+    <pre><code>return: Promise&lt;boolean&gt;
+</code></pre>
+<p>Check if right click events are sent to the item or not.</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">item.getAllowRightClick().then(function(isRightClickAllowed) {
+  // The rest of your code here
+});
+</code></pre>
+
+  </section>
+
+
+  <section class="member">
+    <a name="setAllowRightClick"><h1 id="setAllowRightClick" class="name">
+      setAllowRightClick
+    </h1></a>
+    <pre><code>param: (value:boolean)
+</code></pre>
+<pre><code>return: Promise&lt;Item&gt;
+</code></pre>
+<p>Allow or disallow right click events to be sent to the item. Note that
+you can only catch right click events using <code>mouseup/mousedown</code></p>
+<p><em>Chainable</em></p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">item.setAllowRightClick(true).then(function(item) {
+  // Promise resolves with the same Item instance
+});
+</code></pre>
+
+  </section>
+
+<p class="module defined-in">exported from <a href='#/core'>core</a><br/>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/src/core/source/iflash.ts#L5-L69">../src/core/source/iflash.ts (line 5)</a>
+</p>
+

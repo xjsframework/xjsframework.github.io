@@ -27,12 +27,8 @@ instance.</p>
     <a name="call"><h1 id="call" class="name">
       call
     </h1></a>
-    <pre><code>param: (func: string, arg: string)
-</code></pre>
-<pre><code>return: Promise&lt;HtmlSource&gt;
-</code></pre>
-<p>Allow this source to call a pre-exposed function within the HTML Source</p>
-
+          <p>See: <a href='#core/ISourceHtml#call'>call</a></p>
+      
   </section>
 
 
@@ -40,10 +36,8 @@ instance.</p>
     <a name="getURL"><h1 id="getURL" class="name">
       getURL
     </h1></a>
-    <pre><code>return: Promise&lt;string&gt;
-</code></pre>
-<p>Gets the URL of this webpage source.</p>
-
+          <p>See: <a href='#core/ISourceHtml#getURL'>getURL</a></p>
+      
   </section>
 
 
@@ -51,13 +45,8 @@ instance.</p>
     <a name="setURL"><h1 id="setURL" class="name">
       setURL
     </h1></a>
-    <pre><code>param: (url: string)
-</code></pre>
-<pre><code>return: Promise&lt;HtmlSource&gt;
-</code></pre>
-<p>Sets the URL of this webpage source.</p>
-<p><em>Chainable.</em></p>
-
+          <p>See: <a href='#core/ISourceHtml#setURL'>setURL</a></p>
+      
   </section>
 
 
@@ -65,10 +54,8 @@ instance.</p>
     <a name="isBrowserTransparent"><h1 id="isBrowserTransparent" class="name">
       isBrowserTransparent
     </h1></a>
-    <pre><code>return: Promise&lt;boolean&gt;
-</code></pre>
-<p>Check if browser is rendered transparent</p>
-
+          <p>See: <a href='#core/ISourceHtml#isBrowserTransparent'>isBrowserTransparent</a></p>
+      
   </section>
 
 
@@ -76,13 +63,8 @@ instance.</p>
     <a name="enableBrowserTransparency"><h1 id="enableBrowserTransparency" class="name">
       enableBrowserTransparency
     </h1></a>
-    <pre><code>param: Promise&lt;boolean&gt;
-</code></pre>
-<pre><code>return: Promise&lt;HtmlSource&gt;
-</code></pre>
-<p>Enable or disable transparency of CEF browser</p>
-<p><em>Chainable.</em></p>
-
+          <p>See: <a href='#core/ISourceHtml#enableBrowserTransparency'>enableBrowserTransparency</a></p>
+      
   </section>
 
 
@@ -90,10 +72,8 @@ instance.</p>
     <a name="isBrowser60FPS"><h1 id="isBrowser60FPS" class="name">
       isBrowser60FPS
     </h1></a>
-    <pre><code>return: Promise&lt;boolean&gt;
-</code></pre>
-<p>Check if browser can render up to a maximum of 60FPS</p>
-
+          <p>See: <a href='#core/ISourceHtml#isBrowser60FPS'>isBrowser60FPS</a></p>
+      
   </section>
 
 
@@ -101,13 +81,8 @@ instance.</p>
     <a name="enableBrowser60FPS"><h1 id="enableBrowser60FPS" class="name">
       enableBrowser60FPS
     </h1></a>
-    <pre><code>param: Promise&lt;boolean&gt;
-</code></pre>
-<pre><code>return: Promise&lt;HtmlSource&gt;
-</code></pre>
-<p>Enable or disable browser source to render up to a maximum of 60FPS</p>
-<p><em>Chainable.</em></p>
-
+          <p>See: <a href='#core/ISourceHtml#enableBrowser60FPS'>enableBrowser60FPS</a></p>
+      
   </section>
 
 
@@ -115,13 +90,8 @@ instance.</p>
     <a name="getBrowserCustomSize"><h1 id="getBrowserCustomSize" class="name">
       getBrowserCustomSize
     </h1></a>
-    <pre><code>return: Promise&lt;Rectangle&gt;
-</code></pre>
-<p>Gets the custom browser window size (in pixels) for the item, if set,
-regardless of its layout on the mixer. Returns a (0, 0) Rectangle if no
-custom size has been set.</p>
-<p>See also: <a href='#util/Rectangle'>Util/Rectangle</a></p>
-
+          <p>See: <a href='#core/ISourceHtml#getBrowserCustomSize'>getBrowserCustomSize</a></p>
+      
   </section>
 
 
@@ -129,15 +99,8 @@ custom size has been set.</p>
     <a name="setBrowserCustomSize"><h1 id="setBrowserCustomSize" class="name">
       setBrowserCustomSize
     </h1></a>
-    <pre><code>param: Promise&lt;Rectangle&gt;
-</code></pre>
-<pre><code>return: Promise&lt;HtmlSource&gt;
-</code></pre>
-<p>Sets the custom browser window size for the item
-regardless of its layout on the mixer</p>
-<p><em>Chainable.</em></p>
-<p>See also: <a href='#util/Rectangle'>Util/Rectangle</a></p>
-
+          <p>See: <a href='#core/ISourceHtml#setBrowserCustomSize'>setBrowserCustomSize</a></p>
+      
   </section>
 
 
@@ -145,15 +108,8 @@ regardless of its layout on the mixer</p>
     <a name="getAllowRightClick"><h1 id="getAllowRightClick" class="name">
       getAllowRightClick
     </h1></a>
-    <pre><code>return: Promise&lt;boolean&gt;
-</code></pre>
-<p>Check if right click events are sent to the item or not.</p>
-<h4 id="usage">Usage</h4>
-<pre><code class="lang-javascript">item.getAllowRightClick().then(function(isRightClickAllowed) {
-  // The rest of your code here
-});
-</code></pre>
-
+          <p>See: <a href='#core/ISourceHtml#getAllowRightClick'>getAllowRightClick</a></p>
+      
   </section>
 
 
@@ -161,19 +117,8 @@ regardless of its layout on the mixer</p>
     <a name="setAllowRightClick"><h1 id="setAllowRightClick" class="name">
       setAllowRightClick
     </h1></a>
-    <pre><code>param: (value:boolean)
-</code></pre>
-<pre><code>return: Promise&lt;Source&gt;
-</code></pre>
-<p>Allow or disallow right click events to be sent to the item. Note that
-you can only catch right click events using <code>mouseup/mousedown</code></p>
-<p><em>Chainable</em></p>
-<h4 id="usage">Usage</h4>
-<pre><code class="lang-javascript">item.setAllowRightClick(true).then(function(item) {
-  // Promise resolves with the same Item instance
-});
-</code></pre>
-
+          <p>See: <a href='#core/ISourceHtml#setAllowRightClick'>setAllowRightClick</a></p>
+      
   </section>
 
 
@@ -181,10 +126,8 @@ you can only catch right click events using <code>mouseup/mousedown</code></p>
     <a name="getBrowserJS"><h1 id="getBrowserJS" class="name">
       getBrowserJS
     </h1></a>
-    <pre><code>return: Promise&lt;string&gt;
-</code></pre>
-<p>Gets the javascript commands to be executed on item upon load</p>
-
+          <p>See: <a href='#core/ISourceHtml#getBrowserJS'>getBrowserJS</a></p>
+      
   </section>
 
 
@@ -192,15 +135,8 @@ you can only catch right click events using <code>mouseup/mousedown</code></p>
     <a name="setBrowserJS"><h1 id="setBrowserJS" class="name">
       setBrowserJS
     </h1></a>
-    <pre><code>param: (js: string, refresh: boolean = false)
-</code></pre>
-<pre><code>return: Promise&lt;ISourceHtml&gt;
-</code></pre>
-<p>Sets the javascript commands to be executed on item
-right upon setting and on load. Optionally set second parameter
-to true to refresh item (needed to clean previously executed JS code.)</p>
-<p><em>Chainable.</em></p>
-
+          <p>See: <a href='#core/ISourceHtml#setBrowserJS'>setBrowserJS</a></p>
+      
   </section>
 
 
@@ -208,10 +144,8 @@ to true to refresh item (needed to clean previously executed JS code.)</p>
     <a name="isBrowserJSEnabled"><h1 id="isBrowserJSEnabled" class="name">
       isBrowserJSEnabled
     </h1></a>
-    <pre><code>return: Promise&lt;boolean&gt;
-</code></pre>
-<p>Gets if BrowserJS is enabled and executed on load</p>
-
+          <p>See: <a href='#core/ISourceHtml#isBrowserJSEnabled'>isBrowserJSEnabled</a></p>
+      
   </section>
 
 
@@ -219,15 +153,8 @@ to true to refresh item (needed to clean previously executed JS code.)</p>
     <a name="enableBrowserJS"><h1 id="enableBrowserJS" class="name">
       enableBrowserJS
     </h1></a>
-    <pre><code>param: (value: boolean)
-</code></pre>
-<pre><code>return: Promise&lt;HtmlSource&gt;
-</code></pre>
-<p>Enables or disables execution of the set BrowserJs upon load.
-Note that disabling this will require item to be refreshed
-in order to remove any BrowserJS previously executed.</p>
-<p><em>Chainable.</em></p>
-
+          <p>See: <a href='#core/ISourceHtml#enableBrowserJS'>enableBrowserJS</a></p>
+      
   </section>
 
 
@@ -235,10 +162,8 @@ in order to remove any BrowserJS previously executed.</p>
     <a name="getCustomCSS"><h1 id="getCustomCSS" class="name">
       getCustomCSS
     </h1></a>
-    <pre><code>return: Promise&lt;string&gt;
-</code></pre>
-<p>Gets the custom CSS applied to the document upon loading</p>
-
+          <p>See: <a href='#core/ISourceHtml#getCustomCSS'>getCustomCSS</a></p>
+      
   </section>
 
 
@@ -246,13 +171,8 @@ in order to remove any BrowserJS previously executed.</p>
     <a name="setCustomCSS"><h1 id="setCustomCSS" class="name">
       setCustomCSS
     </h1></a>
-    <pre><code>param: (value: string)
-</code></pre>
-<pre><code>return: Promise&lt;HtmlSource&gt;
-</code></pre>
-<p>Sets the custom CSS to be applied to the document upon loading</p>
-<p><em>Chainable.</em></p>
-
+          <p>See: <a href='#core/ISourceHtml#setCustomCSS'>setCustomCSS</a></p>
+      
   </section>
 
 
@@ -260,10 +180,8 @@ in order to remove any BrowserJS previously executed.</p>
     <a name="isCustomCSSEnabled"><h1 id="isCustomCSSEnabled" class="name">
       isCustomCSSEnabled
     </h1></a>
-    <pre><code>return: Promise&lt;boolean&gt;
-</code></pre>
-<p>Gets if custom CSS is enabled and applied to the document on load</p>
-
+          <p>See: <a href='#core/ISourceHtml#isCustomCSSEnabled'>isCustomCSSEnabled</a></p>
+      
   </section>
 
 
@@ -271,13 +189,8 @@ in order to remove any BrowserJS previously executed.</p>
     <a name="enableCustomCSS"><h1 id="enableCustomCSS" class="name">
       enableCustomCSS
     </h1></a>
-    <pre><code>param: (value: boolean)
-</code></pre>
-<pre><code>return: Promise&lt;HtmlSource&gt;
-</code></pre>
-<p>Enables or disables application of custom CSS to the document</p>
-<p><em>Chainable.</em></p>
-
+          <p>See: <a href='#core/ISourceHtml#enableCustomCSS'>enableCustomCSS</a></p>
+      
   </section>
 
 
@@ -285,10 +198,8 @@ in order to remove any BrowserJS previously executed.</p>
     <a name="isBrowserOptimized"><h1 id="isBrowserOptimized" class="name">
       isBrowserOptimized
     </h1></a>
-    <pre><code>return: Promise&lt;boolean&gt;
-</code></pre>
-<p>Gets if browser instance is optimized via surface sharing</p>
-
+          <p>See: <a href='#core/ISourceHtml#isBrowserOptimized'>isBrowserOptimized</a></p>
+      
   </section>
 
 
@@ -296,18 +207,8 @@ in order to remove any BrowserJS previously executed.</p>
     <a name="getBrowserLoadStatus"><h1 id="getBrowserLoadStatus" class="name">
       getBrowserLoadStatus
     </h1></a>
-    <pre><code>return: Promise&lt;string&gt;
-</code></pre>
-<p>Gets the load status of the html
-May return as any of the following:</p>
-<ul>
-<li>&#39;LOADED&#39; -&gt; HTML is already loaded</li>
-<li>&#39;NOT LOADED&#39; -&gt; HTML is not yet loaded</li>
-<li>&#39;LOAD ERROR&#39; -&gt; Error in loading HTML</li>
-<li>&#39;UNKNOWN&#39; -&gt; URL used is invalid or when status is checked right after adding new HTML source</li>
-<li>&#39;UNAVAILABLE&#39; -&gt; Method for getting load status is unavailable for the XBC version</li>
-</ul>
-
+          <p>See: <a href='#core/ISourceHtml#getBrowserLoadStatus'>getBrowserLoadStatus</a></p>
+      
   </section>
 
 
@@ -428,6 +329,6 @@ May return as any of the following:</p>
   </section>
 
 <p class="module defined-in">exported from <a href='#/core'>core</a><br/>
-defined in <a href="https://github.com/xjsframework/xjs/tree/master/src/core/source/html.ts#L12-L327">../src/core/source/html.ts (line 12)</a>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/src/core/source/html.ts#L12-L204">../src/core/source/html.ts (line 12)</a>
 </p>
 

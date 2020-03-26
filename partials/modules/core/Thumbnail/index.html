@@ -1,0 +1,27 @@
+
+<h1 class="class export">Thumbnail <span class="type">class</span></h1>
+<p></p><h2>Members</h2>
+  <section class="member static">
+    <a name="getSceneThumbnail"><h1 id="getSceneThumbnail" class="name">
+      <code>static</code> getSceneThumbnail
+    </h1></a>
+    <pre><code>param?: scene&lt;id|Scene|undefined&gt;
+</code></pre>
+<pre><code>return: Promise&lt;string&gt;
+</code></pre>
+<p>Returns a base64 png url of a specified or current scene.</p>
+<h4 id="usage">Usage</h4>
+<p><code>`</code>javascript
+var sceneThumbnail</p>
+<p>Thumbnail.getSceneThumbnail().then(function(image) {
+  sceneThumbnail = image;
+  // can be used as:
+  // div.style.backgroundImage = &#39;url(data:image/png;base64, image)&#39;
+})</p>
+
+  </section>
+
+<p class="module defined-in">exported from <a href='#/core'>core</a><br/>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/src/core/thumbnail.ts#L4-L62">../src/core/thumbnail.ts (line 4)</a>
+</p>
+

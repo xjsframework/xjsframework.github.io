@@ -1,0 +1,142 @@
+
+<h1 class="class export">ISourceReplay <span class="type">interface</span></h1>
+<p></p><h2>Members</h2>
+  <section class="member">
+    <a name="getChannel"><h1 id="getChannel" class="name">
+      getChannel
+    </h1></a>
+    <pre><code>return: Promise&lt;string&gt;
+</code></pre>
+<p>Gets the name of the stream/channel tied to the replay.</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="setChannel"><h1 id="setChannel" class="name">
+      setChannel
+    </h1></a>
+    <pre><code>param: (channel: string)
+</code></pre>
+<pre><code>return: Promise&lt;ISourceReplay&gt;
+</code></pre>
+<p>Sets the stream/channel tied to the replay via its name.</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="getHotkey"><h1 id="getHotkey" class="name">
+      getHotkey
+    </h1></a>
+    <pre><code>return: Promise&lt;number&gt;
+</code></pre>
+<p>Gets the hotkey, in numerical value, used to toggle start/stop of the replay.</p>
+<p>See conversion from keycode: <a href='#system/Replay'>Replay Class</a></p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="setHotkey"><h1 id="setHotkey" class="name">
+      setHotkey
+    </h1></a>
+    <pre><code>param: (hotkey: number)
+</code></pre>
+<pre><code>return: Promise&lt;ISourceReplay&gt;
+</code></pre>
+<p>Sets the hotkey, in numerical value, used to toggle start/stop of the replay.</p>
+<p>See conversion from keycode: <a href='#system/Replay'>Replay Class</a></p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="getReplayTime"><h1 id="getReplayTime" class="name">
+      getReplayTime
+    </h1></a>
+    <pre><code>return: Promise&lt;number&gt;
+</code></pre>
+<p>Gets the duration, or buffer time for the replay</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="setReplayTime"><h1 id="setReplayTime" class="name">
+      setReplayTime
+    </h1></a>
+    <pre><code>param: (time: number)
+</code></pre>
+<pre><code>return: Promise&lt;ISourceReplay&gt;
+</code></pre>
+<p>Sets the duration, or buffer time for the replay</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="startReplay"><h1 id="startReplay" class="name">
+      startReplay
+    </h1></a>
+    <pre><code>return: Promise&lt;ISourceReplay&gt;
+</code></pre>
+<p>Start playing of the buffered replay</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="stopReplay"><h1 id="stopReplay" class="name">
+      stopReplay
+    </h1></a>
+    <pre><code>return: Promise&lt;ISourceReplay&gt;
+</code></pre>
+<p>Stop playing of the buffered replay</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="getReplayState"><h1 id="getReplayState" class="name">
+      getReplayState
+    </h1></a>
+    <pre><code>return: Promise&lt;number&gt;
+</code></pre>
+<p>Gets the replay state, may return any of the following:
+0 - playing
+1 - not playing
+-1 - no stream exists
+-2 - stream exists but cannot be tied to a replay</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="isAutostartOnSceneLoad"><h1 id="isAutostartOnSceneLoad" class="name">
+      isAutostartOnSceneLoad
+    </h1></a>
+    <pre><code>return: Promise&lt;boolean&gt;
+</code></pre>
+<p>Checks whether this source is set to start playback when the application
+switches to this source&#39;s scene.</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="setAutostartOnSceneLoad"><h1 id="setAutostartOnSceneLoad" class="name">
+      setAutostartOnSceneLoad
+    </h1></a>
+    <pre><code>param: (value: boolean)
+</code></pre>
+<p>Specifies whether this source is set to start playback when the application
+switches to this source&#39;s scene.</p>
+<p><em>Chainable.</em></p>
+
+  </section>
+
+<p class="module defined-in">exported from <a href='#/core'>core</a><br/>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/src/core/source/ireplay.ts#L9-L109">../src/core/source/ireplay.ts (line 9)</a>
+</p>
+

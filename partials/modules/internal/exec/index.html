@@ -1,0 +1,19 @@
+
+<h1 class="function export">exec<span class="params">(<span class="param">funcName: string, </span><span class="param">...args: any[]</span>)</span></h1>
+<p class="module">exported from <a href='/internal'>internal</a><br/>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/src/internal/internal.ts#L11-L114">../src/internal/internal.ts (line 11)</a></p>
+<p><p>Executes an external function, and main callback handler for the XJS Framework.</p>
+<p>Since 2.9, this is exposed to provide an alternative way
+of handling new XBC properties, methods and item/source properties
+without having to wait for a new update.
+This requires some knowledge on the needed native XBC calls.</p>
+<p>Usage:
+(This sample is basically the same as
+<a href='#core/App#getFrameTime'>getFrameTime</a>)</p>
+<pre><code>XJS.exec(&#39;AppGetPropertyAsync&#39;, &#39;frametime&#39;)
+.then(function(frametime) {
+  // do something here
+});
+</code></pre>
+</p>
+

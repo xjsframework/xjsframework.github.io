@@ -419,6 +419,40 @@ the length of time after voice detection before silence is again detected</p>
 
 
   <section class="member">
+    <a name="isNoiseSuppressionEnabled"><h1 id="isNoiseSuppressionEnabled" class="name">
+      isNoiseSuppressionEnabled
+    </h1></a>
+    <pre><code>return: Promise&lt;boolean&gt;
+</code></pre>
+<p>Gets whether noise suppression is enabled</p>
+<h3 id="usage">Usage</h3>
+<pre><code class="lang-javascript">App.isNoiseSuppressionEnabled().then(function(val) {
+  var isEnabled = val;
+});
+</code></pre>
+
+  </section>
+
+
+  <section class="member">
+    <a name="enableNoiseSuppression"><h1 id="enableNoiseSuppression" class="name">
+      enableNoiseSuppression
+    </h1></a>
+    <pre><code>param: enabled&lt;boolean&gt;
+</code></pre>
+<pre><code>return: Promise&lt;boolean&gt;
+</code></pre>
+<p>Enables or disables noise suppression</p>
+<h3 id="usage">Usage</h3>
+<pre><code class="lang-javascript">App.enableNoiseSuppression(enabled).then(function(val) {
+  var isSet = val;
+});
+</code></pre>
+
+  </section>
+
+
+  <section class="member">
     <a name="getTransition"><h1 id="getTransition" class="name">
       getTransition
     </h1></a>
@@ -522,6 +556,6 @@ certain XSplit users only.</p>
   </section>
 
 <p class="module defined-in">exported from <a href='#/core'>core</a><br/>
-defined in <a href="https://github.com/xjsframework/xjs/tree/master/src/core/app.ts#L14-L1051">../src/core/app.ts (line 14)</a>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/src/core/app.ts#L24-L1108">../src/core/app.ts (line 24)</a>
 </p>
 
