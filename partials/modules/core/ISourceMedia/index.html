@@ -1,0 +1,41 @@
+
+<h1 class="class export">ISourceMedia <span class="type">interface</span></h1>
+<p></p><h2>Members</h2>
+  <section class="member">
+    <a name="getFileInfo"><h1 id="getFileInfo" class="name">
+      getFileInfo
+    </h1></a>
+    <pre><code>return: Promise&lt;object&gt;
+</code></pre>
+<p>Gets file information such as codecs, bitrate, resolution, etc.</p>
+<p>sample file info object format:</p>
+<p>{
+ &quot;audio&quot;: {
+   &quot;duration&quot;:&quot;1436734690&quot;,
+   &quot;samplerate&quot;:&quot;44100&quot;,
+   &quot;bitrate&quot;:&quot;128000&quot;,
+   &quot;codec&quot;:&quot;mp3&quot;},
+ &quot;video&quot;:{
+   &quot;frameduration&quot;:&quot;333670&quot;,
+   &quot;bitrate&quot;:&quot;1132227&quot;,
+   &quot;duration&quot;:&quot;1436436440&quot;,
+   &quot;height&quot;:&quot;240&quot;,
+   &quot;width&quot;:&quot;320&quot;,
+   &quot;codec&quot;:&quot;mpeg4&quot;}
+}</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">mediaItem.getFileInfo().then(function(value) {
+  // Do something with the value
+  var audioCodec;
+  if (typeof value[&#39;audio&#39;] !== &#39;undefined&#39; &amp;&amp; typeof value[&#39;audio&#39;][&#39;codec&#39;]) {
+    audioCodec = value[&#39;audio&#39;][&#39;codec&#39;];
+  }
+});
+</code></pre>
+
+  </section>
+
+<p class="module defined-in">exported from <a href='#/core'>core</a><br/>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/src/core/source/imedia.ts#L5-L43">../src/core/source/imedia.ts (line 5)</a>
+</p>
+

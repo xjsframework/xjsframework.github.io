@@ -1,0 +1,162 @@
+
+<h1 class="class export">ISourceCamera <span class="type">interface</span></h1>
+<p></p><h2>Members</h2>
+  <section class="member">
+    <a name="getDeviceId"><h1 id="getDeviceId" class="name">
+      getDeviceId
+    </h1></a>
+    <pre><code>return: Promise&lt;string&gt;
+</code></pre>
+<p>Gets the device ID of the underlying camera device.</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="getResolution"><h1 id="getResolution" class="name">
+      getResolution
+    </h1></a>
+    <pre><code>return: Promise&lt;Rectangle&gt;
+</code></pre>
+<p>Gets the camera&#39;s native resolution.</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="getAudioOffset"><h1 id="getAudioOffset" class="name">
+      getAudioOffset
+    </h1></a>
+    <pre><code>return: Promise&lt;number&gt;
+</code></pre>
+<p>Gets audio delay with respect to video feed in milliseconds</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="setAudioOffset"><h1 id="setAudioOffset" class="name">
+      setAudioOffset
+    </h1></a>
+    <pre><code>param: (value: number)
+</code></pre>
+<p>Sets audio delay with respect to video feed in milliseconds</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="getAudioInput"><h1 id="getAudioInput" class="name">
+      getAudioInput
+    </h1></a>
+    <pre><code>return: Promise&lt;MicrophoneDevice&gt;
+</code></pre>
+<p>Gets the microphone device tied as an audio input,
+rejected if no microphone device is used</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="setAudioInput"><h1 id="setAudioInput" class="name">
+      setAudioInput
+    </h1></a>
+    <pre><code>param: (value: number)
+</code></pre>
+<p>Sets the microphone device to be tied as an audio input</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="isStreamPaused"><h1 id="isStreamPaused" class="name">
+      isStreamPaused
+    </h1></a>
+    <pre><code>return: Promise&lt;boolean&gt;
+</code></pre>
+<p>Checks if camera feed is paused</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="setStreamPaused"><h1 id="setStreamPaused" class="name">
+      setStreamPaused
+    </h1></a>
+    <pre><code>param: (value: boolean)
+</code></pre>
+<p>Sets whether camera feed is paused or not</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="isHardwareEncoder"><h1 id="isHardwareEncoder" class="name">
+      isHardwareEncoder
+    </h1></a>
+    <pre><code>return: Promise&lt;boolean&gt;
+</code></pre>
+<p>Checks if camera device is a hardware encoder or not. This check may fail
+if camera device is reinitializing or not present (value defaults to false)</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="isActive"><h1 id="isActive" class="name">
+      isActive
+    </h1></a>
+    <pre><code>return: Promise&lt;boolean&gt;
+</code></pre>
+<p>Checks if camera device is active and present.</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="getDelay"><h1 id="getDelay" class="name">
+      getDelay
+    </h1></a>
+    <pre><code>return: Promise&lt;number&gt;
+</code></pre>
+<p>Gets feed capture delay in milliseconds</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="setDelay"><h1 id="setDelay" class="name">
+      setDelay
+    </h1></a>
+    <pre><code>param: (value: number)
+</code></pre>
+<p>Sets feed capture delay in milliseconds, accepts only positive delay</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="isForceDeinterlace"><h1 id="isForceDeinterlace" class="name">
+      isForceDeinterlace
+    </h1></a>
+    <pre><code>return: Promise&lt;boolean&gt;
+</code></pre>
+<p>Checks whether deinterlacing is enforced</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="setForceDeinterlace"><h1 id="setForceDeinterlace" class="name">
+      setForceDeinterlace
+    </h1></a>
+    <pre><code>param: (value: boolean)
+</code></pre>
+<p>Enables or disables forcing of deinterlacing</p>
+
+  </section>
+
+<p class="module defined-in">exported from <a href='#/core'>core</a><br/>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/src/core/source/icamera.ts#L15-L118">../src/core/source/icamera.ts (line 15)</a>
+</p>
+

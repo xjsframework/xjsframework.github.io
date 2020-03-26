@@ -7,6 +7,24 @@
   </section>
 
   <section class="member">
+    <a name="addAsSource"><h1 id="addAsSource" class="name">
+      addAsSource
+    </h1></a>
+    <pre><code>param: (value?: number | Scene)
+</code></pre>
+<pre><code>return: Promise&lt;any&gt;
+</code></pre>
+<p>Adds this scene as a source to the current scene by default.
+Accepts an optional parameter value, which, when supplied,
+points to the scene where item will be added instead.
+If ready config {listenToItemAdd: true} it returns item id,
+else returns boolean.</p>
+<p>Note: There is yet no way to detect error responses for this action.</p>
+
+  </section>
+
+
+  <section class="member">
     <a name="getSources"><h1 id="getSources" class="name">
       getSources
     </h1></a>
@@ -33,7 +51,7 @@ See also: <a href='#core/Source'>Core/Source</a></p>
     <a name="getSceneNumber"><h1 id="getSceneNumber" class="name">
       getSceneNumber
     </h1></a>
-    <pre><code>return: number
+    <pre><code>return: Promise&lt;number&gt;
 </code></pre>
 <p>Get the 1-indexed scene number of this scene object.</p>
 <h4 id="usage">Usage</h4>
@@ -50,7 +68,7 @@ See also: <a href='#core/Source'>Core/Source</a></p>
     <a name="getSceneIndex"><h1 id="getSceneIndex" class="name">
       getSceneIndex
     </h1></a>
-    <pre><code>return: number
+    <pre><code>return: Promise&lt;number&gt;
 </code></pre>
 <p>Get the 0-indexed scene number of this scene object.</p>
 <h4 id="usage">Usage</h4>
@@ -66,7 +84,7 @@ See also: <a href='#core/Source'>Core/Source</a></p>
     <a name="getSceneUid"><h1 id="getSceneUid" class="name">
       getSceneUid
     </h1></a>
-    <pre><code>return: string
+    <pre><code>return: Promise&lt;string&gt;
 </code></pre>
 <p>Get the unique id of this scene object.
 Scenes unique id is only available for XBC v.3.0.1704.2101 or higher.</p>
@@ -83,7 +101,7 @@ Scenes unique id is only available for XBC v.3.0.1704.2101 or higher.</p>
     <a name="getName"><h1 id="getName" class="name">
       getName
     </h1></a>
-    <pre><code>return: number
+    <pre><code>return: Promise&lt;string&gt;
 </code></pre>
 <p>Get the name of this scene object.</p>
 <h4 id="usage">Usage</h4>
@@ -110,6 +128,74 @@ Scenes unique id is only available for XBC v.3.0.1704.2101 or higher.</p>
 
 
   <section class="member">
+    <a name="getTransitionOverride"><h1 id="getTransitionOverride" class="name">
+      getTransitionOverride
+    </h1></a>
+    <pre><code>return: Promise&lt;string&gt;
+</code></pre>
+<p>Get the transition override of this scene object.
+Transition overrides take priority over the more generic one from App.GetTransition
+See also: <a href='#core/Transition'>Core/Transition</a> and <a href='#core/App#getTransition'>getTransition</a></p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">myScene.getTransitionOverride().then(function(transition) {
+ // do something here
+});
+</code></pre>
+
+  </section>
+
+
+  <section class="member">
+    <a name="setTransitionOverride"><h1 id="setTransitionOverride" class="name">
+      setTransitionOverride
+    </h1></a>
+    <pre><code>param: (value: string)
+</code></pre>
+<p>Set the transition override of this scene object.
+Transition overrides take priority over the more generic one from App.GetTransition
+See also: <a href='#core/Transition'>Core/Transition</a> and <a href='#core/App#setTransition'>setTransition</a></p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">myScene.setTransitionOverride(&#39;xjs.Transition.CLOCK&#39;);
+</code></pre>
+
+  </section>
+
+
+  <section class="member">
+    <a name="getTransitionTime"><h1 id="getTransitionTime" class="name">
+      getTransitionTime
+    </h1></a>
+    <pre><code>return: Promise&lt;number&gt;
+</code></pre>
+<p>Get the transition time override of this scene object.
+The scene transition time override will only take effect
+if the scene transition override itself is not equal to &#39;&#39;(Transition.NONE)</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">myScene.getTransitionTime().then(function(time) {
+ // do something here
+});
+</code></pre>
+
+  </section>
+
+
+  <section class="member">
+    <a name="setTransitionTime"><h1 id="setTransitionTime" class="name">
+      setTransitionTime
+    </h1></a>
+    <pre><code>param: (value: string)
+</code></pre>
+<p>Set the transition time override of this scene object.
+The scene transition time override will only take effect
+if the scene transition override itself is not equal to &#39;&#39;(Transition.NONE)</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">myScene.setTransitionTime(1000);
+</code></pre>
+
+  </section>
+
+
+  <section class="member">
     <a name="getItems"><h1 id="getItems" class="name">
       getItems
     </h1></a>
@@ -119,6 +205,23 @@ Scenes unique id is only available for XBC v.3.0.1704.2101 or higher.</p>
 See also: <a href='#core/Item'>Core/Item</a></p>
 <h4 id="usage">Usage</h4>
 <pre><code class="lang-javascript">myScene.getItems().then(function(items) {
+ // do something to each item in items array
+});
+</code></pre>
+
+  </section>
+
+
+  <section class="member">
+    <a name="getTopLevelItems"><h1 id="getTopLevelItems" class="name">
+      getTopLevelItems
+    </h1></a>
+    <pre><code>return: Promise&lt;Item[]&gt;
+</code></pre>
+<p>Gets all non-child Items (not belonging to a group) in a specific scene
+See also: <a href='#core/Item'>Core/Item</a></p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">myScene.getTopLevelItems().then(function(items) {
  // do something to each item in items array
 });
 </code></pre>
@@ -154,6 +257,170 @@ See also: <a href='#core/Item'>Core/Item</a></p>
 </code></pre>
 <p>Sets the item order of the current scene. The first item in the array
 will be on top (will cover items below it).</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="getPresets"><h1 id="getPresets" class="name">
+      getPresets
+    </h1></a>
+    <pre><code>return: Promise&lt;string[]&gt;
+</code></pre>
+<p>Get all presets for the scene, returns an array of preset UIDs
+Does not work on source plugins.</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">myScene.getPresets().then(function(presets) {
+ // do something to each preset UID in UIDs array
+});
+</code></pre>
+
+  </section>
+
+
+  <section class="member">
+    <a name="getActivePreset"><h1 id="getActivePreset" class="name">
+      getActivePreset
+    </h1></a>
+    <pre><code>return: Promise&lt;string&gt;
+</code></pre>
+<p>Get the UID of the active preset.
+Does not work on source plugins.</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">myScene.getActivePreset().then(function(preset) {
+ console.log(&#39;Active preset UID is &#39; + preset);
+});
+</code></pre>
+
+  </section>
+
+
+  <section class="member">
+    <a name="switchToPreset"><h1 id="switchToPreset" class="name">
+      switchToPreset
+    </h1></a>
+    <pre><code>param: (preset: string)
+</code></pre>
+<pre><code>return: Promise&lt;boolean&gt;
+</code></pre>
+<p>Switch to the specified preset for the scene.
+Does not work on source plugins.</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">myScene.getPresets()
+.then(presets =&gt; {
+  const lastPreset = presets.pop()
+  return myScene.switchToPreset(lastPreset);
+})
+.then(isSwitched =&gt; {
+  console.log(&#39;switched to preset : &#39; + isSwitched)
+});
+</code></pre>
+
+  </section>
+
+
+  <section class="member">
+    <a name="addPreset"><h1 id="addPreset" class="name">
+      addPreset
+    </h1></a>
+    <pre><code>return: Promise&lt;string&gt;
+</code></pre>
+<p>Add a new preset to the scene, returns the UID of the new preset
+Does not work on source plugins.</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">myScene.addPreset().then(function(preset) {
+ console.log(&#39;New preset UID is &#39; + preset);
+});
+</code></pre>
+
+  </section>
+
+
+  <section class="member">
+    <a name="removePreset"><h1 id="removePreset" class="name">
+      removePreset
+    </h1></a>
+    <pre><code>param: (preset: string)
+</code></pre>
+<pre><code>return: Promise&lt;boolean&gt;
+</code></pre>
+<p>Remove the specified preset for the scene.
+Does not work on source plugins.</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">myScene.removePreset(lastPreset)
+.then(isRemoved =&gt; {
+  console.log(&#39;preset is removed : &#39; + isRemoved)
+});
+</code></pre>
+
+  </section>
+
+
+  <section class="member">
+    <a name="getPresetTransitionEasing"><h1 id="getPresetTransitionEasing" class="name">
+      getPresetTransitionEasing
+    </h1></a>
+    <pre><code>return: Promise&lt;string&gt;
+</code></pre>
+<p>Get the preset transition easing function for the scene.
+Does not work on source plugins.</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">myScene.getPresetTransition().then(function(presetTransition) {
+ console.log(&#39;Preset transition is &#39; + presetTransition);
+});
+</code></pre>
+
+  </section>
+
+
+  <section class="member">
+    <a name="setPresetTransitionEasing"><h1 id="setPresetTransitionEasing" class="name">
+      setPresetTransitionEasing
+    </h1></a>
+    <pre><code>param: (presetTransitionEasing: string)
+</code></pre>
+<pre><code>return: Promise&lt;boolean&gt;
+</code></pre>
+<p>Switch to the specified preset transition easing function for the scene
+Possible values (&#39;&#39; or &#39;none&#39;, &#39;easeInCubic&#39;, &#39;easeOutCubic&#39;, &#39;easeInOutCubic&#39;)
+Does not work on source plugins.</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">myScene.setPresetTransitionEasing(&#39;easeInCubic&#39;);
+</code></pre>
+
+  </section>
+
+
+  <section class="member">
+    <a name="getPresetTransitionTime"><h1 id="getPresetTransitionTime" class="name">
+      getPresetTransitionTime
+    </h1></a>
+    <pre><code>return: Promise&lt;number&gt;
+</code></pre>
+<p>Get the preset transition time for the scene, in ms
+Does not work on source plugins.</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">myScene.getPresetTransitionTime().then(function(presetTransitionTime) {
+ console.log(&#39;Preset transition time is &#39; + presetTransitionTime);
+});
+</code></pre>
+
+  </section>
+
+
+  <section class="member">
+    <a name="setPresetTransitionTime"><h1 id="setPresetTransitionTime" class="name">
+      setPresetTransitionTime
+    </h1></a>
+    <pre><code>param: (presetTransitionTime: number)
+</code></pre>
+<pre><code>return: Promise&lt;boolean&gt;
+</code></pre>
+<p>Set the preset transition time for the scene, in ms
+Does not work on source plugins.</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">myScene.setPresetTransitionTime(500);
+</code></pre>
 
   </section>
 
@@ -497,7 +764,27 @@ This function is only available to extensions.</p>
 
   </section>
 
+
+  <section class="member static">
+    <a name="liveScene"><h1 id="liveScene" class="name">
+      <code>static</code> liveScene
+    </h1></a>
+    <pre><code>return: Scene
+</code></pre>
+<p>Returns a special <code>liveScene</code> object that may be added as a source to the stage.
+The Scene.liveScene object whenever called upon,
+gives access to the current active scene.
+This is made possible because the liveScene object does not pertain to a real scene
+in the context of XBC, but the actual view,
+or at least the scene which is currently loaded in that view.</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">var xjs = require(&#39;xjs&#39;);
+xjs.Scene.liveScene().addAsSource();
+</code></pre>
+
+  </section>
+
 <p class="module defined-in">exported from <a href='#/core'>core</a><br/>
-defined in <a href="https://github.com/xjsframework/xjs/tree/master/src/core/scene.ts#L37-L1366">../src/core/scene.ts (line 37)</a>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/src/core/scene.ts#L32-L2026">../src/core/scene.ts (line 32)</a>
 </p>
 

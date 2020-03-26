@@ -1,0 +1,107 @@
+
+<h1 class="class export">IItemGroup <span class="type">interface</span></h1>
+<p></p><h2>Members</h2>
+  <section class="member">
+    <a name="getItems"><h1 id="getItems" class="name">
+      getItems
+    </h1></a>
+    <pre><code>return: Promise&lt;Item[]&gt;
+</code></pre>
+<p>Get all the items present in the group</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">grpItem.getItems().then(function(items) {
+ // do something to each item in items array
+});
+</code></pre>
+
+  </section>
+
+
+  <section class="member">
+    <a name="addItems"><h1 id="addItems" class="name">
+      addItems
+    </h1></a>
+    <pre><code>param: (items: string || string[] || Item || Item[])
+</code></pre>
+<pre><code>return: Promise&lt;Item[]&gt;
+</code></pre>
+<p>Adds items into the group.
+Accepts an item ID or Item object or an array of those.
+Rejects when any of the provided items cannot be added into the group,
+such as, but not limited to already added into the group or another group,
+in another scene, or non-existent</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">var myItems;
+Scene.getItems()
+.then(function(items) {
+  // assuming myItems[0] is the group Item
+  // can be added as a single Item object
+  myItems[0].addItems(myItems[2]);
+  // or via the item&#39;s id
+  myItems[0].addItems(myItems[3]._id);
+  // or via an array of them
+  myItems[0].addItems([myItems[4],myItems[5]]);
+});
+</code></pre>
+
+  </section>
+
+
+  <section class="member">
+    <a name="removeItems"><h1 id="removeItems" class="name">
+      removeItems
+    </h1></a>
+    <pre><code>param: (items: string || string[] || Item || Item[])
+</code></pre>
+<pre><code>return: Promise&lt;Item[]&gt;
+</code></pre>
+<p>Removes the items from the group.
+This doesn&#39;t actually remove the item from the scene,
+but only detaches itself from the group.
+Accepts an item ID or Item object or an array of those.
+Rejects when any of the provided items cannot be removed from the group,</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">var myItems;
+Scene.getItems()
+.then(function(items) {
+  // assuming myItems[0] is the group Item
+  // can remove a single Item object
+  myItems[0].removeItems(myItems[2]);
+  // or via the item&#39;s id
+  myItems[0].removeItems(myItems[3]._id);
+  // or via an array of them
+  myItems[0].removeItems([myItems[4],myItems[5]]);
+});
+</code></pre>
+
+  </section>
+
+
+  <section class="member">
+    <a name="unGroup"><h1 id="unGroup" class="name">
+      unGroup
+    </h1></a>
+    <pre><code>return: Promise&lt;Item[]&gt;
+</code></pre>
+<p>Removes all the items within the group.
+This doesn&#39;t actually remove the items from the scene,
+but only detaches itself from the group.
+This also persists the group item in the scene.
+You would need to specifically remove the GroupItem if needed.</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">Scene.getItems()
+.then(function(items) {
+  if (myItems[0] instanceof XJS.GroupItem) {
+    return myItems[0].unGroup();
+  }
+}).then(function() {
+  myItems[0].remove()
+});
+</code></pre>
+
+  </section>
+
+<p class="module defined-in">exported from <a href='#/core'>core</a><br/>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/src/core/items/igroup.ts#L41-L143">../src/core/items/igroup.ts (line 41)</a>
+</p>
+

@@ -118,7 +118,7 @@ DECLARE_INTERFACE_(IXSplitScriptDllContext, IUnknown)
 </p>
 <pre class="language-javascript">
 <code>
-var dll = xjs.Dll;
+var dll = XSplitScriptPlugin.dll;
 dll.load(['Scriptdlls\\SplitMediaLabs\\dllA.dll','Scriptdlls\\SplitMediaLabs\\dllB.dll']);
 
 dll.call('xsplit.EnumProcesses').then(function(value) { console.log(value); });

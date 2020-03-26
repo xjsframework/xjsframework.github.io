@@ -281,6 +281,41 @@ process.</p>
 
 
   <section class="member">
+    <a name="isChildItem"><h1 id="isChildItem" class="name">
+      isChildItem
+    </h1></a>
+    <pre><code>return: Promise&lt;boolean&gt;
+</code></pre>
+<p>Checks if item is part of a group</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">item.isChildItem()
+.then(function(isChild) {
+  console.log(isChild);
+});
+</code></pre>
+
+  </section>
+
+
+  <section class="member">
+    <a name="getParentItem"><h1 id="getParentItem" class="name">
+      getParentItem
+    </h1></a>
+    <pre><code>return: Promise&lt;boolean&gt;
+</code></pre>
+<p>Get the GroupItem that contains this item.
+This rejects if item is not a child item or non-existent</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">item.getParentItem()
+.then(function(parentItem) {
+  console.log(parentItem);
+});
+</code></pre>
+
+  </section>
+
+
+  <section class="member">
     <a name="bringForward"><h1 id="bringForward" class="name">
       bringForward
     </h1></a>
@@ -617,6 +652,6 @@ Linked items are items linked to a single source.</p>
   </section>
 
 <p class="module defined-in">exported from <a href='#/core'>core</a><br/>
-defined in <a href="https://github.com/xjsframework/xjs/tree/master/src/core/items/item.ts#L43-L704">../src/core/items/item.ts (line 43)</a>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/src/core/items/item.ts#L35-L726">../src/core/items/item.ts (line 35)</a>
 </p>
 

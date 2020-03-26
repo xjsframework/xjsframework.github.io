@@ -1,0 +1,96 @@
+
+<h1 class="class export">ISourceAudio <span class="type">interface</span></h1>
+<p></p><h2>Members</h2>
+  <section class="member">
+    <a name="isSilenceDetectionEnabled"><h1 id="isSilenceDetectionEnabled" class="name">
+      isSilenceDetectionEnabled
+    </h1></a>
+    <pre><code>return: Promise&lt;boolean&gt;
+</code></pre>
+<p>Check if silence detection is on or off</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="setSilenceDetectionEnabled"><h1 id="setSilenceDetectionEnabled" class="name">
+      setSilenceDetectionEnabled
+    </h1></a>
+    <pre><code>param: (value: boolean)
+</code></pre>
+<p>Set silence detection to ON or OFF</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="getSilenceThreshold"><h1 id="getSilenceThreshold" class="name">
+      getSilenceThreshold
+    </h1></a>
+    <pre><code>return: Promise&lt;number&gt;
+</code></pre>
+<p>Gets silenced detection threshold.
+Amplitude less than threshold will be detected as silence.</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="setSilenceThreshold"><h1 id="setSilenceThreshold" class="name">
+      setSilenceThreshold
+    </h1></a>
+    <pre><code>param: (value: number)
+</code></pre>
+<p>Sets silence detection threshold, min of 0, max of 128</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="getSilencePeriod"><h1 id="getSilencePeriod" class="name">
+      getSilencePeriod
+    </h1></a>
+    <pre><code>return: Promise&lt;number&gt;
+</code></pre>
+<p>Gets silenced detection period in ms time unit.
+Reaction time before filter removes noice/sound less than threshold</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="setSilencePeriod"><h1 id="setSilencePeriod" class="name">
+      setSilencePeriod
+    </h1></a>
+    <pre><code>param: (value: number)
+</code></pre>
+<p>Sets silence detection period, min of 0, max of 10000</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="getAudioOffset"><h1 id="getAudioOffset" class="name">
+      getAudioOffset
+    </h1></a>
+    <pre><code>return: Promise&lt;number&gt;
+</code></pre>
+<p>Gets audio delay (1 unit = 100ns)</p>
+
+  </section>
+
+
+  <section class="member">
+    <a name="setAudioOffset"><h1 id="setAudioOffset" class="name">
+      setAudioOffset
+    </h1></a>
+    <pre><code>param: (value: number)
+</code></pre>
+<p>Sets audio delay, accepts only positive delay</p>
+
+  </section>
+
+<p class="module defined-in">exported from <a href='#/core'>core</a><br/>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/src/core/source/iaudiosource.ts#L5-L66">../src/core/source/iaudiosource.ts (line 5)</a>
+</p>
+
