@@ -156,7 +156,42 @@ if camera device is reinitializing or not present (value defaults to false)</p>
 
   </section>
 
+
+  <section class="member">
+    <a name="getValue"><h1 id="getValue" class="name">
+      getValue
+    </h1></a>
+    <pre><code>return: Promise&lt;string&gt;
+</code></pre>
+<p>Gets the camera device used as a source</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">source.getValue().then(function(value) {
+  // Do something with the value
+});
+</code></pre>
+
+  </section>
+
+
+  <section class="member">
+    <a name="setValue"><h1 id="setValue" class="name">
+      setValue
+    </h1></a>
+    <pre><code>param: (value: string)
+</code></pre>
+<pre><code>return: Promise&lt;CameraSource&gt;
+</code></pre>
+<p>Set the camera device to be used as source</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">source.setValue(&#39;&lt;camera device&gt;&#39;)
+  .then(function(source) {
+  // Promise resolves with same Source instance
+});
+</code></pre>
+
+  </section>
+
 <p class="module defined-in">exported from <a href='#/core'>core</a><br/>
-defined in <a href="https://github.com/xjsframework/xjs/tree/master/src/core/source/icamera.ts#L15-L118">../src/core/source/icamera.ts (line 15)</a>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/src/core/source/icamera.ts#L16-L154">../src/core/source/icamera.ts (line 16)</a>
 </p>
 

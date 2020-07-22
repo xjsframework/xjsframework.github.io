@@ -1188,6 +1188,16 @@ angular.module('navigation-modules', [])
               "path": "/core/ISourceAudio#setAudioOffset",
               "partial": "partials/modules//core/ISourceAudio/index.html",
               "name": "setAudioOffset"
+            },
+            {
+              "path": "/core/ISourceAudio#getValue",
+              "partial": "partials/modules//core/ISourceAudio/index.html",
+              "name": "getValue"
+            },
+            {
+              "path": "/core/ISourceAudio#setValue",
+              "partial": "partials/modules//core/ISourceAudio/index.html",
+              "name": "setValue"
             }
           ]
         },
@@ -1266,6 +1276,16 @@ angular.module('navigation-modules', [])
               "path": "/core/ISourceCamera#setForceDeinterlace",
               "partial": "partials/modules//core/ISourceCamera/index.html",
               "name": "setForceDeinterlace"
+            },
+            {
+              "path": "/core/ISourceCamera#getValue",
+              "partial": "partials/modules//core/ISourceCamera/index.html",
+              "name": "getValue"
+            },
+            {
+              "path": "/core/ISourceCamera#setValue",
+              "partial": "partials/modules//core/ISourceCamera/index.html",
+              "name": "setValue"
             }
           ]
         },
@@ -1322,6 +1342,21 @@ angular.module('navigation-modules', [])
               "path": "/core/ISourceFlash#setAllowRightClick",
               "partial": "partials/modules//core/ISourceFlash/index.html",
               "name": "setAllowRightClick"
+            },
+            {
+              "path": "/core/ISourceFlash#isSourceAvailable",
+              "partial": "partials/modules//core/ISourceFlash/index.html",
+              "name": "isSourceAvailable"
+            },
+            {
+              "path": "/core/ISourceFlash#getValue",
+              "partial": "partials/modules//core/ISourceFlash/index.html",
+              "name": "getValue"
+            },
+            {
+              "path": "/core/ISourceFlash#setValue",
+              "partial": "partials/modules//core/ISourceFlash/index.html",
+              "name": "setValue"
             }
           ]
         },
@@ -1493,6 +1528,31 @@ angular.module('navigation-modules', [])
               "path": "/core/iSourceHtml#getBrowserLoadStatus",
               "partial": "partials/modules//core/iSourceHtml/index.html",
               "name": "getBrowserLoadStatus"
+            },
+            {
+              "path": "/core/iSourceHtml#isReloadOnShowEnabled",
+              "partial": "partials/modules//core/iSourceHtml/index.html",
+              "name": "isReloadOnShowEnabled"
+            },
+            {
+              "path": "/core/iSourceHtml#enableReloadOnShow",
+              "partial": "partials/modules//core/iSourceHtml/index.html",
+              "name": "enableReloadOnShow"
+            },
+            {
+              "path": "/core/iSourceHtml#isReloadOnSceneEnterEnabled",
+              "partial": "partials/modules//core/iSourceHtml/index.html",
+              "name": "isReloadOnSceneEnterEnabled"
+            },
+            {
+              "path": "/core/iSourceHtml#enableReloadOnSceneEnter",
+              "partial": "partials/modules//core/iSourceHtml/index.html",
+              "name": "enableReloadOnSceneEnter"
+            },
+            {
+              "path": "/core/iSourceHtml#isSourceAvailable",
+              "partial": "partials/modules//core/iSourceHtml/index.html",
+              "name": "isSourceAvailable"
             }
           ]
         },
@@ -1506,6 +1566,11 @@ angular.module('navigation-modules', [])
               "path": "/core/ISourceMedia#getFileInfo",
               "partial": "partials/modules//core/ISourceMedia/index.html",
               "name": "getFileInfo"
+            },
+            {
+              "path": "/core/ISourceMedia#isSourceAvailable",
+              "partial": "partials/modules//core/ISourceMedia/index.html",
+              "name": "isSourceAvailable"
             }
           ]
         },
@@ -2015,6 +2080,11 @@ angular.module('navigation-modules', [])
               "path": "/core/ISourceVideoPlaylist#setVideoPlaylistSources",
               "partial": "partials/modules//core/ISourceVideoPlaylist/index.html",
               "name": "setVideoPlaylistSources"
+            },
+            {
+              "path": "/core/ISourceVideoPlaylist#isSourceAvailable",
+              "partial": "partials/modules//core/ISourceVideoPlaylist/index.html",
+              "name": "isSourceAvailable"
             }
           ]
         },
@@ -3610,6 +3680,11 @@ angular.module('navigation-modules', [])
               "path": "/core/FlashItem#setAllowRightClick",
               "partial": "partials/modules//core/FlashItem/index.html",
               "name": "setAllowRightClick"
+            },
+            {
+              "path": "/core/FlashItem#isSourceAvailable",
+              "partial": "partials/modules//core/FlashItem/index.html",
+              "name": "isSourceAvailable"
             },
             {
               "path": "/core/FlashItem#bringForward",
@@ -5924,6 +5999,31 @@ angular.module('navigation-modules', [])
               "name": "getBrowserLoadStatus"
             },
             {
+              "path": "/core/HtmlItem#isReloadOnShowEnabled",
+              "partial": "partials/modules//core/HtmlItem/index.html",
+              "name": "isReloadOnShowEnabled"
+            },
+            {
+              "path": "/core/HtmlItem#enableReloadOnShow",
+              "partial": "partials/modules//core/HtmlItem/index.html",
+              "name": "enableReloadOnShow"
+            },
+            {
+              "path": "/core/HtmlItem#isReloadOnSceneEnterEnabled",
+              "partial": "partials/modules//core/HtmlItem/index.html",
+              "name": "isReloadOnSceneEnterEnabled"
+            },
+            {
+              "path": "/core/HtmlItem#enableReloadOnSceneEnter",
+              "partial": "partials/modules//core/HtmlItem/index.html",
+              "name": "enableReloadOnSceneEnter"
+            },
+            {
+              "path": "/core/HtmlItem#isSourceAvailable",
+              "partial": "partials/modules//core/HtmlItem/index.html",
+              "name": "isSourceAvailable"
+            },
+            {
               "path": "/core/HtmlItem#bringForward",
               "partial": "partials/modules//core/HtmlItem/index.html",
               "name": "bringForward"
@@ -6512,6 +6612,11 @@ angular.module('navigation-modules', [])
           "type": "Class",
           "pages": [
             {
+              "path": "/core/ImageItem#isSourceAvailable",
+              "partial": "partials/modules//core/ImageItem/index.html",
+              "name": "isSourceAvailable"
+            },
+            {
               "path": "/core/ImageItem#getValue",
               "partial": "partials/modules//core/ImageItem/index.html",
               "name": "getValue"
@@ -7048,6 +7153,11 @@ angular.module('navigation-modules', [])
               "path": "/core/MediaItem#getFileInfo",
               "partial": "partials/modules//core/MediaItem/index.html",
               "name": "getFileInfo"
+            },
+            {
+              "path": "/core/MediaItem#isSourceAvailable",
+              "partial": "partials/modules//core/MediaItem/index.html",
+              "name": "isSourceAvailable"
             },
             {
               "path": "/core/MediaItem#bringForward",
@@ -9562,6 +9672,11 @@ angular.module('navigation-modules', [])
               "name": "setVideoPlaylistSources"
             },
             {
+              "path": "/core/VideoPlaylistItem#isSourceAvailable",
+              "partial": "partials/modules//core/VideoPlaylistItem/index.html",
+              "name": "isSourceAvailable"
+            },
+            {
               "path": "/core/VideoPlaylistItem#bringForward",
               "partial": "partials/modules//core/VideoPlaylistItem/index.html",
               "name": "bringForward"
@@ -10356,6 +10471,11 @@ angular.module('navigation-modules', [])
               "name": "setAllowRightClick"
             },
             {
+              "path": "/core/FlashSource#isSourceAvailable",
+              "partial": "partials/modules//core/FlashSource/index.html",
+              "name": "isSourceAvailable"
+            },
+            {
               "path": "/core/FlashSource#getVolume",
               "partial": "partials/modules//core/FlashSource/index.html",
               "name": "getVolume"
@@ -10572,6 +10692,31 @@ angular.module('navigation-modules', [])
               "name": "getBrowserLoadStatus"
             },
             {
+              "path": "/core/HtmlSource#isReloadOnShowEnabled",
+              "partial": "partials/modules//core/HtmlSource/index.html",
+              "name": "isReloadOnShowEnabled"
+            },
+            {
+              "path": "/core/HtmlSource#enableReloadOnShow",
+              "partial": "partials/modules//core/HtmlSource/index.html",
+              "name": "enableReloadOnShow"
+            },
+            {
+              "path": "/core/HtmlSource#isReloadOnSceneEnterEnabled",
+              "partial": "partials/modules//core/HtmlSource/index.html",
+              "name": "isReloadOnSceneEnterEnabled"
+            },
+            {
+              "path": "/core/HtmlSource#enableReloadOnSceneEnter",
+              "partial": "partials/modules//core/HtmlSource/index.html",
+              "name": "enableReloadOnSceneEnter"
+            },
+            {
+              "path": "/core/HtmlSource#isSourceAvailable",
+              "partial": "partials/modules//core/HtmlSource/index.html",
+              "name": "isSourceAvailable"
+            },
+            {
               "path": "/core/HtmlSource#loadConfig",
               "partial": "partials/modules//core/HtmlSource/index.html",
               "name": "loadConfig"
@@ -10645,6 +10790,11 @@ angular.module('navigation-modules', [])
           "type": "Class",
           "pages": [
             {
+              "path": "/core/ImageSource#isSourceAvailable",
+              "partial": "partials/modules//core/ImageSource/index.html",
+              "name": "isSourceAvailable"
+            },
+            {
               "path": "/core/ImageSource#getValue",
               "partial": "partials/modules//core/ImageSource/index.html",
               "name": "getValue"
@@ -10657,6 +10807,11 @@ angular.module('navigation-modules', [])
           ]
         },
         {
+          "name": "MediaTypes",
+          "type": "Let",
+          "pages": []
+        },
+        {
           "path": "/core/MediaSource",
           "partial": "partials/modules//core/MediaSource/index.html",
           "name": "MediaSource",
@@ -10666,6 +10821,11 @@ angular.module('navigation-modules', [])
               "path": "/core/MediaSource#getFileInfo",
               "partial": "partials/modules//core/MediaSource/index.html",
               "name": "getFileInfo"
+            },
+            {
+              "path": "/core/MediaSource#isSourceAvailable",
+              "partial": "partials/modules//core/MediaSource/index.html",
+              "name": "isSourceAvailable"
             },
             {
               "path": "/core/MediaSource#isAudio",
@@ -11063,6 +11223,11 @@ angular.module('navigation-modules', [])
               "path": "/core/VideoPlaylistSource#setVideoPlaylistSources",
               "partial": "partials/modules//core/VideoPlaylistSource/index.html",
               "name": "setVideoPlaylistSources"
+            },
+            {
+              "path": "/core/VideoPlaylistSource#isSourceAvailable",
+              "partial": "partials/modules//core/VideoPlaylistSource/index.html",
+              "name": "isSourceAvailable"
             },
             {
               "path": "/core/VideoPlaylistSource#loadConfig",
@@ -11603,6 +11768,11 @@ angular.module('navigation-modules', [])
               "path": "/system/MicrophoneDevice#getDisplayId",
               "partial": "partials/modules//system/MicrophoneDevice/index.html",
               "name": "getDisplayId"
+            },
+            {
+              "path": "/system/MicrophoneDevice#getName",
+              "partial": "partials/modules//system/MicrophoneDevice/index.html",
+              "name": "getName"
             },
             {
               "path": "/system/MicrophoneDevice#toXML",
