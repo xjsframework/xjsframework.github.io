@@ -90,7 +90,42 @@ Reaction time before filter removes noice/sound less than threshold</p>
 
   </section>
 
+
+  <section class="member">
+    <a name="getValue"><h1 id="getValue" class="name">
+      getValue
+    </h1></a>
+    <pre><code>return: Promise&lt;string&gt;
+</code></pre>
+<p>Gets the microphone device used as a source</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">source.getValue().then(function(value) {
+  // Do something with the value
+});
+</code></pre>
+
+  </section>
+
+
+  <section class="member">
+    <a name="setValue"><h1 id="setValue" class="name">
+      setValue
+    </h1></a>
+    <pre><code>param: (value: string)
+</code></pre>
+<pre><code>return: Promise&lt;AudioSource&gt;
+</code></pre>
+<p>Set the microphone device to be used as source</p>
+<h4 id="usage">Usage</h4>
+<pre><code class="lang-javascript">source.setValue(&#39;&lt;microphone device&gt;&#39;)
+  .then(function(source) {
+  // Promise resolves with same Source instance
+});
+</code></pre>
+
+  </section>
+
 <p class="module defined-in">exported from <a href='#/core'>core</a><br/>
-defined in <a href="https://github.com/xjsframework/xjs/tree/master/src/core/source/iaudiosource.ts#L5-L66">../src/core/source/iaudiosource.ts (line 5)</a>
+defined in <a href="https://github.com/xjsframework/xjs/tree/master/src/core/source/iaudiosource.ts#L7-L103">../src/core/source/iaudiosource.ts (line 7)</a>
 </p>
 
